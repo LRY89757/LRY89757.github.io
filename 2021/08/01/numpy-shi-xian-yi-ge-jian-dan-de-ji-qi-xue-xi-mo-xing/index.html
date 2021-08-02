@@ -742,7 +742,7 @@ from matplotlib import pyplot as plt</code></pre><h4 id="代码分析："><a hre
 <h3 id="生成数据"><a href="#生成数据" class="headerlink" title="生成数据"></a>生成数据</h3><pre><code>np.random.seed(100)
 x = np.linspace(-1, 1, 100).reshape(100, 1)
 y = 3 * np.power(x, 2) + 2 + 0.2 * np.random.rand(x.size).reshape(100, 1)</code></pre><h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><p>生成输入数据x及目标数据y，np.random.seed(100)时设置随机数种子。reshape函数将矩阵形状改为合适的形状方便操作。而后np.random.rand是为了加一些噪点。</p>
-<h3 id="查看x、y数据分布情况"><a href="#查看x、y数据分布情况" class="headerlink" title="查看x、y数据分布情况"></a>查看x、y数据分布情况</h3><pre><code>plt.scatter(x, y, s=20, c='red')
+<h3 id="查看x、y数据分布情况"><a href="#查看x、y数据分布情况" class="headerlink" title="查看x、y数据分布情况"></a>查看x、y数据分布情况</h3><pre><code>plt.scatter(x, y, s=20, c=&#39;red&#39;)
 plt.show()</code></pre><p>运行结果： <img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdnimg.cn/20210531214950572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xSWTg5NzU3,size_16,color_FFFFFF,t_70#pic_center" alt="函数图片"></p>
 <h3 id="随机初始化参数"><a href="#随机初始化参数" class="headerlink" title="随机初始化参数"></a>随机初始化参数</h3><pre><code>w1 = np.random.rand(1, 1)
 b1 = np.random.rand(1, 1)</code></pre><h4 id="代码分析：-2"><a href="#代码分析：-2" class="headerlink" title="代码分析："></a>代码分析：</h4><p>随机初始化参数w1、b1，后面会计算梯度逐渐接近最优解。</p>
@@ -761,8 +761,8 @@ for i in range(800):
     w1 -= lr * grad_w
     b1 -= lr * grad_b</code></pre><h4 id="代码分析：-3"><a href="#代码分析：-3" class="headerlink" title="代码分析："></a>代码分析：</h4><p><strong>这是我们代码最核心的一部分了。</strong> 一个简单的前向传播，y_pred是预测值，y是实际值。loss是均方损失函数，这里均方损失函数乘以0.5是为了求导的时候平方项正好消去，方便后续整理，实际上也可以不乘，梯度下降算法最重要的是方向，大小是次要的。sum函数对损失进行求和同时把loss函数变为标量，实际上这里面由于我们直接后续计算梯度直接求出了loss函数的导数，所以这里loss函数实际上没有在代码上没有很大的作用，写出来是为了方便我们去观看🤣😋。而这里我们接下来就是计算的grad_w、grad_b就是来进行梯度的计算，然后更新权重w1和参数b1。</p>
 <h3 id="可视化结果"><a href="#可视化结果" class="headerlink" title="可视化结果"></a>可视化结果</h3><p><em>我们训练结果如何呢？其实际拟合程度如何呢？我们画图来验证一下拟合的效果。</em></p>
-<pre><code>plt.plot(x, y_pred, "r-", label='predict')
-plt.scatter(x, y, color='blue', marker='o', label='true')    # true data
+<pre><code>plt.plot(x, y_pred, &quot;r-&quot;, label=&#39;predict&#39;)
+plt.scatter(x, y, color=&#39;blue&#39;, marker=&#39;o&#39;, label=&#39;true&#39;)    # true data
 plt.xlim(-1, 1)
 plt.ylim(2, 6)
 plt.legend()
@@ -786,25 +786,7 @@ print(w1, b1)</code></pre><p>训练结果： <img src="https://cdn.jsdelivr.net/
     //否则递归查找，如果左子树里有就返回左子树里的，否则返回右子树
     return GetSibling(T-&gt;lchild, e) != NULL ? GetSibling(T-&gt;lchild, e) : GetSibling(T-&gt;rchild, e);
 }
-</code></pre><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+</code></pre>
             </div>
             <hr/>
 
@@ -1271,7 +1253,7 @@ print(w1, b1)</code></pre><p>训练结果： <img src="https://cdn.jsdelivr.net/
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">15.3k</span> 字
+                <span class="white-color">16.4k</span> 字
             
 
             
@@ -1502,5 +1484,5 @@ $(function () {
             </script>
         
 
-    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
