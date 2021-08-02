@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-02T02:41:04.121Z</updated>
+  <updated>2021-08-02T03:14:37.345Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>readme</title>
+    <link href="https://lry89757.github.io/2021/08/02/readme/"/>
+    <id>https://lry89757.github.io/2021/08/02/readme/</id>
+    <published>2021-08-02T03:10:01.000Z</published>
+    <updated>2021-08-02T03:14:37.345Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;逯润雨的博客&quot;&gt;&lt;a href=&quot;#逯润雨的博客&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="博客建站" scheme="https://lry89757.github.io/categories/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99/"/>
+    
+    
+      <category term="记录" scheme="https://lry89757.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>numpy中对于tile的理解</title>
