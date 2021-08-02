@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-01T04:20:10.526Z</updated>
+  <updated>2021-08-02T02:41:04.121Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -17,11 +17,97 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>numpy中对于tile的理解</title>
+    <link href="https://lry89757.github.io/2021/08/02/numpy-zhong-dui-yu-tile-de-li-jie/"/>
+    <id>https://lry89757.github.io/2021/08/02/numpy-zhong-dui-yu-tile-de-li-jie/</id>
+    <published>2021-08-02T02:40:02.000Z</published>
+    <updated>2021-08-02T02:41:04.121Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;近些天使用numpy的时候发现了这么一个函数tile，感觉这个函数比较有用，可以将减少循环，直接矩阵运算优化运算速度。博主认为很有必要认真讨论一下这个函数的功能。&lt;/p&gt;
+&lt;h1 id=&quot;官网解释&quot;&gt;&lt;a href=&quot;#官网解释&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="numpy的小知识" scheme="https://lry89757.github.io/categories/numpy%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    
+    
+      <category term="numpy" scheme="https://lry89757.github.io/tags/numpy/"/>
+    
+      <category term="矩阵运算" scheme="https://lry89757.github.io/tags/%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>numpy中对于axis的理解</title>
+    <link href="https://lry89757.github.io/2021/08/02/numpy-zhong-dui-yu-axis-de-li-jie/"/>
+    <id>https://lry89757.github.io/2021/08/02/numpy-zhong-dui-yu-axis-de-li-jie/</id>
+    <published>2021-08-02T02:15:34.000Z</published>
+    <updated>2021-08-02T02:19:21.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="numpy的小知识" scheme="https://lry89757.github.io/categories/numpy%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    
+    
+      <category term="numpy" scheme="https://lry89757.github.io/tags/numpy/"/>
+    
+      <category term="矩阵计算" scheme="https://lry89757.github.io/tags/%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>argsort函数的详解</title>
+    <link href="https://lry89757.github.io/2021/08/02/argsort-han-shu-de-xiang-jie/"/>
+    <id>https://lry89757.github.io/2021/08/02/argsort-han-shu-de-xiang-jie/</id>
+    <published>2021-08-02T02:08:14.000Z</published>
+    <updated>2021-08-02T02:11:53.207Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;argsort函数经常用于矩阵的一些不破坏原有数组的情况下得到原数组的有序序列的情况。&lt;/p&gt;
+&lt;h1 id=&quot;官网解释&quot;&gt;&lt;a href=&quot;#官网解释&quot; class=&quot;headerlink&quot; title=&quot;官网解释&quot;&gt;&lt;/a&gt;官网解释&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="numpy的小知识" scheme="https://lry89757.github.io/categories/numpy%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    
+    
+      <category term="numpy" scheme="https://lry89757.github.io/tags/numpy/"/>
+    
+      <category term="矩阵计算" scheme="https://lry89757.github.io/tags/%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据结构各类排序算法详解+代码分析</title>
     <link href="https://lry89757.github.io/2021/08/01/shu-ju-jie-gou-ge-lei-pai-xu-suan-fa-xiang-jie-dai-ma-fen-xi/"/>
     <id>https://lry89757.github.io/2021/08/01/shu-ju-jie-gou-ge-lei-pai-xu-suan-fa-xiang-jie-dai-ma-fen-xi/</id>
     <published>2021-08-01T03:49:55.000Z</published>
-    <updated>2021-08-01T04:20:10.526Z</updated>
+    <updated>2021-08-02T02:14:11.170Z</updated>
     
     <summary type="html">
     
@@ -35,14 +121,14 @@
     
     </summary>
     
-      <category term="排序算法" scheme="https://lry89757.github.io/categories/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+      <category term="数据结构" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
       <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="排序" scheme="https://lry89757.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
-    
       <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
+      <category term="排序" scheme="https://lry89757.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
     
       <category term="图解" scheme="https://lry89757.github.io/tags/%E5%9B%BE%E8%A7%A3/"/>
     
@@ -53,7 +139,7 @@
     <link href="https://lry89757.github.io/2021/08/01/dong-tai-cha-zhao-biao-zhi-er-cha-pai-xu-shu-he-ping-heng-er-cha-shu-tu-jie-dai-ma-xiang-jie/"/>
     <id>https://lry89757.github.io/2021/08/01/dong-tai-cha-zhao-biao-zhi-er-cha-pai-xu-shu-he-ping-heng-er-cha-shu-tu-jie-dai-ma-xiang-jie/</id>
     <published>2021-08-01T03:47:11.000Z</published>
-    <updated>2021-08-01T03:49:33.894Z</updated>
+    <updated>2021-08-02T02:14:21.422Z</updated>
     
     <summary type="html">
     
@@ -67,14 +153,14 @@
     
     </summary>
     
-      <category term="二叉排序树" scheme="https://lry89757.github.io/categories/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/"/>
+      <category term="数据结构" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
       <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
-    
       <category term="查找表" scheme="https://lry89757.github.io/tags/%E6%9F%A5%E6%89%BE%E8%A1%A8/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
     
       <category term="二叉树" scheme="https://lry89757.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
@@ -121,7 +207,7 @@
     <link href="https://lry89757.github.io/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/"/>
     <id>https://lry89757.github.io/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/</id>
     <published>2021-08-01T02:26:14.000Z</published>
-    <updated>2021-08-01T02:32:59.931Z</updated>
+    <updated>2021-08-02T02:41:56.688Z</updated>
     
     <summary type="html">
     
@@ -135,7 +221,9 @@
     
     </summary>
     
-      <category term="概率论与数理统计" scheme="https://lry89757.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/"/>
+      <category term="概率论" scheme="https://lry89757.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+    
+      <category term="数据分析" scheme="https://lry89757.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
       <category term="numpy" scheme="https://lry89757.github.io/tags/numpy/"/>

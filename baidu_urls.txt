@@ -1,3 +1,6 @@
+https://lry89757.github.io/2021/08/02/numpy-zhong-dui-yu-tile-de-li-jie/
+https://lry89757.github.io/2021/08/02/numpy-zhong-dui-yu-axis-de-li-jie/
+https://lry89757.github.io/2021/08/02/argsort-han-shu-de-xiang-jie/
 https://lry89757.github.io/2021/08/01/shu-ju-jie-gou-ge-lei-pai-xu-suan-fa-xiang-jie-dai-ma-fen-xi/
 https://lry89757.github.io/2021/08/01/dong-tai-cha-zhao-biao-zhi-er-cha-pai-xu-shu-he-ping-heng-er-cha-shu-tu-jie-dai-ma-xiang-jie/
 https://lry89757.github.io/2021/08/01/numpy-shi-xian-yi-ge-jian-dan-de-ji-qi-xue-xi-mo-xing/
