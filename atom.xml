@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-02T10:42:42.282Z</updated>
+  <updated>2021-08-02T14:18:57.750Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一些感想2021.8.02</title>
+    <link href="https://lry89757.github.io/2021/08/02/yi-xie-gan-xiang/"/>
+    <id>https://lry89757.github.io/2021/08/02/yi-xie-gan-xiang/</id>
+    <published>2021-08-02T13:52:29.000Z</published>
+    <updated>2021-08-02T14:18:57.750Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;关于情绪&quot;&gt;&lt;a href=&quot;#关于情绪&quot; class=&quot;headerlink&quot; title=&quot;关于情绪&quot;&gt;&lt;/a&gt;关于情绪&lt;/h3&gt;&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;怎么说呢，
+        
+      
+    
+    </summary>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+    
+      <category term="生活随笔" scheme="https://lry89757.github.io/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>读《在路上》</title>
     <link href="https://lry89757.github.io/2021/08/02/du-zai-lu-shang/"/>
     <id>https://lry89757.github.io/2021/08/02/du-zai-lu-shang/</id>
     <published>2021-08-02T09:32:16.000Z</published>
-    <updated>2021-08-02T10:42:42.282Z</updated>
+    <updated>2021-08-02T14:39:04.108Z</updated>
     
     <summary type="html">
     
@@ -35,12 +65,12 @@
     
     </summary>
     
-      <category term="生活随笔" scheme="https://lry89757.github.io/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="书评" scheme="https://lry89757.github.io/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/%E4%B9%A6%E8%AF%84/"/>
+      <category term="书评" scheme="https://lry89757.github.io/categories/%E4%B9%A6%E8%AF%84/"/>
     
     
-      <category term="随笔" scheme="https://lry89757.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="生活随笔" scheme="https://lry89757.github.io/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
       <category term="书评" scheme="https://lry89757.github.io/tags/%E4%B9%A6%E8%AF%84/"/>
     
@@ -55,7 +85,7 @@
     <link href="https://lry89757.github.io/2021/08/02/git-nvm-npm-ming-ling-xing-linux-deng-ge-chong-luan-qi-ba-zao-de-zhi-ling-da-quan-chi-xu-chi-xu-huan-huan-geng-xin-zhong/"/>
     <id>https://lry89757.github.io/2021/08/02/git-nvm-npm-ming-ling-xing-linux-deng-ge-chong-luan-qi-ba-zao-de-zhi-ling-da-quan-chi-xu-chi-xu-huan-huan-geng-xin-zhong/</id>
     <published>2021-08-02T09:30:24.000Z</published>
-    <updated>2021-08-02T10:54:57.790Z</updated>
+    <updated>2021-08-02T14:29:28.111Z</updated>
     
     <summary type="html">
     
@@ -123,7 +153,7 @@
     <link href="https://lry89757.github.io/2021/08/02/readme/"/>
     <id>https://lry89757.github.io/2021/08/02/readme/</id>
     <published>2021-08-02T03:10:01.000Z</published>
-    <updated>2021-08-02T10:44:08.141Z</updated>
+    <updated>2021-08-02T14:30:02.103Z</updated>
     
     <summary type="html">
     
@@ -235,7 +265,7 @@
     <link href="https://lry89757.github.io/2021/08/01/shu-ju-jie-gou-ge-lei-pai-xu-suan-fa-xiang-jie-dai-ma-fen-xi/"/>
     <id>https://lry89757.github.io/2021/08/01/shu-ju-jie-gou-ge-lei-pai-xu-suan-fa-xiang-jie-dai-ma-fen-xi/</id>
     <published>2021-08-01T03:49:55.000Z</published>
-    <updated>2021-08-02T02:14:11.170Z</updated>
+    <updated>2021-08-02T14:27:20.876Z</updated>
     
     <summary type="html">
     
@@ -335,7 +365,7 @@
     <link href="https://lry89757.github.io/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/"/>
     <id>https://lry89757.github.io/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/</id>
     <published>2021-08-01T02:26:14.000Z</published>
-    <updated>2021-08-02T02:41:56.688Z</updated>
+    <updated>2021-08-02T14:39:31.949Z</updated>
     
     <summary type="html">
     
@@ -349,9 +379,7 @@
     
     </summary>
     
-      <category term="概率论" scheme="https://lry89757.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
-    
-      <category term="数据分析" scheme="https://lry89757.github.io/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+      <category term="数据分析" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
     
       <category term="numpy" scheme="https://lry89757.github.io/tags/numpy/"/>
