@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-02T03:14:37.345Z</updated>
+  <updated>2021-08-02T04:27:07.352Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一些小知识</title>
+    <link href="https://lry89757.github.io/2021/08/02/yi-xie-xiao-zhi-shi/"/>
+    <id>https://lry89757.github.io/2021/08/02/yi-xie-xiao-zhi-shi/</id>
+    <published>2021-08-02T04:17:30.000Z</published>
+    <updated>2021-08-02T04:27:07.352Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;  视频码率通俗地说就是采样率， 采样率越大，处理后的视频就越清晰， 码率的计算公式为：码率(kbps, 千位每秒) = 文件大小（KB） * 8 / 时间（秒）。 一个大小为2.6GB，
+        
+      
+    
+    </summary>
+    
+      <category term="数码知识" scheme="https://lry89757.github.io/categories/%E6%95%B0%E7%A0%81%E7%9F%A5%E8%AF%86/"/>
+    
+    
+      <category term="小知识" scheme="https://lry89757.github.io/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    
+      <category term="数码" scheme="https://lry89757.github.io/tags/%E6%95%B0%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>readme</title>
     <link href="https://lry89757.github.io/2021/08/02/readme/"/>
     <id>https://lry89757.github.io/2021/08/02/readme/</id>
     <published>2021-08-02T03:10:01.000Z</published>
-    <updated>2021-08-02T03:14:37.345Z</updated>
+    <updated>2021-08-02T07:11:35.424Z</updated>
     
     <summary type="html">
     
@@ -104,7 +132,7 @@
     <link href="https://lry89757.github.io/2021/08/02/argsort-han-shu-de-xiang-jie/"/>
     <id>https://lry89757.github.io/2021/08/02/argsort-han-shu-de-xiang-jie/</id>
     <published>2021-08-02T02:08:14.000Z</published>
-    <updated>2021-08-02T02:11:53.207Z</updated>
+    <updated>2021-08-02T04:27:03.905Z</updated>
     
     <summary type="html">
     

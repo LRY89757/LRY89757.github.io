@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>一些小知识</title>
+      <link href="/2021/08/02/yi-xie-xiao-zhi-shi/"/>
+      <url>/2021/08/02/yi-xie-xiao-zhi-shi/</url>
+      
+        <content type="html"><![CDATA[<p>  视频码率通俗地说就是采样率， 采样率越大，处理后的视频就越清晰， 码率的计算公式为：码率(kbps, 千位每秒) = 文件大小（KB） * 8 / 时间（秒）。 一个大小为2.6GB， 时长为120分钟的MKV视频文件，他的码率就是3029.21kbps</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数码知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小知识 </tag>
+            
+            <tag> 数码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>readme</title>
       <link href="/2021/08/02/readme/"/>
       <url>/2021/08/02/readme/</url>
       
-        <content type="html"><![CDATA[<h1 id="逯润雨的博客"><a href="#逯润雨的博客" class="headerlink" title="逯润雨的博客"></a>逯润雨的博客</h1><p>这是我本人的博客平台，欢迎大家前来访问🥳<br>刚建成没多久，有许多功能都不是很完善，我以后会在readme文档中记录更新功能与修改BUG与新的相关文章的。</p><h2 id="8-2-11-00-第一次更新"><a href="#8-2-11-00-第一次更新" class="headerlink" title="8.2  11:00 第一次更新"></a>8.2  11:00 第一次更新</h2><hr><ol><li>友链：修正了部分无法显示问题， 加进去了更多友链</li><li>发布了3篇新文章，全部都是关于numpy的小知识</li><li>增加mathjax已解决无法显示markdown数学公式问题</li><li>更新了readme文档</li><li>预计会进一步：  <ul><li>二级目录</li><li>一个博客记录nvm、nodejs、npm踩坑历史😖</li><li>评论模块</li><li>文章密码问题</li></ul></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h1 id="逯润雨的博客"><a href="#逯润雨的博客" class="headerlink" title="逯润雨的博客"></a>逯润雨的博客</h1><p>这是我本人的博客平台，欢迎大家前来访问🥳<br>刚建成没多久，有许多功能都不是很完善，我以后会在readme文档中记录更新功能与修改BUG与新的相关文章的。  </p><h2 id="8-2-14-28第二次更新"><a href="#8-2-14-28第二次更新" class="headerlink" title="8.2 14:28第二次更新"></a>8.2 14:28第二次更新</h2><hr><ol><li><p>更新了密码功能，对于一些文章实现了加密， <em>如果有小伙伴们对加密文章感兴趣，欢迎发邮件或是通过各种渠道联系我获取密码，顺便交个朋友👀</em>， 或者有关大佬可以选择直接尝试破译哦~那就更得交个朋友了😅</p></li><li><p>更新了readme文档</p></li><li><p>发布了一篇博客，关于一些数码小知识，并测试了密码功能。</p></li><li><p>待完成：</p><ul><li>代码高亮功能</li><li>二级目录</li><li>记录nvm、nodejs、npm踩坑历史的博客。</li><li>评论功能</li></ul></li></ol><h2 id="8-2-11-00-第一次更新"><a href="#8-2-11-00-第一次更新" class="headerlink" title="8.2  11:00 第一次更新"></a>8.2  11:00 第一次更新</h2><hr><ol><li>友链：修正了部分无法显示问题， 加进去了更多友链</li><li>发布了3篇新文章，全部都是关于numpy的小知识</li><li>增加mathjax已解决无法显示markdown数学公式问题</li><li>更新了readme文档</li><li>预计会进一步：  <ul><li>二级目录</li><li>一个博客记录nvm、nodejs、npm踩坑历史😖</li><li>评论模块</li><li>文章密码问题</li></ul></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
