@@ -742,6 +742,40 @@ $(function () {
 </div>
                     
                     
+                    <!-- shw2018 洪卫  modify 2019.08.15-->
+
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="row">
+        
+        
+        <div class="col s12 ">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+<script>
+    $(function () {
+        new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: 'true' === 'true',
+            autoplay: 'false' === 'true',
+            theme: '#542674',
+            loop: 'all',
+            order: 'list',
+            preload: 'auto',
+            volume: Number('0.7'),
+            listFolded: 'false' === 'true',
+            listMaxHeight: '197px',
+            audio: JSON.parse('[{"name":"Beautiful World","artist":"Westlife","url":"http://music.163.com/song/media/outer/url?id=20707408.mp3","cover":"https://p2.music.126.net/MEWr-THANcYy-1jvx334_Q==/109951163167214019.jpg?param=130y130"},{"name":"River Flows in You","artist":"Yiruma","url":"http://music.163.com/song/media/outer/url?id=26237342.mp3","cover":"https://p2.music.126.net/8ZRSyI0ZN_4ah8uzsNd1mA==/2324367581169008.jpg?param=130y130"},{"name":"Hello My Love","artist":"Westlife","url":"http://music.163.com/song/media/outer/url?id=1338728670.mp3","cover":"https://p2.music.126.net/P2_COhPmlhsOpoj31DDLeA==/109951163785867445.jpg?param=130y130"},{"name":"If I Let You Go","artist":"Westlife","url":"http://music.163.com/song/media/outer/url?id=27220254.mp3","cover":"https://p2.music.126.net/TcOOoZSbISGT9AkhUtwOsg==/5644892697128237.jpg?param=130y130"},{"name":"Señorita","artist":"Shawn Mendes/Camila Cabello","url":"http://music.163.com/song/media/outer/url?id=1373168742.mp3","cover":"https://p2.music.126.net/eSrLKe5g3U8jX-lb629q6A==/109951164162885535.jpg?param=130y130"}]')
+        });
+    });
+</script>
+                    
                     
                     
                     
@@ -759,7 +793,32 @@ $(function () {
 
     
     
-    <div class="col s12" >
+    <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/newcover/JJLIN.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/新闻/" class="category" target="_blank">新闻</a>
+                    
+                </div>
+                <a href="/2021/08/03/lier-and-accuser-for-lin-jun-jie/" target="_blank">
+                    <h3 class="post-title">Lier and Accuser for 林俊杰</h3>
+                </a>
+                <p class="post-description">
+                    
+                        网上最近流言飞起，说到林俊杰****，我实际上是比较气愤的，至少现在还没有真相大白，网上的键盘侠、水军们已经开始拼命黑了，我想起了JJ Lin的一首歌，Lier and Accuser, 里面几句歌词：They don't even know me，With their tongues（闲言碎语） they crucify（折磨） me，Won't you vindicate（证明……无辜的） me，Fend（防御） me from those false accusations（指责）。他们都不认识我，就各处造谣，你能证明我是无辜的对吧，快带我逃离这不实的指责。
+                    
+                </p>
+                <a href="/2021/08/03/lier-and-accuser-for-lin-jun-jie/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" >
         <div class="post-card" style="background-image: url('/medias/featureimages/18.jpg')">
             <div class="post-body">
                 <div class="post-categories">
@@ -770,29 +829,12 @@ $(function () {
                 <a href="/2021/08/02/readme/" target="_blank">
                     <h3 class="post-title">readme</h3>
                 </a>
-                <p class="post-description">这是我本人的博客平台，欢迎大家前来访问🥳.刚建成没多久，有许多功能都不是很完善，我以后会在readme文档中记录更新功能与修改BUG与新的相关文章的。</p>
+                <p class="post-description">
+                    
+                        这是我本人的博客平台，欢迎大家前来访问🥳.刚建成没多久，有许多功能都不是很完善，我以后会在readme文档中记录更新功能与修改BUG与新的相关文章的。
+                    
+                </p>
                 <a href="/2021/08/02/readme/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/newcover/onroad.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/书评/" class="category" target="_blank">书评</a>
-                    
-                </div>
-                <a href="/2021/08/02/du-zai-lu-shang/" target="_blank">
-                    <h3 class="post-title">读《在路上》</h3>
-                </a>
-                <p class="post-description">我当时（初中）整天就去摘抄他的文章。除了这本他还写过《门外汉的京都》《台北小吃札记》等书 。我也都一一看过，当时看《台北小吃札记》时常常流口水，留恋于对美食的幻想之中，还整天想着未来哪天去台北品尝一下。可惜现在可能哪些描述的小吃摊位已经没有了。不得不说，初中生活真是很让人怀念。……………………不知为何，又突然想到之前一首叫做《鹿港小镇》的歌了，唉。</p>
-                <a href="/2021/08/02/du-zai-lu-shang/" target="_blank"
                         class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
@@ -812,9 +854,38 @@ $(function () {
                 <a href="/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/" target="_blank">
                     <h3 class="post-title">上海交大概率论数理统计大作业代码实现解析</h3>
                 </a>
-                <p class="post-description">前些日子有上交小姐姐概率论与数理统计课程结课了，有一个大作业要做，题目要求使用matlab或者python画图分析并统计有关数据。</p>
+                <p class="post-description">
+                    
+                        前些日子有上交小姐姐概率论与数理统计课程结课了，有一个大作业要做，题目要求使用matlab或者python画图分析并统计有关数据。
+                    
+                </p>
                 <a href="/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/" target="_blank"
                         class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/newcover/onroad.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/书评/" class="category" target="_blank">书评</a>
+                    
+                </div>
+                <a href="/2021/08/02/du-zai-lu-shang/" target="_blank">
+                    <h3 class="post-title">读《在路上》</h3>
+                </a>
+                <p class="post-description">
+                    
+                        我当时（初中）整天就去摘抄他的文章。除了这本他还写过《门外汉的京都》《台北小吃札记》等书 。我也都一一看过，当时看《台北小吃札记》时常常流口水，留恋于对美食的幻想之中，还整天想着未来哪天去台北品尝一下。可惜现在可能哪些描述的小吃摊位已经没有了。不得不说，初中生活真是很让人怀念。……………………不知为何，又突然想到之前一首叫做《鹿港小镇》的歌了，唉。
+                    
+                </p>
+                <a href="/2021/08/02/du-zai-lu-shang/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FFCC00 0%, #FF9500 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -837,6 +908,56 @@ $(function () {
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/08/03/lier-and-accuser-for-lin-jun-jie/" target="_blank">
+                        <div class="card-image">
+                            
+                            <img src="/medias/newcover/JJLIN.jpg" class="responsive-img" alt="Lier and Accuser for 林俊杰">
+                            
+                            <span class="card-title">Lier and Accuser for 林俊杰</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            网上最近流言飞起，说到林俊杰****，我实际上是比较气愤的，至少现在还没有真相大白，网上的键盘侠、水军们已经开始拼命黑了，我想起了JJ Lin的一首歌，Lier and Accuser, 里面几句歌词：They don't even know me，With their tongues（闲言碎语） they crucify（折磨） me，Won't you vindicate（证明……无辜的） me，Fend（防御） me from those false accusations（指责）。他们都不认识我，就各处造谣，你能证明我是无辜的对吧，快带我逃离这不实的指责。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-03
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/新闻/" class="post-category" target="_blank">
+                                    新闻
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/林俊杰/" target="_blank">
+                            <span class="chip bg-color">林俊杰</span>
+                        </a>
+                        
+                        <a href="/tags/生活随笔/" target="_blank">
+                            <span class="chip bg-color">生活随笔</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -944,6 +1065,10 @@ $(function () {
                         
                         <a href="/tags/Jack-Kerouac/" target="_blank">
                             <span class="chip bg-color">Jack Kerouac</span>
+                        </a>
+                        
+                        <a href="/tags/舒国治/" target="_blank">
+                            <span class="chip bg-color">舒国治</span>
                         </a>
                         
                     </div>
@@ -1319,12 +1444,12 @@ git commit -m""   # 提交到
                             <span class="chip bg-color">数据结构</span>
                         </a>
                         
-                        <a href="/tags/C/" target="_blank">
-                            <span class="chip bg-color">C</span>
-                        </a>
-                        
                         <a href="/tags/排序/" target="_blank">
                             <span class="chip bg-color">排序</span>
+                        </a>
+                        
+                        <a href="/tags/C/" target="_blank">
+                            <span class="chip bg-color">C</span>
                         </a>
                         
                         <a href="/tags/图解/" target="_blank">
@@ -1378,12 +1503,12 @@ git commit -m""   # 提交到
                             <span class="chip bg-color">数据结构</span>
                         </a>
                         
-                        <a href="/tags/查找表/" target="_blank">
-                            <span class="chip bg-color">查找表</span>
-                        </a>
-                        
                         <a href="/tags/C/" target="_blank">
                             <span class="chip bg-color">C</span>
+                        </a>
+                        
+                        <a href="/tags/查找表/" target="_blank">
+                            <span class="chip bg-color">查找表</span>
                         </a>
                         
                         <a href="/tags/二叉树/" target="_blank">
@@ -1462,69 +1587,34 @@ git commit -m""   # 提交到
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="上海交大概率论数理统计大作业代码实现解析">
-                            
-                            <span class="card-title">上海交大概率论数理统计大作业代码实现解析</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            前些日子有上交小姐姐概率论与数理统计课程结课了，有一个大作业要做，题目要求使用matlab或者python画图分析并统计有关数据。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-01
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/数据分析/" class="post-category" target="_blank">
-                                    数据分析
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/numpy/" target="_blank">
-                            <span class="chip bg-color">numpy</span>
-                        </a>
-                        
-                        <a href="/tags/matplotlib/" target="_blank">
-                            <span class="chip bg-color">matplotlib</span>
-                        </a>
-                        
-                        <a href="/tags/math/" target="_blank">
-                            <span class="chip bg-color">math</span>
-                        </a>
-                        
-                        <a href="/tags/概率论与数理统计/" target="_blank">
-                            <span class="chip bg-color">概率论与数理统计</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
 </main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a class="left btn-floating btn-large disabled">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">1 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/page/2/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
 
 
         <footer class="page-footer bg-color">
@@ -1553,7 +1643,7 @@ git commit -m""   # 提交到
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">16.9k</span> 字
+                <span class="white-color">18k</span> 字
             
 
             
