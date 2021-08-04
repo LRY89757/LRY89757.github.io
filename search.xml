@@ -8,7 +8,7 @@
       <link href="/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p5788-dan-diao-zhan/"/>
       <url>/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p5788-dan-diao-zhan/</url>
       
-        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a href="https://www.luogu.com.cn/problem/P5788" target="_blank" rel="noopener">题目</a>描述</h2><hr><p>给出项数为 n的整数数列 a_{1 … n}<em>a</em>1…<em>n</em>。</p><p>定义函数 f(i)<em>f</em>(<em>i</em>) 代表数列中第 i<em>i</em> 个元素之后第一个大于 a_i<em>a**i</em> 的元素的<strong>下标</strong>，若不存在，则 f(i)=0。</p><p>试求出 f<em>(1…</em>n)。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210804234631286.png" alt="image-20210804234631286"></p><h2 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h2><hr><p>实际上这一道题和前面那一道<a href>日志分析</a>是非常像的，不过这里这个需要我们先将所有的数字都读进a[3000005]，读进来之后从后往前开始，定义一个辅助数组b[3000005]用来存储相同位置的数比他大的第一个数的索引值，从最后一个数开始，最后一个数为0，然后往前，随意一个数a[i]先判断是否它比后面第一个数a[i+1]大，如果比后面第一个数a[i+1]小，那么那个辅助数组只需在该位置存储该位置的索引 i+1 就行；如果它比它后面第一个数a[i+1]大或是相等，那么就找比它后面那个数a[i+1]还大的数a[b[i+1]],由于是从后往前进行的，这个b[i+1]已经求出来了，如果我们的a[b[i+1]]，仍然不比a[i]大，那么就继续找a[b[b[i+1]]], 哈哈哈，有点套娃的感觉了，实际上就是找比a[b[i+1]]还大的第一个数，这么依次找下去，直到找到一个比a[i]大的数，将其索引存储到b[i]上， 或者直到找到一个b[j]为0，那么说明a[i]是目前最大数，没有比它更大的数，那么对应的b[i]就为0。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><hr><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS</span><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3000002</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 用来存储数据</span><span class="token keyword">int</span> b<span class="token punctuation">[</span><span class="token number">3000002</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 用来存储我们的答案</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> n<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 总共的个数</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 读取数据</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    b<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// 如果后面的第一个数正好比他大</span>            b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token keyword">else</span>        <span class="token punctuation">{</span>            <span class="token keyword">int</span> next <span class="token operator">=</span> b<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>            <span class="token keyword">while</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> a<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> next <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// // 如果后面第一个数没有比他更大的数，那么直接赋值为0,否则就一直找接下来的索引直到找到0或者找到合适的数为止</span>                next <span class="token operator">=</span> b<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">;</span>            b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> next<span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a href="https://www.luogu.com.cn/problem/P5788" target="_blank" rel="noopener">题目</a>描述</h2><hr><p>给出项数为 n的整数数列 $a_{1 … n}$。</p><p>定义函数 <em>f</em>(<em>i</em>) 代表数列中第 i<em>i</em> 个元素之后第一个大于 <em>a**i</em> 的元素的<strong>下标</strong>，若不存在，则 f(i)=0。</p><p>试求出 f<em>(1…</em>n)。</p><p><a href="https://imgtu.com/i/fV9nYV" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/05/fV9nYV.png" alt></a></p><h2 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h2><hr><p>实际上这一道题和前面那一道<a href>日志分析</a>是非常像的，不过这里这个需要我们先将所有的数字都读进a[3000005]，读进来之后从后往前开始，定义一个辅助数组b[3000005]用来存储相同位置的数比他大的第一个数的索引值，从最后一个数开始，最后一个数为0，然后往前，随意一个数a[i]先判断是否它比后面第一个数a[i+1]大，如果比后面第一个数a[i+1]小，那么那个辅助数组只需在该位置存储该位置的索引 i+1 就行；如果它比它后面第一个数a[i+1]大或是相等，那么就找比它后面那个数a[i+1]还大的数a[b[i+1]],由于是从后往前进行的，这个b[i+1]已经求出来了，如果我们的a[b[i+1]]，仍然不比a[i]大，那么就继续找a[b[b[i+1]]], 哈哈哈，有点套娃的感觉了，实际上就是找比a[b[i+1]]还大的第一个数，这么依次找下去，直到找到一个比a[i]大的数，将其索引存储到b[i]上， 或者直到找到一个b[j]为0，那么说明a[i]是目前最大数，没有比它更大的数，那么对应的b[i]就为0。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><hr><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS</span><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3000002</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 用来存储数据</span><span class="token keyword">int</span> b<span class="token punctuation">[</span><span class="token number">3000002</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 用来存储我们的答案</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> n<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 总共的个数</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 读取数据</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    b<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// 如果后面的第一个数正好比他大</span>            b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token keyword">else</span>        <span class="token punctuation">{</span>            <span class="token keyword">int</span> next <span class="token operator">=</span> b<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>            <span class="token keyword">while</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> a<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> next <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// // 如果后面第一个数没有比他更大的数，那么直接赋值为0,否则就一直找接下来的索引直到找到0或者找到合适的数为止</span>                next <span class="token operator">=</span> b<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">;</span>            b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> next<span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -20,13 +20,13 @@
       
         <tags>
             
+            <tag> C </tag>
+            
             <tag> 栈 </tag>
             
             <tag> 洛谷 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> C </tag>
             
             <tag> 模板 </tag>
             
@@ -53,6 +53,8 @@
       
         <tags>
             
+            <tag> C </tag>
+            
             <tag> 栈 </tag>
             
             <tag> 洛谷 </tag>
@@ -60,8 +62,6 @@
             <tag> 算法 </tag>
             
             <tag> 数学 </tag>
-            
-            <tag> C </tag>
             
         </tags>
       
@@ -86,13 +86,13 @@
       
         <tags>
             
+            <tag> C </tag>
+            
             <tag> 栈 </tag>
             
             <tag> 洛谷 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> C </tag>
             
             <tag> python </tag>
             
@@ -119,6 +119,8 @@
       
         <tags>
             
+            <tag> C </tag>
+            
             <tag> 栈 </tag>
             
             <tag> 洛谷 </tag>
@@ -126,8 +128,6 @@
             <tag> 算法 </tag>
             
             <tag> 数学 </tag>
-            
-            <tag> C </tag>
             
         </tags>
       
@@ -152,6 +152,10 @@
       
         <tags>
             
+            <tag> 数据结构 </tag>
+            
+            <tag> C </tag>
+            
             <tag> 栈 </tag>
             
             <tag> 洛谷 </tag>
@@ -160,11 +164,7 @@
             
             <tag> 数学 </tag>
             
-            <tag> C </tag>
-            
             <tag> python </tag>
-            
-            <tag> 数据结构 </tag>
             
         </tags>
       
@@ -514,9 +514,9 @@
       
         <tags>
             
-            <tag> C </tag>
-            
             <tag> 数据结构 </tag>
+            
+            <tag> C </tag>
             
             <tag> 排序 </tag>
             
@@ -545,11 +545,11 @@
       
         <tags>
             
-            <tag> C </tag>
-            
             <tag> 数据结构 </tag>
             
             <tag> 查找表 </tag>
+            
+            <tag> C </tag>
             
             <tag> 二叉树 </tag>
             
