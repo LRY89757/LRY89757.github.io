@@ -688,19 +688,8 @@ $(function () {
 
     let carouselIntervalId;
     
-    // Loop to call the next cover article picture.
-    let autoCarousel = function() {
-        carouselIntervalId = setInterval(function () {
-            coverSlider.carousel('next');
-        }, 5000);
-    };
-    autoCarousel();
-    
 
     let restartPlay = function () {
-        
-        clearInterval(carouselIntervalId);
-        autoCarousel();
         
     };
 
@@ -729,10 +718,6 @@ $(function () {
                 <div class="card-content">
                     
                     <div class="dream">
-    
-    <div class="title center-align">
-        <i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;My Features
-    </div>
     
     <div class="row">
         <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
@@ -771,7 +756,7 @@ $(function () {
             volume: Number('0.7'),
             listFolded: 'false' === 'true',
             listMaxHeight: '197px',
-            audio: JSON.parse('[{"name":"Beautiful World","artist":"Westlife","url":"http://music.163.com/song/media/outer/url?id=20707408.mp3","cover":"https://p2.music.126.net/MEWr-THANcYy-1jvx334_Q==/109951163167214019.jpg?param=130y130"},{"name":"River Flows in You","artist":"Yiruma","url":"http://music.163.com/song/media/outer/url?id=26237342.mp3","cover":"https://p2.music.126.net/8ZRSyI0ZN_4ah8uzsNd1mA==/2324367581169008.jpg?param=130y130"},{"name":"Hello My Love","artist":"Westlife","url":"http://music.163.com/song/media/outer/url?id=1338728670.mp3","cover":"https://p2.music.126.net/P2_COhPmlhsOpoj31DDLeA==/109951163785867445.jpg?param=130y130"},{"name":"If I Let You Go","artist":"Westlife","url":"http://music.163.com/song/media/outer/url?id=27220254.mp3","cover":"https://p2.music.126.net/TcOOoZSbISGT9AkhUtwOsg==/5644892697128237.jpg?param=130y130"},{"name":"Señorita","artist":"Shawn Mendes/Camila Cabello","url":"http://music.163.com/song/media/outer/url?id=1373168742.mp3","cover":"https://p2.music.126.net/eSrLKe5g3U8jX-lb629q6A==/109951164162885535.jpg?param=130y130"}]')
+            audio: JSON.parse('[{"name":"River Flows in You","artist":"Yiruma","url":"http://music.163.com/song/media/outer/url?id=26237342.mp3","cover":"https://p2.music.126.net/8ZRSyI0ZN_4ah8uzsNd1mA==/2324367581169008.jpg?param=130y130"},{"name":"Hello My Love","artist":"Westlife","url":"http://music.163.com/song/media/outer/url?id=1338728670.mp3","cover":"https://p2.music.126.net/P2_COhPmlhsOpoj31DDLeA==/109951163785867445.jpg?param=130y130"},{"name":"If I Let You Go","artist":"Westlife","url":"http://music.163.com/song/media/outer/url?id=27220254.mp3","cover":"https://p2.music.126.net/TcOOoZSbISGT9AkhUtwOsg==/5644892697128237.jpg?param=130y130"},{"name":"Señorita","artist":"Shawn Mendes/Camila Cabello","url":"http://music.163.com/song/media/outer/url?id=1373168742.mp3","cover":"https://p2.music.126.net/eSrLKe5g3U8jX-lb629q6A==/109951164162885535.jpg?param=130y130"}]')
         });
     });
 </script>
@@ -819,6 +804,31 @@ $(function () {
     
     
     <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/newcover/onroad.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/书评/" class="category" target="_blank">书评</a>
+                    
+                </div>
+                <a href="/2021/08/02/du-zai-lu-shang/" target="_blank">
+                    <h3 class="post-title">读《在路上》</h3>
+                </a>
+                <p class="post-description">
+                    
+                        我当时（初中）整天就去摘抄他的文章。除了这本他还写过《门外汉的京都》《台北小吃札记》等书 。我也都一一看过，当时看《台北小吃札记》时常常流口水，留恋于对美食的幻想之中，还整天想着未来哪天去台北品尝一下。可惜现在可能哪些描述的小吃摊位已经没有了。不得不说，初中生活真是很让人怀念。……………………不知为何，又突然想到之前一首叫做《鹿港小镇》的歌了，唉。
+                    
+                </p>
+                <a href="/2021/08/02/du-zai-lu-shang/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
         <div class="post-card" style="background-image: url('/medias/featureimages/18.jpg')">
             <div class="post-body">
                 <div class="post-categories">
@@ -835,7 +845,7 @@ $(function () {
                     
                 </p>
                 <a href="/2021/08/02/readme/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -860,31 +870,6 @@ $(function () {
                     
                 </p>
                 <a href="/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        <div class="post-card" style="background-image: url('/medias/newcover/onroad.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/书评/" class="category" target="_blank">书评</a>
-                    
-                </div>
-                <a href="/2021/08/02/du-zai-lu-shang/" target="_blank">
-                    <h3 class="post-title">读《在路上》</h3>
-                </a>
-                <p class="post-description">
-                    
-                        我当时（初中）整天就去摘抄他的文章。除了这本他还写过《门外汉的京都》《台北小吃札记》等书 。我也都一一看过，当时看《台北小吃札记》时常常流口水，留恋于对美食的幻想之中，还整天想着未来哪天去台北品尝一下。可惜现在可能哪些描述的小吃摊位已经没有了。不得不说，初中生活真是很让人怀念。……………………不知为何，又突然想到之前一首叫做《鹿港小镇》的歌了，唉。
-                    
-                </p>
-                <a href="/2021/08/02/du-zai-lu-shang/" target="_blank"
                         class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FFCC00 0%, #FF9500 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
@@ -1444,12 +1429,12 @@ git commit -m""   # 提交到
                             <span class="chip bg-color">数据结构</span>
                         </a>
                         
-                        <a href="/tags/排序/" target="_blank">
-                            <span class="chip bg-color">排序</span>
-                        </a>
-                        
                         <a href="/tags/C/" target="_blank">
                             <span class="chip bg-color">C</span>
+                        </a>
+                        
+                        <a href="/tags/排序/" target="_blank">
+                            <span class="chip bg-color">排序</span>
                         </a>
                         
                         <a href="/tags/图解/" target="_blank">
@@ -1503,12 +1488,12 @@ git commit -m""   # 提交到
                             <span class="chip bg-color">数据结构</span>
                         </a>
                         
-                        <a href="/tags/C/" target="_blank">
-                            <span class="chip bg-color">C</span>
-                        </a>
-                        
                         <a href="/tags/查找表/" target="_blank">
                             <span class="chip bg-color">查找表</span>
+                        </a>
+                        
+                        <a href="/tags/C/" target="_blank">
+                            <span class="chip bg-color">C</span>
                         </a>
                         
                         <a href="/tags/二叉树/" target="_blank">
@@ -1643,7 +1628,7 @@ git commit -m""   # 提交到
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">18k</span> 字
+                <span class="white-color">18.1k</span> 字
             
 
             
@@ -1874,5 +1859,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
