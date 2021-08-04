@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-04T07:05:30.106Z</updated>
+  <updated>2021-08-04T15:58:08.597Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,218 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>算法刷题之栈系列P5788 单调栈</title>
+    <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p5788-dan-diao-zhan/"/>
+    <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p5788-dan-diao-zhan/</id>
+    <published>2021-08-04T15:42:33.000Z</published>
+    <updated>2021-08-04T15:58:08.597Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P5788&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="刷算法题" scheme="https://lry89757.github.io/categories/%E5%88%B7%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    
+      <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
+    
+      <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
+      <category term="模板" scheme="https://lry89757.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法刷题之栈系列P1165-日志分析</title>
+    <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1165-ri-zhi-fen-xi/"/>
+    <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1165-ri-zhi-fen-xi/</id>
+    <published>2021-08-04T15:31:49.000Z</published>
+    <updated>2021-08-04T15:41:41.461Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述:&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P1165&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    
+      <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
+    
+      <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="https://lry89757.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法刷题之栈系列P1981 表达式求值</title>
+    <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1981-biao-da-shi-qiu-zhi/"/>
+    <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1981-biao-da-shi-qiu-zhi/</id>
+    <published>2021-08-04T15:15:43.000Z</published>
+    <updated>2021-08-04T15:32:40.876Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P1981&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    
+      <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
+    
+      <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
+      <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法刷题之栈系列P1449 后缀表达式</title>
+    <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1449-hou-zhui-biao-da-shi/"/>
+    <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1449-hou-zhui-biao-da-shi/</id>
+    <published>2021-08-04T15:04:31.000Z</published>
+    <updated>2021-08-04T15:35:29.376Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P1449&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    
+      <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
+    
+      <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="https://lry89757.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法刷题全记录</title>
+    <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-quan-ji-lu/"/>
+    <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-quan-ji-lu/</id>
+    <published>2021-08-04T14:42:08.000Z</published>
+    <updated>2021-08-04T16:02:28.219Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;em&gt;学校要求暑假刷算法题，上个寒假刷的题（&lt;del&gt;有好多好多都是不会抄的&lt;/del&gt;）几乎上都快忘完了，正逢上我创建个人博客，算是把刷过的题都做一个记录，也算是个记录整理一下思路，以后忘了还可以看看当时的思路&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;就以这一个系列作为开篇作，以后我会
+        
+      
+    
+    </summary>
+    
+      <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    
+      <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
+    
+      <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="https://lry89757.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
+      <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
+    
+      <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法刷题之栈系列P1044 栈</title>
+    <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1044-zhan/"/>
+    <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1044-zhan/</id>
+    <published>2021-08-04T14:34:55.000Z</published>
+    <updated>2021-08-04T16:09:25.724Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://www.luogu.com.cn/problem/P1044&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+    
+    
+      <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
+    
+      <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
+    
+      <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学" scheme="https://lry89757.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
+    
+      <category term="C++" scheme="https://lry89757.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>回到那片球场8.3 2021</title>
@@ -189,7 +401,7 @@
     <link href="https://lry89757.github.io/2021/08/02/readme/"/>
     <id>https://lry89757.github.io/2021/08/02/readme/</id>
     <published>2021-08-02T03:10:01.000Z</published>
-    <updated>2021-08-04T07:16:50.703Z</updated>
+    <updated>2021-08-04T16:05:43.290Z</updated>
     
     <summary type="html">
     
@@ -318,9 +530,9 @@
       <category term="数据结构" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
+      <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="排序" scheme="https://lry89757.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
     
@@ -350,11 +562,11 @@
       <category term="数据结构" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
       <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="查找表" scheme="https://lry89757.github.io/tags/%E6%9F%A5%E6%89%BE%E8%A1%A8/"/>
-    
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
     
       <category term="二叉树" scheme="https://lry89757.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     

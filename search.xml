@@ -4,6 +4,210 @@
   
     
     <entry>
+      <title>算法刷题之栈系列P5788 单调栈</title>
+      <link href="/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p5788-dan-diao-zhan/"/>
+      <url>/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p5788-dan-diao-zhan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a href="https://www.luogu.com.cn/problem/P5788" target="_blank" rel="noopener">题目</a>描述</h2><hr><p>给出项数为 n的整数数列 a_{1 … n}<em>a</em>1…<em>n</em>。</p><p>定义函数 f(i)<em>f</em>(<em>i</em>) 代表数列中第 i<em>i</em> 个元素之后第一个大于 a_i<em>a**i</em> 的元素的<strong>下标</strong>，若不存在，则 f(i)=0。</p><p>试求出 f<em>(1…</em>n)。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210804234631286.png" alt="image-20210804234631286"></p><h2 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h2><hr><p>实际上这一道题和前面那一道<a href>日志分析</a>是非常像的，不过这里这个需要我们先将所有的数字都读进a[3000005]，读进来之后从后往前开始，定义一个辅助数组b[3000005]用来存储相同位置的数比他大的第一个数的索引值，从最后一个数开始，最后一个数为0，然后往前，随意一个数a[i]先判断是否它比后面第一个数a[i+1]大，如果比后面第一个数a[i+1]小，那么那个辅助数组只需在该位置存储该位置的索引 i+1 就行；如果它比它后面第一个数a[i+1]大或是相等，那么就找比它后面那个数a[i+1]还大的数a[b[i+1]],由于是从后往前进行的，这个b[i+1]已经求出来了，如果我们的a[b[i+1]]，仍然不比a[i]大，那么就继续找a[b[b[i+1]]], 哈哈哈，有点套娃的感觉了，实际上就是找比a[b[i+1]]还大的第一个数，这么依次找下去，直到找到一个比a[i]大的数，将其索引存储到b[i]上， 或者直到找到一个b[j]为0，那么说明a[i]是目前最大数，没有比它更大的数，那么对应的b[i]就为0。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><hr><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS</span><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3000002</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 用来存储数据</span><span class="token keyword">int</span> b<span class="token punctuation">[</span><span class="token number">3000002</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 用来存储我们的答案</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> n<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 总共的个数</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 读取数据</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    b<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// 如果后面的第一个数正好比他大</span>            b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token keyword">else</span>        <span class="token punctuation">{</span>            <span class="token keyword">int</span> next <span class="token operator">=</span> b<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>            <span class="token keyword">while</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> a<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> next <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// // 如果后面第一个数没有比他更大的数，那么直接赋值为0,否则就一直找接下来的索引直到找到0或者找到合适的数为止</span>                next <span class="token operator">=</span> b<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">;</span>            b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> next<span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷算法题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 栈 </tag>
+            
+            <tag> 洛谷 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> C </tag>
+            
+            <tag> 模板 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法刷题之栈系列P1165-日志分析</title>
+      <link href="/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1165-ri-zhi-fen-xi/"/>
+      <url>/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1165-ri-zhi-fen-xi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述:"></a><a href="https://www.luogu.com.cn/problem/P1165" target="_blank" rel="noopener">题目</a>描述:</h2><p><em>M</em> 海运公司最近要对旗下仓库的货物进出情况进行统计。目前他们所拥有的唯一记录就是一个记录集装箱进出情况的日志。该日志记录了两类操作：第一类操作为集装箱入库操作，以及该次入库的集装箱重量；第二类操作为集装箱的出库操作。这些记录都严格按时间顺序排列。集装箱入库和出库的规则为先进后出，即每次出库操作出库的集装箱为当前在仓库里所有集装箱中最晚入库的集装箱。</p><p>出于分析目的，分析人员在日志中随机插入了若干第三类操作――查询操作。分析日志时，每遇到一次查询操作，都要报告出当前仓库中最大集装箱的重量。</p><p><a href="https://imgtu.com/i/fEvvCD" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/04/fEvvCD.png" alt></a></p><h2 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h2><hr><p>首先我们知道要使用一个栈来存储输入的重量，但是由于这里有着一个所谓的最大值的限制，我们要能随时查询最大值，所以同时还需要有着一个辅助栈来<strong>同步</strong>存储我们的当前元素作为栈顶时的最大值，这个是建立栈的同时建立的辅助栈，最后我们只需要查询时输出栈顶，出库时把两个栈顶都弹出来就行。</p><p>另外就是注意一下这里的空栈时查询输出0就行了</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><hr><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS</span><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token comment" spellcheck="true">// 一共需要两个栈，一个栈用来记录依次进入的货品质量，</span><span class="token comment" spellcheck="true">//一个栈在建立前一个栈的时候记录当前栈的最大值</span><span class="token keyword">int</span> stack1<span class="token punctuation">[</span><span class="token number">200006</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 记录依次进入的货品质量</span><span class="token keyword">int</span> stack2<span class="token punctuation">[</span><span class="token number">200006</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 记录建立栈的同时当前栈的最大值</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> n<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 所含操作总数</span>    <span class="token keyword">int</span> opera<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 记录每次的操作</span>    <span class="token keyword">int</span> weigh<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 记录每次的物品质量</span>    <span class="token keyword">int</span> top <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//记录栈顶位置</span>    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//读取数据</span>    <span class="token comment" spellcheck="true">//scanf("%d%d", &amp;opera, &amp;weigh);  // 先读取一次，使栈中有数</span>    <span class="token comment" spellcheck="true">//stack1[top++] = weigh;</span>    <span class="token comment" spellcheck="true">//stack2[top++] = weigh;  // 由于栈中只有一个元素，所以我们的当前栈最大值为weigh</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 循环n次</span>    <span class="token punctuation">{</span>        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>opera<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">switch</span> <span class="token punctuation">(</span>opera<span class="token punctuation">)</span>        <span class="token punctuation">{</span>        <span class="token keyword">case</span> <span class="token number">0</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">// 读取入栈</span>        <span class="token punctuation">{</span>            <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>weigh<span class="token punctuation">)</span><span class="token punctuation">;</span>            stack1<span class="token punctuation">[</span>top<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> weigh<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 入栈</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>top <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">//栈中只有一个元素</span>                stack2<span class="token punctuation">[</span>top <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> weigh<span class="token punctuation">;</span>            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>weigh <span class="token operator">></span> stack2<span class="token punctuation">[</span>top <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 如果我们的读入数据比之前的最大值还大</span>                stack2<span class="token punctuation">[</span>top <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> weigh<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 就更改最大值</span>            <span class="token keyword">else</span>                stack2<span class="token punctuation">[</span>top <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> stack2<span class="token punctuation">[</span>top <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 否则延续上次的最大值</span>            <span class="token keyword">break</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">case</span> <span class="token number">1</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">//出库</span>        <span class="token punctuation">{</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>top <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//如果栈不空</span>                top<span class="token operator">--</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 出栈</span>            <span class="token keyword">break</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">case</span> <span class="token number">2</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">// 如果栈</span>        <span class="token punctuation">{</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>top <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 栈空时输出0</span>                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"0\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token keyword">else</span>                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> stack2<span class="token punctuation">[</span>top <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">default</span><span class="token punctuation">:</span>            <span class="token keyword">break</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 栈 </tag>
+            
+            <tag> 洛谷 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
+            
+            <tag> C </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法刷题之栈系列P1981 表达式求值</title>
+      <link href="/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1981-biao-da-shi-qiu-zhi/"/>
+      <url>/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1981-biao-da-shi-qiu-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><hr><p><a href="https://www.luogu.com.cn/problem/P1981" target="_blank" rel="noopener">题目</a>描述：给定一个只包含加法和乘法的算术表达式，请你编程计算表达式的值。</p><p><a href="https://imgtu.com/i/fEXFET" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/04/fEXFET.png" alt></a></p><h2 id="解析思路"><a href="#解析思路" class="headerlink" title="解析思路"></a>解析思路</h2><hr><p>实际上本题和栈的关系不是特别大，因为只有乘和加两种运算，我们基本思路为把乘的乘出来后，加上之前的和就OK，没有必要使用栈运算。</p><h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><hr><p>代码如下：</p><pre class="line-numbers language-c++"><code class="language-c++">#include <cstdio>const int mod = 10000;int x,s,t; //x是当前的数，s是和，t是当前段的乘积char c;int main(){    scanf("%d",&t);//先读入第一个数，之后每次读入一个符号一个数    while(scanf("%c",&c) && c != '\n'){ //最后会读到换行符        scanf("%d",&x);        if(c == '*') t = t * x % mod; //是乘号就相乘        else s = (s + t) % mod,t = x;        //加号就加上上一段的积，t变为下一段的第一个数    }    printf("%d\n",(s + t) % mod); //加上最后一段的积    return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Python实现（eval函数）"><a href="#Python实现（eval函数）" class="headerlink" title="Python实现（eval函数）"></a>Python实现（eval函数）</h2><hr><p>当然，这里面我们的运算式就是这样，我们平时计算的时候往计算器上敲的格式一模一样，所以我们完全能想到python中的eval函数，它可以将我们的输入的字符串作为python的代码编译出来，所以很理所应当的，<del>一行代码优雅解决</del></p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>eval<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">10000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然而现实很残酷……</p><p><a href="https://imgtu.com/i/fEjTTf" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/04/fEjTTf.png" alt></a></p><p>有两个运行超时了</p><p>后来换成了Pyhon2，python2才是可以直接运算不借助任何函数：</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">10000</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><del>直接AC！</del></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 栈 </tag>
+            
+            <tag> 洛谷 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> C </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法刷题之栈系列P1449 后缀表达式</title>
+      <link href="/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1449-hou-zhui-biao-da-shi/"/>
+      <url>/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1449-hou-zhui-biao-da-shi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a href="https://www.luogu.com.cn/problem/P1449" target="_blank" rel="noopener">题目</a>描述</h2><hr><p>所谓后缀表达式是指这样的一个表达式：式中不再引用括号，运算符号放在两个运算对象之后，所有计算按运算符号出现的顺序，严格地由左而右新进行（不用考虑运算符的优先级）。</p><p>如：3<em>(5–2)+7对应的后缀表达式为：3．5．2．-</em>7．+@。’@’为表达式的结束符号。‘.’为操作数的结束符号。</p><p><a href="https://imgtu.com/i/fELUWd" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/04/fELUWd.png" alt></a></p><p>##解析思路</p><hr><p>本题也是对于栈的较为直接的考察，我们可以直接选择建立一个栈来存储我们的每次输入的数字，然后遇到一个符号就弹出两个数来进行运算，运算的结果再入栈，最后运算结束之后，栈中只会剩下最后一个数，就是我们的结果。</p><p><strong>注意这里面我们读取数字的时候是以字符串读取的，有可能会读取多位数比如13、122这种，所以需要注意读取问题，不过这一题还算简单，没有让我们读取负数</strong></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><hr><p>代码如下：</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS</span><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> stack<span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 用来放置相关数字的栈</span>    <span class="token keyword">char</span> ch<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 读入字符</span>    <span class="token keyword">int</span> top <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//记录栈目前的栈顶位置</span>    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>ch <span class="token operator">=</span> <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">'@'</span><span class="token punctuation">)</span>    <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>ch <span class="token operator">&lt;=</span> <span class="token string">'9'</span> <span class="token operator">&amp;&amp;</span> ch <span class="token operator">>=</span> <span class="token string">'0'</span><span class="token punctuation">)</span>        <span class="token punctuation">{</span>            <span class="token keyword">int</span> num<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 用来做读取的每一个数字</span>            num <span class="token operator">=</span> ch <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>ch <span class="token operator">=</span> <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token string">'\.'</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// 如果是数字的话</span>            <span class="token punctuation">{</span>                num <span class="token operator">*</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>                num <span class="token operator">+</span><span class="token operator">=</span> ch <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>            <span class="token punctuation">}</span>            stack<span class="token punctuation">[</span>top<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> num<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 入栈</span>            <span class="token comment" spellcheck="true">// printf("%d", num);</span>        <span class="token punctuation">}</span>        <span class="token keyword">else</span>   <span class="token comment" spellcheck="true">// 如果是运算符就出栈运算然后入栈</span>        <span class="token punctuation">{</span>            <span class="token keyword">int</span> right <span class="token operator">=</span> stack<span class="token punctuation">[</span><span class="token operator">--</span>top<span class="token punctuation">]</span><span class="token punctuation">,</span> left <span class="token operator">=</span> stack<span class="token punctuation">[</span><span class="token operator">--</span>top<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 得到左右操作数</span>            <span class="token keyword">switch</span> <span class="token punctuation">(</span>ch<span class="token punctuation">)</span>            <span class="token punctuation">{</span>            <span class="token keyword">case</span><span class="token string">'*'</span><span class="token punctuation">:</span> stack<span class="token punctuation">[</span>top<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> left <span class="token operator">*</span> right<span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>            <span class="token keyword">case</span><span class="token string">'/'</span><span class="token punctuation">:</span> stack<span class="token punctuation">[</span>top<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> left <span class="token operator">/</span> right<span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>            <span class="token keyword">case</span><span class="token string">'+'</span><span class="token punctuation">:</span> stack<span class="token punctuation">[</span>top<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> left <span class="token operator">+</span> right<span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>            <span class="token keyword">case</span><span class="token string">'-'</span><span class="token punctuation">:</span> stack<span class="token punctuation">[</span>top<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> left <span class="token operator">-</span> right<span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>            <span class="token keyword">default</span><span class="token punctuation">:</span><span class="token keyword">break</span><span class="token punctuation">;</span>            <span class="token punctuation">}</span>        <span class="token punctuation">}</span>        <span class="token comment" spellcheck="true">// printf("top : %d\n", stack[top - 1]);</span>    <span class="token punctuation">}</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> stack<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>实际上格式化之后，发现本题难度并不大。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 栈 </tag>
+            
+            <tag> 洛谷 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
+            
+            <tag> C </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法刷题全记录</title>
+      <link href="/2021/08/04/suan-fa-shua-ti-quan-ji-lu/"/>
+      <url>/2021/08/04/suan-fa-shua-ti-quan-ji-lu/</url>
+      
+        <content type="html"><![CDATA[<p><em>学校要求暑假刷算法题，上个寒假刷的题（<del>有好多好多都是不会抄的</del>）几乎上都快忘完了，正逢上我创建个人博客，算是把刷过的题都做一个记录，也算是个记录整理一下思路，以后忘了还可以看看当时的思路</em></p><p>就以这一个系列作为开篇作，以后我会每次刷一个系列的题，顺便来进行一个大的每道题的总结。</p><p>第一个系列的是关于栈的五道题。</p><p><a href="https://imgtu.com/i/fEHUWn" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/04/fEHUWn.png" alt></a></p><p>难度不是很大，不过也花了一定的时间</p><p>五道题地址与解答博客地址在这里：</p><p>第一道：<a href="https://www.luogu.com.cn/problem/P1044" target="_blank" rel="noopener">P1044单调栈</a>       <a href>算法刷题之栈系列P1044栈</a></p><p>第二道：<a href="https://www.luogu.com.cn/problem/P1449" target="_blank" rel="noopener">P1449后缀表达式</a>  <a href>算法刷题之栈系列P1449后缀表达式</a></p><p>第三道：<a href="https://www.luogu.com.cn/problem/P1981" target="_blank" rel="noopener">P1981表达式求值</a>   <a href>算法刷题之栈系列P1981 表达式求值</a></p><p>第四道：<a href="https://www.luogu.com.cn/problem/P1165" target="_blank" rel="noopener">P1165日志分析</a>    <a href>算法刷题之栈系列P1165-日志分析</a></p><p>第五道：<a href="https://www.luogu.com.cn/problem/P5788" target="_blank" rel="noopener">P5788单调栈</a>   <a href>算法刷题之栈系列P5788 单调栈</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 栈 </tag>
+            
+            <tag> 洛谷 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
+            
+            <tag> C </tag>
+            
+            <tag> python </tag>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法刷题之栈系列P1044 栈</title>
+      <link href="/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1044-zhan/"/>
+      <url>/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1044-zhan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a href="https://www.luogu.com.cn/problem/P1044" target="_blank" rel="noopener">题目</a>描述</h2><hr><p>一个序列1、2、3、4、5、……、n，按照如此顺序入栈，可能的出栈顺序有多少种？</p><p><a href="https://imgtu.com/i/fEbQh9" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/04/fEbQh9.png" alt></a></p><h2 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h2><hr><p>这一道题实际上使用了卡特兰数的公式，</p><p>建立数组f。f[i]表示i个数的全部可能性。</p><p>f[0] = 1, f[1] = 1; //当然只有一个</p><p>设 x 为当前出栈序列的最后一个，则x有n种取值</p><p>由于x是最后一个出栈的，所以可以将已经出栈的数分成两部分</p><ol><li>比x小</li><li>比x大</li></ol><p>比x小的数有x-1个，所以这些数的全部出栈可能为f[x-1]</p><p>比x大的数有n-x个，所以这些数的全部出栈可能为f[n-x]</p><p>这两部分互相影响，所以一个x的取值能够得到的所有可能性为f[x-1] * f[n-x]</p><p>另外，由于x有n个取值，所以</p><p>ans = f[0]<em>f[n-1] + f[1]</em>f[n-2] + … + f[n-1]*f[0];</p><p>当然可以这样使用递归处理，但是我们已经有结论了：h(n)=c(2n,n)-c(2n,n-1) (n=0,1,2,…)</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><hr><p>所以我的答案就很“简洁”了</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> math <span class="token keyword">import</span> factorialn <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>int<span class="token punctuation">(</span>factorial<span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> n<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>factorial<span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>当然如果你想要较为”正常“的完成这一道题(抄某位大佬的)：</p><pre class="line-numbers language-c++"><code class="language-c++">#include<cstdio>#define siz 20using namespace std;int n;int c[siz*2][siz];int main(){    scanf("%d",&n);    for(int i=1;i<=2*n;i++) c[i][1]=c[i][i]=1;    for(int i=3;i<=2*n;i++)     for(int j=2;j<i;j++)      c[i][j]=c[i-1][j]+c[i-1][j-1];    printf("%d",c[2*n][n]-c[2*n][n-1]);    return 0;}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><del>愉快AC</del></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 栈 </tag>
+            
+            <tag> 洛谷 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
+            
+            <tag> python </tag>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>回到那片球场8.3 2021</title>
       <link href="/2021/08/04/hui-dao-na-pian-qiu-chang-8-3-2021/"/>
       <url>/2021/08/04/hui-dao-na-pian-qiu-chang-8-3-2021/</url>
@@ -192,7 +396,7 @@
       <link href="/2021/08/02/readme/"/>
       <url>/2021/08/02/readme/</url>
       
-        <content type="html"><![CDATA[<h1 id="逯润雨的博客"><a href="#逯润雨的博客" class="headerlink" title="逯润雨的博客"></a>逯润雨的博客</h1><p>这是我本人的博客平台，欢迎大家前来访问🥳<a href="https://lry89757.github.io/">https://lry89757.github.io/</a><br>刚建成没多久，有许多功能都不是很完善，我以后会在readme文档中记录更新功能与修改BUG与新的相关文章的。  </p><h2 id="8-4-15-28第七次紧急更新！"><a href="#8-4-15-28第七次紧急更新！" class="headerlink" title="8.4 15:28第七次紧急更新！"></a>8.4 15:28第七次紧急更新！</h2><hr><p><strong>感谢帮忙测试朋友提出相关意见，我关停了网站对一些隐私做了紧急修改，感谢各位的帮助！</strong></p><h2 id="8-4-11-40第六次更新"><a href="#8-4-11-40第六次更新" class="headerlink" title="8.4 11:40第六次更新"></a>8.4 11:40第六次更新</h2><hr><ol><li>更新了readme文档</li><li>添加了转载限定规则模块采用知识共享署名 4.0 国际许可协议<del>（虽然我的文章不值得被转载）</del></li><li>取消了轮播图自动轮播，去掉了没用的音乐外链</li><li>增加了IP检测（excuse me ?)🤣😅</li><li>待完成：见第三次更新</li></ol><h2 id="8-3-15-39第五次更新"><a href="#8-3-15-39第五次更新" class="headerlink" title="8.3 15:39第五次更新"></a>8.3 15:39第五次更新</h2><hr><ol><li>更新了readme文档</li><li>博客：对于林俊杰最近事情的看法</li><li>加入了音乐播放功能哈哈哈哈！！😎😎当然目前的音乐都是我知道能够外链播放的，后期会继续整修的（没发现的朋友可以看页面左下角哦）</li><li>待完成：见第三次更新😬</li></ol><h2 id="8-2-22-25第四次更新"><a href="#8-2-22-25第四次更新" class="headerlink" title="8.2 22:25第四次更新"></a>8.2 22:25第四次更新</h2><hr><ol><li>更新了readme文档</li><li>友链增加了flylee，同班学霸</li><li>博客：写了一些对生活感想</li><li>进一步修改了markdown数学公式无法显示问题。</li><li>待完成：见第3次更新😁(我不催我自己！！！)</li></ol><h2 id="8-2-18-39第三次更新"><a href="#8-2-18-39第三次更新" class="headerlink" title="8.2 18:39第三次更新"></a>8.2 18:39第三次更新</h2><hr><p><del><em>看来刚建好博客更新的就是快啊……哈哈哈</em></del></p><ol><li>更新了readme文档😅</li><li>发布了2篇博客，一篇是读《在路上》后对生活的感想思考（有兴趣阅读的可以和我联系索要密码，破译出密码的大佬记得和我联系🤩），另一篇是常用的shell命令（git/nodejs/nvm/npm）集</li><li>实现了推荐置顶功能</li><li>待完成：<ul><li>二级目录</li><li>相册</li><li>代码高亮</li><li>评论</li></ul></li></ol><h2 id="8-2-14-28第二次更新"><a href="#8-2-14-28第二次更新" class="headerlink" title="8.2 14:28第二次更新"></a>8.2 14:28第二次更新</h2><hr><ol><li><p>更新了密码功能，对于一些文章实现了加密， <em>如果有小伙伴们对加密文章感兴趣，欢迎发邮件或是通过各种渠道联系我获取密码，顺便交个朋友👀</em>， 或者有关大佬可以选择直接尝试破译哦~那就更得交个朋友了😅</p></li><li><p>更新了readme文档</p></li><li><p>发布了一篇博客，关于一些数码小知识，并测试了密码功能。</p></li><li><p>待完成：</p><ul><li>代码高亮功能</li><li>二级目录</li><li>记录nvm、nodejs、npm踩坑历史的博客。</li><li>评论功能</li></ul></li></ol><h2 id="8-2-11-00-第一次更新"><a href="#8-2-11-00-第一次更新" class="headerlink" title="8.2  11:00 第一次更新"></a>8.2  11:00 第一次更新</h2><hr><ol><li>友链：修正了部分无法显示问题， 加进去了更多友链</li><li>发布了3篇新文章，全部都是关于numpy的小知识</li><li>增加mathjax已解决无法显示markdown数学公式问题</li><li>更新了readme文档</li><li>预计会进一步：  <ul><li>二级目录</li><li>一个博客记录nvm、nodejs、npm踩坑历史😖</li><li>评论模块</li><li>文章密码问题</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="逯润雨的博客"><a href="#逯润雨的博客" class="headerlink" title="逯润雨的博客"></a>逯润雨的博客</h1><p>这是我本人的博客平台，欢迎大家前来访问🥳<a href="https://lry89757.github.io/">https://lry89757.github.io/</a><br>刚建成没多久，有许多功能都不是很完善，我以后会在readme文档中记录更新功能与修改BUG与新的相关文章的。  </p><h2 id="8-5-23-48第八次更新"><a href="#8-5-23-48第八次更新" class="headerlink" title="8.5 23:48第八次更新"></a>8.5 23:48第八次更新</h2><hr><ol><li>更新了readme文档</li><li>把算法刷题的栈系列解析肝完了， 一共六篇博客</li><li>待完成：见第三次更新，不过最要紧的是代码高亮和音乐部分。</li></ol><h2 id="8-4-15-28第七次紧急更新！"><a href="#8-4-15-28第七次紧急更新！" class="headerlink" title="8.4 15:28第七次紧急更新！"></a>8.4 15:28第七次紧急更新！</h2><hr><p><strong>感谢帮忙测试朋友提出相关意见，我关停了网站对一些隐私做了紧急修改，感谢各位的帮助！</strong></p><h2 id="8-4-11-40第六次更新"><a href="#8-4-11-40第六次更新" class="headerlink" title="8.4 11:40第六次更新"></a>8.4 11:40第六次更新</h2><hr><ol><li>更新了readme文档</li><li>添加了转载限定规则模块采用知识共享署名 4.0 国际许可协议<del>（虽然我的文章不值得被转载）</del></li><li>取消了轮播图自动轮播，去掉了没用的音乐外链</li><li>增加了IP检测（excuse me ?)🤣😅</li><li>待完成：见第三次更新</li></ol><h2 id="8-3-15-39第五次更新"><a href="#8-3-15-39第五次更新" class="headerlink" title="8.3 15:39第五次更新"></a>8.3 15:39第五次更新</h2><hr><ol><li>更新了readme文档</li><li>博客：对于林俊杰最近事情的看法</li><li>加入了音乐播放功能哈哈哈哈！！😎😎当然目前的音乐都是我知道能够外链播放的，后期会继续整修的（没发现的朋友可以看页面左下角哦）</li><li>待完成：见第三次更新😬</li></ol><h2 id="8-2-22-25第四次更新"><a href="#8-2-22-25第四次更新" class="headerlink" title="8.2 22:25第四次更新"></a>8.2 22:25第四次更新</h2><hr><ol><li>更新了readme文档</li><li>友链增加了flylee，同班学霸</li><li>博客：写了一些对生活感想</li><li>进一步修改了markdown数学公式无法显示问题。</li><li>待完成：见第3次更新😁(我不催我自己！！！)</li></ol><h2 id="8-2-18-39第三次更新"><a href="#8-2-18-39第三次更新" class="headerlink" title="8.2 18:39第三次更新"></a>8.2 18:39第三次更新</h2><hr><p><del><em>看来刚建好博客更新的就是快啊……哈哈哈</em></del></p><ol><li>更新了readme文档😅</li><li>发布了2篇博客，一篇是读《在路上》后对生活的感想思考（有兴趣阅读的可以和我联系索要密码，破译出密码的大佬记得和我联系🤩），另一篇是常用的shell命令（git/nodejs/nvm/npm）集</li><li>实现了推荐置顶功能</li><li>待完成：<ul><li>二级目录</li><li>相册</li><li>代码高亮</li><li>评论</li></ul></li></ol><h2 id="8-2-14-28第二次更新"><a href="#8-2-14-28第二次更新" class="headerlink" title="8.2 14:28第二次更新"></a>8.2 14:28第二次更新</h2><hr><ol><li><p>更新了密码功能，对于一些文章实现了加密， <em>如果有小伙伴们对加密文章感兴趣，欢迎发邮件或是通过各种渠道联系我获取密码，顺便交个朋友👀</em>， 或者有关大佬可以选择直接尝试破译哦~那就更得交个朋友了😅</p></li><li><p>更新了readme文档</p></li><li><p>发布了一篇博客，关于一些数码小知识，并测试了密码功能。</p></li><li><p>待完成：</p><ul><li>代码高亮功能</li><li>二级目录</li><li>记录nvm、nodejs、npm踩坑历史的博客。</li><li>评论功能</li></ul></li></ol><h2 id="8-2-11-00-第一次更新"><a href="#8-2-11-00-第一次更新" class="headerlink" title="8.2  11:00 第一次更新"></a>8.2  11:00 第一次更新</h2><hr><ol><li>友链：修正了部分无法显示问题， 加进去了更多友链</li><li>发布了3篇新文章，全部都是关于numpy的小知识</li><li>增加mathjax已解决无法显示markdown数学公式问题</li><li>更新了readme文档</li><li>预计会进一步：  <ul><li>二级目录</li><li>一个博客记录nvm、nodejs、npm踩坑历史😖</li><li>评论模块</li><li>文章密码问题</li></ul></li></ol>]]></content>
       
       
       <categories>
@@ -310,9 +514,9 @@
       
         <tags>
             
-            <tag> 数据结构 </tag>
-            
             <tag> C </tag>
+            
+            <tag> 数据结构 </tag>
             
             <tag> 排序 </tag>
             
@@ -341,11 +545,11 @@
       
         <tags>
             
+            <tag> C </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 查找表 </tag>
-            
-            <tag> C </tag>
             
             <tag> 二叉树 </tag>
             
