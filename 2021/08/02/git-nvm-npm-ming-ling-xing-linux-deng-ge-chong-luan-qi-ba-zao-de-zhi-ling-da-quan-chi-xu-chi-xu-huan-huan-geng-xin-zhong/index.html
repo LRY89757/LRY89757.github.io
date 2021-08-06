@@ -6,7 +6,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="git|nvm|npm|命令行|linux等各种乱七八糟的指令大 全（持续持续缓缓更新中）, UESTC CV DeepLearning MachineLearning 逯润雨 Lurunyu 计算机视觉 深度学习">
+    <meta name="keywords" content="git|nvm|npm|命令行|linux|jupyter notebook等各种乱七八糟的指令大 全（持续持续缓缓更新中）, UESTC CV DeepLearning MachineLearning 逯润雨 Lurunyu 计算机视觉 深度学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
     <meta name="description" content="本博客更新不定期，基本上是想到哪里就写什么，就是一些各种常见的脚本命令。
@@ -21,7 +21,7 @@ git commit -m&#34;&#34;   # 提交到">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>git|nvm|npm|命令行|linux等各种乱七八糟的指令大 全（持续持续缓缓更新中） | 逯润雨的博客</title>
+    <title>git|nvm|npm|命令行|linux|jupyter notebook等各种乱七八糟的指令大 全（持续持续缓缓更新中） | 逯润雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -523,13 +523,13 @@ git commit -m&#34;&#34;   # 提交到">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        git|nvm|npm|命令行|linux等各种乱七八糟的指令大 全（持续持续缓缓更新中）
+                        git|nvm|npm|命令行|linux|jupyter notebook等各种乱七八糟的指令大 全（持续持续缓缓更新中）
                     </div>
                 </div>
             </div>
@@ -703,14 +703,14 @@ git commit -m&#34;&#34;   # 提交到">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        313
+                        506
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -732,8 +732,21 @@ git commit -m&#34;&#34;   # 提交到">
 <h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><pre class="line-numbers language-sh"><code class="language-sh">git clone ssh地址   # 项目克隆到本地
 git add .    # 提交到暂存区？好像是
 git commit -m""   # 提交到仓库
-git push origin main(master)# 提交到远程仓库<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+git push origin main(master)# 提交到远程仓库
+git clone ssh or http  # 克隆到本地<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>暂时就这么多</p>
+<h3 id="本地代码上传到github仓库"><a href="#本地代码上传到github仓库" class="headerlink" title="本地代码上传到github仓库"></a>本地代码上传到github仓库</h3><pre class="line-numbers language-shell"><code class="language-shell">git init  # 建立git仓库，cd到本地项目根目录
+git add .  # 将项目所有文件添加到仓库中
+git commit -m"说明语句"  # 将文件commit到仓库
+# 去github创建自己的Repository<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://pic1.zhimg.com/80/v2-a4e249c5e85f6f5ca6c56fc916c150ac_1440w.jpg" alt></p>
+<p>点击<strong>Clone or download</strong>按钮，复制弹出的地址<strong><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:\</strong>*/test.git**，记得要用SSH的地址，尽量不要用HTTPS的地址，如上图所示</p>
+<p><strong>将本地的仓库关联到github上—把上一步复制的地址放到下面</strong></p>
+<pre class="line-numbers language-shell"><code class="language-shell">git remote add origin git@github.com:***/***.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上传到github之前，先pull一下：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">git pull origin main(or master)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>上传到github远程仓库</p>
+<pre class="line-numbers language-shell"><code class="language-shell">git push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h2><hr>
 <h3 id="指令-1"><a href="#指令-1" class="headerlink" title="指令"></a>指令</h3><pre class="line-numbers language-shell"><code class="language-shell">nvm ls
 nvm list  # 列出当前node包
@@ -751,6 +764,8 @@ npm install # 都是安装对应包，但是前者会找到最新的包给你安
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="shell命令"><a href="#shell命令" class="headerlink" title="shell命令"></a>shell命令</h2><hr>
 <h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><hr>
+<h2 id="jupyter-notebook"><a href="#jupyter-notebook" class="headerlink" title="jupyter notebook"></a>jupyter notebook</h2><hr>
+<p>.ipynb转换为.md、.pdf、.tex等格式：<a href="https://blog.csdn.net/red_stone1/article/details/73380517" target="_blank" rel="noopener">https://blog.csdn.net/red_stone1/article/details/73380517</a></p>
 <h2 id="改环境变量"><a href="#改环境变量" class="headerlink" title="改环境变量"></a>改环境变量</h2><hr>
 <p><code>Win + R</code> ，输入：<code>SystemPropertiesAdvanced.exe</code> ，回车。</p>
 <p>然后点击 <code>环境变量</code> ：</p>
@@ -914,7 +929,7 @@ npm install # 都是安装对应包，但是前者会找到最新的包给你安
                     </span>
                     <a href="https://lry89757.github.io" class="b-link-green">逯润雨的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/08/02/git-nvm-npm-ming-ling-xing-linux-deng-ge-chong-luan-qi-ba-zao-de-zhi-ling-da-quan-chi-xu-chi-xu-huan-huan-geng-xin-zhong/" class="b-link-green">git|nvm|npm|命令行|linux等各种乱七八糟的指令大 全（持续持续缓缓更新中）</a>
+                    <a href="/2021/08/02/git-nvm-npm-ming-ling-xing-linux-deng-ge-chong-luan-qi-ba-zao-de-zhi-ling-da-quan-chi-xu-chi-xu-huan-huan-geng-xin-zhong/" class="b-link-green">git|nvm|npm|命令行|linux|jupyter notebook等各种乱七八糟的指令大 全（持续持续缓缓更新中）</a>
                 </p>
             </div>
 
@@ -1222,7 +1237,7 @@ npm install # 都是安装对应包，但是前者会找到最新的包给你安
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">19.4k</span> 字
+                <span class="white-color">19.7k</span> 字
             
 
             

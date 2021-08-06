@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-04T16:37:49.821Z</updated>
+  <updated>2021-08-05T06:36:22.256Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p5788-dan-diao-zhan/"/>
     <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p5788-dan-diao-zhan/</id>
     <published>2021-08-04T15:42:33.000Z</published>
-    <updated>2021-08-04T16:37:49.821Z</updated>
+    <updated>2021-08-05T06:36:22.256Z</updated>
     
     <summary type="html">
     
@@ -35,7 +35,7 @@
     
     </summary>
     
-      <category term="刷算法题" scheme="https://lry89757.github.io/categories/%E5%88%B7%E7%AE%97%E6%B3%95%E9%A2%98/"/>
+      <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     
     
       <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
@@ -55,7 +55,7 @@
     <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1165-ri-zhi-fen-xi/"/>
     <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1165-ri-zhi-fen-xi/</id>
     <published>2021-08-04T15:31:49.000Z</published>
-    <updated>2021-08-04T15:41:41.461Z</updated>
+    <updated>2021-08-05T01:09:39.384Z</updated>
     
     <summary type="html">
     
@@ -89,7 +89,7 @@
     <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1981-biao-da-shi-qiu-zhi/"/>
     <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1981-biao-da-shi-qiu-zhi/</id>
     <published>2021-08-04T15:15:43.000Z</published>
-    <updated>2021-08-04T15:32:40.876Z</updated>
+    <updated>2021-08-05T01:09:25.148Z</updated>
     
     <summary type="html">
     
@@ -124,7 +124,7 @@
     <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1449-hou-zhui-biao-da-shi/"/>
     <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1449-hou-zhui-biao-da-shi/</id>
     <published>2021-08-04T15:04:31.000Z</published>
-    <updated>2021-08-04T15:35:29.376Z</updated>
+    <updated>2021-08-05T01:09:31.853Z</updated>
     
     <summary type="html">
     
@@ -158,7 +158,7 @@
     <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-quan-ji-lu/"/>
     <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-quan-ji-lu/</id>
     <published>2021-08-04T14:42:08.000Z</published>
-    <updated>2021-08-04T16:37:11.346Z</updated>
+    <updated>2021-08-05T01:16:48.006Z</updated>
     
     <summary type="html">
     
@@ -197,7 +197,7 @@
     <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1044-zhan/"/>
     <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1044-zhan/</id>
     <published>2021-08-04T14:34:55.000Z</published>
-    <updated>2021-08-04T16:14:30.558Z</updated>
+    <updated>2021-08-05T01:09:46.711Z</updated>
     
     <summary type="html">
     
@@ -335,11 +335,11 @@
   </entry>
   
   <entry>
-    <title>git|nvm|npm|命令行|linux等各种乱七八糟的指令大 全（持续持续缓缓更新中）</title>
+    <title>git|nvm|npm|命令行|linux|jupyter notebook等各种乱七八糟的指令大 全（持续持续缓缓更新中）</title>
     <link href="https://lry89757.github.io/2021/08/02/git-nvm-npm-ming-ling-xing-linux-deng-ge-chong-luan-qi-ba-zao-de-zhi-ling-da-quan-chi-xu-chi-xu-huan-huan-geng-xin-zhong/"/>
     <id>https://lry89757.github.io/2021/08/02/git-nvm-npm-ming-ling-xing-linux-deng-ge-chong-luan-qi-ba-zao-de-zhi-ling-da-quan-chi-xu-chi-xu-huan-huan-geng-xin-zhong/</id>
     <published>2021-08-02T09:30:24.000Z</published>
-    <updated>2021-08-04T06:10:57.769Z</updated>
+    <updated>2021-08-06T04:00:14.682Z</updated>
     
     <summary type="html">
     
@@ -401,7 +401,7 @@
     <link href="https://lry89757.github.io/2021/08/02/readme/"/>
     <id>https://lry89757.github.io/2021/08/02/readme/</id>
     <published>2021-08-02T03:10:01.000Z</published>
-    <updated>2021-08-04T16:05:43.290Z</updated>
+    <updated>2021-08-06T04:35:09.151Z</updated>
     
     <summary type="html">
     
