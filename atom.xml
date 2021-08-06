@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-06T14:36:57.306Z</updated>
+  <updated>2021-08-06T14:43:49.100Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lry89757.github.io/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/"/>
     <id>https://lry89757.github.io/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/</id>
     <published>2021-08-06T09:32:55.000Z</published>
-    <updated>2021-08-06T14:36:57.306Z</updated>
+    <updated>2021-08-06T14:43:49.100Z</updated>
     
     <summary type="html">
     
@@ -75,13 +75,13 @@
       <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     
     
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
       <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
     
       <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
     
       <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
     
       <category term="模板" scheme="https://lry89757.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
     
@@ -109,6 +109,8 @@
       <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     
     
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
       <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
     
       <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
@@ -116,8 +118,6 @@
       <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数学" scheme="https://lry89757.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
     
   </entry>
   
@@ -146,13 +146,13 @@
     
       <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
     
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
       <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
     
       <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
     
       <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
     
   </entry>
   
@@ -178,6 +178,8 @@
       <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     
     
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
       <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
     
       <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
@@ -186,8 +188,6 @@
     
       <category term="数学" scheme="https://lry89757.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
-    
   </entry>
   
   <entry>
@@ -195,7 +195,7 @@
     <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-quan-ji-lu/"/>
     <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-quan-ji-lu/</id>
     <published>2021-08-04T14:42:08.000Z</published>
-    <updated>2021-08-05T01:16:48.006Z</updated>
+    <updated>2021-08-06T14:40:18.478Z</updated>
     
     <summary type="html">
     
@@ -215,6 +215,10 @@
     
       <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
     
+      <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
       <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
     
       <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
@@ -222,10 +226,6 @@
       <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数学" scheme="https://lry89757.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
     
   </entry>
   
@@ -438,7 +438,7 @@
     <link href="https://lry89757.github.io/2021/08/02/readme/"/>
     <id>https://lry89757.github.io/2021/08/02/readme/</id>
     <published>2021-08-02T03:10:01.000Z</published>
-    <updated>2021-08-06T04:35:09.151Z</updated>
+    <updated>2021-08-06T14:46:14.982Z</updated>
     
     <summary type="html">
     
