@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>常用Tensor操作</title>
+      <link href="/2021/08/07/chang-yong-tensor-cao-zuo/"/>
+      <url>/2021/08/07/chang-yong-tensor-cao-zuo/</url>
+      
+        <content type="html"><![CDATA[<p>当然这里基本上都是本人的代码，还没来得及很具体的整理，所以比较乱……</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> __future__ <span class="token keyword">import</span> print_function<span class="token keyword">import</span> torch <span class="token keyword">as</span> tt<span class="token punctuation">.</span>__version__<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre><code>&#39;1.8.1+cpu&#39;</code></pre><h2 id="Tensor"><a href="#Tensor" class="headerlink" title="Tensor"></a>Tensor</h2><p>Tensor，又名张量，读者可能对这个名词似曾相识，因它不仅在PyTorch中出现过，它也是Theano、TensorFlow、<br>Torch和MxNet中重要的数据结构。关于张量的本质不乏深度的剖析，但从工程角度来讲，可简单地认为它就是一个数组，且支持高效的科学计算。它可以是一个数（标量）、一维数组（向量）、二维数组（矩阵）和更高维的数组（高阶数据）。Tensor和Numpy的ndarrays类似，但PyTorch的tensor支持GPU加速。</p><p><del>本节将系统讲解tensor的使用，力求面面俱到，但不会涉及每个函数</del>。对于更多函数及其用法，我们可通过在IPython/Notebook中使用函数名加<code>?</code>查看帮助文档，或查阅PyTorch官方文档<a href="http://docs.pytorch.org" target="_blank" rel="noopener">^1</a>。</p><h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><p>学习过Numpy会感到非常熟悉，因tensor的接口有意设计成与Numpy类似，以方便用户使用。</p><p>从接口的角度来讲，对tensor的操作可分为两类：</p><ol><li><code>torch.function</code>，如<code>torch.save</code>等。</li><li>另一类是<code>tensor.function</code>，如<code>tensor.view</code>等。</li></ol><p>为方便使用，对tensor的大部分操作同时支持这两类接口，在本书中不做具体区分，如<code>torch.sum (torch.sum(a, b))</code>与<code>tensor.sum (a.sum(b))</code>功能等价。</p><p>而从存储的角度来讲，对tensor的操作又可分为两类：</p><ol><li>不会修改自身的数据，如 <code>a.add(b)</code>， 加法的结果会返回一个新的tensor。</li><li>会修改自身的数据，如 <code>a.add_(b)</code>， 加法的结果仍存储在a中，a被修改了。</li></ol><p>函数名以<code>_</code>结尾的都是inplace方式, 即会修改调用者自己的数据，在实际应用中需加以区分。</p><h4 id="创建Tensor"><a href="#创建Tensor" class="headerlink" title="创建Tensor"></a>创建Tensor</h4><p>在PyTorch中新建tensor的方法有很多，具体如表3-1所示。</p><p>表3-1: 常见新建tensor的方法</p><table><thead><tr><th align="center">函数</th><th align="center">功能</th></tr></thead><tbody><tr><td align="center">Tensor(*sizes)</td><td align="center">基础构造函数</td></tr><tr><td align="center">tensor(data,)</td><td align="center">类似np.array的构造函数</td></tr><tr><td align="center">ones(*sizes)</td><td align="center">全1Tensor</td></tr><tr><td align="center">zeros(*sizes)</td><td align="center">全0Tensor</td></tr><tr><td align="center">eye(*sizes)</td><td align="center">对角线为1，其他为0</td></tr><tr><td align="center">arange(s,e,step</td><td align="center">从s到e，步长为step</td></tr><tr><td align="center">linspace(s,e,steps)</td><td align="center">从s到e，均匀切分成steps份</td></tr><tr><td align="center">rand/randn(*sizes)</td><td align="center">均匀/标准分布</td></tr><tr><td align="center">normal(mean,std)/uniform(from,to)</td><td align="center">正态分布/均匀分布</td></tr><tr><td align="center">randperm(m)</td><td align="center">随机排列</td></tr></tbody></table><p>这些创建方法都可以在创建的时候指定数据类型dtype和存放device(cpu/gpu).</p><p>其中使用<code>Tensor</code>函数新建tensor是最复杂多变的方式，它既可以接收一个list，并根据list的数据新建tensor，也能根据指定的形状新建tensor，还能传入其他的tensor，下面举几个例子。</p><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 指定tensor形状</span>a <span class="token operator">=</span> t<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 提前分配好空间</span>a   <span class="token comment" spellcheck="true"># 数值取决于内存空间的状态，</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre><code>tensor([[0., 0., 0.],        [0., 0., 0.]])</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 使用list数据创建tensor</span>b <span class="token operator">=</span> t<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre><code>tensor([[1., 2., 3.],        [4., 5., 6.]])</code></pre><pre class="line-numbers language-python"><code class="language-python">b<span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 和numpy的转化何其相似</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre><code>[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]</code></pre><p><code>tensor.size()</code>返回<code>torch.Size</code>对象，它是tuple的子类，但其使用方式与tuple略有区别</p><pre class="line-numbers language-python"><code class="language-python">b_size <span class="token operator">=</span> b<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>b_size<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>torch.Size([2, 3])</code></pre><pre class="line-numbers language-python"><code class="language-python">b<span class="token punctuation">.</span>numel<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#  b中元素总个数，2*3，等价于b.nelement()</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre><code>6</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 创建一个与b形状一样的tensor</span>c <span class="token operator">=</span> t<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span>b<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 创建一个元素为2和3的tensor</span>d <span class="token operator">=</span> t<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 注意和t.Tensor(2, 3)完全不一样！</span>c<span class="token punctuation">,</span> d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre><code>(tensor([[0., 0., 0.],         [0., 0., 0.]]), tensor([2., 3.]))</code></pre><pre class="line-numbers language-python"><code class="language-python">c<span class="token punctuation">.</span>shape   <span class="token comment" spellcheck="true"># equal to c.size()</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre><code>torch.Size([2, 3])</code></pre><p>需要注意的是，<code>t.Tensor(*sizes)</code>创建tensor时，系统不会马上分配空间，只是会计算剩余的内存是否足够使用，使用到tensor时才会分配，而其它操作都是在创建完tensor之后马上进行空间分配。其它常用的创建tensor的方法举例如下。</p><pre class="line-numbers language-python"><code class="language-python">t<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre><code>tensor([[1., 1., 1.],        [1., 1., 1.]])</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'\n'</span><span class="token punctuation">,</span> t<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre><code>tensor([[0., 0., 0.],        [0., 0., 0.]])tensor([ 1,  5,  9, 13, 17])tensor([ 1.0000,  5.5000, 10.0000])  tensor([ 1.0000,  2.1250,  3.2500,  4.3750,  5.5000,  6.6250,  7.7500,  8.8750,        10.0000])</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> device<span class="token operator">=</span>t<span class="token punctuation">.</span>device<span class="token punctuation">(</span><span class="token string">'cpu'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre><code>tensor([[ 0.6485,  0.8807,  0.5077],        [-1.1991, -0.9738, -0.8757]])</code></pre><pre class="line-numbers language-python"><code class="language-python">t<span class="token punctuation">.</span>randperm<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 长度为5的随机排列</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre><code>tensor([1, 3, 2, 0, 4])</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>eye<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>t<span class="token punctuation">.</span>int<span class="token punctuation">)</span><span class="token punctuation">)</span>t<span class="token punctuation">.</span>eye<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>t<span class="token punctuation">.</span>int<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 对角线为1， 不要求行列数一致</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>tensor([[1, 0],        [0, 1],        [0, 0],        [0, 0]], dtype=torch.int32)tensor([[1, 0, 0],        [0, 1, 0]], dtype=torch.int32)</code></pre><p><code>torch.tensor</code>是在0.4版本新增加的一个新版本的创建tensor方法，使用的方法，和参数几乎和<code>np.array</code>完全一致</p><pre class="line-numbers language-python"><code class="language-python">scalar <span class="token operator">=</span> t<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">3.14159</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'scalar: %s, shape of scalar: %s'</span> <span class="token operator">%</span><span class="token punctuation">(</span>scalar<span class="token punctuation">,</span> scalar<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 零维标量</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>scalar: tensor(3.1416), shape of scalar: torch.Size([])</code></pre><pre class="line-numbers language-python"><code class="language-python">vector <span class="token operator">=</span> t<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'vector: %s, shape of vector: %s'</span> <span class="token operator">%</span><span class="token punctuation">(</span>vector<span class="token punctuation">,</span> vector<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 向量</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>vector: tensor([1, 2]), shape of vector: torch.Size([2])</code></pre><pre class="line-numbers language-python"><code class="language-python">tensor <span class="token operator">=</span> t<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 注意与t.tensor([1, 2])区别</span>tensor<span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>torch.Size([1, 2])</code></pre><pre class="line-numbers language-python"><code class="language-python">matrix <span class="token operator">=</span> t<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2.2</span><span class="token punctuation">,</span> <span class="token number">3.1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4.9</span><span class="token punctuation">,</span> <span class="token number">5.2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>matrix<span class="token punctuation">,</span> matrix<span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>(tensor([[0.1000, 1.2000],         [2.2000, 3.1000],         [4.9000, 5.2000]]), torch.Size([3, 2]))</code></pre><pre class="line-numbers language-python"><code class="language-python">empty_tensor <span class="token operator">=</span> t<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>empty_tensor<span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>torch.Size([0])</code></pre><p>通过<code>tensor.view</code>方法可以调整tensor的形状，但必须保证调整前后元素总数一致。<code>view</code>不会修改自身的数据，返回的新tensor与源tensor共享内存，也即更改其中的一个，另外一个也会跟着改变。在实际应用中可能经常需要添加或减少某一维度，这时候<code>squeeze</code>和<code>unsqueeze</code>两个函数就派上用场了。</p><pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> t<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>a<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>tensor([[0, 1, 2],        [3, 4, 5]])</code></pre><pre class="line-numbers language-python"><code class="language-python">b <span class="token operator">=</span> a<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>b<span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>torch.Size([2, 3])</code></pre><pre class="line-numbers language-python"><code class="language-python">b<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 注意形状，在第1维（下标从0开始）上增加“1”</span><span class="token comment" spellcheck="true"># 等价于b[, None]</span>b<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> None<span class="token punctuation">]</span><span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre><code>torch.Size([2, 1, 3])</code></pre><pre class="line-numbers language-python"><code class="language-python">b<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># -2表示倒数第二个维度</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre><code>tensor([[[0, 1, 2]],        [[3, 4, 5]]])</code></pre><pre class="line-numbers language-python"><code class="language-python">c <span class="token operator">=</span> b<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>c<span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 压缩第0维的“1”</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>tensor([[[[0, 1, 2],          [3, 4, 5]]]])</code></pre><pre class="line-numbers language-python"><code class="language-python">c<span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 把所有维度为“1”的压缩</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre><code>tensor([[0, 1, 2],        [3, 4, 5]])</code></pre><pre class="line-numbers language-python"><code class="language-python">a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">100</span>b  <span class="token comment" spellcheck="true"># a修改， b作为view之后的，也会跟着修改</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre><code>tensor([[  0, 100,   2],        [  3,   4,   5]])</code></pre><pre class="line-numbers language-python"><code class="language-python">help<span class="token punctuation">(</span>t<span class="token punctuation">.</span>squeeze<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre><code>Help on built-in function squeeze:squeeze(...)    squeeze(input, dim=None, *, out=None) -&gt; Tensor    Returns a tensor with all the dimensions of :attr:`input` of size `1` removed.    For example, if `input` is of shape:    :math:`(A \times 1 \times B \times C \times 1 \times D)` then the `out` tensor    will be of shape: :math:`(A \times B \times C \times D)`.    When :attr:`dim` is given, a squeeze operation is done only in the given    dimension. If `input` is of shape: :math:`(A \times 1 \times B)`,    ``squeeze(input, 0)`` leaves the tensor unchanged, but ``squeeze(input, 1)``    will squeeze the tensor to the shape :math:`(A \times B)`.    .. note:: The returned tensor shares the storage with the input tensor,              so changing the contents of one will change the contents of the other.    .. warning:: If the tensor has a batch dimension of size 1, then `squeeze(input)`              will also remove the batch dimension, which can lead to unexpected              errors.    Args:        input (Tensor): the input tensor.        dim (int, optional): if given, the input will be squeezed only in               this dimension    Keyword args:        out (Tensor, optional): the output tensor.    Example::        &gt;&gt;&gt; x = torch.zeros(2, 1, 2, 1, 2)        &gt;&gt;&gt; x.size()        torch.Size([2, 1, 2, 1, 2])        &gt;&gt;&gt; y = torch.squeeze(x)        &gt;&gt;&gt; y.size()        torch.Size([2, 2, 2])        &gt;&gt;&gt; y = torch.squeeze(x, 0)        &gt;&gt;&gt; y.size()        torch.Size([2, 1, 2, 1, 2])        &gt;&gt;&gt; y = torch.squeeze(x, 1)        &gt;&gt;&gt; y.size()        torch.Size([2, 2, 1, 2])</code></pre><p>​    </p><pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 指令集 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> pytorch </tag>
+            
+            <tag> Tensor </tag>
+            
+            <tag> 矩阵 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeNet实现CIFAR10分类</title>
       <link href="/2021/08/07/lenet-shi-xian-cifar10-fen-lei/"/>
       <url>/2021/08/07/lenet-shi-xian-cifar10-fen-lei/</url>
@@ -20,19 +51,19 @@
       
         <tags>
             
-            <tag> LeNet </tag>
-            
-            <tag> 神经网络 </tag>
-            
-            <tag> CIFAR10 </tag>
-            
-            <tag> pytorch </tag>
+            <tag> 机器学习 </tag>
             
             <tag> 深度学习 </tag>
             
-            <tag> 机器学习 </tag>
+            <tag> pytorch </tag>
+            
+            <tag> 神经网络 </tag>
             
             <tag> CNN </tag>
+            
+            <tag> CIFAR10 </tag>
+            
+            <tag> LeNet </tag>
             
         </tags>
       
@@ -57,21 +88,21 @@
       
         <tags>
             
-            <tag> 神经网络 </tag>
-            
-            <tag> CIFAR10 </tag>
-            
-            <tag> pytorch </tag>
-            
-            <tag> 深度学习 </tag>
-            
             <tag> 机器学习 </tag>
-            
-            <tag> CNN </tag>
             
             <tag> 数据集 </tag>
             
+            <tag> 深度学习 </tag>
+            
+            <tag> pytorch </tag>
+            
+            <tag> 神经网络 </tag>
+            
+            <tag> CNN </tag>
+            
             <tag> python </tag>
+            
+            <tag> CIFAR10 </tag>
             
         </tags>
       
@@ -96,13 +127,13 @@
       
         <tags>
             
-            <tag> C </tag>
-            
             <tag> 栈 </tag>
             
             <tag> 洛谷 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> C </tag>
             
             <tag> 模板 </tag>
             
@@ -129,8 +160,6 @@
       
         <tags>
             
-            <tag> C </tag>
-            
             <tag> 栈 </tag>
             
             <tag> 洛谷 </tag>
@@ -138,6 +167,8 @@
             <tag> 算法 </tag>
             
             <tag> 数学 </tag>
+            
+            <tag> C </tag>
             
         </tags>
       
@@ -164,13 +195,13 @@
             
             <tag> python </tag>
             
-            <tag> C </tag>
-            
             <tag> 栈 </tag>
             
             <tag> 洛谷 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> C </tag>
             
         </tags>
       
@@ -195,8 +226,6 @@
       
         <tags>
             
-            <tag> C </tag>
-            
             <tag> 栈 </tag>
             
             <tag> 洛谷 </tag>
@@ -204,6 +233,8 @@
             <tag> 算法 </tag>
             
             <tag> 数学 </tag>
+            
+            <tag> C </tag>
             
         </tags>
       
@@ -230,10 +261,6 @@
             
             <tag> python </tag>
             
-            <tag> 数据结构 </tag>
-            
-            <tag> C </tag>
-            
             <tag> 栈 </tag>
             
             <tag> 洛谷 </tag>
@@ -241,6 +268,10 @@
             <tag> 算法 </tag>
             
             <tag> 数学 </tag>
+            
+            <tag> C </tag>
+            
+            <tag> 数据结构 </tag>
             
         </tags>
       
@@ -472,7 +503,7 @@
       <link href="/2021/08/02/readme/"/>
       <url>/2021/08/02/readme/</url>
       
-        <content type="html"><![CDATA[<h1 id="逯润雨的博客"><a href="#逯润雨的博客" class="headerlink" title="逯润雨的博客"></a>逯润雨的博客</h1><p>这是我本人的博客平台，欢迎大家前来访问🥳<a href="https://lry89757.github.io/">https://lry89757.github.io/</a><br>刚建成没多久，有许多功能都不是很完善，我以后会在readme文档中记录更新功能与修改BUG与新的相关文章的。  </p><h2 id="8-7-14-13第十一次更新"><a href="#8-7-14-13第十一次更新" class="headerlink" title="8.7 14:13第十一次更新"></a>8.7 14:13第十一次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一个博客，关于LeNet分类CIFAR10</li><li>解决了首页图片加载不出来的问题 <del>（换个小点儿的图片就行了）</del></li><li>待完成：评论+外链</li></ol><h2 id="8-6-22-44第十次更新"><a href="#8-6-22-44第十次更新" class="headerlink" title="8.6 22:44第十次更新"></a>8.6 22:44第十次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一个全英文的CIFAR-10数据集的详解<del>（英文水平太低，写了好长时间🤐）</del></li><li>待完成：评论+音乐外链</li></ol><h2 id="8-6-12-33第九次更新"><a href="#8-6-12-33第九次更新" class="headerlink" title="8.6 12:33第九次更新"></a>8.6 12:33第九次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一个项目</li><li>更新了shell指令的博客</li><li>解决了代码高亮</li><li>待完成：音乐部分、评论模块</li></ol><h2 id="8-5-23-48第八次更新"><a href="#8-5-23-48第八次更新" class="headerlink" title="8.5 23:48第八次更新"></a>8.5 23:48第八次更新</h2><hr><ol><li>更新了readme文档</li><li>把算法刷题的栈系列解析肝完了， 一共六篇博客</li><li>待完成：见第三次更新，不过最要紧的是代码高亮和音乐部分。</li></ol><h2 id="8-4-15-28第七次紧急更新！"><a href="#8-4-15-28第七次紧急更新！" class="headerlink" title="8.4 15:28第七次紧急更新！"></a>8.4 15:28第七次紧急更新！</h2><hr><p><strong>感谢帮忙测试朋友提出相关意见，我关停了网站对一些隐私做了紧急修改，感谢各位的帮助！</strong></p><h2 id="8-4-11-40第六次更新"><a href="#8-4-11-40第六次更新" class="headerlink" title="8.4 11:40第六次更新"></a>8.4 11:40第六次更新</h2><hr><ol><li>更新了readme文档</li><li>添加了转载限定规则模块采用知识共享署名 4.0 国际许可协议<del>（虽然我的文章不值得被转载）</del></li><li>取消了轮播图自动轮播，去掉了没用的音乐外链</li><li>增加了IP检测（excuse me ?)🤣😅</li><li>待完成：见第三次更新</li></ol><h2 id="8-3-15-39第五次更新"><a href="#8-3-15-39第五次更新" class="headerlink" title="8.3 15:39第五次更新"></a>8.3 15:39第五次更新</h2><hr><ol><li>更新了readme文档</li><li>博客：对于林俊杰最近事情的看法</li><li>加入了音乐播放功能哈哈哈哈！！😎😎当然目前的音乐都是我知道能够外链播放的，后期会继续整修的（没发现的朋友可以看页面左下角哦）</li><li>待完成：见第三次更新😬</li></ol><h2 id="8-2-22-25第四次更新"><a href="#8-2-22-25第四次更新" class="headerlink" title="8.2 22:25第四次更新"></a>8.2 22:25第四次更新</h2><hr><ol><li>更新了readme文档</li><li>友链增加了flylee，同班学霸</li><li>博客：写了一些对生活感想</li><li>进一步修改了markdown数学公式无法显示问题。</li><li>待完成：见第3次更新😁(我不催我自己！！！)</li></ol><h2 id="8-2-18-39第三次更新"><a href="#8-2-18-39第三次更新" class="headerlink" title="8.2 18:39第三次更新"></a>8.2 18:39第三次更新</h2><hr><p><del><em>看来刚建好博客更新的就是快啊……哈哈哈</em></del></p><ol><li>更新了readme文档😅</li><li>发布了2篇博客，一篇是读《在路上》后对生活的感想思考（有兴趣阅读的可以和我联系索要密码，破译出密码的大佬记得和我联系🤩），另一篇是常用的shell命令（git/nodejs/nvm/npm）集</li><li>实现了推荐置顶功能</li><li>待完成：<ul><li>二级目录</li><li>相册</li><li>代码高亮</li><li>评论</li></ul></li></ol><h2 id="8-2-14-28第二次更新"><a href="#8-2-14-28第二次更新" class="headerlink" title="8.2 14:28第二次更新"></a>8.2 14:28第二次更新</h2><hr><ol><li><p>更新了密码功能，对于一些文章实现了加密， <em>如果有小伙伴们对加密文章感兴趣，欢迎发邮件或是通过各种渠道联系我获取密码，顺便交个朋友👀</em>， 或者有关大佬可以选择直接尝试破译哦~那就更得交个朋友了😅</p></li><li><p>更新了readme文档</p></li><li><p>发布了一篇博客，关于一些数码小知识，并测试了密码功能。</p></li><li><p>待完成：</p><ul><li>代码高亮功能</li><li>二级目录</li><li>记录nvm、nodejs、npm踩坑历史的博客。</li><li>评论功能</li></ul></li></ol><h2 id="8-2-11-00-第一次更新"><a href="#8-2-11-00-第一次更新" class="headerlink" title="8.2  11:00 第一次更新"></a>8.2  11:00 第一次更新</h2><hr><ol><li>友链：修正了部分无法显示问题， 加进去了更多友链</li><li>发布了3篇新文章，全部都是关于numpy的小知识</li><li>增加mathjax已解决无法显示markdown数学公式问题</li><li>更新了readme文档</li><li>预计会进一步：  <ul><li>二级目录</li><li>一个博客记录nvm、nodejs、npm踩坑历史😖</li><li>评论模块</li><li>文章密码问题</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="逯润雨的博客"><a href="#逯润雨的博客" class="headerlink" title="逯润雨的博客"></a>逯润雨的博客</h1><p>这是我本人的博客平台，欢迎大家前来访问🥳<a href="https://lry89757.github.io/">https://lry89757.github.io/</a><br>刚建成没多久，有许多功能都不是很完善，我以后会在readme文档中记录更新功能与修改BUG与新的相关文章的。  </p><h2 id="8-7-14-13第十一次更新"><a href="#8-7-14-13第十一次更新" class="headerlink" title="8.7 14:13第十一次更新"></a>8.7 14:13第十一次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了两篇博客，关于LeNet分类CIFAR10和常用tensor操作</li><li>解决了首页图片加载不出来的问题 <del>（换个小点儿的图片就行了）</del></li><li>待完成：评论+外链</li></ol><h2 id="8-6-22-44第十次更新"><a href="#8-6-22-44第十次更新" class="headerlink" title="8.6 22:44第十次更新"></a>8.6 22:44第十次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一个全英文的CIFAR-10数据集的详解<del>（英文水平太低，写了好长时间🤐）</del></li><li>待完成：评论+音乐外链</li></ol><h2 id="8-6-12-33第九次更新"><a href="#8-6-12-33第九次更新" class="headerlink" title="8.6 12:33第九次更新"></a>8.6 12:33第九次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一个项目</li><li>更新了shell指令的博客</li><li>解决了代码高亮</li><li>待完成：音乐部分、评论模块</li></ol><h2 id="8-5-23-48第八次更新"><a href="#8-5-23-48第八次更新" class="headerlink" title="8.5 23:48第八次更新"></a>8.5 23:48第八次更新</h2><hr><ol><li>更新了readme文档</li><li>把算法刷题的栈系列解析肝完了， 一共六篇博客</li><li>待完成：见第三次更新，不过最要紧的是代码高亮和音乐部分。</li></ol><h2 id="8-4-15-28第七次紧急更新！"><a href="#8-4-15-28第七次紧急更新！" class="headerlink" title="8.4 15:28第七次紧急更新！"></a>8.4 15:28第七次紧急更新！</h2><hr><p><strong>感谢帮忙测试朋友提出相关意见，我关停了网站对一些隐私做了紧急修改，感谢各位的帮助！</strong></p><h2 id="8-4-11-40第六次更新"><a href="#8-4-11-40第六次更新" class="headerlink" title="8.4 11:40第六次更新"></a>8.4 11:40第六次更新</h2><hr><ol><li>更新了readme文档</li><li>添加了转载限定规则模块采用知识共享署名 4.0 国际许可协议<del>（虽然我的文章不值得被转载）</del></li><li>取消了轮播图自动轮播，去掉了没用的音乐外链</li><li>增加了IP检测（excuse me ?)🤣😅</li><li>待完成：见第三次更新</li></ol><h2 id="8-3-15-39第五次更新"><a href="#8-3-15-39第五次更新" class="headerlink" title="8.3 15:39第五次更新"></a>8.3 15:39第五次更新</h2><hr><ol><li>更新了readme文档</li><li>博客：对于林俊杰最近事情的看法</li><li>加入了音乐播放功能哈哈哈哈！！😎😎当然目前的音乐都是我知道能够外链播放的，后期会继续整修的（没发现的朋友可以看页面左下角哦）</li><li>待完成：见第三次更新😬</li></ol><h2 id="8-2-22-25第四次更新"><a href="#8-2-22-25第四次更新" class="headerlink" title="8.2 22:25第四次更新"></a>8.2 22:25第四次更新</h2><hr><ol><li>更新了readme文档</li><li>友链增加了flylee，同班学霸</li><li>博客：写了一些对生活感想</li><li>进一步修改了markdown数学公式无法显示问题。</li><li>待完成：见第3次更新😁(我不催我自己！！！)</li></ol><h2 id="8-2-18-39第三次更新"><a href="#8-2-18-39第三次更新" class="headerlink" title="8.2 18:39第三次更新"></a>8.2 18:39第三次更新</h2><hr><p><del><em>看来刚建好博客更新的就是快啊……哈哈哈</em></del></p><ol><li>更新了readme文档😅</li><li>发布了2篇博客，一篇是读《在路上》后对生活的感想思考（有兴趣阅读的可以和我联系索要密码，破译出密码的大佬记得和我联系🤩），另一篇是常用的shell命令（git/nodejs/nvm/npm）集</li><li>实现了推荐置顶功能</li><li>待完成：<ul><li>二级目录</li><li>相册</li><li>代码高亮</li><li>评论</li></ul></li></ol><h2 id="8-2-14-28第二次更新"><a href="#8-2-14-28第二次更新" class="headerlink" title="8.2 14:28第二次更新"></a>8.2 14:28第二次更新</h2><hr><ol><li><p>更新了密码功能，对于一些文章实现了加密， <em>如果有小伙伴们对加密文章感兴趣，欢迎发邮件或是通过各种渠道联系我获取密码，顺便交个朋友👀</em>， 或者有关大佬可以选择直接尝试破译哦~那就更得交个朋友了😅</p></li><li><p>更新了readme文档</p></li><li><p>发布了一篇博客，关于一些数码小知识，并测试了密码功能。</p></li><li><p>待完成：</p><ul><li>代码高亮功能</li><li>二级目录</li><li>记录nvm、nodejs、npm踩坑历史的博客。</li><li>评论功能</li></ul></li></ol><h2 id="8-2-11-00-第一次更新"><a href="#8-2-11-00-第一次更新" class="headerlink" title="8.2  11:00 第一次更新"></a>8.2  11:00 第一次更新</h2><hr><ol><li>友链：修正了部分无法显示问题， 加进去了更多友链</li><li>发布了3篇新文章，全部都是关于numpy的小知识</li><li>增加mathjax已解决无法显示markdown数学公式问题</li><li>更新了readme文档</li><li>预计会进一步：  <ul><li>二级目录</li><li>一个博客记录nvm、nodejs、npm踩坑历史😖</li><li>评论模块</li><li>文章密码问题</li></ul></li></ol>]]></content>
       
       
       <categories>
@@ -590,9 +621,9 @@
       
         <tags>
             
-            <tag> 数据结构 </tag>
-            
             <tag> C </tag>
+            
+            <tag> 数据结构 </tag>
             
             <tag> 排序 </tag>
             
@@ -621,11 +652,11 @@
       
         <tags>
             
+            <tag> C </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 查找表 </tag>
-            
-            <tag> C </tag>
             
             <tag> 二叉树 </tag>
             
@@ -654,13 +685,13 @@
       
         <tags>
             
-            <tag> 机器学习 </tag>
-            
             <tag> numpy </tag>
             
             <tag> matplotlib </tag>
             
             <tag> math </tag>
+            
+            <tag> 机器学习 </tag>
             
             <tag> 梯度下降 </tag>
             

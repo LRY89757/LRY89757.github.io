@@ -6,11 +6,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Numpy实现一个简单的机器学习模型, UESTC CV DeepLearning MachineLearning 逯润雨 Lurunyu 计算机视觉 深度学习">
+    <meta name="keywords" content="常用Tensor操作, UESTC CV DeepLearning MachineLearning 逯润雨 Lurunyu 计算机视觉 深度学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="Numpy实现一个简单的机器学习模型mes que un codesfarmer 足球、音乐与代码😏
-本实例使用numpy实现机器学习，相对于pytorch这类包而言需要花费的代码多一点，但是每一步都是透明的，有利于理解每一步工作原理.首">
+    <meta name="description" content="当然这里基本上都是本人的代码，还没来得及很具体的整理，所以比较乱……
+from __future__ import print_function
+
+import torch as t
+
+t.__version__
+&amp;#39;1.8.1+cp">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +23,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Numpy实现一个简单的机器学习模型 | 逯润雨的博客</title>
+    <title>常用Tensor操作 | 逯润雨的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -520,13 +525,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Numpy实现一个简单的机器学习模型
+                        常用Tensor操作
                     </div>
                 </div>
             </div>
@@ -638,24 +643,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/numpy/" target="_blank">
-                                <span class="chip bg-color">numpy</span>
+                            <a href="/tags/深度学习/" target="_blank">
+                                <span class="chip bg-color">深度学习</span>
                             </a>
                         
-                            <a href="/tags/matplotlib/" target="_blank">
-                                <span class="chip bg-color">matplotlib</span>
+                            <a href="/tags/pytorch/" target="_blank">
+                                <span class="chip bg-color">pytorch</span>
                             </a>
                         
-                            <a href="/tags/math/" target="_blank">
-                                <span class="chip bg-color">math</span>
+                            <a href="/tags/Tensor/" target="_blank">
+                                <span class="chip bg-color">Tensor</span>
                             </a>
                         
-                            <a href="/tags/机器学习/" target="_blank">
-                                <span class="chip bg-color">机器学习</span>
-                            </a>
-                        
-                            <a href="/tags/梯度下降/" target="_blank">
-                                <span class="chip bg-color">梯度下降</span>
+                            <a href="/tags/矩阵/" target="_blank">
+                                <span class="chip bg-color">矩阵</span>
                             </a>
                         
                     </div>
@@ -666,8 +667,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/机器学习/" class="post-category" target="_blank">
-                                机器学习
+                            <a href="/categories/指令集/" class="post-category" target="_blank">
+                                指令集
                             </a>
                         
                     </div>
@@ -678,7 +679,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-01
+                    2021-08-07
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -692,14 +693,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1k
+                        1.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        8 分
                     </div>
                     
                 
@@ -716,64 +717,231 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Numpy实现一个简单的机器学习模型"><a href="#Numpy实现一个简单的机器学习模型" class="headerlink" title="Numpy实现一个简单的机器学习模型"></a>Numpy实现一个简单的机器学习模型</h1><p>mes que un codesfarmer 足球、音乐与代码😏</p>
-<h3 id="本实例使用numpy实现机器学习，相对于pytorch这类包而言需要花费的代码多一点，但是每一步都是透明的，有利于理解每一步工作原理"><a href="#本实例使用numpy实现机器学习，相对于pytorch这类包而言需要花费的代码多一点，但是每一步都是透明的，有利于理解每一步工作原理" class="headerlink" title="本实例使用numpy实现机器学习，相对于pytorch这类包而言需要花费的代码多一点，但是每一步都是透明的，有利于理解每一步工作原理."></a>本实例使用numpy实现机器学习，相对于pytorch这类包而言需要花费的代码多一点，但是每一步都是透明的，有利于理解每一步工作原理.</h3><h4 id="首先我们应该明确基本步骤："><a href="#首先我们应该明确基本步骤：" class="headerlink" title="首先我们应该明确基本步骤："></a>首先我们应该明确基本步骤：</h4><ol>
-<li>基于函数式y = 3x ^ 2 + 2 得到一些数据，另外加上一些噪音数据到达另一组数据y。</li>
-<li>构建一个机器学习模型来学习表达式y =  wx^2 + b 的两个参数w 、b .利用数组x, y的数据为训练数据。</li>
-<li>采用梯度下降法来通过多次迭代学习到w、b的值。</li>
-</ol>
-<p>@[TOC]</p>
-<h3 id="导入必要库"><a href="#导入必要库" class="headerlink" title="导入必要库"></a>导入必要库</h3><pre><code>import numpy as np
-%matplotlib inline 
-from matplotlib import pyplot as plt</code></pre><h4 id="代码分析："><a href="#代码分析：" class="headerlink" title="代码分析："></a>代码分析：</h4><p>%matplotlib inline是一个魔法函数（Magic Functions）。使用%matplotlib命令可以将matplotlib的图表直接嵌入到Notebook之中，或者使用指定的界面库显示图表，它有一个参数指定matplotlib图表的显示方式。 inline表示将图表嵌入到Notebook中。</p>
-<h3 id="生成数据"><a href="#生成数据" class="headerlink" title="生成数据"></a>生成数据</h3><pre><code>np.random.seed(100)
-x = np.linspace(-1, 1, 100).reshape(100, 1)
-y = 3 * np.power(x, 2) + 2 + 0.2 * np.random.rand(x.size).reshape(100, 1)</code></pre><h4 id="代码分析：-1"><a href="#代码分析：-1" class="headerlink" title="代码分析："></a>代码分析：</h4><p>生成输入数据x及目标数据y，np.random.seed(100)时设置随机数种子。reshape函数将矩阵形状改为合适的形状方便操作。而后np.random.rand是为了加一些噪点。</p>
-<h3 id="查看x、y数据分布情况"><a href="#查看x、y数据分布情况" class="headerlink" title="查看x、y数据分布情况"></a>查看x、y数据分布情况</h3><pre><code>plt.scatter(x, y, s=20, c=&#39;red&#39;)
-plt.show()</code></pre><p>运行结果： <img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdnimg.cn/20210531214950572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xSWTg5NzU3,size_16,color_FFFFFF,t_70#pic_center" alt="函数图片"></p>
-<h3 id="随机初始化参数"><a href="#随机初始化参数" class="headerlink" title="随机初始化参数"></a>随机初始化参数</h3><pre><code>w1 = np.random.rand(1, 1)
-b1 = np.random.rand(1, 1)</code></pre><h4 id="代码分析：-2"><a href="#代码分析：-2" class="headerlink" title="代码分析："></a>代码分析：</h4><p>随机初始化参数w1、b1，后面会计算梯度逐渐接近最优解。</p>
-<h3 id="训练模型"><a href="#训练模型" class="headerlink" title="训练模型"></a>训练模型</h3><pre><code>lr = 0.001  # 学习率
+                <p>当然这里基本上都是本人的代码，还没来得及很具体的整理，所以比较乱……</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> __future__ <span class="token keyword">import</span> print_function
 
-for i in range(800):
-    # 前向传播
-    y_pred = np.power(x, 2) * w1 + b1
-    # 定义损失函数
-    loss = 0.5*(y_pred - y) ** 2
-    loss = loss.sum()
-    # 计算梯度
-    grad_w = np.sum((y_pred - y) * np.power(x, 2))
-    grad_b = np.sum((y_pred - y))
-    # 使用梯度下降法，使loss最小
-    w1 -= lr * grad_w
-    b1 -= lr * grad_b</code></pre><h4 id="代码分析：-3"><a href="#代码分析：-3" class="headerlink" title="代码分析："></a>代码分析：</h4><p><strong>这是我们代码最核心的一部分了。</strong> 一个简单的前向传播，y_pred是预测值，y是实际值。loss是均方损失函数，这里均方损失函数乘以0.5是为了求导的时候平方项正好消去，方便后续整理，实际上也可以不乘，梯度下降算法最重要的是方向，大小是次要的。sum函数对损失进行求和同时把loss函数变为标量，实际上这里面由于我们直接后续计算梯度直接求出了loss函数的导数，所以这里loss函数实际上没有在代码上没有很大的作用，写出来是为了方便我们去观看🤣😋。而这里我们接下来就是计算的grad_w、grad_b就是来进行梯度的计算，然后更新权重w1和参数b1。</p>
-<h3 id="可视化结果"><a href="#可视化结果" class="headerlink" title="可视化结果"></a>可视化结果</h3><p><em>我们训练结果如何呢？其实际拟合程度如何呢？我们画图来验证一下拟合的效果。</em></p>
-<pre><code>plt.plot(x, y_pred, &quot;r-&quot;, label=&#39;predict&#39;)
-plt.scatter(x, y, color=&#39;blue&#39;, marker=&#39;o&#39;, label=&#39;true&#39;)    # true data
-plt.xlim(-1, 1)
-plt.ylim(2, 6)
-plt.legend()
-plt.show()
-print(w1, b1)</code></pre><p>训练结果： <img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdnimg.cn/2021053123433278.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xSWTg5NzU3,size_16,color_FFFFFF,t_70#pic_center" alt="图像拟合效果"> [[2.98941611]] [[2.09813123]]</p>
-<h4 id="代码分析：-4"><a href="#代码分析：-4" class="headerlink" title="代码分析："></a>代码分析：</h4><p>事实证明，经过800次训练之后，我们训练出的模型的拟合效果还是相当不错的，w是2.9894左右，b是2.0981左右。和我们初始时设定的3、2相差很小。</p>
-<pre><code>BiTree GetSibling(BiTree T, KeyType e)
-{
-    if (T == NULL)
-        return NULL;
-    if (T-&gt;lchild)
-    {
-        if (T-&gt;lchild-&gt;data.key == e)
-            return T-&gt;rchild; //左孩子符合条件就返回右孩子
-    }
-    else if (T-&gt;rchild)
-    {
-        if (T-&gt;rchild-&gt;data.key == e)
-            return T-&gt;lchild; //右孩子符合条件就返回左孩子
-    }
-    //否则递归查找，如果左子树里有就返回左子树里的，否则返回右子树
-    return GetSibling(T-&gt;lchild, e) != NULL ? GetSibling(T-&gt;lchild, e) : GetSibling(T-&gt;rchild, e);
-}
-</code></pre>
+<span class="token keyword">import</span> torch <span class="token keyword">as</span> t
+
+t<span class="token punctuation">.</span>__version__<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>&#39;1.8.1+cpu&#39;</code></pre><h2 id="Tensor"><a href="#Tensor" class="headerlink" title="Tensor"></a>Tensor</h2><p>Tensor，又名张量，读者可能对这个名词似曾相识，因它不仅在PyTorch中出现过，它也是Theano、TensorFlow、<br>Torch和MxNet中重要的数据结构。关于张量的本质不乏深度的剖析，但从工程角度来讲，可简单地认为它就是一个数组，且支持高效的科学计算。它可以是一个数（标量）、一维数组（向量）、二维数组（矩阵）和更高维的数组（高阶数据）。Tensor和Numpy的ndarrays类似，但PyTorch的tensor支持GPU加速。</p>
+<p><del>本节将系统讲解tensor的使用，力求面面俱到，但不会涉及每个函数</del>。对于更多函数及其用法，我们可通过在IPython/Notebook中使用函数名加<code>?</code>查看帮助文档，或查阅PyTorch官方文档<a href="http://docs.pytorch.org" target="_blank" rel="noopener">^1</a>。</p>
+<h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><p>学习过Numpy会感到非常熟悉，因tensor的接口有意设计成与Numpy类似，以方便用户使用。</p>
+<p>从接口的角度来讲，对tensor的操作可分为两类：</p>
+<ol>
+<li><code>torch.function</code>，如<code>torch.save</code>等。</li>
+<li>另一类是<code>tensor.function</code>，如<code>tensor.view</code>等。</li>
+</ol>
+<p>为方便使用，对tensor的大部分操作同时支持这两类接口，在本书中不做具体区分，如<code>torch.sum (torch.sum(a, b))</code>与<code>tensor.sum (a.sum(b))</code>功能等价。</p>
+<p>而从存储的角度来讲，对tensor的操作又可分为两类：</p>
+<ol>
+<li>不会修改自身的数据，如 <code>a.add(b)</code>， 加法的结果会返回一个新的tensor。</li>
+<li>会修改自身的数据，如 <code>a.add_(b)</code>， 加法的结果仍存储在a中，a被修改了。</li>
+</ol>
+<p>函数名以<code>_</code>结尾的都是inplace方式, 即会修改调用者自己的数据，在实际应用中需加以区分。</p>
+<h4 id="创建Tensor"><a href="#创建Tensor" class="headerlink" title="创建Tensor"></a>创建Tensor</h4><p>在PyTorch中新建tensor的方法有很多，具体如表3-1所示。</p>
+<p>表3-1: 常见新建tensor的方法</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Tensor(*sizes)</td>
+<td align="center">基础构造函数</td>
+</tr>
+<tr>
+<td align="center">tensor(data,)</td>
+<td align="center">类似np.array的构造函数</td>
+</tr>
+<tr>
+<td align="center">ones(*sizes)</td>
+<td align="center">全1Tensor</td>
+</tr>
+<tr>
+<td align="center">zeros(*sizes)</td>
+<td align="center">全0Tensor</td>
+</tr>
+<tr>
+<td align="center">eye(*sizes)</td>
+<td align="center">对角线为1，其他为0</td>
+</tr>
+<tr>
+<td align="center">arange(s,e,step</td>
+<td align="center">从s到e，步长为step</td>
+</tr>
+<tr>
+<td align="center">linspace(s,e,steps)</td>
+<td align="center">从s到e，均匀切分成steps份</td>
+</tr>
+<tr>
+<td align="center">rand/randn(*sizes)</td>
+<td align="center">均匀/标准分布</td>
+</tr>
+<tr>
+<td align="center">normal(mean,std)/uniform(from,to)</td>
+<td align="center">正态分布/均匀分布</td>
+</tr>
+<tr>
+<td align="center">randperm(m)</td>
+<td align="center">随机排列</td>
+</tr>
+</tbody></table>
+<p>这些创建方法都可以在创建的时候指定数据类型dtype和存放device(cpu/gpu).</p>
+<p>其中使用<code>Tensor</code>函数新建tensor是最复杂多变的方式，它既可以接收一个list，并根据list的数据新建tensor，也能根据指定的形状新建tensor，还能传入其他的tensor，下面举几个例子。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 指定tensor形状</span>
+
+a <span class="token operator">=</span> t<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 提前分配好空间</span>
+
+a   <span class="token comment" spellcheck="true"># 数值取决于内存空间的状态，</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>tensor([[0., 0., 0.],
+        [0., 0., 0.]])</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 使用list数据创建tensor</span>
+
+b <span class="token operator">=</span> t<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>tensor([[1., 2., 3.],
+        [4., 5., 6.]])</code></pre><pre class="line-numbers language-python"><code class="language-python">b<span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 和numpy的转化何其相似</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]</code></pre><p><code>tensor.size()</code>返回<code>torch.Size</code>对象，它是tuple的子类，但其使用方式与tuple略有区别</p>
+<pre class="line-numbers language-python"><code class="language-python">b_size <span class="token operator">=</span> b<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+b_size<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>torch.Size([2, 3])</code></pre><pre class="line-numbers language-python"><code class="language-python">b<span class="token punctuation">.</span>numel<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#  b中元素总个数，2*3，等价于b.nelement()</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>6</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 创建一个与b形状一样的tensor</span>
+
+c <span class="token operator">=</span> t<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span>b<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 创建一个元素为2和3的tensor</span>
+
+d <span class="token operator">=</span> t<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 注意和t.Tensor(2, 3)完全不一样！</span>
+
+c<span class="token punctuation">,</span> d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>(tensor([[0., 0., 0.],
+         [0., 0., 0.]]),
+ tensor([2., 3.]))</code></pre><pre class="line-numbers language-python"><code class="language-python">c<span class="token punctuation">.</span>shape   <span class="token comment" spellcheck="true"># equal to c.size()</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>torch.Size([2, 3])</code></pre><p>需要注意的是，<code>t.Tensor(*sizes)</code>创建tensor时，系统不会马上分配空间，只是会计算剩余的内存是否足够使用，使用到tensor时才会分配，而其它操作都是在创建完tensor之后马上进行空间分配。其它常用的创建tensor的方法举例如下。</p>
+<pre class="line-numbers language-python"><code class="language-python">t<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>tensor([[1., 1., 1.],
+        [1., 1., 1.]])</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'\n'</span><span class="token punctuation">,</span> t<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>tensor([[0., 0., 0.],
+        [0., 0., 0.]])
+tensor([ 1,  5,  9, 13, 17])
+tensor([ 1.0000,  5.5000, 10.0000]) 
+ tensor([ 1.0000,  2.1250,  3.2500,  4.3750,  5.5000,  6.6250,  7.7500,  8.8750,
+        10.0000])</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> device<span class="token operator">=</span>t<span class="token punctuation">.</span>device<span class="token punctuation">(</span><span class="token string">'cpu'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>tensor([[ 0.6485,  0.8807,  0.5077],
+        [-1.1991, -0.9738, -0.8757]])</code></pre><pre class="line-numbers language-python"><code class="language-python">t<span class="token punctuation">.</span>randperm<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 长度为5的随机排列</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>tensor([1, 3, 2, 0, 4])</code></pre><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">.</span>eye<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>t<span class="token punctuation">.</span>int<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+t<span class="token punctuation">.</span>eye<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>t<span class="token punctuation">.</span>int<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 对角线为1， 不要求行列数一致</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>tensor([[1, 0],
+        [0, 1],
+        [0, 0],
+        [0, 0]], dtype=torch.int32)
+
+
+
+
+
+tensor([[1, 0, 0],
+        [0, 1, 0]], dtype=torch.int32)</code></pre><p><code>torch.tensor</code>是在0.4版本新增加的一个新版本的创建tensor方法，使用的方法，和参数几乎和<code>np.array</code>完全一致</p>
+<pre class="line-numbers language-python"><code class="language-python">scalar <span class="token operator">=</span> t<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">3.14159</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'scalar: %s, shape of scalar: %s'</span> <span class="token operator">%</span><span class="token punctuation">(</span>scalar<span class="token punctuation">,</span> scalar<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 零维标量</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>scalar: tensor(3.1416), shape of scalar: torch.Size([])</code></pre><pre class="line-numbers language-python"><code class="language-python">vector <span class="token operator">=</span> t<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'vector: %s, shape of vector: %s'</span> <span class="token operator">%</span><span class="token punctuation">(</span>vector<span class="token punctuation">,</span> vector<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 向量</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>vector: tensor([1, 2]), shape of vector: torch.Size([2])</code></pre><pre class="line-numbers language-python"><code class="language-python">tensor <span class="token operator">=</span> t<span class="token punctuation">.</span>Tensor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 注意与t.tensor([1, 2])区别</span>
+
+tensor<span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>torch.Size([1, 2])</code></pre><pre class="line-numbers language-python"><code class="language-python">matrix <span class="token operator">=</span> t<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.1</span><span class="token punctuation">,</span> <span class="token number">1.2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2.2</span><span class="token punctuation">,</span> <span class="token number">3.1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4.9</span><span class="token punctuation">,</span> <span class="token number">5.2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+matrix<span class="token punctuation">,</span> matrix<span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>(tensor([[0.1000, 1.2000],
+         [2.2000, 3.1000],
+         [4.9000, 5.2000]]),
+ torch.Size([3, 2]))</code></pre><pre class="line-numbers language-python"><code class="language-python">empty_tensor <span class="token operator">=</span> t<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+empty_tensor<span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>torch.Size([0])</code></pre><p>通过<code>tensor.view</code>方法可以调整tensor的形状，但必须保证调整前后元素总数一致。<code>view</code>不会修改自身的数据，返回的新tensor与源tensor共享内存，也即更改其中的一个，另外一个也会跟着改变。在实际应用中可能经常需要添加或减少某一维度，这时候<code>squeeze</code>和<code>unsqueeze</code>两个函数就派上用场了。</p>
+<pre class="line-numbers language-python"><code class="language-python">a <span class="token operator">=</span> t<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span>
+
+a<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>tensor([[0, 1, 2],
+        [3, 4, 5]])</code></pre><pre class="line-numbers language-python"><code class="language-python">b <span class="token operator">=</span> a<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+b<span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>torch.Size([2, 3])</code></pre><pre class="line-numbers language-python"><code class="language-python">b<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 注意形状，在第1维（下标从0开始）上增加“1”</span>
+
+<span class="token comment" spellcheck="true"># 等价于b[, None]</span>
+
+b<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> None<span class="token punctuation">]</span><span class="token punctuation">.</span>shape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>torch.Size([2, 1, 3])</code></pre><pre class="line-numbers language-python"><code class="language-python">b<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># -2表示倒数第二个维度</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>tensor([[[0, 1, 2]],
+
+        [[3, 4, 5]]])</code></pre><pre class="line-numbers language-python"><code class="language-python">c <span class="token operator">=</span> b<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+c<span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 压缩第0维的“1”</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>tensor([[[[0, 1, 2],
+          [3, 4, 5]]]])</code></pre><pre class="line-numbers language-python"><code class="language-python">c<span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 把所有维度为“1”的压缩</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>tensor([[0, 1, 2],
+        [3, 4, 5]])</code></pre><pre class="line-numbers language-python"><code class="language-python">a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">100</span>
+
+b  <span class="token comment" spellcheck="true"># a修改， b作为view之后的，也会跟着修改</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre><code>tensor([[  0, 100,   2],
+        [  3,   4,   5]])</code></pre><pre class="line-numbers language-python"><code class="language-python">help<span class="token punctuation">(</span>t<span class="token punctuation">.</span>squeeze<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>Help on built-in function squeeze:
+
+squeeze(...)
+    squeeze(input, dim=None, *, out=None) -&gt; Tensor
+
+    Returns a tensor with all the dimensions of :attr:`input` of size `1` removed.
+
+    For example, if `input` is of shape:
+    :math:`(A \times 1 \times B \times C \times 1 \times D)` then the `out` tensor
+    will be of shape: :math:`(A \times B \times C \times D)`.
+
+    When :attr:`dim` is given, a squeeze operation is done only in the given
+    dimension. If `input` is of shape: :math:`(A \times 1 \times B)`,
+    ``squeeze(input, 0)`` leaves the tensor unchanged, but ``squeeze(input, 1)``
+    will squeeze the tensor to the shape :math:`(A \times B)`.
+
+    .. note:: The returned tensor shares the storage with the input tensor,
+              so changing the contents of one will change the contents of the other.
+
+    .. warning:: If the tensor has a batch dimension of size 1, then `squeeze(input)`
+              will also remove the batch dimension, which can lead to unexpected
+              errors.
+
+    Args:
+        input (Tensor): the input tensor.
+        dim (int, optional): if given, the input will be squeezed only in
+               this dimension
+
+    Keyword args:
+        out (Tensor, optional): the output tensor.
+
+    Example::
+
+        &gt;&gt;&gt; x = torch.zeros(2, 1, 2, 1, 2)
+        &gt;&gt;&gt; x.size()
+        torch.Size([2, 1, 2, 1, 2])
+        &gt;&gt;&gt; y = torch.squeeze(x)
+        &gt;&gt;&gt; y.size()
+        torch.Size([2, 2, 2])
+        &gt;&gt;&gt; y = torch.squeeze(x, 0)
+        &gt;&gt;&gt; y.size()
+        torch.Size([2, 1, 2, 1, 2])
+        &gt;&gt;&gt; y = torch.squeeze(x, 1)
+        &gt;&gt;&gt; y.size()
+        torch.Size([2, 2, 1, 2])</code></pre><p>​    </p>
+<pre class="line-numbers language-python"><code class="language-python"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
             </div>
             <hr/>
 
@@ -923,7 +1091,7 @@ print(w1, b1)</code></pre><p>训练结果： <img src="https://cdn.jsdelivr.net/
                     </span>
                     <a href="https://lry89757.github.io" class="b-link-green">逯润雨的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/08/01/numpy-shi-xian-yi-ge-jian-dan-de-ji-qi-xue-xi-mo-xing/" class="b-link-green">Numpy实现一个简单的机器学习模型</a>
+                    <a href="/2021/08/07/chang-yong-tensor-cao-zuo/" class="b-link-green">常用Tensor操作</a>
                 </p>
             </div>
 
@@ -945,62 +1113,60 @@ print(w1, b1)</code></pre><p>训练结果： <img src="https://cdn.jsdelivr.net/
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/01/dong-tai-cha-zhao-biao-zhi-er-cha-pai-xu-shu-he-ping-heng-er-cha-shu-tu-jie-dai-ma-xiang-jie/">
+                <a href="/2021/08/07/chang-yong-tensor-cao-zuo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="动态查找表之二叉排序树和平衡二叉树（图解+代码详解）">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="常用Tensor操作">
                         
-                        <span class="card-title">动态查找表之二叉排序树和平衡二叉树（图解+代码详解）</span>
+                        <span class="card-title">常用Tensor操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            动态查找表：与静态查找表不同的是，动态查找表是在查找过程中动态生成的，即对于给定值key, 若表中存在其关键字等于key的记录，则查找成功返回，否则插入关键字等于key的记录。
+                            也算是练习简单了解一下关于tensor的常用操作吧（感觉和numpy差不多），到时候忘了现查，先知道有哪些操作。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/数据结构/" class="post-category" target="_blank">
-                                    数据结构
+                            <a href="/categories/指令集/" class="post-category" target="_blank">
+                                    指令集
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C</span>
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
                     </a>
                     
-                    <a href="/tags/数据结构/" target="_blank">
-                        <span class="chip bg-color">数据结构</span>
+                    <a href="/tags/pytorch/" target="_blank">
+                        <span class="chip bg-color">pytorch</span>
                     </a>
                     
-                    <a href="/tags/查找表/" target="_blank">
-                        <span class="chip bg-color">查找表</span>
+                    <a href="/tags/Tensor/" target="_blank">
+                        <span class="chip bg-color">Tensor</span>
                     </a>
                     
-                    <a href="/tags/二叉树/" target="_blank">
-                        <span class="chip bg-color">二叉树</span>
-                    </a>
-                    
-                    <a href="/tags/二叉排序树/" target="_blank">
-                        <span class="chip bg-color">二叉排序树</span>
+                    <a href="/tags/矩阵/" target="_blank">
+                        <span class="chip bg-color">矩阵</span>
                     </a>
                     
                 </div>
@@ -1014,31 +1180,30 @@ print(w1, b1)</code></pre><p>训练结果： <img src="https://cdn.jsdelivr.net/
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/">
+                <a href="/2021/08/07/lenet-shi-xian-cifar10-fen-lei/">
                     <div class="card-image">
                         
+                        <img src="/medias/featureimages/nn_lenet3.png" class="responsive-img" alt="LeNet实现CIFAR10分类">
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="上海交大概率论数理统计大作业代码实现解析">
-                        
-                        <span class="card-title">上海交大概率论数理统计大作业代码实现解析</span>
+                        <span class="card-title">LeNet实现CIFAR10分类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前些日子有上交小姐姐概率论与数理统计课程结课了，有一个大作业要做，题目要求使用matlab或者python画图分析并统计有关数据。
+                            学了那么长时间的神经网络以及各个机器学习算法的手动numpy底层实现， 也掉了好多头发，终于也算是对这些算法有了算是比较本质的理解。接下来终于可以接触真正的深度学习库了。还是很高兴的，终于可以当调参侠了😎！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-01
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/数据分析/" class="post-category" target="_blank">
-                                    数据分析
+                            <a href="/categories/pytorch/" class="post-category" target="_blank">
+                                    pytorch
                                 </a>
                             
                             
@@ -1048,20 +1213,32 @@ print(w1, b1)</code></pre><p>训练结果： <img src="https://cdn.jsdelivr.net/
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/numpy/" target="_blank">
-                        <span class="chip bg-color">numpy</span>
+                    <a href="/tags/机器学习/" target="_blank">
+                        <span class="chip bg-color">机器学习</span>
                     </a>
                     
-                    <a href="/tags/matplotlib/" target="_blank">
-                        <span class="chip bg-color">matplotlib</span>
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
                     </a>
                     
-                    <a href="/tags/math/" target="_blank">
-                        <span class="chip bg-color">math</span>
+                    <a href="/tags/pytorch/" target="_blank">
+                        <span class="chip bg-color">pytorch</span>
                     </a>
                     
-                    <a href="/tags/概率论与数理统计/" target="_blank">
-                        <span class="chip bg-color">概率论与数理统计</span>
+                    <a href="/tags/神经网络/" target="_blank">
+                        <span class="chip bg-color">神经网络</span>
+                    </a>
+                    
+                    <a href="/tags/CNN/" target="_blank">
+                        <span class="chip bg-color">CNN</span>
+                    </a>
+                    
+                    <a href="/tags/CIFAR10/" target="_blank">
+                        <span class="chip bg-color">CIFAR10</span>
+                    </a>
+                    
+                    <a href="/tags/LeNet/" target="_blank">
+                        <span class="chip bg-color">LeNet</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-07T06:18:05.410Z</updated>
+  <updated>2021-08-07T08:50:24.509Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用Tensor操作</title>
+    <link href="https://lry89757.github.io/2021/08/07/chang-yong-tensor-cao-zuo/"/>
+    <id>https://lry89757.github.io/2021/08/07/chang-yong-tensor-cao-zuo/</id>
+    <published>2021-08-07T08:41:11.000Z</published>
+    <updated>2021-08-07T08:50:24.509Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;当然这里基本上都是本人的代码，还没来得及很具体的整理，所以比较乱……&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+      <category term="指令集" scheme="https://lry89757.github.io/categories/%E6%8C%87%E4%BB%A4%E9%9B%86/"/>
+    
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+    
+      <category term="Tensor" scheme="https://lry89757.github.io/tags/Tensor/"/>
+    
+      <category term="矩阵" scheme="https://lry89757.github.io/tags/%E7%9F%A9%E9%98%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>LeNet实现CIFAR10分类</title>
@@ -38,19 +71,19 @@
       <category term="pytorch" scheme="https://lry89757.github.io/categories/pytorch/"/>
     
     
-      <category term="LeNet" scheme="https://lry89757.github.io/tags/LeNet/"/>
-    
-      <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="CIFAR10" scheme="https://lry89757.github.io/tags/CIFAR10/"/>
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+    
+      <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
       <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
+    
+      <category term="CIFAR10" scheme="https://lry89757.github.io/tags/CIFAR10/"/>
+    
+      <category term="LeNet" scheme="https://lry89757.github.io/tags/LeNet/"/>
     
   </entry>
   
@@ -77,21 +110,21 @@
       <category term="数据集" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
     
-      <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="CIFAR10" scheme="https://lry89757.github.io/tags/CIFAR10/"/>
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
     
       <category term="数据集" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+    
+      <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
+    
       <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
+    
+      <category term="CIFAR10" scheme="https://lry89757.github.io/tags/CIFAR10/"/>
     
   </entry>
   
@@ -117,13 +150,13 @@
       <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     
     
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
-    
       <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
     
       <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
     
       <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
     
       <category term="模板" scheme="https://lry89757.github.io/tags/%E6%A8%A1%E6%9D%BF/"/>
     
@@ -151,8 +184,6 @@
       <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     
     
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
-    
       <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
     
       <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
@@ -160,6 +191,8 @@
       <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数学" scheme="https://lry89757.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
     
   </entry>
   
@@ -188,13 +221,13 @@
     
       <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
     
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
-    
       <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
     
       <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
     
       <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
     
   </entry>
   
@@ -220,8 +253,6 @@
       <category term="算法题" scheme="https://lry89757.github.io/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
     
     
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
-    
       <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
     
       <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
@@ -229,6 +260,8 @@
       <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数学" scheme="https://lry89757.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
     
   </entry>
   
@@ -257,10 +290,6 @@
     
       <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
     
-      <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
-    
       <category term="栈" scheme="https://lry89757.github.io/tags/%E6%A0%88/"/>
     
       <category term="洛谷" scheme="https://lry89757.github.io/tags/%E6%B4%9B%E8%B0%B7/"/>
@@ -268,6 +297,10 @@
       <category term="算法" scheme="https://lry89757.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="数学" scheme="https://lry89757.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
+      <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -480,7 +513,7 @@
     <link href="https://lry89757.github.io/2021/08/02/readme/"/>
     <id>https://lry89757.github.io/2021/08/02/readme/</id>
     <published>2021-08-02T03:10:01.000Z</published>
-    <updated>2021-08-07T06:16:26.331Z</updated>
+    <updated>2021-08-07T08:51:55.440Z</updated>
     
     <summary type="html">
     
@@ -609,47 +642,13 @@
       <category term="数据结构" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     
-      <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
       <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
+    
+      <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
       <category term="排序" scheme="https://lry89757.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
     
       <category term="图解" scheme="https://lry89757.github.io/tags/%E5%9B%BE%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动态查找表之二叉排序树和平衡二叉树（图解+代码详解）</title>
-    <link href="https://lry89757.github.io/2021/08/01/dong-tai-cha-zhao-biao-zhi-er-cha-pai-xu-shu-he-ping-heng-er-cha-shu-tu-jie-dai-ma-xiang-jie/"/>
-    <id>https://lry89757.github.io/2021/08/01/dong-tai-cha-zhao-biao-zhi-er-cha-pai-xu-shu-he-ping-heng-er-cha-shu-tu-jie-dai-ma-xiang-jie/</id>
-    <published>2021-08-01T03:47:11.000Z</published>
-    <updated>2021-08-04T06:09:32.120Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;动态查找表&lt;/strong&gt;：与静态查找表不同的是，动态查找表是在查找过程中动态生成的，即对于给定值key,
-        
-      
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="数据结构" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="查找表" scheme="https://lry89757.github.io/tags/%E6%9F%A5%E6%89%BE%E8%A1%A8/"/>
-    
-      <category term="C" scheme="https://lry89757.github.io/tags/C/"/>
-    
-      <category term="二叉树" scheme="https://lry89757.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-      <category term="二叉排序树" scheme="https://lry89757.github.io/tags/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/"/>
     
   </entry>
   
