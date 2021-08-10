@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-10T03:59:42.509Z</updated>
+  <updated>2021-08-10T10:36:36.705Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Typora集成PicGo图床服务</title>
+    <link href="https://lry89757.github.io/2021/08/10/typora-ji-cheng-picgo-tu-chuang-fu-wu/"/>
+    <id>https://lry89757.github.io/2021/08/10/typora-ji-cheng-picgo-tu-chuang-fu-wu/</id>
+    <published>2021-08-10T10:16:15.000Z</published>
+    <updated>2021-08-10T10:36:36.705Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;给大家推送一波福利，新版本的 Markdown 写作利器 ——&lt;strong&gt;Typora&lt;/strong&gt;，集成了 PicGo
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>记一次反挖矿病毒（转）</title>
@@ -170,9 +192,9 @@
       <category term="指令集" scheme="https://lry89757.github.io/categories/%E6%8C%87%E4%BB%A4%E9%9B%86/"/>
     
     
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Tensor" scheme="https://lry89757.github.io/tags/Tensor/"/>
     
@@ -202,19 +224,19 @@
       <category term="pytorch" scheme="https://lry89757.github.io/categories/pytorch/"/>
     
     
-      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+      <category term="LeNet" scheme="https://lry89757.github.io/tags/LeNet/"/>
     
       <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
-      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
-    
       <category term="CIFAR10" scheme="https://lry89757.github.io/tags/CIFAR10/"/>
     
-      <category term="LeNet" scheme="https://lry89757.github.io/tags/LeNet/"/>
+      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
     
   </entry>
   
@@ -241,21 +263,21 @@
       <category term="数据集" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
     
-      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
-      <category term="数据集" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="CIFAR10" scheme="https://lry89757.github.io/tags/CIFAR10/"/>
     
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
     
-      <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
     
-      <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
+      <category term="数据集" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
-      <category term="CIFAR10" scheme="https://lry89757.github.io/tags/CIFAR10/"/>
+      <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
     
   </entry>
   
@@ -636,32 +658,6 @@
       <category term="小知识" scheme="https://lry89757.github.io/tags/%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
     
       <category term="数码" scheme="https://lry89757.github.io/tags/%E6%95%B0%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>readme</title>
-    <link href="https://lry89757.github.io/2021/08/02/readme/"/>
-    <id>https://lry89757.github.io/2021/08/02/readme/</id>
-    <published>2021-08-02T03:10:01.000Z</published>
-    <updated>2021-08-10T04:04:20.213Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;逯润雨的博客&quot;&gt;&lt;a href=&quot;#逯润雨的博客&quot; class=&quot;headerlink&quot; title=&quot;逯润雨的博客&quot;&gt;&lt;/a&gt;逯润雨的博客&lt;/h1&gt;&lt;p&gt;这是我本人的博客平台，欢迎大家前来访问🥳&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="博客建站" scheme="https://lry89757.github.io/categories/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E7%AB%99/"/>
-    
-    
-      <category term="记录" scheme="https://lry89757.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   

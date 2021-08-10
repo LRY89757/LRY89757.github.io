@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Typora集成PicGo图床服务</title>
+      <link href="/2021/08/10/typora-ji-cheng-picgo-tu-chuang-fu-wu/"/>
+      <url>/2021/08/10/typora-ji-cheng-picgo-tu-chuang-fu-wu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>给大家推送一波福利，新版本的 Markdown 写作利器 ——<strong>Typora</strong>，集成了 PicGo 服务，文章插入图片即可通过 PicGo 服务上传到图床内。废话不多说，直接开门见山！</p><h1 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h1><p>安装 PicGo 软件，接着图床的搭建，并进行相关的配置。</p><h1 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h1><p>注意：PicGo 软件的版本要求 2.2.0 及以上</p><p>打开 PicGo 软件的设置界面，进行 Server 的设置：</p><p>PicGo 设置 -&gt; 设置 Server，开启 Server，监听地址不用进行更改，监听端口的值设置为 36677，这个值的获取在 Typora 软件中，下面会提到：</p><p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316220909.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316220909.png" alt="img"></a></p><h1 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h1><p>注意：Typora 软件的版本要求 0.9.84 及以上</p><p>接下来进行 Typora 的设置，Typora 的安装我就不说了，相信大家都会安装，打开 typora 软件，依次打开步骤为：文件 -&gt; 偏好设置 -&gt; 图像，具体配置参考下面的图中的配置：</p><p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222009.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222009.png" alt="img"></a></p><h1 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h1><p>进行验证，看 Typora 是否可以成功的通过 PicGo 上传到图床</p><p>点击第三步图中的验证图片选项，当成功后会出现下面图中的情况</p><p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222349.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222349.png" alt="21312"></a></p><p>图中可以看出监听地址以及端口号，这个需要与 PicGo 的 Server 服务中的监听地址以及端口号一致，否则上传会失败！</p><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>有三种方法</p><h2 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h2><p>采用拖拽的方法，直接将本地图片拖拽到文章中，即可进行上传</p><h2 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h2><p>采用插入本地图片的方法，使用快捷键 <strong>Ctrl + Shift + I</strong>，选择图片路径即可</p><h2 id="第三种"><a href="#第三种" class="headerlink" title="第三种"></a>第三种</h2><p>采用截图软件，我推荐大家一款软件 ——<strong>Snipaste</strong>，可以快速截图并进行粘贴，快捷键 <strong>F1</strong>，进行截图，<strong>Ctrl + C</strong>，进行复制，<strong>Ctrl + V</strong>，进行粘贴，可以直接粘贴到文章内，然后就自动上传到图传内，很方便，还有很多好用的截图软件，我就不在这里说了</p><p>如果你在电脑上登录 QQ，也可以通过快捷键 <strong>Ctrl + Alt + A</strong>，进行快速截图并进行复制粘贴，直接粘贴到文章中即可。</p><h1 id="问题集锦"><a href="#问题集锦" class="headerlink" title="问题集锦"></a>问题集锦</h1><h2 id="错误一：-Failed-to-fetch"><a href="#错误一：-Failed-to-fetch" class="headerlink" title="错误一： Failed to fetch"></a>错误一： Failed to fetch</h2><p>这个问题一般是因为端口不一致而导致的，Typora 监听的端口号为 36677，如何解决呢？</p><p>解决办法：</p><p>打开 PicGo 软件，然后依次打开 <code>PicGo设置</code>👉<code>设置Server</code>，查看当前的端口号，如果不是 36677，则将监听端口号修改为 36677 即可。</p><p>不过有的时候，我们的老朋友 Failed to fetch 还是如约而至，打开端口设置一看，怎么变成了 366771？？？？</p><p>问题在于端口冲突，如果你打开了多个 picgo 程序，就会端口冲突，<strong>picgo 自动帮你把 36677 端口改为 366771 端口</strong>，导致错误。log 文件里也写得很清楚。</p><p><code>解决方法</code>：<strong>先把 picgo 中的端口设置改回 36677，然后退出所有 picgo 程序</strong>，再使用 typora 上传功能（会自动启动 picgo 程序）</p><h2 id="错误二：-“success”-false"><a href="#错误二：-“success”-false" class="headerlink" title="错误二：{“success”,false}"></a>错误二：{“success”,false}</h2><p>这个错误相信也有很多小伙伴遇到了，原因是<strong>文件名冲突</strong>了，如果你上传过一张 image1.jpg 的图片，再上传名称一样的图片就会失败，log 日志中也会写道。</p><p>办法也很简单，打开 picgo 设置，将【<strong>时间戳重命名】打开</strong>即可，再次上传即可成功！另外还有一件事就是目前PicGo.app不支持上传网络图片，所以我们目前只能上传本地图片(我被这个坑死了）。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20210810183614.jpg" alt="1619489055707b158a827febd380b483ed6a9834c5f2f10ed"></p><p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114637.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114637.png" alt="img"></a></p><hr><p>友情提醒：</p><p>PicGo 的日志 (log) 文件是个好东西，如果出现报错，图片上传不成功的情况，大家可以打开日志看看，根据日志输出，然后自己尝试解决，百度是个好东西！😎😎😎</p><p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114257.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114257.png" alt="img"></a></p><p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/2020-05-01_11-43-27.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/2020-05-01_11-43-27.png" alt="img"></a></p><hr><p>参考：<a href="https://zhuanlan.zhihu.com/p/114175770" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/114175770</a></p><blockquote><p><strong>文章作者:</strong> <a href="mailto:undefined" target="_blank" rel="noopener">Yafine</a></p><p><strong>文章链接:</strong> <a href="https://yafine-blog.cn/posts/4e9b.html" target="_blank" rel="noopener">https://yafine-blog.cn/posts/4e9b.html</a></p><p><strong>版权声明:</strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yafine-blog.cn/" target="_blank" rel="noopener">过客～励む</a>！</p></blockquote>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>记一次反挖矿病毒（转）</title>
       <link href="/2021/08/10/ji-yi-ci-fan-wa-kuang-bing-du-zhuan/"/>
       <url>/2021/08/10/ji-yi-ci-fan-wa-kuang-bing-du-zhuan/</url>
@@ -144,9 +157,9 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
-            
             <tag> pytorch </tag>
+            
+            <tag> 深度学习 </tag>
             
             <tag> Tensor </tag>
             
@@ -175,19 +188,19 @@
       
         <tags>
             
-            <tag> 机器学习 </tag>
-            
-            <tag> 深度学习 </tag>
-            
-            <tag> pytorch </tag>
+            <tag> LeNet </tag>
             
             <tag> 神经网络 </tag>
             
-            <tag> CNN </tag>
-            
             <tag> CIFAR10 </tag>
             
-            <tag> LeNet </tag>
+            <tag> pytorch </tag>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> CNN </tag>
             
         </tags>
       
@@ -212,21 +225,21 @@
       
         <tags>
             
-            <tag> 机器学习 </tag>
+            <tag> 神经网络 </tag>
             
-            <tag> 数据集 </tag>
-            
-            <tag> 深度学习 </tag>
+            <tag> CIFAR10 </tag>
             
             <tag> pytorch </tag>
             
-            <tag> 神经网络 </tag>
+            <tag> 深度学习 </tag>
+            
+            <tag> 机器学习 </tag>
             
             <tag> CNN </tag>
             
-            <tag> python </tag>
+            <tag> 数据集 </tag>
             
-            <tag> CIFAR10 </tag>
+            <tag> python </tag>
             
         </tags>
       
@@ -809,13 +822,13 @@
       
         <tags>
             
+            <tag> 机器学习 </tag>
+            
             <tag> numpy </tag>
             
             <tag> matplotlib </tag>
             
             <tag> math </tag>
-            
-            <tag> 机器学习 </tag>
             
             <tag> 梯度下降 </tag>
             

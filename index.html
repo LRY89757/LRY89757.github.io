@@ -812,27 +812,6 @@ $(function () {
     
     
     <div class="col s12" >
-        <div class="post-card" style="background-image: url('/medias/banner/3.jpg')">
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                    <a href="/categories/数据集/" class="category" target="_blank">数据集</a>
-                    
-                </div>
-                <a href="/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/" target="_blank">
-                    <h3 class="post-title">CIFAR10 dataset and reading</h3>
-                </a>
-                <p class="post-description">I used the MNIST data set to practice before, and the most common python operation was used to read. This time I learned CNN and started to contact the DIFAR-10 data set and tried to use the framework pytorch to read data for classification.</p>
-                <a href="/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
-                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
         <div class="post-card" style="background-image: url('/medias/featureimages/nn_lenet3.png')">
             <div class="post-body">
                 <div class="post-categories">
@@ -845,6 +824,27 @@ $(function () {
                 </a>
                 <p class="post-description">学了那么长时间的神经网络以及各个机器学习算法的手动numpy底层实现， 也掉了好多头发，终于也算是对这些算法有了算是比较本质的理解。接下来终于可以接触真正的深度学习库了。还是很高兴的，终于可以当调参侠了😎！</p>
                 <a href="/2021/08/07/lenet-shi-xian-cifar10-fen-lei/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/banner/3.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/数据集/" class="category" target="_blank">数据集</a>
+                    
+                </div>
+                <a href="/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/" target="_blank">
+                    <h3 class="post-title">CIFAR10 dataset and reading</h3>
+                </a>
+                <p class="post-description">I used the MNIST data set to practice before, and the most common python operation was used to read. This time I learned CNN and started to contact the DIFAR-10 data set and tried to use the framework pytorch to read data for classification.</p>
+                <a href="/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/" target="_blank"
                         class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                 </a>
@@ -973,6 +973,39 @@ $(function () {
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/08/10/typora-ji-cheng-picgo-tu-chuang-fu-wu/" target="_blank">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Typora集成PicGo图床服务">
+                            
+                            <span class="card-title">Typora集成PicGo图床服务</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            前言给大家推送一波福利，新版本的 Markdown 写作利器 ——Typora，集成了 PicGo 服务，文章插入图片即可通过 PicGo 服务上传到图床内。废话不多说，直接开门见山！
+第一步安装 PicGo 软件，接着图床的搭建，并进行相
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-10
+                            </span>
+                            <span class="publish-author">
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -1246,12 +1279,12 @@ $(function () {
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/深度学习/" target="_blank">
-                            <span class="chip bg-color">深度学习</span>
-                        </a>
-                        
                         <a href="/tags/pytorch/" target="_blank">
                             <span class="chip bg-color">pytorch</span>
+                        </a>
+                        
+                        <a href="/tags/深度学习/" target="_blank">
+                            <span class="chip bg-color">深度学习</span>
                         </a>
                         
                         <a href="/tags/Tensor/" target="_blank">
@@ -1304,32 +1337,32 @@ $(function () {
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/机器学习/" target="_blank">
-                            <span class="chip bg-color">机器学习</span>
-                        </a>
-                        
-                        <a href="/tags/深度学习/" target="_blank">
-                            <span class="chip bg-color">深度学习</span>
-                        </a>
-                        
-                        <a href="/tags/pytorch/" target="_blank">
-                            <span class="chip bg-color">pytorch</span>
+                        <a href="/tags/LeNet/" target="_blank">
+                            <span class="chip bg-color">LeNet</span>
                         </a>
                         
                         <a href="/tags/神经网络/" target="_blank">
                             <span class="chip bg-color">神经网络</span>
                         </a>
                         
-                        <a href="/tags/CNN/" target="_blank">
-                            <span class="chip bg-color">CNN</span>
-                        </a>
-                        
                         <a href="/tags/CIFAR10/" target="_blank">
                             <span class="chip bg-color">CIFAR10</span>
                         </a>
                         
-                        <a href="/tags/LeNet/" target="_blank">
-                            <span class="chip bg-color">LeNet</span>
+                        <a href="/tags/pytorch/" target="_blank">
+                            <span class="chip bg-color">pytorch</span>
+                        </a>
+                        
+                        <a href="/tags/深度学习/" target="_blank">
+                            <span class="chip bg-color">深度学习</span>
+                        </a>
+                        
+                        <a href="/tags/机器学习/" target="_blank">
+                            <span class="chip bg-color">机器学习</span>
+                        </a>
+                        
+                        <a href="/tags/CNN/" target="_blank">
+                            <span class="chip bg-color">CNN</span>
                         </a>
                         
                     </div>
@@ -1374,36 +1407,36 @@ $(function () {
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/机器学习/" target="_blank">
-                            <span class="chip bg-color">机器学习</span>
+                        <a href="/tags/神经网络/" target="_blank">
+                            <span class="chip bg-color">神经网络</span>
                         </a>
                         
-                        <a href="/tags/数据集/" target="_blank">
-                            <span class="chip bg-color">数据集</span>
-                        </a>
-                        
-                        <a href="/tags/深度学习/" target="_blank">
-                            <span class="chip bg-color">深度学习</span>
+                        <a href="/tags/CIFAR10/" target="_blank">
+                            <span class="chip bg-color">CIFAR10</span>
                         </a>
                         
                         <a href="/tags/pytorch/" target="_blank">
                             <span class="chip bg-color">pytorch</span>
                         </a>
                         
-                        <a href="/tags/神经网络/" target="_blank">
-                            <span class="chip bg-color">神经网络</span>
+                        <a href="/tags/深度学习/" target="_blank">
+                            <span class="chip bg-color">深度学习</span>
+                        </a>
+                        
+                        <a href="/tags/机器学习/" target="_blank">
+                            <span class="chip bg-color">机器学习</span>
                         </a>
                         
                         <a href="/tags/CNN/" target="_blank">
                             <span class="chip bg-color">CNN</span>
                         </a>
                         
-                        <a href="/tags/python/" target="_blank">
-                            <span class="chip bg-color">python</span>
+                        <a href="/tags/数据集/" target="_blank">
+                            <span class="chip bg-color">数据集</span>
                         </a>
                         
-                        <a href="/tags/CIFAR10/" target="_blank">
-                            <span class="chip bg-color">CIFAR10</span>
+                        <a href="/tags/python/" target="_blank">
+                            <span class="chip bg-color">python</span>
                         </a>
                         
                     </div>
@@ -1677,76 +1710,6 @@ $(function () {
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/08/04/suan-fa-shua-ti-quan-ji-lu/" target="_blank">
-                        <div class="card-image">
-                            
-                            <img src="https://z3.ax1x.com/2021/08/05/fVSREt.png" class="responsive-img" alt="算法刷题全记录">
-                            
-                            <span class="card-title">算法刷题全记录</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            学校要求暑假刷算法题，上个寒假刷的题（有好多好多都是不会抄的）几乎上都快忘完了，正逢上我创建个人博客，算是把刷过的题都做一个记录，也算是个记录整理一下思路，以后忘了还可以看看当时的思路.
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/算法题/" class="post-category" target="_blank">
-                                    算法题
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/python/" target="_blank">
-                            <span class="chip bg-color">python</span>
-                        </a>
-                        
-                        <a href="/tags/数据结构/" target="_blank">
-                            <span class="chip bg-color">数据结构</span>
-                        </a>
-                        
-                        <a href="/tags/C/" target="_blank">
-                            <span class="chip bg-color">C</span>
-                        </a>
-                        
-                        <a href="/tags/栈/" target="_blank">
-                            <span class="chip bg-color">栈</span>
-                        </a>
-                        
-                        <a href="/tags/洛谷/" target="_blank">
-                            <span class="chip bg-color">洛谷</span>
-                        </a>
-                        
-                        <a href="/tags/算法/" target="_blank">
-                            <span class="chip bg-color">算法</span>
-                        </a>
-                        
-                        <a href="/tags/数学/" target="_blank">
-                            <span class="chip bg-color">数学</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1803,7 +1766,7 @@ $(function () {
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">31.9k</span> 字
+                <span class="white-color">32.9k</span> 字
             
 
             
@@ -2034,5 +1997,5 @@ $(function () {
             </script>
         
 
-    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
