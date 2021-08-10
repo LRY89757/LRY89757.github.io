@@ -4,6 +4,99 @@
   
     
     <entry>
+      <title>记一次反挖矿病毒（转）</title>
+      <link href="/2021/08/10/ji-yi-ci-fan-wa-kuang-bing-du-zhuan/"/>
+      <url>/2021/08/10/ji-yi-ci-fan-wa-kuang-bing-du-zhuan/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>作者：<a href="https://home.cnblogs.com/u/wq242424/" target="_blank" rel="noopener">丨o聽乄雨o丨</a></p><p>出处：<a href="http://www.cnblogs.com/wq242424/" target="_blank" rel="noopener">http://www.cnblogs.com/wq242424/</a></p><p>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。</p></blockquote><p>这两天实验室电脑中度了，无故被占用50%cpu挖矿，且运行任何程序都会killed。</p><p>运行原理类似于，自动网上下载挖矿程序，然后rm删除程序，让你无从找到程序，有时候还会用ld.so.preload伪装，使你看不到占用资源的挖矿程序名称，在试了各种办法后，最有效的如下：</p><p><strong>一、杜绝恶意IP访问</strong></p><p>执行netstat查询外部ip，</p><pre class="line-numbers language-shell"><code class="language-shell">1 $ netstat -ant<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>发现来自于荷兰的一个ip：</p><pre class="line-numbers language-shell"><code class="language-shell">1 45.153.184.134<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>禁用ip：</p><pre class="line-numbers language-shell"><code class="language-shell">1 $ iptables -I INPUT -s  45.153.0.0/16 -j DROP2 # 保存规则3 $ iptables-save > /etc/sysconfig/iptables4 # 使规则生效5 $ iptables -L<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这样就禁止了此ip的访问。</p><p>有时，黑客会利用自启动程序在开机时对iptables进行修改，所以需要事先对iptables进行清空，在此，记录下重写iptables的过程。</p><p>清除所有规则：</p><pre class="line-numbers language-shell"><code class="language-shell">1 $ iptables -F2 $ iptables -X3 $ iptables -Z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>添加一些常用端口：</p><pre class="line-numbers language-shell"><code class="language-shell"> 1 #允许本地回环接口(即运行本机访问本机) 2 $ iptables -A INPUT -i lo -j ACCEPT 3 # 允许已建立的或相关连的通行 4 $ iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT 5 #允许所有本机向外的访问 6 $ iptables -A OUTPUT -j ACCEPT 7 # 允许访问22,21,20,80端口 8 $ iptables -A INPUT -p tcp --dport 22 -j ACCEPT 9 $ iptables -A INPUT -p tcp --dport 21 -j ACCEPT10 $ iptables -A INPUT -p tcp --dport 20 -j ACCEPT11 $ iptables -A INPUT -p tcp --dport 80 -j ACCEPT12 # 允许127.0.0.113 $ iptables -A INPUT -s 127.0.0.1 -d 127.0.0.1 -j ACCEPT14 $ iptables -A OUTPUT -s 127.0.0.1 -d 127.0.0.1 -j ACCEP15 #16 $ iptables -A OUTPUT -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT17 $ iptables -A OUTPUT  -p tcp --sport 80 -m state --state ESTABLISHED -j ACCEPT18 #允许ping19 $ iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT20 #运行自己指定的网段21 $ iptables -A INPUT -p tcp -s 172.16.0.0/16 --dport 22 -j ACCEPT22 #禁止其他未允许的规则访问23 $ iptables -A INPUT -j REJECT  #（注意：如果22端口未加入允许规则，SSH链接会直接断开。）24 $ iptables -A FORWARD -j REJECT<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>查看网络通信，查找异常IP：</p><pre class="line-numbers language-shell"><code class="language-shell">1 $ netstat -ant 或者 netstat -antp<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><a href="https://imgtu.com/i/fJmhB6" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/10/fJmhB6.png" alt="IP"></a></p><p>禁止挖矿网段：</p><pre class="line-numbers language-shell"><code class="language-shell">1 $ iptables -I INPUT -s 198.251.0.0/16 -j DROP2 $ iptables -I INPUT -s 45.153.0.0/16 -j DROP3 $ iptables -I INPUT -s 54.38.193.170 -j DROP<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>只允许内网网段：</p><pre class="line-numbers language-shell"><code class="language-shell">1 $ iptables -A INPUT -p tcp -s 172.16.0.0/16 --dport 22 -j ACCEPT<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>到此，规则就重写完成，记得保存规则生效：</p><pre class="line-numbers language-shell"><code class="language-shell">1 $ iptables-save > /etc/sysconfig/iptables2 $ iptables -L<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>设置iptables开机启动：</p><pre class="line-numbers language-shell"><code class="language-shell">1 $ chkconfig --level 345 iptables on2 $service iptables save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><strong>二、删除挖矿病毒源程序</strong></p><p>可以参考<a href="https://blog.csdn.net/weixin_45284355/article/details/110728620" target="_blank" rel="noopener">https://blog.csdn.net/weixin_45284355/article/details/110728620</a> 这篇博客，跟我遇到的问题几乎一样。</p><p>在 /bin/ 下找到 sysdrr 挖矿源病毒程序，并删除！</p><p>同时也可以使用 find / -name sysdrr 全盘查找源病毒程序，并删除！</p><p>在 /etc/cron.monthly/ , /etc/cron.weekly/ , /etc/cron.daily/ , /etc/cron.hourly/ 这些定时目录里找到sync程序并删除！</p><p>用 crontab -l 查看定时任务并删除所有异常定时任务。</p><p>上述sysdrr和sync直接删除不了，就需要先用 chattr -R -i /bin/sysdrr 和 chattr -R -i /bin/sync ，在用 rm -f 删除！</p><p>这样就解决了挖矿病毒的问题。</p><p>至此，我们就成功啦！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 挖矿 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 挖矿 </tag>
+            
+            <tag> 比特币 </tag>
+            
+            <tag> 反挖矿 </tag>
+            
+            <tag> 挖矿病毒 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>EIP-1559只是开始（转）</title>
+      <link href="/2021/08/10/eip-1559-zhi-shi-kai-shi/"/>
+      <url>/2021/08/10/eip-1559-zhi-shi-kai-shi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="EIP-1559只是开始"><a href="#EIP-1559只是开始" class="headerlink" title="EIP-1559只是开始"></a><strong>EIP-1559只是开始</strong></h2><p>以太坊的伦敦升级于8月4日完成，其中包括了著名的EIP-1559。在EIP-1559推出至今，不到4天，已经烧毁了16,230.38个ETH（截止到写稿时），价值接近5,000万美元。当真实的ETH被烧毁时，人们终于感受到EIP-1559的燃烧能量，看到每天都会有大量的ETH被烧掉。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdnimg.cn/img_convert/bd0493633e96ae3d431424151d76e4fb.png" alt="oh">)（EIP-1559推出后烧毁的ETH总量，Ultrasound.money)</p><p>当然，只有EIP-1559无法导致ETH的通缩。当前每天ETH的新增量大约为13,000个，EIP-1559启动后第一天以太坊烧毁的ETH量为4791.5个。EIP-1559大约使ETH新增率降低30%左右（当然ETH的销毁量也会根据网络的使用情况发生变化，这里只是根据当前情况的大概预估）</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdnimg.cn/img_convert/1ab262af5685209692bdd1606447b82c.png" alt="my">)（EIP-1559推出之后第一天烧毁的ETH量，etherchain.org)</p><p>蓝狐笔记在之前的文章《<a href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ%3D%3D&chksm=9b551eadac2297bbf939efb5ff7d33c98703a8f0ac52f5e715796747f052abb857b8a3f3ddea&idx=1&mid=2247491643&scene=21&sn=1c03eba5cd5a2d1fc9bff0024c2c8270#wechat_redirect" target="_blank" rel="noopener">EIP-1559与以太坊之路</a>》中也提到，未来半年多，以太坊有三件重要的事情，其中影响最大的还是POS的融合，它对以太坊和ETH的影响会远超EIP-1559，也就是说，EIP-1559只是拉开大幕，大戏还在路上。PoS的融合会直接改变ETH的性质。</p><h2 id="PoS融合才是大戏"><a href="#PoS融合才是大戏" class="headerlink" title="PoS融合才是大戏"></a><strong>PoS融合才是大戏</strong></h2><p>减半效应的概念来自于比特币每四年一次的减半，每次减半导致其新增发行的大幅下降。当新增量下降，而需求量保持不变或者上升时，就会推动价格的上升。关于BTC的减半，可以参考蓝狐笔记之前文章《<a href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ%3D%3D&chksm=9b56e2c2ac216bd4a77695b9b7c5b21283976f2e54697d875dbfae1ae195d853d9f510a8a083&idx=1&mid=2247490644&scene=21&sn=b99c5afae4c6741dd1dd39fe80f4128e#wechat_redirect" target="_blank" rel="noopener">比特币的减半效应与ETH2.0的质押效应</a>》、《<a href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ%3D%3D&chksm=9b56e920ac216036da9f4b0a9b161122da35627bf6a5328be972d28f5725f300f61ea4c4d74a&idx=1&mid=2247489462&scene=21&sn=dba87af98559637ed9e71974e23cbd7a#wechat_redirect" target="_blank" rel="noopener">BTC的减半效应：如何计入价格？</a>》。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdnimg.cn/img_convert/8baf69163fdeaa486a398c22338a8550.png" alt="god">)（关于BTC减半效应的形象展示，来源于MoonCapital)</p><p>这在比特币的历史上曾经多次得到证明。如今，以太坊社区中的一部分人也将减半效应概念运用到以太坊上，而且相对于btc的减半来说，是三倍减半。那么，如何理解以太坊的三倍减半概念？</p><h2 id="三倍减半"><a href="#三倍减半" class="headerlink" title="*三倍减半"></a>*三倍减半</h2><p>目前ETH年增发率大约为4%，每年新增大约460万多个ETH，平均每日新增大约13,000个左右，假设PoS新增发行0.4%（根据质押率会有变化），平均日新增大约13,00多个ETH。也就是说，按照当前每日新增为13,000个ETH，减半之后为6,500个ETH，第二次减半则3,250个ETH，第三次减半为1,625个ETH。从13,000到1,625，一共缩减87.5%，接近于90%的缩减，大约相当于3倍减半。（注：这里的具体数字不是精确数字，根据具体情况，会有一定的上下浮动，主要是为了说明量级）</p><p>当每天新增ETH仅为1,625个左右时，即便是如今的日烧毁量也超过这个日新增量，这会导致ETH进入通缩的状态。</p><p>BTC的总量是恒定的，不会通缩。而ETH随着PoS的到来，有很大概率进入通缩的状态。这导致ETH会变得越来越稀缺。从这里也可以看出，BTC和ETH经济机制的不同。</p><p>当然，需要着重强调的是，这里无法评判谁的经济政策更好。如果从长远生态发展看，不一定通缩就一定是好的，一个越来越稀缺的ETH是否是好事，目前还不能下定论，这个需要辩证来看问题。</p><p>不过，仅从供需的市场角度，这会导致对ETH的需求不断增加，供应的减少会带来压力，会导致ETH价值上涨。一个通缩的ETH会面临越来越大的需求竞争。这个竞争不仅来自于DeFi的锁定，也来自于PoS的质押需求。</p><h2 id="PoS质押"><a href="#PoS质押" class="headerlink" title="*PoS质押"></a>*PoS质押</h2><p>截止到蓝狐笔记写稿时为止，仅仅是8个多月的时间，ETH2.0质押合约中存入的ETH数量高达6,548,125个ETH，占据ETH总量的5.6%左右。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdnimg.cn/img_convert/48074e0aa6ee539d0834ca45a46e6ca3.png" alt="az">)（存入ETH2.0质押合约的ETH量增长趋势，beaconcha.io)</p><p>随着后续PoS融合，随着矿工的迁移，预计质押的PoS还会大幅度上升。根据蓝狐笔记的预估，未来存入ETH2.0质押合约中的ETH有机会达到2,000到3,000万个以上，甚至更高，占据ETH总量20%以上。（注：这里只是预估，还不是现实）</p><p>在这种情况下，从流通市场中，会有大量的ETH被移走，一是每天有真实的ETH被烧毁，二是有越来越多的ETH进入到ETH2.0的质押合约，以赚取ETH的收益。</p><h2 id="DeFi的锁定"><a href="#DeFi的锁定" class="headerlink" title="*DeFi的锁定"></a>*DeFi的锁定</h2><p>截止到蓝狐笔记写稿时，目前DeFi中锁定的ETH超过950万个，超过ETH流通量的8%，预计锁定在DeFi中的ETH很快会突破1000万个。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://img-blog.csdnimg.cn/img_convert/fb2d2815f4fa8f2cf9e6440d3c03705b.png" alt="%%%">)（ETH在DeFi中的锁定量,DeFiPulse)</p><p>随着后续DeFi协议的发展，尤其是借贷、DEX、衍生品等领域的继续发展，DeFi领域对ETH的需求也是逐步增加的。未来DeFi领域对ETH的需求也有可能会突破2000万个。（注：这只是预估，并非发生的现实）</p><p>那么，未来PoS+DeFi大概会锁定市场中接近40-50%的ETH，甚至更高的比例，而每天的新增发行量有可能小于每日的烧毁量。即便是PoS+DeFi的锁定量不变，整个市场上流通的ETH也会越来越少。</p><h2 id="ETH走向通缩是大概率事件"><a href="#ETH走向通缩是大概率事件" class="headerlink" title="ETH走向通缩是大概率事件"></a><strong>ETH走向通缩是大概率事件</strong></h2><p>如果以太坊PoS融合顺利，在这个前提下，考虑到其年新增发行率的下降以及ETH烧毁量的情况，ETH有很大的概率走向通缩，而通缩的ETH会对其供求关系产生极其重要的影响。与此同时，PoS的机制导致对ETH的质押需求在增加，加上DeFi协议对ETH的需求也在增长，未来半年之后的ETH可能是完全不同的ETH。</p><p>当然，未来政策层面的变化，有可能会对PoS产生一些不利的影响，但长远看，如果这个影响只是降低其收益率，并不是不让它存在，那么，从这个角度，虽然会面临阻力，但趋势还会继续。</p><blockquote><p>本文转载自：<a href="https://blog.csdn.net/weixin_44383880" target="_blank" rel="noopener">巴比特资讯</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 挖矿 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 挖矿 </tag>
+            
+            <tag> EIP-1559 </tag>
+            
+            <tag> 比特币 </tag>
+            
+            <tag> 以太坊 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>以太坊GAS费爆棚，矿工疯狂扫货高端笔记本挖矿（转）</title>
+      <link href="/2021/08/10/yi-tai-fang-gas-fei-bao-peng-kuang-gong-feng-kuang-sao-huo-gao-duan-bi-ji-ben-wa-kuang/"/>
+      <url>/2021/08/10/yi-tai-fang-gas-fei-bao-peng-kuang-gong-feng-kuang-sao-huo-gao-duan-bi-ji-ben-wa-kuang/</url>
+      
+        <content type="html"><![CDATA[<p>一句话，市场似乎已经到了“闭眼梭哈也致富”的阶段。</p><p>很多挖矿或者使用Uniswap等需要用到以太坊链上转账的投资人发现，现在GAS费太贵了，有多贵呢？一个简单的交易就需要几百块，复杂的合约交互，比如挖个矿，没有几千块是不行了。DeFi，普通人彻底玩不起了。羊毛也不舍得薅了。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8xVk8yRlNpY1JHVlJOa0NxSld1ZnhyRkl5TFRBdUFpYUJaRlBXREF4clBVSURqeFVLNWQwNUhNSHhHdVVxYk15MXo3U1FXY0JGMXZxbm0wQ3Z3ZFRtQmRnLzY0MA?x-oss-process=image/format,png" alt="……"></p><p>▲以太坊相关数据（6日下午2点，OKlink）</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8xVk8yRlNpY1JHVlJOa0NxSld1ZnhyRkl5TFRBdUFpYUJaNGR6NGt5ZXVkMjk1dXhUaFZlSWlhQ1VJaGljOGlidlNBUzFTY3JCdVd5RmdpY00zaWFyaWE4cTJPUHlRLzY0MA?x-oss-process=image/format,png" alt="Gwei"></p><p>▲某挖矿项目的GAS费用，487GAS等于近千元人民币</p><p>据Tokenview数据显示，2月5日以太坊链上手续费总和达到12827.06 ETH（约为3018.9千万美元），单日GAS均价为150 GWei，单笔交易手续费平均值为24.7美元，属于近两年的最高位。</p><p>行业大V“比特币超级君”就说：“以太坊高昂的手续费正在驱赶绝大多数defi矿工。”</p><p>那什么时候GAS便宜呢？看下图。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8xVk8yRlNpY1JHVlJOa0NxSld1ZnhyRkl5TFRBdUFpYUJaS25aVFpXN2phWnl0SFozV2ljV1ZBMGNhbWhOS2lhdlJ2ZEI5clRJejVzTzFZV1ZNSVhxaWNuS21RLzY0MA?x-oss-process=image/format,png" alt="img"></p><p>通过数据可以发现，整体而言，<strong>一周的下午1点到3点这个时间段的GAS费用最便宜</strong>，只有80Gwei。凌晨、午夜的费用相对最贵，可以轻松翻越400Gwei。</p><p>所以，如果你要通过DeFi应用交易，或是要去某个未发币的应用里薅羊毛，这个图可以让你一眼看GAS费用最“划算”的时间点。</p><p>当然，这个数据是动态的，变化非常快，更多实时数据可以通过一个叫做gasnow的网站查看，这是以太坊最大的矿池星火矿池做的小网站，它分析处理了以太坊的链上数据后给出了针对GAS费用的预测。网站如下，可点击收藏：<a href="https://gasnow.sparkpool.com/" target="_blank" rel="noopener">https://gasnow.sparkpool.com/</a></p><h2 id="1"><a href="#1" class="headerlink" title="1"></a><strong><em>1</em></strong></h2><h2 id="DeFi疯狂，以太坊矿工扫货笔记本挖矿"><a href="#DeFi疯狂，以太坊矿工扫货笔记本挖矿" class="headerlink" title="DeFi疯狂，以太坊矿工扫货笔记本挖矿"></a>DeFi疯狂，以太坊矿工扫货笔记本挖矿</h2><p>数据显示，以太坊矿工在一小时内赚了350万美元，这是迄今为止最高的每小时采矿收入。</p><p>但是，众所周知，因为疫情等原因，2020年以来高端显卡的供货不足，有钱也买不到。随着ETH价格突破前高，矿工们已经把注意力投降向了游戏本，尤其是搭载了最新最强显卡的高端机型。</p><p>最近，鱼池就做了一个热门小视频，主持人拿着一台搭载了NVIDIA3060显卡的华硕笔记本去星巴克薅羊毛。数据显示，该游戏本可提供40MH/S的算力，结合难度和币价，日收益约23元，260天回本，年化140%的回报率。电费白嫖。</p><p>这不是段子。目前，确实有一部分矿工在扫货笔记本，他们要么把笔记本肢解，取出显卡重新组装为矿机，要么直接安上软件挖矿。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy8xVk8yRlNpY1JHVlJOa0NxSld1ZnhyRkl5TFRBdUFpYUJaWjVGUEoxSFpYd25QMUN4VFMzc210NktueFdDeE1MTko1aE5yVWt5UWljbHRjYmprYlpQVE1pYWcvNjQw?x-oss-process=image/format,png" alt="走起！！"></p><h2 id="2"><a href="#2" class="headerlink" title="2"></a><strong><em>2</em></strong></h2><h2 id="以太坊拥堵，交易所公链和二层网络的机会来了？"><a href="#以太坊拥堵，交易所公链和二层网络的机会来了？" class="headerlink" title="以太坊拥堵，交易所公链和二层网络的机会来了？"></a>以太坊拥堵，交易所公链和二层网络的机会来了？</h2><p>以太坊堵了，GAS费贵了，对谁最有利？无疑是以“太坊杀手”，比如Cardano、Polkadot、Cosmos等。</p><p>结合今天的市场热点，币安的bsc，火币的heco，ok交易所的okchain，这些交易所公链可能也将获得市场青睐。</p><p>另外，值得期待的就是Layer2（二层网络）类项目。但不得不说，Layer2的目前还难当大任，炒作噱头超过了实际的价值。</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL3N6X21tYml6X2dpZi9RamNKakQ1VVJWa1Vhb0Q2TXdpY2pOSlMxbWlhaWJYaWI3eDRyQWh4Wm5KRWNaRXNxdWxNTjJsS0xjQ3hOR1N0UWFNQ2tGR3JReUZUVFJpYmtCb2FEWXJoYzJBLzY0MA?x-oss-process=image/format,png" alt="走好！"></p><blockquote><p>本文转载自：<a href="https://blog.csdn.net/weixin_44383880" target="_blank" rel="noopener">巴比特资讯</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 挖矿 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 挖矿 </tag>
+            
+            <tag> 比特币 </tag>
+            
+            <tag> 以太坊 </tag>
+            
+            <tag> 区块链 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>梅西，诺坎普永远是你的家</title>
       <link href="/2021/08/09/mei-xi-nuo-kan-pu-yong-yuan-shi-ni-de-jia/"/>
       <url>/2021/08/09/mei-xi-nuo-kan-pu-yong-yuan-shi-ni-de-jia/</url>
@@ -82,13 +175,13 @@
       
         <tags>
             
+            <tag> 机器学习 </tag>
+            
             <tag> 深度学习 </tag>
             
             <tag> pytorch </tag>
             
             <tag> 神经网络 </tag>
-            
-            <tag> 机器学习 </tag>
             
             <tag> CNN </tag>
             
@@ -119,6 +212,8 @@
       
         <tags>
             
+            <tag> 机器学习 </tag>
+            
             <tag> 数据集 </tag>
             
             <tag> 深度学习 </tag>
@@ -126,8 +221,6 @@
             <tag> pytorch </tag>
             
             <tag> 神经网络 </tag>
-            
-            <tag> 机器学习 </tag>
             
             <tag> CNN </tag>
             
@@ -534,7 +627,7 @@
       <link href="/2021/08/02/readme/"/>
       <url>/2021/08/02/readme/</url>
       
-        <content type="html"><![CDATA[<h1 id="逯润雨的博客"><a href="#逯润雨的博客" class="headerlink" title="逯润雨的博客"></a>逯润雨的博客</h1><p>这是我本人的博客平台，欢迎大家前来访问🥳<a href="https://lry89757.github.io/">https://lry89757.github.io/</a><br>刚建成没多久，有许多功能都不是很完善，我以后会在readme文档中记录更新功能与修改BUG与新的相关文章的。  </p><h2 id="8-10-0-00第十二次更新"><a href="#8-10-0-00第十二次更新" class="headerlink" title="8.10 0:00第十二次更新"></a>8.10 0:00第十二次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一篇博客，关于梅西</li><li>加了个友链</li><li>待完成：评论</li></ol><h2 id="8-7-14-13第十一次更新"><a href="#8-7-14-13第十一次更新" class="headerlink" title="8.7 14:13第十一次更新"></a>8.7 14:13第十一次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了两篇博客，关于LeNet分类CIFAR10和常用tensor操作</li><li>解决了首页图片加载不出来的问题 <del>（换个小点儿的图片就行了）</del></li><li>待完成：评论+外链</li></ol><h2 id="8-6-22-44第十次更新"><a href="#8-6-22-44第十次更新" class="headerlink" title="8.6 22:44第十次更新"></a>8.6 22:44第十次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一个全英文的CIFAR-10数据集的详解<del>（英文水平太低，写了好长时间🤐）</del></li><li>待完成：评论+音乐外链</li></ol><h2 id="8-6-12-33第九次更新"><a href="#8-6-12-33第九次更新" class="headerlink" title="8.6 12:33第九次更新"></a>8.6 12:33第九次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一个项目</li><li>更新了shell指令的博客</li><li>解决了代码高亮</li><li>待完成：音乐部分、评论模块</li></ol><h2 id="8-5-23-48第八次更新"><a href="#8-5-23-48第八次更新" class="headerlink" title="8.5 23:48第八次更新"></a>8.5 23:48第八次更新</h2><hr><ol><li>更新了readme文档</li><li>把算法刷题的栈系列解析肝完了， 一共六篇博客</li><li>待完成：见第三次更新，不过最要紧的是代码高亮和音乐部分。</li></ol><h2 id="8-4-15-28第七次紧急更新！"><a href="#8-4-15-28第七次紧急更新！" class="headerlink" title="8.4 15:28第七次紧急更新！"></a>8.4 15:28第七次紧急更新！</h2><hr><p><strong>感谢帮忙测试朋友提出相关意见，我关停了网站对一些隐私做了紧急修改，感谢各位的帮助！</strong></p><h2 id="8-4-11-40第六次更新"><a href="#8-4-11-40第六次更新" class="headerlink" title="8.4 11:40第六次更新"></a>8.4 11:40第六次更新</h2><hr><ol><li>更新了readme文档</li><li>添加了转载限定规则模块采用知识共享署名 4.0 国际许可协议<del>（虽然我的文章不值得被转载）</del></li><li>取消了轮播图自动轮播，去掉了没用的音乐外链</li><li>增加了IP检测（excuse me ?)🤣😅</li><li>待完成：见第三次更新</li></ol><h2 id="8-3-15-39第五次更新"><a href="#8-3-15-39第五次更新" class="headerlink" title="8.3 15:39第五次更新"></a>8.3 15:39第五次更新</h2><hr><ol><li>更新了readme文档</li><li>博客：对于林俊杰最近事情的看法</li><li>加入了音乐播放功能哈哈哈哈！！😎😎当然目前的音乐都是我知道能够外链播放的，后期会继续整修的（没发现的朋友可以看页面左下角哦）</li><li>待完成：见第三次更新😬</li></ol><h2 id="8-2-22-25第四次更新"><a href="#8-2-22-25第四次更新" class="headerlink" title="8.2 22:25第四次更新"></a>8.2 22:25第四次更新</h2><hr><ol><li>更新了readme文档</li><li>友链增加了flylee，同班学霸</li><li>博客：写了一些对生活感想</li><li>进一步修改了markdown数学公式无法显示问题。</li><li>待完成：见第3次更新😁(我不催我自己！！！)</li></ol><h2 id="8-2-18-39第三次更新"><a href="#8-2-18-39第三次更新" class="headerlink" title="8.2 18:39第三次更新"></a>8.2 18:39第三次更新</h2><hr><p><del><em>看来刚建好博客更新的就是快啊……哈哈哈</em></del></p><ol><li>更新了readme文档😅</li><li>发布了2篇博客，一篇是读《在路上》后对生活的感想思考（有兴趣阅读的可以和我联系索要密码，破译出密码的大佬记得和我联系🤩），另一篇是常用的shell命令（git/nodejs/nvm/npm）集</li><li>实现了推荐置顶功能</li><li>待完成：<ul><li>二级目录</li><li>相册</li><li>代码高亮</li><li>评论</li></ul></li></ol><h2 id="8-2-14-28第二次更新"><a href="#8-2-14-28第二次更新" class="headerlink" title="8.2 14:28第二次更新"></a>8.2 14:28第二次更新</h2><hr><ol><li><p>更新了密码功能，对于一些文章实现了加密， <em>如果有小伙伴们对加密文章感兴趣，欢迎发邮件或是通过各种渠道联系我获取密码，顺便交个朋友👀</em>， 或者有关大佬可以选择直接尝试破译哦~那就更得交个朋友了😅</p></li><li><p>更新了readme文档</p></li><li><p>发布了一篇博客，关于一些数码小知识，并测试了密码功能。</p></li><li><p>待完成：</p><ul><li>代码高亮功能</li><li>二级目录</li><li>记录nvm、nodejs、npm踩坑历史的博客。</li><li>评论功能</li></ul></li></ol><h2 id="8-2-11-00-第一次更新"><a href="#8-2-11-00-第一次更新" class="headerlink" title="8.2  11:00 第一次更新"></a>8.2  11:00 第一次更新</h2><hr><ol><li>友链：修正了部分无法显示问题， 加进去了更多友链</li><li>发布了3篇新文章，全部都是关于numpy的小知识</li><li>增加mathjax已解决无法显示markdown数学公式问题</li><li>更新了readme文档</li><li>预计会进一步：  <ul><li>二级目录</li><li>一个博客记录nvm、nodejs、npm踩坑历史😖</li><li>评论模块</li><li>文章密码问题</li></ul></li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="逯润雨的博客"><a href="#逯润雨的博客" class="headerlink" title="逯润雨的博客"></a>逯润雨的博客</h1><p>这是我本人的博客平台，欢迎大家前来访问🥳<a href="https://lry89757.github.io/">https://lry89757.github.io/</a><br>刚建成没多久，有许多功能都不是很完善，我以后会在readme文档中记录更新功能与修改BUG与新的相关文章的。  </p><h2 id="8-10-12-03第十三次更新"><a href="#8-10-12-03第十三次更新" class="headerlink" title="8.10 12:03第十三次更新"></a>8.10 12:03第十三次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了3篇关于以太坊、反挖矿病毒的博客（转）</li><li>待完成：评论</li></ol><h2 id="8-10-0-00第十二次更新"><a href="#8-10-0-00第十二次更新" class="headerlink" title="8.10 0:00第十二次更新"></a>8.10 0:00第十二次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一篇博客，关于梅西</li><li>加了个友链</li><li>待完成：评论</li></ol><h2 id="8-7-14-13第十一次更新"><a href="#8-7-14-13第十一次更新" class="headerlink" title="8.7 14:13第十一次更新"></a>8.7 14:13第十一次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了两篇博客，关于LeNet分类CIFAR10和常用tensor操作</li><li>解决了首页图片加载不出来的问题 <del>（换个小点儿的图片就行了）</del></li><li>待完成：评论+外链</li></ol><h2 id="8-6-22-44第十次更新"><a href="#8-6-22-44第十次更新" class="headerlink" title="8.6 22:44第十次更新"></a>8.6 22:44第十次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一个全英文的CIFAR-10数据集的详解<del>（英文水平太低，写了好长时间🤐）</del></li><li>待完成：评论+音乐外链</li></ol><h2 id="8-6-12-33第九次更新"><a href="#8-6-12-33第九次更新" class="headerlink" title="8.6 12:33第九次更新"></a>8.6 12:33第九次更新</h2><hr><ol><li>更新了readme文档</li><li>增加了一个项目</li><li>更新了shell指令的博客</li><li>解决了代码高亮</li><li>待完成：音乐部分、评论模块</li></ol><h2 id="8-5-23-48第八次更新"><a href="#8-5-23-48第八次更新" class="headerlink" title="8.5 23:48第八次更新"></a>8.5 23:48第八次更新</h2><hr><ol><li>更新了readme文档</li><li>把算法刷题的栈系列解析肝完了， 一共六篇博客</li><li>待完成：见第三次更新，不过最要紧的是代码高亮和音乐部分。</li></ol><h2 id="8-4-15-28第七次紧急更新！"><a href="#8-4-15-28第七次紧急更新！" class="headerlink" title="8.4 15:28第七次紧急更新！"></a>8.4 15:28第七次紧急更新！</h2><hr><p><strong>感谢帮忙测试朋友提出相关意见，我关停了网站对一些隐私做了紧急修改，感谢各位的帮助！</strong></p><h2 id="8-4-11-40第六次更新"><a href="#8-4-11-40第六次更新" class="headerlink" title="8.4 11:40第六次更新"></a>8.4 11:40第六次更新</h2><hr><ol><li>更新了readme文档</li><li>添加了转载限定规则模块采用知识共享署名 4.0 国际许可协议<del>（虽然我的文章不值得被转载）</del></li><li>取消了轮播图自动轮播，去掉了没用的音乐外链</li><li>增加了IP检测（excuse me ?)🤣😅</li><li>待完成：见第三次更新</li></ol><h2 id="8-3-15-39第五次更新"><a href="#8-3-15-39第五次更新" class="headerlink" title="8.3 15:39第五次更新"></a>8.3 15:39第五次更新</h2><hr><ol><li>更新了readme文档</li><li>博客：对于林俊杰最近事情的看法</li><li>加入了音乐播放功能哈哈哈哈！！😎😎当然目前的音乐都是我知道能够外链播放的，后期会继续整修的（没发现的朋友可以看页面左下角哦）</li><li>待完成：见第三次更新😬</li></ol><h2 id="8-2-22-25第四次更新"><a href="#8-2-22-25第四次更新" class="headerlink" title="8.2 22:25第四次更新"></a>8.2 22:25第四次更新</h2><hr><ol><li>更新了readme文档</li><li>友链增加了flylee，同班学霸</li><li>博客：写了一些对生活感想</li><li>进一步修改了markdown数学公式无法显示问题。</li><li>待完成：见第3次更新😁(我不催我自己！！！)</li></ol><h2 id="8-2-18-39第三次更新"><a href="#8-2-18-39第三次更新" class="headerlink" title="8.2 18:39第三次更新"></a>8.2 18:39第三次更新</h2><hr><p><del><em>看来刚建好博客更新的就是快啊……哈哈哈</em></del></p><ol><li>更新了readme文档😅</li><li>发布了2篇博客，一篇是读《在路上》后对生活的感想思考（有兴趣阅读的可以和我联系索要密码，破译出密码的大佬记得和我联系🤩），另一篇是常用的shell命令（git/nodejs/nvm/npm）集</li><li>实现了推荐置顶功能</li><li>待完成：<ul><li>二级目录</li><li>相册</li><li>代码高亮</li><li>评论</li></ul></li></ol><h2 id="8-2-14-28第二次更新"><a href="#8-2-14-28第二次更新" class="headerlink" title="8.2 14:28第二次更新"></a>8.2 14:28第二次更新</h2><hr><ol><li><p>更新了密码功能，对于一些文章实现了加密， <em>如果有小伙伴们对加密文章感兴趣，欢迎发邮件或是通过各种渠道联系我获取密码，顺便交个朋友👀</em>， 或者有关大佬可以选择直接尝试破译哦~那就更得交个朋友了😅</p></li><li><p>更新了readme文档</p></li><li><p>发布了一篇博客，关于一些数码小知识，并测试了密码功能。</p></li><li><p>待完成：</p><ul><li>代码高亮功能</li><li>二级目录</li><li>记录nvm、nodejs、npm踩坑历史的博客。</li><li>评论功能</li></ul></li></ol><h2 id="8-2-11-00-第一次更新"><a href="#8-2-11-00-第一次更新" class="headerlink" title="8.2  11:00 第一次更新"></a>8.2  11:00 第一次更新</h2><hr><ol><li>友链：修正了部分无法显示问题， 加进去了更多友链</li><li>发布了3篇新文章，全部都是关于numpy的小知识</li><li>增加mathjax已解决无法显示markdown数学公式问题</li><li>更新了readme文档</li><li>预计会进一步：  <ul><li>二级目录</li><li>一个博客记录nvm、nodejs、npm踩坑历史😖</li><li>评论模块</li><li>文章密码问题</li></ul></li></ol>]]></content>
       
       
       <categories>
@@ -716,13 +809,13 @@
       
         <tags>
             
-            <tag> 机器学习 </tag>
-            
             <tag> numpy </tag>
             
             <tag> matplotlib </tag>
             
             <tag> math </tag>
+            
+            <tag> 机器学习 </tag>
             
             <tag> 梯度下降 </tag>
             

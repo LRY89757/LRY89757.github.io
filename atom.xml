@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-09T17:08:09.485Z</updated>
+  <updated>2021-08-10T03:59:42.509Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,105 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次反挖矿病毒（转）</title>
+    <link href="https://lry89757.github.io/2021/08/10/ji-yi-ci-fan-wa-kuang-bing-du-zhuan/"/>
+    <id>https://lry89757.github.io/2021/08/10/ji-yi-ci-fan-wa-kuang-bing-du-zhuan/</id>
+    <published>2021-08-10T03:54:17.000Z</published>
+    <updated>2021-08-10T03:59:42.509Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;作者：&lt;a href=&quot;https://home.cnblogs.com/u/wq242424/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;丨o聽乄雨o丨&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;出处：&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="挖矿" scheme="https://lry89757.github.io/categories/%E6%8C%96%E7%9F%BF/"/>
+    
+    
+      <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
+    
+      <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
+    
+      <category term="反挖矿" scheme="https://lry89757.github.io/tags/%E5%8F%8D%E6%8C%96%E7%9F%BF/"/>
+    
+      <category term="挖矿病毒" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF%E7%97%85%E6%AF%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>EIP-1559只是开始（转）</title>
+    <link href="https://lry89757.github.io/2021/08/10/eip-1559-zhi-shi-kai-shi/"/>
+    <id>https://lry89757.github.io/2021/08/10/eip-1559-zhi-shi-kai-shi/</id>
+    <published>2021-08-10T03:45:30.000Z</published>
+    <updated>2021-08-10T04:00:31.596Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;EIP-1559只是开始&quot;&gt;&lt;a href=&quot;#EIP-1559只是开始&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="挖矿" scheme="https://lry89757.github.io/categories/%E6%8C%96%E7%9F%BF/"/>
+    
+    
+      <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
+    
+      <category term="EIP-1559" scheme="https://lry89757.github.io/tags/EIP-1559/"/>
+    
+      <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
+    
+      <category term="以太坊" scheme="https://lry89757.github.io/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>以太坊GAS费爆棚，矿工疯狂扫货高端笔记本挖矿（转）</title>
+    <link href="https://lry89757.github.io/2021/08/10/yi-tai-fang-gas-fei-bao-peng-kuang-gong-feng-kuang-sao-huo-gao-duan-bi-ji-ben-wa-kuang/"/>
+    <id>https://lry89757.github.io/2021/08/10/yi-tai-fang-gas-fei-bao-peng-kuang-gong-feng-kuang-sao-huo-gao-duan-bi-ji-ben-wa-kuang/</id>
+    <published>2021-08-10T03:38:08.000Z</published>
+    <updated>2021-08-10T04:02:15.892Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一句话，市场似乎已经到了“闭眼梭哈也致富”的阶段。&lt;/p&gt;
+&lt;p&gt;很多挖矿或者使用Uniswap等需要用到以太坊链上转账的投资人发现，现在GAS费太贵了，有多贵呢？一个简单的交易就需要几百块，复杂的合约交互，比如挖个矿，没有几千块是不行了。DeFi，普通人彻底玩不起了。羊毛
+        
+      
+    
+    </summary>
+    
+      <category term="挖矿" scheme="https://lry89757.github.io/categories/%E6%8C%96%E7%9F%BF/"/>
+    
+    
+      <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
+    
+      <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
+    
+      <category term="以太坊" scheme="https://lry89757.github.io/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
+    
+      <category term="区块链" scheme="https://lry89757.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>梅西，诺坎普永远是你的家</title>
@@ -103,13 +202,13 @@
       <category term="pytorch" scheme="https://lry89757.github.io/categories/pytorch/"/>
     
     
+      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
     
       <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
     
@@ -142,6 +241,8 @@
       <category term="数据集" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
     
+      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
       <category term="数据集" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
@@ -149,8 +250,6 @@
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
     
       <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
     
@@ -545,7 +644,7 @@
     <link href="https://lry89757.github.io/2021/08/02/readme/"/>
     <id>https://lry89757.github.io/2021/08/02/readme/</id>
     <published>2021-08-02T03:10:01.000Z</published>
-    <updated>2021-08-09T17:17:55.938Z</updated>
+    <updated>2021-08-10T04:04:20.213Z</updated>
     
     <summary type="html">
     
@@ -563,92 +662,6 @@
     
     
       <category term="记录" scheme="https://lry89757.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>numpy中对于tile的理解</title>
-    <link href="https://lry89757.github.io/2021/08/02/numpy-zhong-dui-yu-tile-de-li-jie/"/>
-    <id>https://lry89757.github.io/2021/08/02/numpy-zhong-dui-yu-tile-de-li-jie/</id>
-    <published>2021-08-02T02:40:02.000Z</published>
-    <updated>2021-08-04T06:11:27.158Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;近些天使用numpy的时候发现了这么一个函数tile，感觉这个函数比较有用，可以将减少循环，直接矩阵运算优化运算速度。博主认为很有必要认真讨论一下这个函数的功能。&lt;/p&gt;
-&lt;h1 id=&quot;官网解释&quot;&gt;&lt;a href=&quot;#官网解释&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="numpy的小知识" scheme="https://lry89757.github.io/categories/numpy%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="numpy" scheme="https://lry89757.github.io/tags/numpy/"/>
-    
-      <category term="矩阵运算" scheme="https://lry89757.github.io/tags/%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>numpy中对于axis的理解</title>
-    <link href="https://lry89757.github.io/2021/08/02/numpy-zhong-dui-yu-axis-de-li-jie/"/>
-    <id>https://lry89757.github.io/2021/08/02/numpy-zhong-dui-yu-axis-de-li-jie/</id>
-    <published>2021-08-02T02:15:34.000Z</published>
-    <updated>2021-08-04T06:11:22.620Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="numpy的小知识" scheme="https://lry89757.github.io/categories/numpy%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="numpy" scheme="https://lry89757.github.io/tags/numpy/"/>
-    
-      <category term="矩阵计算" scheme="https://lry89757.github.io/tags/%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>argsort函数的详解</title>
-    <link href="https://lry89757.github.io/2021/08/02/argsort-han-shu-de-xiang-jie/"/>
-    <id>https://lry89757.github.io/2021/08/02/argsort-han-shu-de-xiang-jie/</id>
-    <published>2021-08-02T02:08:14.000Z</published>
-    <updated>2021-08-04T06:10:50.818Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;argsort函数经常用于矩阵的一些不破坏原有数组的情况下得到原数组的有序序列的情况。&lt;/p&gt;
-&lt;h1 id=&quot;官网解释&quot;&gt;&lt;a href=&quot;#官网解释&quot; class=&quot;headerlink&quot; title=&quot;官网解释&quot;&gt;&lt;/a&gt;官网解释&lt;/h1&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="numpy的小知识" scheme="https://lry89757.github.io/categories/numpy%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="numpy" scheme="https://lry89757.github.io/tags/numpy/"/>
-    
-      <category term="矩阵计算" scheme="https://lry89757.github.io/tags/%E7%9F%A9%E9%98%B5%E8%AE%A1%E7%AE%97/"/>
     
   </entry>
   
