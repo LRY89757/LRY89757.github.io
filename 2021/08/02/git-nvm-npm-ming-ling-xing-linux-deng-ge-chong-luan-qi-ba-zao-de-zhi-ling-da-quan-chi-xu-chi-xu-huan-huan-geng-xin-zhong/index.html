@@ -703,14 +703,14 @@ git commit -m&#34;&#34;   # 提交到">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        555
+                        961
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -767,6 +767,13 @@ npm install # 都是安装对应包，但是前者会找到最新的包给你安
 <pre class="line-numbers language-shell"><code class="language-shell">hexo clean && hexo g && hexo d
 hexo clean && hexo g && hexo s
 hexo -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="传统建立文章方式"><a href="#传统建立文章方式" class="headerlink" title="传统建立文章方式"></a>传统建立文章方式</h3><p>一般我们都会使用 <code>hexo new &lt;title&gt;</code> 来建立文章，这种建立方法会将新文章建立在 <code>source/_posts</code> 目录下，当使用 <code>hexo generate</code> 编译 markdown 文件时，会将其 HTML 结果编译在 <code>public</code> 目录下，之后 <code>hexo deploy</code> 将会把 <code>public</code> 目录下所有文章部署到 GitHub，这是我们熟悉的 Hexo 流程。</p>
+<p>这种建立文章方式的缺点是：若我们同时编辑多篇文章，只要其中一篇文章尚未编辑完成，也会随着 <code>hexo deploy</code> 一起部署到 GitHub，也就是 GitHub 可能会看到我们尚未完成的文章。</p>
+<h3 id="建立文章草稿"><a href="#建立文章草稿" class="headerlink" title="建立文章草稿"></a>建立文章草稿</h3><pre><code>$ hexo new draft &lt;title&gt;</code></pre><p>Hexo 另外提供 <code>draft</code> 机制，它的原理是新文章将建立在 <code>source/_drafts</code> 目录下，因此 <code>hexo generate</code> 并不会将其编译到 <code>public</code> 目录下，所以 <code>hexo deploy</code> 也不会将其部署到 GitHub。</p>
+<h3 id="本机预览草稿"><a href="#本机预览草稿" class="headerlink" title="本机预览草稿"></a>本机预览草稿</h3><pre><code>$ hexo S --draft</code></pre><p>虽然 <code>hexo generate</code> 不会编译 <code>source/_drafts</code> 目录下的文章，但 Hexo 的 <code>Hexo server</code> 另外提供 <code>--draft</code> 参数，这让我们只要搭配 <code>hexo-browsersync</code> plugins，就可以达到一边编辑 <code>markdown</code> 文章，一边使用浏览器预览的目的。</p>
+<h3 id="将草稿发布为正式文章"><a href="#将草稿发布为正式文章" class="headerlink" title="将草稿发布为正式文章"></a>将草稿发布为正式文章</h3><pre><code>$ hexo P &lt;filename&gt;</code></pre><p>其中 <code>&lt;filename&gt;</code> 为不包含 <code>md</code> 后缀的文章名称。它的原理只是将文章从 <code>source/_drafts</code> 移动到 <code>source/_posts</code> 而已。</p>
+<p>之后的 <code>hexo generate</code> 与 <code>hexo deploy</code> 的用法就完全一样了。</p>
+<p>若日后想将正式文章转为为草稿，只需手动将文章从 <code>source/_posts</code> 目录移动到 <code>source/_drafts</code> 目录即可。</p>
 <h2 id="jupyter-notebook"><a href="#jupyter-notebook" class="headerlink" title="jupyter notebook"></a>jupyter notebook</h2><hr>
 <p>.ipynb转换为.md、.pdf、.tex等格式：<a href="https://blog.csdn.net/red_stone1/article/details/73380517" target="_blank" rel="noopener">https://blog.csdn.net/red_stone1/article/details/73380517</a></p>
 <p><a href="https://blog.csdn.net/qq_35423500/article/details/79565146" target="_blank" rel="noopener">cell的markdown与code指令快速更换</a>:在vscode中可以选择tab+y or tab+m自由切换，还有一篇<a href="https://blog.csdn.net/wield_jjz/article/details/105607301?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0.control&spm=1001.2101.3001.4242" target="_blank" rel="noopener">博客</a>讲的也挺好</p>
@@ -1241,7 +1248,7 @@ hexo -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">32.9k</span> 字
+                <span class="white-color">35.8k</span> 字
             
 
             
@@ -1472,5 +1479,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>

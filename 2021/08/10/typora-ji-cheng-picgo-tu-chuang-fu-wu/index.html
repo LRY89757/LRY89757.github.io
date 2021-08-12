@@ -636,12 +636,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/图床/" target="_blank">
+                                <span class="chip bg-color">图床</span>
+                            </a>
+                        
+                            <a href="/tags/markdown/" target="_blank">
+                                <span class="chip bg-color">markdown</span>
+                            </a>
+                        
+                            <a href="/tags/码云/" target="_blank">
+                                <span class="chip bg-color">码云</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/效率/" class="post-category" target="_blank">
+                                效率
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -692,13 +713,13 @@
 <h1 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h1><p>注意：PicGo 软件的版本要求 2.2.0 及以上</p>
 <p>打开 PicGo 软件的设置界面，进行 Server 的设置：</p>
 <p>PicGo 设置 -&gt; 设置 Server，开启 Server，监听地址不用进行更改，监听端口的值设置为 36677，这个值的获取在 Typora 软件中，下面会提到：</p>
-<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316220909.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316220909.png" alt="img"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316220909.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316220909.png" alt></a></p>
 <h1 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h1><p>注意：Typora 软件的版本要求 0.9.84 及以上</p>
 <p>接下来进行 Typora 的设置，Typora 的安装我就不说了，相信大家都会安装，打开 typora 软件，依次打开步骤为：文件 -&gt; 偏好设置 -&gt; 图像，具体配置参考下面的图中的配置：</p>
-<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222009.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222009.png" alt="img"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222009.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222009.png" alt></a></p>
 <h1 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h1><p>进行验证，看 Typora 是否可以成功的通过 PicGo 上传到图床</p>
 <p>点击第三步图中的验证图片选项，当成功后会出现下面图中的情况</p>
-<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222349.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222349.png" alt="21312"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222349.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200316222349.png" alt></a></p>
 <p>图中可以看出监听地址以及端口号，这个需要与 PicGo 的 Server 服务中的监听地址以及端口号一致，否则上传会失败！</p>
 <h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>有三种方法</p>
 <h2 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h2><p>采用拖拽的方法，直接将本地图片拖拽到文章中，即可进行上传</p>
@@ -712,14 +733,14 @@
 <p>问题在于端口冲突，如果你打开了多个 picgo 程序，就会端口冲突，<strong>picgo 自动帮你把 36677 端口改为 366771 端口</strong>，导致错误。log 文件里也写得很清楚。</p>
 <p><code>解决方法</code>：<strong>先把 picgo 中的端口设置改回 36677，然后退出所有 picgo 程序</strong>，再使用 typora 上传功能（会自动启动 picgo 程序）</p>
 <h2 id="错误二：-“success”-false"><a href="#错误二：-“success”-false" class="headerlink" title="错误二：{“success”,false}"></a>错误二：{“success”,false}</h2><p>这个错误相信也有很多小伙伴遇到了，原因是<strong>文件名冲突</strong>了，如果你上传过一张 image1.jpg 的图片，再上传名称一样的图片就会失败，log 日志中也会写道。</p>
-<p>办法也很简单，打开 picgo 设置，将【<strong>时间戳重命名】打开</strong>即可，再次上传即可成功！另外还有一件事就是目前PicGo.app不支持上传网络图片，所以我们目前只能上传本地图片(我被这个坑死了）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20210810183614.jpg" alt="1619489055707b158a827febd380b483ed6a9834c5f2f10ed"></p>
-<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114637.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114637.png" alt="img"></a></p>
+<p>办法也很简单，打开 picgo 设置，将【<strong>时间戳重命名】打开</strong>即可，再次上传即可成功！另外还有一件事就是目前PicGo.app不支持上传网络图片，所以我们目前只能上传本地图片(我被<a href="https://github.com/Molunerfinn/PicGo/issues/432" target="_blank" rel="noopener">这个</a>坑死了）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20210810183614.jpg" alt></p>
+<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114637.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114637.png" alt></a></p>
 <hr>
 <p>友情提醒：</p>
 <p>PicGo 的日志 (log) 文件是个好东西，如果出现报错，图片上传不成功的情况，大家可以打开日志看看，根据日志输出，然后自己尝试解决，百度是个好东西！😎😎😎</p>
-<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114257.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114257.png" alt="img"></a></p>
-<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/2020-05-01_11-43-27.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/2020-05-01_11-43-27.png" alt="img"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114257.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/20200501114257.png" alt></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/2020-05-01_11-43-27.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://cdn.jsdelivr.net/gh/Yafine/Yafine-imgs/images/2020-05-01_11-43-27.png" alt></a></p>
 <hr>
 <p>参考：<a href="https://zhuanlan.zhihu.com/p/114175770" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/114175770</a></p>
 <blockquote>
@@ -899,37 +920,57 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/10/typora-ji-cheng-picgo-tu-chuang-fu-wu/">
+                <a href="/2021/08/12/pa-chong-shi-zhan-xi-lie-zhi-zhi-hu-gpu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Typora集成PicGo图床服务">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="爬虫实战系列之知乎GPU">
                         
-                        <span class="card-title">Typora集成PicGo图床服务</span>
+                        <span class="card-title">爬虫实战系列之知乎GPU</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言给大家推送一波福利，新版本的 Markdown 写作利器 ——Typora，集成了 PicGo 服务，文章插入图片即可通过 PicGo 服务上传到图床内。废话不多说，直接开门见山！
-第一步安装 PicGo 软件，接着图床的搭建，并进行相
+                            以下内容均爬虫获得，如有侵权，请联系博主lry89757，邮箱： lry_working@163.com。看完这些，想起了之前一位联创大佬说的话，不得不感慨，深度学习，真是有钱人的游戏啊！
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-10
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-12
+                        </span>
                         <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                    深度学习
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/爬虫/" target="_blank">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                    <a href="/tags/GPU/" target="_blank">
+                        <span class="chip bg-color">GPU</span>
+                    </a>
+                    
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -974,12 +1015,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/挖矿/" target="_blank">
-                        <span class="chip bg-color">挖矿</span>
-                    </a>
-                    
                     <a href="/tags/比特币/" target="_blank">
                         <span class="chip bg-color">比特币</span>
+                    </a>
+                    
+                    <a href="/tags/挖矿/" target="_blank">
+                        <span class="chip bg-color">挖矿</span>
                     </a>
                     
                     <a href="/tags/反挖矿/" target="_blank">
@@ -1162,7 +1203,7 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">32.9k</span> 字
+                <span class="white-color">35.8k</span> 字
             
 
             
@@ -1393,5 +1434,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
