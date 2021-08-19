@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-08-12T04:09:50.700Z</updated>
+  <updated>2021-08-19T09:55:32.049Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,154 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CNN经典模型复现数据分析解析</title>
+    <link href="https://lry89757.github.io/2021/08/14/cnn-jing-dian-mo-xing-fu-xian-shu-ju-fen-xi-jie-xi/"/>
+    <id>https://lry89757.github.io/2021/08/14/cnn-jing-dian-mo-xing-fu-xian-shu-ju-fen-xi-jie-xi/</id>
+    <published>2021-08-14T13:56:02.000Z</published>
+    <updated>2021-08-19T09:55:32.049Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;本次共动手实现了模型LeNet、AlexNet、VGG(11 13 16
+        
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+    
+      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
+    
+      <category term="matplotlib" scheme="https://lry89757.github.io/tags/matplotlib/"/>
+    
+      <category term="数据分析" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+      <category term="numpy" scheme="https://lry89757.github.io/tags/numpy/"/>
+    
+      <category term="GoogLeNet" scheme="https://lry89757.github.io/tags/GoogLeNet/"/>
+    
+      <category term="LeNet" scheme="https://lry89757.github.io/tags/LeNet/"/>
+    
+      <category term="AlexNet" scheme="https://lry89757.github.io/tags/AlexNet/"/>
+    
+      <category term="VGG" scheme="https://lry89757.github.io/tags/VGG/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kaggle竟然不支持TensorBoard</title>
+    <link href="https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/"/>
+    <id>https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/</id>
+    <published>2021-08-13T03:44:07.000Z</published>
+    <updated>2021-08-14T14:08:27.912Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;   最近想白嫖一下Kaggle的GPU，费了一些功夫&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="GPU" scheme="https://lry89757.github.io/tags/GPU/"/>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Kaggle" scheme="https://lry89757.github.io/tags/Kaggle/"/>
+    
+      <category term="BUG" scheme="https://lry89757.github.io/tags/BUG/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CPU/GPU/TPU/APU家族们</title>
+    <link href="https://lry89757.github.io/2021/08/13/cpu-gpu-tpu-apu-jia-zu-men/"/>
+    <id>https://lry89757.github.io/2021/08/13/cpu-gpu-tpu-apu-jia-zu-men/</id>
+    <published>2021-08-13T02:26:48.000Z</published>
+    <updated>2021-08-19T09:42:58.532Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;文章转载自个人博客&lt;a href=&quot;http://www.techeasygo.com/archives/1143&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;闻西谈&lt;/a&gt;，如有侵权，请与博主本人联系：&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="GPU" scheme="https://lry89757.github.io/tags/GPU/"/>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="显卡" scheme="https://lry89757.github.io/tags/%E6%98%BE%E5%8D%A1/"/>
+    
+      <category term="CPU" scheme="https://lry89757.github.io/tags/CPU/"/>
+    
+      <category term="TPU" scheme="https://lry89757.github.io/tags/TPU/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习GPU利用率低问题分析(转)</title>
+    <link href="https://lry89757.github.io/2021/08/12/shen-du-xue-xi-gpu-li-yong-lu-di-wen-ti-fen-xi-zhuan/"/>
+    <id>https://lry89757.github.io/2021/08/12/shen-du-xue-xi-gpu-li-yong-lu-di-wen-ti-fen-xi-zhuan/</id>
+    <published>2021-08-12T09:55:34.000Z</published>
+    <updated>2021-08-12T10:24:46.261Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;本文转载自：&lt;a href=&quot;https://benpaodewoniu.github.io/2021/01/21/torch16/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;犀牛鸟的博客&lt;/a&gt;,如有侵权请与本人联系：&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="GPU" scheme="https://lry89757.github.io/tags/GPU/"/>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+    
+      <category term="CPU" scheme="https://lry89757.github.io/tags/CPU/"/>
+    
+      <category term="加速" scheme="https://lry89757.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
+    
+      <category term="tensorflow" scheme="https://lry89757.github.io/tags/tensorflow/"/>
+    
+  </entry>
   
   <entry>
     <title>爬虫实战系列之知乎GPU</title>
@@ -181,7 +329,7 @@
     <link href="https://lry89757.github.io/2021/08/09/mei-xi-nuo-kan-pu-yong-yuan-shi-ni-de-jia/"/>
     <id>https://lry89757.github.io/2021/08/09/mei-xi-nuo-kan-pu-yong-yuan-shi-ni-de-jia/</id>
     <published>2021-08-09T12:01:05.000Z</published>
-    <updated>2021-08-09T17:08:09.485Z</updated>
+    <updated>2021-08-19T09:51:51.206Z</updated>
     
     <summary type="html">
     
@@ -246,7 +394,7 @@
     <link href="https://lry89757.github.io/2021/08/07/lenet-shi-xian-cifar10-fen-lei/"/>
     <id>https://lry89757.github.io/2021/08/07/lenet-shi-xian-cifar10-fen-lei/</id>
     <published>2021-08-07T03:37:25.000Z</published>
-    <updated>2021-08-09T17:08:00.904Z</updated>
+    <updated>2021-08-14T14:10:22.710Z</updated>
     
     <summary type="html">
     
@@ -267,15 +415,15 @@
     
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
     
+      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
+    
+      <category term="LeNet" scheme="https://lry89757.github.io/tags/LeNet/"/>
+    
       <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
       <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
-    
       <category term="CIFAR10" scheme="https://lry89757.github.io/tags/CIFAR10/"/>
-    
-      <category term="LeNet" scheme="https://lry89757.github.io/tags/LeNet/"/>
     
   </entry>
   
@@ -304,15 +452,15 @@
     
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="数据集" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+    
+      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
+    
+      <category term="数据集" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
       <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
       <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
     
       <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
     
@@ -462,7 +610,7 @@
     <link href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-quan-ji-lu/"/>
     <id>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-quan-ji-lu/</id>
     <published>2021-08-04T14:42:08.000Z</published>
-    <updated>2021-08-06T14:40:18.478Z</updated>
+    <updated>2021-08-14T14:08:58.673Z</updated>
     
     <summary type="html">
     
@@ -555,126 +703,6 @@
       <category term="羽毛球" scheme="https://lry89757.github.io/tags/%E7%BE%BD%E6%AF%9B%E7%90%83/"/>
     
       <category term="体育运动" scheme="https://lry89757.github.io/tags/%E4%BD%93%E8%82%B2%E8%BF%90%E5%8A%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lier and Accuser for 林俊杰</title>
-    <link href="https://lry89757.github.io/2021/08/03/lier-and-accuser-for-lin-jun-jie/"/>
-    <id>https://lry89757.github.io/2021/08/03/lier-and-accuser-for-lin-jun-jie/</id>
-    <published>2021-08-03T06:08:23.000Z</published>
-    <updated>2021-08-09T12:02:55.537Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;网上最近流言飞起，说到林俊杰****，我实际上是比较气愤的，至少现在还没有真相大白，网上的键盘侠、水军们已经开始拼命黑了，我想起了JJ Lin的一首歌，Lier and Accuser, 里面几句歌词：They don’t even know me，With their
-        
-      
-    
-    </summary>
-    
-      <category term="人物" scheme="https://lry89757.github.io/categories/%E4%BA%BA%E7%89%A9/"/>
-    
-    
-      <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
-    
-      <category term="生活随笔" scheme="https://lry89757.github.io/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一些感想2021.8.02</title>
-    <link href="https://lry89757.github.io/2021/08/02/yi-xie-gan-xiang/"/>
-    <id>https://lry89757.github.io/2021/08/02/yi-xie-gan-xiang/</id>
-    <published>2021-08-02T13:52:29.000Z</published>
-    <updated>2021-08-04T06:20:34.815Z</updated>
-    
-    <summary type="html">
-    
-      有东西被加密了, 请输入密码查看.
-    
-    </summary>
-    
-      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
-    
-    
-      <category term="生活随笔" scheme="https://lry89757.github.io/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>读《在路上》</title>
-    <link href="https://lry89757.github.io/2021/08/02/du-zai-lu-shang/"/>
-    <id>https://lry89757.github.io/2021/08/02/du-zai-lu-shang/</id>
-    <published>2021-08-02T09:32:16.000Z</published>
-    <updated>2021-08-04T06:20:50.155Z</updated>
-    
-    <summary type="html">
-    
-      有东西被加密了, 请输入密码查看.
-    
-    </summary>
-    
-      <category term="书评" scheme="https://lry89757.github.io/categories/%E4%B9%A6%E8%AF%84/"/>
-    
-    
-      <category term="生活随笔" scheme="https://lry89757.github.io/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
-    
-      <category term="书评" scheme="https://lry89757.github.io/tags/%E4%B9%A6%E8%AF%84/"/>
-    
-      <category term="在路上" scheme="https://lry89757.github.io/tags/%E5%9C%A8%E8%B7%AF%E4%B8%8A/"/>
-    
-      <category term="Jack Kerouac" scheme="https://lry89757.github.io/tags/Jack-Kerouac/"/>
-    
-      <category term="舒国治" scheme="https://lry89757.github.io/tags/%E8%88%92%E5%9B%BD%E6%B2%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git|nvm|npm|命令行|linux|jupyter notebook等各种乱七八糟的指令大 全（持续持续缓缓更新中）</title>
-    <link href="https://lry89757.github.io/2021/08/02/git-nvm-npm-ming-ling-xing-linux-deng-ge-chong-luan-qi-ba-zao-de-zhi-ling-da-quan-chi-xu-chi-xu-huan-huan-geng-xin-zhong/"/>
-    <id>https://lry89757.github.io/2021/08/02/git-nvm-npm-ming-ling-xing-linux-deng-ge-chong-luan-qi-ba-zao-de-zhi-ling-da-quan-chi-xu-chi-xu-huan-huan-geng-xin-zhong/</id>
-    <published>2021-08-02T09:30:24.000Z</published>
-    <updated>2021-08-10T15:28:31.355Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本博客更新不定期，基本上是想到哪里就写什么，就是一些各种常见的脚本命令。&lt;/p&gt;
-&lt;h2 id=&quot;git&quot;&gt;&lt;a href=&quot;#git&quot; class=&quot;headerlink&quot; title=&quot;git&quot;&gt;&lt;/a&gt;git&lt;/h2&gt;&lt;hr&gt;
-&lt;h3 id=&quot;指令&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="指令集" scheme="https://lry89757.github.io/categories/%E6%8C%87%E4%BB%A4%E9%9B%86/"/>
-    
-      <category term="shell命令" scheme="https://lry89757.github.io/categories/%E6%8C%87%E4%BB%A4%E9%9B%86/shell%E5%91%BD%E4%BB%A4/"/>
-    
-    
-      <category term="git" scheme="https://lry89757.github.io/tags/git/"/>
-    
-      <category term="nvm" scheme="https://lry89757.github.io/tags/nvm/"/>
-    
-      <category term="npm" scheme="https://lry89757.github.io/tags/npm/"/>
-    
-      <category term="linux" scheme="https://lry89757.github.io/tags/linux/"/>
-    
-      <category term="命令行" scheme="https://lry89757.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-      <category term="nodejs" scheme="https://lry89757.github.io/tags/nodejs/"/>
     
   </entry>
   
