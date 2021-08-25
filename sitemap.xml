@@ -2,9 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/</loc>
+    
+    <lastmod>2021-08-25T07:51:42.161Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/</loc>
+    
+    <lastmod>2021-08-25T07:51:09.819Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/</loc>
+    
+    <lastmod>2021-08-25T07:47:15.910Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/11/yin-pin-ke-shi-hua-cai-yang-pin-lu-he-fu-li-xie-bian-huan/</loc>
+    
+    <lastmod>2021-08-25T07:41:54.848Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/12/pa-chong-shi-zhan-xi-lie-zhi-zhi-hu-gpu/</loc>
+    
+    <lastmod>2021-08-25T07:40:01.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/13/cpu-gpu-tpu-apu-jia-zu-men/</loc>
+    
+    <lastmod>2021-08-25T07:39:05.206Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/12/shen-du-xue-xi-gpu-li-yong-lu-di-wen-ti-fen-xi-zhuan/</loc>
+    
+    <lastmod>2021-08-25T07:38:40.454Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lry89757.github.io/2021/08/02/readme/</loc>
     
-    <lastmod>2021-08-19T10:10:21.458Z</lastmod>
+    <lastmod>2021-08-25T07:31:05.764Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/contact/index.html</loc>
+    
+    <lastmod>2021-08-25T05:55:57.698Z</lastmod>
     
   </url>
   
@@ -19,13 +75,6 @@
     <loc>https://lry89757.github.io/2021/08/09/mei-xi-nuo-kan-pu-yong-yuan-shi-ni-de-jia/</loc>
     
     <lastmod>2021-08-19T09:51:51.206Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/13/cpu-gpu-tpu-apu-jia-zu-men/</loc>
-    
-    <lastmod>2021-08-19T09:42:58.532Z</lastmod>
     
   </url>
   
@@ -54,27 +103,6 @@
     <loc>https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-quan-ji-lu/</loc>
     
     <lastmod>2021-08-14T14:08:58.673Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/</loc>
-    
-    <lastmod>2021-08-14T14:08:27.912Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/12/shen-du-xue-xi-gpu-li-yong-lu-di-wen-ti-fen-xi-zhuan/</loc>
-    
-    <lastmod>2021-08-12T10:24:46.261Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/12/pa-chong-shi-zhan-xi-lie-zhi-zhi-hu-gpu/</loc>
-    
-    <lastmod>2021-08-12T04:09:50.700Z</lastmod>
     
   </url>
   
@@ -124,13 +152,6 @@
     <loc>https://lry89757.github.io/2021/08/07/chang-yong-tensor-cao-zuo/</loc>
     
     <lastmod>2021-08-07T08:50:24.509Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/</loc>
-    
-    <lastmod>2021-08-07T06:18:16.787Z</lastmod>
     
   </url>
   
@@ -226,13 +247,6 @@
   </url>
   
   <url>
-    <loc>https://lry89757.github.io/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/</loc>
-    
-    <lastmod>2021-08-04T06:09:43.702Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lry89757.github.io/2021/08/01/dong-tai-cha-zhao-biao-zhi-er-cha-pai-xu-shu-he-ping-heng-er-cha-shu-tu-jie-dai-ma-xiang-jie/</loc>
     
     <lastmod>2021-08-04T06:09:32.120Z</lastmod>
@@ -243,13 +257,6 @@
     <loc>https://lry89757.github.io/galleries/%E6%B2%B9%E7%94%BB/index.html</loc>
     
     <lastmod>2021-08-02T07:00:11.435Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/contact/index.html</loc>
-    
-    <lastmod>2021-08-02T03:17:15.167Z</lastmod>
     
   </url>
   
