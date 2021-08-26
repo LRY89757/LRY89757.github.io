@@ -1,3 +1,4 @@
+https://lry89757.github.io/2021/08/26/bai-du-huan-you-fan-pan-de-ji-hui-ma/
 https://lry89757.github.io/2021/08/14/cnn-jing-dian-mo-xing-fu-xian-shu-ju-fen-xi-jie-xi/
 https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/
 https://lry89757.github.io/2021/08/13/cpu-gpu-tpu-apu-jia-zu-men/
