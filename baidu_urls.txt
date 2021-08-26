@@ -1,10 +1,10 @@
 https://lry89757.github.io/2021/08/26/bai-du-huan-you-fan-pan-de-ji-hui-ma/
+https://lry89757.github.io/2021/08/25/yin-pin-ke-shi-hua-cai-yang-pin-lu-he-fu-li-xie-bian-huan/
 https://lry89757.github.io/2021/08/14/cnn-jing-dian-mo-xing-fu-xian-shu-ju-fen-xi-jie-xi/
 https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/
 https://lry89757.github.io/2021/08/13/cpu-gpu-tpu-apu-jia-zu-men/
 https://lry89757.github.io/2021/08/12/shen-du-xue-xi-gpu-li-yong-lu-di-wen-ti-fen-xi-zhuan/
 https://lry89757.github.io/2021/08/12/pa-chong-shi-zhan-xi-lie-zhi-zhi-hu-gpu/
-https://lry89757.github.io/2021/08/11/yin-pin-ke-shi-hua-cai-yang-pin-lu-he-fu-li-xie-bian-huan/
 https://lry89757.github.io/2021/08/10/typora-ji-cheng-picgo-tu-chuang-fu-wu/
 https://lry89757.github.io/2021/08/10/ji-yi-ci-fan-wa-kuang-bing-du-zhuan/
 https://lry89757.github.io/2021/08/10/eip-1559-zhi-shi-kai-shi/
