@@ -1,5 +1,10 @@
+https://lry89757.github.io/2021/09/06/faster-rcnn-yuan-ma-jie-du/
+https://lry89757.github.io/2021/09/06/mu-biao-jian-ce-bi-ji-shang/
+https://lry89757.github.io/2021/09/06/shu-ju-zeng-qiang/
+https://lry89757.github.io/2021/09/01/python-lu-jing-xiang-hu-yin-yong-dao-ru-wen-ti/
 https://lry89757.github.io/2021/08/26/bai-du-huan-you-fan-pan-de-ji-hui-ma/
 https://lry89757.github.io/2021/08/25/yin-pin-ke-shi-hua-cai-yang-pin-lu-he-fu-li-xie-bian-huan/
+https://lry89757.github.io/2021/08/25/pytorch-cookbook-chang-yong-dai-ma-duan/
 https://lry89757.github.io/2021/08/14/cnn-jing-dian-mo-xing-fu-xian-shu-ju-fen-xi-jie-xi/
 https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/
 https://lry89757.github.io/2021/08/13/cpu-gpu-tpu-apu-jia-zu-men/

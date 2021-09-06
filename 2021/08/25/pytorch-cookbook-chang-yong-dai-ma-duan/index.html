@@ -1,0 +1,1884 @@
+<!DOCTYPE HTML>
+<html lang="default">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Pytorch Cookbook(常用代码段), Dian CV DeepLearning MachineLearning 逯润雨 Lurunyu 计算机视觉 深度学习">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="PyTorch常用代码段整理合集 HudsonEvangeline 
+本文代码基于 PyTorch 1.0 版本，需要用到以下包
+import collections
+import os
+import shutil
+import tqdm
+">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Pytorch Cookbook(常用代码段) | LRY&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://dian.org.cn/static/dian/images/logo.dd99a9865177.gif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">LRY's Blog</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>Galleries</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>Contact</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>Friends</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性   -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>Index</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>Tags</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>Categories</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>Archives</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>Galleries</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>About</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>Contact</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>Friends</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://dian.org.cn/static/dian/images/logo.dd99a9865177.gif" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">LRY's Blog</div>
+        <div class="logo-desc">
+            
+            华中科技大学 | 计算机科学与技术 | 计算机视觉
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                Galleries
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                Contact
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                Friends
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LRY89757/LRY89757.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性   -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        Index
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        Tags
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        Categories
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        Archives
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        Galleries
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        About
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        Contact
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        Friends
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LRY89757/LRY89757.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/LRY89757/LRY89757.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('\medias\featureimages\5.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Pytorch Cookbook(常用代码段)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/深度学习/" target="_blank">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/pytorch/" target="_blank">
+                                <span class="chip bg-color">pytorch</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/pytorch/" class="post-category" target="_blank">
+                                pytorch
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-08-25
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>Author:&nbsp;&nbsp;
+                    
+                        逯润雨
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
+                        4.2k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                        21 Min
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="PyTorch常用代码段整理合集"><a href="#PyTorch常用代码段整理合集" class="headerlink" title="PyTorch常用代码段整理合集"></a>PyTorch常用代码段整理合集</h3><p> <a href="https://www.ctolib.com/user/pe-12647.html" target="_blank" rel="noopener">HudsonEvangeline</a> </p>
+<p>本文代码基于 PyTorch 1.0 版本，需要用到以下包</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> collections
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> shutil
+<span class="token keyword">import</span> tqdm
+
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> PIL<span class="token punctuation">.</span>Image
+<span class="token keyword">import</span> torch
+<span class="token keyword">import</span> torchvision<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>基础配置</p>
+<p>检查 PyTorch 版本</p>
+<pre class="line-numbers language-python"><code class="language-python">torch<span class="token punctuation">.</span>__version__               <span class="token comment" spellcheck="true"># PyTorch version</span>
+torch<span class="token punctuation">.</span>version<span class="token punctuation">.</span>cuda              <span class="token comment" spellcheck="true"># Corresponding CUDA version</span>
+torch<span class="token punctuation">.</span>backends<span class="token punctuation">.</span>cudnn<span class="token punctuation">.</span>version<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># Corresponding cuDNN version</span>
+torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>get_device_name<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># GPU type</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>更新 PyTorch</p>
+<p>PyTorch 将被安装在 anaconda3/lib/python3.7/site-packages/torch/目录下。</p>
+<pre class="line-numbers language-python"><code class="language-python">conda update pytorch torchvision <span class="token operator">-</span>c pytorch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>固定随机种子</p>
+<pre class="line-numbers language-python"><code class="language-python">torch<span class="token punctuation">.</span>manual_seed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>manual_seed_all<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>指定程序运行在特定 GPU 卡上</p>
+<p>在命令行指定环境变量</p>
+<pre class="line-numbers language-python"><code class="language-python">CUDA_VISIBLE_DEVICES<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span> python train<span class="token punctuation">.</span>py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>或在代码中指定</p>
+<pre class="line-numbers language-python"><code class="language-python">os<span class="token punctuation">.</span>environ<span class="token punctuation">[</span><span class="token string">'CUDA_VISIBLE_DEVICES'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'0,1'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>判断是否有 CUDA 支持</p>
+<pre class="line-numbers language-python"><code class="language-python">torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>设置为 cuDNN benchmark 模式</p>
+<p>Benchmark 模式会提升计算速度，但是由于计算中有随机性，每次网络前馈结果略有差异。</p>
+<pre class="line-numbers language-python"><code class="language-python">torch<span class="token punctuation">.</span>backends<span class="token punctuation">.</span>cudnn<span class="token punctuation">.</span>benchmark <span class="token operator">=</span> <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果想要避免这种结果波动，设置</p>
+<pre class="line-numbers language-python"><code class="language-python">torch<span class="token punctuation">.</span>backends<span class="token punctuation">.</span>cudnn<span class="token punctuation">.</span>deterministic <span class="token operator">=</span> <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>清除 GPU 存储</p>
+<p>有时 Control-C 中止运行后 GPU 存储没有及时释放，需要手动清空。在 PyTorch 内部可以</p>
+<pre class="line-numbers language-python"><code class="language-python">torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>empty_cache<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>或在命令行可以先使用 ps 找到程序的 PID，再使用 kill 结束该进程</p>
+<pre class="line-numbers language-python"><code class="language-python">ps aux <span class="token operator">|</span> grep pythonkill <span class="token operator">-</span><span class="token number">9</span> <span class="token punctuation">[</span>pid<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>或者直接重置没有被清空的 GPU</p>
+<pre class="line-numbers language-python"><code class="language-python">nvidia<span class="token operator">-</span>smi <span class="token operator">-</span><span class="token operator">-</span>gpu<span class="token operator">-</span>reset <span class="token operator">-</span>i <span class="token punctuation">[</span>gpu_id<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>张量处理</p>
+<p>张量基本信息</p>
+<pre><code>tensor.type()   # Data type
+tensor.size()   # Shape of the tensor. It is a subclass of Python tuple
+tensor.dim()    # Number of dimensions.</code></pre><p>数据类型转换</p>
+<pre><code># Set default tensor type. Float in PyTorch is much faster than double.
+torch.set_default_tensor_type(torch.FloatTensor)
+
+# Type convertions.
+tensor = tensor.cuda()
+tensor = tensor.cpu()
+tensor = tensor.float()
+tensor = tensor.long()</code></pre><p>torch.Tensor 与 np.ndarray 转换</p>
+<pre><code># torch.Tensor -&gt; np.ndarray.
+ndarray = tensor.cpu().numpy()
+
+# np.ndarray -&gt; torch.Tensor.
+tensor = torch.from_numpy(ndarray).float()
+tensor = torch.from_numpy(ndarray.copy()).float()  # If ndarray has negative stride</code></pre><p>torch.Tensor 与 PIL.Image 转换</p>
+<p>PyTorch 中的张量默认采用 N×D×H×W 的顺序，并且数据范围在 [0, 1]，需要进行转置和规范化。</p>
+<pre><code># torch.Tensor -&gt; PIL.Image.
+image = PIL.Image.fromarray(torch.clamp(tensor * 255, min=0, max=255
+    ).byte().permute(1, 2, 0).cpu().numpy())
+image = torchvision.transforms.functional.to_pil_image(tensor)  # Equivalently way
+
+# PIL.Image -&gt; torch.Tensor.
+tensor = torch.from_numpy(np.asarray(PIL.Image.open(path))
+    ).permute(2, 0, 1).float() / 255
+tensor = torchvision.transforms.functional.to_tensor(PIL.Image.open(path))  # Equivalently way</code></pre><p>np.ndarray 与 PIL.Image 转换</p>
+<pre><code># np.ndarray -&gt; PIL.Image.image = PIL.Image.fromarray(ndarray.astypde(np.uint8))# PIL.Image -&gt; np.ndarray.ndarray = np.asarray(PIL.Image.open(path))</code></pre><p>从只包含一个元素的张量中提取值</p>
+<p>这在训练时统计 loss 的变化过程中特别有用。否则这将累积计算图，使 GPU 存储占用量越来越大。</p>
+<pre><code>value = tensor.item()</code></pre><p>张量形变</p>
+<p>张量形变常常需要用于将卷积层特征输入全连接层的情形。相比 torch.view，torch.reshape 可以自动处理输入张量不连续的情况。</p>
+<pre><code>tensor = torch.reshape(tensor, shape)</code></pre><p>打乱顺序</p>
+<pre><code>tensor = tensor[torch.randperm(tensor.size(0))]  # Shuffle the first dimension</code></pre><p>水平翻转</p>
+<p>PyTorch 不支持 tensor[::-1] 这样的负步长操作，水平翻转可以用张量索引实现。</p>
+<pre><code># Assume tensor has shape N*D*H*W.tensor = tensor[:, :, :, torch.arange(tensor.size(3) - 1, -1, -1).long()]</code></pre><p>复制张量</p>
+<p>有三种复制的方式，对应不同的需求。</p>
+<pre><code># Operation                 |  New/Shared memory | Still in computation graph |tensor.clone()            # |        New         |          Yes               |tensor.detach()           # |      Shared        |          No                |tensor.detach.clone()()   # |        New         |          No                |</code></pre><p>拼接张量</p>
+<p>注意 torch.cat 和 torch.stack 的区别在于 torch.cat 沿着给定的维度拼接，而 torch.stack 会新增一维。例如当参数是 3 个 10×5 的张量，torch.cat 的结果是 30×5 的张量，而 torch.stack 的结果是 3×10×5 的张量。</p>
+<pre><code>tensor = torch.cat(list_of_tensors, dim=0)tensor = torch.stack(list_of_tensors, dim=0)</code></pre><p>将整数标记转换成独热（one-hot）编码</p>
+<p>PyTorch 中的标记默认从 0 开始。</p>
+<pre><code>N = tensor.size(0)one_hot = torch.zeros(N, num_classes).long()one_hot.scatter_(dim=1, index=torch.unsqueeze(tensor, dim=1), src=torch.ones(N, num_classes).long())</code></pre><p>得到非零/零元素</p>
+<pre><code>torch.nonzero(tensor)               # Index of non-zero elementstorch.nonzero(tensor == 0)          # Index of zero elementstorch.nonzero(tensor).size(0)       # Number of non-zero elementstorch.nonzero(tensor == 0).size(0)  # Number of zero elements</code></pre><p>张量扩展</p>
+<pre><code># Expand tensor of shape 64*512 to shape 64*512*7*7.
+torch.reshape(tensor, (64, 512, 1, 1)).expand(64, 512, 7, 7)</code></pre><p>矩阵乘法</p>
+<pre><code># Matrix multiplication: (m*n) * (n*p) -&gt; (m*p).
+result = torch.mm(tensor1, tensor2)
+
+# Batch matrix multiplication: (b*m*n) * (b*n*p) -&gt; (b*m*p).
+result = torch.bmm(tensor1, tensor2)
+
+# Element-wise multiplication.
+result = tensor1 * tensor2</code></pre><p>计算两组数据之间的两两欧式距离</p>
+<pre><code># X1 is of shape m*d.
+X1 = torch.unsqueeze(X1, dim=1).expand(m, n, d)
+# X2 is of shape n*d.
+X2 = torch.unsqueeze(X2, dim=0).expand(m, n, d)
+# dist is of shape m*n, where dist[i][j] = sqrt(|X1[i, :] - X[j, :]|^2)
+dist = torch.sqrt(torch.sum((X1 - X2) ** 2, dim=2))</code></pre><p>模型定义</p>
+<p>卷积层</p>
+<p>最常用的卷积层配置是</p>
+<pre><code>conv = torch.nn.Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=1, bias=True)conv = torch.nn.Conv2d(in_channels, out_channels, kernel_size=1, stride=1, padding=0, bias=True)</code></pre><p>如果卷积层配置比较复杂，不方便计算输出大小时，可以利用如下可视化工具辅助</p>
+<p>链接：<a href="https://ezyang.github.io/convolution-visualizer/index.html" target="_blank" rel="noopener">https://ezyang.github.io/convolution-visualizer/index.html</a></p>
+<p>0GAP（Global average pooling）层</p>
+<pre><code>gap = torch.nn.AdaptiveAvgPool2d(output_size=1)</code></pre><p>双线性汇合（bilinear pooling）</p>
+<pre><code>X = torch.reshape(N, D, H * W)                        # Assume X has shape N*D*H*WX = torch.bmm(X, torch.transpose(X, 1, 2)) / (H * W)  # Bilinear poolingassert X.size() == (N, D, D)X = torch.reshape(X, (N, D * D))X = torch.sign(X) * torch.sqrt(torch.abs(X) + 1e-5)   # Signed-sqrt normalizationX = torch.nn.functional.normalize(X)                  # L2 normalization</code></pre><p>多卡同步 BN（Batch normalization）</p>
+<p>当使用 torch.nn.DataParallel 将代码运行在多张 GPU 卡上时，PyTorch 的 BN 层默认操作是各卡上数据独立地计算均值和标准差，同步 BN 使用所有卡上的数据一起计算 BN 层的均值和标准差，缓解了当批量大小（batch size）比较小时对均值和标准差估计不准的情况，是在目标检测等任务中一个有效的提升性能的技巧。</p>
+<p>链接：<a href="https://github.com/vacancy/Synchronized-BatchNorm-PyTorch" target="_blank" rel="noopener">https://github.com/vacancy/Synchronized-BatchNorm-PyTorch</a></p>
+<p>类似 BN 滑动平均</p>
+<p>如果要实现类似 BN 滑动平均的操作，在 forward 函数中要使用原地（inplace）操作给滑动平均赋值。</p>
+<pre><code>class BN(torch.nn.Module)    def __init__(self):        ...        self.register_buffer(&#39;running_mean&#39;, torch.zeros(num_features))    def forward(self, X):        ...        self.running_mean += momentum * (current - self.running_mean)</code></pre><p>计算模型整体参数量</p>
+<pre><code>num_parameters = sum(torch.numel(parameter) for parameter in model.parameters())</code></pre><p>类似 Keras 的 model.summary() 输出模型信息</p>
+<p>链接：<a href="https://github.com/sksq96/pytorch-summary" target="_blank" rel="noopener">https://github.com/sksq96/pytorch-summary</a></p>
+<p>模型权值初始化</p>
+<p>注意 model.modules() 和 model.children() 的区别：model.modules() 会迭代地遍历模型的所有子层，而 model.children() 只会遍历模型下的一层。</p>
+<pre><code># Common practise for initialization.
+for layer in model.modules():
+    if isinstance(layer, torch.nn.Conv2d):
+        torch.nn.init.kaiming_normal_(layer.weight, mode=&#39;fan_out&#39;,
+                                      nonlinearity=&#39;relu&#39;)
+        if layer.bias is not None:
+            torch.nn.init.constant_(layer.bias, val=0.0)
+    elif isinstance(layer, torch.nn.BatchNorm2d):
+        torch.nn.init.constant_(layer.weight, val=1.0)
+        torch.nn.init.constant_(layer.bias, val=0.0)
+    elif isinstance(layer, torch.nn.Linear):
+        torch.nn.init.xavier_normal_(layer.weight)
+        if layer.bias is not None:
+            torch.nn.init.constant_(layer.bias, val=0.0)
+
+# Initialization with given tensor.
+layer.weight = torch.nn.Parameter(tensor)</code></pre><p>部分层使用预训练模型</p>
+<p>注意如果保存的模型是 torch.nn.DataParallel，则当前的模型也需要是</p>
+<pre><code>model.load_state_dict(torch.load(&#39;model,pth&#39;), strict=False)</code></pre><p>将在 GPU 保存的模型加载到 CPU</p>
+<pre><code>model.load_state_dict(torch.load(&#39;model,pth&#39;, map_location=&#39;cpu&#39;))</code></pre><p>数据准备、特征提取与微调</p>
+<p>得到视频数据基本信息</p>
+<pre><code>import cv2
+video = cv2.VideoCapture(mp4_path)
+height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
+width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
+num_frames = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+fps = int(video.get(cv2.CAP_PROP_FPS))
+video.release()</code></pre><p>TSN 每段（segment）采样一帧视频</p>
+<pre><code>K = self._num_segments
+if is_train:
+    if num_frames &gt; K:
+        # Random index for each segment.
+        frame_indices = torch.randint(
+            high=num_frames // K, size=(K,), dtype=torch.long)
+        frame_indices += num_frames // K * torch.arange(K)
+    else:
+        frame_indices = torch.randint(
+            high=num_frames, size=(K - num_frames,), dtype=torch.long)
+        frame_indices = torch.sort(torch.cat((
+            torch.arange(num_frames), frame_indices)))[0]
+else:
+    if num_frames &gt; K:
+        # Middle index for each segment.
+        frame_indices = num_frames / K // 2
+        frame_indices += num_frames // K * torch.arange(K)
+    else:
+        frame_indices = torch.sort(torch.cat((                              
+            torch.arange(num_frames), torch.arange(K - num_frames))))[0]
+assert frame_indices.size() == (K,)
+return [frame_indices[i] for i in range(K)]</code></pre><p>提取 ImageNet 预训练模型某层的卷积特征</p>
+<pre><code># VGG-16 relu5-3 feature.model = torchvision.models.vgg16(pretrained=True).features[:-1]# VGG-16 pool5 feature.model = torchvision.models.vgg16(pretrained=True).features# VGG-16 fc7 feature.model = torchvision.models.vgg16(pretrained=True)model.classifier = torch.nn.Sequential(*list(model.classifier.children())[:-3])# ResNet GAP feature.model = torchvision.models.resnet18(pretrained=True)model = torch.nn.Sequential(collections.OrderedDict(    list(model.named_children())[:-1]))with torch.no_grad():    model.eval()    conv_representation = model(image)</code></pre><p>提取 ImageNet 预训练模型多层的卷积特征</p>
+<pre><code>class FeatureExtractor(torch.nn.Module):
+    &quot;&quot;&quot;Helper class to extract several convolution features from the given
+    pre-trained model.
+
+    Attributes:
+        _model, torch.nn.Module.
+        _layers_to_extract, list&lt;str&gt; or set&lt;str&gt;
+
+    Example:
+        &gt;&gt;&gt; model = torchvision.models.resnet152(pretrained=True)
+        &gt;&gt;&gt; model = torch.nn.Sequential(collections.OrderedDict(
+                list(model.named_children())[:-1]))
+        &gt;&gt;&gt; conv_representation = FeatureExtractor(
+                pretrained_model=model,
+                layers_to_extract={&#39;layer1&#39;, &#39;layer2&#39;, &#39;layer3&#39;, &#39;layer4&#39;})(image)
+    &quot;&quot;&quot;
+    def __init__(self, pretrained_model, layers_to_extract):
+        torch.nn.Module.__init__(self)
+        self._model = pretrained_model
+        self._model.eval()
+        self._layers_to_extract = set(layers_to_extract)
+
+    def forward(self, x):
+        with torch.no_grad():
+            conv_representation = []
+            for name, layer in self._model.named_children():
+                x = layer(x)
+                if name in self._layers_to_extract:
+                    conv_representation.append(x)
+            return conv_representation</code></pre><p>其他预训练模型</p>
+<p>链接：<a href="https://github.com/Cadene/pretrained-models.pytorch" target="_blank" rel="noopener">https://github.com/Cadene/pretrained-models.pytorch</a></p>
+<p>微调全连接层</p>
+<pre><code>model = torchvision.models.resnet18(pretrained=True)
+for param in model.parameters():
+    param.requires_grad = False
+model.fc = nn.Linear(512, 100)  # Replace the last fc layer
+optimizer = torch.optim.SGD(model.fc.parameters(), lr=1e-2, momentum=0.9, weight_decay=1e-4)</code></pre><p>以较大学习率微调全连接层，较小学习率微调卷积层</p>
+<pre><code>model = torchvision.models.resnet18(pretrained=True)
+finetuned_parameters = list(map(id, model.fc.parameters()))
+conv_parameters = (p for p in model.parameters() if id(p) not in finetuned_parameters)
+parameters = [{&#39;params&#39;: conv_parameters, &#39;lr&#39;: 1e-3}, 
+              {&#39;params&#39;: model.fc.parameters()}]
+optimizer = torch.optim.SGD(parameters, lr=1e-2, momentum=0.9, weight_decay=1e-4)</code></pre><p>模型训练</p>
+<p>常用训练和验证数据预处理</p>
+<p>其中 ToTensor 操作会将 PIL.Image 或形状为 H×W×D，数值范围为 [0, 255] 的 np.ndarray 转换为形状为 D×H×W，数值范围为 [0.0, 1.0] 的 torch.Tensor。</p>
+<pre><code>train_transform = torchvision.transforms.Compose([
+    torchvision.transforms.RandomResizedCrop(size=224,
+                                             scale=(0.08, 1.0)),
+    torchvision.transforms.RandomHorizontalFlip(),
+    torchvision.transforms.ToTensor(),
+    torchvision.transforms.Normalize(mean=(0.485, 0.456, 0.406),
+                                     std=(0.229, 0.224, 0.225)),
+ ])
+ val_transform = torchvision.transforms.Compose([
+    torchvision.transforms.Resize(224),
+    torchvision.transforms.CenterCrop(224),
+    torchvision.transforms.ToTensor(),
+    torchvision.transforms.Normalize(mean=(0.485, 0.456, 0.406),
+                                     std=(0.229, 0.224, 0.225)),
+])</code></pre><p>训练基本代码框架</p>
+<pre><code>for t in epoch(80):
+    for images, labels in tqdm.tqdm(train_loader, desc=&#39;Epoch %3d&#39; % (t + 1)):
+        images, labels = images.cuda(), labels.cuda()
+        scores = model(images)
+        loss = loss_function(scores, labels)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()</code></pre><p>标记平滑（label smoothing）</p>
+<pre><code>for images, labels in train_loader:
+    images, labels = images.cuda(), labels.cuda()
+    N = labels.size(0)
+    # C is the number of classes.
+    smoothed_labels = torch.full(size=(N, C), fill_value=0.1 / (C - 1)).cuda()
+    smoothed_labels.scatter_(dim=1, index=torch.unsqueeze(labels, dim=1), value=0.9)
+
+    score = model(images)
+    log_prob = torch.nn.functional.log_softmax(score, dim=1)
+    loss = -torch.sum(log_prob * smoothed_labels) / N
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()</code></pre><p>Mixup</p>
+<pre><code>beta_distribution = torch.distributions.beta.Beta(alpha, alpha)
+for images, labels in train_loader:
+    images, labels = images.cuda(), labels.cuda()
+
+    # Mixup images.
+    lambda_ = beta_distribution.sample([]).item()
+    index = torch.randperm(images.size(0)).cuda()
+    mixed_images = lambda_ * images + (1 - lambda_) * images[index, :]
+
+    # Mixup loss.    
+    scores = model(mixed_images)
+    loss = (lambda_ * loss_function(scores, labels) 
+            + (1 - lambda_) * loss_function(scores, labels[index]))
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()</code></pre><p>L1 正则化</p>
+<pre><code>l1_regularization = torch.nn.L1Loss(reduction=&#39;sum&#39;)
+loss = ...  # Standard cross-entropy loss
+for param in model.parameters():
+    loss += torch.sum(torch.abs(param))
+loss.backward()</code></pre><p>不对偏置项进行 L2 正则化/权值衰减（weight decay）</p>
+<pre><code>bias_list = (param for name, param in model.named_parameters() if name[-4:] == &#39;bias&#39;)
+others_list = (param for name, param in model.named_parameters() if name[-4:] != &#39;bias&#39;)
+parameters = [{&#39;parameters&#39;: bias_list, &#39;weight_decay&#39;: 0},                
+              {&#39;parameters&#39;: others_list}]
+optimizer = torch.optim.SGD(parameters, lr=1e-2, momentum=0.9, weight_decay=1e-4)</code></pre><p>梯度裁剪（gradient clipping）</p>
+<pre><code>torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=20)</code></pre><p>计算 Softmax 输出的准确率</p>
+<pre><code>score = model(images)
+prediction = torch.argmax(score, dim=1)
+num_correct = torch.sum(prediction == labels).item()
+accuruacy = num_correct / labels.size(0)</code></pre><p>可视化模型前馈的计算图</p>
+<p>链接：<a href="https://github.com/szagoruyko/pytorchviz" target="_blank" rel="noopener">https://github.com/szagoruyko/pytorchviz</a></p>
+<p>可视化学习曲线</p>
+<p>有 Facebook 自己开发的 Visdom 和 Tensorboard 两个选择。</p>
+<p><a href="https://github.com/facebookresearch/visdom" target="_blank" rel="noopener">https://github.com/facebookresearch/visdom</a></p>
+<p><a href="https://github.com/lanpa/tensorboardX" target="_blank" rel="noopener">https://github.com/lanpa/tensorboardX</a></p>
+<pre><code># Example using Visdom.
+vis = visdom.Visdom(env=&#39;Learning curve&#39;, use_incoming_socket=False)
+assert self._visdom.check_connection()
+self._visdom.close()
+options = collections.namedtuple(&#39;Options&#39;, [&#39;loss&#39;, &#39;acc&#39;, &#39;lr&#39;])(
+    loss={&#39;xlabel&#39;: &#39;Epoch&#39;, &#39;ylabel&#39;: &#39;Loss&#39;, &#39;showlegend&#39;: True},
+    acc={&#39;xlabel&#39;: &#39;Epoch&#39;, &#39;ylabel&#39;: &#39;Accuracy&#39;, &#39;showlegend&#39;: True},
+    lr={&#39;xlabel&#39;: &#39;Epoch&#39;, &#39;ylabel&#39;: &#39;Learning rate&#39;, &#39;showlegend&#39;: True})
+
+for t in epoch(80):
+    tran(...)
+    val(...)
+    vis.line(X=torch.Tensor([t + 1]), Y=torch.Tensor([train_loss]),
+             name=&#39;train&#39;, win=&#39;Loss&#39;, update=&#39;append&#39;, opts=options.loss)
+    vis.line(X=torch.Tensor([t + 1]), Y=torch.Tensor([val_loss]),
+             name=&#39;val&#39;, win=&#39;Loss&#39;, update=&#39;append&#39;, opts=options.loss)
+    vis.line(X=torch.Tensor([t + 1]), Y=torch.Tensor([train_acc]),
+             name=&#39;train&#39;, win=&#39;Accuracy&#39;, update=&#39;append&#39;, opts=options.acc)
+    vis.line(X=torch.Tensor([t + 1]), Y=torch.Tensor([val_acc]),
+             name=&#39;val&#39;, win=&#39;Accuracy&#39;, update=&#39;append&#39;, opts=options.acc)
+    vis.line(X=torch.Tensor([t + 1]), Y=torch.Tensor([lr]),
+             win=&#39;Learning rate&#39;, update=&#39;append&#39;, opts=options.lr)</code></pre><p>得到当前学习率</p>
+<pre><code># If there is one global learning rate (which is the common case).
+lr = next(iter(optimizer.param_groups))[&#39;lr&#39;]
+
+# If there are multiple learning rates for different layers.
+all_lr = []
+for param_group in optimizer.param_groups:
+    all_lr.append(param_group[&#39;lr&#39;])</code></pre><p>学习率衰减</p>
+<pre><code># Reduce learning rate when validation accuarcy plateau.
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode=&#39;max&#39;, patience=5, verbose=True)
+for t in range(0, 80):
+    train(...); val(...)
+    scheduler.step(val_acc)
+
+# Cosine annealing learning rate.
+scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=80)
+# Reduce learning rate by 10 at given epochs.
+scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[50, 70], gamma=0.1)
+for t in range(0, 80):
+    scheduler.step()    
+    train(...); val(...)
+
+# Learning rate warmup by 10 epochs.
+scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda t: t / 10)
+for t in range(0, 10):
+    scheduler.step()
+    train(...); val(...)</code></pre><p>保存与加载断点</p>
+<p>注意为了能够恢复训练，我们需要同时保存模型和优化器的状态，以及当前的训练轮数。</p>
+<pre><code># Save checkpoint.
+is_best = current_acc &gt; best_acc
+best_acc = max(best_acc, current_acc)
+checkpoint = {
+    &#39;best_acc&#39;: best_acc,    
+    &#39;epoch&#39;: t + 1,
+    &#39;model&#39;: model.state_dict(),
+    &#39;optimizer&#39;: optimizer.state_dict(),
+}
+model_path = os.path.join(&#39;model&#39;, &#39;checkpoint.pth.tar&#39;)
+torch.save(checkpoint, model_path)
+if is_best:
+    shutil.copy(&#39;checkpoint.pth.tar&#39;, model_path)
+
+# Load checkpoint.
+if resume:
+    model_path = os.path.join(&#39;model&#39;, &#39;checkpoint.pth.tar&#39;)
+    assert os.path.isfile(model_path)
+    checkpoint = torch.load(model_path)
+    best_acc = checkpoint[&#39;best_acc&#39;]
+    start_epoch = checkpoint[&#39;epoch&#39;]
+    model.load_state_dict(checkpoint[&#39;model&#39;])
+    optimizer.load_state_dict(checkpoint[&#39;optimizer&#39;])
+    print(&#39;Load checkpoint at epoch %d.&#39; % start_epoch)</code></pre><p>计算准确率、查准率（precision）、查全率（recall）</p>
+<pre><code># data[&#39;label&#39;] and data[&#39;prediction&#39;] are groundtruth label and prediction 
+# for each image, respectively.
+accuracy = np.mean(data[&#39;label&#39;] == data[&#39;prediction&#39;]) * 100
+
+# Compute recision and recall for each class.
+for c in range(len(num_classes)):
+    tp = np.dot((data[&#39;label&#39;] == c).astype(int),
+                (data[&#39;prediction&#39;] == c).astype(int))
+    tp_fp = np.sum(data[&#39;prediction&#39;] == c)
+    tp_fn = np.sum(data[&#39;label&#39;] == c)
+    precision = tp / tp_fp * 100
+    recall = tp / tp_fn * 100</code></pre><p>PyTorch 其他注意事项</p>
+<p>模型定义</p>
+<ul>
+<li>建议有参数的层和汇合（pooling）层使用 torch.nn 模块定义，激活函数直接使用 torch.nn.functional。torch.nn 模块和 torch.nn.functional 的区别在于，torch.nn 模块在计算时底层调用了 torch.nn.functional，但 torch.nn 模块包括该层参数，还可以应对训练和测试两种网络状态。使用 torch.nn.functional 时要注意网络状态，如</li>
+</ul>
+<pre><code>def forward(self, x):
+    ...
+    x = torch.nn.functional.dropout(x, p=0.5, training=self.training)</code></pre><ul>
+<li>model(x) 前用 model.train() 和 model.eval() 切换网络状态。</li>
+<li>不需要计算梯度的代码块用 with torch.no_grad() 包含起来。model.eval() 和 torch.no_grad() 的区别在于，model.eval() 是将网络切换为测试状态，例如 BN 和随机失活（dropout）在训练和测试阶段使用不同的计算方法。torch.no_grad() 是关闭 PyTorch 张量的自动求导机制，以减少存储使用和加速计算，得到的结果无法进行 loss.backward()。</li>
+<li>torch.nn.CrossEntropyLoss 的输入不需要经过 Softmax。torch.nn.CrossEntropyLoss 等价于 torch.nn.functional.log_softmax + torch.nn.NLLLoss。</li>
+<li>loss.backward() 前用 optimizer.zero_grad() 清除累积梯度。optimizer.zero_grad() 和 model.zero_grad() 效果一样。</li>
+</ul>
+<p>PyTorch 性能与调试</p>
+<ul>
+<li>torch.utils.data.DataLoader 中尽量设置 pin_memory=True，对特别小的数据集如 MNIST 设置 pin_memory=False 反而更快一些。num_workers 的设置需要在实验中找到最快的取值。</li>
+<li>用 del 及时删除不用的中间变量，节约 GPU 存储。</li>
+<li>使用 inplace 操作可节约 GPU 存储，如</li>
+</ul>
+<pre><code>x = torch.nn.functional.relu(x, inplace=True)</code></pre><ul>
+<li>减少 CPU 和 GPU 之间的数据传输。例如如果你想知道一个 epoch 中每个 mini-batch 的 loss 和准确率，先将它们累积在 GPU 中等一个 epoch 结束之后一起传输回 CPU 会比每个 mini-batch 都进行一次 GPU 到 CPU 的传输更快。</li>
+<li>使用半精度浮点数 half() 会有一定的速度提升，具体效率依赖于 GPU 型号。需要小心数值精度过低带来的稳定性问题。</li>
+<li>时常使用 assert tensor.size() == (N, D, H, W) 作为调试手段，确保张量维度和你设想中一致。</li>
+<li>除了标记 y 外，尽量少使用一维张量，使用 n*1 的二维张量代替，可以避免一些意想不到的一维张量计算结果。</li>
+<li>统计代码各部分耗时</li>
+</ul>
+<pre><code>with torch.autograd.profiler.profile(enabled=True, use_cuda=False) as profile:
+    ...
+print(profile)</code></pre><p>或者在命令行运行</p>
+<pre><code>python -m torch.utils.bottleneck main.py</code></pre><p>致谢</p>
+<p>感谢 @些许流年和@El tnoto的勘误。由于作者才疏学浅，更兼时间和精力所限，代码中错误之处在所难免，敬请读者批评指正。</p>
+<p>参考资料</p>
+<ul>
+<li>PyTorch 官方代码：pytorch/examples (<a href="https://link.zhihu.com/?target=https%3A//github.com/pytorch/examples)" target="_blank" rel="noopener">https://link.zhihu.com/?target=https%3A//github.com/pytorch/examples)</a></li>
+<li>PyTorch 论坛：PyTorch Forums (<a href="https://link.zhihu.com/?target=https%3A//discuss.pytorch.org/latest%3Forder%3Dviews)" target="_blank" rel="noopener">https://link.zhihu.com/?target=https%3A//discuss.pytorch.org/latest%3Forder%3Dviews)</a></li>
+<li>PyTorch 文档：<a href="http://pytorch.org/docs/stable/index.html" target="_blank" rel="noopener">http://pytorch.org/docs/stable/index.html</a> (<a href="https://link.zhihu.com/?target=http%3A//pytorch.org/docs/stable/index.html)" target="_blank" rel="noopener">https://link.zhihu.com/?target=http%3A//pytorch.org/docs/stable/index.html)</a></li>
+<li>其他基于 PyTorch 的公开实现代码，无法一一列举</li>
+</ul>
+<p>张皓：南京大学计算机系机器学习与数据挖掘所（LAMDA）硕士生，研究方向为计算机视觉和机器学习，特别是视觉识别和深度学习。个人主页：<a href="http://lamda.nju.edu.cn/zhangh/" target="_blank" rel="noopener">http://lamda.nju.edu.cn/zhangh/</a></p>
+<p><em>原知乎链接：</em> <a href="https://zhuanlan.zhihu.com/p/59205847?" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/59205847?</a></p>
+<p>查看原文： <a href="https://www.jiqizhixin.com/articles/2019-04-25-8" target="_blank" rel="noopener">点赞收藏：PyTorch常用代码段整理合集</a><a href="https://www.jiqizhixin.com/articles/2019-04-25-8" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/2019-04-25-8</a>)</p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.bmp" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.bmp" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;Reprint policy:
+                    </span>
+                    <a href="https://lry89757.github.io" class="b-link-green">LRY's Blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2021/08/25/pytorch-cookbook-chang-yong-dai-ma-duan/" class="b-link-green">Pytorch Cookbook(常用代码段)</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/08/25/yin-pin-ke-shi-hua-cai-yang-pin-lu-he-fu-li-xie-bian-huan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="音频可视化：采样、频率和傅里叶变换（转）">
+                        
+                        <span class="card-title">音频可视化：采样、频率和傅里叶变换（转）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+真是金子一样的文章！我觉得这一篇文章写的真是太有水平了！很感谢这样良心乐于分享的作者。  
+本博客转载自cjting, 如有侵权，请立刻联系博主lry89757@gmail.com.
+
+音频可视化：采样、频率和傅里叶变换2021.08.0
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/数码知识/" class="post-category" target="_blank">
+                                    数码知识
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/数码/" target="_blank">
+                        <span class="chip bg-color">数码</span>
+                    </a>
+                    
+                    <a href="/tags/数学/" target="_blank">
+                        <span class="chip bg-color">数学</span>
+                    </a>
+                    
+                    <a href="/tags/音频/" target="_blank">
+                        <span class="chip bg-color">音频</span>
+                    </a>
+                    
+                    <a href="/tags/音乐/" target="_blank">
+                        <span class="chip bg-color">音乐</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/14/cnn-jing-dian-mo-xing-fu-xian-shu-ju-fen-xi-jie-xi/">
+                    <div class="card-image">
+                        
+                        <img src="https://z3.ax1x.com/2021/08/14/f6BJ29.png" class="responsive-img" alt="CNN经典模型复现数据分析解析">
+                        
+                        <span class="card-title">CNN经典模型复现数据分析解析</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本次共动手实现了模型LeNet、AlexNet、VGG(11 13 16 19)、GoogLeNet共7个模型，以CIFAR10数据集作为分类结果跑数据前前后后跑了大概有几天吧（当然并不是一直在跑数据），终于得到了所有数据，本人将数据分析过程记录下来。以后就会选择用TensorBoard来记录了。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/数据分析/" class="post-category" target="_blank">
+                                    数据分析
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/pytorch/" target="_blank">
+                        <span class="chip bg-color">pytorch</span>
+                    </a>
+                    
+                    <a href="/tags/CNN/" target="_blank">
+                        <span class="chip bg-color">CNN</span>
+                    </a>
+                    
+                    <a href="/tags/matplotlib/" target="_blank">
+                        <span class="chip bg-color">matplotlib</span>
+                    </a>
+                    
+                    <a href="/tags/数据分析/" target="_blank">
+                        <span class="chip bg-color">数据分析</span>
+                    </a>
+                    
+                    <a href="/tags/numpy/" target="_blank">
+                        <span class="chip bg-color">numpy</span>
+                    </a>
+                    
+                    <a href="/tags/GoogLeNet/" target="_blank">
+                        <span class="chip bg-color">GoogLeNet</span>
+                    </a>
+                    
+                    <a href="/tags/LeNet/" target="_blank">
+                        <span class="chip bg-color">LeNet</span>
+                    </a>
+                    
+                    <a href="/tags/AlexNet/" target="_blank">
+                        <span class="chip bg-color">AlexNet</span>
+                    </a>
+                    
+                    <a href="/tags/VGG/" target="_blank">
+                        <span class="chip bg-color">VGG</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: LRY's Blog<br />'
+            + 'Author: 逯润雨<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者Lurunyu所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5, h6, h7'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6, h7').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2021 逯润雨. 
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">79.7k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LRY89757" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=lry89757@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/yi-ran-fan-te-xi-57-88" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=1785435713&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2021, 07, 29, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果   -->
+        
+            <canvas class="fireworks" style="position: fixed; left: 0; top: 0; z-index: 1; pointer-events: none;"></canvas>
+            <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+            <script type="text/javascript" src="/js/fireworks.js"></script>
+        
+
+        <!-- 背景雪花飘落特效 -->
+        
+
+        <!-- 鼠标点击文字特效 -->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效  -->
+        
+            <script type="text/javascript">
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
+                }
+            </script>
+        
+
+        <!-- 在线聊天工具   -->
+        
+            <script src="//code.tidio.co/xxxxxxxxxxxxxxxxxxxxxxxxxxx.js"></script>
+            <!--  在线聊天位置自定义    -->
+            <script> 
+                $(document).ready(function () {
+
+                    setInterval(change_Tidio, 50);  
+                    function change_Tidio() { 
+
+                        var tidio=$("#tidio-chat iframe");
+                        if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"80px":"20px";   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                            document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        } 
+                        else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+                        else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+
+                        if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                            document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                        }
+                    } 
+                }); 
+            </script>
+        
+
+        <!-- 背景 canvas-nest  -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity= "0.8" zIndex="--1" count="150"src="/libs/background/canvas-nest.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景静止彩带  -->
+        
+
+        <!-- 背景动态彩带 -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>

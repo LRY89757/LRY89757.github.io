@@ -2,6 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lry89757.github.io/2021/08/14/cnn-jing-dian-mo-xing-fu-xian-shu-ju-fen-xi-jie-xi/</loc>
+    
+    <lastmod>2021-09-06T05:25:11.297Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/</loc>
+    
+    <lastmod>2021-09-06T05:25:05.257Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/02/readme/</loc>
+    
+    <lastmod>2021-09-06T05:24:47.312Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/09/06/mu-biao-jian-ce-bi-ji-shang/</loc>
+    
+    <lastmod>2021-09-06T05:24:19.180Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/09/06/faster-rcnn-yuan-ma-jie-du/</loc>
+    
+    <lastmod>2021-09-06T05:24:01.254Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/09/06/shu-ju-zeng-qiang/</loc>
+    
+    <lastmod>2021-09-06T05:20:26.314Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/</loc>
+    
+    <lastmod>2021-09-06T05:12:07.571Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/</loc>
+    
+    <lastmod>2021-09-06T05:09:09.405Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/12/pa-chong-shi-zhan-xi-lie-zhi-zhi-hu-gpu/</loc>
+    
+    <lastmod>2021-09-06T05:08:28.443Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/25/pytorch-cookbook-chang-yong-dai-ma-duan/</loc>
+    
+    <lastmod>2021-09-06T04:45:44.604Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/09/01/python-lu-jing-xiang-hu-yin-yong-dao-ru-wen-ti/</loc>
+    
+    <lastmod>2021-09-01T08:45:14.281Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lry89757.github.io/2021/08/25/yin-pin-ke-shi-hua-cai-yang-pin-lu-he-fu-li-xie-bian-huan/</loc>
     
     <lastmod>2021-08-26T15:46:02.294Z</lastmod>
@@ -16,44 +93,9 @@
   </url>
   
   <url>
-    <loc>https://lry89757.github.io/2021/08/02/readme/</loc>
-    
-    <lastmod>2021-08-26T03:23:42.406Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lry89757.github.io/contact/index.html</loc>
     
     <lastmod>2021-08-26T03:09:59.564Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/</loc>
-    
-    <lastmod>2021-08-25T07:51:42.161Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/01/shang-hai-jiao-da-gai-lu-lun-shu-li-tong-ji-da-zuo-ye-dai-ma-shi-xian-jie-xi/</loc>
-    
-    <lastmod>2021-08-25T07:51:09.819Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/</loc>
-    
-    <lastmod>2021-08-25T07:47:15.910Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/12/pa-chong-shi-zhan-xi-lie-zhi-zhi-hu-gpu/</loc>
-    
-    <lastmod>2021-08-25T07:40:01.989Z</lastmod>
     
   </url>
   
@@ -68,13 +110,6 @@
     <loc>https://lry89757.github.io/2021/08/12/shen-du-xue-xi-gpu-li-yong-lu-di-wen-ti-fen-xi-zhuan/</loc>
     
     <lastmod>2021-08-25T07:38:40.454Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/14/cnn-jing-dian-mo-xing-fu-xian-shu-ju-fen-xi-jie-xi/</loc>
-    
-    <lastmod>2021-08-19T09:55:32.049Z</lastmod>
     
   </url>
   

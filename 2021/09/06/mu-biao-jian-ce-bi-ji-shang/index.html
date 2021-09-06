@@ -1,0 +1,2038 @@
+<!DOCTYPE HTML>
+<html lang="default">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="目标检测笔记（上）, Dian CV DeepLearning MachineLearning 逯润雨 Lurunyu 计算机视觉 深度学习">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="Preface本笔记主要是针对two-stage系列RCNN模型的理解，主要就是一些相关的知识点笔记。花了十天来记这个笔记，顺带着也是一个学习的过程。从开始入门目标检测到各个模型RCNN、SPPNET、FAST RCNN、FASTER RC">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>目标检测笔记（上） | LRY&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://dian.org.cn/static/dian/images/logo.dd99a9865177.gif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">LRY's Blog</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>Galleries</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>Contact</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>Friends</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性   -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>Index</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>Tags</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>Categories</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>Archives</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>Galleries</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>About</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>Contact</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>Friends</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://dian.org.cn/static/dian/images/logo.dd99a9865177.gif" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">LRY's Blog</div>
+        <div class="logo-desc">
+            
+            华中科技大学 | 计算机科学与技术 | 计算机视觉
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                Galleries
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                Contact
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                Friends
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LRY89757/LRY89757.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性   -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        Index
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        Tags
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        Categories
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        Archives
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        Galleries
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        About
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        Contact
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        Friends
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LRY89757/LRY89757.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/LRY89757/LRY89757.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        目标检测笔记（上）
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/深度学习/" target="_blank">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/Faster-RCNN/" target="_blank">
+                                <span class="chip bg-color">Faster RCNN</span>
+                            </a>
+                        
+                            <a href="/tags/目标检测/" target="_blank">
+                                <span class="chip bg-color">目标检测</span>
+                            </a>
+                        
+                            <a href="/tags/RCNN/" target="_blank">
+                                <span class="chip bg-color">RCNN</span>
+                            </a>
+                        
+                            <a href="/tags/笔记/" target="_blank">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                            <a href="/tags/Fast-RCNN/" target="_blank">
+                                <span class="chip bg-color">Fast RCNN</span>
+                            </a>
+                        
+                            <a href="/tags/SPPNet/" target="_blank">
+                                <span class="chip bg-color">SPPNet</span>
+                            </a>
+                        
+                            <a href="/tags/ResNet/" target="_blank">
+                                <span class="chip bg-color">ResNet</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                深度学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-09-06
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>Author:&nbsp;&nbsp;
+                    
+                        逯润雨
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
+                        7.2k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                        26 Min
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h4><p>本笔记主要是针对two-stage系列RCNN模型的理解，主要就是一些相关的知识点笔记。花了十天来记这个笔记，顺带着也是一个学习的过程。从开始入门目标检测到各个模型RCNN、SPPNET、FAST RCNN、FASTER RCNN的原理与改进的过程。其中没有什么源码，源码解读单独放到其他的笔记中了。</p>
+<h3 id="目标检测R-CNN模型"><a href="#目标检测R-CNN模型" class="headerlink" title="目标检测R-CNN模型"></a>目标检测R-CNN模型</h3><ul>
+<li>在CVPR 2014中Ross Girshick提出R-CNN。</li>
+<li>提出了物体检测的重要的思路</li>
+</ul>
+<h4 id="完整的R-CNN结构"><a href="#完整的R-CNN结构" class="headerlink" title="完整的R-CNN结构"></a>完整的R-CNN结构</h4><p>不使用暴力方法，而使用候选区域方法（region proposal method)，创建目标检测的区域<strong>改变了图像领域实现物体检测的模型思路</strong>，R-CNN是以深度神经网络为基础的物体检测的模型，R-CNN在当时以优异的性能令世人瞩目，以R-CNN为基点，后续的SPPNet，Fast R-CNN模型都是照着这个物体检测的思路。</p>
+<p><a href="https://imgtu.com/i/hP62TI" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/23/hP62TI.md.png" alt="基本结构"></a></p>
+<ul>
+<li>步骤（以AlexNet网络为基准）<ul>
+<li><ol>
+<li>找出图片中可能存在目标的候选区域region proposal（对于1张图片找2000个候选区域）</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>将候选区域调整为了适应AlexNet网络的输入图像大小227*227，通过CNN对候选区域提取特征向量，2000个建议框的CNN特征组合成网络AlexNet的最终输出：2000×4096维矩阵。（对着两千个区域做大小调整变换然后放到CNN网络中得到两千个特征向量）</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>将2000×4096维特征经过SVM分类器（20种分类，SVM是二分类器，则有20个SVM），获得2000称20种类别矩阵（<strong>经过20个类别的SVM分类器，对于2000个候选区域做判断，得到2000×20的得分矩阵</strong>）（做分类，后来不用向量机了，换成神经网络了）</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>分别对2000×20维矩阵中进行非极大值抑制（NMS：non-maximum suppression)去除重叠度高的、不好的建议框，得到与目标物体最符合，分数最高的一些建议框。</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>修正bbox,对bbox做回归微调</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>接下来我们详细介绍一下各个过程的实现</em>：</p>
+<h4 id="1-候选区域（Region-of-Interest-ROI-得出（了解SS，选择性搜索）"><a href="#1-候选区域（Region-of-Interest-ROI-得出（了解SS，选择性搜索）" class="headerlink" title="1. 候选区域（Region of Interest (ROI))得出（了解SS，选择性搜索）"></a>1. 候选区域（Region of Interest (ROI))得出（了解SS，选择性搜索）</h4><p>实际上这一部分仅仅了解就行了，没有必要去深究这个东西，这个其实后面的YOLO、Faster R-CNN都不会选择去使用这些东西了。</p>
+<ul>
+<li><p><strong>选择性搜索（SelectiveSerch, SS)</strong>: 首先将每个像素作为一组，然后，计算每一组的纹理，并将两个最接近的组结合起来。但是为了避免单个区域吞噬其他区域，我们首先对较小的组进行分组。我们继续合并区域，直到所有区域都结合在一起。下图第一行展示了如何使用使区域增长，第二行中的蓝色矩形代表合并过程中所有可能的ROI。</p>
+</li>
+<li><p><a href="https://imgtu.com/i/hPhr59" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/23/hPhr59.png" alt="SelectiveSerch"></a></p>
+</li>
+<li><p>SS在一张图片上提取出来约2000个候选区域，<strong>需要注意的是这些候选区域的长宽都不固定</strong>。二我们使用CNN提取候选区域的特征向量，需要接受固定长度的输入，所以需要对候选区域做一些尺寸上的修改。需要我们一些算法进行修改调整。</p>
+</li>
+<li><p>就是一个利用像素特征的过程，还是简单了解一下就OK。</p>
+</li>
+</ul>
+<h4 id="2-CNN网络提取特征"><a href="#2-CNN网络提取特征" class="headerlink" title="2. CNN网络提取特征"></a>2. CNN网络提取特征</h4><p>在候选区域的基础上提取出更高级的、更抽象的特征，这些高级特征是作为下一步的分类器、回归的依据</p>
+<p><a href="https://imgtu.com/i/hP5iYd" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/23/hP5iYd.png" alt="CNN提取特征"></a></p>
+<blockquote>
+<p> 这些特征注意是<strong>保存到磁盘</strong>中！这不是保存到内存中的临时数据！这些特征是我们真正要训练的数据请注意！</p>
+</blockquote>
+<h4 id="3-特征向量训练分类器SVM"><a href="#3-特征向量训练分类器SVM" class="headerlink" title="3. 特征向量训练分类器SVM"></a>3. 特征向量训练分类器SVM</h4><blockquote>
+<p><em>假设做20个类别的物体检测</em></p>
+</blockquote>
+<ul>
+<li>假设一个图片得到了2000个候选区域，那么我们提取出来的就是2000×4096这样的特征向量（R-CNN中默认CNN层输出4096特征向量）。</li>
+<li>R-CNN选用SVM进行二分类，假设检测20个类别，那么会提供20个不同类别的SVM分类器，每个分类器都会对2000个候选区域的特征向量分别判断一次，这样得出[2000, 20]的得分矩阵，如下图所示</li>
+<li><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/23/hPT9TU.md.png" alt="hPT9TU.md.png"></li>
+<li>猫分类对：2000个候选区域做判断，得到2000个属于猫的类别</li>
+<li>狗分类对：2000个候选区域做判断，得到2000个属于狗的类别</li>
+<li>……</li>
+<li>……</li>
+<li>最终得到[2000, 20]向量。</li>
+</ul>
+<h4 id="4-非极大抑制-NMS"><a href="#4-非极大抑制-NMS" class="headerlink" title="4. 非极大抑制(NMS)"></a>4. 非极大抑制(NMS)</h4><h5 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h5><ul>
+<li><strong>筛选候选区域，目标是一个物体只保留一个最优的框，来抑制那些冗余的候选框</strong></li>
+<li>RCNN预测2000个候选框，得到所含物体数的较为准确的候选框（<del>这句话有点难以理解，我的表达能力有问题</del>）</li>
+</ul>
+<h5 id="迭代过程"><a href="#迭代过程" class="headerlink" title="迭代过程"></a>迭代过程</h5><ul>
+<li><p>对于所有2000个候选区域得分进行概率筛选，0.5，小于0.5都删了。</p>
+</li>
+<li><p>剩余的候选框</p>
+<ul>
+<li><p>假设图片真实物体个数为2（N），筛选之后候选框为5（P），<del>筛选前可是有2000个</del>，计算N中每个物体位置与所有P的交并比IOU计算，得到P中欧给每个候选框对应IOU最高的N中一个</p>
+</li>
+<li><p>如下图，A、C候选框对应左边车辆，B、D、E对应右边车辆<a href="https://imgtu.com/i/hPjfSO" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/23/hPjfSO.png" alt="对应框"></a></p>
+<p>假设现在滑动窗口有：A、B、C、D、E5个候选框，IOU有点像是计算重叠程度的。</p>
+<ul>
+<li>第一轮：对于右边车辆，假设B是得分最高的，与B的IOU&gt;0.5删除。现在与B计算IOU，DE结果&gt;0.5，剔除DE，B作为一个预测结果</li>
+<li>第二轮：对于左边车辆，AC中，A的得分最高，与A计算IOU，C的结果&gt;0.5，剔除C，A作为一个结果</li>
+</ul>
+<p><strong>最终这五个中检测出结果为A和B</strong>，最终理想状态就是每一个Ground truth都有一个候选框。</p>
+<p><strong>SS算法得到的物体位置已经固定了，但是我们筛选出的位置不一定就真的特别准确</strong>，需要对A和B进行最后的修正。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-修正候选框"><a href="#5-修正候选框" class="headerlink" title="5. 修正候选框"></a>5. 修正候选框</h4><ul>
+<li><p>通过非最大抑制筛选出来的候选框不一定非常准确怎么办？R-CNN提供了这样一种方法，建立一个bbox regrassor</p>
+<ul>
+<li><p>回归用于修正筛选后的候选区域，使之回归于ground-truth,默认认为这两个框之间是线性关系，因为在最后筛选出来的候选区域和ground-truth很接近了</p>
+<p>修正过程（线性回归）</p>
+<p><a href="https://imgtu.com/i/hipcR0" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/23/hipcR0.png" alt="线性回归算法"></a></p>
+<p>我们给出一个相关的解释：</p>
+<p><a href="https://imgtu.com/i/hi9af1" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/23/hi9af1.png" alt="例子"></a></p>
+<ul>
+<li>假设G是GT，而A是predicted bbox.那么我们想要通过该回归算法来使得A尽可能接近G，通过变换来使得A变为G’，尽量和真实值G相等。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>RCNN输出：一张图片预测一个X候选框， x*w = y_locate（经过回归修正的）</p>
+</li>
+</ul>
+<p><strong>以上便是我们RCNN的五步过程。</strong></p>
+<h4 id="检测的评价指标"><a href="#检测的评价指标" class="headerlink" title="检测的评价指标"></a>检测的评价指标</h4><h5 id="IOU交并比"><a href="#IOU交并比" class="headerlink" title="IOU交并比"></a>IOU交并比</h5><p><em>IOU交并比是最简单的一种</em></p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>description</th>
+<th>输入</th>
+<th>输出</th>
+<th>评价标准</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Detection and Localization(检测和定位)</td>
+<td>在输入图片中找出存在物体类别和位置（可能存在多种物体）</td>
+<td>图片（Image)</td>
+<td>类别标签（categories）和位置（bbox(x,y,w,h))</td>
+<td>IOU（Intersection over Union</td>
+</tr>
+</tbody></table>
+<ul>
+<li>IOU(交并比)<ul>
+<li>两个区域的重叠程度overlap:候选区域和标定区域的IOU值</li>
+<li><a href="https://imgtu.com/i/hFEfk8" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/24/hFEfk8.png" alt="IOU计算公式"></a></li>
+<li>所以我们的IOU值越大，重合程度越大。IOU值在[0, 1]之间</li>
+<li>通常来说IOU&gt;0.5，说明重合程度算比较高了，类别一样。</li>
+<li><strong>属于位置的考量</strong></li>
+</ul>
+</li>
+</ul>
+<h5 id="平均精确率（map，mean-average-precision"><a href="#平均精确率（map，mean-average-precision" class="headerlink" title="平均精确率（map，mean average precision)"></a>平均精确率（map，mean average precision)</h5><p>训练样本的标记：候选框（如RCNN2000个）标记</p>
+<ul>
+<li>与每个ground truth box有着最高的IOU的anchor标记为正样本</li>
+<li>剩下的anchor/anchors与任何ground truth box的IOU大于0.7记为正样本，IOU小于0.3， 记为负样本</li>
+</ul>
+<ul>
+<li>定义：多个分类任务的AP的平均值。<ul>
+<li>mAP = 所有类别的AP之和/类别总个数</li>
+<li>注：<code>PR曲线</code>，而AP（average precision)就是这个曲线下的面积（ROC与AUC）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>关于ROC曲线、AOC值、正确率、召回率、PR曲线，这里有着几个博客讲的还可以:</strong></p>
+<ol>
+<li><p><strong><a href="https://zhuanlan.zhihu.com/p/58587448" target="_blank" rel="noopener">ROC曲线和AUC值</a>,</strong></p>
+</li>
+<li><p><strong><a href="https://zhuanlan.zhihu.com/p/31256633" target="_blank" rel="noopener">ROC曲线、AUC值、正确率、召回率</a></strong></p>
+</li>
+<li><p><strong><a href="https://zhuanlan.zhihu.com/p/104917232" target="_blank" rel="noopener">ROC曲线和PR曲线</a></strong></p>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>方法步骤</p>
+<ul>
+<li><ol>
+<li>对于其中一个类别C，首先将算法输出所有C类别的预测框，按预测的分数confidence排序<ul>
+<li>RCNN中就是SVM的输出分数</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>设定不同的K值，选择top k个预测框，计算FP和TP，计算Precision和AP</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>将得到的N个类别的AP取平均，即得到AP；AP是针对单一类别的，mAP时将所有类别的AP求和再取平均</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>首先回顾精确率和召回率<ul>
+<li>左边一整个矩形中的数表示ground truth之中为1的（即为正确的）数据</li>
+<li>右边一整个矩形中的数表示ground truth之中为0的数据</li>
+<li>精度precision的计算使用检测正确的数据个数/总的检测个数</li>
+<li>召回率recall的计算是用检测正确的数据个数/ground truth中所有正数据个数。</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://imgtu.com/i/h3fxcn" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/28/h3fxcn.png" alt="图像辅助理解各个“率”"></a></p>
+<p>我们所说的召回率就是绿色的半圆除以左半边，召回率是为了解决样本不均衡的问题。</p>
+<p>这里有更为详细的如何计算：</p>
+<p><a href="https://imgtu.com/i/h3huB6" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/28/h3huB6.md.png" alt="精确率与召回率计算"></a></p>
+<h4 id="RCNN算法总结"><a href="#RCNN算法总结" class="headerlink" title="RCNN算法总结"></a>RCNN算法总结</h4><p>流程总结</p>
+<ol>
+<li>首先我们输入一张图片</li>
+</ol>
+<p><a href="https://imgtu.com/i/h3hLb6" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/28/h3hLb6.md.png" alt="input"></a></p>
+<ol start="2">
+<li>接着我们得到2000个候选区域，得到ROI</li>
+</ol>
+<p><a href="https://imgtu.com/i/h349xA" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/28/h349xA.md.png" alt="ROI"></a></p>
+<ol start="3">
+<li>对候选区域进行大小适当的变换</li>
+</ol>
+<p><a href="https://imgtu.com/i/h358OI" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/28/h358OI.md.png" alt="大小变换"></a></p>
+<ol start="4">
+<li>而后经过卷积提取特征得到特征向量</li>
+</ol>
+<p><a href="https://imgtu.com/i/h35rXn" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/28/h35rXn.md.png" alt="经过卷积层"></a></p>
+<ol start="5">
+<li>经过SVM分类得到类别和reg得到bbox</li>
+</ol>
+<p><a href="https://imgtu.com/i/h35Tn1" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/28/h35Tn1.md.png" alt="经过SVM分类得到类别和reg得到bbox"></a></p>
+<h4 id="RCNN表现与缺点"><a href="#RCNN表现与缺点" class="headerlink" title="RCNN表现与缺点"></a>RCNN表现与缺点</h4><ul>
+<li>表现<ul>
+<li>在VOC2007数据集上的平均精度map达到66%</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>缺点<ul>
+<li>训练阶段多， 步骤繁琐：微调网络+训练SVM+训练边框回归器（要训练好多东西，模型太多）。</li>
+<li>训练耗时，占用磁盘空间大：5000张图片产生几百G的特征文件。（VOC数据集的检测结果，因为SVM的存在）</li>
+<li>处理速度慢：使用GPU，VGG16模型处理一张图像需要47s</li>
+<li>图片形状变化：候选区域要经过crop/warp进行固定大小，无法保证图片不变性</li>
+</ul>
+</li>
+</ul>
+<h3 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h3><h4 id="Preface-1"><a href="#Preface-1" class="headerlink" title="Preface"></a>Preface</h4><ul>
+<li><p>假设我们需要在卷积神经网络中了解一个神经网络的话，<strong>我们只需要了解ResNet就行了</strong>，这个神经网络是最好用的一个网络了。</p>
+</li>
+<li><p>这个源自一个思想就是，我们总是不断加深我们的神经网络，但是加深神经网络一定会给我们带来好处吗？</p>
+<ul>
+<li>不一定的。可能我模型越大，就会学得更偏了……</li>
+<li>而我们ResNet核心思想就是我们每次加大模型，都包含上之前的那个小模型，<strong>至少要保证我加深网络之后，模型没有比之前差</strong>， 这样的话至少可以保证一个下限，保证我没有学偏。</li>
+</ul>
+</li>
+</ul>
+<h4 id="残差块"><a href="#残差块" class="headerlink" title="残差块"></a>残差块</h4><h5 id="具体思想"><a href="#具体思想" class="headerlink" title="具体思想"></a>具体思想</h5><ul>
+<li><em>之前的时候，我们习惯于一层一层的不断前向传递参数，上一层的输出就是下一层的输入，这么一个固定的模式</em></li>
+</ul>
+<p>而ResNet却改变了这样的一个固有模式，来保证我们至少不会得到更差的结果：</p>
+<ul>
+<li><p>串联一个层改变函数类，我们希望能扩大函数类</p>
+</li>
+<li><p>残差快加入快速通道来得到$f(x) = x + g(x)$​的结构。这样来说就假设我$g(x)$什么都不干我们至少会得到原来的结果。</p>
+</li>
+<li><p>可以看下图，相当于加了个快速通道，加了个“捷径”来是输入加至输出。</p>
+</li>
+<li><p><a href="https://imgtu.com/i/hANdN8" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/24/hANdN8.md.png" alt="与之前对比"></a></p>
+</li>
+<li><p>当然ResNet当时不是这么解释的，他当时是借助了残差这些概念但是我们不需要这么解释，就按照以上的方式解读是非常合适的。</p>
+</li>
+</ul>
+<h5 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h5><p>当然，以上的只是一个直观上的来理解，我们真正的残差ResNet块的细节结构如下：</p>
+<p><a href="https://imgtu.com/i/hAaImR" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/24/hAaImR.png" alt="ResNet块"></a></p>
+<ul>
+<li>可以看出，这个ResNet块这里借鉴了VGG的有关卷积层，利用了3*3的卷积块，这么一来我们的输入输出的形状不会发生变化，正好有利于我们的加上输入层的操作。</li>
+<li>同时这里如果我们想要变换输入层的通道数，我们也可以利用到这里有一个1*1的卷积层方便改变通道数</li>
+<li>综合以上两点，有利于我们输入和输出的相加。（<del>可以说完美解决了这些问题</del>）</li>
+</ul>
+<h5 id="更多变种"><a href="#更多变种" class="headerlink" title="更多变种"></a>更多变种</h5><p>当然我们或许对于我们加入x的位置有所疑问，为什么必须加到BN层和ReLU之间呢？实际上这里就是我们另一个比较有趣的地方，答案是：<strong>随便试试！</strong></p>
+<p><a href="https://imgtu.com/i/hAdHDs" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/24/hAdHDs.png" alt="都可以尝试一下"></a></p>
+<h4 id="ResNet块"><a href="#ResNet块" class="headerlink" title="ResNet块"></a>ResNet块</h4><p>由下图我们可以看出具体的ResNet块的组成，实际上ResNet块是有2种的（上边也有所提到）：</p>
+<ul>
+<li>第一个ResNet块便是首先我们需要将其高宽减半，所以我们定义了3*3conv层的步幅为2，这样一来我们通过的数据高宽减半了，而高宽减半后我们通常会将我们的通道数增加（<del>这是之前VGG等的经验</del>），所以我们加入快速通道的同时我们加进去了一个conv1层来减半高宽并且增加通道数以保持我们可以顺利的将两者相加。<em>这里仍需注意的一点是我们的3*3卷积仅仅只有第一个是步幅为2，也就是只减半一次</em></li>
+<li>第二种ResNet块便是正常的3*3卷积，保持我们的高宽不变，甚至我们通道数也没有改变，这样一来我们就可以不使用1*1卷积来改变输入的通道数，直接相加就OK。而第二个ResNet块我们会重复多次，接多个这样的块。</li>
+</ul>
+<p><a href="https://imgtu.com/i/hADyJP" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/24/hADyJP.png" alt="ResNet块"></a></p>
+<h4 id="ResNet架构"><a href="#ResNet架构" class="headerlink" title="ResNet架构"></a>ResNet架构</h4><ul>
+<li>类似VGG和GoogleNet的总体架构，也是5个stage</li>
+<li>不过这里替换成了ResNet块</li>
+</ul>
+<p><a href="https://imgtu.com/i/hAgPqU" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/24/hAgPqU.png" alt="ResNet架构"></a></p>
+<h3 id="8-29号记录"><a href="#8-29号记录" class="headerlink" title="8.29号记录"></a>8.29号记录</h3><h3 id="改进-目标检测SPPNET"><a href="#改进-目标检测SPPNET" class="headerlink" title="改进-目标检测SPPNET"></a>改进-目标检测SPPNET</h3><p>这个相当于是中间的一个算法了。</p>
+<h4 id="Preface-2"><a href="#Preface-2" class="headerlink" title="Preface"></a>Preface</h4><ul>
+<li>学习目标<ul>
+<li>说明SPPNET的特点</li>
+<li>说明SPP层的作用</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>暂无</li>
+</ul>
+</li>
+</ul>
+<h4 id="RCNN慢在哪里？"><a href="#RCNN慢在哪里？" class="headerlink" title="RCNN慢在哪里？"></a>RCNN慢在哪里？</h4><p><a href="https://imgtu.com/i/hGFNo6" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hGFNo6.png" alt="RCNN全过程"></a></p>
+<p><strong>每个候选区域都进行了卷积操作提取特征</strong>!</p>
+<p>慢就慢在这里的ConvNet这个地方！每个图片都有2000个候选框来做卷积!</p>
+<h4 id="那我们进行了怎样的改进呢？"><a href="#那我们进行了怎样的改进呢？" class="headerlink" title="那我们进行了怎样的改进呢？"></a>那我们进行了怎样的改进呢？</h4><p>SPPNet主要存在两点改进的地方，提出了SPP层</p>
+<ul>
+<li>减少卷积运算<ul>
+<li>首先RCNN是经过一个crop/warp层，这是裁剪resize图片得到候选区域用的，而后我们经过卷积层，这个时候是2000个候选区域都经过卷积层，，然后经过全连接层最后得到输出</li>
+<li>而我们的SPPNET是首先将这一张图片经过卷积层，注意，之前RCNN可是2000张经过卷积层！而后经过一个SPP Pooling层，接着就是经过全连接层然后输出。<ul>
+<li>一张图片经过了卷积，那我们怎么得到候选区域呢?这便是我们SPP层需要考虑的了。</li>
+<li><strong>可见我们的重点改进呢便是这个SPP层（spatial pyramid pooling<del>空间金字塔池化</del>）</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://imgtu.com/i/hGVoCV" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hGVoCV.png" alt="RCNN和SPP对比"></a></p>
+<table>
+<thead>
+<tr>
+<th>R-CNN模型</th>
+<th>SPPNet模型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1、R-CNN是让每个候选区域经过crop/wrap等操作变换成固定大小的图像   2、固定大小的图像塞给CNN传给后面的层做训练回归分类操作。</td>
+<td>1、SPPNet把全图塞给CNN得到全图的feature map 2、 <strong>让SS（选择性搜索）得到候选区域直接映射特征向量中对应位置</strong> 3、映射过来的特征向量，<strong>经过SPP层</strong>（<strong>空间金字塔变换层</strong>），S输出固定大小的特征向量给FC层。</td>
+</tr>
+</tbody></table>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hGZiKe.png" alt="更形象的对比"></p>
+<ul>
+<li>这个映射还是非常关键的，原图中通过SS得到的候选区域直接<strong>映射</strong>到我们的卷积得到的相应区域。</li>
+<li><strong>然后映射过来的候选区域的特征向量</strong>，经过SPP层来输出固定大小的特征向量给FC层。</li>
+</ul>
+<h4 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h4><p><em>原始图片经过CNN变成了feature map, 原始图片通过选择性搜索(SS）得到了候选区域（Region of Interest),现在需要将基于原始图片的候选区域映射到feature map中的特征向量。映射过程图参考如下：</em></p>
+<ul>
+<li>映射是有特定规则的</li>
+</ul>
+<p><a href="https://imgtu.com/i/hGeYeH" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hGeYeH.png" alt="映射"></a></p>
+<p>整个映射过程有具体的公式，如下：</p>
+<p>假设（x’，y’)表示特征图上的坐标点，坐标点(x, y)表示原输入图片上的点，那么它们之间有如下转换关系，这种映射关系与网络结构有关：(x, y) = (S*x’, S*y’), 即</p>
+<ul>
+<li><p>左上角的点：</p>
+<ul>
+<li><strong>x’ = [x / S] + 1</strong></li>
+</ul>
+</li>
+<li><p>右下角的点：</p>
+<ul>
+<li><strong>x’ = [x / S] - 1</strong></li>
+</ul>
+</li>
+</ul>
+<p>其中S就是CNN中所有的strides的乘积，包含了池化、卷积的stride.论文中使用S计算出来的为2×2×2×2=16</p>
+<blockquote>
+<p>如果想关注这个公式怎么计算出来的，我们可以参考：</p>
+<p><a href="http://kaiminghe.com/iccv15tutorial/iccv2015_tutorial_convolutional_feature_maps_kaiminghe.pdf" target="_blank" rel="noopener">http://kaiminghe.com/iccv15tutorial/iccv2015_tutorial_convolutional_feature_maps_kaiminghe.pdf</a></p>
+</blockquote>
+<p>论文使用的AlexNet好像（此时2015还没提出来那个ResNet)</p>
+<ul>
+<li>原图：特征图中xmin’, ymin’ = [xmin/16]+1, [ymin/16]+1</li>
+<li>特征图：xmax’,ymax’ = [xmax/16] - 1,ymax/16 -1</li>
+</ul>
+<p><em>那么这么一来我们得到特征图候选区域了。但是我们得到的特征图仍然大小不一，需要我们进一步的将特征图转换为固定大小的特征向量（RNN中靠的是crop/warp来得到固定的大小，然后才通过的CNN注意对比）。这就需要我们的后面的spatial pyramid pooling层了</em></p>
+<h4 id="spatial-pyramid-pooling"><a href="#spatial-pyramid-pooling" class="headerlink" title="spatial pyramid pooling"></a>spatial pyramid pooling</h4><p><strong>候选区域的特征图转换成固定大小的特征向量</strong></p>
+<p>我们给出一个示例：假设原图输入是224×224，对于conv出来后的输出是13×13×256，其中某个映射的候选区域假设为12×10×256</p>
+<ul>
+<li>spp layer 会将每一个候选区域分成1×1，2×2，4×4三张子图，对每个子图的每个区域做max pooling,得出的特征再连接到一起就是（16+4+1）×256 = 21×256=5376结果，接着给全连接层做进一步处理，如下图：</li>
+<li>Spatial bins（空间盒个数）：1 + 4 + 16 = 21，相当于盒子一样将我们的像素装进去做池化。</li>
+<li>类似于金字塔型的池化操作能够减少我们的特征数并且将我们的特征数固定到了5736个这样一个结果。我们到全连接层</li>
+</ul>
+<p><a href="https://imgtu.com/i/hG2GwT" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hG2GwT.png" alt="经过SPP层"></a></p>
+<h4 id="SPPNet总结"><a href="#SPPNet总结" class="headerlink" title="SPPNet总结"></a>SPPNet总结</h4><p>我们SPPNet其实创新来说就是一个SPP层的创新，创新力度相对而言没有那么大。只是我们的</p>
+<ul>
+<li><p>优点</p>
+<ul>
+<li>SPPNet在R-CNN的基础上提出了改进，通过候选区域和feature map的映射，配合SPP层的使用，从而达到了CNN层的共享计算，减少了运算的时间，后面的Fast R-CNN等也是受SPPNet的启发</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>训练依然过慢、效率低，特征需要写入磁盘，因为(SVM的存在)</li>
+<li>分阶段训练网络：选取候选区域、训练CNN、训练SVM、训练bbox回归器，SPPNet反向传播效率低。可以看出，<strong>SPP仅解决了一小部分R-CNN的缺点</strong>，很多缺点仍然没有解决。</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://imgtu.com/i/hGRbb6" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hGRbb6.png" alt="总流程"></a></p>
+<h3 id="目标检测Fast-R-CNN"><a href="#目标检测Fast-R-CNN" class="headerlink" title="目标检测Fast R-CNN"></a>目标检测Fast R-CNN</h3><h4 id="Preface-3"><a href="#Preface-3" class="headerlink" title="Preface"></a>Preface</h4><ul>
+<li>了解Fast R-CNN的结构特点</li>
+<li>说明RoI pooling 的特点</li>
+<li>了解多任务损失</li>
+</ul>
+<p>SPPNet性能已经得到了很大的改善，但是由于网络之间不统一训练（又要训练卷积，又要训练SVM，又要训练regression……），造成很大麻烦，所以接下来的Fast R-CNN就是为了解决这样的问题，直接将那些统一到一起了。</p>
+<h4 id="改进之处"><a href="#改进之处" class="headerlink" title="改进之处"></a>改进之处</h4><ul>
+<li>提出了一个RoI pooling,然后整合整个模型，把CNN、RoIpooling、分类器、bbox回归几个模块整个一起训练</li>
+</ul>
+<p><a href="https://imgtu.com/i/hGfdpQ" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hGfdpQ.png" alt="ROI pooling"></a></p>
+<ul>
+<li>步骤<ul>
+<li>首先将整个图片输入到一个基础卷积网络，得到整张图的feature map</li>
+<li>将选择性搜索算法的结果region proposal（ROI)映射到feature map中(前两步和SPPNet一样哦)</li>
+<li>ROI pooling layer（与SPPNet对比）提取一个固定长度的特征向量，每个特征会输入到一系列全连接层，得到一个ROI特征向量（<strong>此步骤是对每一个候选区域都会进行相同的操作</strong>）<ul>
+<li>其中一个是传统softmax层（不同于SVM）进行分类，输出类别有k个类别加上“背景类”</li>
+<li>另一个是bounding box regressor</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="ROI-pooling"><a href="#ROI-pooling" class="headerlink" title="ROI pooling"></a>ROI pooling</h4><p>首先RoI pooling只是一个简单版本的SPP，目的是为了减少计算时间并且得出固定长度的向量。</p>
+<p><a href="https://imgtu.com/i/hG4VPO" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hG4VPO.png" alt="ROI AND SPP"></a></p>
+<ul>
+<li>只使用一种比如说4×4=16空间盒数</li>
+<li>ROI池层使用最大池化将任何有效ROI区域内的特征转换成具有H×W的固定空间范围的小feature map，其中H和W是超参数 他们独立于任何特定的ROI。</li>
+</ul>
+<p>为什么要设计单个尺度呢？这要涉及到single scale 与 multi scale两者的优缺点</p>
+<ul>
+<li>single scale， 直接将image定为某种scale，直接输入网络来训练即可。（Fast R-CNN)</li>
+<li>multi scale, 也就是要生成一个金字塔</li>
+</ul>
+<p><strong>后者比前者更加准确些，但准确率并没有高很多，不过时间要节省很多，所以实际采用的是第一个策略，因此Fast R-CNN要比SPPNet快很多也是因为这里的原因。</strong></p>
+<h4 id="End-to-End-model"><a href="#End-to-End-model" class="headerlink" title="End-to-End model"></a>End-to-End model</h4><p>从输入端到输出端直接用一个神经网络相连，整体优化目标函数</p>
+<h4 id="接着我们来看看为什么后面的整个网络能进行统一训练？"><a href="#接着我们来看看为什么后面的整个网络能进行统一训练？" class="headerlink" title="接着我们来看看为什么后面的整个网络能进行统一训练？"></a>接着我们来看看为什么后面的整个网络能进行统一训练？</h4><p>特征提取CNN的训练和SVM分类器的训练在时间上是先后顺序，两者的训练方式独立，因此SVMs的训练Loss无法更新SPP-Layer之前的卷积层参数，去掉了SVM分类这一过程，所有特征都存储在内存中，不占用磁盘空间，<strong>形成了End-to-End模型</strong>（除了选择性搜索得到候选框也即proposal除外，end-to-end在Faster -RCNN中得以完善）</p>
+<ul>
+<li>训练会比较统一：废弃了SVM以及SPPnet<ul>
+<li>ROI pooling layer  + softmax </li>
+<li>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="多任务损失"><a href="#多任务损失" class="headerlink" title="多任务损失"></a>多任务损失</h4><p><em>这是Fast R-CNN的一个特点</em></p>
+<p>两个loss，分别是：</p>
+<ul>
+<li>对于分类loss, 是一个N+1路的softmax输出，其中的N是类别 个数，1是背景，使用交叉熵损失</li>
+<li>对于回归loss，是一个4×N路输出的regressor，也就是说对于每个类别都会训练一个单独的regressor的意思，<strong>使用平均绝对误差损失（MAE）即L1损失</strong></li>
+<li><a href="https://imgtu.com/i/hGbcAs" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hGbcAs.png" alt="L1 Loss"></a></li>
+</ul>
+<ul>
+<li>fine-tuning训练<ul>
+<li>在微调时，调整CNN+ROI pooling + softmax</li>
+<li>调整bbox regressor 回归当中的参数</li>
+</ul>
+</li>
+</ul>
+<h4 id="R-CNN、SPPNet、Fast-R-CNN效果对比"><a href="#R-CNN、SPPNet、Fast-R-CNN效果对比" class="headerlink" title="R-CNN、SPPNet、Fast R-CNN效果对比"></a>R-CNN、SPPNet、Fast R-CNN效果对比</h4><table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">R-CNN</th>
+<th align="center">SPPNet</th>
+<th align="center">Fast R-CNN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">训练时间（h）</td>
+<td align="center">84</td>
+<td align="center">25</td>
+<td align="center"><strong>9.5</strong></td>
+</tr>
+<tr>
+<td align="center">测试时间/图片</td>
+<td align="center">47.0s</td>
+<td align="center">2.3s</td>
+<td align="center"><strong>0.32s</strong></td>
+</tr>
+<tr>
+<td align="center">mAP</td>
+<td align="center">66.0</td>
+<td align="center">63.1</td>
+<td align="center"><strong>66.9</strong></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h4 id="Fast-R-CNN总结"><a href="#Fast-R-CNN总结" class="headerlink" title="Fast R-CNN总结"></a>Fast R-CNN总结</h4><p><a href="https://imgtu.com/i/hGXGxP" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hGXGxP.png" alt="Fast R-CNN"></a></p>
+<p>基本上已经算是一个完整的神经网络了</p>
+<ul>
+<li>缺点<ul>
+<li>Selective Search 提取Region Proposals, <strong>没有真正意义的端到端</strong>，操作也比较耗时</li>
+</ul>
+</li>
+</ul>
+<p>接下来便是我们的最终优化改进，Faster R-CNN的登场了！</p>
+<h3 id="目标检测Faster-R-CNN"><a href="#目标检测Faster-R-CNN" class="headerlink" title="目标检测Faster R-CNN"></a>目标检测Faster R-CNN</h3><h4 id="Preface-4"><a href="#Preface-4" class="headerlink" title="Preface"></a>Preface</h4><ul>
+<li>了解Faster R-CNN的特点</li>
+<li>知道RPN的原理以及作用</li>
+<li>候选区域融合到网络之中。</li>
+</ul>
+<p>在Fast R-CNN还存在着瓶颈问题：Selective  Search （选择性搜索）。要找出所有的候选框，那我们有没有一个更加高效的方法来求出这些候选框呢？</p>
+<h4 id="改进之处-1"><a href="#改进之处-1" class="headerlink" title="改进之处"></a>改进之处</h4><p>在Faster R-CNN中加入了一个提取边缘的神经网络，也就是说找候选框的工作也交给了神经网络来做了。这样，目标检测的四个基本步骤（<strong>候选区域生成，特征提取，分类，位置精修</strong>）终于被统一到一个深度网络框架之内。</p>
+<p>我们不妨先看一下三种网络的对比：</p>
+<p><a href="https://imgtu.com/i/hGjR6P" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hGjR6P.png" alt="三种方法对比"></a></p>
+<p>可以明显看出我们的faster相比之下候选区域的推荐也融进去了，将以上说的四个步骤：<strong>候选区域生成，特征提取，分类，位置精修</strong>都融进去了。</p>
+<p>Faster R-CNN可以简单地看成是<strong>区域生成网络+Fast R-CNN的模型</strong>， 用区域生成网络（Region Proposal Network, 简称RPN）来代替Fast R-CNN中的选择性搜索方法，结构如下：</p>
+<p><a href="https://imgtu.com/i/hGjx7F" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/29/hGjx7F.png" alt="RPN结构"></a></p>
+<h4 id="RPN"><a href="#RPN" class="headerlink" title="RPN"></a>RPN</h4><ul>
+<li><p>首先向CNN网络（VGG-16)输入图片，Faster R-CNN使用一组基础的conv+relu+pooling层提取feature map.该<strong>feature map被共享用于后续RPN层和全连接层</strong>。</p>
+</li>
+<li><p>Region Proposal Networks. RPN网络用于生成region proposals, faster rcnn中称之为anchors</p>
+<ul>
+<li><strong>通过softmax判断anchors属于foreground 或者background</strong></li>
+<li><strong>再利用bounding box regression 修正anchors获得精确的proposals， 输出器Top-N(默认为300)的区域给RoI pooling</strong></li>
+<li>得到默认300个候选区域</li>
+</ul>
+</li>
+<li><p>生成anchors-&gt;softmax分类器提取fg anchors -&gt; bbox reg回归 fg anchors -&gt; Proposal Layer生成proposals</p>
+</li>
+<li><p>后续就是Fast RCNN操作</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210829221422804.png" alt="全过程"></p>
+<ul>
+<li>RPN就是我们的从Feature Map到ROIPooling这中间的部分，也就是图片左下角这么一块部分。</li>
+<li>原来我们是将我们的feature map通过SS（选择性搜索）得到我们的候选区域然后映射到我们的ROIPooling处理后的结果得到最终候选区域</li>
+<li>现在我们可以说RPN完全取代了我们SS所承担的任务，直接通过我们的RPN在我们的feature map来得到我们候选区域，然后也是同样的映射到ROIPooling处理后的结果。</li>
+</ul>
+<h4 id="RPN原理"><a href="#RPN原理" class="headerlink" title="RPN原理"></a>RPN原理</h4><p>RPN网络的主要作用是得出比较准确的候选区域。整个过程分为两步</p>
+<ul>
+<li>用n×n（默认3×3=9）的大小窗口去扫描特征图，每个滑窗位置映射到一个低维的向量（默认256维），并为每个滑窗位置考虑k种（在论文设计中k=9）可能的<strong>参考窗口（论文中称为anchors）</strong></li>
+<li>这里滑动的方式请注意，这里会以每一个像素为中心点生成k种可能的参考窗口。假设我们的输入feature map是20*20*256的，那么我们会得到20*20*9=3600个参考窗口（anchors）（当然我们的每一个anchors也有256个通道）。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/30/htGhbn.png" alt="建议框"></p>
+<ul>
+<li><p>我们可以看一下他所给出的每个像素点为中心的九种窗口大小的选取：</p>
+<p><a href="https://imgtu.com/i/htNkMF" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/30/htNkMF.png" alt="九种窗口"></a></p>
+</li>
+</ul>
+<ul>
+<li>3*3卷积核的中心点对应原图上的位置，将该点作为anchor的中心点，在原图中框出多尺度、多种长宽比的anchors，三种尺度（128，256，512），三种长宽比（1：1，1：2，2：1），每个特征图种的像素点有9种框。上边就是所谓的图。</li>
+</ul>
+<p>举个例子（以下图为例）：</p>
+<p><a href="https://imgtu.com/i/htUVl8" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/30/htUVl8.png" alt="流程"></a></p>
+<p>假设我们最后feature shape为51*39*256, 那么我们会最终得到</p>
+<h4 id="Faster-R-CNN训练"><a href="#Faster-R-CNN训练" class="headerlink" title="Faster R-CNN训练"></a>Faster R-CNN训练</h4><p>Faster R-CNN的训练分为两部分，即两个网络的训练。</p>
+<ul>
+<li><p>RPN训练</p>
+<ul>
+<li>目的：从众多的候选区域中提取出score较高的，并且经过regression调整的候选区域</li>
+<li>分类：二分类，softmax，logistic regression</li>
+<li>候选框的调整：均方误差修正</li>
+</ul>
+</li>
+<li><p>Fast R-CNN部分的训练：</p>
+<ul>
+<li>Fast R-CNN classification(over classes): 所有类别分类N+1，得到候选区域的每个类别概率</li>
+<li>Fast R-CNN regression(bbox regression): 得到更好的位置</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>预测类别训练：softmax</li>
+<li>预测位置的训练：均方误差损失</li>
+</ul>
+<p><a href="https://imgtu.com/i/hN3s7q" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/30/hN3s7q.png" alt="总流程"></a></p>
+<h4 id="候选区域的训练"><a href="#候选区域的训练" class="headerlink" title="候选区域的训练"></a>候选区域的训练</h4><ul>
+<li>训练样本anchor标记<ul>
+<li>每个ground-truth box有着最高的IOU的anchor标记为正样本</li>
+<li>剩下的anchor/anchors与任何ground-truth box的IOU大于0.7的记为正样本，IOU小于0.3，记为负样本</li>
+<li>剩下的样本全部忽略</li>
+<li>正负样本比例为1：3</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://blog.csdn.net/qq_40212975/article/details/107214896" target="_blank" rel="noopener">关于正负样本、简单困难样本</a></p>
+<p><a href="https://imgtu.com/i/hNB5KP" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/30/hNB5KP.png" alt></a></p>
+<ul>
+<li>训练损失<ul>
+<li>RPN classification(anchor good/bad), 二分类，是否有物体，是，否。</li>
+<li>RPN， 回归</li>
+<li>注：这里使用的损失函数和Fast R-CNN内的损失函数原理类似，同时最小化两种代价</li>
+</ul>
+</li>
+</ul>
+<p><strong>候选区域的训练是为了让得出来的正确的候选区域，并且候选区域经过了回归微调。在这基础上做Fast RCNN训练是得到特征向量做分类预测和回归预测。</strong></p>
+<h4 id="效果对比"><a href="#效果对比" class="headerlink" title="效果对比"></a>效果对比</h4><p><a href="https://imgtu.com/i/hNrmSs" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/30/hNrmSs.png" alt="三种R-CNN对比" style="zoom:150%;"></a></p>
+<p>Faster R-CNN很明显速度会更快一些，性能提升非常显著。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li><p>优点</p>
+<ul>
+<li>提出RPN网络</li>
+<li>端到端网络模型</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>训练参数过大</li>
+</ul>
+</li>
+</ul>
+<p>可以改进的需求：</p>
+<ul>
+<li>RPN（Region Proposal Networks)改进对于小目标选择利用多尺度特征信息进行RPN</li>
+<li>速度提升，如YOLO系列算法，删去了RPN，直接对proposal进行分类回归，极大的提升了网络的速度</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.bmp" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.bmp" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;Reprint policy:
+                    </span>
+                    <a href="https://lry89757.github.io" class="b-link-green">LRY's Blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2021/09/06/mu-biao-jian-ce-bi-ji-shang/" class="b-link-green">目标检测笔记（上）</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/09/06/faster-rcnn-yuan-ma-jie-du/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="Faster RCNN源码解读">
+                        
+                        <span class="card-title">Faster RCNN源码解读</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            该笔记是我的关于Pytorch Faster RCNN的源码解读。源码读了大概有4天，其中ROIPooling使用C++写的代码，那一部分仅仅了解了那一层的功能，没有深入了解。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                    深度学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/pytorch/" target="_blank">
+                        <span class="chip bg-color">pytorch</span>
+                    </a>
+                    
+                    <a href="/tags/源码解读/" target="_blank">
+                        <span class="chip bg-color">源码解读</span>
+                    </a>
+                    
+                    <a href="/tags/Faster-RCNN/" target="_blank">
+                        <span class="chip bg-color">Faster RCNN</span>
+                    </a>
+                    
+                    <a href="/tags/目标检测/" target="_blank">
+                        <span class="chip bg-color">目标检测</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/09/06/shu-ju-zeng-qiang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="数据增强">
+                        
+                        <span class="card-title">数据增强</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            由于数据增强本人目前只是简单了解，并没有理解的太深入，所以这个博客会持续更新。目前仅记录了一些自己的笔记。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                    深度学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/数据增强/" target="_blank">
+                        <span class="chip bg-color">数据增强</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: LRY's Blog<br />'
+            + 'Author: 逯润雨<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者Lurunyu所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5, h6, h7'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6, h7').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2021 逯润雨. 
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">79.7k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LRY89757" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=lry89757@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/yi-ran-fan-te-xi-57-88" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=1785435713&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2021, 07, 29, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果   -->
+        
+            <canvas class="fireworks" style="position: fixed; left: 0; top: 0; z-index: 1; pointer-events: none;"></canvas>
+            <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+            <script type="text/javascript" src="/js/fireworks.js"></script>
+        
+
+        <!-- 背景雪花飘落特效 -->
+        
+
+        <!-- 鼠标点击文字特效 -->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效  -->
+        
+            <script type="text/javascript">
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
+                }
+            </script>
+        
+
+        <!-- 在线聊天工具   -->
+        
+            <script src="//code.tidio.co/xxxxxxxxxxxxxxxxxxxxxxxxxxx.js"></script>
+            <!--  在线聊天位置自定义    -->
+            <script> 
+                $(document).ready(function () {
+
+                    setInterval(change_Tidio, 50);  
+                    function change_Tidio() { 
+
+                        var tidio=$("#tidio-chat iframe");
+                        if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"80px":"20px";   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                            document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        } 
+                        else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+                        else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+
+                        if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                            document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                        }
+                    } 
+                }); 
+            </script>
+        
+
+        <!-- 背景 canvas-nest  -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity= "0.8" zIndex="--1" count="150"src="/libs/background/canvas-nest.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景静止彩带  -->
+        
+
+        <!-- 背景动态彩带 -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+</html>
