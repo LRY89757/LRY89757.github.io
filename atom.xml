@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-09-06T05:24:01.254Z</updated>
+  <updated>2021-09-08T13:43:18.856Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,92 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Dian团队初体验</title>
+    <link href="https://lry89757.github.io/2021/09/08/dian-tuan-dui-chu-ti-yan/"/>
+    <id>https://lry89757.github.io/2021/09/08/dian-tuan-dui-chu-ti-yan/</id>
+    <published>2021-09-08T12:43:54.000Z</published>
+    <updated>2021-09-08T13:43:18.856Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+    
+      <category term="Dian团队" scheme="https://lry89757.github.io/tags/Dian%E5%9B%A2%E9%98%9F/"/>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+      <category term="AI" scheme="https://lry89757.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>谭志虎院长访谈</title>
+    <link href="https://lry89757.github.io/2021/09/06/tan-zhi-hu-yuan-chang-fang-tan/"/>
+    <id>https://lry89757.github.io/2021/09/06/tan-zhi-hu-yuan-chang-fang-tan/</id>
+    <published>2021-09-06T11:18:56.000Z</published>
+    <updated>2021-09-06T11:20:22.885Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;“探科访计”谭志虎副院长访谈&quot;&gt;&lt;a href=&quot;#“探科访计”谭志虎副院长访谈&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="记录" scheme="https://lry89757.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="社会实践" scheme="https://lry89757.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%AE%9E%E8%B7%B5/"/>
+    
+      <category term="访谈" scheme="https://lry89757.github.io/tags/%E8%AE%BF%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>暑期实践感慨</title>
+    <link href="https://lry89757.github.io/2021/09/06/shu-qi-shi-jian-gan-kai/"/>
+    <id>https://lry89757.github.io/2021/09/06/shu-qi-shi-jian-gan-kai/</id>
+    <published>2021-09-06T11:13:30.000Z</published>
+    <updated>2021-09-06T11:14:30.076Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h3&gt;&lt;p&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+      <category term="社会实践" scheme="https://lry89757.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%AE%9E%E8%B7%B5/"/>
+    
+  </entry>
   
   <entry>
     <title>Faster RCNN源码解读</title>
@@ -55,7 +141,7 @@
     <link href="https://lry89757.github.io/2021/09/06/mu-biao-jian-ce-bi-ji-shang/"/>
     <id>https://lry89757.github.io/2021/09/06/mu-biao-jian-ce-bi-ji-shang/</id>
     <published>2021-09-06T04:55:50.000Z</published>
-    <updated>2021-09-06T05:24:19.180Z</updated>
+    <updated>2021-09-08T13:16:13.587Z</updated>
     
     <summary type="html">
     
@@ -123,7 +209,7 @@
     <link href="https://lry89757.github.io/2021/09/01/python-lu-jing-xiang-hu-yin-yong-dao-ru-wen-ti/"/>
     <id>https://lry89757.github.io/2021/09/01/python-lu-jing-xiang-hu-yin-yong-dao-ru-wen-ti/</id>
     <published>2021-09-01T08:41:35.000Z</published>
-    <updated>2021-09-01T08:45:14.281Z</updated>
+    <updated>2021-09-08T13:21:18.454Z</updated>
     
     <summary type="html">
     
@@ -137,7 +223,7 @@
     
     </summary>
     
-      <category term="python" scheme="https://lry89757.github.io/categories/python/"/>
+      <category term="语法知识" scheme="https://lry89757.github.io/categories/%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/"/>
     
     
       <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
@@ -473,9 +559,9 @@
       <category term="挖矿" scheme="https://lry89757.github.io/categories/%E6%8C%96%E7%9F%BF/"/>
     
     
-      <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
-    
       <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
+    
+      <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
     
       <category term="反挖矿" scheme="https://lry89757.github.io/tags/%E5%8F%8D%E6%8C%96%E7%9F%BF/"/>
     
@@ -505,13 +591,13 @@
       <category term="挖矿" scheme="https://lry89757.github.io/categories/%E6%8C%96%E7%9F%BF/"/>
     
     
-      <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
-    
-      <category term="以太坊" scheme="https://lry89757.github.io/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
-    
       <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
     
       <category term="EIP-1559" scheme="https://lry89757.github.io/tags/EIP-1559/"/>
+    
+      <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
+    
+      <category term="以太坊" scheme="https://lry89757.github.io/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
     
   </entry>
   
@@ -538,11 +624,11 @@
       <category term="挖矿" scheme="https://lry89757.github.io/categories/%E6%8C%96%E7%9F%BF/"/>
     
     
+      <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
+    
       <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
     
       <category term="以太坊" scheme="https://lry89757.github.io/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
-    
-      <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
     
       <category term="区块链" scheme="https://lry89757.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
@@ -577,118 +663,6 @@
       <category term="运动" scheme="https://lry89757.github.io/tags/%E8%BF%90%E5%8A%A8/"/>
     
       <category term="别离" scheme="https://lry89757.github.io/tags/%E5%88%AB%E7%A6%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用Tensor操作</title>
-    <link href="https://lry89757.github.io/2021/08/07/chang-yong-tensor-cao-zuo/"/>
-    <id>https://lry89757.github.io/2021/08/07/chang-yong-tensor-cao-zuo/</id>
-    <published>2021-08-07T08:41:11.000Z</published>
-    <updated>2021-08-07T08:50:24.509Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;当然这里基本上都是本人的代码，还没来得及很具体的整理，所以比较乱……&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-      <category term="指令集" scheme="https://lry89757.github.io/categories/%E6%8C%87%E4%BB%A4%E9%9B%86/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
-      <category term="Tensor" scheme="https://lry89757.github.io/tags/Tensor/"/>
-    
-      <category term="矩阵" scheme="https://lry89757.github.io/tags/%E7%9F%A9%E9%98%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeNet实现CIFAR10分类</title>
-    <link href="https://lry89757.github.io/2021/08/07/lenet-shi-xian-cifar10-fen-lei/"/>
-    <id>https://lry89757.github.io/2021/08/07/lenet-shi-xian-cifar10-fen-lei/</id>
-    <published>2021-08-07T03:37:25.000Z</published>
-    <updated>2021-08-14T14:10:22.710Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;学了那么长时间的神经网络以及各个机器学习算法的手动numpy底层实现， 也掉了好多头发，终于也算是对这些算法有了算是比较本质的理解。接下来终于可以接触真正的深度学习库了。还是很高兴的，
-        
-      
-    
-    </summary>
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/categories/pytorch/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
-      <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
-    
-      <category term="CIFAR10" scheme="https://lry89757.github.io/tags/CIFAR10/"/>
-    
-      <category term="LeNet" scheme="https://lry89757.github.io/tags/LeNet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CIFAR10 dataset and reading</title>
-    <link href="https://lry89757.github.io/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/"/>
-    <id>https://lry89757.github.io/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/</id>
-    <published>2021-08-06T09:32:55.000Z</published>
-    <updated>2021-09-06T05:25:05.257Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;I used the MNIST data set to practice
-        
-      
-    
-    </summary>
-    
-      <category term="数据集" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    
-    
-      <category term="数据集" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
-      <category term="神经网络" scheme="https://lry89757.github.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="机器学习" scheme="https://lry89757.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
-    
-      <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
-    
-      <category term="CIFAR10" scheme="https://lry89757.github.io/tags/CIFAR10/"/>
     
   </entry>
   
