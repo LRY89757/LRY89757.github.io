@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-09-08T13:43:18.856Z</updated>
+  <updated>2021-09-11T01:58:33.959Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,82 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pandas</title>
+    <link href="https://lry89757.github.io/2021/09/11/pandas/"/>
+    <id>https://lry89757.github.io/2021/09/11/pandas/</id>
+    <published>2021-09-11T01:56:44.000Z</published>
+    <updated>2021-09-11T01:58:33.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;pandas是本书后续内容的首选库。它含有使数据清洗和分析工作变得更快更简单的数据结构和操作工具。pandas经常和其它工具一同使用，如数值计算工具NumPy和SciPy，分析库statsmodels和scikit-learn，和数据可视化库matplotlib。panda
+        
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="Pandas" scheme="https://lry89757.github.io/tags/Pandas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>物理实验报告</title>
+    <link href="https://lry89757.github.io/2021/09/10/wu-li-shi-yan-bao-gao/"/>
+    <id>https://lry89757.github.io/2021/09/10/wu-li-shi-yan-bao-gao/</id>
+    <published>2021-09-10T09:18:28.000Z</published>
+    <updated>2021-09-10T09:19:54.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;物理实验报告&quot;&gt;&lt;a href=&quot;#物理实验报告&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+    
+      <category term="实验报告" scheme="https://lry89757.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Musical reviews of 以后要做的事</title>
+    <link href="https://lry89757.github.io/2021/09/09/musical-reviews-of-yi-hou-yao-zuo-de-shi/"/>
+    <id>https://lry89757.github.io/2021/09/09/musical-reviews-of-yi-hou-yao-zuo-de-shi/</id>
+    <published>2021-09-09T01:15:51.000Z</published>
+    <updated>2021-09-09T01:42:14.368Z</updated>
+    
+    <summary type="html">
+    
+      有东西被加密了, 请输入密码查看.
+    
+    </summary>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+      <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
+    
+      <category term="乐评" scheme="https://lry89757.github.io/tags/%E4%B9%90%E8%AF%84/"/>
+    
+  </entry>
   
   <entry>
     <title>Dian团队初体验</title>
@@ -38,9 +114,9 @@
       <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
     
-      <category term="Dian团队" scheme="https://lry89757.github.io/tags/Dian%E5%9B%A2%E9%98%9F/"/>
-    
       <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+      <category term="Dian团队" scheme="https://lry89757.github.io/tags/Dian%E5%9B%A2%E9%98%9F/"/>
     
       <category term="AI" scheme="https://lry89757.github.io/tags/AI/"/>
     
@@ -559,110 +635,13 @@
       <category term="挖矿" scheme="https://lry89757.github.io/categories/%E6%8C%96%E7%9F%BF/"/>
     
     
-      <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
-    
       <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
+    
+      <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
     
       <category term="反挖矿" scheme="https://lry89757.github.io/tags/%E5%8F%8D%E6%8C%96%E7%9F%BF/"/>
     
       <category term="挖矿病毒" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF%E7%97%85%E6%AF%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>EIP-1559只是开始（转）</title>
-    <link href="https://lry89757.github.io/2021/08/10/eip-1559-zhi-shi-kai-shi/"/>
-    <id>https://lry89757.github.io/2021/08/10/eip-1559-zhi-shi-kai-shi/</id>
-    <published>2021-08-10T03:45:30.000Z</published>
-    <updated>2021-08-10T04:00:31.596Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;EIP-1559只是开始&quot;&gt;&lt;a href=&quot;#EIP-1559只是开始&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="挖矿" scheme="https://lry89757.github.io/categories/%E6%8C%96%E7%9F%BF/"/>
-    
-    
-      <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
-    
-      <category term="EIP-1559" scheme="https://lry89757.github.io/tags/EIP-1559/"/>
-    
-      <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
-    
-      <category term="以太坊" scheme="https://lry89757.github.io/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>以太坊GAS费爆棚，矿工疯狂扫货高端笔记本挖矿（转）</title>
-    <link href="https://lry89757.github.io/2021/08/10/yi-tai-fang-gas-fei-bao-peng-kuang-gong-feng-kuang-sao-huo-gao-duan-bi-ji-ben-wa-kuang/"/>
-    <id>https://lry89757.github.io/2021/08/10/yi-tai-fang-gas-fei-bao-peng-kuang-gong-feng-kuang-sao-huo-gao-duan-bi-ji-ben-wa-kuang/</id>
-    <published>2021-08-10T03:38:08.000Z</published>
-    <updated>2021-08-10T04:02:15.892Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;一句话，市场似乎已经到了“闭眼梭哈也致富”的阶段。&lt;/p&gt;
-&lt;p&gt;很多挖矿或者使用Uniswap等需要用到以太坊链上转账的投资人发现，现在GAS费太贵了，有多贵呢？一个简单的交易就需要几百块，复杂的合约交互，比如挖个矿，没有几千块是不行了。DeFi，普通人彻底玩不起了。羊毛
-        
-      
-    
-    </summary>
-    
-      <category term="挖矿" scheme="https://lry89757.github.io/categories/%E6%8C%96%E7%9F%BF/"/>
-    
-    
-      <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
-    
-      <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
-    
-      <category term="以太坊" scheme="https://lry89757.github.io/tags/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
-    
-      <category term="区块链" scheme="https://lry89757.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>梅西，诺坎普永远是你的家</title>
-    <link href="https://lry89757.github.io/2021/08/09/mei-xi-nuo-kan-pu-yong-yuan-shi-ni-de-jia/"/>
-    <id>https://lry89757.github.io/2021/08/09/mei-xi-nuo-kan-pu-yong-yuan-shi-ni-de-jia/</id>
-    <published>2021-08-09T12:01:05.000Z</published>
-    <updated>2021-08-19T09:51:51.206Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h5 id=&quot;事先声明&quot;&gt;&lt;a href=&quot;#事先声明&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="人物" scheme="https://lry89757.github.io/categories/%E4%BA%BA%E7%89%A9/"/>
-    
-    
-      <category term="生活随笔" scheme="https://lry89757.github.io/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="梅西" scheme="https://lry89757.github.io/tags/%E6%A2%85%E8%A5%BF/"/>
-    
-      <category term="运动" scheme="https://lry89757.github.io/tags/%E8%BF%90%E5%8A%A8/"/>
-    
-      <category term="别离" scheme="https://lry89757.github.io/tags/%E5%88%AB%E7%A6%BB/"/>
     
   </entry>
   
