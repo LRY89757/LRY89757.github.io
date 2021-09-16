@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-09-11T01:58:33.959Z</updated>
+  <updated>2021-09-16T05:15:07.365Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我看今天谁还敢买小米旗舰！</title>
+    <link href="https://lry89757.github.io/2021/09/16/wo-kan-jin-tian-shui-huan-gan-mai-xiao-mi-qi-jian/"/>
+    <id>https://lry89757.github.io/2021/09/16/wo-kan-jin-tian-shui-huan-gan-mai-xiao-mi-qi-jian/</id>
+    <published>2021-09-16T05:03:26.000Z</published>
+    <updated>2021-09-16T05:15:07.365Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;昨天凌晨我和我室友聊天，突然聊到了小米的一些问题，然后突然一位来了几句“我看今天谁还敢买小米旗舰！！！”，他一顿破音我们赶忙让他小点声，毕竟凌晨一点多了，&lt;del&gt;我们可不敢再被隔壁宿舍举报一次&lt;/del&gt;。然后另一位室友就让我们看了一下所谓的“小米圣经”。woc，这声调配
+        
+      
+    
+    </summary>
+    
+      <category term="互联网" scheme="https://lry89757.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    
+    
+      <category term="小米" scheme="https://lry89757.github.io/tags/%E5%B0%8F%E7%B1%B3/"/>
+    
+      <category term="互联网" scheme="https://lry89757.github.io/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
+    
+      <category term="手机" scheme="https://lry89757.github.io/tags/%E6%89%8B%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>Pandas</title>
@@ -73,7 +103,7 @@
     <link href="https://lry89757.github.io/2021/09/09/musical-reviews-of-yi-hou-yao-zuo-de-shi/"/>
     <id>https://lry89757.github.io/2021/09/09/musical-reviews-of-yi-hou-yao-zuo-de-shi/</id>
     <published>2021-09-09T01:15:51.000Z</published>
-    <updated>2021-09-09T01:42:14.368Z</updated>
+    <updated>2021-09-12T08:25:45.350Z</updated>
     
     <summary type="html">
     
@@ -86,9 +116,9 @@
     
       <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
-      <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
-    
       <category term="乐评" scheme="https://lry89757.github.io/tags/%E4%B9%90%E8%AF%84/"/>
+    
+      <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
     
   </entry>
   
@@ -183,7 +213,7 @@
     <link href="https://lry89757.github.io/2021/09/06/faster-rcnn-yuan-ma-jie-du/"/>
     <id>https://lry89757.github.io/2021/09/06/faster-rcnn-yuan-ma-jie-du/</id>
     <published>2021-09-06T05:01:51.000Z</published>
-    <updated>2021-09-06T05:24:01.254Z</updated>
+    <updated>2021-09-11T10:57:02.628Z</updated>
     
     <summary type="html">
     
@@ -200,6 +230,8 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
@@ -207,8 +239,6 @@
       <category term="源码解读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/"/>
     
       <category term="Faster RCNN" scheme="https://lry89757.github.io/tags/Faster-RCNN/"/>
-    
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
   </entry>
   
@@ -234,11 +264,11 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Faster RCNN" scheme="https://lry89757.github.io/tags/Faster-RCNN/"/>
-    
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
       <category term="RCNN" scheme="https://lry89757.github.io/tags/RCNN/"/>
     
@@ -503,9 +533,9 @@
     
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="显卡" scheme="https://lry89757.github.io/tags/%E6%98%BE%E5%8D%A1/"/>
-    
       <category term="CPU" scheme="https://lry89757.github.io/tags/CPU/"/>
+    
+      <category term="显卡" scheme="https://lry89757.github.io/tags/%E6%98%BE%E5%8D%A1/"/>
     
       <category term="GPU" scheme="https://lry89757.github.io/tags/GPU/"/>
     
@@ -538,9 +568,9 @@
     
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
       <category term="CPU" scheme="https://lry89757.github.io/tags/CPU/"/>
+    
+      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
     
       <category term="GPU" scheme="https://lry89757.github.io/tags/GPU/"/>
     
@@ -608,40 +638,6 @@
       <category term="markdown" scheme="https://lry89757.github.io/tags/markdown/"/>
     
       <category term="码云" scheme="https://lry89757.github.io/tags/%E7%A0%81%E4%BA%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次反挖矿病毒（转）</title>
-    <link href="https://lry89757.github.io/2021/08/10/ji-yi-ci-fan-wa-kuang-bing-du-zhuan/"/>
-    <id>https://lry89757.github.io/2021/08/10/ji-yi-ci-fan-wa-kuang-bing-du-zhuan/</id>
-    <published>2021-08-10T03:54:17.000Z</published>
-    <updated>2021-08-10T03:59:42.509Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;作者：&lt;a href=&quot;https://home.cnblogs.com/u/wq242424/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;丨o聽乄雨o丨&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;出处：&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="挖矿" scheme="https://lry89757.github.io/categories/%E6%8C%96%E7%9F%BF/"/>
-    
-    
-      <category term="比特币" scheme="https://lry89757.github.io/tags/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
-    
-      <category term="挖矿" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF/"/>
-    
-      <category term="反挖矿" scheme="https://lry89757.github.io/tags/%E5%8F%8D%E6%8C%96%E7%9F%BF/"/>
-    
-      <category term="挖矿病毒" scheme="https://lry89757.github.io/tags/%E6%8C%96%E7%9F%BF%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
