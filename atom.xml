@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-09-16T07:40:36.407Z</updated>
+  <updated>2021-09-16T14:02:17.038Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>backbone neck and head</title>
+    <link href="https://lry89757.github.io/2021/09/16/backbone-neck-and-head/"/>
+    <id>https://lry89757.github.io/2021/09/16/backbone-neck-and-head/</id>
+    <published>2021-09-16T13:49:26.000Z</published>
+    <updated>2021-09-16T14:02:17.038Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;基于深度学习的现在目标检测算法中有三个组件：Backbone、Neck和Head，乍一看很让人不理解：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Backbone,
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+      <category term="名词" scheme="https://lry89757.github.io/tags/%E5%90%8D%E8%AF%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论文之YOLO系列</title>
+    <link href="https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/"/>
+    <id>https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/</id>
+    <published>2021-09-16T11:27:26.000Z</published>
+    <updated>2021-09-16T11:51:15.924Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本博客记录了自己的一些YOLO论文的阅读。&lt;/p&gt;
+&lt;h2 id=&quot;YOLOv1&quot;&gt;&lt;a href=&quot;#YOLOv1&quot; class=&quot;headerlink&quot; title=&quot;YOLOv1&quot;&gt;&lt;/a&gt;YOLOv1&lt;/h2&gt;&lt;p&gt;地址：&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
+    
+      <category term="论文解读" scheme="https://lry89757.github.io/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>faster rcnn的编解码过程</title>
@@ -147,9 +206,9 @@
     
       <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
-      <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
-    
       <category term="乐评" scheme="https://lry89757.github.io/tags/%E4%B9%90%E8%AF%84/"/>
+    
+      <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
     
   </entry>
   
@@ -571,74 +630,6 @@
       <category term="GPU" scheme="https://lry89757.github.io/tags/GPU/"/>
     
       <category term="TPU" scheme="https://lry89757.github.io/tags/TPU/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习GPU利用率低问题分析(转)</title>
-    <link href="https://lry89757.github.io/2021/08/12/shen-du-xue-xi-gpu-li-yong-lu-di-wen-ti-fen-xi-zhuan/"/>
-    <id>https://lry89757.github.io/2021/08/12/shen-du-xue-xi-gpu-li-yong-lu-di-wen-ti-fen-xi-zhuan/</id>
-    <published>2021-08-12T09:55:34.000Z</published>
-    <updated>2021-08-25T07:38:40.454Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;本文转载自：&lt;a href=&quot;https://benpaodewoniu.github.io/2021/01/21/torch16/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;犀牛鸟的博客&lt;/a&gt;,如有侵权请与本人联系：&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="CPU" scheme="https://lry89757.github.io/tags/CPU/"/>
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
-      <category term="GPU" scheme="https://lry89757.github.io/tags/GPU/"/>
-    
-      <category term="加速" scheme="https://lry89757.github.io/tags/%E5%8A%A0%E9%80%9F/"/>
-    
-      <category term="tensorflow" scheme="https://lry89757.github.io/tags/tensorflow/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>爬虫实战系列之知乎GPU</title>
-    <link href="https://lry89757.github.io/2021/08/12/pa-chong-shi-zhan-xi-lie-zhi-zhi-hu-gpu/"/>
-    <id>https://lry89757.github.io/2021/08/12/pa-chong-shi-zhan-xi-lie-zhi-zhi-hu-gpu/</id>
-    <published>2021-08-12T03:44:37.000Z</published>
-    <updated>2021-09-06T05:08:28.443Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;以下内容均爬虫获得，如有侵权，请联系博主lry89757，邮箱： &lt;a href=&quot;mailto:lry89757@gmail.com&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="GPU" scheme="https://lry89757.github.io/tags/GPU/"/>
-    
-      <category term="爬虫" scheme="https://lry89757.github.io/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
