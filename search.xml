@@ -11,6 +11,20 @@
         <content type="html"><![CDATA[<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><p>实际上latex公式就像markdown一样，不需要格外去记，但是想找的时候有时候并不容易找。所以这里就使用这个来记录一下latex有关公式，以防忘记。</p><p>另外这一篇博文其实整理的极为详细了：<a href="https://blog.csdn.net/NSJim/article/details/109045914" target="_blank" rel="noopener">https://blog.csdn.net/NSJim/article/details/109045914</a></p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>使用<code>$</code>，即行中公式时，数学公式与<code>$</code>连接处不要有空格，否则公式不会显示。即<code>$</code>  数学公式  <code>$</code> 不显示公式。</li><li>使用<code>$$</code>，即居中公式时，数学公式与<code>$$</code>连接处可以有空格。</li><li>使用<code>$$</code>时，上方要空一行。</li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> 指令集 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> latex </tag>
+            
+            <tag> 公式 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -224,9 +238,9 @@
       
         <tags>
             
-            <tag> Dian团队 </tag>
-            
             <tag> 写给自己的散文诗 </tag>
+            
+            <tag> Dian团队 </tag>
             
             <tag> AI </tag>
             
@@ -253,9 +267,9 @@
       
         <tags>
             
-            <tag> 社会实践 </tag>
-            
             <tag> 访谈 </tag>
+            
+            <tag> 社会实践 </tag>
             
         </tags>
       
@@ -307,6 +321,8 @@
       
         <tags>
             
+            <tag> 目标检测 </tag>
+            
             <tag> 深度学习 </tag>
             
             <tag> pytorch </tag>
@@ -314,8 +330,6 @@
             <tag> 源码解读 </tag>
             
             <tag> Faster RCNN </tag>
-            
-            <tag> 目标检测 </tag>
             
         </tags>
       
@@ -340,11 +354,11 @@
       
         <tags>
             
+            <tag> 目标检测 </tag>
+            
             <tag> 深度学习 </tag>
             
             <tag> Faster RCNN </tag>
-            
-            <tag> 目标检测 </tag>
             
             <tag> RCNN </tag>
             
@@ -598,9 +612,9 @@
             
             <tag> 深度学习 </tag>
             
-            <tag> 显卡 </tag>
-            
             <tag> CPU </tag>
+            
+            <tag> 显卡 </tag>
             
             <tag> GPU </tag>
             
@@ -722,9 +736,9 @@
       
         <tags>
             
-            <tag> 挖矿 </tag>
-            
             <tag> 比特币 </tag>
+            
+            <tag> 挖矿 </tag>
             
             <tag> 反挖矿 </tag>
             
@@ -753,13 +767,13 @@
       
         <tags>
             
-            <tag> 挖矿 </tag>
-            
-            <tag> EIP-1559 </tag>
-            
             <tag> 比特币 </tag>
             
             <tag> 以太坊 </tag>
+            
+            <tag> 挖矿 </tag>
+            
+            <tag> EIP-1559 </tag>
             
         </tags>
       
@@ -784,11 +798,11 @@
       
         <tags>
             
-            <tag> 挖矿 </tag>
-            
             <tag> 比特币 </tag>
             
             <tag> 以太坊 </tag>
+            
+            <tag> 挖矿 </tag>
             
             <tag> 区块链 </tag>
             
@@ -881,15 +895,15 @@
             
             <tag> pytorch </tag>
             
-            <tag> CNN </tag>
-            
-            <tag> LeNet </tag>
-            
             <tag> 神经网络 </tag>
             
             <tag> 机器学习 </tag>
             
+            <tag> CNN </tag>
+            
             <tag> CIFAR10 </tag>
+            
+            <tag> LeNet </tag>
             
         </tags>
       
@@ -916,15 +930,15 @@
             
             <tag> 深度学习 </tag>
             
-            <tag> pytorch </tag>
-            
-            <tag> CNN </tag>
-            
             <tag> 数据集 </tag>
+            
+            <tag> pytorch </tag>
             
             <tag> 神经网络 </tag>
             
             <tag> 机器学习 </tag>
+            
+            <tag> CNN </tag>
             
             <tag> python </tag>
             
@@ -1019,9 +1033,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> C </tag>
+            
+            <tag> python </tag>
             
             <tag> 栈 </tag>
             
@@ -1085,11 +1099,11 @@
       
         <tags>
             
+            <tag> C </tag>
+            
             <tag> python </tag>
             
             <tag> 数据结构 </tag>
-            
-            <tag> C </tag>
             
             <tag> 栈 </tag>
             
@@ -1122,6 +1136,8 @@
       
         <tags>
             
+            <tag> C++ </tag>
+            
             <tag> python </tag>
             
             <tag> 栈 </tag>
@@ -1131,8 +1147,6 @@
             <tag> 算法 </tag>
             
             <tag> 数学 </tag>
-            
-            <tag> C++ </tag>
             
         </tags>
       
@@ -1157,9 +1171,9 @@
       
         <tags>
             
-            <tag> 写给自己的散文诗 </tag>
-            
             <tag> 生活随笔 </tag>
+            
+            <tag> 写给自己的散文诗 </tag>
             
             <tag> 羽毛球 </tag>
             
@@ -1188,9 +1202,9 @@
       
         <tags>
             
-            <tag> 林俊杰 </tag>
-            
             <tag> 生活随笔 </tag>
+            
+            <tag> 林俊杰 </tag>
             
         </tags>
       
@@ -1215,9 +1229,9 @@
       
         <tags>
             
-            <tag> 写给自己的散文诗 </tag>
-            
             <tag> 生活随笔 </tag>
+            
+            <tag> 写给自己的散文诗 </tag>
             
         </tags>
       
@@ -1242,9 +1256,9 @@
       
         <tags>
             
-            <tag> 写给自己的散文诗 </tag>
-            
             <tag> 生活随笔 </tag>
+            
+            <tag> 写给自己的散文诗 </tag>
             
             <tag> 书评 </tag>
             
@@ -1447,9 +1461,9 @@
       
         <tags>
             
-            <tag> 数据结构 </tag>
-            
             <tag> C </tag>
+            
+            <tag> 数据结构 </tag>
             
             <tag> 排序 </tag>
             
@@ -1478,11 +1492,11 @@
       
         <tags>
             
+            <tag> C </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 查找表 </tag>
-            
-            <tag> C </tag>
             
             <tag> 二叉树 </tag>
             
@@ -1511,11 +1525,11 @@
       
         <tags>
             
+            <tag> 机器学习 </tag>
+            
             <tag> matplotlib </tag>
             
             <tag> numpy </tag>
-            
-            <tag> 机器学习 </tag>
             
             <tag> math </tag>
             
