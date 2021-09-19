@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-09-16T14:02:17.038Z</updated>
+  <updated>2021-09-18T09:51:07.427Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>latex常用公式（龟速更新）</title>
+    <link href="https://lry89757.github.io/2021/09/18/latex-chang-yong-gong-shi-gui-su-geng-xin/"/>
+    <id>https://lry89757.github.io/2021/09/18/latex-chang-yong-gong-shi-gui-su-geng-xin/</id>
+    <published>2021-09-18T09:42:52.000Z</published>
+    <updated>2021-09-18T09:51:07.427Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>backbone neck and head</title>
@@ -193,7 +215,7 @@
     <link href="https://lry89757.github.io/2021/09/09/musical-reviews-of-yi-hou-yao-zuo-de-shi/"/>
     <id>https://lry89757.github.io/2021/09/09/musical-reviews-of-yi-hou-yao-zuo-de-shi/</id>
     <published>2021-09-09T01:15:51.000Z</published>
-    <updated>2021-09-17T02:21:19.324Z</updated>
+    <updated>2021-09-17T11:47:52.413Z</updated>
     
     <summary type="html">
     
@@ -206,9 +228,9 @@
     
       <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
-      <category term="乐评" scheme="https://lry89757.github.io/tags/%E4%B9%90%E8%AF%84/"/>
-    
       <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
+    
+      <category term="乐评" scheme="https://lry89757.github.io/tags/%E4%B9%90%E8%AF%84/"/>
     
   </entry>
   
@@ -234,9 +256,9 @@
       <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
     
-      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
-    
       <category term="Dian团队" scheme="https://lry89757.github.io/tags/Dian%E5%9B%A2%E9%98%9F/"/>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
       <category term="AI" scheme="https://lry89757.github.io/tags/AI/"/>
     
@@ -320,8 +342,6 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
@@ -329,6 +349,8 @@
       <category term="源码解读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/"/>
     
       <category term="Faster RCNN" scheme="https://lry89757.github.io/tags/Faster-RCNN/"/>
+    
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
   </entry>
   
@@ -354,11 +376,11 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Faster RCNN" scheme="https://lry89757.github.io/tags/Faster-RCNN/"/>
+    
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
       <category term="RCNN" scheme="https://lry89757.github.io/tags/RCNN/"/>
     
@@ -595,41 +617,6 @@
       <category term="Kaggle" scheme="https://lry89757.github.io/tags/Kaggle/"/>
     
       <category term="BUG" scheme="https://lry89757.github.io/tags/BUG/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CPU/GPU/TPU/APU家族们</title>
-    <link href="https://lry89757.github.io/2021/08/13/cpu-gpu-tpu-apu-jia-zu-men/"/>
-    <id>https://lry89757.github.io/2021/08/13/cpu-gpu-tpu-apu-jia-zu-men/</id>
-    <published>2021-08-13T02:26:48.000Z</published>
-    <updated>2021-08-25T07:39:05.206Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;文章转载自个人博客&lt;a href=&quot;http://www.techeasygo.com/archives/1143&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;闻西谈&lt;/a&gt;，如有侵权，请与博主本人联系：&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="CPU" scheme="https://lry89757.github.io/tags/CPU/"/>
-    
-      <category term="显卡" scheme="https://lry89757.github.io/tags/%E6%98%BE%E5%8D%A1/"/>
-    
-      <category term="GPU" scheme="https://lry89757.github.io/tags/GPU/"/>
-    
-      <category term="TPU" scheme="https://lry89757.github.io/tags/TPU/"/>
     
   </entry>
   
