@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-09-19T13:50:25.409Z</updated>
+  <updated>2021-09-20T02:29:19.590Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初试RNN</title>
+    <link href="https://lry89757.github.io/2021/09/20/chu-shi-rnn/"/>
+    <id>https://lry89757.github.io/2021/09/20/chu-shi-rnn/</id>
+    <published>2021-09-20T02:16:57.000Z</published>
+    <updated>2021-09-20T02:29:19.590Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="NLP" scheme="https://lry89757.github.io/tags/NLP/"/>
+    
+      <category term="seq2seq_translation" scheme="https://lry89757.github.io/tags/seq2seq-translation/"/>
+    
+  </entry>
   
   <entry>
     <title>latex常用公式（龟速更新）</title>
@@ -79,7 +109,7 @@
     <link href="https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/"/>
     <id>https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/</id>
     <published>2021-09-16T11:27:26.000Z</published>
-    <updated>2021-09-16T11:51:15.924Z</updated>
+    <updated>2021-09-20T02:15:29.255Z</updated>
     
     <summary type="html">
     
@@ -88,7 +118,8 @@
         
         
           &lt;p&gt;本博客记录了自己的一些YOLO论文的阅读。&lt;/p&gt;
-&lt;h2 id=&quot;YOLOv1&quot;&gt;&lt;a href=&quot;#YOLOv1&quot; class=&quot;headerlink&quot; title=&quot;YOLOv1&quot;&gt;&lt;/a&gt;YOLOv1&lt;/h2&gt;&lt;p&gt;地址：&lt;a
+&lt;h2 id=&quot;YOLOv1&quot;&gt;&lt;a href=&quot;#YOLOv1&quot; class=&quot;headerlink&quot; title=&quot;YOLOv1&quot;&gt;&lt;/a&gt;YOLOv1&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a
         
       
     
@@ -591,38 +622,6 @@
       <category term="AlexNet" scheme="https://lry89757.github.io/tags/AlexNet/"/>
     
       <category term="VGG" scheme="https://lry89757.github.io/tags/VGG/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kaggle竟然不支持TensorBoard</title>
-    <link href="https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/"/>
-    <id>https://lry89757.github.io/2021/08/13/kaggle-jing-ran-bu-zhi-chi-tensorboard/</id>
-    <published>2021-08-13T03:44:07.000Z</published>
-    <updated>2021-09-06T05:12:07.571Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;   最近想白嫖一下Kaggle的GPU，费了一些功夫&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="GPU" scheme="https://lry89757.github.io/tags/GPU/"/>
-    
-      <category term="Kaggle" scheme="https://lry89757.github.io/tags/Kaggle/"/>
-    
-      <category term="BUG" scheme="https://lry89757.github.io/tags/BUG/"/>
     
   </entry>
   

@@ -10,8 +10,10 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
     <meta name="description" content="本博客记录了自己的一些YOLO论文的阅读。
-YOLOv1地址：https://arxiv.org/abs/1506.02640
-">
+YOLOv1
+论文地址：https://arxiv.org/abs/1506.02640
+论文翻译版：https://zhuanlan.zhihu.com/p/35416826
+就随便记录一些想法">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -723,14 +725,14 @@ YOLOv1地址：https://arxiv.org/abs/1506.02640
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        26
+                        3.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        1 Min
+                        16 Min
                     </div>
                     
                 
@@ -748,7 +750,153 @@ YOLOv1地址：https://arxiv.org/abs/1506.02640
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>本博客记录了自己的一些YOLO论文的阅读。</p>
-<h2 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h2><p>地址：<a href="https://arxiv.org/abs/1506.02640" target="_blank" rel="noopener">https://arxiv.org/abs/1506.02640</a></p>
+<h2 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h2><blockquote>
+<p>论文地址：<a href="https://arxiv.org/abs/1506.02640" target="_blank" rel="noopener">https://arxiv.org/abs/1506.02640</a></p>
+<p>论文翻译版：<a href="https://zhuanlan.zhihu.com/p/35416826" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35416826</a></p>
+<p>就随便记录一些想法。</p>
+</blockquote>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>作者大致吹了一下，我看得早了，没有记录。</p>
+<h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><p>前面的也看过去了，没有来得及记录，知道后来看到了关于several benefits over traditional methods of object detection的一些东西才开始记录。</p>
+<p>First,  YOLO is very fast. Since they frame detection as a regression problem, they don’t need a pipeline. The simply run their neural network on a new image at test time to predict. 他们可以实时处理图片。小于25milliseconds的延迟。然后另外就是2倍的平均准确率比起其他的系统。在Titan X GPU上可以处理45 frames per second. 一个快速的版本可以处理超过150fps。</p>
+<p>Second, 不同于传统的滑动窗口与区域检测技术，YOLO更加具有全局性（<del>我瞎编的</del>）？就是更容易连起上下比较连贯的（contextual）图像信息。特意提到了关于Fast RCNN,它会将一些背景块（background patches）错误的认为是物体目标（objects）。因为FastRCNN不能够看到更加大块的物体信息。关于这种的错误率比Fast RCNN<strong>少了一半</strong>！<strong><del>小小吐槽一下，果然大家发论文都会格外强调别人的缺点，放大自己的优点……</del></strong></p>
+<blockquote>
+<p>coordinate   n.坐标,套装  v.使协调，搭配   contextual 上下文的 ，连贯的  patches n.块，补丁</p>
+</blockquote>
+<p>Third, 更好的泛化能力，这个段落最好懂。在自然图像上训练然后再艺术品上测试的时候，YOLO outperforms top detection methods like DPM and R-CNN <strong>by a wide margin</strong>.看来RCNN反复被鞭尸……</p>
+<p>Last， 终于开始承认自己的不足了：准确率落后于SOTA，lags behind stoa detection systems in accuracy.  尽管可以快速认出物体但是很困难精确定位到一些物体，尤其是小物体（stuggles to precisely localize some objects, especially small ones.)  , 作者也说到以后会做一些进一步的tradeoffs。</p>
+<h3 id="2-Unified-Detection"><a href="#2-Unified-Detection" class="headerlink" title="2. Unified Detection"></a>2. Unified Detection</h3><ul>
+<li>将图像分为S×S的网格区域（grids)，如果一个物体中心再某格中则该grid负责预测该物体。</li>
+</ul>
+<blockquote>
+<p>simultaneously adv.同时地，一壁</p>
+</blockquote>
+<ul>
+<li>每个grid cells预测B个bboxes于confidence scores(reflect how confident the model is that the box contains an object and also how accurate it thinks the box is that it predicts )</li>
+<li>每个bbox包含5个predictions: x, y, w, h and confidence. The (x, y) coordinates represent the center of the box. The  width and height are predicted relative to the whole image. Finally the confidence prediction  represents the IOU(Intersection over union between predicted box and the  ground box)</li>
+<li>每个grid cell单元格只选取一个bbox来预测内含物体的类别，regardless of the number of boxes B.</li>
+<li>最后测试环节我们使用类别概率（the conditional class probabilities）和框概率（ and the individual box confidence predictions）的乘积来评估：<ul>
+<li>$$Pr(Class | Object) * Pr(Object) * IOU(truth, pred)  = Pr(Class_i) * IOU(truth, pred)$$​</li>
+<li>这个scores可以正好的涵盖了类别出现在该box还有预测的框的适应能力。（encode both the probability of that class appearing in the box and how well the predicted box fits the object）</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://imgtu.com/i/4MhVzD" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/09/17/4MhVzD.png" alt="Figure 2: The Model"></a></p>
+<p>Our system models detection as a regression problem. It divides the image into an S × S grid and for each<br>grid cell predicts B bounding boxes, confidence for those boxes, and C class probabilities. These predictions are encoded as an S × S × (B ∗ 5 + C) tensor.</p>
+<ul>
+<li><p>以上的话说得非常明显了，指的是我们每个grid cell都会负责一个预测的区域，然后这里分为S×S个grid cell, 最后得到的tensor形状为 S × S × (B ∗ 5 + C) ，这样一来我们的最终结果就得到了。</p>
+</li>
+<li><p>当然最后也给出了对于不同数据集的不同S， C，B的取值：For evaluating YOLO on PASCAL VOC, we use S = 7, B = 2. PASCAL VOC has 20 labelled classes so C = 20. Our final prediction is a 7 × 7 × 30 tensor.</p>
+</li>
+</ul>
+<h3 id="2-1-Network-Design"><a href="#2-1-Network-Design" class="headerlink" title="2.1 Network Design"></a>2.1 Network Design</h3><ul>
+<li>Evaluate it on the PASCAL VOC detection dataset.</li>
+<li>the initial  convolutional layers of the  network extract features from the image  while the fully connected layers predict the out put probabilities and coordinates</li>
+<li>inspired by the GoogLeNet model for image classification. The network has 24 convolutional layers followed by 2 fully connected layers.</li>
+<li>No Inception modules!</li>
+</ul>
+<p><a href="https://imgtu.com/i/4l6uCD" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/09/18/4l6uCD.png" alt="NetWork"></a></p>
+<ul>
+<li>The final output of the network is the 7×7×30 tensor of predictions.</li>
+</ul>
+<p>输入图像大小为448<em>448，经过若干个卷积层与池化层，变为7</em>7<em>1024张量（图一中倒数第三个立方体），最后经过两层全连接层，输出张量维度为7</em>7<em>30，这就是Yolo v1的整个神经网络结构，和一般的卷积物体分类网络没有太多区别，最大的不同就是：分类网络最后的全连接层，一般连接于一个一维向量，向量的不同位代表不同类别，而这里的输出向量是一个三维的张量（7</em>7*30）。上图中Yolo的backbone网络结构，受启发于GoogLeNet，也是v2、v3中Darknet的先锋。本质上来说没有什么特别，没有使用BN层，用了一层Dropout。除了最后一层的输出使用了线性激活函数，其他层全部使用Leaky Relu激活函数。网络结构没有特别的东西，不再赘述。</p>
+<h3 id="2-2Training"><a href="#2-2Training" class="headerlink" title="2.2Training"></a>2.2Training</h3><blockquote>
+<p><strong>denote</strong> v.标志， 表示    </p>
+<p><strong>penalize</strong>  v.惩罚</p>
+<p><strong>fine-grained</strong>: (chiefly of wood) having a fine or delicate arrangement of fibers.</p>
+<ul>
+<li><p>(chiefly of rock) consisting of small particles.</p>
+</li>
+<li><p>involving great attention to detail.</p>
+<p>*”fine-grained analysis”*</p>
+</li>
+</ul>
+<p><strong>parametrize</strong> v. describe or represent in terms of a parameter or parameters.  *”the nuclear charge distribution can be parameterized directly using a suitable mathematical form”*</p>
+<p><strong>align</strong> v. 1.对齐place or arrange (things) in a straight line.  2. give support to (a person, organization, or cause).</p>
+<p><strong>diverge</strong>  v. (of a road, route, or line) separate from another route, especially a main one, and go in a different direction.  *”the flight path diverged from the original flight plan”*</p>
+<p><strong>early on</strong>: phrase of early, at an initial stage in a particular time or period. *”they discovered early on that the published data were wrong”*</p>
+<p><strong>remedy</strong>: v. set right (an undesirable situation).*”by the time a problem becomes patently obvious, it may be almost too late to remedy it”*</p>
+<p><strong>coefficient:</strong> n. a numerical or constant quantity placed before and multiplying the variable in an algebraic expression (e.g. 4 in 4x y).</p>
+<p><strong>saturation</strong>: n. (饱和)the state or process that occurs when no more of something can be absorbed, combined with, or added. *”the springs on the left slope of the hill lie below the level of permanent saturation”*</p>
+</blockquote>
+<ul>
+<li>这里看到了pretraining, 预训练这个概念，所以查了查，看<a href="https://blog.csdn.net/qq_41821678/article/details/106113870" target="_blank" rel="noopener">这里</a></li>
+<li>首先作者花了一周的时间训练前20个卷积层并且在ImageNet 2012验证集上获得了单一裁剪图像88%的top-5准确率，与Caffe模型池中的GoogLeNet模型相当。</li>
+<li>接着对该预训练模型迁移到我们的目标检测中去(convert the model to perform detection)</li>
+<li>因为目标检测一些”fine-grained”视觉信息，所以我们把这个输入图像分辨率从224×224提升至448×448</li>
+<li>模型的最后一层预测类概率和边界框坐标。我们通过图像宽度和高度来规范边界框的宽度和高度，使它们落在0和1之间。我们将边界框x和y坐标参数化为特定网格单元位置的偏移量，所以它们的值被限定在在0和1之间。</li>
+<li>模型的最后一层使用线性激活函数，而所有其它的层使用下面的leaky rectified activation：</li>
+<li><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://pic3.zhimg.com/80/v2-e75e88cd05e31c1c0c2575397cf8a46a_1440w.jpg" alt="leaky linear activation"></li>
+<li>我们对模型输出的平方和误差(sum-squared error)进行优化。我们选择使用平方和误差，是因为它易于优化(optimize)，但是它并不完全符合(not perfectly align with)最大化平均精度（average precision）的目标。它给分类误差(classification)与定位(localization)误差的权重是一样的，这点可能并不理想。另外，每个图像都有很多网格单元并没有包含任何目标，这将这些单元格的“置信度”分数推向零，通常压制了包含目标的单元格的梯度。这可能导致模型不稳定，从而导致训练在早期就发散。</li>
+<li>为了弥补这个情况（to remedy this)，我们选择增加我们的定位误差损失，然后降低我们的分类损失。我们使用了两个parameters， $λ<em>{coord} = 5, \lambda</em>{noobj} = .5$</li>
+<li>平方和误差对大框和小框的误差权衡是一样的，而我们的错误指标应该要体现出，大框的小偏差的重要性不如小框的小偏差的重要性(<em>small deviations in large boxes matter less than in small boxes</em>)。为了部分解决(<em>partially address this</em>)这个问题，我们直接预测边界框宽度和高度的平方根(the square root)，而不是宽度和高度。</li>
+<li>YOLO每个grid cell预测很多个bbox，训练时我们不是所有的bbox都会负责物体，而是只有一个会负责物体的检测，这里就会选用我们和GT的IOU最高的bbox承担检测物体的任务。</li>
+<li>损失函数我们使用这个multi-part的loss function:<a href="https://imgtu.com/i/43icpq" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/09/19/43icpq.png" alt="Loss Function"></a></li>
+</ul>
+<ul>
+<li>这里的loss function比较复杂，<strong>同时也是非常重要的请认真研究一下</strong>，我们可以看出这里的符号花体$1_{i}^{obj}$denotes  if object appears in cell $i$, and $1_{ij}^{obj}$ denotes that the $j$th bbox predictor in cell $i$​ is “responsible” for that prediction.</li>
+<li>和组长讨论了讨论，注意，这里论文里的损失函数这个公式没有任何废话，全都是非常关键的符号。这些东西和前面很多你看着比较晕、或者看的比较不理解的地方都联系上了，可以说这个是“非常有道理”的一个损失函数。同时也是经过精心设计、很巧妙地一个函数。</li>
+<li>虽然我目前没有完全理解，但是理解了个大部分，剩下的部分可能目前还有一些困难，需要进一步的了解，另外，关于我们localization error 和 classification error的部分仍然需要进一步去探究（<del>这部分我找到了四篇文章<a href="https://stats.stackexchange.com/questions/481332/yolo-v1-why-we-weigh-localization-error-more-than-classification-error" target="_blank" rel="noopener">1</a>, <a href="https://stats.stackexchange.com/questions/481956/yolo-v1-how-gradients-in-grids-with-no-objects-overpower" target="_blank" rel="noopener">2</a>, <a href="https://stackoverflow.com/questions/49535301/understanding-the-loss-function-in-yolo-v1-research-paper" target="_blank" rel="noopener">3</a>， 个人认为第<a href="https://medium.com/adventures-with-deep-learning/yolo-v1-part3-78f22bd97de4" target="_blank" rel="noopener">4</a>篇更具有可读性</del>），以及该损失函数$C_i$究竟代表什么这些东西， 最后的关于$p_i(c)$的这个损失函数，都有待进一步去研究讨论。</li>
+<li>最终终于理解了！这里面主要是又看了看上边的第四篇文章以及我们的这一篇<a href="https://www.cnblogs.com/sddai/p/14760055.html" target="_blank" rel="noopener">中文博客</a>, 这一篇博客主要带给我的收获就是关于这个C实际上代表的才是置信度，而p代表的才是我们的那个关于每一类的那个概率的预测。其他的就是再读一遍前前后后关于这个函数的介绍以及前面的一些东西，顿时就有了一种茅塞顿开的感觉，这种感觉还是非常好的🎈</li>
+</ul>
+<ul>
+<li><p>解决了loss function 的问题之后后面就是有关训练的过程了，实际上这方面还是非常简单的，这里直接摘录原文就🆗</p>
+</li>
+<li><blockquote>
+<p>We train the network for about 135 epochs on the train-<br>ing and validation data sets from PASCAL VOC 2007 and 2012</p>
+<p>When testing on 2012 we also include the VOC 2007<br>test data for training. Throughout training we use a batch<br>size of 64, a momentum of 0.9 and a decay of 0.0005.<br>Our learning rate schedule is as follows: For the first<br>epochs we slowly raise the learning rate from  $10^{−3}$ to  $10^{−2}$.<br>If we start at a high learning rate our model often diverges<br>due to unstable gradients. We continue training with $10^{−2}$<br>for 75 epochs, then 10−3 for 30 epochs, and finally $10^{−4}$<br>for 30 epochs.<br>To avoid overfitting we use dropout and extensive data<br>augmentation. A dropout layer with rate = .5 after the first<br>connected layer prevents co-adaptation between layers [18].<br>For data augmentation we introduce random scaling and<br>translations of up to 20% of the original image size. We<br>also randomly adjust the exposure and saturation of the im-<br>age by up to a factor of 1.5 in the HSV color space.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-3Inference"><a href="#2-3Inference" class="headerlink" title="2.3Inference"></a>2.3Inference</h3><blockquote>
+<p><strong>inference</strong>: n. a conclusion reached on the basis of evidence and reasoning.   *”researchers are entrusted with drawing inferences from the data”*</p>
+<p><strong>spatial:</strong> adj. relating to or occupying space.  *”the spatial distribution of population”*</p>
+</blockquote>
+<ul>
+<li>YOLO非常快，因为它只需要一个网络的评估，不像是RCNN系列的算法。</li>
+<li>另外作者还特意提到了，每一个物体最后基本上都会有一个grid cell来负责预测， 但是有时候，比如说物体本身比较大的时候或者是一些横跨多个grid cell的时候，就会有着许多的grid cell来预测这个框，这样的话我们可以选用NMS！</li>
+<li>NMS, Non-maximal suppression可以用来剪掉多余的多个检测框。但是这里可以看出实际上NMS就是个补充而已，并不是一个我们说是必须的，就像在R-CNN或是DPM这里一样。非极大抑制最多增加2-3%mAP这种。</li>
+</ul>
+<h3 id="Limitations-of-YOLO"><a href="#Limitations-of-YOLO" class="headerlink" title="Limitations of YOLO"></a>Limitations of YOLO</h3><blockquote>
+<p><strong>constraints</strong>: n. a limitation or restriction. *”time constraints make it impossible to do everything”*</p>
+<p><strong>aspect ratio:</strong> n. 长宽比</p>
+<p><strong>generalize：</strong> v. 1. make a general or broad statement by inferring from specific cases. *”it is not easy to generalize about the poor”* 2. make (something) more widespread or widely applicable. *”attempts to generalize an elite education”*</p>
+<p><strong>configurations:</strong> n.  (配置)an arrangement of elements in a particular form, figure, or combination *”the broad configuration of the economy remains capitalist”* </p>
+<p><strong>coarse:</strong> adj. rough or loose in texture or grain.</p>
+<p><strong>off-the-shelf：</strong> adj. (现成的)not designed or made to order but taken from existing stock or supplies.  <strong>“off-the-shelf software packages”</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>So What Does Aspect Ratio(长宽比) Mean?</strong></p>
+<p>An aspect ratio is an attribute that describes the relationship between the width and height of an image. Aspect ratio is expressed by the symbolic notation: X:Y. The values of X and Y are not the actual width and height of the image, but describe the relationship between them.</p>
+</blockquote>
+<ul>
+<li>因为YOLO对于我们的预测bbox的约束(strong spatial constraints)还是很强的，每个grid cell只可以预测两个bbox(B通常为2)并且只可以预测一个种类，也就是一个物体。这就约束了我们相邻的一些物体，对于离得很近的物体，它的预测就比较难办。该模型因此也很难检测我们的成群的小物体，比如说成群的鸟（flocks of bird)</li>
+<li>另外一个问题，就是我们的关于学习相关的bbox是根据的我们的数据，那么我们肯定会对一些不寻常长宽比（aspect ratio）或是配置（configuration）不太寻常的物体很难识别清楚.</li>
+<li>另外一点就是我们的模型仍旧使用相对比较粗糙的特征来训练bbox，因为我们有着太多的downsampling层在这里了，如果过分下采样的话我们的模型容易预测的不是很好，这一点当然可以理解，但是论文的意思似乎是另一个方面的意思，这几个需要进一步的去思考。</li>
+<li>最后一点我们训练loss平等对待小bbox和大bbox， 主要error来源是错误的位置。</li>
+</ul>
+<p>总结YOLOv1要点：</p>
+<ul>
+<li><p>YOLO: 45 FPS，Fast YOLO: 155 FPS</p>
+</li>
+<li><p>将图像分成S*S的网格，每个网格预测B个bbox，对每个bbox预测其置信度confidence（IOU）</p>
+</li>
+<li><p>每个网格预测C个条件类别概率，C是类别数目，之预测一组C个条件概率，无论B的取值为多少</p>
+</li>
+<li><p>对VOC，S=7，B=2，C=20，网络输出为7<em>7</em>30，其中30=20+（xywh+confidence）*B</p>
+</li>
+<li><p>24卷积+2全连接</p>
+</li>
+<li><p>训练和测试阶段的分辨率不同：detection需要细粒度的视觉信息，因此把输入分辨率从224<em>224提高到448</em>448</p>
+</li>
+<li><p>leaky RELU</p>
+</li>
+<li><p>lambda参数对loss进行加权：增加bounding box坐标产生的loss，减少不包含物体的预测结果loss，为两个loss添加权重</p>
+</li>
+<li><p>预测bounding box的h，w的平方根，而不是直接预测bbox，平方和将大box和小box的error看做平等的</p>
+</li>
+<li><p>数据增强和NMS</p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -1197,7 +1345,7 @@ YOLOv1地址：https://arxiv.org/abs/1506.02640
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">102.3k</span> 字
+                <span class="white-color">110.5k</span> 字
             
 
             
