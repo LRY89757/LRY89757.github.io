@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-09-20T02:29:19.590Z</updated>
+  <updated>2021-09-22T04:27:48.474Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基于Pseudo-LiDAR的纯视觉3D物体检测算法</title>
+    <link href="https://lry89757.github.io/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/"/>
+    <id>https://lry89757.github.io/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/</id>
+    <published>2021-09-21T03:55:57.000Z</published>
+    <updated>2021-09-22T04:27:48.474Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+      <category term="线上talk" scheme="https://lry89757.github.io/tags/%E7%BA%BF%E4%B8%8Atalk/"/>
+    
+      <category term="3D" scheme="https://lry89757.github.io/tags/3D/"/>
+    
+      <category term="康奈尔大学" scheme="https://lry89757.github.io/tags/%E5%BA%B7%E5%A5%88%E5%B0%94%E5%A4%A7%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>初试RNN</title>
     <link href="https://lry89757.github.io/2021/09/20/chu-shi-rnn/"/>
     <id>https://lry89757.github.io/2021/09/20/chu-shi-rnn/</id>
     <published>2021-09-20T02:16:57.000Z</published>
-    <updated>2021-09-20T02:29:19.590Z</updated>
+    <updated>2021-09-20T03:18:15.704Z</updated>
     
     <summary type="html">
     
@@ -265,9 +297,9 @@
     
       <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
-      <category term="乐评" scheme="https://lry89757.github.io/tags/%E4%B9%90%E8%AF%84/"/>
-    
       <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
+    
+      <category term="乐评" scheme="https://lry89757.github.io/tags/%E4%B9%90%E8%AF%84/"/>
     
   </entry>
   
@@ -293,9 +325,9 @@
       <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
     
-      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
-    
       <category term="Dian团队" scheme="https://lry89757.github.io/tags/Dian%E5%9B%A2%E9%98%9F/"/>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
       <category term="AI" scheme="https://lry89757.github.io/tags/AI/"/>
     
@@ -323,9 +355,9 @@
       <category term="记录" scheme="https://lry89757.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="访谈" scheme="https://lry89757.github.io/tags/%E8%AE%BF%E8%B0%88/"/>
-    
       <category term="社会实践" scheme="https://lry89757.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%AE%9E%E8%B7%B5/"/>
+    
+      <category term="访谈" scheme="https://lry89757.github.io/tags/%E8%AE%BF%E8%B0%88/"/>
     
   </entry>
   
@@ -379,8 +411,6 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
@@ -388,6 +418,8 @@
       <category term="源码解读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/"/>
     
       <category term="Faster RCNN" scheme="https://lry89757.github.io/tags/Faster-RCNN/"/>
+    
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
   </entry>
   
@@ -413,11 +445,11 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Faster RCNN" scheme="https://lry89757.github.io/tags/Faster-RCNN/"/>
+    
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
       <category term="RCNN" scheme="https://lry89757.github.io/tags/RCNN/"/>
     
@@ -578,50 +610,6 @@
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CNN经典模型复现数据分析解析</title>
-    <link href="https://lry89757.github.io/2021/08/14/cnn-jing-dian-mo-xing-fu-xian-shu-ju-fen-xi-jie-xi/"/>
-    <id>https://lry89757.github.io/2021/08/14/cnn-jing-dian-mo-xing-fu-xian-shu-ju-fen-xi-jie-xi/</id>
-    <published>2021-08-14T13:56:02.000Z</published>
-    <updated>2021-09-06T05:25:11.297Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;本次共动手实现了模型LeNet、AlexNet、VGG(11 13 16
-        
-      
-    
-    </summary>
-    
-      <category term="数据分析" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
-      <category term="CNN" scheme="https://lry89757.github.io/tags/CNN/"/>
-    
-      <category term="matplotlib" scheme="https://lry89757.github.io/tags/matplotlib/"/>
-    
-      <category term="数据分析" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-      <category term="numpy" scheme="https://lry89757.github.io/tags/numpy/"/>
-    
-      <category term="GoogLeNet" scheme="https://lry89757.github.io/tags/GoogLeNet/"/>
-    
-      <category term="LeNet" scheme="https://lry89757.github.io/tags/LeNet/"/>
-    
-      <category term="AlexNet" scheme="https://lry89757.github.io/tags/AlexNet/"/>
-    
-      <category term="VGG" scheme="https://lry89757.github.io/tags/VGG/"/>
     
   </entry>
   
