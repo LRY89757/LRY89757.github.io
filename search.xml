@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Linux笔记</title>
+      <link href="/2021/09/24/linux-bi-ji/"/>
+      <url>/2021/09/24/linux-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<p>4张2080Ti！！我连接了Dian团队的服务器之后，终于不用再担心算力的问题了😭！之前总是靠kaggle、colab这些白嫖GPU，现在完全不用担心这些问题，直接连接到Dian的服务器，算力十足。这也正好让我开始接触到了Linux，任务驱动之下，也不得不学一些Linux命令，正好实际上我对这个东西也挺好奇的，这里开一篇博客记录一下。</p><p><strong>笔记记得会非常没有章法，但是这算是一个学习的过程。这篇文章可能不是按照顺序理解的</strong></p><h2 id="查看显卡的型号、信息-置顶"><a href="#查看显卡的型号、信息-置顶" class="headerlink" title="查看显卡的型号、信息(置顶)"></a>查看显卡的型号、信息(置顶)</h2><pre class="line-numbers language-shell"><code class="language-shell">nvidia-smi -L<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>康康Dian的服务器的4张2080Ti：</p><p><a href="https://imgtu.com/i/4rdY0f" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/09/25/4rdY0f.png" alt="nvidia"></a></p><p>在 Linux 中目前有几个命令可以用来获取硬件信息，其中 lspic 命令行工具便可用来获取显卡的硬件信息。</p><p>这里目前不太能用到，以后用到再说。可以看看这个博客：<a href="https://www.sysgeek.cn/graphics-card-information-linux/。" target="_blank" rel="noopener">https://www.sysgeek.cn/graphics-card-information-linux/。</a></p><h2 id="首先简单介绍一下SSH"><a href="#首先简单介绍一下SSH" class="headerlink" title="首先简单介绍一下SSH"></a>首先简单介绍一下SSH</h2><blockquote><p>该部分选自：阮一峰的网络日志<a href="https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html</a></p></blockquote><h3 id="一、什么是SSH？"><a href="#一、什么是SSH？" class="headerlink" title="一、什么是SSH？"></a><strong>一、什么是SSH？</strong></h3><p>简单说，SSH是一种网络协议，用于计算机之间的加密登录。</p><p>如果一个用户从本地计算机，使用SSH协议登录另一台远程计算机，我们就可以认为，这种登录是安全的，即使被中途截获，密码也不会泄露。</p><p>最早的时候，互联网通信都是明文通信，一旦被截获，内容就暴露无疑。1995年，芬兰学者Tatu Ylonen设计了SSH协议，将登录信息全部加密，成为互联网安全的一个基本解决方案，迅速在全世界获得推广，目前已经成为Linux系统的标准配置。</p><p>需要指出的是，SSH只是一种协议，存在多种实现，既有商业实现，也有开源实现。本文针对的实现是<a href="https://www.openssh.com/" target="_blank" rel="noopener">OpenSSH</a>，它是自由软件，应用非常广泛。</p><p>此外，本文只讨论SSH在Linux Shell中的用法。如果要在Windows系统中使用SSH，会用到另一种软件<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty" target="_blank" rel="noopener">PuTTY</a>，这需要另文介绍。</p><h3 id="二、最基本的用法"><a href="#二、最基本的用法" class="headerlink" title="二、最基本的用法"></a><strong>二、最基本的用法</strong></h3><p>SSH主要用于远程登录。假定你要以用户名user，登录远程主机host，只要一条简单命令就可以了。</p><blockquote><p>　　$ ssh user@host</p></blockquote><p>如果本地用户名与远程用户名一致，登录时可以省略用户名。</p><blockquote><p>　　$ ssh host</p></blockquote><p>SSH的默认端口是22，也就是说，你的登录请求会送进远程主机的22端口。使用p参数，可以修改这个端口。</p><blockquote><p>　　$ ssh -p 2222 user@host</p></blockquote><p>上面这条命令表示，ssh直接连接远程主机的2222端口。</p><h2 id="连接到服务器"><a href="#连接到服务器" class="headerlink" title="连接到服务器"></a>连接到服务器</h2><pre class="line-numbers language-shell"><code class="language-shell">ssh 43004 ssh lry@192.168.0.75 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>但是一般来说为了安全起见，端口号等一些参数并不会使用默认值。这样的话命令就变成这样：</p><pre class="line-numbers language-shell"><code class="language-shell">ssh 用户名@IP地址 -p 端口号<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="密钥登录-免密码"><a href="#密钥登录-免密码" class="headerlink" title="密钥登录(免密码)"></a>密钥登录(免密码)</h2><p>每次登录SH都需要输入密码很麻烦，而且可能不太安全。SSH还能使用另外一种登录方式，也就是使用密钥登录。这种登录方式需要客户端生成一堆公钥私钥对，然后将公钥添加到服务器中，这样下次就可以直接登录了。</p><p>首先生成SSH密钥，依照提示输入信息即可。默认生成在用户主目录中的.ssh文件夹中。带pub的是公钥，接下来需要添加到服务器中。</p><pre class="line-numbers language-shell"><code class="language-shell">ssh-keygen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后将本地公钥添加到服务器中，需要使用另一个命令：</p><pre class="line-numbers language-shell"><code class="language-shell">scp -P 端口号 本地文件路径 用户名@远程服务器地址:远程路径<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后登陆服务器，找到复制进去的公钥，将公钥名字改为authorized_keys并添加到对应的.ssh文件夹中。然后退出SSH重新登陆试试，成功的话不需要输入密码就会直接进入远程服务器。</p><h2 id="Linux-系统目录结构"><a href="#Linux-系统目录结构" class="headerlink" title="Linux 系统目录结构"></a>Linux 系统目录结构</h2><blockquote><p>选自菜鸟教程：<a href="https://www.runoob.com/linux/linux-system-contents.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-system-contents.html</a></p></blockquote><p>登陆系统后输入命令：</p><pre class="line-numbers language-shell"><code class="language-shell">ls \<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>你会看到如下图所示:</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://www.runoob.com/wp-content/uploads/2014/06/4_20.png" alt="files"></p><p>树状目录结构：</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://www.runoob.com/wp-content/uploads/2014/06/d0c50-linux2bfile2bsystem2bhierarchy.jpg" alt="structure"></p><p>以下是对这些目录的解释：</p><ul><li><p><strong>/bin</strong>：<br>bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</p></li><li><p><strong>/boot：</strong><br>这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</p></li><li><p><strong>/dev ：</strong><br>dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</p></li><li><p><strong>/etc：</strong><br>etc 是 Etcetera(等等) 的缩写,这个目录用来存放所有的系统管理所需要的配置文件和子目录。</p></li><li><p><strong>/home</strong>：<br>用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</p></li><li><p><strong>/lib</strong>：<br>lib 是 Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</p></li><li><p><strong>/lost+found</strong>：<br>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</p></li><li><p><strong>/media</strong>：<br>linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</p></li><li><p><strong>/mnt</strong>：<br>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上，然后进入该目录就可以查看光驱里的内容了。</p></li><li><p><strong>/opt</strong>：<br>opt 是 optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</p></li><li><p><strong>/proc</strong>：<br>proc 是 Processes(进程) 的缩写，/proc 是一种伪文件系统（也即虚拟文件系统），存储的是当前内核运行状态的一系列特殊文件，这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。<br>这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：</p><pre><code>echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all</code></pre></li><li><p><strong>/root</strong>：<br>该目录为系统管理员，也称作超级权限者的用户主目录。</p></li><li><p><strong>/sbin</strong>：<br>s 就是 Super User 的意思，是 Superuser Binaries (超级用户的二进制文件) 的缩写，这里存放的是系统管理员使用的系统管理程序。</p></li><li><p><strong>/selinux</strong>：<br> 这个目录是 Redhat/CentOS 所特有的目录，Selinux 是一个安全机制，类似于 windows 的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。</p></li><li><p><strong>/srv</strong>：<br> 该目录存放一些服务启动之后需要提取的数据。</p></li><li><p><strong>/sys</strong>：</p><p>这是 Linux2.6 内核的一个很大的变化。该目录下安装了 2.6 内核中新出现的一个文件系统 sysfs 。</p><p>sysfs 文件系统集成了下面3种文件系统的信息：针对进程信息的 proc 文件系统、针对设备的 devfs 文件系统以及针对伪终端的 devpts 文件系统。</p><p>该文件系统是内核设备树的一个直观反映。</p><p>当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。</p></li><li><p><strong>/tmp</strong>：<br>tmp 是 temporary(临时) 的缩写这个目录是用来存放一些临时文件的。</p></li><li><p><strong>/usr</strong>：<br> usr 是 unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</p></li><li><p><strong>/usr/bin：</strong><br>系统用户使用的应用程序。</p></li><li><p><strong>/usr/sbin：</strong><br>超级用户使用的比较高级的管理程序和系统守护程序。</p></li><li><p><strong>/usr/src：</strong><br>内核源代码默认的放置目录。</p></li><li><p><strong>/var</strong>：<br>var 是 variable(变量) 的缩写，这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p></li><li><p><strong>/run</strong>：<br>是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。如果你的系统上有 /var/run 目录，应该让它指向 run。</p></li></ul><p>在 Linux 系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。</p><p><strong>/etc</strong>： 上边也提到了，这个是系统中的配置文件，如果你更改了该目录下的某个文件可能会导致系统不能启动。</p><p><strong>/bin, /sbin, /usr/bin, /usr/sbin</strong>: 这是系统预设的执行文件的放置目录，比如 ls 就是在 /bin/ls 目录下的。</p><p>值得提出的是，/bin, /usr/bin 是给系统用户使用的指令（除root外的通用户），而/sbin, /usr/sbin 则是给 root 使用的指令。</p><p><strong>/var</strong>： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在 /var/log 目录下，另外 mail 的预设放置也是在这里。</p><h2 id="What-is-shell"><a href="#What-is-shell" class="headerlink" title="What is shell?"></a>What is shell?</h2><blockquote><p>该章节几乎所有内容来自于<a href="https://missing-semester-cn.github.io/2020/course-shell/" target="_blank" rel="noopener">https://missing-semester-cn.github.io/2020/course-shell/</a></p></blockquote><p>如今的计算机有着多种多样的交互接口让我们可以进行指令的的输入，从炫酷的图像用户界面（GUI），语音输入甚至是 AR/VR 都已经无处不在。 这些交互接口可以覆盖 80% 的使用场景，但是它们也从根本上限制了您的操作方式——你不能点击一个不存在的按钮或者是用语音输入一个还没有被录入的指令。 为了充分利用计算机的能力，我们不得不回到最根本的方式，使用文字接口：Shell</p><p>几乎所有您能够接触到的平台都支持某种形式的 shell，有些甚至还提供了多种 shell 供您选择。虽然它们之间有些细节上的差异，但是其核心功能都是一样的：它允许你执行程序，输入并获取某种半结构化的输出。</p><p>本次我们会使用 Bourne Again SHell, 简称 “bash” 。 这是被最广泛使用的一种 shell，它的语法和其他的 shell 都是类似的。打开shell <em>提示符*（您输入指令的地方），您首先需要打开 *终端</em> 。您的设备通常都已经内置了终端，或者您也可以安装一个，非常简单。</p><p>shell的功能更加强大，相比于我们的GUI程序来说。并且我们可以安装新的终端，比如说目前我用的就是git的bash, 当然，也可以选择使用别的如power shell、cmd等等。或者windows terminal这种。</p><h3 id="使用-shell"><a href="#使用-shell" class="headerlink" title="使用 shell"></a>使用 shell</h3><p>当您打开终端时，您会看到一个提示符，它看起来一般是这个样子的：</p><pre><code>missing:~$ </code></pre><p>这是 shell 最主要的文本接口。它告诉你，你的主机名是 <code>missing</code> 并且您当前的工作目录（”current working directory”）或者说您当前所在的位置是 <code>~</code> (表示 “home”)。 <code>$</code> 符号表示您现在的身份不是 root 用户（稍后会介绍）。在这个提示符中，您可以输入 <em>命令</em> ，命令最终会被 shell 解析。最简单的命令是执行一个程序：</p><pre><code>missing:~$ dateFri 10 Jan 2020 11:49:31 AM ESTmissing:~$ </code></pre><p>这里，我们执行了 <code>date</code> 这个程序，不出意料地，它打印出了当前的日前和时间。然后，shell 等待我们输入其他命令。我们可以在执行命令的同时向程序传递 <em>参数</em> ：</p><pre><code>missing:~$ echo hellohello</code></pre><p>上例中，我们让 shell 执行 <code>echo</code> ，同时指定参数 <code>hello</code>。<code>echo</code> 程序将该参数打印出来。 shell 基于空格分割命令并进行解析，然后执行第一个单词代表的程序，并将后续的单词作为程序可以访问的参数。如果您希望传递的参数中包含空格（例如一个名为 My Photos 的文件夹），您要么用使用单引号，双引号将其包裹起来，要么使用转义符号 <code>\</code> 进行处理（<code>My\ Photos</code>）。</p><p>但是，shell 是如何知道去哪里寻找 <code>date</code> 或 <code>echo</code> 的呢？其实，类似于 Python 或 Ruby，shell 是一个编程环境，所以它具备变量、条件、循环和函数（下一课进行讲解）。当你在 shell 中执行命令时，您实际上是在执行一段 shell 可以解释执行的简短代码。如果你要求 shell 执行某个指令，但是该指令并不是 shell 所了解的编程关键字，那么它会去咨询 <em>环境变量</em> <code>$PATH</code>，它会列出当 shell 接到某条指令时，进行程序搜索的路径：</p><pre><code>missing:~$ echo $PATH/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/binmissing:~$ which echo/bin/echomissing:~$ /bin/echo $PATH/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</code></pre><p>当我们执行 <code>echo</code> 命令时，shell 了解到需要执行 <code>echo</code> 这个程序，随后它便会在 <code>$PATH</code> 中搜索由 <code>:</code> 所分割的一系列目录，基于名字搜索该程序。当找到该程序时便执行（假定该文件是 <em>可执行程序</em>，后续课程将详细讲解）。确定某个程序名代表的是哪个具体的程序，可以使用 <code>which</code> 程序。我们也可以绕过 <code>$PATH</code>，通过直接指定需要执行的程序的路径来执行该程序</p><h3 id="在shell中导航"><a href="#在shell中导航" class="headerlink" title="在shell中导航"></a>在shell中导航</h3><p>shell 中的路径是一组被分割的目录，在 Linux 和 macOS 上使用 <code>/</code> 分割，而在Windows上是 <code>\</code>。路径 <code>/</code> 代表的是系统的根目录，所有的文件夹都包括在这个路径之下，在Windows上每个盘都有一个根目录（例如： <code>C:\</code>）。 我们假设您在学习本课程时使用的是 Linux 文件系统。如果某个路径以 <code>/</code> 开头，那么它是一个 <em>绝对路径*，其他的都是 *相对路径</em> 。相对路径是指相对于当前工作目录的路径，当前工作目录可以使用 <code>pwd</code> 命令来获取。此外，切换目录需要使用 <code>cd</code> 命令。在路径中，<code>.</code> 表示的是当前目录，而 <code>..</code> 表示上级目录：</p><pre><code>missing:~$ pwd/home/missingmissing:~$ cd /homemissing:/home$ pwd/homemissing:/home$ cd ..missing:/$ pwd/missing:/$ cd ./homemissing:/home$ pwd/homemissing:/home$ cd missingmissing:~$ pwd/home/missingmissing:~$ ../../bin/echo hellohello</code></pre><p>注意，shell 会实时显示当前的路径信息。您可以通过配置 shell 提示符来显示各种有用的信息，这一内容我们会在后面的课程中进行讨论。</p><p>一般来说，当我们运行一个程序时，如果我们没有指定路径，则该程序会在当前目录下执行。例如，我们常常会搜索文件，并在需要时创建文件。</p><p>为了查看指定目录下包含哪些文件，我们使用 <code>ls</code> 命令：</p><pre class="line-numbers language-shell"><code class="language-shell">missing:~$ lsmissing:~$ cd ..missing:/home$ lsmissingmissing:/home$ cd ..missing:/$ lsbinbootdevetchome...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>除非我们利用第一个参数指定目录，否则 <code>ls</code> 会打印当前目录下的文件。大多数的命令接受标记和选项（带有值的标记），它们以 <code>-</code> 开头，并可以改变程序的行为。通常，在执行程序时使用 <code>-h</code> 或 <code>--help</code> 标记可以打印帮助信息，以便了解有哪些可用的标记或选项。例如，<code>ls --help</code> 的输出如下：</p><pre class="line-numbers language-shell"><code class="language-shell">  -l                         use a long listing formatmissing:~$ ls -l /homedrwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-shell"><code class="language-shell">drwxr-xr-x 18 gpl  gpl  4096 9月  23 15:46 gpldrwxr-xr-x  6 gyf  gyf  4096 9月  21 19:29 gyfdrwxr-xr-x 18 jhy  jhy  4096 9月  20 15:27 jhydrwxr-xr-x  6 lj   lj   4096 5月  29 18:15 ljdrwxr-xr-x  6 lry  lry  4096 9月  24 21:38 lrydrwxr-xr-x 15 lza  lza  4096 9月  12 17:29 lzadrwxr-xr-x 32 user user 4096 7月  21 16:42 userdrwxr-xr-x 11 1004 1004 4096 5月  12 17:03 wqydrwxr-xr-x 11 xyf  xyf  4096 3月  17  2021 xyfdrwxr-xr-x  6 zn   zn   4096 8月  19 22:18 zndrwxr-xr-x 13 zwt  zwt  4096 9月  21 15:24 zwtdrwxr-xr-x 17 zxl  zxl  4096 9月   9 22:02 zxldrwxr-xr-x 32 zyh  1011 4096 7月  27 14:50 zyhdrwxr-xr-x  2 zzr  zzr  4096 5月   7 19:47 zzr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这个参数可以打印出更加详细地列出目录下文件或文件夹的信息。首先，本行第一个字符 <code>d</code> 表示 <code>missing</code> 是一个目录。然后接下来的九个字符，每三个字符构成一组。 （<code>rwx</code>）. 它们分别代表了文件所有者（<code>missing</code>），用户组（<code>users</code>） 以及其他所有人具有的权限。其中 <code>-</code> 表示该用户不具备相应的权限。从上面的信息来看，只有文件所有者可以修改（<code>w</code>），<code>missing</code> 文件夹 （例如，添加或删除文件夹中的文件）。为了进入某个文件夹，用户需要具备该文件夹以及其父文件夹的“搜索”权限（以“可执行”：<code>x</code>）权限表示。为了列出它的包含的内容，用户必须对该文件夹具备读权限（<code>r</code>）。对于文件来说，权限的意义也是类似的。注意，<code>/bin</code> 目录下的程序在最后一组，即表示所有人的用户组中，均包含 <code>x</code> 权限，也就是说任何人都可以执行这些程序。</p><p>在这个阶段，还有几个趁手的命令是您需要掌握的，例如 <code>mv</code>（用于重命名或移动文件）、 <code>cp</code>（拷贝文件）以及 <code>mkdir</code>（新建文件夹）。</p><p>如果您想要知道关于程序参数、输入输出的信息，亦或是想要了解它们的工作方式，请试试 <code>man</code> 这个程序。它会接受一个程序名作为参数，然后将它的文档（用户手册）展现给您。注意，使用 <code>q</code> 可以退出该程序。</p><pre class="line-numbers language-shell"><code class="language-shell">missing:~$ man ls<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><blockquote><p><strong>synopsis</strong>:  n. a brief summary or general survey of something.    “a synopsis of the accident”</p><p><strong>manual</strong>  :  1. adj. relating to or done with the hands. 2. a book of instructions, especially for operating a machine or learning a subject; a handbook.</p></blockquote><p> <a href="https://imgtu.com/i/4DLfD1" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/09/24/4DLfD1.md.png" alt="result of man ls"></a></p><h3 id="在程序间创建连接"><a href="#在程序间创建连接" class="headerlink" title="在程序间创建连接"></a>在程序间创建连接</h3><p>在 shell 中，程序有两个主要的“流”：它们的输入流和输出流。 当程序尝试读取信息时，它们会从输入流中进行读取，当程序打印信息时，它们会将信息输出到输出流中。 通常，一个程序的输入输出流都是您的终端。也就是，您的键盘作为输入，显示器作为输出。 但是，我们也可以重定向这些流！</p><p>最简单的重定向是 <code>&lt; file</code> 和 <code>&gt; file</code>。这两个命令可以将程序的输入输出流分别重定向到文件：</p><pre><code>missing:~$ echo hello &gt; hello.txtmissing:~$ cat hello.txthellomissing:~$ cat &lt; hello.txthellomissing:~$ cat &lt; hello.txt &gt; hello2.txtmissing:~$ cat hello2.txthello</code></pre><blockquote><p><strong>The <em>cat</em> Command</strong>, <a href="https://www.baeldung.com/linux/cat-writing-file" target="_blank" rel="noopener">https://www.baeldung.com/linux/cat-writing-file</a></p><p>The <em>cat</em> command is a utility command in Linux. One of its most commonly known usages is to print the content of a file onto the standard output stream. Other than that, the <em>cat</em> command also allows us to write some texts into a file.</p></blockquote><p>您还可以使用 <code>&gt;&gt;</code> 来向一个文件追加内容。使用管道（ <em>pipes</em> ），我们能够更好的利用文件重定向。 <code>|</code> 操作符允许我们将一个程序的输出和另外一个程序的输入连接起来：</p><pre><code>missing:~$ ls -l / | tail -n1drwxr-xr-x 1 root  root  4096 Jun 20  2019 varmissing:~$ curl --head --silent google.com | grep --ignore-case content-length | cut --delimiter=&#39; &#39; -f2219</code></pre><p>我们会在数据清理一章中更加详细的探讨如何更好的利用管道。</p><h3 id="一个功能全面又强大的工具"><a href="#一个功能全面又强大的工具" class="headerlink" title="一个功能全面又强大的工具"></a>一个功能全面又强大的工具</h3><p>对于大多数的类 Unix 系统，有一类用户是非常特殊的，那就是：根用户（root user）。 您应该已经注意到了，在上面的输出结果中，根用户几乎不受任何限制，他可以创建、读取、更新和删除系统中的任何文件。 通常在我们并不会以根用户的身份直接登录系统，因为这样可能会因为某些错误的操作而破坏系统。 取而代之的是我们会在需要的时候使用 <code>sudo</code> 命令。顾名思义，它的作用是让您可以以 su（super user 或 root 的简写）的身份执行一些操作。 当您遇到拒绝访问（permission denied）的错误时，通常是因为此时您必须是根用户才能操作。然而，请再次确认您是真的要执行此操作。</p><p>有一件事情是您必须作为根用户才能做的，那就是向 <code>sysfs</code> 文件写入内容。系统被挂载在 <code>/sys</code> 下，<code>sysfs</code> 文件则暴露了一些内核（kernel）参数。 因此，您不需要借助任何专用的工具，就可以轻松地在运行期间配置系统内核。<strong>注意 Windows 和 macOS 没有这个文件</strong></p><p>例如，您笔记本电脑的屏幕亮度写在 <code>brightness</code> 文件中，它位于</p><pre><code>/sys/class/backlight</code></pre><p>通过将数值写入该文件，我们可以改变屏幕的亮度。现在，蹦到您脑袋里的第一个想法可能是：</p><pre><code>$ sudo find -L /sys/class/backlight -maxdepth 2 -name &#39;*brightness*&#39;/sys/class/backlight/thinkpad_screen/brightness$ cd /sys/class/backlight/thinkpad_screen$ sudo echo 3 &gt; brightnessAn error occurred while redirecting file &#39;brightness&#39;open: Permission denied</code></pre><p>出乎意料的是，我们还是得到了一个错误信息。毕竟，我们已经使用了 <code>sudo</code> 命令！关于 shell，有件事我们必须要知道。<code>|</code>、<code>&gt;</code>、和 <code>&lt;</code> 是通过 shell 执行的，而不是被各个程序单独执行。 <code>echo</code> 等程序并不知道 <code>|</code> 的存在，它们只知道从自己的输入输出流中进行读写。 对于上面这种情况， <em>shell</em> (权限为您的当前用户) 在设置 <code>sudo echo</code> 前尝试打开 brightness 文件并写入，但是系统拒绝了 shell 的操作因为此时 shell 不是根用户。</p><p>明白这一点后，我们可以这样操作：</p><pre><code>$ echo 3 | sudo tee brightness</code></pre><p>因为打开 <code>/sys</code> 文件的是 <code>tee</code> 这个程序，并且该程序以 <code>root</code> 权限在运行，因此操作可以进行。 这样您就可以在 <code>/sys</code> 中愉快地玩耍了，例如修改系统中各种LED的状态（路径可能会有所不同）：</p><pre class="line-numbers language-shell"><code class="language-shell">$ echo 1 | sudo tee /sys/class/leds/input6::scrolllock/brightness<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="接下来…"><a href="#接下来…" class="headerlink" title="接下来….."></a>接下来…..</h3><p>学到这里，您掌握的 shell 知识已经可以完成一些基础的任务了。您应该已经可以查找感兴趣的文件并使用大多数程序的基本功能了。 在下一场讲座中，我们会探讨如何利用 shell 及其他工具执行并自动化更复杂的任务。</p><h2 id="公网访问方式"><a href="#公网访问方式" class="headerlink" title="公网访问方式"></a>公网访问方式</h2><p>之前我以为我们只能内网访问，但是现在发现还可以公网访问该文件。经过我们优秀组长蒋浩懿的指点，方法如下：</p><p>首先输入我们的这样一串代码：</p><pre class="line-numbers language-shell"><code class="language-shell">ssh jump<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>接着我们就需要输入公网的密码了：</p><pre class="line-numbers language-shell"><code class="language-shell">****(经过加密不予显示)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>然后我们接着就可以使用内网的连接方式了，不知道为什么ssh 43004不行：</p><pre class="line-numbers language-shell"><code class="language-shell">ssh lry@192.168.0.75<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>接着输入自己的密码就OK。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 指令集 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 显卡 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于Pseudo-LiDAR的纯视觉3D物体检测算法</title>
       <link href="/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/"/>
       <url>/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/</url>
@@ -298,9 +325,9 @@
       
         <tags>
             
-            <tag> Dian团队 </tag>
-            
             <tag> 写给自己的散文诗 </tag>
+            
+            <tag> Dian团队 </tag>
             
             <tag> AI </tag>
             
@@ -327,9 +354,9 @@
       
         <tags>
             
-            <tag> 社会实践 </tag>
-            
             <tag> 访谈 </tag>
+            
+            <tag> 社会实践 </tag>
             
         </tags>
       
@@ -381,6 +408,8 @@
       
         <tags>
             
+            <tag> 目标检测 </tag>
+            
             <tag> 深度学习 </tag>
             
             <tag> pytorch </tag>
@@ -388,8 +417,6 @@
             <tag> 源码解读 </tag>
             
             <tag> Faster RCNN </tag>
-            
-            <tag> 目标检测 </tag>
             
         </tags>
       
@@ -414,11 +441,11 @@
       
         <tags>
             
+            <tag> 目标检测 </tag>
+            
             <tag> 深度学习 </tag>
             
             <tag> Faster RCNN </tag>
-            
-            <tag> 目标检测 </tag>
             
             <tag> RCNN </tag>
             
@@ -672,9 +699,9 @@
             
             <tag> 深度学习 </tag>
             
-            <tag> 显卡 </tag>
-            
             <tag> CPU </tag>
+            
+            <tag> 显卡 </tag>
             
             <tag> GPU </tag>
             
@@ -705,9 +732,9 @@
             
             <tag> 深度学习 </tag>
             
-            <tag> pytorch </tag>
-            
             <tag> CPU </tag>
+            
+            <tag> pytorch </tag>
             
             <tag> GPU </tag>
             
@@ -796,9 +823,9 @@
       
         <tags>
             
-            <tag> 挖矿 </tag>
-            
             <tag> 比特币 </tag>
+            
+            <tag> 挖矿 </tag>
             
             <tag> 反挖矿 </tag>
             
@@ -827,13 +854,13 @@
       
         <tags>
             
-            <tag> 挖矿 </tag>
-            
-            <tag> EIP-1559 </tag>
-            
             <tag> 比特币 </tag>
             
             <tag> 以太坊 </tag>
+            
+            <tag> 挖矿 </tag>
+            
+            <tag> EIP-1559 </tag>
             
         </tags>
       
@@ -858,11 +885,11 @@
       
         <tags>
             
-            <tag> 挖矿 </tag>
-            
             <tag> 比特币 </tag>
             
             <tag> 以太坊 </tag>
+            
+            <tag> 挖矿 </tag>
             
             <tag> 区块链 </tag>
             
@@ -988,9 +1015,9 @@
       
         <tags>
             
-            <tag> 数据集 </tag>
-            
             <tag> 深度学习 </tag>
+            
+            <tag> 数据集 </tag>
             
             <tag> pytorch </tag>
             
@@ -1093,9 +1120,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> C </tag>
+            
+            <tag> python </tag>
             
             <tag> 栈 </tag>
             
@@ -1159,11 +1186,11 @@
       
         <tags>
             
+            <tag> C </tag>
+            
             <tag> python </tag>
             
             <tag> 数据结构 </tag>
-            
-            <tag> C </tag>
             
             <tag> 栈 </tag>
             
@@ -1196,6 +1223,8 @@
       
         <tags>
             
+            <tag> C++ </tag>
+            
             <tag> python </tag>
             
             <tag> 栈 </tag>
@@ -1205,8 +1234,6 @@
             <tag> 算法 </tag>
             
             <tag> 数学 </tag>
-            
-            <tag> C++ </tag>
             
         </tags>
       
@@ -1231,9 +1258,9 @@
       
         <tags>
             
-            <tag> 写给自己的散文诗 </tag>
-            
             <tag> 生活随笔 </tag>
+            
+            <tag> 写给自己的散文诗 </tag>
             
             <tag> 羽毛球 </tag>
             
@@ -1262,9 +1289,9 @@
       
         <tags>
             
-            <tag> 林俊杰 </tag>
-            
             <tag> 生活随笔 </tag>
+            
+            <tag> 林俊杰 </tag>
             
         </tags>
       
@@ -1289,9 +1316,9 @@
       
         <tags>
             
-            <tag> 写给自己的散文诗 </tag>
-            
             <tag> 生活随笔 </tag>
+            
+            <tag> 写给自己的散文诗 </tag>
             
         </tags>
       
@@ -1316,9 +1343,9 @@
       
         <tags>
             
-            <tag> 写给自己的散文诗 </tag>
-            
             <tag> 生活随笔 </tag>
+            
+            <tag> 写给自己的散文诗 </tag>
             
             <tag> 书评 </tag>
             
@@ -1521,9 +1548,9 @@
       
         <tags>
             
-            <tag> 数据结构 </tag>
-            
             <tag> C </tag>
+            
+            <tag> 数据结构 </tag>
             
             <tag> 排序 </tag>
             
@@ -1552,11 +1579,11 @@
       
         <tags>
             
+            <tag> C </tag>
+            
             <tag> 数据结构 </tag>
             
             <tag> 查找表 </tag>
-            
-            <tag> C </tag>
             
             <tag> 二叉树 </tag>
             
