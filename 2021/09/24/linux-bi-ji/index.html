@@ -721,14 +721,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        5.9k
+                        6.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        22 Min
+                        26 Min
                     </div>
                     
                 
@@ -969,6 +969,50 @@ open: Permission denied</code></pre><p>出乎意料的是，我们还是得到�
 <p>然后我们接着就可以使用内网的连接方式了，不知道为什么ssh 43004不行：</p>
 <pre class="line-numbers language-shell"><code class="language-shell">ssh lry@192.168.0.75<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>接着输入自己的密码就OK。</p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>配置相应的机器学习环境真麻烦，我感觉又要配一整天……</p>
+<h3 id="安装miniconda"><a href="#安装miniconda" class="headerlink" title="安装miniconda"></a>安装miniconda</h3><blockquote>
+<p>参考博客：<a href="https://blog.csdn.net/qq_41795565/article/details/114181048#:~:text=%E6%89%BE%E5%88%B0MiniConda%20%E5%AE%98%E7%BD%91%E8%BF%9E%E6%8E%A5%E6%89%BE%E5%88%B0,%E5%90%8E%E9%9D%A2%E5%85%A8%E9%83%A8yes%E9%80%9A%E8%BF%87%E5%AE%89%E8%A3%85%E3%80%82" target="_blank" rel="noopener">https://blog.csdn.net/qq_41795565/article/details/114181048#:~:text=%E6%89%BE%E5%88%B0MiniConda%20%E5%AE%98%E7%BD%91%E8%BF%9E%E6%8E%A5%E6%89%BE%E5%88%B0,%E5%90%8E%E9%9D%A2%E5%85%A8%E9%83%A8yes%E9%80%9A%E8%BF%87%E5%AE%89%E8%A3%85%E3%80%82</a></p>
+</blockquote>
+<p>指令：</p>
+<pre class="line-numbers language-shell"><code class="language-shell"># step 1: 获取安装shell脚本文件
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# step 2: 执行脚本文件安装
+bash Miniconda3-latest-Linux-x86_64.sh
+
+# step 3: 激活
+source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><strong>注意，第三步激活不同的人路径不一样，比如说我的路径就是~/.zshrc, 这一点请格外注意一下。</strong></li>
+<li><a href="https://imgtu.com/i/4r6PQe" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/09/25/4r6PQe.md.png" alt="zshrc"></a></li>
+<li>另外第二步的路径可以自己选，到时候让选location的时候注意自己输入路径就OK了。</li>
+</ul>
+<h3 id="接着安装我们深度学习其他环境"><a href="#接着安装我们深度学习其他环境" class="headerlink" title="接着安装我们深度学习其他环境"></a>接着安装我们深度学习其他环境</h3><p>我发现这一篇博客写得非常好，希望对各位有帮助，至少对我帮助非常大！</p>
+<p><a href="https://bartek-blog.github.io/python/pytorch/conda/2018/11/12/install-pytorch-with-conda.html" target="_blank" rel="noopener">https://bartek-blog.github.io/python/pytorch/conda/2018/11/12/install-pytorch-with-conda.html</a></p>
+<p>呜呜呜，不用装了不用装了，目前已经有配好的环境可供我使用了，各位请参考上面的博客，祝你们成功！</p>
+<h2 id="下载和解压、压缩文件"><a href="#下载和解压、压缩文件" class="headerlink" title="下载和解压、压缩文件"></a>下载和解压、压缩文件</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>wget是linux下一个从网络上自动下载文件的常用自由工具。它支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。一般的使用方法是: wget + 空格 + 参数 + 要下载文件的url路径，例如：</p>
+<p>wget -c <a href="http://apache.opencas.org/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.zip" target="_blank" rel="noopener">http://apache.opencas.org/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.zip</a><br>-c参数, 这个也非常常见, 可以断点续传, 如果不小心终止了, 可以继续使用命令接着下载。</p>
+<p>Wget常用参数</p>
+<p>-b：后台下载，Wget默认的是把文件下载到当前目录。</p>
+<p>-O：将文件下载到指定的目录中。</p>
+<p>-P：保存文件之前先创建指定名称的目录。</p>
+<p>-t：尝试连接次数，当Wget无法与服务器建立连接时，尝试连接多少次。</p>
+<p>-c：断点续传，如果下载中断，那么连接恢复时会从上次断点开始下载。</p>
+<p>-r：使用递归下载</p>
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p>1.zip命令<br>zip -r myfile.zip ./*<br>将当前目录下的所有文件和文件夹全部压缩成myfile.zip文件,－r表示递归压缩子目录下所有文件.</p>
+<p>2.unzip命令<br>unzip -o -d /home/sunny myfile.zip<br>把myfile.zip文件解压到 /home/sunny/<br>-o:不提示的情况下覆盖文件；<br>-d:-d /home/sunny 指明将文件解压缩到/home/sunny目录下；</p>
+<p>3.其他<br>zip -d myfile.zip smart.txt<br>删除压缩文件中smart.txt文件<br>zip -m myfile.zip ./rpm_info.txt<br>向压缩文件中myfile.zip中添加rpm_info.txt文件</p>
+<p>要使用 zip 来压缩文件，在 shell 提示下键入下面的命令：</p>
+<p>zip -r filename.zip filesdir<br>在这个例子里，filename.zip 代表你创建的文件，filesdir 代表你想放置新 zip 文件的目录。-r 选项指定你想递归地（recursively）包括所有包括在 filesdir 目录中的文件。<br>要抽取 zip 文件的内容，键入以下命令：<br>unzip filename.zip</p>
+<p>你可以使用 zip 命令同时处理多个文件和目录，方法是将它们逐一列出，并用空格间隔：</p>
+<p>zip -r filename.zip file1 file2 file3 /usr/work/school<br>上面的命令把 file1、file2、 file3、以及 /usr/work/school 目录的内容（假设这个目录存在）压缩起来，然后放入 filename.zip 文件中。</p>
+<h2 id="linux-如何以树形结构显示文件目录结构"><a href="#linux-如何以树形结构显示文件目录结构" class="headerlink" title="linux 如何以树形结构显示文件目录结构"></a>linux 如何以树形结构显示文件目录结构</h2><p>可以用 tree 命令</p>
+<p>安装：</p>
+<p>sudo apt-get install tree</p>
+<p>功能说明：以树状图列出目录的内容。</p>
+<p>如：</p>
+<p>tree 以树状图显示所有文件</p>
+<p>tree -L N 以树状图显示所有文件，子文件夹显示到第 N 层</p>
 
             </div>
             <hr/>
@@ -1141,52 +1185,50 @@ open: Permission denied</code></pre><p>出乎意料的是，我们还是得到�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/09/24/linux-bi-ji/">
+                <a href="/2021/09/25/pytorch-tutorial-of-torchvision-object-detection-finetuning-tutorial/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Linux笔记">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="pytorch_tutorial of TorchVision Object Detection Finetuning Tutorial">
                         
-                        <span class="card-title">Linux笔记</span>
+                        <span class="card-title">pytorch_tutorial of TorchVision Object Detection Finetuning Tutorial</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            4张2080Ti！！我连接了Dian团队的服务器之后，终于不用再担心算力的问题了😭！之前总是靠kaggle、colab这些白嫖GPU，现在完全不用担心这些问题，直接连接到Dian的服务器，算力十足。这也正好让我开始接触到了Linux，任务驱动之下，也不得不学一些Linux命令，正好实际上我对这个东西也挺好奇的，这里开一篇博客记录一下。
+                            这篇tutorial就是为了让我们finetuning 一个pre-trained的Mask R-CNN模型。基于数据集行人检测分割. 该数据集包括了179张图片以及345个行人实例，我们会使用它来描绘如何使用torchvision中的新特性来一个自定义数据集上训练我们的检测分割。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/指令集/" class="post-category" target="_blank">
-                                    指令集
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                    深度学习
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/显卡/" target="_blank">
-                        <span class="chip bg-color">显卡</span>
+                    <a href="/tags/pytorch/" target="_blank">
+                        <span class="chip bg-color">pytorch</span>
                     </a>
                     
-                    <a href="/tags/Linux/" target="_blank">
-                        <span class="chip bg-color">Linux</span>
+                    <a href="/tags/Mask-RCNN/" target="_blank">
+                        <span class="chip bg-color">Mask-RCNN</span>
                     </a>
                     
                 </div>
@@ -1421,7 +1463,7 @@ open: Permission denied</code></pre><p>出乎意料的是，我们还是得到�
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">118.1k</span> 字
+                <span class="white-color">121k</span> 字
             
 
             
@@ -1652,5 +1694,5 @@ $(function () {
             </script>
         
 
-    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>
