@@ -721,7 +721,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        6.9k
+                        7k
                     </div>
                     
 
@@ -752,6 +752,16 @@
 <p><a href="https://imgtu.com/i/4rdY0f" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/09/25/4rdY0f.png" alt="nvidia"></a></p>
 <p>在 Linux 中目前有几个命令可以用来获取硬件信息，其中 lspic 命令行工具便可用来获取显卡的硬件信息。</p>
 <p>这里目前不太能用到，以后用到再说。可以看看这个博客：<a href="https://www.sysgeek.cn/graphics-card-information-linux/。" target="_blank" rel="noopener">https://www.sysgeek.cn/graphics-card-information-linux/。</a></p>
+<p>查看CPU信息（型号）</p>
+<pre class="line-numbers language-shell"><code class="language-shell">cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>查看内存信息</p>
+<p># cat /proc/meminfo</p>
+<p>如何查看Linux 内核<br>uname -a<br>cat /proc/version</p>
+<p>查看机器型号（机器硬件型号）</p>
+<p>dmidecode | grep “Product Name”<br>dmidecode</p>
+<p>如何查看linux 系统版本<br>cat /etc/redhat-release<br>lsb_release -a<br>cat /etc/issue</p>
+<p>如何查看linux系统和CPU型号，类型和大小<br>cat /proc/cpuinfo</p>
+<p>如何查看linux 系统内存大小的信息，可以查看总内存，剩余内存，可使用内存等信息<br>cat /proc/meminfo</p>
 <h2 id="首先简单介绍一下SSH"><a href="#首先简单介绍一下SSH" class="headerlink" title="首先简单介绍一下SSH"></a>首先简单介绍一下SSH</h2><blockquote>
 <p>该部分选自：阮一峰的网络日志<a href="https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html</a></p>
 </blockquote>
@@ -1463,7 +1473,7 @@ source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span>
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">121k</span> 字
+                <span class="white-color">124.7k</span> 字
             
 
             
@@ -1694,5 +1704,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
