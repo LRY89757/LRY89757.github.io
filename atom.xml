@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-09-26T17:02:52.665Z</updated>
+  <updated>2021-09-29T13:29:16.769Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>9.29欧冠小组赛感想</title>
+    <link href="https://lry89757.github.io/2021/09/29/9-29-ou-guan-xiao-zu-sai-gan-xiang/"/>
+    <id>https://lry89757.github.io/2021/09/29/9-29-ou-guan-xiao-zu-sai-gan-xiang/</id>
+    <published>2021-09-29T13:11:29.000Z</published>
+    <updated>2021-09-29T13:29:16.769Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;恭喜梅西！&quot;&gt;&lt;a href=&quot;#恭喜梅西！&quot; class=&quot;headerlink&quot; title=&quot;恭喜梅西！&quot;&gt;&lt;/a&gt;恭喜梅西！&lt;/h1&gt;&lt;p&gt;恭喜梅西打入巴黎处子球
+        
+      
+    
+    </summary>
+    
+      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
+    
+    
+      <category term="足球" scheme="https://lry89757.github.io/tags/%E8%B6%B3%E7%90%83/"/>
+    
+      <category term="梅西" scheme="https://lry89757.github.io/tags/%E6%A2%85%E8%A5%BF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>a Barcode Reader in Python</title>
+    <link href="https://lry89757.github.io/2021/09/28/python-tiao-xing-ma-shi-bie/"/>
+    <id>https://lry89757.github.io/2021/09/28/python-tiao-xing-ma-shi-bie/</id>
+    <published>2021-09-28T12:56:40.000Z</published>
+    <updated>2021-09-29T13:31:24.870Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;还没写完呢-等Dian招新完了再更新&quot;&gt;&lt;a href=&quot;#还没写完呢-等Dian招新完了再更新&quot; class=&quot;headerlink&quot; title=&quot;还没写完呢,等Dian招新完了再更新&quot;&gt;&lt;/a&gt;还没写完呢,等Dian招新完了再更新&lt;/h1&gt;&lt;h1
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://lry89757.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
+    
+      <category term="Barcode Reader" scheme="https://lry89757.github.io/tags/Barcode-Reader/"/>
+    
+  </entry>
   
   <entry>
     <title>pytorch_tutorial of TorchVision Object Detection Finetuning Tutorial</title>
@@ -45,11 +101,11 @@
   </entry>
   
   <entry>
-    <title>Linux笔记</title>
+    <title>Linux笔记（持续更新）</title>
     <link href="https://lry89757.github.io/2021/09/24/linux-bi-ji/"/>
     <id>https://lry89757.github.io/2021/09/24/linux-bi-ji/</id>
     <published>2021-09-24T12:53:07.000Z</published>
-    <updated>2021-09-25T17:23:51.218Z</updated>
+    <updated>2021-09-29T12:42:26.914Z</updated>
     
     <summary type="html">
     
@@ -340,7 +396,7 @@
     <link href="https://lry89757.github.io/2021/09/09/musical-reviews-of-yi-hou-yao-zuo-de-shi/"/>
     <id>https://lry89757.github.io/2021/09/09/musical-reviews-of-yi-hou-yao-zuo-de-shi/</id>
     <published>2021-09-09T01:15:51.000Z</published>
-    <updated>2021-09-17T11:47:52.413Z</updated>
+    <updated>2021-09-29T02:01:24.048Z</updated>
     
     <summary type="html">
     
@@ -544,66 +600,6 @@
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="数据增强" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python 路径相互引用导入问题(转)</title>
-    <link href="https://lry89757.github.io/2021/09/01/python-lu-jing-xiang-hu-yin-yong-dao-ru-wen-ti/"/>
-    <id>https://lry89757.github.io/2021/09/01/python-lu-jing-xiang-hu-yin-yong-dao-ru-wen-ti/</id>
-    <published>2021-09-01T08:41:35.000Z</published>
-    <updated>2021-09-08T13:21:18.454Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://segmentfault.com/u/huaweiyunkaifazheshequ&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="语法知识" scheme="https://lry89757.github.io/categories/%E8%AF%AD%E6%B3%95%E7%9F%A5%E8%AF%86/"/>
-    
-    
-      <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
-    
-      <category term="语法" scheme="https://lry89757.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
-    
-      <category term="路径" scheme="https://lry89757.github.io/tags/%E8%B7%AF%E5%BE%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>百度还有翻盘的机会吗</title>
-    <link href="https://lry89757.github.io/2021/08/26/bai-du-huan-you-fan-pan-de-ji-hui-ma/"/>
-    <id>https://lry89757.github.io/2021/08/26/bai-du-huan-you-fan-pan-de-ji-hui-ma/</id>
-    <published>2021-08-26T14:48:34.000Z</published>
-    <updated>2021-08-26T15:40:57.090Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;前面写点个人感想&quot;&gt;&lt;a href=&quot;#前面写点个人感想&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="互联网" scheme="https://lry89757.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="百度" scheme="https://lry89757.github.io/tags/%E7%99%BE%E5%BA%A6/"/>
-    
-      <category term="科技" scheme="https://lry89757.github.io/tags/%E7%A7%91%E6%8A%80/"/>
-    
-      <category term="企业" scheme="https://lry89757.github.io/tags/%E4%BC%81%E4%B8%9A/"/>
     
   </entry>
   

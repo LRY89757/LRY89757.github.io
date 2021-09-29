@@ -6,7 +6,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux笔记, Dian.AI CV DeepLearning MachineLearning 逯润雨 Lurunyu 计算机视觉 深度学习">
+    <meta name="keywords" content="Linux笔记（持续更新）, Dian.AI CV DeepLearning MachineLearning 逯润雨 Lurunyu 计算机视觉 深度学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
     <meta name="description" content="4张2080Ti！！我连接了Dian团队的服务器之后，终于不用再担心算力的问题了😭！之前总是靠kaggle、colab这些白嫖GPU，现在完全不用担心这些问题，直接连接到Dian的服务器，算力十足。这也正好让我开始接触到了Linux，任务">
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Linux笔记 | LRY&#39;s Blog</title>
+    <title>Linux笔记（持续更新） | LRY&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -561,13 +561,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/29.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Linux笔记
+                        Linux笔记（持续更新）
                     </div>
                 </div>
             </div>
@@ -721,14 +721,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        7k
+                        7.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        26 Min
+                        30 Min
                     </div>
                     
                 
@@ -1000,6 +1000,13 @@ source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <h3 id="接着安装我们深度学习其他环境"><a href="#接着安装我们深度学习其他环境" class="headerlink" title="接着安装我们深度学习其他环境"></a>接着安装我们深度学习其他环境</h3><p>我发现这一篇博客写得非常好，希望对各位有帮助，至少对我帮助非常大！</p>
 <p><a href="https://bartek-blog.github.io/python/pytorch/conda/2018/11/12/install-pytorch-with-conda.html" target="_blank" rel="noopener">https://bartek-blog.github.io/python/pytorch/conda/2018/11/12/install-pytorch-with-conda.html</a></p>
 <p>呜呜呜，不用装了不用装了，目前已经有配好的环境可供我使用了，各位请参考上面的博客，祝你们成功！</p>
+<p>又需要装了😅，但实际上也并不难，这么来：</p>
+<p>ipython和jupyternotebook:<a href="https://zhuanlan.zhihu.com/p/369612671" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/369612671</a></p>
+<p>记住保存密文：<code>&#39;argon2:$argon2id$v=19$m=10240,t=10,p=8$iXHYQd2WrThQvARAuNV8Mg$Ip+Au2KT0QfmfOqvpmYpiA&#39;</code></p>
+<p>另外关于jupyter notebook内核问题，如果在vscode找不到内核了，我们就直接</p>
+<p><a href="https://imgtu.com/i/4fo6a9" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/09/28/4fo6a9.png" alt></a></p>
+<p>然后直接点这个地方：<a href="https://imgtu.com/i/4fowvT" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/09/28/4fowvT.png" alt></a></p>
+<p>然后输入我们的复制的链接，接着就可以用了，管不了这么多，就这么用就OK。</p>
 <h2 id="下载和解压、压缩文件"><a href="#下载和解压、压缩文件" class="headerlink" title="下载和解压、压缩文件"></a>下载和解压、压缩文件</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>wget是linux下一个从网络上自动下载文件的常用自由工具。它支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。一般的使用方法是: wget + 空格 + 参数 + 要下载文件的url路径，例如：</p>
 <p>wget -c <a href="http://apache.opencas.org/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.zip" target="_blank" rel="noopener">http://apache.opencas.org/tomcat/tomcat-7/v7.0.67/bin/apache-tomcat-7.0.67.zip</a><br>-c参数, 这个也非常常见, 可以断点续传, 如果不小心终止了, 可以继续使用命令接着下载。</p>
 <p>Wget常用参数</p>
@@ -1023,6 +1030,19 @@ source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <p>如：</p>
 <p>tree 以树状图显示所有文件</p>
 <p>tree -L N 以树状图显示所有文件，子文件夹显示到第 N 层</p>
+<h2 id="关于apt-get"><a href="#关于apt-get" class="headerlink" title="关于apt-get"></a>关于apt-get</h2><p>apt-get是linux中常用的shell命令，适用于deb包管理式的操作系统，主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。apt-get命令一般需要root权限执行，所以前边一般跟着sudo命令。</p>
+<h2 id="远程服务器"><a href="#远程服务器" class="headerlink" title="远程服务器"></a>远程服务器</h2><p><strong>一：scp常规的使用方式：</strong></p>
+<p>scp可以进行简单的远程复制文件的功能。它是一个在各个主机之间进行复制或文件传输的一个命令工具。它使用一种同ssh一样的安全机制来进行文件的传输。</p>
+<p><strong>注意：下面定义的远程计算机的主机域名是 192.168.1.104， 上传文件的路径是 /usr/local/nginx/html/webs 下面的文件；且 服务器的账号是 root， 那么密码需要自己输入自己的密码即可。</strong></p>
+<p>\1. 从本地上传文件到远程计算机或服务器的命令如下：<br>先进入本地目录下，然后运行如下命令：<br><strong>scp my_local_file.zip <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs</strong></p>
+<p>\2. 从远程主机复制文件到本地主机(下载)的命令如下：（假如远程文件是about.zip）<br>先进入本地目录下，然后运行如下命令：<br><strong>scp <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs/about.zip .</strong></p>
+<p><strong>二： 多文件传输</strong><br>2-1 从本地文件复制多个文件到远程主机（多个文件使用空格分隔开）<br>先进入本地目录下，然后运行如下命令：<br><strong>scp index.css json.js <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs</strong></p>
+<p>2-2 从远程主机复制多个文件到当前目录<br>先进入本地目录下，然后运行如下命令：<br><strong>scp <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs/{index.css,json.js} .</strong></p>
+<p><strong>三：复制整个文件夹(使用r switch 并且指定目录)</strong><br>3-1 从本地文件复制整个文件夹到远程主机上（文件夹假如是diff）<br>先进入本地目录下，然后运行如下命令：<br><strong>scp -v -r diff <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs</strong></p>
+<p>3-2 从远程主机复制整个文件夹到本地目录下（文件夹假如是diff）<br>先进入本地目录下，然后运行如下命令：<br><strong>scp -r <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs/diff .</strong></p>
+<p><strong>四：在两个远程主机之间复制文件</strong><br>scp也可以把文件从一个远程主机复制到另一个远程主机上。<br>如下命令：<br><strong>scp <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs/xx.txt <a href="mailto:root@192.168.1.105" target="_blank" rel="noopener">root@192.168.1.105</a>:/usr/local/nginx/html/webs/</strong></p>
+<p><strong>五：使用压缩来加快传输</strong><br>在文件传输的过程中，我们可以使用压缩文件来加快文件传输，我们可以使用 C选项来启用压缩功能，该文件在传输过程中被压缩，在目的主机上被解压缩。</p>
+<p>如下命令：<br><strong>scp -vrC diff <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs</strong></p>
 
             </div>
             <hr/>
@@ -1173,7 +1193,7 @@ source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span>
                     </span>
                     <a href="https://lry89757.github.io" class="b-link-green">LRY's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/09/24/linux-bi-ji/" class="b-link-green">Linux笔记</a>
+                    <a href="/2021/09/24/linux-bi-ji/" class="b-link-green">Linux笔记（持续更新）</a>
                 </p>
             </div>
 
@@ -1473,7 +1493,7 @@ source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span>
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">124.7k</span> 字
+                <span class="white-color">126.6k</span> 字
             
 
             
@@ -1704,5 +1724,5 @@ $(function () {
             </script>
         
 
-    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>

@@ -1,3 +1,5 @@
+https://lry89757.github.io/2021/09/29/9-29-ou-guan-xiao-zu-sai-gan-xiang/
+https://lry89757.github.io/2021/09/28/python-tiao-xing-ma-shi-bie/
 https://lry89757.github.io/2021/09/25/pytorch-tutorial-of-torchvision-object-detection-finetuning-tutorial/
 https://lry89757.github.io/2021/09/24/linux-bi-ji/
 https://lry89757.github.io/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/
