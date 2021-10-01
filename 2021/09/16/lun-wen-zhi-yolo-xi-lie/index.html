@@ -725,14 +725,14 @@ YOLOv1
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        3.8k
+                        5.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        16 Min
+                        23 Min
                     </div>
                     
                 
@@ -750,13 +750,13 @@ YOLOv1
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>本博客记录了自己的一些YOLO论文的阅读。</p>
-<h2 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h2><blockquote>
+<h1 id="YOLOv1"><a href="#YOLOv1" class="headerlink" title="YOLOv1"></a>YOLOv1</h1><blockquote>
 <p>论文地址：<a href="https://arxiv.org/abs/1506.02640" target="_blank" rel="noopener">https://arxiv.org/abs/1506.02640</a></p>
 <p>论文翻译版：<a href="https://zhuanlan.zhihu.com/p/35416826" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/35416826</a></p>
 <p>就随便记录一些想法。</p>
 </blockquote>
-<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>作者大致吹了一下，我看得早了，没有记录。</p>
-<h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><p>前面的也看过去了，没有来得及记录，知道后来看到了关于several benefits over traditional methods of object detection的一些东西才开始记录。</p>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>作者大致吹了一下，我看得早了，没有记录。</p>
+<h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p>前面的也看过去了，没有来得及记录，知道后来看到了关于several benefits over traditional methods of object detection的一些东西才开始记录。</p>
 <p>First,  YOLO is very fast. Since they frame detection as a regression problem, they don’t need a pipeline. The simply run their neural network on a new image at test time to predict. 他们可以实时处理图片。小于25milliseconds的延迟。然后另外就是2倍的平均准确率比起其他的系统。在Titan X GPU上可以处理45 frames per second. 一个快速的版本可以处理超过150fps。</p>
 <p>Second, 不同于传统的滑动窗口与区域检测技术，YOLO更加具有全局性（<del>我瞎编的</del>）？就是更容易连起上下比较连贯的（contextual）图像信息。特意提到了关于Fast RCNN,它会将一些背景块（background patches）错误的认为是物体目标（objects）。因为FastRCNN不能够看到更加大块的物体信息。关于这种的错误率比Fast RCNN<strong>少了一半</strong>！<strong><del>小小吐槽一下，果然大家发论文都会格外强调别人的缺点，放大自己的优点……</del></strong></p>
 <blockquote>
@@ -764,7 +764,7 @@ YOLOv1
 </blockquote>
 <p>Third, 更好的泛化能力，这个段落最好懂。在自然图像上训练然后再艺术品上测试的时候，YOLO outperforms top detection methods like DPM and R-CNN <strong>by a wide margin</strong>.看来RCNN反复被鞭尸……</p>
 <p>Last， 终于开始承认自己的不足了：准确率落后于SOTA，lags behind stoa detection systems in accuracy.  尽管可以快速认出物体但是很困难精确定位到一些物体，尤其是小物体（stuggles to precisely localize some objects, especially small ones.)  , 作者也说到以后会做一些进一步的tradeoffs。</p>
-<h3 id="2-Unified-Detection"><a href="#2-Unified-Detection" class="headerlink" title="2. Unified Detection"></a>2. Unified Detection</h3><ul>
+<h2 id="2-Unified-Detection"><a href="#2-Unified-Detection" class="headerlink" title="2. Unified Detection"></a>2. Unified Detection</h2><ul>
 <li>将图像分为S×S的网格区域（grids)，如果一个物体中心再某格中则该grid负责预测该物体。</li>
 </ul>
 <blockquote>
@@ -788,7 +788,7 @@ YOLOv1
 <li><p>当然最后也给出了对于不同数据集的不同S， C，B的取值：For evaluating YOLO on PASCAL VOC, we use S = 7, B = 2. PASCAL VOC has 20 labelled classes so C = 20. Our final prediction is a 7 × 7 × 30 tensor.</p>
 </li>
 </ul>
-<h3 id="2-1-Network-Design"><a href="#2-1-Network-Design" class="headerlink" title="2.1 Network Design"></a>2.1 Network Design</h3><ul>
+<h2 id="2-1-Network-Design"><a href="#2-1-Network-Design" class="headerlink" title="2.1 Network Design"></a>2.1 Network Design</h2><ul>
 <li>Evaluate it on the PASCAL VOC detection dataset.</li>
 <li>the initial  convolutional layers of the  network extract features from the image  while the fully connected layers predict the out put probabilities and coordinates</li>
 <li>inspired by the GoogLeNet model for image classification. The network has 24 convolutional layers followed by 2 fully connected layers.</li>
@@ -799,7 +799,7 @@ YOLOv1
 <li>The final output of the network is the 7×7×30 tensor of predictions.</li>
 </ul>
 <p>输入图像大小为448<em>448，经过若干个卷积层与池化层，变为7</em>7<em>1024张量（图一中倒数第三个立方体），最后经过两层全连接层，输出张量维度为7</em>7<em>30，这就是Yolo v1的整个神经网络结构，和一般的卷积物体分类网络没有太多区别，最大的不同就是：分类网络最后的全连接层，一般连接于一个一维向量，向量的不同位代表不同类别，而这里的输出向量是一个三维的张量（7</em>7*30）。上图中Yolo的backbone网络结构，受启发于GoogLeNet，也是v2、v3中Darknet的先锋。本质上来说没有什么特别，没有使用BN层，用了一层Dropout。除了最后一层的输出使用了线性激活函数，其他层全部使用Leaky Relu激活函数。网络结构没有特别的东西，不再赘述。</p>
-<h3 id="2-2Training"><a href="#2-2Training" class="headerlink" title="2.2Training"></a>2.2Training</h3><blockquote>
+<h2 id="2-2Training"><a href="#2-2Training" class="headerlink" title="2.2Training"></a>2.2Training</h2><blockquote>
 <p><strong>denote</strong> v.标志， 表示    </p>
 <p><strong>penalize</strong>  v.惩罚</p>
 <p><strong>fine-grained</strong>: (chiefly of wood) having a fine or delicate arrangement of fibers.</p>
@@ -847,7 +847,7 @@ YOLOv1
 </blockquote>
 </li>
 </ul>
-<h3 id="2-3Inference"><a href="#2-3Inference" class="headerlink" title="2.3Inference"></a>2.3Inference</h3><blockquote>
+<h2 id="2-3Inference"><a href="#2-3Inference" class="headerlink" title="2.3Inference"></a>2.3Inference</h2><blockquote>
 <p><strong>inference</strong>: n. a conclusion reached on the basis of evidence and reasoning.   *”researchers are entrusted with drawing inferences from the data”*</p>
 <p><strong>spatial:</strong> adj. relating to or occupying space.  *”the spatial distribution of population”*</p>
 </blockquote>
@@ -856,7 +856,7 @@ YOLOv1
 <li>另外作者还特意提到了，每一个物体最后基本上都会有一个grid cell来负责预测， 但是有时候，比如说物体本身比较大的时候或者是一些横跨多个grid cell的时候，就会有着许多的grid cell来预测这个框，这样的话我们可以选用NMS！</li>
 <li>NMS, Non-maximal suppression可以用来剪掉多余的多个检测框。但是这里可以看出实际上NMS就是个补充而已，并不是一个我们说是必须的，就像在R-CNN或是DPM这里一样。非极大抑制最多增加2-3%mAP这种。</li>
 </ul>
-<h3 id="Limitations-of-YOLO"><a href="#Limitations-of-YOLO" class="headerlink" title="Limitations of YOLO"></a>Limitations of YOLO</h3><blockquote>
+<h2 id="Limitations-of-YOLO"><a href="#Limitations-of-YOLO" class="headerlink" title="Limitations of YOLO"></a>Limitations of YOLO</h2><blockquote>
 <p><strong>constraints</strong>: n. a limitation or restriction. *”time constraints make it impossible to do everything”*</p>
 <p><strong>aspect ratio:</strong> n. 长宽比</p>
 <p><strong>generalize：</strong> v. 1. make a general or broad statement by inferring from specific cases. *”it is not easy to generalize about the poor”* 2. make (something) more widespread or widely applicable. *”attempts to generalize an elite education”*</p>
@@ -895,6 +895,58 @@ YOLOv1
 <li><p>预测bounding box的h，w的平方根，而不是直接预测bbox，平方和将大box和小box的error看做平等的</p>
 </li>
 <li><p>数据增强和NMS</p>
+</li>
+</ul>
+<h1 id="YOLOv1精简总结版"><a href="#YOLOv1精简总结版" class="headerlink" title="YOLOv1精简总结版"></a>YOLOv1精简总结版</h1><h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><p>YOLOv1实际上已经看过了，也记过笔记了，但是代码部分总是看得比较模模糊糊的感觉。还是算法原理这部分没有完全掌握实际上。另外深度学习学着学着明显可以感觉到实际上之前的基础学得还是不太好。以后有时间需要多重复刷一刷李宏毅和吴恩达，</p>
+<blockquote>
+<p> 李宏毅视频有一位大佬记的笔记非常好：<a href="https://sakura-gh.github.io/ML-notes/" target="_blank" rel="noopener">https://sakura-gh.github.io/ML-notes/</a></p>
+</blockquote>
+<p>另外就是我们的关于论文精度，本人打算跟着B站同济大佬学习，他发布了很多精度AI论文的视频，真是<strong>宝藏UP主</strong>！！（实际上看完视频才发现该UP主讲的不是那么清晰至少在前面算法精讲阶段，不过算法精讲阶段给我带来最大收获可能就是题目：<strong>我们需要讲算法分为预测和训练两个阶段</strong>。 该视频还是值得一看的。能了解许多关于YOLO的花絮。</p>
+<p>我也是看完这个视频才发现我实际上很多YOLO基础内容学的其实也还算扎实了，没必要再看一遍了。</p>
+<blockquote>
+<p>UP主YOLOv1视频：<a href="https://www.bilibili.com/video/BV15w411Z7LG?p=4&amp;spm_id_from=pageDriver" target="_blank" rel="noopener">https://www.bilibili.com/video/BV15w411Z7LG?p=4&amp;spm_id_from=pageDriver</a></p>
+</blockquote>
+<h2 id="目标检测综述"><a href="#目标检测综述" class="headerlink" title="目标检测综述"></a>目标检测综述</h2><p>计算机视觉解决问题，分类、检测、分割。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20210930212438.png" alt="Computer Vision tasks"></p>
+<p>我们接着看：</p>
+<p>图像分类是输入图片，输出分类。目标检测是 输入图片输出图片中的每一个物体类别并把所有的每一个物体都框出来。分割分为两种：分为Semantic Segmentation语义分割与Instance Segementation实例分割。语义分割就是对每一个像素分类，我不管这个像素pixel是属于哪一个物体的，我只管这个像素是哪一个类别的，有点像精确到像素的分类，不会去区分同一类物体的不同实例。而我们实例分割要把同一个类别的不同实例来分割区别出来。可以看一张图辅助理解下以上概念：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20210930212838.png" alt></p>
+<p>当然可能看完这张对比图对于语义分割实例分割的区别还是不是特别清楚，我们可以接着看一下接下来这张图：</p>
+<p><a href="https://imgtu.com/i/4ovPgO" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/09/30/4ovPgO.png" alt></a></p>
+<p>有一篇讲的非常好的文件综述：<em>Object Detection in 20 Years: A Survey</em>. 地址在这里：<a href="https://arxiv.org/pdf/1905.05055.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1905.05055.pdf</a> 是我们中国人写的，可以读一下没事的时候。总结了一下目标检测的发展。</p>
+<p>目标检测分为两个模块：两阶段（<em>tow-stage<em>）和单阶段(</em>one-stage</em>).这个已经非常熟悉了，不多讲了。两阶段就是先提取候选框在进行分类定位。而单阶段就是直接端到端就OK。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20210930214045.png" alt="Milestones"></p>
+<p>之前总说单阶段小目标、多目标不太好，但那是之前了。现在来看，我们的yolov5已经非常好了检测来看。</p>
+<p>以下这张图是YOLOv1的提出者在学术会议上对比了当时的DPM与RCNN系列算法。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20210930214304.png" alt="image-20210930214301910"></p>
+<p>DPM是基于传统的方法识别特征，基于模板的，人工设计然后利用滑动窗口来往模型上套，明显人工设计而且滑动窗口又慢并且鲁棒性又差，效果不是特别好。</p>
+<p>RCNN就是two-stage算法。先从图像中提取2k个候选框，然后把每一个框都放到进去识别，虽然比较慢，但是准确率还可以。这一系列的算法实际上还可以，之前博客也介绍过了，源码也介绍过了。</p>
+<h2 id="算法精讲之预测阶段（前向推断）"><a href="#算法精讲之预测阶段（前向推断）" class="headerlink" title="算法精讲之预测阶段（前向推断）"></a>算法精讲之预测阶段（前向推断）</h2><p>实际上许多博客都把训练阶段和预测阶段混为一谈，我们先看预测阶段。</p>
+<p><strong>预测阶段：</strong> 此时我们模型已经训练好了，只需要进行前向传播，不需要反向传播。先看一下我们的预测阶段。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20210930215037.png" alt="YOLO AND YOLO-Tiny"></p>
+<p>YOLO-Tiny论文中提到过，就是一个比较小，比较快的一个模型。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20210930224106.png" alt="image-20210930224101536"></p>
+<p>我们输入一个图像，输出一个7×7×30的一个张量。</p>
+<p>关于7×7×30，应该也不用多说了，因为已经熟悉的不能再熟悉了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20210930224219.png" alt="image-20210930224218188"></p>
+<h2 id="算法精讲之训练阶段"><a href="#算法精讲之训练阶段" class="headerlink" title="算法精讲之训练阶段"></a>算法精讲之训练阶段</h2><p>监督学习是通过反向传播、梯度下降的方法进行迭代去微调权重使得损失函数最小化的过程。</p>
+<p>我们训练过程中，已经有相应的标注label来框出物体，而我们就是要对这个进行相应的预测去尽可能地使我们的预测结果尽可能接近这个框。</p>
+<p>每个grid cell只能预测出一个类别物体。</p>
+<ul>
+<li>首先，生成S×S个<code>grid cell</code>. </li>
+<li>如果我们的物体落在我们的某个grid cell中了，那么我们会选择该grid cell负责该物体的预测。每个grid cell生成B个bbox, 每个bbox都有4个参数：<em>x, y, w, h</em>, 另外还有一个confidence ,置信度，用来表示该bbox内含物体的概率。置信度的计算方式还比较简单：如果我们的物体中心点没有落在该grid cell中，那么该置信度实际上应该为0，我们就应该让我们的训练结果逼近于0，如果落在该grid cell种，那么我们就应该让该置信度就逼近于与GT的IOU。这么说可能有些难理解，就是，我们的confidence的训练目标就是如果不含物体那么让它接近于0，如果含目标那么就让它接近与GT的IOU。</li>
+<li>接着我们按照置信度来决定哪个框用来决定我们的分类种类的向量，比方说两个bbox，第二个bbox的Confidence值更大，那么我们就会选择让我们的值更大的那个来预测我们的20类的概率值。</li>
+<li>所以我们最后就得到了一个S×S×(B×5+C)的一个tensor。我们就是要拿这个 tensor来进行损失的计算，损失函数如下：</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20211001103524.png" alt="YOLO loss function"></p>
+<ul>
+<li>实际上损失函数也是做了很多很精巧的考虑和优化的：<ul>
+<li>可以看到第一行我们对所有的bbox的坐标中心点的损失进行了累加，但实际上，由于我们那个符号花体1的存在他只会考虑负责检测那个物体的框的坐标损失。而第一行公式的$\lambda_{coord}$的存在是为了提高我们定位误差占总误差的权重。</li>
+<li>第二行的公式是我们的宽高误差，可以看出也是通过的我们的高宽的损失函数，但是这里用到了根号，因为作者考虑到这里可能大物体的高宽和小物体的高宽误差可能数值是一样的，但是影响却完全不同，所以我们这里为了部分缓解这方面的考虑，进行了相关的根号处理，使得小框对误差更敏感，当然这里只是一个部分的解决方案。</li>
+<li>第三行是我们的相关的Confidence的误差损失函数。这里面也是同样只计算了我们的负责检测物体的bbox的误差损失。注意的一点就是我们这里的损失的$\hat{C_{i}}$​ 指的是我们的bbox与GT的IOU。我们的$C_i$就是我们预测值，要努力去逼近这个值。</li>
+<li>第四行也是我们的相关Confidence误差损失函数。这里面是只考虑了所有不负责预测物体结果的bbox,我们要努力尽量地让我们的这里预测值$C_i$接近于0， 也就是我们这里的$\hat{C_i}$.  因为大多数框都是没有不负责预测物体结果的，所以实际上如果我们不加上前面的系数$\lambda_{noobj}$，结果就是我们的confidence预测权重可能更多的就会训练bbox的部分，因为我们含预测物体的bbox的样本量太小了，所以最后可能会使得我们的权重全都为0，所以我们加了一个系数$\lambda_{noobj}$​​，这样一来就防止我们的权重最后全零的情况，论文原话是：<em>Also, in every image many grid cells do not contain any object. This pushes the “confidence” scores of those cells towards zero, often overpowering the gradient from cells that do contain objects. This can lead to model instability, causing training to diverge early on.</em></li>
+<li>最后一行是我们的分类误差，classification误差，$S^2$个<code>grid cell</code>， 我们同样只关心负责预测物体的<code>grid cell</code>. 将我们预测的类别概率使用平方和误差加起来。</li>
+</ul>
 </li>
 </ul>
 
@@ -1352,7 +1404,7 @@ YOLOv1
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">126.6k</span> 字
+                <span class="white-color">128.8k</span> 字
             
 
             
@@ -1583,5 +1635,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>

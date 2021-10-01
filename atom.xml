@@ -253,7 +253,7 @@
     <link href="https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/"/>
     <id>https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/</id>
     <published>2021-09-16T11:27:26.000Z</published>
-    <updated>2021-09-20T02:48:33.548Z</updated>
+    <updated>2021-10-01T14:00:22.279Z</updated>
     
     <summary type="html">
     
@@ -262,7 +262,7 @@
         
         
           &lt;p&gt;本博客记录了自己的一些YOLO论文的阅读。&lt;/p&gt;
-&lt;h2 id=&quot;YOLOv1&quot;&gt;&lt;a href=&quot;#YOLOv1&quot; class=&quot;headerlink&quot; title=&quot;YOLOv1&quot;&gt;&lt;/a&gt;YOLOv1&lt;/h2&gt;&lt;blockquote&gt;
+&lt;h1 id=&quot;YOLOv1&quot;&gt;&lt;a href=&quot;#YOLOv1&quot; class=&quot;headerlink&quot; title=&quot;YOLOv1&quot;&gt;&lt;/a&gt;YOLOv1&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;论文地址：&lt;a
         
       
@@ -523,9 +523,9 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
     
@@ -557,9 +557,9 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
       <category term="Faster RCNN" scheme="https://lry89757.github.io/tags/Faster-RCNN/"/>
     
