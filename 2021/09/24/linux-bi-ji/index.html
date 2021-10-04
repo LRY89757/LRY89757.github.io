@@ -721,14 +721,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        7.9k
+                        8.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        30 Min
+                        32 Min
                     </div>
                     
                 
@@ -1031,18 +1031,50 @@ source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <p>tree 以树状图显示所有文件</p>
 <p>tree -L N 以树状图显示所有文件，子文件夹显示到第 N 层</p>
 <h2 id="关于apt-get"><a href="#关于apt-get" class="headerlink" title="关于apt-get"></a>关于apt-get</h2><p>apt-get是linux中常用的shell命令，适用于deb包管理式的操作系统，主要用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件或操作系统。apt-get命令一般需要root权限执行，所以前边一般跟着sudo命令。</p>
-<h2 id="远程服务器"><a href="#远程服务器" class="headerlink" title="远程服务器"></a>远程服务器</h2><p><strong>一：scp常规的使用方式：</strong></p>
-<p>scp可以进行简单的远程复制文件的功能。它是一个在各个主机之间进行复制或文件传输的一个命令工具。它使用一种同ssh一样的安全机制来进行文件的传输。</p>
+<h2 id="远程服务器本地连接scp"><a href="#远程服务器本地连接scp" class="headerlink" title="远程服务器本地连接scp"></a>远程服务器本地连接scp</h2><h3 id="一：scp常规的使用方式："><a href="#一：scp常规的使用方式：" class="headerlink" title="一：scp常规的使用方式："></a><strong>一：scp常规的使用方式：</strong></h3><p>scp可以进行简单的远程复制文件的功能。它是一个在各个主机之间进行复制或文件传输的一个命令工具。它使用一种同ssh一样的安全机制来进行文件的传输。</p>
 <p><strong>注意：下面定义的远程计算机的主机域名是 192.168.1.104， 上传文件的路径是 /usr/local/nginx/html/webs 下面的文件；且 服务器的账号是 root， 那么密码需要自己输入自己的密码即可。</strong></p>
 <p>\1. 从本地上传文件到远程计算机或服务器的命令如下：<br>先进入本地目录下，然后运行如下命令：<br><strong>scp my_local_file.zip <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs</strong></p>
 <p>\2. 从远程主机复制文件到本地主机(下载)的命令如下：（假如远程文件是about.zip）<br>先进入本地目录下，然后运行如下命令：<br><strong>scp <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs/about.zip .</strong></p>
-<p><strong>二： 多文件传输</strong><br>2-1 从本地文件复制多个文件到远程主机（多个文件使用空格分隔开）<br>先进入本地目录下，然后运行如下命令：<br><strong>scp index.css json.js <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs</strong></p>
+<h3 id="二：-多文件传输"><a href="#二：-多文件传输" class="headerlink" title="二： 多文件传输"></a><strong>二： 多文件传输</strong></h3><p>2-1 从本地文件复制多个文件到远程主机（多个文件使用空格分隔开）<br>先进入本地目录下，然后运行如下命令：<br><strong>scp index.css json.js <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs</strong></p>
 <p>2-2 从远程主机复制多个文件到当前目录<br>先进入本地目录下，然后运行如下命令：<br><strong>scp <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs/{index.css,json.js} .</strong></p>
-<p><strong>三：复制整个文件夹(使用r switch 并且指定目录)</strong><br>3-1 从本地文件复制整个文件夹到远程主机上（文件夹假如是diff）<br>先进入本地目录下，然后运行如下命令：<br><strong>scp -v -r diff <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs</strong></p>
+<h3 id="三：复制整个文件夹-使用r-switch-并且指定目录"><a href="#三：复制整个文件夹-使用r-switch-并且指定目录" class="headerlink" title="三：复制整个文件夹(使用r switch 并且指定目录)"></a><strong>三：复制整个文件夹(使用r switch 并且指定目录)</strong></h3><p>3-1 从本地文件复制整个文件夹到远程主机上（文件夹假如是diff）<br>先进入本地目录下，然后运行如下命令：<br><strong>scp -v -r diff <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs</strong></p>
 <p>3-2 从远程主机复制整个文件夹到本地目录下（文件夹假如是diff）<br>先进入本地目录下，然后运行如下命令：<br><strong>scp -r <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs/diff .</strong></p>
-<p><strong>四：在两个远程主机之间复制文件</strong><br>scp也可以把文件从一个远程主机复制到另一个远程主机上。<br>如下命令：<br><strong>scp <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs/xx.txt <a href="mailto:root@192.168.1.105" target="_blank" rel="noopener">root@192.168.1.105</a>:/usr/local/nginx/html/webs/</strong></p>
-<p><strong>五：使用压缩来加快传输</strong><br>在文件传输的过程中，我们可以使用压缩文件来加快文件传输，我们可以使用 C选项来启用压缩功能，该文件在传输过程中被压缩，在目的主机上被解压缩。</p>
+<h3 id="四：在两个远程主机之间复制文件"><a href="#四：在两个远程主机之间复制文件" class="headerlink" title="四：在两个远程主机之间复制文件"></a><strong>四：在两个远程主机之间复制文件</strong></h3><p>scp也可以把文件从一个远程主机复制到另一个远程主机上。<br>如下命令：<br><strong>scp <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs/xx.txt <a href="mailto:root@192.168.1.105" target="_blank" rel="noopener">root@192.168.1.105</a>:/usr/local/nginx/html/webs/</strong></p>
+<h3 id="五：使用压缩来加快传输"><a href="#五：使用压缩来加快传输" class="headerlink" title="五：使用压缩来加快传输"></a><strong>五：使用压缩来加快传输</strong></h3><p>在文件传输的过程中，我们可以使用压缩文件来加快文件传输，我们可以使用 C选项来启用压缩功能，该文件在传输过程中被压缩，在目的主机上被解压缩。</p>
 <p>如下命令：<br><strong>scp -vrC diff <a href="mailto:root@192.168.1.104" target="_blank" rel="noopener">root@192.168.1.104</a>:/usr/local/nginx/html/webs</strong></p>
+<h2 id="复制、移动、删除文件命令"><a href="#复制、移动、删除文件命令" class="headerlink" title="复制、移动、删除文件命令"></a>复制、移动、删除文件命令</h2><p>linux下文件的复制、移动与删除命令为：cp，mv，rm<br>一、文件复制命令cp</p>
+<pre class="line-numbers language-shell"><code class="language-shell">命令格式：cp [-adfilprsu] 源文件(source) 目标文件(destination)
+cp [option] source1 source2 source3 ... directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>参数说明：<br>-a:是指archive的意思，也说是指复制所有的目录<br>-d:若源文件为连接文件(link file)，则复制连接文件属性而非文件本身<br>-f:强制(force)，若有重复或其它疑问时，不会询问用户，而强制复制<br>-i:若目标文件(destination)已存在，在覆盖时会先询问是否真的操作<br>-l:建立硬连接(hard link)的连接文件，而非复制文件本身<br>-p:与文件的属性一起复制，而非使用默认属性<br>-r:递归复制，用于目录的复制操作<br>-s:复制成符号连接文件(symbolic link)，即“快捷方式”文件<br>-u:若目标文件比源文件旧，更新目标文件 </p>
+<p>如将/test1目录下的file1复制到/test3目录，并将文件名改为file2,可输入以下命令：<br>cp /test1/file1 /test3/file2</p>
+<p>二、文件移动命令mv</p>
+<pre class="line-numbers language-shell"><code class="language-shell">命令格式：mv [-fiv] source destination<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>参数说明：<br>-f:force，强制直接移动而不询问<br>-i:若目标文件(destination)已经存在，就会询问是否覆盖<br>-u:若目标文件已经存在，且源文件比较新，才会更新</p>
+<p>如将/test1目录下的file1复制到/test3 目录，并将文件名改为file2,可输入以下命令：<br>mv /test1/file1 /test3/file2</p>
+<p>三、文件删除命令rm</p>
+<pre class="line-numbers language-shell"><code class="language-shell">命令格式：rm [fir] 文件或目录<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>参数说明：<br>-f:强制删除<br>-i:交互模式，在删除前询问用户是否操作<br>-r:递归删除，常用在目录的删除</p>
+<p>如删除/test目录下的file1文件，可以输入以下命令：<br>rm -i /test/file1</p>
+<pre class="line-numbers language-shell"><code class="language-shell">CP命令
+格式: CP [选项]  源文件或目录   目的文件或目录
+选项说明:-b 同名,备分原来的文件
+        -f 强制覆盖同名文件
+        -r  按递归方式保留原目录结构复制文件
+
+cp -Rf /home/user1/* /root/temp/
+将 /home/user1目录下的所有东西拷到/root/temp/下而不拷贝user1目录本身。
+即格式为：cp -Rf 原路径/ 目的路径/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>移动：</strong></p>
+<pre class="line-numbers language-shell"><code class="language-shell">mv ./WorkReport/web.xml ./WorkReport/WEB-INF/
+注：移动/WorkReport/web.xml文件到/WorkReport/WEB-INF/
+
+mv /data/new /data/old/
+注：移动/data/new 到/data/old/文件夹下
+注意点：移动文件夹的话就不要再加 / 了
+
+如果是移动文件夹下的所有文件的话就可以文件夹后面跟上 /* 
+
+mv /data/new/* /data/old/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1493,7 +1525,7 @@ source ~/.bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span>
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">131.1k</span> 字
+                <span class="white-color">131.8k</span> 字
             
 
             
@@ -1724,5 +1756,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
