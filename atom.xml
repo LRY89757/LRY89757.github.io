@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-10-05T05:46:11.316Z</updated>
+  <updated>2021-10-05T06:25:05.537Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lry89757.github.io/2021/10/05/explore-argparse-tutorial/"/>
     <id>https://lry89757.github.io/2021/10/05/explore-argparse-tutorial/</id>
     <published>2021-10-05T02:49:18.000Z</published>
-    <updated>2021-10-05T05:46:11.316Z</updated>
+    <updated>2021-10-05T06:25:05.537Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h1&gt;&lt;p&gt;*”This tutorial is intended to be a gentle
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h1&gt;&lt;p&gt;“&lt;em&gt;This tutorial is intended to be a gentle
         
       
     
@@ -178,9 +178,9 @@
       <category term="指令集" scheme="https://lry89757.github.io/categories/%E6%8C%87%E4%BB%A4%E9%9B%86/"/>
     
     
-      <category term="Linux" scheme="https://lry89757.github.io/tags/Linux/"/>
-    
       <category term="显卡" scheme="https://lry89757.github.io/tags/%E6%98%BE%E5%8D%A1/"/>
+    
+      <category term="Linux" scheme="https://lry89757.github.io/tags/Linux/"/>
     
   </entry>
   
