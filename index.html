@@ -718,18 +718,40 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     
     
     <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/featureimages/23.jpg');">
+            style="background-image: url('/medias/featureimages/29.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col s10 offset-s1">
-                    <div class="title center-align">目标检测笔记（上）</div>
+                    <div class="title center-align">Linux笔记（持续更新）</div>
                     <div class="description center-align">
                     
-                        本笔记主要是针对two-stage系列RCNN模型的理解，主要就是一些相关的知识点笔记。从开始入门目标检测到各个模型RCNN、SPPNET、FAST RCNN、FASTER RCNN的原理与改进的过程。其中没有什么源码，源码解读单独放到其他的笔记中了。
+                        4张2080Ti！！我连接了Dian团队的服务器之后，终于不用再担心算力的问题了😭！之前总是靠kaggle、colab这些白嫖GPU，现在完全不用担心这些问题，直接连接到Dian的服务器，算力十足。这也正好让我开始接触到了Linux，任务驱动之下，也不得不学一些Linux命令，正好实际上我对这个东西也挺好奇的，这里开一篇博客记录一下。
                     
                     </div>
                     <div class="cover-btns">
-                        <a href="/2021/09/06/mu-biao-jian-ce-bi-ji-shang/" class="waves-effect waves-light btn" target="_blank">
+                        <a href="/2021/09/24/linux-bi-ji/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>Read more
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/9.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">practice mmdet</div>
+                    <div class="description center-align">
+                    
+                        我们想要使用我们的训练好的模型直接来预测我们的images。在MMDetection，一个模型被一个configuration file和保存在checkpoint file中的已经存在的model parameters来定义。
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2021/10/04/practice-mmdet/" class="waves-effect waves-light btn" target="_blank">
                             <i class="icon fa fa-eye fa-fw"></i>Read more
                         </a>
                     </div>
@@ -752,6 +774,28 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     </div>
                     <div class="cover-btns">
                         <a href="/2021/09/16/lun-wen-zhi-yolo-xi-lie/" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>Read more
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/hello.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">路面裂缝数据集调研</div>
+                    <div class="description center-align">
+                    
+                        探查关于路面裂缝的各个数据集，然后自己写一下dataloader进行相应的读取，进行一下mmdet跑一下数据集。
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/" class="waves-effect waves-light btn" target="_blank">
                             <i class="icon fa fa-eye fa-fw"></i>Read more
                         </a>
                     </div>
@@ -901,6 +945,31 @@ $(function () {
     
     
     <div class="col s12 m6" >
+        <div class="post-card" style="background-image: url('/medias/featureimages/29.jpg')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/指令集/" class="category" target="_blank">指令集</a>
+                    
+                </div>
+                <a href="/2021/09/24/linux-bi-ji/" target="_blank">
+                    <h3 class="post-title">Linux笔记（持续更新）</h3>
+                </a>
+                <p class="post-description">
+                    
+                        4张2080Ti！！我连接了Dian团队的服务器之后，终于不用再担心算力的问题了😭！之前总是靠kaggle、colab这些白嫖GPU，现在完全不用担心这些问题，直接连接到Dian的服务器，算力十足。这也正好让我开始接触到了Linux，任务驱动之下，也不得不学一些Linux命令，正好实际上我对这个东西也挺好奇的，这里开一篇博客记录一下。
+                    
+                </p>
+                <a href="/2021/09/24/linux-bi-ji/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>Read more
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
         <div class="post-card" style="background-image: url('/medias/featureimages/9.jpg')">
             <div class="post-body">
                 <div class="post-categories">
@@ -908,16 +977,16 @@ $(function () {
                     <a href="/categories/深度学习/" class="category" target="_blank">深度学习</a>
                     
                 </div>
-                <a href="/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/" target="_blank">
-                    <h3 class="post-title">基于Pseudo-LiDAR的纯视觉3D物体检测算法</h3>
+                <a href="/2021/10/04/practice-mmdet/" target="_blank">
+                    <h3 class="post-title">practice mmdet</h3>
                 </a>
                 <p class="post-description">
                     
-                        何琨老师给我们3D目标检测小组邀请到了康奈尔大学3D深度检测方面的博士生王岩博士来做线上talk，这里简单记录一些关于3D目标检测方面的讲的一些slides和一些笔记，当然，这些都是很杂乱的，不是很规矩，甚至有些可能是错的，但是这些都是很好的部分，以供之后进一步学习。
+                        我们想要使用我们的训练好的模型直接来预测我们的images。在MMDetection，一个模型被一个configuration file和保存在checkpoint file中的已经存在的model parameters来定义。
                     
                 </p>
-                <a href="/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
+                <a href="/2021/10/04/practice-mmdet/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>Read more
                 </a>
             </div>
@@ -942,7 +1011,7 @@ $(function () {
                     
                 </p>
                 <a href="/2021/09/06/mu-biao-jian-ce-bi-ji-shang/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FFCC00 0%, #FF9500 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>Read more
                 </a>
             </div>
@@ -967,7 +1036,32 @@ $(function () {
                     
                 </p>
                 <a href="/2021/09/16/lun-wen-zhi-yolo-xi-lie/" target="_blank"
-                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FFCC00 0%, #FF9500 100%)">
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%)">
+                    <i class="icon fa fa-eye fa-fw"></i>Read more
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        <div class="post-card" style="background-image: url('/medias/featureimages/hello.png')">
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                    <a href="/categories/深度学习/" class="category" target="_blank">深度学习</a>
+                    
+                </div>
+                <a href="/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/" target="_blank">
+                    <h3 class="post-title">路面裂缝数据集调研</h3>
+                </a>
+                <p class="post-description">
+                    
+                        探查关于路面裂缝的各个数据集，然后自己写一下dataloader进行相应的读取，进行一下mmdet跑一下数据集。
+                    
+                </p>
+                <a href="/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/" target="_blank"
+                        class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #C644FC 0%, #5856D6 100%)">
                     <i class="icon fa fa-eye fa-fw"></i>Read more
                 </a>
             </div>
@@ -1085,6 +1179,56 @@ $(function () {
                         
                         <a href="/tags/路面裂缝检测/" target="_blank">
                             <span class="chip bg-color">路面裂缝检测</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/10/04/practice-mmdet/" target="_blank">
+                        <div class="card-image">
+                            
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="practice mmdet">
+                            
+                            <span class="card-title">practice mmdet</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            我们想要使用我们的训练好的模型直接来预测我们的images。在MMDetection，一个模型被一个configuration file和保存在checkpoint file中的已经存在的model parameters来定义。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-04
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                    深度学习
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/目标检测/" target="_blank">
+                            <span class="chip bg-color">目标检测</span>
+                        </a>
+                        
+                        <a href="/tags/mmdet/" target="_blank">
+                            <span class="chip bg-color">mmdet</span>
                         </a>
                         
                     </div>
@@ -1563,62 +1707,6 @@ $(function () {
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/16/faster-rcnn-de-bian-jie-ma-guo-cheng/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="faster rcnn的编解码过程">
-                            
-                            <span class="card-title">faster rcnn的编解码过程</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            
-————————————————版权声明：本文为CSDN博主「shuyeah」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。原文链接：https://blog.csdn.net/weixin_43227
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-16
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/深度学习/" class="post-category" target="_blank">
-                                    深度学习
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/深度学习/" target="_blank">
-                            <span class="chip bg-color">深度学习</span>
-                        </a>
-                        
-                        <a href="/tags/Faster-RCNN/" target="_blank">
-                            <span class="chip bg-color">Faster RCNN</span>
-                        </a>
-                        
-                        <a href="/tags/cv/" target="_blank">
-                            <span class="chip bg-color">cv</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1675,7 +1763,7 @@ $(function () {
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">134.9k</span> 字
+                <span class="white-color">136.8k</span> 字
             
 
             

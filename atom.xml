@@ -49,7 +49,7 @@
     <link href="https://lry89757.github.io/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/"/>
     <id>https://lry89757.github.io/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/</id>
     <published>2021-10-04T07:20:44.000Z</published>
-    <updated>2021-10-04T13:23:05.486Z</updated>
+    <updated>2021-10-05T12:23:15.530Z</updated>
     
     <summary type="html">
     
@@ -69,6 +69,34 @@
       <category term="数据集" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
       <category term="路面裂缝检测" scheme="https://lry89757.github.io/tags/%E8%B7%AF%E9%9D%A2%E8%A3%82%E7%BC%9D%E6%A3%80%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>practice mmdet</title>
+    <link href="https://lry89757.github.io/2021/10/04/practice-mmdet/"/>
+    <id>https://lry89757.github.io/2021/10/04/practice-mmdet/</id>
+    <published>2021-10-04T03:36:52.000Z</published>
+    <updated>2021-10-05T12:21:43.695Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h1&gt;&lt;p&gt;All refer to the &lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+      <category term="mmdet" scheme="https://lry89757.github.io/tags/mmdet/"/>
     
   </entry>
   
@@ -161,7 +189,7 @@
     <link href="https://lry89757.github.io/2021/09/24/linux-bi-ji/"/>
     <id>https://lry89757.github.io/2021/09/24/linux-bi-ji/</id>
     <published>2021-09-24T12:53:07.000Z</published>
-    <updated>2021-10-05T04:06:22.262Z</updated>
+    <updated>2021-10-05T12:19:21.345Z</updated>
     
     <summary type="html">
     
@@ -189,7 +217,7 @@
     <link href="https://lry89757.github.io/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/"/>
     <id>https://lry89757.github.io/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/</id>
     <published>2021-09-21T03:55:57.000Z</published>
-    <updated>2021-09-22T11:38:53.441Z</updated>
+    <updated>2021-10-05T12:21:09.498Z</updated>
     
     <summary type="html">
     
@@ -465,9 +493,9 @@
     
       <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
-      <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
-    
       <category term="乐评" scheme="https://lry89757.github.io/tags/%E4%B9%90%E8%AF%84/"/>
+    
+      <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
     
   </entry>
   
@@ -554,40 +582,6 @@
       <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
     
       <category term="社会实践" scheme="https://lry89757.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%AE%9E%E8%B7%B5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Faster RCNN源码解读</title>
-    <link href="https://lry89757.github.io/2021/09/06/faster-rcnn-yuan-ma-jie-du/"/>
-    <id>https://lry89757.github.io/2021/09/06/faster-rcnn-yuan-ma-jie-du/</id>
-    <published>2021-09-06T05:01:51.000Z</published>
-    <updated>2021-09-20T02:48:17.352Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h4&gt;&lt;p&gt;该笔记是我的关于Pytorch Faster
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
-      <category term="源码解读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/"/>
-    
-      <category term="Faster RCNN" scheme="https://lry89757.github.io/tags/Faster-RCNN/"/>
     
   </entry>
   
