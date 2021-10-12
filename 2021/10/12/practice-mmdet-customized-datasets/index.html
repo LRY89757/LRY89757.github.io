@@ -1,0 +1,1705 @@
+<!DOCTYPE HTML>
+<html lang="default">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="practice mmdet(Customized datasets), Dian.AI CV DeepLearning MachineLearning 逯润雨 Lurunyu 计算机视觉 深度学习">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="Preface上一个文档实际上我们学习了有关的mmdet怎么基于已有的标准数据集和模型来训练，当然我们没有能够一个一个代码进行溯源，源码也没有开始详细了解解读，但是已经迈出了一小步，接下来我们继续来看怎么使用自定义的数据集进行训练。
+Bas">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>practice mmdet(Customized datasets) | LRY&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://dian.org.cn/static/dian/images/logo.dd99a9865177.gif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">LRY's Blog</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>Galleries</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>Contact</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>Friends</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性   -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>Index</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>Tags</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>Categories</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>Archives</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>Galleries</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>About</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>Contact</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>Friends</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://dian.org.cn/static/dian/images/logo.dd99a9865177.gif" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">LRY's Blog</div>
+        <div class="logo-desc">
+            
+            华中科技大学 | 计算机科学与技术 | 计算机视觉
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                Galleries
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                Contact
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                Friends
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LRY89757/LRY89757.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性   -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        Index
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        Tags
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        Categories
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        Archives
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        Galleries
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        About
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        Contact
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        Friends
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LRY89757/LRY89757.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/LRY89757/LRY89757.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        practice mmdet(Customized datasets)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/深度学习/" target="_blank">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/mmdet/" target="_blank">
+                                <span class="chip bg-color">mmdet</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                深度学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-10-12
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>Author:&nbsp;&nbsp;
+                    
+                        逯润雨
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
+                        1.7k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                        7 Min
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>上一个文档实际上我们学习了有关的mmdet怎么基于已有的标准数据集和模型来训练，当然我们没有能够一个一个代码进行溯源，源码也没有开始详细了解解读，但是已经迈出了一小步，接下来我们继续来看怎么使用自定义的数据集进行训练。</p>
+<h1 id="Basic-steps"><a href="#Basic-steps" class="headerlink" title="Basic steps"></a>Basic steps</h1><p>通常而言我们通常有三步走：</p>
+<ol>
+<li>准备自己的数据集(Prepare the customized dataset)</li>
+<li>准备一个config(Prepare a config)</li>
+<li>在自定义数据集上训练，测试，推断(Train, test, inference models on the customized datasets.)</li>
+</ol>
+<p>而我们准备符合mmdet的数据集通常会有以下这么些形式：</p>
+<ol>
+<li>将数据集按照COCO的格式来弄</li>
+<li>reorganize the dataset into a middle format.</li>
+<li>实行一个新数据集</li>
+</ol>
+<p>我们通常会选择前两种方法，因为简单，当然，我们这里先试试第一种方法。</p>
+<p><strong>Note</strong>: MMDetection only supports evaluating mask AP of dataset in COCO format for now. So for instance segmentation task users should convert the data into coco format.</p>
+<h1 id="Prepare-the-customized-dataset"><a href="#Prepare-the-customized-dataset" class="headerlink" title="Prepare the customized dataset"></a>Prepare the customized dataset</h1><p>我们先来看看COCO annotation的格式</p>
+<h2 id="COCO-annotation-format"><a href="#COCO-annotation-format" class="headerlink" title="COCO annotation format"></a>COCO annotation format</h2><p>The necessary keys of COCO format for instance segmentation is as below, for the complete details, please refer <a href="https://cocodataset.org/#format-data" target="_blank" rel="noopener">here</a>.</p>
+<pre class="line-numbers language-shell"><code class="language-shell">{
+    "images": [image],
+    "annotations": [annotation],
+    "categories": [category]
+}
+
+
+image = {
+    "id": int,
+    "width": int,
+    "height": int,
+    "file_name": str,
+}
+
+annotation = {
+    "id": int,
+    "image_id": int,
+    "category_id": int,
+    "segmentation": RLE or [polygon],
+    "area": float,
+    "bbox": [x,y,width,height],
+    "iscrowd": 0 or 1,
+}
+
+categories = [{
+    "id": int,
+    "name": str,
+    "supercategory": str,
+}]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们以一个较小的balloon数据集为例，我们需要写一个新的函数来让我们的数据集转化为COCO的格式。然后我们就可以利用COCODataset来加载数据然后训练，评估。</p>
+<h2 id="Balloon-dataset"><a href="#Balloon-dataset" class="headerlink" title="Balloon dataset"></a>Balloon dataset</h2><p>我们可以来看看我们的 balloon dataset：</p>
+<p><a href="https://imgtu.com/i/5nwXnI" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5nwXnI.png" alt></a></p>
+<p>初级目录有训练集和验证集。</p>
+<p>然后继续看：</p>
+<p><a href="https://imgtu.com/i/5n0mNT" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5n0mNT.png" alt></a></p>
+<p><a href="https://imgtu.com/i/5n0VH0" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5n0VH0.png" alt></a></p>
+<p>可以看到我们的图片都是.jpg,然后annotation文件都是.json格式的。我们用vim先预览下：</p>
+<p>我们可以看到大致的格式如下：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">{'base64_img_data': '',
+ 'file_attributes': {},
+ 'filename': '34020010494_e5cb88e1c4_k.jpg',
+ 'fileref': '',
+ 'regions': {'0': {'region_attributes': {},
+   'shape_attributes': {'all_points_x': [1020,
+     1000,
+     994,
+     1003,
+     1023,
+     1050,
+     1089,
+     1134,
+     1190,
+     1265,
+     1321,
+     1361,
+     1403,
+     1428,
+     1442,
+     1445,
+     1441,
+     1427,
+     1400,
+     1361,
+     1316,
+     1269,
+     1228,
+     1198,
+     1207,
+     1210,
+     1190,
+     1177,
+     1172,
+     1174,
+     1170,
+     1153,
+     1127,
+     1104,
+     1061,
+     1032,
+     1020],
+    'all_points_y': [963,
+     899,
+     841,
+     787,
+     738,
+     700,
+     663,
+     638,
+     621,
+     619,
+     643,
+     672,
+     720,
+     765,
+     800,
+     860,
+     896,
+     942,
+     990,
+     1035,
+     1079,
+     1112,
+     1129,
+     1134,
+     1144,
+     1153,
+     1166,
+     1166,
+     1150,
+     1136,
+     1129,
+     1122,
+     1112,
+     1084,
+     1037,
+     989,
+     963],
+    'name': 'polygon'}}},
+ 'size': 1115004}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Convert-to-COCO-style"><a href="#Convert-to-COCO-style" class="headerlink" title="Convert to COCO style"></a>Convert to COCO style</h2><p>这个annotation是一个JSON文件，每一个键值对都表示一个图像所有annotations，我们需要写一些代码来将这个JSON文件转化为COCO的标准格式，就像下面这样(经过本人微小的修改并且调试运行成功)：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os<span class="token punctuation">.</span>path <span class="token keyword">as</span> osp
+<span class="token keyword">import</span> mmcv
+
+<span class="token keyword">def</span> <span class="token function">convert_balloon_to_coco</span><span class="token punctuation">(</span>ann_file<span class="token punctuation">,</span> out_file<span class="token punctuation">,</span> image_prefix<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    data_infos <span class="token operator">=</span> mmcv<span class="token punctuation">.</span>load<span class="token punctuation">(</span>ann_file<span class="token punctuation">)</span>
+
+    annotations <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    images <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    obj_count <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> idx<span class="token punctuation">,</span> v <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>mmcv<span class="token punctuation">.</span>track_iter_progress<span class="token punctuation">(</span>data_infos<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        filename <span class="token operator">=</span> v<span class="token punctuation">[</span><span class="token string">'filename'</span><span class="token punctuation">]</span>
+        img_path <span class="token operator">=</span> osp<span class="token punctuation">.</span>join<span class="token punctuation">(</span>image_prefix<span class="token punctuation">,</span> filename<span class="token punctuation">)</span>
+        height<span class="token punctuation">,</span> width <span class="token operator">=</span> mmcv<span class="token punctuation">.</span>imread<span class="token punctuation">(</span>img_path<span class="token punctuation">)</span><span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span>
+
+        images<span class="token punctuation">.</span>append<span class="token punctuation">(</span>dict<span class="token punctuation">(</span>
+            id<span class="token operator">=</span>idx<span class="token punctuation">,</span>
+            file_name<span class="token operator">=</span>filename<span class="token punctuation">,</span>
+            height<span class="token operator">=</span>height<span class="token punctuation">,</span>
+            width<span class="token operator">=</span>width<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        bboxes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        labels <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        masks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> _<span class="token punctuation">,</span> obj <span class="token keyword">in</span> v<span class="token punctuation">[</span><span class="token string">'regions'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">assert</span> <span class="token operator">not</span> obj<span class="token punctuation">[</span><span class="token string">'region_attributes'</span><span class="token punctuation">]</span>
+            obj <span class="token operator">=</span> obj<span class="token punctuation">[</span><span class="token string">'shape_attributes'</span><span class="token punctuation">]</span>
+            px <span class="token operator">=</span> obj<span class="token punctuation">[</span><span class="token string">'all_points_x'</span><span class="token punctuation">]</span>
+            py <span class="token operator">=</span> obj<span class="token punctuation">[</span><span class="token string">'all_points_y'</span><span class="token punctuation">]</span>
+            poly <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span>x <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">,</span> y <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x<span class="token punctuation">,</span> y <span class="token keyword">in</span> zip<span class="token punctuation">(</span>px<span class="token punctuation">,</span> py<span class="token punctuation">)</span><span class="token punctuation">]</span>
+            poly <span class="token operator">=</span> <span class="token punctuation">[</span>p <span class="token keyword">for</span> x <span class="token keyword">in</span> poly <span class="token keyword">for</span> p <span class="token keyword">in</span> x<span class="token punctuation">]</span>
+
+            x_min<span class="token punctuation">,</span> y_min<span class="token punctuation">,</span> x_max<span class="token punctuation">,</span> y_max <span class="token operator">=</span> <span class="token punctuation">(</span>
+                min<span class="token punctuation">(</span>px<span class="token punctuation">)</span><span class="token punctuation">,</span> min<span class="token punctuation">(</span>py<span class="token punctuation">)</span><span class="token punctuation">,</span> max<span class="token punctuation">(</span>px<span class="token punctuation">)</span><span class="token punctuation">,</span> max<span class="token punctuation">(</span>py<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+            data_anno <span class="token operator">=</span> dict<span class="token punctuation">(</span>
+                image_id<span class="token operator">=</span>idx<span class="token punctuation">,</span>
+                id<span class="token operator">=</span>obj_count<span class="token punctuation">,</span>
+                category_id<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>
+                bbox<span class="token operator">=</span><span class="token punctuation">[</span>x_min<span class="token punctuation">,</span> y_min<span class="token punctuation">,</span> x_max <span class="token operator">-</span> x_min<span class="token punctuation">,</span> y_max <span class="token operator">-</span> y_min<span class="token punctuation">]</span><span class="token punctuation">,</span>
+                area<span class="token operator">=</span><span class="token punctuation">(</span>x_max <span class="token operator">-</span> x_min<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>y_max <span class="token operator">-</span> y_min<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                segmentation<span class="token operator">=</span><span class="token punctuation">[</span>poly<span class="token punctuation">]</span><span class="token punctuation">,</span>
+                iscrowd<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+            annotations<span class="token punctuation">.</span>append<span class="token punctuation">(</span>data_anno<span class="token punctuation">)</span>
+            obj_count <span class="token operator">+=</span> <span class="token number">1</span>
+
+    coco_format_json <span class="token operator">=</span> dict<span class="token punctuation">(</span>
+        images<span class="token operator">=</span>images<span class="token punctuation">,</span>
+        annotations<span class="token operator">=</span>annotations<span class="token punctuation">,</span>
+        categories<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">'id'</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'balloon'</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    mmcv<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>coco_format_json<span class="token punctuation">,</span> out_file<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    image_pre <span class="token operator">=</span> <span class="token string">'/home/lry/data/balloon/train/'</span>
+    ann_file <span class="token operator">=</span> <span class="token string">'/home/lry/data/balloon/train/via_region_data.json'</span>
+    out_file <span class="token operator">=</span> <span class="token string">'/home/lry/data/balloon/train_coco.json'</span>
+    convert_balloon_to_coco<span class="token punctuation">(</span>ann_file<span class="token punctuation">,</span> out_file<span class="token punctuation">,</span> image_pre<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最后annotation保存为JSON文件，文件名为train_coco.json.</p>
+<p>当然我们可以看一下转化后的文件和转化前的文件对比：</p>
+<p><a href="https://imgtu.com/i/5nr7VI" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5nr7VI.png" alt="Comparition"></a></p>
+<p>右边就是COCO的格式。</p>
+<p>OK，我们转化好格式之后，我们就可以成功使用我们的CoCoDataset来训练与评估我们的模型了。</p>
+<h1 id="Prepare-a-config"><a href="#Prepare-a-config" class="headerlink" title="Prepare a config"></a>Prepare a config</h1><p>第二步就是准备一个config文件以方便我们的dataset可以成功被读取。假定我们要使用Mask R-CNN with FPN，用来在我们的ballon dataset上训练我们的detector的config如下：</p>
+<blockquote>
+<p> 我们的config需要放到<code>configs/balloon/</code>目录下并且命名为：<code>mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_balloon.py</code></p>
+</blockquote>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># The new config inherits a base config to highlight the necessary modification</span>
+_base_ <span class="token operator">=</span> <span class="token string">'mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_coco.py'</span>
+
+<span class="token comment" spellcheck="true"># We also need to change the num_classes in head to match the dataset's annotation</span>
+model <span class="token operator">=</span> dict<span class="token punctuation">(</span>
+    roi_head<span class="token operator">=</span>dict<span class="token punctuation">(</span>
+        bbox_head<span class="token operator">=</span>dict<span class="token punctuation">(</span>num_classes<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        mask_head<span class="token operator">=</span>dict<span class="token punctuation">(</span>num_classes<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Modify dataset related settings</span>
+dataset_type <span class="token operator">=</span> <span class="token string">'COCODataset'</span>
+classes <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'balloon'</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> dict<span class="token punctuation">(</span>
+    train<span class="token operator">=</span>dict<span class="token punctuation">(</span>
+        img_prefix<span class="token operator">=</span><span class="token string">'balloon/train/'</span><span class="token punctuation">,</span>
+        classes<span class="token operator">=</span>classes<span class="token punctuation">,</span>
+        ann_file<span class="token operator">=</span><span class="token string">'balloon/train/annotation_coco.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    val<span class="token operator">=</span>dict<span class="token punctuation">(</span>
+        img_prefix<span class="token operator">=</span><span class="token string">'balloon/val/'</span><span class="token punctuation">,</span>
+        classes<span class="token operator">=</span>classes<span class="token punctuation">,</span>
+        ann_file<span class="token operator">=</span><span class="token string">'balloon/val/annotation_coco.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    test<span class="token operator">=</span>dict<span class="token punctuation">(</span>
+        img_prefix<span class="token operator">=</span><span class="token string">'balloon/val/'</span><span class="token punctuation">,</span>
+        classes<span class="token operator">=</span>classes<span class="token punctuation">,</span>
+        ann_file<span class="token operator">=</span><span class="token string">'balloon/val/annotation_coco.json'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># We can use the pre-trained Mask RCNN model to obtain higher performance</span>
+load_from <span class="token operator">=</span> <span class="token string">'checkpoints/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当然我们通过读这里的文件会发现我们的之前转化的JSON文件的位置放错了，甚至名字也不对，但是没关系，只需要重新转移下就OK了。</p>
+<p>注意一下这里，我们之前读到过这里（<strong>注意高亮的文字</strong>）：</p>
+<p><a href="https://imgtu.com/i/5n63Ke" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5n63Ke.png" alt="Attension"></a></p>
+<p>虽然我们的文件位于我们的项目外部，但是Linux里面有一个软连接symlink这样一个概念，类似于快捷方式，我们同样需要用到这个来在项目中建立一个symlink。至于具体怎么做，请参见我的<a href="https://lry89757.github.io/2021/09/24/linux-bi-ji/">Linux笔记</a>.</p>
+<p>另外我们除了这里要更改之外，我们<code>__base__</code>这里的东西仍然要更改，因为很明显路径有错误。</p>
+<p>还有一个地方（真是吐了，<del>官网给的这么差</del>）:</p>
+<p>我们的训练权重官网居然没有给出他的下载地址在哪里！还是害得我找了一个Colab网址才找到网上的训练权重：</p>
+<p><a href="https://imgtu.com/i/5n2RPI" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5n2RPI.png" alt="注意高亮文字"></a></p>
+<p>加上就行了，最后在加上软连接，我们就会得到我们最终的完成版代码（个人向）：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># The new config inherits a base config to highlight the necessary modification</span>
+_base_ <span class="token operator">=</span> <span class="token string">'../mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_coco.py'</span>
+
+<span class="token comment" spellcheck="true"># We also need to change the num_classes in head to match the dataset's annotation</span>
+model <span class="token operator">=</span> dict<span class="token punctuation">(</span>
+    roi_head<span class="token operator">=</span>dict<span class="token punctuation">(</span>
+        bbox_head<span class="token operator">=</span>dict<span class="token punctuation">(</span>num_classes<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        mask_head<span class="token operator">=</span>dict<span class="token punctuation">(</span>num_classes<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># Modify dataset related settings</span>
+dataset_type <span class="token operator">=</span> <span class="token string">'COCODataset'</span>
+classes <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token string">'balloon'</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> dict<span class="token punctuation">(</span>
+    train<span class="token operator">=</span>dict<span class="token punctuation">(</span>
+        img_prefix<span class="token operator">=</span><span class="token string">'/home/lry/projects/mmdetection/data/balloon/train/'</span><span class="token punctuation">,</span>
+        classes<span class="token operator">=</span>classes<span class="token punctuation">,</span>
+        ann_file<span class="token operator">=</span><span class="token string">'/home/lry/projects/mmdetection/data/balloon/train/annotation_coco.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    val<span class="token operator">=</span>dict<span class="token punctuation">(</span>
+        img_prefix<span class="token operator">=</span><span class="token string">'/home/lry/projects/mmdetection/data/balloon/val/'</span><span class="token punctuation">,</span>
+        classes<span class="token operator">=</span>classes<span class="token punctuation">,</span>
+        ann_file<span class="token operator">=</span><span class="token string">'/home/lry/projects/mmdetection/data/balloon/val/annotation_coco.json'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    test<span class="token operator">=</span>dict<span class="token punctuation">(</span>
+        img_prefix<span class="token operator">=</span><span class="token string">'/home/lry/projects/mmdetection/data/balloon/val/'</span><span class="token punctuation">,</span>
+        classes<span class="token operator">=</span>classes<span class="token punctuation">,</span>
+        ann_file<span class="token operator">=</span><span class="token string">'/home/lry/projects/mmdetection/data/balloon/val/annotation_coco.json'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># We can use the pre-trained Mask RCNN model to obtain higher performance</span>
+<span class="token comment" spellcheck="true"># load_from = 'checkpoints/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'</span>
+load_from <span class="token operator">=</span> <span class="token string">'https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Train-a-new-model"><a href="#Train-a-new-model" class="headerlink" title="Train a new model"></a>Train a new model</h1><p>实际上我们这里训练很简单，仅仅一行指令就OK，我们可以看一下：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">python tools/train.py configs/balloon/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_balloon.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>训练还是比较快的相对而言（至少我感觉）毕竟这里也没有多大的数据，具体执行过程我就截了没几张图：</p>
+<p><a href="https://imgtu.com/i/5nWRjf" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5nWRjf.png" alt></a><a href="https://imgtu.com/i/5nWzE4" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5nWzE4.png" alt></a></p>
+<p>最后运行结束：</p>
+<p><a href="https://imgtu.com/i/5nWb3q" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5nWb3q.png" alt></a></p>
+<p>For more detailed usages, please refer to the <a href="https://mmdetection.readthedocs.io/en/latest/1_exist_data_model.html" target="_blank" rel="noopener">Case 1</a>.</p>
+<h1 id="Test-and-inference"><a href="#Test-and-inference" class="headerlink" title="Test and inference"></a>Test and inference</h1><p>这个也是一行代码：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">python tools/test.py configs/balloon/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_balloon.py work_dirs/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_balloon.py/latest.pth --eval bbox segm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.bmp" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.bmp" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;Reprint policy:
+                    </span>
+                    <a href="https://lry89757.github.io" class="b-link-green">LRY's Blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2021/10/12/practice-mmdet-customized-datasets/" class="b-link-green">practice mmdet(Customized datasets)</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2021/10/12/practice-mmdet-customized-datasets/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="practice mmdet(Customized datasets)">
+                        
+                        <span class="card-title">practice mmdet(Customized datasets)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Preface上一个文档实际上我们学习了有关的mmdet怎么基于已有的标准数据集和模型来训练，当然我们没有能够一个一个代码进行溯源，源码也没有开始详细了解解读，但是已经迈出了一小步，接下来我们继续来看怎么使用自定义的数据集进行训练。
+Bas
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                    深度学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/mmdet/" target="_blank">
+                        <span class="chip bg-color">mmdet</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/05/explore-argparse-tutorial/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="explore Argparse Tutorial">
+                        
+                        <span class="card-title">explore Argparse Tutorial</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            新生招新群里有人问了一些问题，他给出的问题代码中包括这个库，目前我目测是因为他没有用好这个库导致图片读取返回了None，正好我也早就想要去了解一下这个库，顺便学一下。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/语法/" target="_blank">
+                        <span class="chip bg-color">语法</span>
+                    </a>
+                    
+                    <a href="/tags/Argparse/" target="_blank">
+                        <span class="chip bg-color">Argparse</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: LRY's Blog<br />'
+            + 'Author: 逯润雨<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者Lurunyu所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5, h6, h7'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6, h7').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2021 逯润雨. 
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">139.3k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LRY89757" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=lry89757@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/yi-ran-fan-te-xi-57-88" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=1785435713&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2021, 07, 29, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果   -->
+        
+            <canvas class="fireworks" style="position: fixed; left: 0; top: 0; z-index: 1; pointer-events: none;"></canvas>
+            <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+            <script type="text/javascript" src="/js/fireworks.js"></script>
+        
+
+        <!-- 背景雪花飘落特效 -->
+        
+
+        <!-- 鼠标点击文字特效 -->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效  -->
+        
+            <script type="text/javascript">
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
+                }
+            </script>
+        
+
+        <!-- 在线聊天工具   -->
+        
+            <script src="//code.tidio.co/xxxxxxxxxxxxxxxxxxxxxxxxxxx.js"></script>
+            <!--  在线聊天位置自定义    -->
+            <script> 
+                $(document).ready(function () {
+
+                    setInterval(change_Tidio, 50);  
+                    function change_Tidio() { 
+
+                        var tidio=$("#tidio-chat iframe");
+                        if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"80px":"20px";   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                            document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        } 
+                        else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+                        else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+
+                        if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                            document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                        }
+                    } 
+                }); 
+            </script>
+        
+
+        <!-- 背景 canvas-nest  -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity= "0.8" zIndex="--1" count="150"src="/libs/background/canvas-nest.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景静止彩带  -->
+        
+
+        <!-- 背景动态彩带 -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>

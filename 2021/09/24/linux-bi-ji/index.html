@@ -679,12 +679,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/显卡/" target="_blank">
-                                <span class="chip bg-color">显卡</span>
-                            </a>
-                        
                             <a href="/tags/Linux/" target="_blank">
                                 <span class="chip bg-color">Linux</span>
+                            </a>
+                        
+                            <a href="/tags/显卡/" target="_blank">
+                                <span class="chip bg-color">显卡</span>
                             </a>
                         
                     </div>
@@ -721,14 +721,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        8.5k
+                        9.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        32 Min
+                        35 Min
                     </div>
                     
                 
@@ -1075,6 +1075,50 @@ mv /data/new /data/old/
 如果是移动文件夹下的所有文件的话就可以文件夹后面跟上 /* 
 
 mv /data/new/* /data/old/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="linux-软连接的使用"><a href="#linux-软连接的使用" class="headerlink" title="linux 软连接的使用"></a><a href="https://www.cnblogs.com/sueyyyy/p/10985443.html" target="_blank" rel="noopener">linux 软连接的使用</a></h2><blockquote>
+<p>转自博客园：<a href="https://www.cnblogs.com/sueyyyy/p/10985443.html" target="_blank" rel="noopener">https://www.cnblogs.com/sueyyyy/p/10985443.html</a></p>
+</blockquote>
+<p>软连接是linux中一个常用命令，它的功能是为某一个文件在另外一个位置建立一个同不的链接。</p>
+<p>具体用法是：ln -s 源文件 目标文件。 </p>
+<p>当 我们需要在不同的目录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，我们只要在其它的 目录下用ln命令链接（link）就可以，不必重复的占用磁盘空间。</p>
+<p>例如：</p>
+<pre class="line-numbers language-shell"><code class="language-shell">ln -s /usr/local/mysql/bin/mysql /usr/bin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样我们就对/usr/bin目录下的mysql命令创建了软连接 </p>
+<p>【硬连接】<br>硬连接指通过索引节点来进行连接。在Linux的文件系统中，保存在磁盘分区中的文件不管是什么类型都给它分配一个编号，称为索引节点号(Inode Index)。在Linux中，多个文件名指向同一索引节点是存在的。一般这种连接就是硬连接。硬连接的作用是允许一个文件拥有多个有效路径名，这样用户就可以建立硬连接到重要文件，以防止“误删”的功能。其原因如上所述，因为对应该目录的索引节点有一个以上的连接。只删除一个连接并不影响索引节点本身和其它的连接，只有当最后一个连接被删除后，文件的数据块及目录的连接才会被释放。也就是说，文件真正删除的条件是与之相关的所有硬连接文件均被删除。</p>
+<p>【软连接】<br>另外一种连接称之为符号连接（Symbolic Link），也叫软连接。软链接文件有类似于Windows的快捷方式。它实际上是一个特殊的文件。在符号连接中，文件实际上是一个文本文件，其中包含的有另一文件的位置信息。</p>
+<p><strong>使用方式</strong></p>
+<p>创建软链接</p>
+<p>ln  -s [源文件或目录] [目标文件或目录]</p>
+<p>例：</p>
+<p>当前路径创建test 引向/var/www/test 文件夹 </p>
+<pre class="line-numbers language-shell"><code class="language-shell">ln –s /var/www/test test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>创建/var/test 引向/var/www/test 文件夹 </p>
+<pre class="line-numbers language-shell"><code class="language-shell">ln –s /var/www/test /var/test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>删除软链接</p>
+<p>和删除普通的文件是一样的，删除都是使用rm来进行操作</p>
+<p>例：</p>
+<p>删除test</p>
+<pre class="line-numbers language-shell"><code class="language-shell">rm –rf test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改软链接</p>
+<p>ln –snf  [新的源文件或目录] [目标文件或目录]</p>
+<p>这将会修改原有的链接地址为新的地址</p>
+<p>例如：</p>
+<p>创建一个软链接</p>
+<pre class="line-numbers language-shell"><code class="language-shell">ln –s /var/www/test /var/test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改指向的新路径</p>
+<pre class="line-numbers language-shell"><code class="language-shell">ln –snf /var/www/test1 /var/test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>常用参数：</strong></p>
+<pre class="line-numbers language-shell"><code class="language-shell">　　-f : 链结时先将与 dist 同档名的档案删除
+　　-d : 允许系统管理者硬链结自己的目录
+　　-i : 在删除与 dist 同档名的档案时先进行询问
+　　-n : 在进行软连结时，将 dist 视为一般的档案
+　　-s : 进行软链结(symbolic link)
+　　-v : 在连结之前显示其档名
+　　-b : 将在链结时会被覆写或删除的档案进行备份
+　　-S SUFFIX : 将备份的档案都加上 SUFFIX 的字尾
+　　-V METHOD : 指定备份的方式
+　　--help : 显示辅助说明
+　　--version : 显示版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -1525,7 +1569,7 @@ mv /data/new/* /data/old/<span aria-hidden="true" class="line-numbers-rows"><spa
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">136.8k</span> 字
+                <span class="white-color">139.3k</span> 字
             
 
             
@@ -1756,5 +1800,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
