@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>LRY&#39;s Blog</title>
   
-  <subtitle>YOLO：You Only Live Once.</subtitle>
+  <subtitle>SELF-ATTENTION：Attention Is All You Need.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-10-12T14:11:29.453Z</updated>
+  <updated>2021-10-16T15:32:50.217Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Code Trace of mmdetection</title>
+    <link href="https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/"/>
+    <id>https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/</id>
+    <published>2021-10-16T05:20:47.000Z</published>
+    <updated>2021-10-16T15:32:50.217Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+    
+      <category term="mmdetection" scheme="https://lry89757.github.io/tags/mmdetection/"/>
+    
+      <category term="源码阅读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Self Attention Is All My Need</title>
+    <link href="https://lry89757.github.io/2021/10/13/self-attention-is-all-my-need/"/>
+    <id>https://lry89757.github.io/2021/10/13/self-attention-is-all-my-need/</id>
+    <published>2021-10-13T12:45:13.000Z</published>
+    <updated>2021-10-16T16:18:55.591Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Self-Attention&quot;&gt;&lt;a href=&quot;#Self-Attention&quot; class=&quot;headerlink&quot; title=&quot;Self Attention&quot;&gt;&lt;/a&gt;Self Attention&lt;/h1&gt;&lt;h2 id=&quot;Preface&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="self-attention" scheme="https://lry89757.github.io/tags/self-attention/"/>
+    
+      <category term="transformer" scheme="https://lry89757.github.io/tags/transformer/"/>
+    
+  </entry>
   
   <entry>
     <title>practice mmdet(Customized datasets)</title>
@@ -234,9 +292,9 @@
       <category term="指令集" scheme="https://lry89757.github.io/categories/%E6%8C%87%E4%BB%A4%E9%9B%86/"/>
     
     
-      <category term="Linux" scheme="https://lry89757.github.io/tags/Linux/"/>
-    
       <category term="显卡" scheme="https://lry89757.github.io/tags/%E6%98%BE%E5%8D%A1/"/>
+    
+      <category term="Linux" scheme="https://lry89757.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -524,64 +582,6 @@
       <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
     
       <category term="乐评" scheme="https://lry89757.github.io/tags/%E4%B9%90%E8%AF%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Dian团队初体验</title>
-    <link href="https://lry89757.github.io/2021/09/08/dian-tuan-dui-chu-ti-yan/"/>
-    <id>https://lry89757.github.io/2021/09/08/dian-tuan-dui-chu-ti-yan/</id>
-    <published>2021-09-08T12:43:54.000Z</published>
-    <updated>2021-09-08T13:43:18.856Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
-    
-    
-      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
-    
-      <category term="Dian团队" scheme="https://lry89757.github.io/tags/Dian%E5%9B%A2%E9%98%9F/"/>
-    
-      <category term="AI" scheme="https://lry89757.github.io/tags/AI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>谭志虎院长访谈</title>
-    <link href="https://lry89757.github.io/2021/09/06/tan-zhi-hu-yuan-chang-fang-tan/"/>
-    <id>https://lry89757.github.io/2021/09/06/tan-zhi-hu-yuan-chang-fang-tan/</id>
-    <published>2021-09-06T11:18:56.000Z</published>
-    <updated>2021-09-06T11:20:22.885Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;“探科访计”谭志虎副院长访谈&quot;&gt;&lt;a href=&quot;#“探科访计”谭志虎副院长访谈&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="记录" scheme="https://lry89757.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
-    
-    
-      <category term="访谈" scheme="https://lry89757.github.io/tags/%E8%AE%BF%E8%B0%88/"/>
-    
-      <category term="社会实践" scheme="https://lry89757.github.io/tags/%E7%A4%BE%E4%BC%9A%E5%AE%9E%E8%B7%B5/"/>
     
   </entry>
   

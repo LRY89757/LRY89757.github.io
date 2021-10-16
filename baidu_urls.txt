@@ -1,3 +1,5 @@
+https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/
+https://lry89757.github.io/2021/10/13/self-attention-is-all-my-need/
 https://lry89757.github.io/2021/10/12/practice-mmdet-customized-datasets/
 https://lry89757.github.io/2021/10/05/explore-argparse-tutorial/
 https://lry89757.github.io/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/
