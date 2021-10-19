@@ -1,3 +1,5 @@
+https://lry89757.github.io/2021/10/17/word-embedding/
+https://lry89757.github.io/2021/10/17/yolov3-yuan-ma-jie-du/
 https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/
 https://lry89757.github.io/2021/10/13/self-attention-is-all-my-need/
 https://lry89757.github.io/2021/10/12/practice-mmdet-customized-datasets/

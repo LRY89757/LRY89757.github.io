@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-10-16T15:32:50.217Z</updated>
+  <updated>2021-10-19T03:10:26.288Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Word Embedding(已放弃)</title>
+    <link href="https://lry89757.github.io/2021/10/17/word-embedding/"/>
+    <id>https://lry89757.github.io/2021/10/17/word-embedding/</id>
+    <published>2021-10-17T13:10:17.000Z</published>
+    <updated>2021-10-19T03:10:26.288Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="nlp" scheme="https://lry89757.github.io/tags/nlp/"/>
+    
+      <category term="编码" scheme="https://lry89757.github.io/tags/%E7%BC%96%E7%A0%81/"/>
+    
+      <category term="Word Embedding" scheme="https://lry89757.github.io/tags/Word-Embedding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YOLOv3源码解读(远远没写完)</title>
+    <link href="https://lry89757.github.io/2021/10/17/yolov3-yuan-ma-jie-du/"/>
+    <id>https://lry89757.github.io/2021/10/17/yolov3-yuan-ma-jie-du/</id>
+    <published>2021-10-17T07:23:07.000Z</published>
+    <updated>2021-10-19T03:10:03.403Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h1&gt;&lt;p&gt;不得不说还是看源码能够更好了解一个模型的基本实现，&lt;em&gt;talk is cheap&lt;/em&gt;,
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
+    
+      <category term="源码解读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>Code Trace of mmdetection</title>
@@ -532,56 +590,6 @@
     
     
       <category term="Pandas" scheme="https://lry89757.github.io/tags/Pandas/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>物理实验报告</title>
-    <link href="https://lry89757.github.io/2021/09/10/wu-li-shi-yan-bao-gao/"/>
-    <id>https://lry89757.github.io/2021/09/10/wu-li-shi-yan-bao-gao/</id>
-    <published>2021-09-10T09:18:28.000Z</published>
-    <updated>2021-09-10T09:19:54.183Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;物理实验报告&quot;&gt;&lt;a href=&quot;#物理实验报告&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
-    
-    
-      <category term="实验报告" scheme="https://lry89757.github.io/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Musical reviews of 以后要做的事</title>
-    <link href="https://lry89757.github.io/2021/09/09/musical-reviews-of-yi-hou-yao-zuo-de-shi/"/>
-    <id>https://lry89757.github.io/2021/09/09/musical-reviews-of-yi-hou-yao-zuo-de-shi/</id>
-    <published>2021-09-09T01:15:51.000Z</published>
-    <updated>2021-09-29T02:01:24.048Z</updated>
-    
-    <summary type="html">
-    
-      有东西被加密了, 请输入密码查看.
-    
-    </summary>
-    
-      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/categories/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
-    
-    
-      <category term="写给自己的散文诗" scheme="https://lry89757.github.io/tags/%E5%86%99%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%A3%E6%96%87%E8%AF%97/"/>
-    
-      <category term="林俊杰" scheme="https://lry89757.github.io/tags/%E6%9E%97%E4%BF%8A%E6%9D%B0/"/>
-    
-      <category term="乐评" scheme="https://lry89757.github.io/tags/%E4%B9%90%E8%AF%84/"/>
     
   </entry>
   
