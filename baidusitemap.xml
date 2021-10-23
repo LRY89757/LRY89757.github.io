@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://lry89757.github.io/2021/10/23/dian10-1-hou-xue-xi-ji-lu-yolov2/</loc>
+    <lastmod>2021-10-23</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/</loc>
+    <lastmod>2021-10-19</lastmod>
+  </url>  <url>
     <loc>https://lry89757.github.io/2021/10/17/word-embedding/</loc>
     <lastmod>2021-10-19</lastmod>
   </url>  <url>
@@ -8,9 +14,6 @@
     <lastmod>2021-10-19</lastmod>
   </url>  <url>
     <loc>https://lry89757.github.io/2021/10/13/self-attention-is-all-my-need/</loc>
-    <lastmod>2021-10-16</lastmod>
-  </url>  <url>
-    <loc>https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/</loc>
     <lastmod>2021-10-16</lastmod>
   </url>  <url>
     <loc>https://lry89757.github.io/2021/10/12/practice-mmdet-customized-datasets/</loc>

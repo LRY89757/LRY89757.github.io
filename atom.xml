@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-10-19T03:10:26.288Z</updated>
+  <updated>2021-10-23T13:06:48.110Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>YOLOv2论文研读</title>
+    <link href="https://lry89757.github.io/2021/10/23/dian10-1-hou-xue-xi-ji-lu-yolov2/"/>
+    <id>https://lry89757.github.io/2021/10/23/dian10-1-hou-xue-xi-ji-lu-yolov2/</id>
+    <published>2021-10-23T07:15:18.000Z</published>
+    <updated>2021-10-23T13:06:48.110Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;YOLOv2&quot;&gt;&lt;a href=&quot;#YOLOv2&quot; class=&quot;headerlink&quot; title=&quot;YOLOv2&quot;&gt;&lt;/a&gt;YOLOv2&lt;/h1&gt;&lt;h2 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
+    
+  </entry>
   
   <entry>
     <title>Word Embedding(已放弃)</title>
@@ -79,7 +105,7 @@
     <link href="https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/"/>
     <id>https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/</id>
     <published>2021-10-16T05:20:47.000Z</published>
-    <updated>2021-10-16T15:32:50.217Z</updated>
+    <updated>2021-10-19T11:56:41.966Z</updated>
     
     <summary type="html">
     
@@ -96,9 +122,9 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
       <category term="mmdetection" scheme="https://lry89757.github.io/tags/mmdetection/"/>
+    
+      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
     
       <category term="源码阅读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
     
@@ -564,32 +590,6 @@
       <category term="互联网" scheme="https://lry89757.github.io/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
     
       <category term="手机" scheme="https://lry89757.github.io/tags/%E6%89%8B%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Pandas</title>
-    <link href="https://lry89757.github.io/2021/09/11/pandas/"/>
-    <id>https://lry89757.github.io/2021/09/11/pandas/</id>
-    <published>2021-09-11T01:56:44.000Z</published>
-    <updated>2021-09-11T01:58:33.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;pandas是本书后续内容的首选库。它含有使数据清洗和分析工作变得更快更简单的数据结构和操作工具。pandas经常和其它工具一同使用，如数值计算工具NumPy和SciPy，分析库statsmodels和scikit-learn，和数据可视化库matplotlib。panda
-        
-      
-    
-    </summary>
-    
-      <category term="数据分析" scheme="https://lry89757.github.io/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-    
-      <category term="Pandas" scheme="https://lry89757.github.io/tags/Pandas/"/>
     
   </entry>
   

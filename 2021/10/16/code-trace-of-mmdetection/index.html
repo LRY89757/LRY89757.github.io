@@ -679,12 +679,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/pytorch/" target="_blank">
-                                <span class="chip bg-color">pytorch</span>
-                            </a>
-                        
                             <a href="/tags/mmdetection/" target="_blank">
                                 <span class="chip bg-color">mmdetection</span>
+                            </a>
+                        
+                            <a href="/tags/pytorch/" target="_blank">
+                                <span class="chip bg-color">pytorch</span>
                             </a>
                         
                             <a href="/tags/源码阅读/" target="_blank">
@@ -725,7 +725,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        6.8k
+                        6.9k
                     </div>
                     
 
@@ -1333,6 +1333,7 @@ MODELS <span class="token operator">=</span> Registry<span class="token punctuat
 </blockquote>
 </li>
 </ul>
+<p><strong>2021. 10.19更新：这方面怎么加载的数据实际上还是很有值得探讨的地方的，需要详细看看官方文档和我们的源码，其中源码部分注意一些高级的语法糖的应用。</strong></p>
 <h2 id="workflow"><a href="#workflow" class="headerlink" title="workflow"></a>workflow</h2><pre class="line-numbers language-python"><code class="language-python">    <span class="token keyword">if</span> len<span class="token punctuation">(</span>cfg<span class="token punctuation">.</span>workflow<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
         val_dataset <span class="token operator">=</span> copy<span class="token punctuation">.</span>deepcopy<span class="token punctuation">(</span>cfg<span class="token punctuation">.</span>data<span class="token punctuation">.</span>val<span class="token punctuation">)</span>
         val_dataset<span class="token punctuation">.</span>pipeline <span class="token operator">=</span> cfg<span class="token punctuation">.</span>data<span class="token punctuation">.</span>train<span class="token punctuation">.</span>pipeline
@@ -1808,7 +1809,7 @@ MODELS <span class="token operator">=</span> Registry<span class="token punctuat
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">153.2k</span> 字
+                <span class="white-color">156.6k</span> 字
             
 
             
