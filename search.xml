@@ -1308,15 +1308,15 @@
             
             <tag> pytorch </tag>
             
-            <tag> CNN </tag>
-            
-            <tag> LeNet </tag>
-            
             <tag> 神经网络 </tag>
             
             <tag> 机器学习 </tag>
             
+            <tag> CNN </tag>
+            
             <tag> CIFAR10 </tag>
+            
+            <tag> LeNet </tag>
             
         </tags>
       
@@ -1345,13 +1345,13 @@
             
             <tag> pytorch </tag>
             
-            <tag> CNN </tag>
-            
             <tag> 数据集 </tag>
             
             <tag> 神经网络 </tag>
             
             <tag> 机器学习 </tag>
+            
+            <tag> CNN </tag>
             
             <tag> python </tag>
             
@@ -1938,11 +1938,11 @@
       
         <tags>
             
+            <tag> 机器学习 </tag>
+            
             <tag> matplotlib </tag>
             
             <tag> numpy </tag>
-            
-            <tag> 机器学习 </tag>
             
             <tag> math </tag>
             
