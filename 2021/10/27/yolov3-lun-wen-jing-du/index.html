@@ -6,16 +6,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="算法刷题之栈系列P5788 单调栈, Dian.AI CV ADV NLP DeepLearning MachineLearning 逯润雨 Lurunyu CV,NLP,ADV 深度学习">
+    <meta name="keywords" content="YOLOv3论文精读, Dian.AI CV ADV NLP DeepLearning MachineLearning 逯润雨 Lurunyu CV,NLP,ADV 深度学习">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="题目描述
-给出项数为 n的整数数列 $a_{1 … n}$。
-定义函数 f(i) 代表数列中第 ii 个元素之后第一个大于 a**i 的元素的下标，若不存在，则 f(i)=0。
-试求出 f(1…n)。
-
-思路解析
-实际上这一道题和前面那一道">
+    <meta name="description" content="Preface
+论文地址：https://arxiv.org/abs/1804.02767
+参考博文：https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>算法刷题之栈系列P5788 单调栈 | LRY&#39;s Blog</title>
+    <title>YOLOv3论文精读 | LRY&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -567,13 +564,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        算法刷题之栈系列P5788 单调栈
+                        YOLOv3论文精读
                     </div>
                 </div>
             </div>
@@ -683,41 +680,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/C/" target="_blank">
-                                <span class="chip bg-color">C</span>
-                            </a>
-                        
-                            <a href="/tags/栈/" target="_blank">
-                                <span class="chip bg-color">栈</span>
-                            </a>
-                        
-                            <a href="/tags/洛谷/" target="_blank">
-                                <span class="chip bg-color">洛谷</span>
-                            </a>
-                        
-                            <a href="/tags/算法/" target="_blank">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                            <a href="/tags/模板/" target="_blank">
-                                <span class="chip bg-color">模板</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/算法题/" class="post-category" target="_blank">
-                                算法题
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -725,7 +693,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-08-04
+                    2021-10-27
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -739,14 +707,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        606
+                        1.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        2 Min
+                        5 Min
                     </div>
                     
                 
@@ -763,50 +731,49 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><a href="https://www.luogu.com.cn/problem/P5788" target="_blank" rel="noopener">题目</a>描述</h2><hr>
-<p>给出项数为 n的整数数列 $a_{1 … n}$。</p>
-<p>定义函数 <em>f</em>(<em>i</em>) 代表数列中第 i<em>i</em> 个元素之后第一个大于 <em>a**i</em> 的元素的<strong>下标</strong>，若不存在，则 f(i)=0。</p>
-<p>试求出 f<em>(1…</em>n)。</p>
-<p><a href="https://imgtu.com/i/fV9nYV" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/08/05/fV9nYV.png" alt></a></p>
-<h2 id="思路解析"><a href="#思路解析" class="headerlink" title="思路解析"></a>思路解析</h2><hr>
-<p>实际上这一道题和前面那一道<a href="https://lry89757.github.io/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1165-ri-zhi-fen-xi/">日志分析</a>是非常像的，不过这里这个需要我们先将所有的数字都读进a[3000005]，读进来之后从后往前开始，定义一个辅助数组b[3000005]用来存储相同位置的数比他大的第一个数的索引值，从最后一个数开始，最后一个数为0，然后往前，随意一个数a[i]先判断是否它比后面第一个数a[i+1]大，如果比后面第一个数a[i+1]小，那么那个辅助数组只需在该位置存储该位置的索引 i+1 就行；如果它比它后面第一个数a[i+1]大或是相等，那么就找比它后面那个数a[i+1]还大的数a[b[i+1]],由于是从后往前进行的，这个b[i+1]已经求出来了，如果我们的a[b[i+1]]，仍然不比a[i]大，那么就继续找a[b[b[i+1]]], 哈哈哈，有点套娃的感觉了，实际上就是找比a[b[i+1]]还大的第一个数，这么依次找下去，直到找到一个比a[i]大的数，将其索引存储到b[i]上， 或者直到找到一个b[j]为0，那么说明a[i]是目前最大数，没有比它更大的数，那么对应的b[i]就为0。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><hr>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> _CRT_SECURE_NO_WARNINGS</span>
-
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-
-<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3000002</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 用来存储数据</span>
-<span class="token keyword">int</span> b<span class="token punctuation">[</span><span class="token number">3000002</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 用来存储我们的答案</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 总共的个数</span>
-    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">// 读取数据</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    b<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// 如果后面的第一个数正好比他大</span>
-            b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">else</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> next <span class="token operator">=</span> b<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">>=</span> a<span class="token punctuation">[</span>next<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> next <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// // 如果后面第一个数没有比他更大的数，那么直接赋值为0,否则就一直找接下来的索引直到找到0或者找到合适的数为止</span>
-                next <span class="token operator">=</span> b<span class="token punctuation">[</span>next<span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-            b<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> next<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><blockquote>
+<p>论文地址：<a href="https://arxiv.org/abs/1804.02767" target="_blank" rel="noopener">https://arxiv.org/abs/1804.02767</a></p>
+<p>参考博文：<a href="https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b" target="_blank" rel="noopener">https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b</a></p>
+</blockquote>
+<p>尽管YOLOv3据说是写得最烂的一篇论文之一（并不是说内容烂，只是文章写的太随便了 ）但是这里面的内容还是值得一读的。尽管<del>我看这一篇 论文就跟一篇博客似的。。。</del></p>
+<p>文章虽然废话非常多，但是这些废话只是对于AI行业的发展与进步没有用，对于我们学习还是很有用的 。</p>
+<p>YOLO9000刚出的时候(16年)，他是最快的，也是最精确的之一。但是到18年的时候， 他已经不再是最精确那个梯队里面的了，像RetinaNet, SSD,在精确度(acuracy)上都比他好很多，不过YOLO9000仍然是最快的。</p>
+<p>而YOLOv3就相当于是一个速度与精确度的一个平衡（tradeoff），虽然不如之前的v2快了，但是准确率却增加了许多。</p>
+<p><em>But that speed has been traded off for boosts in accuracy in YOLO v3. While the earlier variant ran on 45 FPS on a Titan X, the current version clocks about 30 FPS. This has to do with the increase in *</em>complexity of underlying architecture called Darknet.***</p>
+<p>这里具体列一下主要的改进部分：</p>
+<ul>
+<li>Darknet-53</li>
+<li>Detection ata three Scales</li>
+<li>Better at detecting smaller objects</li>
+<li>Changes in Loss Function</li>
+<li>No more softmaxing the classes</li>
+<li></li>
+</ul>
+<h1 id="Darknet-53"><a href="#Darknet-53" class="headerlink" title="Darknet-53"></a>Darknet-53</h1><p>基于此之前我们先回顾下YOLOv2的Darknet-19:</p>
+<p>YOLOv2使用的是Darknet-19, 这个是由于作者当时觉得VGG式提取特征太耗费算力了，就自己设计了一个网络。</p>
+<p>Darknet-19是一个19层的网络用于分类另外加了11层用于目标检测。不过YOLOv2缺点在预测比较小的物体上比较有缺陷，这是因为我们的粒度特征被压缩的太小了，为了解决这个问题，YOLOv2当时选择了concatenate上一个层的feature map。来得到低层次的特征。除此之外，YOLOv2还缺了一些在目前目标检测上非常重要的trick，没有residual blocks,没有skip connections 以及没有upsampling.YOLOv3弥补了这么些缺陷。</p>
+<p>First, YOLO v3 uses a variant of Darknet, which originally has 53 layer network trained on Imagenet. For the task of detection, 53 more layers are stacked onto it, giving us a <strong>106 layer fully convolutional underlying architecture for YOLO v3</strong>. This is the reason behind the slowness of YOLO v3 compared to YOLO v2. Here is how the architecture of YOLO now looks like.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20211028193240.png" alt></p>
+<h1 id="Detection-at-three-Scales"><a href="#Detection-at-three-Scales" class="headerlink" title="Detection at three Scales"></a>Detection at three Scales</h1><p>新的网络结构加了上采样和skip connections。v3最重要的一点就是在3个不同的尺度上做检测。分别用来做小目标、中目标、大目标的检测。</p>
+<p>分别将我们的特征降维32、16、8倍。第一个检测用来在第82层开始检测，前81层将我们的网络下采样32倍，我们就得到了13×13大小的图片。检测时用的是1×1的kernel，将最终结果变为13×13×255.</p>
+<p>然后第二个检测在第94层开始，首先第79层的feature map经过一些卷积层之后通过上采样层×2变为了26×26的shape，然后该特征和第61层的feature map concatenate起来，最后仍然是通过1×1卷积层来最后得到26×26×255.</p>
+<p>最后一个检测也是类似的，第91层的 特征经过一些卷积层后再通过上采样得到一个52×52的一个tensor,接着和第36层的特征进行一个concatenate, 最后通过1×1的卷积层最后得到我们的52×52×255的特征。</p>
+<p>我们可以认为这三个不同的检测器用来检测3种不同尺度的特征。</p>
+<p>这里解释一下255怎么来得，255 = B × （5 + C）， 这里B=3，C=80. 就解释到这里。</p>
+<h1 id="More-bounding-boxes-per-image"><a href="#More-bounding-boxes-per-image" class="headerlink" title="More bounding boxes per image"></a>More bounding boxes per image</h1><p>对于YOLOv2来说，每一张416×416的图片，都会有13×13×5=845个anchor boxes。</p>
+<p>对于YOLOv3来说，预测的anchor boxes有13×13×3 × （1+4+16） = 10647个boxes。</p>
+<p>所以很明显，v3多了10几倍的预测框，所以结果就是速度会变得更慢。</p>
+<h1 id="Changes-in-Loss-Function"><a href="#Changes-in-Loss-Function" class="headerlink" title="Changes in Loss Function"></a>Changes in Loss Function</h1><p>I know this is intimidating, but notice the last three terms. Of them, the first one penalizes the objectness score prediction for bounding boxes responsible for predicting objects (the scores for these should ideally be 1), the second one for bounding boxes having no objects, (the scores should ideally be zero), and the last one penalises the class prediction for the bounding box which predicts the objects.</p>
+<p>The last three terms in YOLO v2 are the squared errors, whereas in YOLO v3, they’ve been replaced by cross-entropy error terms. In other words, <strong>object confidence and class predictions in YOLO v3 are now predicted through logistic regression.</strong></p>
+<p>While we are training the detector, for each ground truth box, we assign a bounding box, whose anchor has the maximum overlap with the ground truth box.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://miro.medium.com/max/534/0*u4UXzV2E_opHIkNs.png" alt="img"></p>
+<h1 id="留一个问题"><a href="#留一个问题" class="headerlink" title="留一个问题"></a>留一个问题</h1><p>Anchor作用：目前大方向Anchor-free，但是目前还是有Anchor的效果更好，那么Anchor的具体起到的作用是：</p>
+<ul>
+<li>以YOLO为例，提高了模型的精确率并且让模型更快更加方便地收敛。</li>
+<li>Anchor可以提高模型的recall，避免少检测到物体。</li>
+<li></li>
+</ul>
+<p>除此之外Anchor还有什么作用呢？</p>
 
             </div>
             <hr/>
@@ -957,7 +924,7 @@
                     </span>
                     <a href="https://lry89757.github.io" class="b-link-green">LRY's Blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p5788-dan-diao-zhan/" class="b-link-green">算法刷题之栈系列P5788 单调栈</a>
+                    <a href="/2021/10/27/yolov3-lun-wen-jing-du/" class="b-link-green">YOLOv3论文精读</a>
                 </p>
             </div>
 
@@ -979,76 +946,39 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/08/06/cifar10-shu-ju-ji-ji-du-qu/">
+                <a href="/2021/10/27/yolov3-lun-wen-jing-du/">
                     <div class="card-image">
                         
-                        <img src="/medias/banner/36.jpg" class="responsive-img" alt="CIFAR10 dataset and reading">
                         
-                        <span class="card-title">CIFAR10 dataset and reading</span>
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="YOLOv3论文精读">
+                        
+                        <span class="card-title">YOLOv3论文精读</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            I used the MNIST data set to practice before, and the most common python operation was used to read. This time I learned CNN and started to contact the DIFAR-10 data set and tried to use the framework pytorch to read data for classification.
+                            Preface
+论文地址：https://arxiv.org/abs/1804.02767
+参考博文：https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b
+
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-27
+                            </span>
                         <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/数据集/" class="post-category" target="_blank">
-                                    数据集
-                                </a>
-                            
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/pytorch/" target="_blank">
-                        <span class="chip bg-color">pytorch</span>
-                    </a>
-                    
-                    <a href="/tags/深度学习/" target="_blank">
-                        <span class="chip bg-color">深度学习</span>
-                    </a>
-                    
-                    <a href="/tags/CNN/" target="_blank">
-                        <span class="chip bg-color">CNN</span>
-                    </a>
-                    
-                    <a href="/tags/数据集/" target="_blank">
-                        <span class="chip bg-color">数据集</span>
-                    </a>
-                    
-                    <a href="/tags/神经网络/" target="_blank">
-                        <span class="chip bg-color">神经网络</span>
-                    </a>
-                    
-                    <a href="/tags/机器学习/" target="_blank">
-                        <span class="chip bg-color">机器学习</span>
-                    </a>
-                    
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                    <a href="/tags/CIFAR10/" target="_blank">
-                        <span class="chip bg-color">CIFAR10</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1059,31 +989,31 @@
                 Next&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/04/suan-fa-shua-ti-zhi-zhan-xi-lie-p1165-ri-zhi-fen-xi/">
+                <a href="/2021/10/23/dian10-1-hou-xue-xi-ji-lu-yolov2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="算法刷题之栈系列P1165-日志分析">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="YOLOv2论文研读">
                         
-                        <span class="card-title">算法刷题之栈系列P1165-日志分析</span>
+                        <span class="card-title">YOLOv2论文研读</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            题目描述:M 海运公司最近要对旗下仓库的货物进出情况进行统计。目前他们所拥有的唯一记录就是一个记录集装箱进出情况的日志。该日志记录了两类操作：第一类操作为集装箱入库操作，以及该次入库的集装箱重量；第二类操作为集装箱的出库操作。这些记录都严格
+                            YOLO9000引入了一系列改进，加入了anchor,加入了batch normalization， 加了多尺度的训练这些，这些对于之后的目标检测有着非常重要的影响，需要我们好好思考学习一下。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/算法题/" class="post-category" target="_blank">
-                                    算法题
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                    深度学习
                                 </a>
                             
                             
@@ -1093,24 +1023,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C</span>
-                    </a>
-                    
-                    <a href="/tags/栈/" target="_blank">
-                        <span class="chip bg-color">栈</span>
-                    </a>
-                    
-                    <a href="/tags/洛谷/" target="_blank">
-                        <span class="chip bg-color">洛谷</span>
-                    </a>
-                    
-                    <a href="/tags/算法/" target="_blank">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/tags/数学/" target="_blank">
-                        <span class="chip bg-color">数学</span>
+                    <a href="/tags/YOLO/" target="_blank">
+                        <span class="chip bg-color">YOLO</span>
                     </a>
                     
                 </div>
@@ -1258,13 +1172,6 @@
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
         <footer class="page-footer bg-color">
     <div class="container row center-align">

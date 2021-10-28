@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-10-23T13:06:48.110Z</updated>
+  <updated>2021-10-28T13:15:11.301Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>YOLOv3论文精读</title>
+    <link href="https://lry89757.github.io/2021/10/27/yolov3-lun-wen-jing-du/"/>
+    <id>https://lry89757.github.io/2021/10/27/yolov3-lun-wen-jing-du/</id>
+    <published>2021-10-27T06:19:00.000Z</published>
+    <updated>2021-10-28T13:15:11.301Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>YOLOv2论文研读</title>
     <link href="https://lry89757.github.io/2021/10/23/dian10-1-hou-xue-xi-ji-lu-yolov2/"/>
     <id>https://lry89757.github.io/2021/10/23/dian10-1-hou-xue-xi-ji-lu-yolov2/</id>
     <published>2021-10-23T07:15:18.000Z</published>
-    <updated>2021-10-23T13:06:48.110Z</updated>
+    <updated>2021-10-27T06:17:09.879Z</updated>
     
     <summary type="html">
     
@@ -105,7 +128,7 @@
     <link href="https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/"/>
     <id>https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/</id>
     <published>2021-10-16T05:20:47.000Z</published>
-    <updated>2021-10-19T11:56:41.966Z</updated>
+    <updated>2021-10-28T07:45:44.447Z</updated>
     
     <summary type="html">
     
@@ -560,36 +583,6 @@
       <category term="Faster RCNN" scheme="https://lry89757.github.io/tags/Faster-RCNN/"/>
     
       <category term="cv" scheme="https://lry89757.github.io/tags/cv/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我看今天谁还敢买小米旗舰！</title>
-    <link href="https://lry89757.github.io/2021/09/16/wo-kan-jin-tian-shui-huan-gan-mai-xiao-mi-qi-jian/"/>
-    <id>https://lry89757.github.io/2021/09/16/wo-kan-jin-tian-shui-huan-gan-mai-xiao-mi-qi-jian/</id>
-    <published>2021-09-16T05:03:26.000Z</published>
-    <updated>2021-09-16T05:15:07.365Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;昨天凌晨我和我室友聊天，突然聊到了小米的一些问题，然后突然一位来了几句“我看今天谁还敢买小米旗舰！！！”，他一顿破音我们赶忙让他小点声，毕竟凌晨一点多了，&lt;del&gt;我们可不敢再被隔壁宿舍举报一次&lt;/del&gt;。然后另一位室友就让我们看了一下所谓的“小米圣经”。woc，这声调配
-        
-      
-    
-    </summary>
-    
-      <category term="互联网" scheme="https://lry89757.github.io/categories/%E4%BA%92%E8%81%94%E7%BD%91/"/>
-    
-    
-      <category term="小米" scheme="https://lry89757.github.io/tags/%E5%B0%8F%E7%B1%B3/"/>
-    
-      <category term="互联网" scheme="https://lry89757.github.io/tags/%E4%BA%92%E8%81%94%E7%BD%91/"/>
-    
-      <category term="手机" scheme="https://lry89757.github.io/tags/%E6%89%8B%E6%9C%BA/"/>
     
   </entry>
   

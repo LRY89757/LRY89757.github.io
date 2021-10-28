@@ -840,6 +840,7 @@ B站讲解：https://www.bilibili.com/video/BV1Q64y1s74K
 <p>或许你会问为什么我们可以输入不同大小的图片而不改变我们的模型结构？这是因为我们这里并没有选择使用我们的全连接层，这里YOLOv2将模型末尾的两个全连接层去掉了，然后选择使用了一个Avgpool，YOLOv2用的实际上是自己研究出来的darknet(会在Faster那一节讲)，这就导致我们的不管输入是什么，输出的结果都只取决于最后的通道数。</p>
 <p>我们可以看看论文列出的Darknet-19结构（仅为分类部分）:</p>
 <p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20211023203839.png" alt="Darknet-19"></p>
+<h3 id="Compariasion-to-other-sota"><a href="#Compariasion-to-other-sota" class="headerlink" title="Compariasion to other sota"></a>Compariasion to other sota</h3><p><a href="https://imagelol.com/image/I0WrSH" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/10/27/I0WrSH.png" alt></a></p>
 <h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><p>这个是子豪兄在网上找的损失函数图然后做的笔记：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/moisten-the-rain/image01/raw/master/img/20211023195308.png" alt></p>
 <p>（未完待续）</p>
@@ -1015,50 +1016,36 @@ B站讲解：https://www.bilibili.com/video/BV1Q64y1s74K
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;Current
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/10/23/dian10-1-hou-xue-xi-ji-lu-yolov2/">
+                <a href="/2021/10/27/yolov3-lun-wen-jing-du/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="YOLOv2论文研读">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="YOLOv3论文精读">
                         
-                        <span class="card-title">YOLOv2论文研读</span>
+                        <span class="card-title">YOLOv3论文精读</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            YOLO9000引入了一系列改进，加入了anchor,加入了batch normalization， 加了多尺度的训练这些，这些对于之后的目标检测有着非常重要的影响，需要我们好好思考学习一下。
+                            Preface
+论文地址：https://arxiv.org/abs/1804.02767
+参考博文：https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b
+
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-10-27
+                        </span>
                         <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/深度学习/" class="post-category" target="_blank">
-                                    深度学习
-                                </a>
-                            
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/YOLO/" target="_blank">
-                        <span class="chip bg-color">YOLO</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1295,7 +1282,7 @@ B站讲解：https://www.bilibili.com/video/BV1Q64y1s74K
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">156.6k</span> 字
+                <span class="white-color">157.9k</span> 字
             
 
             
