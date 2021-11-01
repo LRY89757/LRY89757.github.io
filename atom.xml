@@ -121,9 +121,9 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
-    
       <category term="源码解读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/"/>
+    
+      <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
     
   </entry>
   
@@ -162,7 +162,7 @@
     <link href="https://lry89757.github.io/2021/10/13/self-attention-is-all-my-need/"/>
     <id>https://lry89757.github.io/2021/10/13/self-attention-is-all-my-need/</id>
     <published>2021-10-13T12:45:13.000Z</published>
-    <updated>2021-10-16T16:18:55.591Z</updated>
+    <updated>2021-10-31T11:04:38.323Z</updated>
     
     <summary type="html">
     
@@ -210,6 +210,60 @@
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="mmdet" scheme="https://lry89757.github.io/tags/mmdet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++笔记</title>
+    <link href="https://lry89757.github.io/2021/10/12/c-bi-ji/"/>
+    <id>https://lry89757.github.io/2021/10/12/c-bi-ji/</id>
+    <published>2021-10-12T11:36:52.000Z</published>
+    <updated>2021-11-01T10:20:26.395Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://lry89757.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="https://lry89757.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>practice mmdet(2)</title>
+    <link href="https://lry89757.github.io/2021/10/10/practice-mmdet-2/"/>
+    <id>https://lry89757.github.io/2021/10/10/practice-mmdet-2/</id>
+    <published>2021-10-10T12:02:20.000Z</published>
+    <updated>2021-11-01T12:56:39.959Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Test-existing-models-on-standard-datasets&quot;&gt;&lt;a href=&quot;#Test-existing-models-on-standard-datasets&quot; class=&quot;headerlink&quot; title=&quot;Test
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="mmdetection" scheme="https://lry89757.github.io/tags/mmdetection/"/>
     
   </entry>
   
@@ -294,6 +348,36 @@
       <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
     
       <category term="mmdet" scheme="https://lry89757.github.io/tags/mmdet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>YOLOv1精读</title>
+    <link href="https://lry89757.github.io/2021/09/30/yolov1-jing-du/"/>
+    <id>https://lry89757.github.io/2021/09/30/yolov1-jing-du/</id>
+    <published>2021-09-30T13:02:11.000Z</published>
+    <updated>2021-10-01T14:23:20.961Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
+    
+      <category term="论文解读" scheme="https://lry89757.github.io/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
     
   </entry>
   
@@ -463,9 +547,9 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="NLP" scheme="https://lry89757.github.io/tags/NLP/"/>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="seq2seq_translation" scheme="https://lry89757.github.io/tags/seq2seq-translation/"/>
     
@@ -496,97 +580,6 @@
       <category term="latex" scheme="https://lry89757.github.io/tags/latex/"/>
     
       <category term="公式" scheme="https://lry89757.github.io/tags/%E5%85%AC%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>backbone neck and head</title>
-    <link href="https://lry89757.github.io/2021/09/16/backbone-neck-and-head/"/>
-    <id>https://lry89757.github.io/2021/09/16/backbone-neck-and-head/</id>
-    <published>2021-09-16T13:49:26.000Z</published>
-    <updated>2021-09-16T14:02:17.038Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;基于深度学习的现在目标检测算法中有三个组件：Backbone、Neck和Head，乍一看很让人不理解：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Backbone,
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
-      <category term="名词" scheme="https://lry89757.github.io/tags/%E5%90%8D%E8%AF%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>论文之YOLO系列</title>
-    <link href="https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/"/>
-    <id>https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/</id>
-    <published>2021-09-16T11:27:26.000Z</published>
-    <updated>2021-10-10T10:13:09.707Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本博客记录了自己的一些YOLO论文的阅读。&lt;/p&gt;
-&lt;h1 id=&quot;YOLOv1&quot;&gt;&lt;a href=&quot;#YOLOv1&quot; class=&quot;headerlink&quot; title=&quot;YOLOv1&quot;&gt;&lt;/a&gt;YOLOv1&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;论文地址：&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
-    
-      <category term="论文解读" scheme="https://lry89757.github.io/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>faster rcnn的编解码过程</title>
-    <link href="https://lry89757.github.io/2021/09/16/faster-rcnn-de-bian-jie-ma-guo-cheng/"/>
-    <id>https://lry89757.github.io/2021/09/16/faster-rcnn-de-bian-jie-ma-guo-cheng/</id>
-    <published>2021-09-16T07:37:24.000Z</published>
-    <updated>2021-09-16T07:40:36.407Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;————————————————&lt;br&gt;版权声明：本文为CSDN博主「shuyeah」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。&lt;br&gt;原文链接：&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="Faster RCNN" scheme="https://lry89757.github.io/tags/Faster-RCNN/"/>
-    
-      <category term="cv" scheme="https://lry89757.github.io/tags/cv/"/>
     
   </entry>
   
