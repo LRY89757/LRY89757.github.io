@@ -121,9 +121,9 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="源码解读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/"/>
-    
       <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
+    
+      <category term="源码解读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/"/>
     
   </entry>
   
@@ -149,9 +149,9 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="mmdetection" scheme="https://lry89757.github.io/tags/mmdetection/"/>
-    
       <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
+    
+      <category term="mmdetection" scheme="https://lry89757.github.io/tags/mmdetection/"/>
     
       <category term="源码阅读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
     
@@ -218,7 +218,7 @@
     <link href="https://lry89757.github.io/2021/10/12/c-bi-ji/"/>
     <id>https://lry89757.github.io/2021/10/12/c-bi-ji/</id>
     <published>2021-10-12T11:36:52.000Z</published>
-    <updated>2021-11-01T10:20:26.395Z</updated>
+    <updated>2021-11-03T13:02:53.405Z</updated>
     
     <summary type="html">
     
@@ -547,9 +547,9 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="NLP" scheme="https://lry89757.github.io/tags/NLP/"/>
-    
       <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="NLP" scheme="https://lry89757.github.io/tags/NLP/"/>
     
       <category term="seq2seq_translation" scheme="https://lry89757.github.io/tags/seq2seq-translation/"/>
     

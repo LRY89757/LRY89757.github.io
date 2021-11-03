@@ -718,7 +718,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        2.8k
+                        2.9k
                     </div>
                     
 
@@ -747,9 +747,17 @@
 <blockquote>
 <p>本笔记不同于其他的笔记，这个笔记主要是给我自己看的，由于我之前也有一些关于类的知识（只不过是python AI torch等库方面用到的一些类），所以这里可能不是入门的Blog。</p>
 </blockquote>
+<p>可能这些很多的基础知识在我们编写绝大多数代码的时候都没什么用，但是知乎有大佬曾说过这么一句话，我认为还非常受用：</p>
+<blockquote>
+<p>“<em>我觉得扎实基础知识可以让你在阅读代码的时候不蒙混过关，不用每次都花费大量时间琢磨代码的用意，最后仍然蒙混过关，浪费时间又没进步。磨刀不误砍柴功，学习基础知识总没错的</em>。”</p>
+</blockquote>
 <p>关键字<code>union</code>, <code>class</code>, <code>struct</code>都可以用来声明定义类。类将数据成员、函数成员、类型成员封装起来，并提供可供外部访问的缺口，降低了程序复杂性。</p>
 <p>类有<code>attribute</code>和<code>method</code>。通常我们会将普通变量封装起来，不让普通用户访问。而我们会利用公有的方法来修改普通变量。类实例化后会调用构造函数来初始化一些值。我们的构造函数就像是python里的<code>__init__</code>.而我们的构造函数一般都是公有的，并且没有返回值。而析构函数是用来释放内存的、毁灭对象的，<strong>析构函数与类名同名并且名前有一个~符号。</strong>我们应该避免析构函数执行多次执行。</p>
 <p>C++类的外部定义类的函数的时候需要在函数名外面加一个<code>类名::</code>. </p>
+<blockquote>
+<p><strong>global reference: PPT by Lianghai King😘😛</strong></p>
+</blockquote>
+<p><strong>M++修正：开工函数、收工函数表示startup函数与terminate函数，c/c++中分别在main之前和之后执行的两个函数，详见MSDN：<a href="https://msdn.microsoft.com/en-us/library/1d3swxkt.aspx" target="_blank" rel="noopener">C++ Program Startup and Termination</a></strong></p>
 <h1 id="Intro-fundamentals"><a href="#Intro-fundamentals" class="headerlink" title="Intro fundamentals"></a>Intro fundamentals</h1><h2 id="类的定义与声明部分"><a href="#类的定义与声明部分" class="headerlink" title="类的定义与声明部分"></a>类的定义与声明部分</h2><ul>
 <li>类的<strong>声明、定义、实现不是一个概念！</strong><ul>
 <li>类的声明由保留字<code>class struct union</code>.加上类的名称构成。</li>
@@ -938,6 +946,111 @@ void main(void) {
     char s[] = “abc”;           //对，等价 char s[]("abc")
     char *p = “abc”;            //错，等价 char *p(“abc”)，正确的应该是const char* p = “abc”
 }                //注意：构造数组和构造指针是不一样的！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="new-and-delete"><a href="#new-and-delete" class="headerlink" title="new and delete"></a>new and delete</h3><h4 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h4><p>首先介绍一下关于free, malloc, new, delete:</p>
+<ul>
+<li>malloc为函数，负责分配堆空间内存，只分配内存，不调用构造函数构造对象</li>
+<li>free也为函数，负责 释放内存，但是同样不调用析构函数析构对象。所以以上两者在类对象有指针对象的时候容易发生内存泄漏。</li>
+<li>new<strong>为运算符</strong>，负责分配对象内存并分配内存之后调用构造函数构造函数。相当于malloc+调用构造函数。</li>
+<li>delete<strong>为运算符</strong>，负责释放内存，释放内存前还会调用析构函数析构对象。</li>
+</ul>
+<h4 id="内存管理区别"><a href="#内存管理区别" class="headerlink" title="内存管理区别"></a>内存管理区别</h4><ul>
+<li>内存管理的区别：<ul>
+<li>C不必实现函数 malloc、free；C++必须实现运算符 new、delete。</li>
+<li>内存分配：malloc为函数，参数为值表达式；new为运算符，操作数为类型表达式，先底层调用malloc，然后调用构造函数；</li>
+<li>用 “new 类型表达式 { }” 可使分配的内存清零，若“{ }”中有数值可用于初始化。 </li>
+<li>内存释放：free为函数，参数为指针类型值表达式，直接释放内存；delete为运算符，操作数为指针类型值表达式，先调用析构函数，然后底层调用 free。</li>
+<li>如为简单类型(没有构造、析构函数)分配和释放内存，则new和malloc、 delete和free没有区别，可混合使用：比如new分配的内存用free释放。</li>
+<li>无法用malloc代替new初始化, new调用的构造函数可维护多态。</li>
+<li>注意delete的新参类型应为const void *，因为它可接受任意指针实参</li>
+</ul>
+</li>
+</ul>
+<h4 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h4><p>简单看一下new和 delete的应用：</p>
+<p>new &lt;类型表达式&gt;  后接()或{}用于初始化或构造。{}可用于数组元素</p>
+<ul>
+<li>类型表达式：比如说我们定义int * p = new int; 这就等价于 int * p = new int(0)</li>
+<li>数组形式仅第一维下标可为任意表达式，其他维必须是常量表达式，这里举一个小例子：int (*q)[6][8]=new int[x+20][6][8];这个表达式代表q指向一个int型大小为6×8的数组。这里给它分配空间为[x+20][6][8]</li>
+<li>为对象数组分配内存时，必须调用参数无参构造函数</li>
+</ul>
+<p>delete &lt;指针&gt;</p>
+<ul>
+<li><strong>指针指向一个非数组的单个实体</strong>， 比如说delete p;可能会调用析构函数（在这是一个对象，存在析构函数的情况下），而对于数组型的删除在下面说。</li>
+</ul>
+<p>delete &lt;数组指针&gt;</p>
+<ul>
+<li>指针指向任意维的数组都直接delete [] q就OK</li>
+<li>如为对象数组，对所有对象调用析构函数。</li>
+<li>如果数组元素为简单类型，则可以用delete&lt;指针&gt;来代替。</li>
+</ul>
+<h4 id="特殊用法"><a href="#特殊用法" class="headerlink" title="特殊用法"></a>特殊用法</h4><ul>
+<li>new 还可以对已经析构的变量重新构造。可以减少对象的说明个数，提高内存的使用效率。<strong>(不是所有C++编译器都支持)</strong></li>
+</ul>
+<pre class="line-numbers language-c++"><code class="language-c++"> STRING x ("Hello!"), *p = &x;
+
+ x. ~STRING ( );
+
+ new (&x) STRING ("The World");
+
+ new (p) STRING ("The World");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>这种用法可以节省内存或栈的空间。 </li>
+</ul>
+<h3 id="Hidden-parameters-this"><a href="#Hidden-parameters-this" class="headerlink" title="Hidden parameters: this"></a>Hidden parameters: <strong>this</strong></h3><ul>
+<li><p>this指针是一个特殊的指针，它是普通函数成员隐含的第一个参数，其类型是指向要调用该函数成员的对象的const指针。</p>
+</li>
+<li><p>当对象调用函数成员时，对象的地址作为函数的第一个实参首先压栈，通过这种方式将对象地址传递给隐含参数this。</p>
+</li>
+<li><p>构造函数和析构函数的this参数类型固定。例如A::~A()的this参数类型为A *const this; //析构函数的this指向可写对象，但this本身是只读的</p>
+</li>
+<li><p>注意：可用<em>this来引用或访问调用该函数成员的普通、const或volatile对象；类的静态函数成员没有隐含的this指针；this*</em>指针不允许移动**。</p>
+</li>
+</ul>
+<h3 id="对象构造与析构"><a href="#对象构造与析构" class="headerlink" title="对象构造与析构"></a>对象构造与析构</h3><ul>
+<li><strong>我们定义的类中含有只读和引用实例数据成员的时候， 如果这些只读和引用实例数据成员，并且B类所有构造函数都存在没有默认值的参数，则类A必须自定义构造函数来调用类B的有参构造函数。</strong>， 只读成员比如说const int a; int const * p;这类。而关于引用示例数据成员比如说int&amp;B类似？这也解释了为什么我们后来的一些只读对象只能在花括号{}前面，函数头加一个“：”后面进行初始化了。只读和引用成员不可以在{}里面进行赋值。</li>
+<li>对于初始化顺序的问题，对于绝大多数编译器来说，<strong>基类以及示例数据成员按照其在类中定义的顺序初始化而不是出现在构造函数中赋值的顺序！</strong> 因此有这么一点建议，我们最好按照公认的初始化顺序对虚基类、基类和是实例数据成员进行初始化，优先级：<strong>虚基类高于基类高于实例数据成员</strong>。</li>
+</ul>
+<p><em>以上为需要注意的点</em></p>
+<p>我们可以看个例子：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">// 【例4.17】包含只读、引用及对象成员的类。
+    class A {
+        int  a = 0;         //数据成员可以在定义时初始化
+    public:
+        A(int x) { a = x;}      //重载构造函数，自动内联
+        A( ) { a = 0; }            //重载构造函数，自动内联
+    };
+    class B {
+        const  int  b = 1;      //数据成员可以在定义时初始化
+        int  c, &d, e, f;     //b, d, g, h只能在构造函数体前初始化
+        A    g, h;     //数据成员按定义顺序b, c, d, e, f, g, h初始化
+public:  //类B构造函数体前未出现h，故h用A( )初始化
+    B(int y): d(c), c(y), g(y) , b(y), e(y) {  //自动内联
+         c += y;            
+        f = y; 
+    }  //f被赋值为y
+};
+void main(void) {
+    int x(5);                          //int x=5 等价于 int x(5)
+    A a(x), y = 5;                       //A y=5 等价于 A y(5)
+    A *p = new A[3] { 1, A(2) };  //初始化的元素为 A(1),  A(2), A(0)
+    B b(7),  z = (7, 8);                 //B z=(7, 8) 等价于 B z(8), 等号右边必单值
+    delete [ ] p;                     //防止内存泄漏：new 产生的所有对象必须用 delete 释放
+}                                             //故(7, 8)为C的扩号表达式，(7, 8) = 8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以下为金良海老师总结的知识点：</p>
+<ul>
+<li><p>如未定义或生成构造函数，则可以用”{ }”的形式初始化。联合仅需初始化第一个成员。</p>
+</li>
+<li><p>对象数组的每个元素都必须初始化，默认采用无参构造函数初始化。</p>
+</li>
+<li><p><strong>单个参数的构造函数能自动转换单个实参值成为对象。</strong></p>
+</li>
+<li><p>若类未自定义构造函数，且类包含私有实例数据成员时，编译会自动生成构造函数。</p>
+</li>
+<li><p>一旦自定义构造函数，将不能接受编译生成的构造函数，除非用default等接受。</p>
+</li>
+<li><p>用常量对象做实参，总是优先调用参数为&amp;&amp;类型的构造函数；用变量对象做实参，总是优先调用参数为&amp;类型的构造函数。</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/11/03/IKuvUU.png" alt="PPT by Lianghai King"></p>
 <h1 id="Inline-anonymous-classes-and-bits"><a href="#Inline-anonymous-classes-and-bits" class="headerlink" title="Inline, anonymous classes and bits"></a>Inline, anonymous classes and bits</h1><p>内联、匿名类及位段</p>
 <p>内联来看，这个知识本身可能用处并没有那么大，但是知乎上某大佬说得好：</p>
 <blockquote>
@@ -947,7 +1060,375 @@ void main(void) {
 <p><a href="https://zhuanlan.zhihu.com/p/50812510" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/50812510</a></p>
 <p><a href="https://blog.csdn.net/zqixiao_09/article/details/50877383" target="_blank" rel="noopener">https://blog.csdn.net/zqixiao_09/article/details/50877383</a></p>
 <p><a href="https://www.runoob.com/cplusplus/cpp-inline-functions.html" target="_blank" rel="noopener">https://www.runoob.com/cplusplus/cpp-inline-functions.html</a></p>
-<p>本次博客到此为止，我还要润去学电路理论呢😭😭😭😭😭</p>
+<p><del>本次博客到此为止，我还要润去学电路理论呢😭😭😭😭😭</del></p>
+<p>2021.11.03更新</p>
+<p>内联实际上知识点并不是非常复杂， 这里先将内联考试要用的东西说明一下，接着来说明底层一些原理。</p>
+<ol>
+<li><p>函数成员的内联说明：</p>
+<ul>
+<li>在类体内定义的任何函数成员都会自动内联</li>
+<li>在类内或类外使用inline保留字说明函数成员。</li>
+</ul>
+</li>
+<li><p>内联失败： </p>
+<ul>
+<li>有分支类语句</li>
+<li>定义在使用后</li>
+<li>取函数地址</li>
+<li>定义纯虚函数</li>
+</ul>
+</li>
+<li><p>内联函数成员作用域局限于当前的代码文件</p>
+</li>
+<li><p>匿名类函数成员只可以在类体内定义</p>
+</li>
+<li><p>函数局部类的成员只能 在类体内定义，某些编译器不支持局部类。</p>
+</li>
+</ol>
+<p>这些知识似乎都比较冷，暂时没兴趣看，过段时间单独参考以上列出博客写一篇关于底层实现内联的说明博客。</p>
+<h1 id="member-function-pointer"><a href="#member-function-pointer" class="headerlink" title="member function pointer"></a>member function pointer</h1><p><em>类成员指针</em></p>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><ul>
+<li>类成员指针：<a href="https://zhuanlan.zhihu.com/p/367373924" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/367373924</a></li>
+<li>类成员函数指针：<a href="https://zh.wikipedia.org/wiki/%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E7%B1%BB%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88</a></li>
+<li>C++类成员指针：<a href="https://segmentfault.com/a/1190000022583207" target="_blank" rel="noopener">https://segmentfault.com/a/1190000022583207</a></li>
+<li>类成员函数指针：<a href="https://www.runoob.com/w3cnote/cpp-func-pointer.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/cpp-func-pointer.html</a></li>
+</ul>
+<h2 id="Preface-1"><a href="#Preface-1" class="headerlink" title="Preface"></a>Preface</h2><p><em>“指向类成员的指针”这个描述中有“指针”这个术语，它其实既不包含地址，行为也不像指针。怎么理解呢？与常规指针不同，一个指向类成员的指针并不指向一个具体的内存位置，它指向的是一个类的特定成员，而不是指向一个特定对象的特定成员。通常最清楚的说法是：把数据成员的指针看做为一个偏移量，它告诉你， 一个特定成员的位置距离对像的起点有多少个字节。而且在大多数编译器中都把数据成员的指针实现为一个整数，其中包含被指向成员的偏移量，另外再加1(这里是为了让0值也可以表示一个空的数据成员)。</em></p>
+<p><em>另外 静态成员函数其实跟普通函数一样，所以跟类成员指针无关。</em></p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+
+using namespace std;
+
+class A
+{
+public:
+    int i = 12;
+    int AFun1(int c)
+    {
+        return i + c;
+    }
+    static int AStaticFun()
+    {
+        return 12;
+    }
+};
+
+int main()
+{
+    int A::*p = &A::i;             //p只是表示A类中i字段的位置。是类的位置，跟对象无关，所以p还并没指向任何内存
+    int (A::*fp)(int) = &A::AFun1; //fp指向了成员函数AFun1,但是成员函数得需要对象才能调用。
+    int (*sfp)() = &A::AStaticFun; //跟普通函数指针一样
+
+    A a;
+
+    cout << *p;         //错误，p并没指向任何内存
+    cout << (*fp)();    //错误，fp确实指向成员函数，但是调用成员函数需要对象来调用
+    cout << a.*p;       //"12" 正确
+    cout << (a.*fp)(8); //"20" 12+8 正确
+    cout << (*sfp)();   //"12" 正确
+
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个目前用处没有那么大，但是在一些事件驱动和多线程应用被广泛用于调回回调函数。</p>
+<p>下面详细解释一下：</p>
+<h2 id="实例成员指针"><a href="#实例成员指针" class="headerlink" title="实例成员指针"></a>实例成员指针</h2><ul>
+<li><p><strong>实例成员指针是成员相对于对象首地址的偏移</strong>，不是真正代表地址的指针。他不会指向任何地址。</p>
+</li>
+<li><p><strong>实例成员指针不能移动</strong>：</p>
+<ul>
+<li>数据成员的大小和类型不一定相同，移动后指向的内存可能是某个成员的一部分，或者跨越两个（或以上）成员的内存；</li>
+<li>即使移动前后指向的成员的类型正好相同，这两个成员的访问权限有可能不同，移动后可能出现越权访问问题。</li>
+</ul>
+</li>
+<li><p><strong>实例成员指针不能转换类型</strong>， 否则可以通过类型转换间接实现实例成员指针移动。</p>
+</li>
+</ul>
+<p>【例5.2】本例说明普通成员指针不能移动。</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+
+using namespace std;
+
+struct A
+{
+    int i; //公有的成员i
+private:
+    long j;
+
+public:
+    int f()
+    {
+        cout << "f() ";
+        return 1;
+    }
+    static int h(){cout<<"h()"<<endl;return 0;}
+private:
+    void g() { cout << "g() "; }
+
+} a;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">void main(void) {
+    int  A::*pi = &A::i;         //普通数据成员指针pi指向public成员A::i
+    int (A::*pf)( ) = &A::f;    //普通函数成员指针pf指向函数成员A::f
+    int  x = a.*pi;              //等价于 x=a.*(&A::i) = a.A::i = a.i
+    x = (a.*pf)( );               //.*的优先级低，故用(a.*pf)
+    pi++;                    //错误， pi不能移动，否则指向私有成员j
+    pf += 1;              //错误， pf不能移动
+    long y = (long) pi;     //错误，pi不能转换为长整型
+    x = x+ sizeof(int)             //对
+    pi = (int A::*)x;    //错误，x不能转换为成员指针
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">int main()
+{
+    A a;
+    int A:: * p = &A::i; // 成员指针，指向成员变量i
+    int (A::*q)() = &A::f;  // 成员指针，指向成员函数f()
+    int (*t)() = &A::h;  // 非成员指针，仅仅指向普通的函数。
+
+    (a.*q)(); // 注意调用时.*这个符号优先级比较低所以要加一个括号。另外注意需要借助于特定的实例来进行相关的调用！
+    (*t)(); // 普通函数的调用直接调用就行，不需要借助实例
+
+    return 0;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="const、volatile、mutable"><a href="#const、volatile、mutable" class="headerlink" title="const、volatile、mutable"></a>const、volatile、mutable</h1><h2 id="preface"><a href="#preface" class="headerlink" title="preface"></a>preface</h2><ul>
+<li><p>const 只读，volatile 易变，mutable 机动。</p>
+</li>
+<li><p>const 和 volatile 可以定义变量、类的数据成员、函数成员及普通函数的参数和返回类型。</p>
+</li>
+<li><p>mutable 只能用来定义类的数据成员。</p>
+</li>
+<li><p><strong>含const实例数据成员的类必须定义构造函数</strong> (如果const实例数据成员没有设定缺省值)，且数据成员必须在构造函数参数表之后，函数体之前初始化。</p>
+</li>
+<li><p><strong>含 volatile、mutable 数据成员的类则不一定需要定义构造函数。</strong></p>
+</li>
+</ul>
+<pre class="line-numbers language-c++"><code class="language-c++">//【例5. 3】定义导师类，允许改名但不允许改性别。
+#include <string.h>
+#include <iostream>
+using namespace std;
+
+class TUTOR
+{
+    char name[20];
+    const char sex; //性别为只读成员
+    int salary;
+
+public:
+    TUTOR(const char *name, const TUTOR *t);
+    TUTOR(const char *name, char gender, int salary);
+    const char *getname() { return name; }
+    char *setname(const char *name);
+};
+
+TUTOR::TUTOR(const char *n, const TUTOR *t) : sex(t->sex)
+{
+    strcpy(name, n);
+    salary = t->salary;
+} //只读成员sex必须在构造函数体之前初始化
+
+TUTOR::TUTOR(const char *n, char g, int s) : sex(g)
+{
+    salary = s;
+    strcpy(name, n);
+} //非只读成员sarlary可在函数体前初始化，也可在体内再次赋值
+
+char *TUTOR::setname(const char *n)
+{
+    return strcpy(name, n); //strcpy的返回值为name
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">int main(void)
+{
+    TUTOR wang("wang", 'F', 2000);
+    TUTOR yang("yang", &wang);
+    // *wang.getname() = ‘W’; //错误:不能改wang.getname( )指的字符
+    *yang.setname("Zang") = 'Y';
+
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="then"><a href="#then" class="headerlink" title="then"></a>then</h2><ul>
+<li><p>普通函数成员参数表后出现const或volatile，修饰this指向的对象。出现const表示this指向的对象(其非静态数据成员)不能被函数修改，但可以修改this指向对象的非只读类型的静态数据成员。</p>
+</li>
+<li><p>构造或析构函数的this不能被说明为 const 或 volatile 的 (即要构造或析构的对象应该能被修改，且状态要稳定不易变)。</p>
+</li>
+<li><p>对隐含参数的修饰还会会影响函数成员的重载：</p>
+</li>
+<li><p>普通对象应调用参数表后不带 const 和 volatile 的函数成员；</p>
+</li>
+<li><p>const 和 volatile 对象应分别调用参数表后出现const和volatile的函数成员，否则编译程序会对函数调用发出警告。</p>
+</li>
+</ul>
+<pre class="line-numbers language-c++"><code class="language-c++">//【例5.4】参数表后出现const和volatile。
+#include <iostream>
+usnig namespace std;
+class A
+{
+    int a;
+    const int b; //b只能在构造函数初始化
+public:
+    int f()
+    {
+        a++;      //this类型为 A * const  this, 指向的
+        return a; //对象可修改(故其普通成员a可修改)，只读成员b不可改
+    }
+    int f() const
+    {             //a++;     //this类型为const A * const  this，指向的对象
+        return a; //不可改，其普通成员a不可改。同上, b不可改
+    }
+    int f() volatile
+    {        //this类型为volatile A * const this，指向的对象可修改，
+        a++; //其普通成员a可修改。只读成员b不可改
+        return a;
+    }
+
+    int f() const volatile
+    { //this类型为const volatile A* const this，
+        //a++;                        //不能修改普通成员a。同上，只读成员b不可改
+        return a;
+    }
+    A(int x)
+    ：b(x) { a = x; }
+} x(3);                //等价于A  x(3), x可修改,
+
+const A y(6);          // y、z不可改
+const volatile A z(8); // x、y、z由startup函数构造、terminate函数析构
+
+int main(void)
+{
+    x.f(); //普通对象x调用int f( ): 指向的对象可修改
+    y.f(); //只读对象y调用int f( ) const:指向的对象不可修改
+    z.f(); //只读易变对象z调用int f( ) const volatile
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意不同的定义这里改变的是我们的this指针的类型从而导致this指针指向对象的类型改变（实际上是this指针类型的改变导致我们无法更改其指向内容的值）。</p>
+<h2 id="Parallel"><a href="#Parallel" class="headerlink" title="Parallel"></a>Parallel</h2><p>还是值得作为一个知识点来理解的。对之后并行有好处。</p>
+<ul>
+<li><p>函数成员参数表后出现volatile，常表示调用该函数成员的对象是挥发对象，这通常意味着存在并发执行的进程。</p>
+</li>
+<li><p>C++编译程序几乎都支持编写并发进程，编译时不对挥发对象作任何访问优化，即不利用寄存器存放中间计算结果，而是直接访问对象内存以便获得对象的最新值。  </p>
+</li>
+<li><p>函数成员参数表后出现 const 时，不能修改调用对象的非静态数据成员，但如果该数据成员的存储类为 mutable，则该数据成员就可以被修改。</p>
+</li>
+<li><p>mutable 说明数据成员为机动数据成员，该类成员不能用 const、volatile 或 static 修饰。 </p>
+</li>
+</ul>
+<h2 id="amp-and-amp-amp"><a href="#amp-and-amp-amp" class="headerlink" title="&amp; and &amp;&amp;"></a>&amp; and &amp;&amp;</h2><p><em>有址引用变量和无址引用变量。</em></p>
+<ul>
+<li><p>有址引用变量<strong>(&amp;)只是被引用对象的别名，被引用对象自己负责构造和析构，该引用变量(逻辑上不分配内存的实体)不必构造和析构。</strong></p>
+</li>
+<li><p>无址引用变量<strong>(&amp;&amp;)常用来引用缓存中的常量对象，该引用变量(逻辑上不分配缓存的实体)不必构造和析构。无址引用变量可为左值，但若同时用const定义则为传统右值。</strong></p>
+</li>
+<li><p>如果<strong>A类型的有址引用变量r引用了new生成的(一定有址的）对象x，则应使用delete &amp;r析构x，同时释放其所占内存。</strong></p>
+</li>
+<li><p>r.~A<strong>( )仅析构x而不释放其所占内存(由new分配)，造成内存泄漏。应该用</strong> delete &r;</p>
+</li>
+<li><p><strong>引用变量必须在定义的同时初始化</strong>，引用参数则在调用函数时初始化。有址传统左值引用变量和参数必须用同类型的左值表达式初始化。</p>
+</li>
+</ul>
+<h2 id="mutable"><a href="#mutable" class="headerlink" title="mutable"></a>mutable</h2><ul>
+<li><p>mutable 仅用于说明实例数据成员为机动成员，<strong>不能用于静态数据成员的。</strong></p>
+</li>
+<li><p>所谓机动是指在整个对象为只读状态时，其每个成员理论上都是不可写的，但若某个成员是<strong>mutable成员，则该成员在此状态是可写的。</strong></p>
+</li>
+<li><p>例如，产品对象的信息在查询时应处于只读状态，但是其成员“查询次数”应在此状态可写，故可以定义为“机动”成员。</p>
+</li>
+<li><p>保留字<strong>mutable还可用于定义Lambda表达式的参数列表是否允许在Lambda的表达式内修改捕获的外部的参数列表的值。</strong></p>
+</li>
+</ul>
+<p>a very simple example:</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+using namespace std;
+
+class PRODUCT {
+    char *name;    //产品名称
+    int  price;        //产品价格
+    int  quantity;    //产品数量
+    mutable int count;    //产品查询次数
+public:
+    PRODUCT(const char* n, int m, int p);
+    int buy(int money);
+    void get(int& p, int& q)const;
+    ~PRODUCT(void);
+};
+void PRODUCT::get(int &p, int &q) const {  //const  PRODUCT *const this
+    p = price;     q = quantity;   //当前对象为const对象，故其成员不能被修改
+    count++;                        //但count为mutable成员，可以修改
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Static-data-amp-amp-function-member"><a href="#Static-data-amp-amp-function-member" class="headerlink" title="Static data&amp;&amp;function member"></a>Static data&amp;&amp;function member</h1><h2 id="static-data-member"><a href="#static-data-member" class="headerlink" title="static data member"></a>static data member</h2><ul>
+<li><p>静态数据成员是使用static说明或定义的类的数据成员。</p>
+</li>
+<li><p>静态数据成员通常在类的里面说明，在类的外面唯一定义一次。</p>
+</li>
+<li><p>静态数据成员一般用来描述类的总体信息，例如对象总个数。</p>
+</li>
+<li><p>实例数据成员可以定义默认值，但非const静态数据成员不能定义默认值。</p>
+</li>
+<li><p>静态数据成员在类中初始化只能定义为 inline static、const static、const inline 类型 (保留字顺序可变）。</p>
+</li>
+<li><p>静态数据成员不管是否用inline、const说明，在所有代码文件只有一个副本。</p>
+</li>
+<li><p>函数中的局部类不能定义静态数据成员，容易造成生命期矛盾。</p>
+</li>
+<li><p>静态数据成员不能定义为位段成员。</p>
+</li>
+</ul>
+<pre class="line-numbers language-c++"><code class="language-c++">例5.9函数局部类不能定义静态数据成员，全局类可以定义 inline 或 const 静态数据成员。
+int  x = 3;
+union  S {  //定义局部类T
+    const  static int b = 0;           //全局类中可用const定义同时初始化静态成员, 必须用常量
+    inline  static int c = x;    //全局类可用inline定义同时初始化静态成员, 可用任意表达式
+    inline  const static int d = x;  //可用任意表达式    
+};
+void f(void) {
+    class  T {      //定义函数中的局部类T
+        int  c;        //static int d;   //错误：函数中的局部类不能定义静态数据成员
+    };
+    T a;             //局部自动变量 a
+    static T s;      //局部静态变量 s
+}
+void main( ) {  f( ); f( );  }   //第一个函数调用f( )返回后 a.d ⇔ s.d ⇔ T::d 产生生成矛盾<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="static-function-member"><a href="#static-function-member" class="headerlink" title="static function member"></a>static function member</h2><ul>
+<li><p>静态函数成员通常在类里以 static 说明或定义，它没有<strong>this参数。</strong></p>
+</li>
+<li><p>有<strong>this的构造和析构函数、虚函数及纯虚函数都不能定义为静态函数成员。</strong></p>
+</li>
+<li><p>静态函数成员一般用来访问类的总体信息，例如对象总个数。</p>
+</li>
+<li><p>静态函数成员可以重载、内联、定义默认值参数。</p>
+</li>
+<li><p>静态函数成员同实例成员的继承、访问规则没有没有太大区别。</p>
+</li>
+<li><p>静态函数成员的<strong>参数表后不能出现</strong> const<strong>、volatile、const volatile</strong> 等修饰符。</p>
+</li>
+<li><p>静态函数成员的返回类型可以同时使用 inline<strong>、const、volatile</strong> 等修饰。</p>
+</li>
+</ul>
+<pre class="line-numbers language-c++"><code class="language-c++">class A {
+    double  i;
+    const static int  j=3;
+public:
+    static A &inc(A &);         //说明静态函数成员
+    static A &dec(A &a) {   //在内体内定义静态函数成员：默认使用 inline
+a.i = a.i - A::j;
+         return a;
+}
+};
+A &A::inc(A &a) {   //不能 static A &A::inc(A &a),  why ?
+    a.i += A::j;              //静态函数可访问静态数据成员
+    return a;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="static-member-pointer"><a href="#static-member-pointer" class="headerlink" title="static member pointer"></a>static member pointer</h1><ul>
+<li><p>静态成员指针是指向类的静态成员的指针，包括静态数据成员指针和静态函数成员指针。</p>
+</li>
+<li><p>静态数据成员的存储单元为该类所有的对象共享，因此，通过该指针修改成员的值时会影响到所有对象该成员的值。 </p>
+</li>
+<li><p>静态数据成员除了具有访问权限外，同普通变量没有本质区别；<strong>静态成员指针则和普通指针没有任何区别。</strong></p>
+</li>
+<li><p>变量、数据成员、普通函数和函数成员的参数和返回值都可以定义成静态成员指针。</p>
+</li>
+</ul>
+<p><a href="https://imagelol.com/image/IKYmQE" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/11/03/IKYmQE.png" alt></a></p>
+<p><a href="https://imagelol.com/image/IKYpYQ" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/11/03/IKYpYQ.png" alt></a></p>
+<p>END;</p>
 
             </div>
             <hr/>
@@ -1392,7 +1873,7 @@ Bas
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">163.7k</span> 字
+                <span class="white-color">163.9k</span> 字
             
 
             
@@ -1623,5 +2104,5 @@ $(function () {
             </script>
         
 
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
 </html>
