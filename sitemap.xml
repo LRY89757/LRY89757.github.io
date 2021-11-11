@@ -2,9 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lry89757.github.io/2021/10/12/practice-mmdet-customized-datasets/</loc>
+    
+    <lastmod>2021-11-11T00:53:01.064Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/</loc>
+    
+    <lastmod>2021-11-11T00:51:15.329Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/</loc>
+    
+    <lastmod>2021-11-11T00:50:38.811Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/10/04/practice-mmdet/</loc>
+    
+    <lastmod>2021-11-11T00:49:40.089Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/11/05/c-bi-ji-ji-cheng-yu-gou-zao/</loc>
+    
+    <lastmod>2021-11-11T00:46:22.440Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/11/09/mmdet-project-of-fenghuo/</loc>
+    
+    <lastmod>2021-11-10T15:46:19.258Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/11/06/rpc-explore/</loc>
+    
+    <lastmod>2021-11-07T15:57:01.774Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/11/03/practice-mmdet-3/</loc>
+    
+    <lastmod>2021-11-05T15:33:19.779Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/10/20/c-bi-ji-yi/</loc>
+    
+    <lastmod>2021-11-05T08:56:40.645Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lry89757.github.io/2021/10/12/c-bi-ji/</loc>
     
-    <lastmod>2021-11-03T13:02:53.405Z</lastmod>
+    <lastmod>2021-11-05T05:56:51.745Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lry89757.github.io/2021/08/02/readme/</loc>
+    
+    <lastmod>2021-11-03T13:36:49.215Z</lastmod>
     
   </url>
   
@@ -37,13 +107,6 @@
   </url>
   
   <url>
-    <loc>https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/</loc>
-    
-    <lastmod>2021-10-28T07:45:44.447Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lry89757.github.io/2021/10/23/dian10-1-hou-xue-xi-ji-lu-yolov2/</loc>
     
     <lastmod>2021-10-27T06:17:09.879Z</lastmod>
@@ -72,13 +135,6 @@
   </url>
   
   <url>
-    <loc>https://lry89757.github.io/2021/10/12/practice-mmdet-customized-datasets/</loc>
-    
-    <lastmod>2021-10-12T14:11:29.453Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lry89757.github.io/2021/09/24/linux-bi-ji/</loc>
     
     <lastmod>2021-10-12T13:30:55.047Z</lastmod>
@@ -96,20 +152,6 @@
     <loc>https://lry89757.github.io/2021/09/06/mu-biao-jian-ce-bi-ji-shang/</loc>
     
     <lastmod>2021-10-09T12:32:19.514Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/</loc>
-    
-    <lastmod>2021-10-05T12:23:15.530Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/10/04/practice-mmdet/</loc>
-    
-    <lastmod>2021-10-05T12:21:43.695Z</lastmod>
     
   </url>
   
@@ -159,13 +201,6 @@
     <loc>https://lry89757.github.io/2021/09/25/pytorch-tutorial-of-torchvision-object-detection-finetuning-tutorial/</loc>
     
     <lastmod>2021-09-26T17:02:52.665Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lry89757.github.io/2021/08/02/readme/</loc>
-    
-    <lastmod>2021-09-22T04:27:39.016Z</lastmod>
     
   </url>
   

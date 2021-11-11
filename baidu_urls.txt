@@ -1,5 +1,10 @@
+https://lry89757.github.io/2021/11/09/mmdet-project-of-fenghuo/
+https://lry89757.github.io/2021/11/06/rpc-explore/
+https://lry89757.github.io/2021/11/05/c-bi-ji-ji-cheng-yu-gou-zao/
+https://lry89757.github.io/2021/11/03/practice-mmdet-3/
 https://lry89757.github.io/2021/10/27/yolov3-lun-wen-jing-du/
 https://lry89757.github.io/2021/10/23/dian10-1-hou-xue-xi-ji-lu-yolov2/
+https://lry89757.github.io/2021/10/20/c-bi-ji-yi/
 https://lry89757.github.io/2021/10/17/word-embedding/
 https://lry89757.github.io/2021/10/17/yolov3-yuan-ma-jie-du/
 https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/

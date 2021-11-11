@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-10-29T06:25:10.390Z</updated>
+  <updated>2021-11-10T15:46:19.258Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -15,6 +15,120 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mmdet &amp;&amp; project of fenghuo</title>
+    <link href="https://lry89757.github.io/2021/11/09/mmdet-project-of-fenghuo/"/>
+    <id>https://lry89757.github.io/2021/11/09/mmdet-project-of-fenghuo/</id>
+    <published>2021-11-09T11:22:50.000Z</published>
+    <updated>2021-11-10T15:46:19.258Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="烽火集团" scheme="https://lry89757.github.io/tags/%E7%83%BD%E7%81%AB%E9%9B%86%E5%9B%A2/"/>
+    
+      <category term="项目" scheme="https://lry89757.github.io/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rpc explore</title>
+    <link href="https://lry89757.github.io/2021/11/06/rpc-explore/"/>
+    <id>https://lry89757.github.io/2021/11/06/rpc-explore/</id>
+    <published>2021-11-06T08:30:16.000Z</published>
+    <updated>2021-11-07T15:57:01.774Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://lry89757.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="https://lry89757.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++笔记(继承与构造)</title>
+    <link href="https://lry89757.github.io/2021/11/05/c-bi-ji-ji-cheng-yu-gou-zao/"/>
+    <id>https://lry89757.github.io/2021/11/05/c-bi-ji-ji-cheng-yu-gou-zao/</id>
+    <published>2021-11-05T06:03:32.000Z</published>
+    <updated>2021-11-11T00:46:22.440Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://lry89757.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="https://lry89757.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>practice mmdet 3</title>
+    <link href="https://lry89757.github.io/2021/11/03/practice-mmdet-3/"/>
+    <id>https://lry89757.github.io/2021/11/03/practice-mmdet-3/</id>
+    <published>2021-11-03T13:25:20.000Z</published>
+    <updated>2021-11-05T15:33:19.779Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MMDetection整体构建流程思想&quot;&gt;&lt;a href=&quot;#MMDetection整体构建流程思想&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+      <category term="CV" scheme="https://lry89757.github.io/tags/CV/"/>
+    
+      <category term="源码阅读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>YOLOv3论文精读</title>
@@ -70,6 +184,33 @@
   </entry>
   
   <entry>
+    <title>C++笔记（二）</title>
+    <link href="https://lry89757.github.io/2021/10/20/c-bi-ji-yi/"/>
+    <id>https://lry89757.github.io/2021/10/20/c-bi-ji-yi/</id>
+    <published>2021-10-20T06:27:04.000Z</published>
+    <updated>2021-11-05T08:56:40.645Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h1&gt;&lt;p&gt;C++有关知识。记录课本上遇到的或是作业中发现的问题。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://lry89757.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="https://lry89757.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Word Embedding(已放弃)</title>
     <link href="https://lry89757.github.io/2021/10/17/word-embedding/"/>
     <id>https://lry89757.github.io/2021/10/17/word-embedding/</id>
@@ -121,9 +262,9 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
-    
       <category term="源码解读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/"/>
+    
+      <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
     
   </entry>
   
@@ -132,7 +273,7 @@
     <link href="https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/"/>
     <id>https://lry89757.github.io/2021/10/16/code-trace-of-mmdetection/</id>
     <published>2021-10-16T05:20:47.000Z</published>
-    <updated>2021-10-28T07:45:44.447Z</updated>
+    <updated>2021-11-11T00:50:38.811Z</updated>
     
     <summary type="html">
     
@@ -149,9 +290,9 @@
       <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
       <category term="mmdetection" scheme="https://lry89757.github.io/tags/mmdetection/"/>
+    
+      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
     
       <category term="源码阅读" scheme="https://lry89757.github.io/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
     
@@ -190,7 +331,7 @@
     <link href="https://lry89757.github.io/2021/10/12/practice-mmdet-customized-datasets/"/>
     <id>https://lry89757.github.io/2021/10/12/practice-mmdet-customized-datasets/</id>
     <published>2021-10-12T12:03:07.000Z</published>
-    <updated>2021-10-12T14:11:29.453Z</updated>
+    <updated>2021-11-11T00:53:01.064Z</updated>
     
     <summary type="html">
     
@@ -218,7 +359,7 @@
     <link href="https://lry89757.github.io/2021/10/12/c-bi-ji/"/>
     <id>https://lry89757.github.io/2021/10/12/c-bi-ji/</id>
     <published>2021-10-12T11:36:52.000Z</published>
-    <updated>2021-11-03T13:02:53.405Z</updated>
+    <updated>2021-11-05T05:56:51.745Z</updated>
     
     <summary type="html">
     
@@ -300,7 +441,7 @@
     <link href="https://lry89757.github.io/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/"/>
     <id>https://lry89757.github.io/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/</id>
     <published>2021-10-04T07:20:44.000Z</published>
-    <updated>2021-10-05T12:23:15.530Z</updated>
+    <updated>2021-11-11T00:51:15.329Z</updated>
     
     <summary type="html">
     
@@ -328,7 +469,7 @@
     <link href="https://lry89757.github.io/2021/10/04/practice-mmdet/"/>
     <id>https://lry89757.github.io/2021/10/04/practice-mmdet/</id>
     <published>2021-10-04T03:36:52.000Z</published>
-    <updated>2021-10-05T12:21:43.695Z</updated>
+    <updated>2021-11-11T00:49:40.089Z</updated>
     
     <summary type="html">
     
@@ -434,152 +575,6 @@
       <category term="python" scheme="https://lry89757.github.io/tags/python/"/>
     
       <category term="Barcode Reader" scheme="https://lry89757.github.io/tags/Barcode-Reader/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pytorch_tutorial of TorchVision Object Detection Finetuning Tutorial</title>
-    <link href="https://lry89757.github.io/2021/09/25/pytorch-tutorial-of-torchvision-object-detection-finetuning-tutorial/"/>
-    <id>https://lry89757.github.io/2021/09/25/pytorch-tutorial-of-torchvision-object-detection-finetuning-tutorial/</id>
-    <published>2021-09-25T06:16:42.000Z</published>
-    <updated>2021-09-26T17:02:52.665Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;fine-tuning&quot;&gt;&lt;a href=&quot;#fine-tuning&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="pytorch" scheme="https://lry89757.github.io/tags/pytorch/"/>
-    
-      <category term="Mask-RCNN" scheme="https://lry89757.github.io/tags/Mask-RCNN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux笔记（持续更新）</title>
-    <link href="https://lry89757.github.io/2021/09/24/linux-bi-ji/"/>
-    <id>https://lry89757.github.io/2021/09/24/linux-bi-ji/</id>
-    <published>2021-09-24T12:53:07.000Z</published>
-    <updated>2021-10-12T13:30:55.047Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;4张2080Ti！！我连接了Dian团队的服务器之后，终于不用再担心算力的问题了😭！之前总是靠kaggle、colab这些白嫖GPU，现在完全不用担心这些问题，直接连接到Dian的服务器，算力十足。这也正好让我开始接触到了Linux，任务驱动之下，也不得不学一些Linux
-        
-      
-    
-    </summary>
-    
-      <category term="指令集" scheme="https://lry89757.github.io/categories/%E6%8C%87%E4%BB%A4%E9%9B%86/"/>
-    
-    
-      <category term="显卡" scheme="https://lry89757.github.io/tags/%E6%98%BE%E5%8D%A1/"/>
-    
-      <category term="Linux" scheme="https://lry89757.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Pseudo-LiDAR的纯视觉3D物体检测算法</title>
-    <link href="https://lry89757.github.io/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/"/>
-    <id>https://lry89757.github.io/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/</id>
-    <published>2021-09-21T03:55:57.000Z</published>
-    <updated>2021-10-05T12:21:09.498Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
-      <category term="线上talk" scheme="https://lry89757.github.io/tags/%E7%BA%BF%E4%B8%8Atalk/"/>
-    
-      <category term="3D" scheme="https://lry89757.github.io/tags/3D/"/>
-    
-      <category term="康奈尔大学" scheme="https://lry89757.github.io/tags/%E5%BA%B7%E5%A5%88%E5%B0%94%E5%A4%A7%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初试RNN</title>
-    <link href="https://lry89757.github.io/2021/09/20/chu-shi-rnn/"/>
-    <id>https://lry89757.github.io/2021/09/20/chu-shi-rnn/</id>
-    <published>2021-09-20T02:16:57.000Z</published>
-    <updated>2021-09-20T03:18:15.704Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="NLP" scheme="https://lry89757.github.io/tags/NLP/"/>
-    
-      <category term="seq2seq_translation" scheme="https://lry89757.github.io/tags/seq2seq-translation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>latex常用公式（龟速更新）</title>
-    <link href="https://lry89757.github.io/2021/09/18/latex-chang-yong-gong-shi-gui-su-geng-xin/"/>
-    <id>https://lry89757.github.io/2021/09/18/latex-chang-yong-gong-shi-gui-su-geng-xin/</id>
-    <published>2021-09-18T09:42:52.000Z</published>
-    <updated>2021-09-19T13:50:25.409Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="指令集" scheme="https://lry89757.github.io/categories/%E6%8C%87%E4%BB%A4%E9%9B%86/"/>
-    
-    
-      <category term="latex" scheme="https://lry89757.github.io/tags/latex/"/>
-    
-      <category term="公式" scheme="https://lry89757.github.io/tags/%E5%85%AC%E5%BC%8F/"/>
     
   </entry>
   

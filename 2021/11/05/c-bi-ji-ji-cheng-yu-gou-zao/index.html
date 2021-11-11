@@ -1,0 +1,2468 @@
+<!DOCTYPE HTML>
+<html lang="default">
+    
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="C++笔记(继承与构造), Dian.AI CV ADV NLP DeepLearning MachineLearning 逯润雨 Lurunyu CV,NLP,ADV 深度学习">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+    <meta name="description" content="Reference
+华中科技大学金良海教授PPT
+C++11继承构造函数：https://www.runoob.com/w3cnote/cpp11-inheritance-constructor.html
+C++继承：https://www">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>C++笔记(继承与构造) | LRY&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/lightgallery/1.6.12/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+    <body>
+
+        <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://dian.org.cn/static/dian/images/logo.dd99a9865177.gif" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">LRY's Blog</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/galleries" class="waves-effect waves-light">
+            
+            <i class="fa fa-photo"></i>
+            
+            <span>Galleries</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>Contact</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>Friends</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性   -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>Index</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tags" class="waves-effect waves-light">
+              
+                <i class="fa fa-tags"></i>
+              
+              <span>Tags</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/categories" class="waves-effect waves-light">
+              
+                <i class="fa fa-bookmark"></i>
+              
+              <span>Categories</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/archives" class="waves-effect waves-light">
+              
+                <i class="fa fa-archive"></i>
+              
+              <span>Archives</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/galleries" class="waves-effect waves-light">
+              
+                <i class="fa fa-photo"></i>
+              
+              <span>Galleries</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>About</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>Contact</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>Friends</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="Search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://dian.org.cn/static/dian/images/logo.dd99a9865177.gif" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">LRY's Blog</div>
+        <div class="logo-desc">
+            
+            华中科技大学 | 计算机科学与技术 | 深度学习
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/galleries" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-photo"></i>
+                
+                Galleries
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                Contact
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                Friends
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LRY89757" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+   
+   
+<!-- 支持二级菜单特性   -->
+<!-- <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        Index
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tags" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-tags"></i>
+                        
+                        Tags
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/categories" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-bookmark"></i>
+                        
+                        Categories
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/archives" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-archive"></i>
+                        
+                        Archives
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/galleries" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-photo"></i>
+                        
+                        Galleries
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        About
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        Contact
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        Friends
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/LRY89757" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/LRY89757" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        C++笔记(继承与构造)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/" target="_blank">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C/" class="post-category" target="_blank">
+                                C++
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-11-05
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>Author:&nbsp;&nbsp;
+                    
+                        逯润雨
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
+                        474
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
+                        1 Min
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li>华中科技大学金良海教授PPT</li>
+<li>C++11继承构造函数：<a href="https://www.runoob.com/w3cnote/cpp11-inheritance-constructor.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/cpp11-inheritance-constructor.html</a></li>
+<li>C++继承：<a href="https://www.runoob.com/cplusplus/cpp-inheritance.html" target="_blank" rel="noopener">https://www.runoob.com/cplusplus/cpp-inheritance.html</a></li>
+</ul>
+<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>本博客主要介绍有关C++继承与构造的一些知识点。</p>
+<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>面向对象程序设计中最重要的一个概念是继承。继承允许我们依据另一个类来定义一个类，这使得创建和维护一个应用程序变得更容易。这样做，也达到了重用代码功能和提高执行效率的效果。</p>
+<p>当创建一个类时，您不需要重新编写新的数据成员和成员函数，只需指定新建的类继承了一个已有的类的成员即可。这个已有的类称为<strong>基类</strong>，新建的类称为<strong>派生类</strong>。</p>
+<p>继承代表了 <strong>is a</strong> 关系。例如，哺乳动物是动物，狗是哺乳动物，因此，狗是动物，等等。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://www.runoob.com/wp-content/uploads/2015/05/cpp-inheritance-2020-12-15-1.png" alt="图源菜鸟教程"></p>
+<p>相关代码如下：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">// 基类
+class Animal {
+    // eat() 函数
+    // sleep() 函数
+};
+
+
+//派生类
+class Dog : public Animal {
+    // bark() 函数
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一个类可以派生自多个类，这意味着它可以从多个基类中继承数据与函数。定义一个派生类我们可以使用一个<strong>类派生列表</strong>来指定基类。类派生列表以一个或多个基类命名，形式如下：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class derived-class: access-specifier base-class<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>其中访问修饰符是<strong>public、protected或private其中一个</strong>，base-class是之前定义过的某个类的名称。如果未使用访问修饰符access-specifier，<strong>则默认为private</strong>.</p>
+<p>假设有一个基类 <strong>Shape</strong>，<strong>Rectangle</strong> 是它的派生类，如下所示：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+
+using namespace std;
+
+// 基类
+class Shape 
+{
+   public:
+      void setWidth(int w)
+      {
+         width = w;
+      }
+      void setHeight(int h)
+      {
+         height = h;
+      }
+   protected:
+      int width;
+      int height;
+};
+
+// 派生类
+class Rectangle: public Shape
+{
+   public:
+      int getArea()
+      { 
+         return (width * height); 
+      }
+};
+
+int main(void)
+{
+   Rectangle Rect;
+
+   Rect.setWidth(5);
+   Rect.setHeight(7);
+
+   // 输出对象的面积
+   cout << "Total area: " << Rect.getArea() << endl;
+
+   return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>编译执行结果为：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">Total area: 35<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="访问控制和继承"><a href="#访问控制和继承" class="headerlink" title="访问控制和继承"></a>访问控制和继承</h2><p>派生类可以访问基类中所有的非私有成员。因此基类成员如果不想被派生类的成员函数访问，则应在基类中声明为 private。</p>
+<p>我们可以根据访问权限总结出不同的访问类型，如下所示：</p>
+<table>
+<thead>
+<tr>
+<th align="left">访问</th>
+<th align="left">public</th>
+<th align="left">protected</th>
+<th align="left">private</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">同一个类</td>
+<td align="left">yes</td>
+<td align="left">yes</td>
+<td align="left">yes</td>
+</tr>
+<tr>
+<td align="left">派生类</td>
+<td align="left">yes</td>
+<td align="left">yes</td>
+<td align="left">no</td>
+</tr>
+<tr>
+<td align="left">外部的类</td>
+<td align="left">yes</td>
+<td align="left">no</td>
+<td align="left">no</td>
+</tr>
+</tbody></table>
+<p>一个派生类继承了所有的基类方法，但下列情况除外：</p>
+<ul>
+<li>基类的构造函数、析构函数和拷贝构造函数。</li>
+<li>基类的重载运算符。</li>
+<li>基类的友元函数。</li>
+</ul>
+<h2 id="继承类型"><a href="#继承类型" class="headerlink" title="继承类型"></a>继承类型</h2><p>当一个类派生自基类，该基类可以被继承为 <strong>public、protected</strong> 或 <strong>private</strong> 几种类型。继承类型是通过上面讲解的访问修饰符 access-specifier 来指定的。</p>
+<p>我们几乎不使用 <strong>protected</strong> 或 <strong>private</strong> 继承，通常使用 <strong>public</strong> 继承。当使用不同类型的继承时，遵循以下几个规则：</p>
+<ul>
+<li><strong>公有继承（public）：</strong>当一个类派生自<strong>公有</strong>基类时，基类的<strong>公有</strong>成员也是派生类的<strong>公有</strong>成员，基类的<strong>保护</strong>成员也是派生类的<strong>保护</strong>成员，基类的<strong>私有</strong>成员不能直接被派生类访问，但是可以通过调用基类的<strong>公有</strong>和<strong>保护</strong>成员来访问。</li>
+<li><strong>保护继承（protected）：</strong> 当一个类派生自<strong>保护</strong>基类时，基类的<strong>公有</strong>和<strong>保护</strong>成员将成为派生类的<strong>保护</strong>成员。</li>
+<li><strong>私有继承（private）：</strong>当一个类派生自<strong>私有</strong>基类时，基类的<strong>公有</strong>和<strong>保护</strong>成员将成为派生类的<strong>私有</strong>成员。</li>
+</ul>
+<h2 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h2><p>多继承即一个子类可以有多个父类，它继承了多个父类的特性。</p>
+<p>C++ 类可以从多个类继承成员，语法如下：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class <派生类名>:<继承方式1><基类名1>,<继承方式2><基类名2>,…
+{
+<派生类类体>
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其中，访问修饰符继承方式是 <strong>public、protected</strong> 或 <strong>private</strong> 其中的一个，用来修饰每个基类，各个基类之间用逗号分隔，如上所示。现在让我们一起看看下面的实例：</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+
+using namespace std;
+
+// 基类 Shape
+class Shape 
+{
+   public:
+      void setWidth(int w)
+      {
+         width = w;
+      }
+      void setHeight(int h)
+      {
+         height = h;
+      }
+   protected:
+      int width;
+      int height;
+};
+
+// 基类 PaintCost
+class PaintCost 
+{
+   public:
+      int getCost(int area)
+      {
+         return area * 70;
+      }
+};
+
+// 派生类
+class Rectangle: public Shape, public PaintCost
+{
+   public:
+      int getArea()
+      { 
+         return (width * height); 
+      }
+};
+
+int main(void)
+{
+   Rectangle Rect;
+   int area;
+
+   Rect.setWidth(5);
+   Rect.setHeight(7);
+
+   area = Rect.getArea();
+
+   // 输出对象的面积
+   cout << "Total area: " << Rect.getArea() << endl;
+
+   // 输出总花费
+   cout << "Total paint cost: $" << Rect.getCost(area) << endl;
+
+   return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">Total area: 35
+Total paint cost: $2450<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="Intro-1"><a href="#Intro-1" class="headerlink" title="Intro"></a>Intro</h2><ul>
+<li><p>继承是C++类型演化的重要机制，在保留原有类的属性和行为的基础上，派生出的新类可以有某种程度的变异。</p>
+</li>
+<li><p>通过继承，新类自动具有了原有类的属性和行为，因而只需定义原有类型没有的新的数据成员和函数成员。实现了软件重用，使得类之间具备了层次性。</p>
+</li>
+<li><p>通过继承和派生形成的类簇，反映了面向对象问（主）题域、主题等概念，形成类似Java的包。</p>
+</li>
+<li><p>单继承是只有一个基类的继承方式。</p>
+</li>
+</ul>
+<ul>
+<li><p>多继承的派生类有多于一个的基类，派生类将是所有基类行为的组合。</p>
+</li>
+<li><p>派生类与基类：接受成员的新类称为派生类，如例中的Point类；提供成员的类称为基类，如例中的Location类。</p>
+</li>
+<li><p>基类是对若干个派生类的抽象，提取了派生类的公共特征；而派生类是基类的具体化，通过增加属性或行为变为更有用的类型。</p>
+</li>
+<li><p>派生类可以看作基类定义的延续，先定义一个抽象程度较高的基类，该基类中有些操作并未实现；然后定义更为具体的派生类，实现抽象基类中未实现的操作。</p>
+</li>
+</ul>
+<h2 id="获得新的派生类"><a href="#获得新的派生类" class="headerlink" title="获得新的派生类"></a>获得新的派生类</h2><ul>
+<li><p>C++通过多种控制派生的方法获得新的派生类，可在定义派生类时：</p>
+</li>
+<li><p>添加新的数据成员和函数成员；</p>
+</li>
+<li><p>修改继承来的基类成员的访问权限；</p>
+</li>
+<li><p>重新定义同名的数据和函数成员。</p>
+</li>
+</ul>
+<h1 id="单继承"><a href="#单继承" class="headerlink" title="单继承"></a>单继承</h1><h2 id="Reference-1"><a href="#Reference-1" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>继承常见特性：<a href="https://segmentfault.com/a/1190000021460678" target="_blank" rel="noopener">https://segmentfault.com/a/1190000021460678</a></li>
+<li>继承和派生：<a href="https://zhuanlan.zhihu.com/p/144603044" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/144603044</a></li>
+</ul>
+<p><em>基本格式为:</em></p>
+<p>单继承的定义格式：</p>
+<p>class &lt;派生类名&gt;:** &lt;继承方式&gt; &lt;基类名&gt;</p>
+<p>​     {</p>
+<p>　　　　&lt;<strong>派生类新定义成员</strong>&gt;</p>
+<p>　　　　&lt;<strong>派生类重定义基类同名的数据和函数成员</strong>&gt;</p>
+<p>　　　　&lt;<strong>派生类声明修改基类成员访问权限</strong>&gt;</p>
+<p>​     };</p>
+<p>&lt;继承方式&gt;指明派生类采用什么继承方式从基类获得成员，分为三种：private表示私有基类；protected表示保护基类；public表示公有基类。 </p>
+<ul>
+<li>注意区别继承方式和访问权限。派生类可以访问基类除了私有对象的所有对象，而私有对象可以通过保护方法或者公有方法来进行访问。而访问权限则是定义的派生类自己的对象访问权限。</li>
+<li>以上3个主要的方面还是很重要的，关于派生类到底进行了什么相关的变化<ul>
+<li>第一个可能新增了新成员的定义</li>
+<li>第二个便是重定义与基类同名的数据与函数成员</li>
+<li>第三个是声明修改基类成员访问权限。</li>
+</ul>
+</li>
+</ul>
+<p>我们结合例子来看一下：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <graphics.h>
+class LOCATION
+{ //定义定位坐标类
+    int x, y;
+
+public:
+    int getx();
+    int gety();                //gety( )获得当前坐标y
+    void moveto(int x, int y); //定义移动坐标函数成员
+    LOCATION(int x, int y);
+    ~LOCATION();
+};
+void LOCATION::moveto(int x, int y)
+{
+    LOCATION::x = x;
+    LOCATION::y = y;
+}
+int LOCATION::getx() { return x; }
+int LOCATION::gety() { return y; }
+LOCATION::LOCATION(int x, int y)
+{
+    LOCATION::x = x;
+    LOCATION::y = y;
+}
+LOCATION::~LOCATION() {}
+class POINT : public LOCATION
+{
+    //定义点类，从LOCATION类继承，继承方式为public
+    int visible; //新增可见属性
+public:
+    int isvisible() { return visible; } //新增函数成员
+    void show(), hide();
+    void moveto(int x, int y); //重新定义与基类同名函数
+    POINT(int x, int y) : LOCATION(x, y) { visible = 0; }
+    //在构造派生类对象前先构造基类对象
+    ~POINT() { hide(); }
+};
+void POINT::show()
+{
+    visible = 1;
+    putpixel(getx(), gety(), getcolor());
+}
+void POINT::hide()
+{
+    visible = 0;
+    putpixel(getx(), gety(), getbkcolor());
+}
+void POINT::moveto(int x, int y)
+{
+    int v = isvisible();
+    if (v)
+        hide();
+    LOCATION::moveto(x, y); //不能去掉LOCATION::，会自递归
+    if (v)
+        show();
+}
+void main(void)
+{
+    POINT p(3, 6);
+    p.LOCATION::moveto(7, 8); //调用基类moveto函数
+    p.moveto(9, 18);          //调用派生类moveto函数
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="关于class、struct、union说明"><a href="#关于class、struct、union说明" class="headerlink" title="关于class、struct、union说明"></a>关于class、struct、union说明</h2><ul>
+<li>用class声明的类的继承方式缺省为private，声明class POINT:private LOCATION等价于声明class POINT:LOCATION.</li>
+<li>派生类也可以用struct声明，不同之处在于用struct声明的继承方式和访问权限缺省为public。</li>
+<li><strong>用union声明的类既不能作派生类的基类，也不能做任何基类的派生类</strong></li>
+</ul>
+<h2 id="继承方式"><a href="#继承方式" class="headerlink" title="继承方式"></a>继承方式</h2><ul>
+<li>当基类成员被继承到派生类时，该成员在派生类的访问权限由继承方式决定。这就是我们之前说的，参见preface中的说明，以下重复说明一遍：<br>当一个类派生自基类，该基类可以被继承为 <strong>public、protected</strong> 或 <strong>private</strong> 几种类型。继承类型是通过上面讲解的访问修饰符 access-specifier 来指定的。<br>我们几乎不使用 <strong>protected</strong> 或 <strong>private</strong> 继承，通常使用 <strong>public</strong> 继承。当使用不同类型的继承时，遵循以下几个规则：</li>
+</ul>
+<ul>
+<li><strong>公有继承（public）：</strong>当一个类派生自<strong>公有</strong>基类时，基类的<strong>公有</strong>成员也是派生类的<strong>公有</strong>成员，基类的<strong>保护</strong>成员也是派生类的<strong>保护</strong>成员，基类的<strong>私有</strong>成员不能直接被派生类访问，但是可以通过调用基类的<strong>公有</strong>和<strong>保护</strong>成员来访问。</li>
+<li><strong>保护继承（protected）：</strong> 当一个类派生自<strong>保护</strong>基类时，基类的<strong>公有</strong>和<strong>保护</strong>成员将成为派生类的<strong>保护</strong>成员。</li>
+<li><strong>私有继承（private）：</strong>当一个类派生自<strong>私有</strong>基类时，基类的<strong>公有</strong>和<strong>保护</strong>成员将成为派生类的<strong>私有</strong>成员。</li>
+</ul>
+<ul>
+<li>基类的私有成员同样也被继承到派生类中，构成派生类的一部分，但对派生类函数成员不可见，不能被派生类函数成员访问。<ul>
+<li>若派生类函数成员要访问基类的私有成员，则必须将其声明为基类的成员友元。 </li>
+</ul>
+</li>
+<li>在派生类外部，对其成员访问的权限：<ul>
+<li>对于新定义成员，按定义时的访问权限访问；</li>
+<li>对于继承来的基类成员，<strong>取决于这些成员在派生类中的访问权限，与其在基类中定义的访问权限无关。</strong></li>
+</ul>
+</li>
+</ul>
+<p><em>再重复一遍：继承来的基类私有成员不可被派生类的函数访问，除非我们在基类将函数定义为友元</em></p>
+<p>这里我们进一步看一下不同继承方式带来的一些区别,仍然以刚才的例子点类为例：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">// 首先是基类成员：
+private成员:
+int x, y;
+public成员:
+int getx();
+int gety();
+void moveto( );
+LOCATION( );
+~LOCATION( );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-c++"><code class="language-c++">派生类POINT新增成员
+private成员:
+int visible;
+public成员:
+int isvisible( );
+void show( );
+void hide( );
+void moveto( );
+POINT( );
+~POINT( );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>那么我们如果继承方式为public:</p>
+<pre class="line-numbers language-c++"><code class="language-c++">// 继承方式为public时POINT可访问的成员
+private成员:
+int visible;
+public成员:
+int isvisible( );
+void show( );
+void hide( );
+void moveto( );
+POINT( );
+~POINT( );
+int getx( );
+int gety( );
+void LOCATION::moveto( );
+LOCATION( );
+~LOCATION( );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到最终基类的public成员变为子类的public成员，虽然父类的私有成员是派生类的一部分，但是却无法被派生类访问。</p>
+<ul>
+<li><p><em>若类POINT的继承方式为public，基类函数getx、gety派生后的访问权限仍为public，对类POINT来说这是合理的，因为，对类POINT来说则类需要这样的函数成员；</em></p>
+</li>
+<li><p>*同上，若类POINT的继承方式为public，基类函数成员moveto派生后的访问权限为public，对类POINT来说则是不合理的，因为类POINT自己定义了public函数成员moveto。在第8页中，主函数还能调用基类函数LOCATION::moveto。 *</p>
+</li>
+</ul>
+<p>那么我们再看如果继承方式变为private:</p>
+<pre class="line-numbers language-c++"><code class="language-c++">继承方式为private时POINT可访问的成员
+private成员:
+int visible;
+int getx( );
+int gety( );
+void LOCATION::moveto( );
+LOCATION( );
+~LOCATION( );
+public成员:
+int isvisible( );
+void show( );
+void hide( );
+void moveto( );
+POINT( );
+~POINT( );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到原来基类为public的成员如今在派生类变为了private私有成员并且仍然可以被基类所访问。</p>
+<p>接着我们可以看一下如何更改某些成员的访问权限，比如说我们虽然继承方式是private，但是我还是想将一些基类成员变成public:<br><strong>继承方式为private时，基类成员在派生类中的访问权限变为private。可以使用 “基类名::成员”或“using 基类名::成员” 修改成员的访问权限, 派生类不能再定义同名的成员。</strong></p>
+<pre class="line-numbers language-c++"><code class="language-c++">
+    class POINT: private LOCATION { //private可省略
+        int visible;        
+    public:
+        LOCATION::getx;    //修改权限成public
+        LOCATION::gety;    //修改权限成public
+        int isvisible( ) { return visible; }
+        void show( ), hide( );
+        void moveto(int x, int y);    
+        POINT(int x,int y):LOCATION(x,y){ visible=0; }
+        ~POINT( ){ hide( ); }
+    };<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>*<em>若 LOCATION::getx 是在protected:属性下面定义的，则基类的 getx 的访问权限是protected 。 *</em></p>
+<p>经过以上更改后，我们的访问权限就变为：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">// 修改private派生的基类成员访问权限时
+private成员:
+int visible;
+void LOCATION::moveto( );
+LOCATION( );
+~LOCATION( );
+public成员:
+int isvisible( );
+void show( );
+void hide( );
+void moveto( );
+POINT( );
+~POINT( );
+int getx( );   //见前页PPT的定义
+int gety( );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="成员访问"><a href="#成员访问" class="headerlink" title="成员访问"></a>成员访问</h2><p><strong>基类成员经过继承方式被继承到派生类后，要注意访问权限的变化。<br>按面向对象的作用域，与基类同名的派生类成员被优先访问。</strong><br>派生类中改写基类同名函数时，要注意区分这些同名函数，否则可能造成自递归调用。</p>
+<p>标识符的作用范围可分为从小到大四种级别：<br>①作用于函数成员内；<br>②作用于类或者派生类内；<br>③作用于基类内；<br>④作用于虚基类内。</p>
+<ul>
+<li>标识符的作用范围越小，被访问到的优先级越高。<strong>如果希望访问作用范围更大的标识符，则可以用类名和作用域运算符进行限定。</strong></li>
+</ul>
+<p>同样以一个例子解析：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class LIST
+{
+    struct NODE
+    { //定义节点类
+        int val;
+        NODE *next;
+        NODE(int v, NODE *p)
+        {
+            val = v;
+            next = p;
+        }
+        ~NODE()
+        {
+            delete next;
+            next = 0;
+        }
+    } * head; //定义数据成员,权限为private.
+public:
+    int insert(int), contains(int);
+    LIST() { head = 0; } //0表示空指针
+    ~LIST()
+    {
+        if (head)
+        {
+            delete head;
+            head = 0; //0表示空指针 
+        } 
+    }
+};
+
+int LIST::contains(int v)
+{ //搜索链表，查询是否存在该节点
+    NODE *h = head;
+    while (h != 0 && h->val != v)
+        h = h->next;
+    return h != 0; //0表示空指针
+}
+
+int LIST::insert(int v)
+{ //在链表中插入新增节点
+    head = new NODE(v, head);
+    return 1;
+}
+class SET : protected LIST
+{             //采用保护继承方式
+    int used; //集合元素的个数
+public:
+    LIST::contains;  //修改contains函数访问权限
+    int insert(int); //需要改变used值，因此改写insert函数
+    SET(){};         //等价于SET( ):LIST( ){ };
+};
+int SET::insert(int v)
+{ //LIST::insert中的LIST不能省略：否则自递归
+    if (!contains(v) && LIST::insert(v))
+        return used++;
+    return 0;
+}
+void main(void)
+{
+    SET s;
+    s.insert(3);
+    s.contains(3);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>派生类不能访问基类私有成员，除非将派生类的声明为基类的友元类，或者将教养访问基类私有成员的派生类函数声明为基类的友元：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class B;           //前向声明类B
+class A {
+    int a, b;
+public:
+    A(int x) { a=x; }
+    friend B;          //声明B为A的友元类，B类成员可以访问A任何成员
+};
+class B: A {           //缺省为private继承，等价于class B: private A{
+    int b;
+public:
+    B(int x): A(x) { b = x;  A::b = x;  a += 3; }   //可访问私有成员A::a, A::b
+};
+void main(void) 
+{
+    B x(7); 
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="构造和析构"><a href="#构造和析构" class="headerlink" title="构造和析构"></a>构造和析构</h2><h3 id="构造与析构函数的顺序"><a href="#构造与析构函数的顺序" class="headerlink" title="构造与析构函数的顺序"></a>构造与析构函数的顺序</h3><ul>
+<li>单继承派生类的构造顺序比较容易确定：<ul>
+<li>调用虚基类的构造函数；</li>
+<li>调用基类的构造函数；</li>
+<li>按照派生类中数据成员的声明顺序，依次调用数据成员的构造函数或初始化数据成员；</li>
+<li>最后执行派生类的构造函数构造派生类。 </li>
+</ul>
+</li>
+<li><strong>析构是构造的逆序。</strong></li>
+</ul>
+<p>以下情况派生类必须定义自己的构造函数：</p>
+<ul>
+<li>虚基类或基类只定义了带参数的构造函数；</li>
+<li>派生类自身定义了<strong>引用成员或只读成员</strong>；</li>
+<li>派生类需要使用带参数构造函数初始化的对象成员。</li>
+</ul>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+class A
+{
+    int a;
+
+public:
+    A(int x) : a(x) { std::cout << a; } //也可在构造函数体内再次对a赋值
+    ~A() { std::cout << a; }
+};
+class B : A
+{ //私有继承，等价于class B: private A {
+    int b, c;
+    const int d; //B中定义有只读成员，故必须定义构造函数初始化
+    A x, y;
+
+public:
+    B(int v) : b(v), y(b + 2), x(b + 1), d(b), A(v)
+    { //注意构造与出现顺序无关
+        c = v;
+        std::cout << b << c << d;
+        std::cout << "C";
+    }
+    ~B() { std::cout << “D”; } //派生类成员实际构造顺序为 b, d, x, y
+};
+void main(void) { B z(1); } //输出结果：123111CD321<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上代码的输出结果是值得反复玩味的，本身的构造顺序和析构顺序非常重要：</p>
+<ul>
+<li>派生类成员构造函数最一开始执行基类构造函数A(v),所以我们得到第一个输出1，然后我们根据在类内的定义顺序b,d,x,y进行相关的初始化构造</li>
+<li>b进行初始化为1,没有任何cout,接着是d的初始化得到1，同样没有cout</li>
+<li>接着调用x构造函数cout&lt;&lt;2, 调用y构造函数cout&lt;&lt;3</li>
+<li>而后开始执行花括号内容cout&lt;&lt;b&lt;&lt;c&lt;&lt;d,cout结果1，1，1</li>
+<li>最后cout&lt;&lt;”C”，构造环节结束。</li>
+<li>而我们析构的时候，执行顺序为先派生类最后基类的顺序。</li>
+<li>因为析构是构造的逆序，首先进入函数~B(),首先输出D，然后先析构y,再析构x,接着析构基类A。</li>
+</ul>
+<p>这就是以上说明的顺序，这里重新介绍一遍加深记忆：</p>
+<ul>
+<li>单继承派生类的构造顺序比较容易确定：<ul>
+<li>调用虚基类的构造函数；</li>
+<li>调用基类的构造函数；</li>
+<li><strong>按照派生类中数据成员的声明顺序</strong>，依次调用数据成员的构造函数或初始化数据成员；</li>
+<li>最后执行派生类的构造函数构造派生类。 </li>
+</ul>
+</li>
+<li><strong>析构是构造的逆序。</strong></li>
+</ul>
+<p>另外看一些注意事项：</p>
+<h3 id="引用变量构造类与指针变量利用new构造类内存泄漏问题"><a href="#引用变量构造类与指针变量利用new构造类内存泄漏问题" class="headerlink" title="引用变量构造类与指针变量利用new构造类内存泄漏问题"></a>引用变量构造类与指针变量利用new构造类内存泄漏问题</h3><ul>
+<li><p>如果虚基类和基类的构造函数是无参的，则构造派生类对象时，构造函数可以不用显式调用它们的构造函数，编译程序会自动调用虚基类或基类的无参构造函数。</p>
+</li>
+<li><p><strong>如果引用变量r引用的是一个对象v，则对象的构造和析构由对象v完成，而不应该由引用变量r完成。</strong></p>
+</li>
+<li><p><strong>如果被引用的对象是用new生成的，则引用变量r必须用delete &amp;r析构对象，否则被引用的对象将因无法完全释放空间（为对象申请的空间）而产生内存泄漏。</strong></p>
+</li>
+</ul>
+<p>接下来是被引用对象的析构问题：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
+class A {
+    int  i;   int *s;
+public:
+    A(int x) {
+        s = new int[i=x]; 
+        cout << "(C): " << i << "\n"; 
+    }
+    ~A( ) {
+        delete s; 
+        cout << "(D): " << i << "\n"; 
+    }
+};
+void sub1(void) { 
+    A &p = *new A(1);  
+}//内存泄露
+void sub2(void) {  
+    A *q = new A(2);
+} //内存泄露
+void sub3(void) {
+    A &p = *new A(3);
+    delete &p;
+}
+void sub4(void) {
+    A *q = new A(4);  
+    delete q;  
+}
+int main(void) {
+    sub1( );   sub2( );
+    sub3( );   sub4( );
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出结果：<br>(C):1<br>(C):2<br>(C):3<br>(D):3<br>(C):4<br>(D):4</p>
+<h2 id="父类与子类"><a href="#父类与子类" class="headerlink" title="父类与子类"></a>父类与子类</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li>如果派生类的继承方式为public，则这样的派生类称为基类的子类，而相应的基类则称为派生类的父类。注意只有public继承才有这个子类父类这种概念。</li>
+<li>C++允许父类指针直接指向子类对象，也允许父类引用直接引用子类对象。</li>
+<li>通过父类指针调用虚函数时晚期绑定，根据对象的实际类型绑定到合适的成员函数。</li>
+<li>父类指针实际指向的对象的类型不同，虚函数绑定的函数的行为就不同，从而产生多态。</li>
+</ul>
+<p>编译时：</p>
+<ul>
+<li>编译程序只能根据类型定义静态地检查语义。由于父类指针可以直接指向子类对象，而到底是指向父类对象还是子类对象只能在运行时确定。</li>
+<li>编译时，只能把父类指针指向的对象都当作父类对象。因此编译时：<br>父类指针访问对象的数据成员或函数成员时，不能超越父类为相应对象成员规定的访问权限；</li>
+<li>也不能通过父类指针访问子类新增的成员，因为这些成员在父类中不存在，编译程序无法识别。</li>
+</ul>
+<p>来一个例子来进一步说明：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
+class POINT
+{
+    int x, y;
+
+public:
+    int getx() { return x; }
+    int gety() { return y; }
+    void show() { cout << "Show a point\n"; }
+    POINT(int x, int y)
+    {
+        POINT::x = x;
+        POINT::y = y;
+    }
+};
+class CIRCLE : public POINT
+{
+    int r;
+
+public:
+    int getr() { return r; }
+    void show() { cout << "Show a circle\n"; }
+    CIRCLE(int x, int y, int r) : POINT(x, y) { CIRCLE::r = r; }
+};
+
+int main(void)
+{
+    CIRCLE c(3, 7, 8);
+    POINT *p = &c; //父类对象指针p可以直接指向子类对象，不用类型转换
+    cout << “The circle with radius ” << c.getr();
+    //不能使用p->getr( )，因为getr( )函数不是父类的函数成员
+    //编译程序无法通过检查
+    cout << “ is at(” << p->getx() << “, ” << p->gety() << “)\n”;
+    p->show();
+    //p虽然指向子类对象，但调用的是父类的show函数
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出结果：<br>The circle with radius 8 is at (3, 7)<br>Show a point</p>
+<p><strong>这里面最关键的一点就是p虽然指向子类对象，但调用的是父类的show函数</strong>(但是如果是虚函数就调用的是子类的虚函数了。)</p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><ul>
+<li><p>若基类和派生类没有构成父子关系，则：</p>
+<ul>
+<li><p><strong>基类指针不能直接指向派生类对象，必须通过强制类型转换才能指向派生类对象。</strong></p>
+</li>
+<li><p><strong>基类引用也不能直接引用派生类对象，而必须通过强制类型转换才能引用派生类对象。</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>【例6.7】引用父类对象的引用变量引用子类对象。</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
+class A
+{
+    int a;
+
+public:
+    int getv() { return a; }
+    A() { a = 0; }
+    A(int x) { a = x; }
+    ~A() { cout << "~A\n"; }
+};
+class B : A
+{ //非父子：private
+    int b;
+
+public:
+    int getv()
+    {
+        return b + A::getv();
+    }
+    B() { b = 0; } //等于B( ):A( )
+    B(int x) : A(x) { b = x; }
+    ~B() { cout << "~B\n"; }
+};
+class C : public A
+{
+    int c;
+
+public:
+    int getv() { return c + A::getv(); }
+    C() { c = 0; } //等价于C( ):A( ) { c = 0; }
+    C(int x) : A(x) { c = x; }
+    ~C() { cout << "~C\n"; }
+};
+int main(void)
+{
+    A &p = *new C(3);      //直接引用C类对象：A和C父子
+    A &q = *(A *)new B(5); //强制转换引用B类对象：A和B非父子
+    cout << "p.getv( )=" << p.getv() << "\n";
+    cout << "q.getv( )=" << q.getv() << "\n";
+    delete &p; //析构C(3)的父类A而非子类C
+    delete &q; //析构B(5)的父类A 而非子类B
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出：<br>p.getv( ) = 3<br>q.getv( ) = 5<br>~A<br>~A</p>
+<p><code>A&amp;p= *new C(3)</code>这一行代码表示创造一个C类型的对象，调用函数C(int)来进行初始化类，new运算符返回地址后在加一个<code>*</code>号访问该地址，然后赋给一个A类的引用p.这个确实不是非常好理解。这里还要注意一下两者A类和C类是父子关系，而下面一行代码的<code>A &amp;q = *(A *)new B(5);</code>中A类和B类就不是父子关系。</p>
+<p>最后输出的结果可以看出，调用的都是A类的函数getv()，但是当我们析构相应的对象的时候仅仅父类的析构函数被调用了，子类、派生类根本没有被调用析构，造成内存泄漏问题。</p>
+<p>这个目前似懂非懂，但是我实在看不下去了，目前看到第六章第31张PPT了，但是以上这个代码还不太懂，到时候再说！</p>
+<p>这里对父类子类指针做一个总结再，</p>
+<ul>
+<li><p>编译方面：虽然我们父类指针可以指向子类 ，但是由于编译程序只能根据类型定义静态的检查语义，所以我们编译的时候父类指针不管指向的是父类还是子类，编译器统一认为这是指向的父类，所以如果我们访问子类新出现的对象的时候，编译会报错。</p>
+</li>
+<li><p>如果基类和派生类没有构成所谓的父子关系，那么我们基类指针不可以直接指向派生类，但是可以通过强制类型转换做到这一点，只不过析构的时候只能析构掉基类的部分。</p>
+<ul>
+<li>在派生类成员内部，基类指针可以直接指向该派生类对象，对派生类函数而言，基类等同当作于父类。</li>
+<li>如果函数声明为派生类的友元，则该友元定义的基类指针也可以直接指向该基类的派生类对象，也不必通过强制类型转换。</li>
+</ul>
+</li>
+</ul>
+<p>针对以上可以看一个小例子：<br>【例6.9】定义机车类VEHICLE，并派生出汽车类CAR。</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+using namespace std;
+class VEHICLE
+{
+    int speed, weight, wheels;
+
+public:
+    VEHICLE(int spd, int wgt, int whl);
+};
+VEHICLE::VEHICLE(int spd, int wgt, int whl)
+{
+    speed = spd;
+    weight = wgt;
+    wheels = whl;
+}
+class CAR : private VEHICLE
+{
+    int seats;
+
+public:
+    VEHICLE *who();
+    CAR(int sd, int wt, int st);
+    friend int main();
+};
+CAR::CAR(int sd, int wt, int st) : VEHICLE(sd, wt, 4) { seats = st; }
+VEHICLE *CAR::who()
+{
+    VEHICLE *p = this;  //派生类内的基类指针直接指向派生类对象
+    VEHICLE &q = *this; //派生类内的基类引用直接引用派生类对象
+    return p;
+}
+//在派生类的友元main中，基类和派生类构成父子关系
+int main(void)
+{
+    CAR c(1, 2, 3);
+    VEHICLE *p = &c;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到以上就有在派生类中直接定义基类指针和引用p\q来指向派生类对象，并且这里定义了<code>main()</code>函数为派生类的友元，也可以直接在main函数中直接定义基类指针指向派生类。</p>
+<h2 id="派生类的存储空间"><a href="#派生类的存储空间" class="headerlink" title="派生类的存储空间"></a>派生类的存储空间</h2><ul>
+<li>派生类的成员一部分是新定义的，另一部分是从基类新继承来得，因此派生类对象的存储空间中必然包含了基类的成员。</li>
+<li>在构造派生类对象之前，首先构造的匿名的基类存储空间，作为派生类对象存储空间的一部分。</li>
+<li>在计算派生类对象存储空间时，<strong>基类与派生类的静态数据成员都不计算在内</strong>。</li>
+</ul>
+<p>所以实际上算起来还不是非常复杂：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+class A {
+    int  h, i, j;
+    static int k;
+};
+class B: A {          //等价于class B:  private A
+    int  m, n, p;
+    static int q;
+};
+int A::k = 0;     //静态数据成员必须初始化
+int B::q = 0;
+void main(void) {
+    std::cout << "Size of int = " << sizeof(int) << "\n";
+    std::cout << "Size of A = "   << sizeof(A)   << "\n";
+    std::cout << "Size of B = "   << sizeof(B)   << "\n";
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://imagelol.com/image/I9vDRH" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/11/10/I9vDRH.png" alt></a></p>
+<h1 id="多继承-1"><a href="#多继承-1" class="headerlink" title="多继承"></a>多继承</h1><h2 id="Preface-1"><a href="#Preface-1" class="headerlink" title="Preface"></a>Preface</h2><ul>
+<li>单继承是多继承的一种特例，多继承派生类具有更强的类型表达能力。</li>
+<li>多继承派生类有多个基类或虚基类。</li>
+<li>派生类继承所有基类的<strong>数据成员和成员函数</strong>。</li>
+<li>派生类在继承多个基类时，不同的基类可以采用不同的派生控制。</li>
+<li>基类之间的成员可能同名，基类与派生类的成员也可能同名。在出现同名时，如面向对象的作用域不能解析，应该使用作用域运算符来指明所要访问的类的成员。</li>
+</ul>
+<blockquote>
+<ol>
+<li>多继承派生类的定义：<br>class 派生类名:&lt;派生方式&gt; 基类1,&lt;派生方式&gt; 基类2, … {<br>&lt;类体&gt;<br>};<ol start="2">
+<li>存在派生类对象多次初始化同一(物理)基类对象问题。 </li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p>先看一个小例子：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">//【例9.1】定义具有水平滚动条和垂直滚动条的窗口类。 
+class Window {
+    //...
+public:
+    Window(int top, int left, int bottom, int right);
+    ~Window( );
+};
+class Hscrollbar {
+    //...
+public:
+    HScrollbar(int top, int left, int bottom, int right);
+    ~ HScrollbar( );
+}; 
+class Vscrollbar {
+    //...
+public:
+    VScrollbar (int top, int left, int bottom, int right);
+    ~ VScrollbar( );
+};
+class ScrollableWind: public Window {
+    HScrollbar  hScrollBar;      //委托hScrollBar代理水平滚动
+    VScrollbar  vScrollBar;      //委托vScrollBar代理垂直滚动
+    //...
+public:
+    ScrollableWind(int top, int left, int bottom, int right);
+    ~ScrollableWind( );
+};
+ScrollableWind::ScrollableWind (int t, int l, int b, int r):Window(t, l, b, r), hScrollbar(t, r+1, b-1, r), vScrollbar(b-1,l-1,b,r+1) {
+    //...
+};
+// Window、hScrollBar和vScrollBar分别初始化显示端口，则派生类ScrollableWind的对象就会多次初始化显示端口，从而导致显示屏出现多次闪烁。
+// 用多继承方式定义派生类 ScrollableWind： 
+class ScrollableWind: public Window, public HScrollbar, public Vscrollbar {
+    //...
+public:
+    ScrollableWind(int top, int left, int bottom, int right);
+    ~ScrollableWind( );
+};
+ScrollableWind::ScrollableWind (int t, int l, int b, int r): Window(t, l, b, r),          HScrollbar(t, r+1, b-1, r), VScrollbar(b-1,l-1,b,r+1) {
+    //...
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上就是一个非常典型、也是非常简单的关于多继承的例子，当然也非常简单，值得注意的是关于派生类的构造函数，需要先将各个基类初始化。这一点非常重要。</p>
+<h2 id="多次闪烁"><a href="#多次闪烁" class="headerlink" title="多次闪烁"></a>多次闪烁</h2><p>但是如果稍微复杂一些就会比较难办了，多继承实际上很常见的一个问题就是派生类对象多次初始化同一基类成员。假设以上定义的类Window、HScrollbar、VScrollbar 都是从基类 Port 派生，即：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class Port  { … };                       
+class Window: public Port  { … };
+class HScrollbar: public Port  { … };   
+class VScrollbar: public Port  { … };
+class ScrollableWind: public Window, public HScrollbar, public VScrollbar{…};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>创建ScrollableWind对象时，Port的构造函数通过3条不同的路径，被调用了3次，从而将显示端口初始化3次。即1个子类有3个同名祖先类，而物理显示端口只有一个！</strong><br>以下为派生树：<br><a href="https://imagelol.com/image/I9jEDS" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/11/10/I9jEDS.png" alt></a></p>
+<p>我们为了解决这个问题，我们这里选择使用<code>virtual</code>来定义虚基类。这样的话就可以使得我们的显示端口Port仅被初始化一次：</p>
+<p><a href="https://imagelol.com/image/I9jmF2" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/11/10/I9jmF2.png" alt="I9jmF2.png"></a></p>
+<pre class="line-numbers language-c++"><code class="language-c++">class Window: virtual public Port  { … };
+class HScrollbar: public virtual Port  { … };
+class VScrollbar: public virtual Port  { … };
+class ScrollableWind: public Window, public HScrollbar, public VScrollbar   {  …  };<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="虚基类"><a href="#虚基类" class="headerlink" title="虚基类"></a>虚基类</h2><ul>
+<li><p>同一个类不能多次作为某个派生类的直接基类，但可多次作为其间接基类，从而引起存储空间的浪费和其他问题。此时，这些间接基类可定义为虚基类。</p>
+</li>
+<li><p>同一颗派生树中的同名虚基类，共享同一个存储空间；其构造函数和析构函数仅执行1次，<strong>且构造函数尽可能最早执行，而析构函数尽可能最晚执行。</strong></p>
+</li>
+<li><p>如果虚基类与基类同名，则它们将分别拥有各自的存储空间，只有同名虚基类才共享存储空间，而同名基类则拥有各自的存储空间。</p>
+</li>
+<li><p>虚基类和基类同名必然会导致二义性访问，编译程序会对这种二义性访问提出警告。当出现这种情况时，建议：要么将基类说明为对象成员，要么将基类都说明为虚基类。可用作用域运算符限定要访问的成员。</p>
+</li>
+</ul>
+<p>虚基类就是为了让某个派生类的各个基类共享一个共同的“大”基类。</p>
+<p>我们不妨看看关于虚基类的二义性问题：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
+struct A {
+    int a;
+    A(int x) { a = x; }
+};
+struct B: A {   //等于struct B:public A
+    B(int x):A(x) {  }
+};
+struct C {
+    C( ) {  }
+};
+struct D: virtual A, C {
+    D(int x):A(x)  {  }   //同样调用C( )
+};
+struct E: B, D {
+    E(int x):A(x), B(x+5), D(x+10) {  }
+};
+int main(void) {
+    E  e(0);
+//  cout << "a=" << e.a;  //二义性访问
+    cout << "a=" << e.B::a;
+    cout << "a=" << e.D::a;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em>为解决 e.a 产生的二义性，要么将E的基类B说明为对象成员，要么将B的基类A说明为虚基类。若将B的基类A说明为虚基类，则 e.a、e.B::a及 e.D::a 都表示虚基类A的成员 a 。</em></p>
+<h2 id="派生类成员-类成员同名问题"><a href="#派生类成员-类成员同名问题" class="headerlink" title="派生类成员(类成员同名问题)"></a>派生类成员(类成员同名问题)</h2><p>当派生类有多个基类或虚基类时，基类或虚基类的成员之间可能出现同名；派生类和基类或虚基类的成员之间也可能出现同名。<br>出现上述同名问题时，必须通过面向对象的作用域解析，或者用作用域运算符::指定要访问的成员，否则就会引起二义性问题。<br>请看马光志《C++精要教程》<br>【例9.2】基类成员间的同名问题。<br>【例9.4】派生类成员与基类成员同名问题。<br>【例9.5】虚基类与基类的成员同名问题。<br>我懒得敲代码了，所以这里请参考相关书籍。</p>
+<h2 id="单重及多重继承的构造与析构"><a href="#单重及多重继承的构造与析构" class="headerlink" title="单重及多重继承的构造与析构"></a>单重及多重继承的构造与析构</h2><h3 id="构造顺序"><a href="#构造顺序" class="headerlink" title="构造顺序"></a>构造顺序</h3><ul>
+<li><p>在考虑多继承派生类构造函数的执行顺序时，必须注意派生类可能有虚基类、基类、对象成员、const成员以及引用成员。<strong>当虚基类、基类和对象成员只有带参数的构造函数时，派生类必须定义自己的构造函数，而不能利用C++提供的缺省构造函数。类有非静态对象成员、const 成员时，也必须定义构造函数。</strong></p>
+</li>
+<li><p>对于虚基类、基类和对象成员来说，如果它们没有定义自己的构造函数，则编译程序就会为它们提供缺省的无参构造函数。对于虚基类、基类和对象成员的无参构造函数，无论它们是自定义的还是由编译程序提供的，可被派生类构造函数按定义顺序自动地调用。</p>
+</li>
+</ul>
+<p>关于调用构造函数的顺序，实际上我们在单继承的构造函数那一节博客已经说过了，但是这里再重复介绍一遍，另外这里又补充了关于虚基类还有类定义顺序的解释：</p>
+<ul>
+<li>派生类对象的构造顺序描述：</li>
+</ul>
+<p>①按定义顺序<strong>自左至右、自下而上地</strong>构造所有虚基类；</p>
+<p>②按定义顺序构造派生类的所有直接基类；</p>
+<p>③按<strong>定义顺序</strong>构造（初始化）派生类的所有数据成员，包括对象成员、const成员和引用成员；</p>
+<p>④执行派生类自身的构造函数体；</p>
+<p>如果虚基类、基类、对象成员、const成员以及引用成员又是派生类对象，重复上述派生类对象的构造过程，<strong>但同名虚基类对象在同一棵派生树中仅构造一次。</strong></p>
+<ul>
+<li>析构：析构派生类对象的顺序同构造<strong>逆序</strong>。</li>
+</ul>
+<h3 id="例一"><a href="#例一" class="headerlink" title="例一"></a>例一</h3><p>我们看一个比较典型的例子：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
+struct A
+{
+    A() { cout << 'A'; }
+};
+struct B
+{
+    B() { cout << 'B'; }
+};
+struct C
+{
+    int a;
+    int &b;
+    const int c;
+    C(char d) : c(d), b(a)
+    {
+        a = d;
+        cout << d;
+    }
+};
+struct D
+{
+    D() { cout << 'D'; }
+};
+
+struct E : A, virtual B, C, virtual D
+{
+    A x, y;
+    B z;
+    E() : z(), y(), C('C')
+    {
+        cout << 'E';
+    }
+};
+
+int main(void)
+{
+    E e;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们可以简单分析一下：<br>首先定义了<code>E e;</code>，我们可以看出首先调用E()构造函数，不要被上面的函数迷惑了，我们首先肯定是虚基类，不管<code>E():</code>后面的定义顺序，顺序是根据上面<code>struct E : A, virtual B, C, virtual D</code>这个顺序来得，所以我们首先初始化虚基类B, D，接着是基类A,C，然后是我们定义的数据类型x,y,z，最后输出E，所以结果应该为<code>BDACAABE</code>.</p>
+<p>以上这个例子太简单了，我们接下来可以看一个更加复杂一点的例子：</p>
+<h3 id="例二"><a href="#例二" class="headerlink" title="例二"></a>例二</h3><pre class="line-numbers language-c++"><code class="language-c++">// 【例9.7】多继承派生类的构造过程。
+#include <iostream>
+using namespace std;
+struct A
+{
+    A() { cout << 'A'; }
+};
+struct B
+{
+    const A a;
+    B() { cout << 'B'; }
+};
+struct C
+{
+    C() { cout << 'C'; }
+};
+struct D
+{
+    D() { cout << 'D'; }
+};
+struct E:A
+{
+    E() { cout << 'E'; }
+};
+struct F:B, virtual C{
+                 F(){cout << 'F';
+}
+}
+;
+struct G:B
+{
+    G() { cout << 'G'; }
+};
+struct H:virtual C, virtual D{
+                         H(){cout << 'H';
+}
+}
+;
+struct I:E, F, virtual G, H
+{
+    E e;
+    F f;
+    I() : f(), e(), F(), E() { cout << 'I'; }
+};
+int main(void)
+{
+    I i;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>相比之下，这个就复杂非常多：<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/11/10/I9jCke.png" alt><br>输出顺序为：CABGDAEABFHAECABFI<br>关于为什么这里最先输出的不是G，就是因为我们上文的顺序规定的是：</p>
+<blockquote>
+<p> 按定义顺序<strong>自左至右、自下而上地</strong>构造所有虚基类；</p>
+</blockquote>
+<p>注意这里按定义顺序<strong>自左至右、自下而上地</strong>构造所有虚基类；这句话非常重要！</p>
+<p>我们正是由于这句话，就像图上的顺序，先将最开始一排排类排整齐，然后进行相关的对于整体的从左至右、自下而上的寻找，按照找到的顺序构造虚基类（注意虚基类很有可能也有它的基类就像这个图中的G，这些都要考虑到）、然后接着构造基类然后构造类的对象。整个过程还是比较清晰的，多看几遍这个例题就可能清楚多了。</p>
+<h3 id="虚基类的多继承说明（vs2019）"><a href="#虚基类的多继承说明（vs2019）" class="headerlink" title="虚基类的多继承说明（vs2019）"></a>虚基类的多继承说明（vs2019）</h3><p>对于一个直接基类C，如果其他直接基类的祖先类中也包含C这个类，则这2个C类不能是一个是虚基类、一个是非虚基类。对于 class  C: C1, virtual C2：C2的祖先类中不能包含非虚的基类C1，C1的祖先类中不能包含虚基类C2，否则报错。</p>
+<pre class="line-numbers language-c++"><code class="language-c++">struct  A { };
+struct  B: A { };
+struct  C: A { };
+struct  D: B { };
+struct  E: A, C { };
+struct  F: virtual  A, C { };     //错：直接基类A是虚的，而C::A非虚
+struct  G: virtual B, D { };     //错：直接基类B是虚的，而D::B非虚
+struct  H: virtual B, C { };     //对：直接基类B是虚的，C的继承链中没有非虚的B
+struct   I:  virtual B, E { };     //对：E的祖先类没有B，B的祖先类没有E
+struct   J: virtual C, E { };      //错：E的祖先类包含非虚的C<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="类的存储空间"><a href="#类的存储空间" class="headerlink" title="类的存储空间"></a>类的存储空间</h2><p>这里就是简单介绍一下，应该还会另开一个博客来介绍这段内容：</p>
+<h3 id="派生类无虚基类的情况下"><a href="#派生类无虚基类的情况下" class="headerlink" title="派生类无虚基类的情况下"></a>派生类无虚基类的情况下</h3><ul>
+<li>若派生类的第一个基类建立了虚函数入口地址表（VFT），则派生类就共用该表首址所占用的存储单元；</li>
+<li>若派生类的第一个基类没有定义虚函数，派生类就在建立完所有基类的存储空间之后，根据派生类中是否定义了新的虚函数，确定是否为VFT表首址分配一个存储单元，然后为新定义的数据成员建立存储空间。</li>
+<li>静态数据成员不包括在内。</li>
+</ul>
+<p>第9章PPT第20页PPT。</p>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.bmp" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.bmp" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;Reprint policy:
+                    </span>
+                    <a href="https://lry89757.github.io" class="b-link-green">LRY's Blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2021/11/05/c-bi-ji-ji-cheng-yu-gou-zao/" class="b-link-green">C++笔记(继承与构造)</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/11/06/rpc-explore/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="rpc explore">
+                        
+                        <span class="card-title">rpc explore</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Preface最近在学C++，想要写一些C++的代码，但是目前苦于不知道写啥比较好，想写一些比较实用的，但是确实没啥能力，找了找项目组长jhy，他告诉我说最近他有一些写轮子的需求，正好我拿这个练一下手。
+rpc，这个似乎涉及到了网络编程……
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-11-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C/" class="post-category" target="_blank">
+                                    C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/11/03/practice-mmdet-3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="practice mmdet 3">
+                        
+                        <span class="card-title">practice mmdet 3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            MMDetection整体构建流程思想Reference
+all reference(几乎完全原文照抄)：https://zhuanlan.zhihu.com/p/337375549
+
+MMDet官方学习路线：https://zhuanla
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-11-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/深度学习/" class="post-category" target="_blank">
+                                    深度学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/目标检测/" target="_blank">
+                        <span class="chip bg-color">目标检测</span>
+                    </a>
+                    
+                    <a href="/tags/CV/" target="_blank">
+                        <span class="chip bg-color">CV</span>
+                    </a>
+                    
+                    <a href="/tags/源码阅读/" target="_blank">
+                        <span class="chip bg-color">源码阅读</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + 'From: LRY's Blog<br />'
+            + 'Author: 逯润雨<br />'
+            + 'Link: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者Lurunyu所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5, h6, h7'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6, h7').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&copy; 2021 逯润雨. 
+
+            <br>
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">174k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LRY89757" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=lry89757@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+    <a href="https://zhihu.com/people/yi-ran-fan-te-xi-57-88" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=1785435713&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2021, 07, 29, 00, 00, 00); //北京时间2019-8-1 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.2.2/masonry.pkgd.min.js"></script>
+        <script src="https://cdn.bootcss.com/aos/3.0.0-beta.6/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdn.bootcss.com/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+        
+        <script type="text/javascript">
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                    "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果   -->
+        
+            <canvas class="fireworks" style="position: fixed; left: 0; top: 0; z-index: 1; pointer-events: none;"></canvas>
+            <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+            <script type="text/javascript" src="/js/fireworks.js"></script>
+        
+
+        <!-- 背景雪花飘落特效 -->
+        
+
+        <!-- 鼠标点击文字特效 -->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+
+        <!-- 背景雪花飘落特效  -->
+        
+            <script type="text/javascript">
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
+                }
+            </script>
+        
+
+        <!-- 在线聊天工具   -->
+        
+            <script src="//code.tidio.co/xxxxxxxxxxxxxxxxxxxxxxxxxxx.js"></script>
+            <!--  在线聊天位置自定义    -->
+            <script> 
+                $(document).ready(function () {
+
+                    setInterval(change_Tidio, 50);  
+                    function change_Tidio() { 
+
+                        var tidio=$("#tidio-chat iframe");
+                        if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"80px":"20px";   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px";   
+                            document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        } 
+                        else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
+                            document.getElementById("tidio-chat-iframe").style.right="-15px"; 
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+                        else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
+                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                        }
+
+                        if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                            document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                        }
+                    } 
+                }); 
+            </script>
+        
+
+        <!-- 背景 canvas-nest  -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" color="0,0,255" pointColor="0,0,255" opacity= "0.8" zIndex="--1" count="150"src="/libs/background/canvas-nest.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 背景静止彩带  -->
+        
+
+        <!-- 背景动态彩带 -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>

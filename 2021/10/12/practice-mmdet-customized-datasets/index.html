@@ -562,7 +562,7 @@ Bas">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -948,6 +948,7 @@ categories = [{
 <h1 id="Prepare-a-config"><a href="#Prepare-a-config" class="headerlink" title="Prepare a config"></a>Prepare a config</h1><p>第二步就是准备一个config文件以方便我们的dataset可以成功被读取。假定我们要使用Mask R-CNN with FPN，用来在我们的ballon dataset上训练我们的detector的config如下：</p>
 <blockquote>
 <p> 我们的config需要放到<code>configs/balloon/</code>目录下并且命名为：<code>mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_balloon.py</code></p>
+<p> 关于这么一个名字，为什么这么复杂是有原因的，参见这里:<a href="https://mmdetection.readthedocs.io/zh_CN/v2.18.0/tutorials/config.html#id4" target="_blank" rel="noopener">https://mmdetection.readthedocs.io/zh_CN/v2.18.0/tutorials/config.html#id4</a></p>
 </blockquote>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># The new config inherits a base config to highlight the necessary modification</span>
 _base_ <span class="token operator">=</span> <span class="token string">'mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_coco.py'</span>
@@ -1016,7 +1017,7 @@ data <span class="token operator">=</span> dict<span class="token punctuation">(
 <span class="token comment" spellcheck="true"># load_from = 'checkpoints/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'</span>
 load_from <span class="token operator">=</span> <span class="token string">'https://download.openmmlab.com/mmdetection/v2.0/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="Train-a-new-model"><a href="#Train-a-new-model" class="headerlink" title="Train a new model"></a>Train a new model</h1><p>实际上我们这里训练很简单，仅仅一行指令就OK，我们可以看一下：</p>
-<pre class="line-numbers language-shell"><code class="language-shell">python tools/train.py configs/balloon/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_balloon.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">python tools<span class="token operator">/</span>train<span class="token punctuation">.</span>py configs<span class="token operator">/</span>balloon<span class="token operator">/</span>mask_rcnn_r50_caffe_fpn_mstrain<span class="token operator">-</span>poly_1x_balloon<span class="token punctuation">.</span>py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>训练还是比较快的相对而言（至少我感觉）毕竟这里也没有多大的数据，具体执行过程我就截了没几张图：</p>
 <p><a href="https://imgtu.com/i/5nWRjf" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5nWRjf.png" alt></a><a href="https://imgtu.com/i/5nWzE4" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://z3.ax1x.com/2021/10/12/5nWzE4.png" alt></a></p>
 <p>最后运行结束：</p>
@@ -1464,7 +1465,7 @@ load_from <span class="token operator">=</span> <span class="token string">'http
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">163.9k</span> 字
+                <span class="white-color">174k</span> 字
             
 
             

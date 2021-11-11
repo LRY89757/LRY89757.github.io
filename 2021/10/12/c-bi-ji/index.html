@@ -1428,6 +1428,143 @@ A &A::inc(A &a) {   //不能 static A &A::inc(A &a),  why ?
 </ul>
 <p><a href="https://imagelol.com/image/IKYmQE" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/11/03/IKYmQE.png" alt></a></p>
 <p><a href="https://imagelol.com/image/IKYpYQ" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/11/03/IKYpYQ.png" alt></a></p>
+<p>2021.11.5日更新</p>
+<hr>
+<h1 id="通过几道作业题对类成员指针的一些思考"><a href="#通过几道作业题对类成员指针的一些思考" class="headerlink" title="通过几道作业题对类成员指针的一些思考"></a>通过几道作业题对类成员指针的一些思考</h1><p>由于是函数整理的错题，所以可能整理的稍微有些乱，不过这里选择按照时间线顺序来进行解释：</p>
+<p>首先看代码：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+using namespace std;
+
+class A
+{
+    static int *j, A::*a, i[5];
+
+public:
+    int x;
+    static int &k, *n;
+};
+int y = 0;
+int A::i[5] = {1, 2, 3};
+int *A::j = &y;
+int A::*j = &A::x;
+int A::*A::a = &A::x;
+int &A::k = y;
+int *A::n = &y;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个代码是完全没有问题的。我们这里定义了大量静态变量，下面我一一解析一下每一行代码：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include<iostream>
+using namespace std;
+
+class A
+{
+    static int *j, A::*a, i[5];  // j为static int型变量，a为指向static int类成员的指针，i为一个静态int型数组元素数量为5.
+
+public:
+    int x;  // public型普通类成员，
+    static int &k, *n;  // k 为static int型引用变量， n为指向static int 型的变量指针。
+};
+int y = 0;  // 定义一个新的变量（非静态变量，仅仅在当前文件有效）
+int A::i[5] = {1, 2, 3};  // 初始化A::i[5]的 前3个元素
+int *A::j = &y;  // 初始化类内普通指向静态int型指针
+int A::*j = &A::x; // 定义一个新的指针！！！这个指针为类成员指针，指向A类中的x普通对象
+int A::*A::a = &A::x;  // 这个应该这样理解: (int A::*) (A::a), 可以看到，与上面一行代码不同的一点就在于这里特别指定了A：：a，这也就代表我们这里并不是定义了一个新的变量，而是类内类成员指针变量的初始化
+int &A::k = y; // 这里面同样的： (int &) (A::k), 代表初始化A类内静态成员 
+int *A::n = &y; // 与上同样的，(int *) (A::n), 代表初始化A类内静态成员。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意，这些初始化操作不可以在main函数内执行，因为这些都是static，所以可以像定义新变量一样来初始化这些类内静态成员，当然这里的格式也是要格外注意的，需要有一个(A::)来说明这是个类内静态变量的初始化而不是新定义了一个变量。</p>
+<p>接着，如果这些变量都不是静态static的那又会怎么样呢？</p>
+<p>我又写到了一道类似的题：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">// 分析如下定义是否正确，并指出错误原因。
+struct A { 
+    char *a, b, *geta( );  // 一个字符指针，一个字符变量，一个返回值为char*类型的指针。
+    char A::*p;     // 成员变量指针，指向char类型的类A成员
+    char *A::*q( );  
+    char *(A::*r)( ); // 成员函数指针，指向返回值为char* 参数为空的类成员函数。
+}; 
+int main(void) { 
+    A a; 
+    a.p = &A::a;  
+    a.p = &A::b;  
+    a.q = &A::geta;  
+    a.r = a.geta; 
+    a.r = &a.geta;
+    a.r = &A::geta;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当然，这个代码就很有问题了。我们先看代码的问题在哪里再说上面提到的问题：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
+using namespace std;
+
+struct A
+{
+    char *a, b, *geta(); // 一个字符指针，一个字符变量，一个返回值为char*类型的指针。
+    char A::*p;          // 成员变量指针，指向char类型的类A成员
+    char *A::*q();       // 成员指针函数，该函数返回值为char* A::*也就是一个A类成员指针，该指针指向一个char*型的对象
+    char *(A::*r)();     // 成员函数指针，指向返回值为char* 参数为空的类成员函数。
+};
+
+// char A::* (A::p) = &A::b;
+
+int main(void)
+{
+
+
+    A a;            // 正确，构造类
+    a.p = &A::a;    // 错误，类型无法对应，指针应该与地址对应而不是与char型常量对应。
+    a.p = &A::b;    // 正确。
+    a.q = &A::geta; // 错误，类型不对应，q为一个函数而不是一个指针，不对应地址。
+    a.r = a.geta;   // 错误，r指向一个返回值char*的无参A类成员函数，这里面类型不对并且这里不可以使用对象的实例来取址，类成员指针不对应具体的地址
+    a.r = &a.geta;   // 错误，类成员指针不对应具体的地址，它对应一个类的抽象特定成员，而不是普通指针对应的地址。
+    a.r = &A::geta;  // 正确。
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到这里面考察的有我们的类成员指针定义的时候不能指向具体实例的成员地址，也有考察指针与地址对应关系，但是我们可以发现这里面正确的变量定义是可以存在于main函数里面的，并且这里的赋值初始化都是直接有具体实例调用相关的指针然后再进行相关的赋值。就比如这一行代码：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">a.p = &A::b //正确<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>但是如果我们想使用上文的这么main函数前面一行注释掉的代码：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">// char A::* (A::p) = &A::b;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>我们就需要对p指针的定义重新进行改变，改为和最一开始代码的一样变为静态变量：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">static char A::*p;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>就说这么多吧，总之还是学到了许多不同的关于类成员变量、类成员指针、静态成员变量等等初始化定义的各种语法问题的。</p>
+<h1 id="友元函数的一点知识"><a href="#友元函数的一点知识" class="headerlink" title="友元函数的一点知识"></a>友元函数的一点知识</h1><p>写到了一道作业题：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">// 分析如下定义是否正确，并指出错误原因
+class A
+{
+    int a;
+    static friend int f();
+    friend int g();
+
+public:
+    friend int A();
+    A(int x) : a(x){};
+} a(5);
+int f() { return a.a; }
+int g() { return a.a; }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里面涉及到了C++友元的一些知识（来自<a href="https://www.apiref.com/cpp-zh/cpp/language/friend.html" target="_blank" rel="noopener">C++ API Reference Document</a>）：</p>
+<ul>
+<li><p>友元关系不传递（你朋友的朋友不是你的朋友）。</p>
+</li>
+<li><p>友元关系不继承（你朋友的孩子不是你的朋友）。</p>
+</li>
+<li><p>友元函数声明中不允许使用存储类说明符。在友元声明中定义的函数具有外部连接，先前已定义的函数保持其定义时所具有的连接。</p>
+</li>
+<li><p><a href="https://www.apiref.com/cpp-zh/cpp/language/access.html" target="_blank" rel="noopener">访问说明符</a>对于友元声明的含义没有影响（它们可出现于 <code>private:</code> 或于 <code>public:</code> 节，且并无区别）。</p>
+</li>
+<li><p>友元类声明不能定义新的类（friend class X {}; 是错的）。</p>
+</li>
+<li><p>当局部类将一个无限定的函数或类声明为其友元时，只<a href="https://www.apiref.com/cpp-zh/cpp/language/lookup.html" target="_blank" rel="noopener">查找</a>在其最内层非类作用域中的函数与类，而非全局函数：</p>
+</li>
+</ul>
+<pre class="line-numbers language-c++"><code class="language-c++">class F {};
+int f();
+int main()
+{
+    extern int g();
+    class Local { // main() 函数中的局部类
+        friend int f(); // 错误，没有声明于 main() 的该函数
+        friend int g(); // OK，main() 中有 g 的声明
+        friend class F; // 令局部 F（随后定义）为友元
+        friend class ::F; // 令全局 F 为友元
+    };
+    class F {}; // 局部 F
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在类或类模板 X 中的友元声明中被首次声明的名字，成为 X 的最内层外围命名空间的成员，但对于查找不可见（除了考虑 X 的<a href="https://www.apiref.com/cpp-zh/cpp/language/adl.html" target="_blank" rel="noopener">实参依赖查找</a>），除非在该命名空间作用域中提供与之匹配的声明——细节见<a href="https://www.apiref.com/cpp-zh/cpp/language/namespace.html#.E5.91.BD.E5.90.8D.E7.A9.BA.E9.97.B4" target="_blank" rel="noopener">命名空间</a>。</p>
 <p>END;</p>
 
             </div>
@@ -1608,8 +1745,7 @@ A &A::inc(A &a) {   //不能 static A &A::inc(A &a),  why ?
                 <a href="/2021/10/12/practice-mmdet-customized-datasets/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="practice mmdet(Customized datasets)">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="practice mmdet(Customized datasets)">
                         
                         <span class="card-title">practice mmdet(Customized datasets)</span>
                     </div>
@@ -1873,7 +2009,7 @@ Bas
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">163.9k</span> 字
+                <span class="white-color">174k</span> 字
             
 
             
