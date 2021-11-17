@@ -913,6 +913,12 @@ int main() {
     cout << q->y<<endl; // 12
     cout << q->z; // error<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><em>选自第3次作业第三题</em></p>
+<p>既然这里已经开始讲解关于虚函数和纯虚函数的一些东西了，我们这里就继续展开讲解关于虚函数和纯虚函数的有关知识。</p>
+<p>本文接下来主要参考金良海老师的PPT：</p>
+<h1 id="虚函数-1"><a href="#虚函数-1" class="headerlink" title="虚函数"></a>虚函数</h1><p>虚函数：即用virtual定义的成员函数。Java几乎所有函数都默认为虚函数。当基类对象指针或引用指向或引用不同类型派生类对象时，通过虚函数到基类或派生类中同名函数的映射实现(动态)多态。</p>
+<p>动态多态：<strong>重载函数表现的是静态(编译时)多态性，虚函数表现的是动态(运行时)多态性：</strong>重载函数是静态多态函数，通过静态绑定调用重载函数；虚函数是动态多态函数，通过动态绑定调用(虚映射到实)函数。动态绑定是程序运行时自己完成的，静态绑定是编译或操作系统完成的。</p>
+<p>虚函数的动态绑定通过存储在对象中的一个指针完成，因此虚函数一定有this(指向这个对象）。(该指针指向虚函数入口地址表VFT)</p>
+<p>理解这些是很关键的。</p>
 
             </div>
             <hr/>
@@ -1356,7 +1362,7 @@ int main() {
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">174k</span> 字
+                <span class="white-color">187.4k</span> 字
             
 
             
@@ -1587,5 +1593,5 @@ $(function () {
             </script>
         
 
-    <script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script><script>!function(e){var r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function t(){for(var c=0;c<r.length;c++)t=r[c],void 0,0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=r[c];t=o,n=function(){r=r.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}t(),e.addEventListener("scroll",function(){!function(t,n){clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)}(t,e)})}(this);</script></body>
 </html>

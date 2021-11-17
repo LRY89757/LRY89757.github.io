@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://lry89757.github.io/2021/11/17/write-a-dataloader/</loc>
+    <lastmod>2021-11-17</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/11/16/c-bi-ji-yun-suan-fu-chong-zai/</loc>
+    <lastmod>2021-11-17</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/09/24/linux-bi-ji/</loc>
+    <lastmod>2021-11-17</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/10/20/c-bi-ji-yi/</loc>
+    <lastmod>2021-11-15</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/11/09/mmdet-project-of-fenghuo/</loc>
+    <lastmod>2021-11-14</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/11/06/rpc-explore/</loc>
+    <lastmod>2021-11-11</lastmod>
+  </url>  <url>
     <loc>https://lry89757.github.io/2021/10/12/practice-mmdet-customized-datasets/</loc>
     <lastmod>2021-11-11</lastmod>
   </url>  <url>
@@ -16,16 +34,7 @@
     <loc>https://lry89757.github.io/2021/11/05/c-bi-ji-ji-cheng-yu-gou-zao/</loc>
     <lastmod>2021-11-11</lastmod>
   </url>  <url>
-    <loc>https://lry89757.github.io/2021/11/09/mmdet-project-of-fenghuo/</loc>
-    <lastmod>2021-11-10</lastmod>
-  </url>  <url>
-    <loc>https://lry89757.github.io/2021/11/06/rpc-explore/</loc>
-    <lastmod>2021-11-07</lastmod>
-  </url>  <url>
     <loc>https://lry89757.github.io/2021/11/03/practice-mmdet-3/</loc>
-    <lastmod>2021-11-05</lastmod>
-  </url>  <url>
-    <loc>https://lry89757.github.io/2021/10/20/c-bi-ji-yi/</loc>
     <lastmod>2021-11-05</lastmod>
   </url>  <url>
     <loc>https://lry89757.github.io/2021/10/12/c-bi-ji/</loc>
@@ -54,9 +63,6 @@
   </url>  <url>
     <loc>https://lry89757.github.io/2021/10/17/yolov3-yuan-ma-jie-du/</loc>
     <lastmod>2021-10-19</lastmod>
-  </url>  <url>
-    <loc>https://lry89757.github.io/2021/09/24/linux-bi-ji/</loc>
-    <lastmod>2021-10-12</lastmod>
   </url>  <url>
     <loc>https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/</loc>
     <lastmod>2021-10-10</lastmod>
