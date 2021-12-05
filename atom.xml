@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lry89757.github.io/"/>
-  <updated>2021-11-17T17:08:48.951Z</updated>
+  <updated>2021-12-05T16:20:10.446Z</updated>
   <id>https://lry89757.github.io/</id>
   
   <author>
@@ -17,11 +17,106 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>烽火项目分类任务总结</title>
+    <link href="https://lry89757.github.io/2021/12/05/feng-huo-xiang-mu-fen-lei-ren-wu-zong-jie/"/>
+    <id>https://lry89757.github.io/2021/12/05/feng-huo-xiang-mu-fen-lei-ren-wu-zong-jie/</id>
+    <published>2021-12-05T15:57:11.000Z</published>
+    <updated>2021-12-05T16:20:10.446Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;项目GitHub仓库地址：&lt;a href=&quot;https://github.com/LRY89757/mmdet-for-fenghuo&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="烽火集团" scheme="https://lry89757.github.io/tags/%E7%83%BD%E7%81%AB%E9%9B%86%E5%9B%A2/"/>
+    
+      <category term="项目" scheme="https://lry89757.github.io/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="图像处理" scheme="https://lry89757.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>烽火项目分割任务总结</title>
+    <link href="https://lry89757.github.io/2021/12/05/feng-huo-xiang-mu-fen-ge-ren-wu-zong-jie/"/>
+    <id>https://lry89757.github.io/2021/12/05/feng-huo-xiang-mu-fen-ge-ren-wu-zong-jie/</id>
+    <published>2021-12-05T15:56:53.000Z</published>
+    <updated>2021-12-05T16:20:32.503Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;项目GitHub仓库地址：&lt;a href=&quot;https://github.com/LRY89757/mmdet-for-fenghuo&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="烽火集团" scheme="https://lry89757.github.io/tags/%E7%83%BD%E7%81%AB%E9%9B%86%E5%9B%A2/"/>
+    
+      <category term="项目" scheme="https://lry89757.github.io/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="图像处理" scheme="https://lry89757.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Intro to QT</title>
+    <link href="https://lry89757.github.io/2021/11/23/intro-to-qt/"/>
+    <id>https://lry89757.github.io/2021/11/23/intro-to-qt/</id>
+    <published>2021-11-23T08:29:23.000Z</published>
+    <updated>2021-11-23T09:11:52.175Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h2&gt;&lt;p&gt;简单介绍一下关于QT的一些了解，用来应付我的C++作业。&lt;/p&gt;
+&lt;h2 id=&quot;三种基类&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="C++" scheme="https://lry89757.github.io/categories/C/"/>
+    
+    
+      <category term="C++" scheme="https://lry89757.github.io/tags/C/"/>
+    
+      <category term="QT" scheme="https://lry89757.github.io/tags/QT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Write A Dataloader</title>
     <link href="https://lry89757.github.io/2021/11/17/write-a-dataloader/"/>
     <id>https://lry89757.github.io/2021/11/17/write-a-dataloader/</id>
     <published>2021-11-17T11:57:07.000Z</published>
-    <updated>2021-11-17T17:08:48.951Z</updated>
+    <updated>2021-12-02T09:41:21.929Z</updated>
     
     <summary type="html">
     
@@ -75,7 +170,7 @@
     <link href="https://lry89757.github.io/2021/11/09/mmdet-project-of-fenghuo/"/>
     <id>https://lry89757.github.io/2021/11/09/mmdet-project-of-fenghuo/</id>
     <published>2021-11-09T11:22:50.000Z</published>
-    <updated>2021-11-14T08:58:50.247Z</updated>
+    <updated>2021-12-05T16:20:42.363Z</updated>
     
     <summary type="html">
     
@@ -83,7 +178,8 @@
       
         
         
-          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
+          &lt;blockquote&gt;
+&lt;p&gt;项目GitHub仓库地址：&lt;a href=&quot;https://github.com/LRY89757/mmdet-for-fenghuo&quot; target=&quot;_blank&quot;
         
       
     
@@ -242,7 +338,7 @@
     <link href="https://lry89757.github.io/2021/10/20/c-bi-ji-yi/"/>
     <id>https://lry89757.github.io/2021/10/20/c-bi-ji-yi/</id>
     <published>2021-10-20T06:27:04.000Z</published>
-    <updated>2021-11-15T07:56:33.012Z</updated>
+    <updated>2021-11-21T02:28:34.027Z</updated>
     
     <summary type="html">
     
@@ -487,92 +583,6 @@
       <category term="语法" scheme="https://lry89757.github.io/tags/%E8%AF%AD%E6%B3%95/"/>
     
       <category term="Argparse" scheme="https://lry89757.github.io/tags/Argparse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>路面裂缝数据集调研</title>
-    <link href="https://lry89757.github.io/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/"/>
-    <id>https://lry89757.github.io/2021/10/04/lu-mian-lie-feng-shu-ju-ji-diao-yan/</id>
-    <published>2021-10-04T07:20:44.000Z</published>
-    <updated>2021-11-11T00:51:15.329Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="数据集" scheme="https://lry89757.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    
-      <category term="路面裂缝检测" scheme="https://lry89757.github.io/tags/%E8%B7%AF%E9%9D%A2%E8%A3%82%E7%BC%9D%E6%A3%80%E6%B5%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>practice mmdet</title>
-    <link href="https://lry89757.github.io/2021/10/04/practice-mmdet/"/>
-    <id>https://lry89757.github.io/2021/10/04/practice-mmdet/</id>
-    <published>2021-10-04T03:36:52.000Z</published>
-    <updated>2021-11-11T00:49:40.089Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot; title=&quot;Preface&quot;&gt;&lt;/a&gt;Preface&lt;/h1&gt;&lt;p&gt;All refer to the &lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="目标检测" scheme="https://lry89757.github.io/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
-    
-      <category term="mmdet" scheme="https://lry89757.github.io/tags/mmdet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>YOLOv1精读</title>
-    <link href="https://lry89757.github.io/2021/09/30/yolov1-jing-du/"/>
-    <id>https://lry89757.github.io/2021/09/30/yolov1-jing-du/</id>
-    <published>2021-09-30T13:02:11.000Z</published>
-    <updated>2021-10-01T14:23:20.961Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Preface&quot;&gt;&lt;a href=&quot;#Preface&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="深度学习" scheme="https://lry89757.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="YOLO" scheme="https://lry89757.github.io/tags/YOLO/"/>
-    
-      <category term="论文解读" scheme="https://lry89757.github.io/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/"/>
     
   </entry>
   

@@ -745,14 +745,14 @@ CommandNotFoundError: Your shell has not been ">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        1.1k
+                        2.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        4 Min
+                        9 Min
                     </div>
                     
                 
@@ -794,6 +794,92 @@ CommandNotFoundError: Your shell has not been ">
 <p>退出环境：source deactivate</p>
 </blockquote>
 <h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><hr>
+<h3 id="本地绑定github仓库的更改"><a href="#本地绑定github仓库的更改" class="headerlink" title="本地绑定github仓库的更改"></a>本地绑定github仓库的更改</h3><p>当你从别人的GitHub仓库中clone下来一个仓库的时候，git默认会绑定一个远端仓库，这个仓库就是别人的仓库，那么如果我们想要更改绑定的仓库的时候，需要更改其配置的有关文件，具体操作可以参考下面这一篇博客：<a href="https://blog.csdn.net/asdfsfsdgdfgh/article/details/54981823" target="_blank" rel="noopener">https://blog.csdn.net/asdfsfsdgdfgh/article/details/54981823</a></p>
+<h3 id="关于上传文件过大失败"><a href="#关于上传文件过大失败" class="headerlink" title="关于上传文件过大失败"></a>关于上传文件过大失败</h3><p>遇到类似这类报错<code>fatal: The remote end hung up unexpectedly</code>很有可能是因为上传的文件超过了 50M的限制，如果我们执意要上传我们可以选择命令<code>git config --global http.postBuffer 524288000</code>来提升最大容量为500MB，参考自<a href="https://stackoverflow.com/questions/15240815/git-fatal-the-remote-end-hung-up-unexpectedly" target="_blank" rel="noopener">Stackoverflow</a>。</p>
+<p>当然如果你要取消上传那个很大的文件，那只能选择从commit过的 东西里面删掉他，但是目前我还不怎么会删，到时候再说吧。</p>
+<h3 id="Linux乌班图系统通过ssh链接git失败"><a href="#Linux乌班图系统通过ssh链接git失败" class="headerlink" title="Linux乌班图系统通过ssh链接git失败"></a>Linux乌班图系统通过ssh链接git失败</h3><p>由于当时服务器的免密钥登录时候用到了id_rsa.pub,我对git连接我自己的GitHub的时候要新创建一个id_rsa,我为了防止免密登录出问题没有创建同名的文件id_rsa.pub（这也是服务器git默认的公钥文件）,而是创建了一个新的文件叫做id_rsaforgit.pub.这导致每一次登录服务器后使用ssh访问GitHub都会出差错。<br>比如说我输入以下指令：</p>
+<pre class="line-numbers language-python"><code class="language-python">ssh <span class="token operator">-</span>T git@github<span class="token punctuation">.</span>com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样就会出问题报错：</p>
+<pre class="line-numbers language-python"><code class="language-python">git@github<span class="token punctuation">.</span>com<span class="token punctuation">:</span> Permission denied <span class="token punctuation">(</span>publickey<span class="token punctuation">)</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>因为GitHub默认认证的是id_rsa这个文件，但是我新建的文件名字叫做id_rsaforgit，所以这产生了冲突，导致连接GitHub出现问题，要解决这个问题就是要把文件id_rsaforgit加进去，只需要下面的指令：</p>
+<pre class="line-numbers language-python"><code class="language-python">eval $<span class="token punctuation">(</span>ssh<span class="token operator">-</span>agent <span class="token operator">-</span>s<span class="token punctuation">)</span>
+ssh<span class="token operator">-</span>add <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsaforgit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>这样就成功连接GitHub了。具体可参考：<a href="https://stackoverflow.com/questions/2643502/git-how-to-solve-permission-denied-publickey-error-when-using-git" target="_blank" rel="noopener">https://stackoverflow.com/questions/2643502/git-how-to-solve-permission-denied-publickey-error-when-using-git</a> 。</p>
+<h3 id="多人管理github分支"><a href="#多人管理github分支" class="headerlink" title="多人管理github分支"></a>多人管理github分支</h3><p>烽火项目我首先是gitclone了mmdetection的项目，然后在本地进行了有关的修改调试，最后跑出了一个demo。接下来由于要团队协作对于工作进行相关的修改，所以需要我新建一个GitHub的仓库进行协作，但是出现了以下这么些问题，首先就是由于我clone的mmdetection，这个项目本身指向的远程仓库是openmmlab官方的仓库，所以我需要让本地的这个仓库连接到我的一个新的仓库中以方便我进行相关的修改。另外一个问题就是由于我新建的仓库同样是fork的mmdetection这个仓库，这个项目是新fork的，所以这期间该项目openmmlab官方已经对于这个做了许许多多的新的push修改，所以我不能简单地直接连接到新fork的仓库中，这会产生冲突，所以我必须首先merge下，参考了廖雪峰的一些网站，个人认为对于这个讲得非常好：</p>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/896043488029600/900375748016320" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/900375748016320</a></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/900004111093344</a></li>
+</ul>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p>如果我现在有着一个commit，但是我想回退到最初的一个commit中，我们可以先看一下<code>git log</code>看一下自己的git 日志：</p>
+<pre class="line-numbers language-python"><code class="language-python">lry@ubuntu <span class="token operator">~</span><span class="token operator">/</span>projects<span class="token operator">/</span>mmdetection
+ <span class="token operator">%</span> git log
+commit <span class="token number">77c40047ced6f62a27559ab35ae18e10ea6aede0</span> <span class="token punctuation">(</span>HEAD <span class="token operator">-</span><span class="token operator">></span> master<span class="token punctuation">)</span>
+Author<span class="token punctuation">:</span> LRY89757 <span class="token operator">&lt;</span>lry89757@gmail<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Sun Dec <span class="token number">5</span> <span class="token number">00</span><span class="token punctuation">:</span><span class="token number">04</span><span class="token punctuation">:</span><span class="token number">19</span> <span class="token number">2021</span> <span class="token operator">+</span><span class="token number">0800</span>
+
+    Classification Task finished
+
+commit fe5a1350d33e954d10052b88ef719dc779d61ec0
+Author<span class="token punctuation">:</span> LRY89757 <span class="token operator">&lt;</span>lry89757@gmail<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Sat Dec <span class="token number">4</span> <span class="token number">23</span><span class="token punctuation">:</span><span class="token number">32</span><span class="token punctuation">:</span><span class="token number">33</span> <span class="token number">2021</span> <span class="token operator">+</span><span class="token number">0800</span>
+
+    Classification Task finished
+
+commit <span class="token number">1b6345c86eb268702bd7858dd8ba2ec8797662fd</span> <span class="token punctuation">(</span>origin<span class="token operator">/</span>master<span class="token punctuation">)</span>
+Author<span class="token punctuation">:</span> LRY89757 <span class="token operator">&lt;</span>lry89757@gmail<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Thu Dec <span class="token number">2</span> <span class="token number">00</span><span class="token punctuation">:</span><span class="token number">26</span><span class="token punctuation">:</span><span class="token number">39</span> <span class="token number">2021</span> <span class="token operator">+</span><span class="token number">0800</span>
+
+    update the single device dataset <span class="token operator">and</span> write a naive dataloader
+
+commit <span class="token number">8028ae36658d3a81f8bccdd3fbba54625dd02259</span>
+Author<span class="token punctuation">:</span> LRY89757 <span class="token operator">&lt;</span>lry89757@gmail<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Wed Dec <span class="token number">1</span> <span class="token number">13</span><span class="token punctuation">:</span><span class="token number">09</span><span class="token punctuation">:</span><span class="token number">08</span> <span class="token number">2021</span> <span class="token operator">+</span><span class="token number">0800</span>
+
+    update the notes <span class="token operator">and</span> image processing
+
+commit <span class="token number">748e20073068610b316f50f1638738c16e493d89</span>
+Merge<span class="token punctuation">:</span> <span class="token number">7ce44f5c</span> a7a16afb
+Author<span class="token punctuation">:</span> LRY89757 <span class="token operator">&lt;</span>lry89757@gmail<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Mon Nov <span class="token number">29</span> <span class="token number">17</span><span class="token punctuation">:</span><span class="token number">15</span><span class="token punctuation">:</span><span class="token number">40</span> <span class="token number">2021</span> <span class="token operator">+</span><span class="token number">0800</span>
+
+    Merge branch <span class="token string">'master'</span> of github<span class="token punctuation">.</span>com<span class="token punctuation">:</span>LRY89757<span class="token operator">/</span>mmdetection
+
+commit <span class="token number">7ce44f5ce6c19ed0b752e43874ee880db4745553</span>
+Author<span class="token punctuation">:</span> LRY89757 <span class="token operator">&lt;</span>lry89757@gmail<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Mon Nov <span class="token number">29</span> <span class="token number">17</span><span class="token punctuation">:</span><span class="token number">11</span><span class="token punctuation">:</span><span class="token number">58</span> <span class="token number">2021</span> <span class="token operator">+</span><span class="token number">0800</span>
+
+    a simple demo of Instance Segmentation
+
+commit a7a16afbf2a4bdb4d023094da73d325cb864838b <span class="token punctuation">(</span>origin<span class="token operator">/</span>dev<span class="token operator">-</span>v2<span class="token number">.20</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token punctuation">,</span> origin<span class="token operator">/</span>dev<span class="token operator">-</span>v2<span class="token number">.19</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token punctuation">)</span>
+Author<span class="token punctuation">:</span> Charlie Chang <span class="token operator">&lt;</span>s94040511s@gmail<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Fri Nov <span class="token number">19</span> <span class="token number">19</span><span class="token punctuation">:</span><span class="token number">31</span><span class="token punctuation">:</span><span class="token number">47</span> <span class="token number">2021</span> <span class="token operator">+</span><span class="token number">0800</span>
+
+    Clean unnecessary custom_imports <span class="token keyword">in</span> entrypoints <span class="token punctuation">(</span><span class="token comment" spellcheck="true">#6546)</span>
+
+commit c76ab0eb3c637b86c343d8454e07e00cfecc1b78 <span class="token punctuation">(</span>tag<span class="token punctuation">:</span> v2<span class="token number">.18</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token punctuation">)</span>
+Author<span class="token punctuation">:</span> RangiLyu <span class="token operator">&lt;</span>lyuchqi@gmail<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Mon Nov <span class="token number">15</span> <span class="token number">23</span><span class="token punctuation">:</span><span class="token number">55</span><span class="token punctuation">:</span><span class="token number">37</span> <span class="token number">2021</span> <span class="token operator">+</span><span class="token number">0800</span>
+
+    bump version to v2<span class="token number">.18</span><span class="token punctuation">.</span><span class="token number">1</span> <span class="token punctuation">(</span><span class="token comment" spellcheck="true">#6510)</span>
+
+    <span class="token operator">*</span> bump version to v2<span class="token number">.18</span><span class="token punctuation">.</span><span class="token number">1</span>
+
+    <span class="token operator">*</span> Update changelog<span class="token punctuation">.</span>md
+
+commit <span class="token number">2cc0fdb25bcd7341d084889aeeef515b17d08984</span>
+Author<span class="token punctuation">:</span> Andrea Panizza <span class="token operator">&lt;</span><span class="token number">8233615</span><span class="token operator">+</span>AndreaPi@users<span class="token punctuation">.</span>noreply<span class="token punctuation">.</span>github<span class="token punctuation">.</span>com<span class="token operator">></span>
+Date<span class="token punctuation">:</span>   Mon Nov <span class="token number">15</span> <span class="token number">12</span><span class="token punctuation">:</span><span class="token number">21</span><span class="token punctuation">:</span><span class="token number">02</span> <span class="token number">2021</span> <span class="token operator">+</span><span class="token number">0100</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>而后我们如果想要回到上面的第三个commit地方的时候，我们可以利用它前面的commit的特定字符<code>1b6345</code>：</p>
+<pre class="line-numbers language-python"><code class="language-python">lry@ubuntu <span class="token operator">~</span><span class="token operator">/</span>projects<span class="token operator">/</span>mmdetection
+ <span class="token operator">%</span> git reset <span class="token operator">-</span>s <span class="token number">1b634</span>
+error<span class="token punctuation">:</span> unknown switch `s'
+usage<span class="token punctuation">:</span> git reset <span class="token punctuation">[</span><span class="token operator">-</span><span class="token operator">-</span>mixed <span class="token operator">|</span> <span class="token operator">-</span><span class="token operator">-</span>soft <span class="token operator">|</span> <span class="token operator">-</span><span class="token operator">-</span>hard <span class="token operator">|</span> <span class="token operator">-</span><span class="token operator">-</span>merge <span class="token operator">|</span> <span class="token operator">-</span><span class="token operator">-</span>keep<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">-</span>q<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>commit<span class="token operator">></span><span class="token punctuation">]</span>
+   <span class="token operator">or</span><span class="token punctuation">:</span> git reset <span class="token punctuation">[</span><span class="token operator">-</span>q<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>tree<span class="token operator">-</span>ish<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token operator">-</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span>paths<span class="token operator">></span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+   <span class="token operator">or</span><span class="token punctuation">:</span> git reset <span class="token operator">-</span><span class="token operator">-</span>patch <span class="token punctuation">[</span><span class="token operator">&lt;</span>tree<span class="token operator">-</span>ish<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token operator">-</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>paths<span class="token operator">></span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当然这里报错了，正常来说这么做是没有问题的，我们可以将<code>-s</code>改为<code>--soft</code>, 就没问题了:</p>
+<pre class="line-numbers language-python"><code class="language-python">lry@ubuntu <span class="token operator">~</span><span class="token operator">/</span>projects<span class="token operator">/</span>mmdetection
+ <span class="token operator">%</span> git reset <span class="token operator">-</span><span class="token operator">-</span>soft <span class="token number">1b634</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><pre class="line-numbers language-sh"><code class="language-sh">git clone ssh地址   # 项目克隆到本地
 git add .    # 提交到暂存区？好像是
 git commit -m""   # 提交到仓库
@@ -1313,7 +1399,7 @@ hexo -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">187.4k</span> 字
+                <span class="white-color">213.8k</span> 字
             
 
             

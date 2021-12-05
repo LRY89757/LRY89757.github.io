@@ -1,20 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://lry89757.github.io/2021/11/09/mmdet-project-of-fenghuo/</loc>
+    <lastmod>2021-12-05</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/12/05/feng-huo-xiang-mu-fen-ge-ren-wu-zong-jie/</loc>
+    <lastmod>2021-12-05</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/12/05/feng-huo-xiang-mu-fen-lei-ren-wu-zong-jie/</loc>
+    <lastmod>2021-12-05</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/09/06/faster-rcnn-yuan-ma-jie-du/</loc>
+    <lastmod>2021-12-05</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/</loc>
+    <lastmod>2021-12-05</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/09/06/mu-biao-jian-ce-bi-ji-shang/</loc>
+    <lastmod>2021-12-05</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/08/02/git-nvm-npm-ming-ling-xing-linux-deng-ge-chong-luan-qi-ba-zao-de-zhi-ling-da-quan-chi-xu-chi-xu-huan-huan-geng-xin-zhong/</loc>
+    <lastmod>2021-12-05</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/09/24/linux-bi-ji/</loc>
+    <lastmod>2021-12-04</lastmod>
+  </url>  <url>
     <loc>https://lry89757.github.io/2021/11/17/write-a-dataloader/</loc>
-    <lastmod>2021-11-17</lastmod>
+    <lastmod>2021-12-02</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/11/23/intro-to-qt/</loc>
+    <lastmod>2021-11-23</lastmod>
+  </url>  <url>
+    <loc>https://lry89757.github.io/2021/10/20/c-bi-ji-yi/</loc>
+    <lastmod>2021-11-21</lastmod>
   </url>  <url>
     <loc>https://lry89757.github.io/2021/11/16/c-bi-ji-yun-suan-fu-chong-zai/</loc>
     <lastmod>2021-11-17</lastmod>
-  </url>  <url>
-    <loc>https://lry89757.github.io/2021/09/24/linux-bi-ji/</loc>
-    <lastmod>2021-11-17</lastmod>
-  </url>  <url>
-    <loc>https://lry89757.github.io/2021/10/20/c-bi-ji-yi/</loc>
-    <lastmod>2021-11-15</lastmod>
-  </url>  <url>
-    <loc>https://lry89757.github.io/2021/11/09/mmdet-project-of-fenghuo/</loc>
-    <lastmod>2021-11-14</lastmod>
   </url>  <url>
     <loc>https://lry89757.github.io/2021/11/06/rpc-explore/</loc>
     <lastmod>2021-11-11</lastmod>
@@ -49,9 +70,6 @@
     <loc>https://lry89757.github.io/2021/10/13/self-attention-is-all-my-need/</loc>
     <lastmod>2021-10-31</lastmod>
   </url>  <url>
-    <loc>https://lry89757.github.io/2021/08/02/git-nvm-npm-ming-ling-xing-linux-deng-ge-chong-luan-qi-ba-zao-de-zhi-ling-da-quan-chi-xu-chi-xu-huan-huan-geng-xin-zhong/</loc>
-    <lastmod>2021-10-30</lastmod>
-  </url>  <url>
     <loc>https://lry89757.github.io/2021/10/27/yolov3-lun-wen-jing-du/</loc>
     <lastmod>2021-10-29</lastmod>
   </url>  <url>
@@ -63,12 +81,6 @@
   </url>  <url>
     <loc>https://lry89757.github.io/2021/10/17/yolov3-yuan-ma-jie-du/</loc>
     <lastmod>2021-10-19</lastmod>
-  </url>  <url>
-    <loc>https://lry89757.github.io/2021/09/16/lun-wen-zhi-yolo-xi-lie/</loc>
-    <lastmod>2021-10-10</lastmod>
-  </url>  <url>
-    <loc>https://lry89757.github.io/2021/09/06/mu-biao-jian-ce-bi-ji-shang/</loc>
-    <lastmod>2021-10-09</lastmod>
   </url>  <url>
     <loc>https://lry89757.github.io/2021/09/21/kang-nai-er-wang-yan-bo-shi-xian-shang-talk-ji-lu/</loc>
     <lastmod>2021-10-05</lastmod>
@@ -92,9 +104,6 @@
     <lastmod>2021-09-26</lastmod>
   </url>  <url>
     <loc>https://lry89757.github.io/2021/09/20/chu-shi-rnn/</loc>
-    <lastmod>2021-09-20</lastmod>
-  </url>  <url>
-    <loc>https://lry89757.github.io/2021/09/06/faster-rcnn-yuan-ma-jie-du/</loc>
     <lastmod>2021-09-20</lastmod>
   </url>  <url>
     <loc>https://lry89757.github.io/2021/09/06/shu-ju-zeng-qiang/</loc>

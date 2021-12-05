@@ -919,6 +919,109 @@ int main() {
 <p>动态多态：<strong>重载函数表现的是静态(编译时)多态性，虚函数表现的是动态(运行时)多态性：</strong>重载函数是静态多态函数，通过静态绑定调用重载函数；虚函数是动态多态函数，通过动态绑定调用(虚映射到实)函数。动态绑定是程序运行时自己完成的，静态绑定是编译或操作系统完成的。</p>
 <p>虚函数的动态绑定通过存储在对象中的一个指针完成，因此虚函数一定有this(指向这个对象）。(该指针指向虚函数入口地址表VFT)</p>
 <p>理解这些是很关键的。</p>
+<h2 id="关于类继承同名变量"><a href="#关于类继承同名变量" class="headerlink" title="关于类继承同名变量"></a>关于类继承同名变量</h2><p>如果我们派生类中有一个自定义的与基类同名的变量。如果不使用<code>using</code>这种来改变变量访问权限的话，就不会报错。类似这种 ：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class A
+{
+public:
+    int d;
+};
+
+class B:public A
+{
+public:
+    int d;
+}y;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>类似于这种就不会产生报错，这里我们B中有两个可用变量，一个是基类A的d，另一个是自己定义的d，访问权限都是public.如果我们调用 <code>y.d</code>，那么就调用的B的d。调用A的d就需要<code>y.A::d</code>。当然如果我们没有在B内单独定义d，我们就可以直接调用<code>y.d</code>这个时候调用的就是基类A的d了。</p>
+<p>但是如果我们使用<code>using</code>来改变派生类继承基类的成员访问权限的时候，就不可以定义同名变量。这样会导致冲突。</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class A
+{
+protected:
+    int a;
+};
+
+class B:public A
+{
+public:
+    using A::a;
+    int a;
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>像这种就会出现报错，因为这里我们使用<code>using</code>改变访问权限的时候，A::a就相当于是B类自己的了，当然就不能在类内定义一个同名的变量了。 </p>
+<p><em>note: 注意这里同样也不能说在其他访问权限定义一个新变量，同样也会报错：</em></p>
+<pre class="line-numbers language-c++"><code class="language-c++">class A
+{
+protected:
+    int a;
+};
+
+class B:public A
+{
+protected:
+    int a;
+public:
+    using A::a;
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em>同样也会报错。</em></p>
+<h2 id="关于构造函数一些问题"><a href="#关于构造函数一些问题" class="headerlink" title="关于构造函数一些问题"></a>关于构造函数一些问题</h2><p>如果基类只定义了非无参构造函数，那么派生类定义自己的初始化函数的时候必须要声明定义基类的构造函数，因为此时编译器不会自动给基类生成无参构造函数。所以调用无法调用无参构造函数。<br>比如说：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class A
+{
+public:
+    A(int x){cout<<"A\n";};
+};
+
+int main()
+{
+    A a;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样的代码编译器编译会无法通过，因为此时会出现报错<code>error: no matching function for call to ‘A::A()’</code>也就是没有找不到无参构造函数来实例化对象。编译器没有生成无参构造函数。</p>
+<p>而如果我们想要改变这种情况，也就是让编译器自动生成一个无参构造函数，那么我们就需要这样操作，加一个<code>A()=default;</code></p>
+<pre class="line-numbers language-c++"><code class="language-c++">class A
+{
+public:
+    A(int x){cout<<"A\n";};
+    A()=default;
+};
+
+int main()
+{
+    A a;
+    return 0;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样的话程序就没有问题了，不会报错了。</p>
+<p>同样的，我们用到类的继承同样是这样。比如我们B类继承了A的类，写继承函数的时候也需要调用相应的A的有参构造（<del>当编译器不自动生成无参构造的时候</del>）：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class A{
+public:
+    A(int x){cout<<"A\n";};
+    // A() = default;
+};
+
+class B:public A
+{
+    B(){cout<<"B\n";};
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样的话程序就会报错。因为继承了A的基类，但是父类并没有无参构造函数可供初始化调用。编译器此时不会自动生成无参构造函数，所以我们必须调用有参构造函数：</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class A{
+public:
+    A(int x){cout<<"A\n";};
+    // A() = default;
+};
+
+class B:public A
+{
+    B():A(3){cout<<"B\n";};
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样的话就不会报错。<br>另外如果我们就想用编译器生成的无参构造，那么我们仍然可以使用<code>A()=default;</code>:</p>
+<pre class="line-numbers language-c++"><code class="language-c++">class A{
+public:
+    A(int x){cout<<"A\n";};
+    A() = default;
+};
+
+class B:public A
+{
+    B(){cout<<"B\n";};
+};<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样就可以了。</p>
 
             </div>
             <hr/>
@@ -1362,7 +1465,7 @@ int main() {
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">187.4k</span> 字
+                <span class="white-color">213.8k</span> 字
             
 
             

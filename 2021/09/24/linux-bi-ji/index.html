@@ -721,14 +721,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Words:&nbsp;&nbsp;
-                        12.1k
+                        13.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        46 Min
+                        51 Min
                     </div>
                     
                 
@@ -1222,16 +1222,41 @@ mv /data/new/* /data/old/<span aria-hidden="true" class="line-numbers-rows"><spa
 <p>$ tmux info</p>
 <p>重新加载当前的 Tmux 配置</p>
 <p>$ tmux source-file ~/.tmux.conf</p>
-<h2 id="关于训练时实时查看GPU使用情况"><a href="#关于训练时实时查看GPU使用情况" class="headerlink" title="关于训练时实时查看GPU使用情况"></a>关于训练时实时查看GPU使用情况</h2><p>当时跑数据集的时候向组长学到了一些关于怎么实时监控显卡以及怎么指定单卡训练的方法：</p>
+<h2 id="关于训练时实时查看GPU使用情况"><a href="#关于训练时实时查看GPU使用情况" class="headerlink" title="关于训练时实时查看GPU使用情况"></a>关于训练时实时查看GPU使用情况</h2><p>当时跑数据集的时候向蒋组长学到了一些关于怎么实时监控显卡以及怎么指定单卡训练的方法：</p>
 <p>指定监控单卡训练，实际上只需要在我们的python命令前面输入一个<code>CUDA_VISIBLE=1</code>：</p>
-<pre class="line-numbers language-shell"><code class="language-shell">CUDA_VISIBLE=1 python tools/test.py configs/fenghuo/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_fenghuo.py work_dirs/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_fenghuo/latest.pth  --eval bbox segm
+<pre class="line-numbers language-shell"><code class="language-shell">CUDA_VISIBLE_DEVICES=1 python tools/test.py configs/fenghuo/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_fenghuo.py work_dirs/mask_rcnn_r50_caffe_fpn_mstrain-poly_1x_fenghuo/latest.pth  --eval bbox segm
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>关于<code>CUDA_VISIBLE=1</code>什么意思，目前还不是非常清楚，等到之后慢慢来看<a href="https://www.jianshu.com/p/0816c3a5fa5c" target="_blank" rel="noopener">https://www.jianshu.com/p/0816c3a5fa5c</a></p>
+<p>关于<code>CUDA_VISIBLE_DEVICES=1</code>什么意思，目前还不是非常清楚，等到之后慢慢来看<a href="https://www.jianshu.com/p/0816c3a5fa5c" target="_blank" rel="noopener">https://www.jianshu.com/p/0816c3a5fa5c</a></p>
+<blockquote>
+<p>2021.12.3号来考古，现在知道了，这个意思是使用CUDA：1，有时候要使用多张卡并行可以选择使用逗号分开两张卡，例如：CUDA_VISIBLE_DEVICES=1, 2</p>
+</blockquote>
 <p>这样做之后模型会进行单卡训练，另外当我们要进行实时监控显存和进程相关使用的时候我们可以考虑使用<code>watch</code>命令，比如说使用以下命令：</p>
 <pre class="line-numbers language-python"><code class="language-python">watch <span class="token operator">-</span>n <span class="token number">1</span> nvidia<span class="token operator">-</span>smi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这个代表每一秒刷新一次显卡使用情况，我们可以看一下检测结果：<br><a href="https://imagelol.com/image/Ixor6p" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s6.jpg.cm/2021/11/17/Ixor6p.png" alt></a></p>
 <p>最下面是相关进程使用情况。</p>
 <p>另外是关于watch的一些命令，可以使用man watch来了解。</p>
+<h2 id="查看各文件磁盘占用、各文件大小"><a href="#查看各文件磁盘占用、各文件大小" class="headerlink" title="查看各文件磁盘占用、各文件大小"></a>查看各文件磁盘占用、各文件大小</h2><blockquote>
+<p><a href="https://blog.csdn.net/ouyang_peng/article/details/10414499" target="_blank" rel="noopener">https://blog.csdn.net/ouyang_peng/article/details/10414499</a></p>
+</blockquote>
+<p>快读使用：</p>
+<pre class="line-numbers language-python"><code class="language-python">du <span class="token operator">-</span>h <span class="token operator">-</span><span class="token operator">-</span>max<span class="token operator">-</span>depth<span class="token operator">=</span><span class="token number">1</span> <span class="token operator">/</span>data<span class="token operator">/</span>home<span class="token operator">/</span> <span class="token comment" spellcheck="true"># 这个是指定某文件夹</span>
+du <span class="token operator">-</span>h <span class="token operator">-</span><span class="token operator">-</span>max<span class="token operator">-</span>depth<span class="token operator">=</span><span class="token number">1</span>  <span class="token comment" spellcheck="true"># 这个是当前文件夹</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>du [-abcDhHklmsSx] [-L &lt;符号连接&gt;][-X &lt;文件&gt;][–block-size][–exclude=&lt;目录或文件&gt;] [–max-depth=&lt;目录层数&gt;][–help][–version][目录或文件]<br>常用参数：<br>-a或-all 为每个指定文件显示磁盘使用情况，或者为目录中每个文件显示各自磁盘使用情况。<br>-b或-bytes 显示目录或文件大小时，以byte为单位。<br>-c或–total 除了显示目录或文件的大小外，同时也显示所有目录或文件的总和。<br>-D或–dereference-args 显示指定符号连接的源文件大小。<br>-h或–human-readable 以K，M，G为单位，提高信息的可读性。<br>-H或–si 与-h参数相同，但是K，M，G是以1000为换算单位,而不是以1024为换算单位。<br>-k或–kilobytes 以1024 bytes为单位。<br>-l或–count-links 重复计算硬件连接的文件。<br>-L&lt;符号连接&gt;或–dereference&lt;符号连接&gt; 显示选项中所指定符号连接的源文件大小。<br>-m或–megabytes 以1MB为单位。<br>-s或–summarize 仅显示总计，即当前目录的大小。<br>-S或–separate-dirs 显示每个目录的大小时，并不含其子目录的大小。<br>-x或–one-file-xystem 以一开始处理时的文件系统为准，若遇上其它不同的文件系统目录则略过。<br>-X&lt;文件&gt;或–exclude-from=&lt;文件&gt; 在&lt;文件&gt;指定目录或文件。<br>–exclude=&lt;目录或文件&gt; 略过指定的目录或文件。<br>–max-depth=&lt;目录层数&gt; 超过指定层数的目录后，予以忽略。<br>–help 显示帮助。<br>–version 显示版本信息。</p>
+<p>1&gt; 要显示一个目录树及其每个子树的磁盘使用情况<br>du /home/linux<br>这在/home/linux目录及其每个子目录中显示了磁盘块数。</p>
+<p>2&gt; 要通过以1024字节为单位显示一个目录树及其每个子树的磁盘使用情况<br>du -k /home/linux<br>这在/home/linux目录及其每个子目录中显示了 1024 字节磁盘块数。</p>
+<p>3&gt; 以MB为单位显示一个目录树及其每个子树的磁盘使用情况<br>du -m /home/linux<br>这在/home/linux目录及其每个子目录中显示了 MB 磁盘块数。</p>
+<p>4&gt; 以GB为单位显示一个目录树及其每个子树的磁盘使用情况<br>du -g /home/linux<br>这在/home/linux目录及其每个子目录中显示了 GB 磁盘块数。</p>
+<p>5&gt;查看当前目录下所有目录以及子目录的大小：<br>du -h .<br>“.”代表当前目录下。也可以换成一个明确的路径<br>-h表示用K、M、G的人性化形式显示</p>
+<p>6&gt;查看当前目录下user目录的大小，并不想看其他目录以及其子目录：<br>du -sh user<br>-s表示总结的意思，即只列出一个总结的值<br>du -h –max-depth=0 user<br>–max-depth=n表示只深入到第n层目录，此处设置为0，即表示不深入到子目录。</p>
+<p>7&gt;列出user目录及其子目录下所有目录和文件的大小：<br>du -ah user<br>-a表示包括目录和文件</p>
+<p>8&gt;列出当前目录中的目录名不包括xyz字符串的目录的大小：<br>du -h –exclude=’<em>xyz</em>‘</p>
+<p>9&gt;想在一个屏幕下列出更多的关于user目录及子目录大小的信息：<br>du -0h user<br>-0（杠零）表示每列出一个目录的信息，不换行，而是直接输出下一个目录的信息。</p>
+<p>10&gt;只显示一个目录树的全部磁盘使用情况<br>du -s /home/linux</p>
+<p>11&gt;查看各文件夹大小:du -h –max-depth=1</p>
+<p>查看指定目录：<br>代码如下：  其中 /path表示路径<br>du -h –max-depth=1 /path<br>具体如下所示：</p>
+<p>root@ubuntu4146:~# du -h –max-depth=1 /data/<br>1.1G    /data/gitlabDataa<br>8.0K    /data/test<br>241G    /data/gitlabData<br>809G    /data/home<br>15G    /data/OpenGrok<br>16K    /data/lost+found<br>1.1T    /data/</p>
+<pre><code>   我们发现  /data/home/ 目录占用最多，因此我们可以继续看那个目录占用的最多，如下所示：</code></pre><p>root@ubuntu4146:/data/home# du -h –max-depth=1 /data/home/<br>141G    /data/home/wzm<br>62G    /data/home/lwc<br>421G    /data/home/hcy<br>16K    /data/home/zzp<br>16K    /data/home/zl<br>54G    /data/home/drj<br>122G    /data/home/sjq<br>4.1G    /data/home/ljs<br>6.7G    /data/home/ywm<br>809G    /data/home/<br>root@ubuntu4146:/data/home# </p>
+<p>————————————————<br>版权声明：本文为CSDN博主「欧阳鹏」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/ouyang_peng/article/details/10414499" target="_blank" rel="noopener">https://blog.csdn.net/ouyang_peng/article/details/10414499</a></p>
 
             </div>
             <hr/>
@@ -1682,7 +1707,7 @@ mv /data/new/* /data/old/<span aria-hidden="true" class="line-numbers-rows"><spa
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">187.4k</span> 字
+                <span class="white-color">213.8k</span> 字
             
 
             
