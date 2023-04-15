@@ -11,22 +11,35 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
+* B.S. in WuHan, (Huazhong University of Science and Technology)[http://english.hust.edu.cn/], 2024
+<!-- * B.S. in GitHub, GitHub University, 2012 -->
+<!-- * M.S. in Jekyll, GitHub University, 2014 -->
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
 
 Work experience
 ======
-* Summer 2015: Research Assistant
+* Summer School: Research Assistant
   * Github University
   * Duties included: Tagging issues
-  * Supervisor: Professor Git
+  * Supervisor: Nihui
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
+* Tencent Company [ncnn](https://github.com/Tencent/ncnn): open source project(17k+ stars) 
+  * Duties included: top15 committer
+  * Write and optimize operators for its high neural network inference engine ncnn
+  * get the scholarship of the project
+  * Supervisor: [Nihui](https://github.com/nihui)(with Github 5.6k followers)
+
+* Sensetime Company: intern
+  * optimize the backend of llvm
+  * base on the AI chips of sensetime
+    * (ISA just like NV PTX)
+  <!-- * Duties included: Merging pull requests -->
+  * Supervisor: WenqiangYin
+
+Research Experience
+
+* PMA: 
+
 Skills
 ======
 * Skill 1
@@ -56,4 +69,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+<!-- * Currently signed in to 43 different slack teams -->

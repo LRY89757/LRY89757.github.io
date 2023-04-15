@@ -88,7 +88,7 @@ author:
   avatar           : "lry.jpg"
   # bio              : "Your biography for the left-hand sidebar"
   bio              : "AI HPC Compiler Football"
-  location         : "Wuhan China"
+  location         : "Shanghai China now"
   employer         : "Sensetime"
   # pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   # googlescholar    : "http://yourfullgooglescholarurl.com"
@@ -101,7 +101,8 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/LRY89757"
+  # github           : "https://github.com/LRY89757"
+  github           : "LRY89757"
   google_plus      :
   keybase          :
   instagram        :
