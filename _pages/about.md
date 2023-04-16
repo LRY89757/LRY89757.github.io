@@ -42,10 +42,10 @@ redirect_from:
 
 <!-- 1 -->
 <div class="section-text col-right">
-<h3><a href="#"><span class="emph">Develop High</span> Performance Neural Network Inference Engine</a></h3>
+<h3><a href="#"style="text-decoration: none;"><span class="emph">Develop High</span> Performance Neural Network Inference Engine</a></h3>
 </div>
 
-<div><a href="https://www.tencent.com/en-us/">Tencent Company</a>
+<div><a href="https://www.tencent.com/en-us/"style="text-decoration: none;">Tencent Company</a>
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
@@ -59,10 +59,10 @@ redirect_from:
 
 <!-- 2 -->
 <div class="section-text col-right">
-<h3><a href="#"><span class="emph">Optimize</span> The Backend of LLVM for AI Chips</a></h3>
+<h3><a href="#"style="text-decoration: none;"><span class="emph">Optimize</span> The Backend of LLVM for AI Chips</a></h3>
 </div>
 
-<div><a href="https://www.sensetime.com/en">Intern @ Sensetime Company</a>
+<div><a href="https://www.sensetime.com/en"style="text-decoration: none;">Intern @ Sensetime Company</a>
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
 </div>
 
@@ -74,10 +74,10 @@ redirect_from:
 
 <!-- 3 -->
 <div class="section-text col-right">
-<h3><a href="#"><span class="emph">Deploy</span> High-FPS AI Models on Arm Chips</a></h3>
+<h3><a href="#"style="text-decoration: none;"><span class="emph">Deploy</span> High-FPS AI Models on Arm Chips</a></h3>
 </div>
 
-<div><a href="https://en.fiberhome.com/"> FiberHome Telecommunication Technologies Company</a>
+<div><a href="https://en.fiberhome.com/"style="text-decoration: none;"> FiberHome Telecommunication Technologies Company</a>
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April 2021 - June.2021</font>
 </div>
 
