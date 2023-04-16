@@ -18,7 +18,7 @@ redirect_from:
 </h2>
 ---
 
-* I'm an undergraduate from [Huazhong University of Science and Technology](http://english.hust.edu.cn/).
+* Junior@[HUST](http://english.hust.edu.cn/), Intern@[sensetime](https://www.sensetime.com/en), want to pursue PhD on AI Compiler
 * I once had some researches on the edge deployment of AI models considered as a subfield of edge computing, who is familiar with common high-performance neural network inference engines and deep learning compiler architectures (such as TVM). 
 * I have written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
 * In addition, as the person in charge, I once led the team to complete a industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
