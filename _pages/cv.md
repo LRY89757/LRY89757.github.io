@@ -53,7 +53,7 @@ Education
 </div>
 
 <div><a href="https://www.tencent.com/en-us/">Tencent Company</a>
-<font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
+<font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
 * Project: [ncnn](https://github.com/Tencent/ncnn): an open source project with 17k+ stars in Github
@@ -85,7 +85,7 @@ Education
 </div>
 
 <div><a href="https://en.fiberhome.com/"> FiberHome Telecommunication Technologies Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April 2021 - June.2021</font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April 2021 - June.2021</font>
 </div>
 
 > Establish a team of 7 undergraduate, 1 postgraduate in total for This Project.

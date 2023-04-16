@@ -18,18 +18,72 @@ Biography
 undergraduate from Huazhong University of Science and Technology.
 mainly research on the edge deployment of AI models considered as a subfield of edge computing, who is familiar with common high-performance neural network inference engines and deep learning compiler architectures (such as TVM). Having written many high-performance neural networks operators for Tencent company, he also has made some contributions to open source projects of Microsoft, Tencent, Meituan, and Megvii. In addition, as the person in charge, he once led the team to complete a industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. At the same time, he has a basic understanding of AI theories. He conducted in-depth research in a college ai lab, where he studied and reproduced papers in the fields of  light-weight object detection, pose estimation and some transformer models.  With the experience of winning the title of "outstanding student" in the parallel programming summer program of the University of Sydney and  preparing for IELTS currently, he possesses basic English communication skills.
 
-
 Education
 ======
+* B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/), 2024(expected)
+  * Want to pursure PhD Degree in AI Compiler
+<!-- * B.S. in GitHub, GitHub University, 2012 -->
+<!-- * M.S. in Jekyll, GitHub University, 2014 -->
+<!-- * Ph.D in Version Control Theory, GitHub University, 2018 (expected) -->
 
-<!-- * B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/) , 2024 -->
-  <!-- * GPA: 3.95/4.0 -->
+<h2 class="col">
+<font color=blue>Industrial Experiences</font>
+</h2>
 
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+<!-- 1 -->
+<div class="section-text col-right">
+<h3><a href="#"><span class="emph">Develop High</span> Performance Neural Network Inference Engine</a></h3>
+</div>
 
- 
+<div><a href="https://www.tencent.com/en-us/">Tencent Company</a>
+<font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
+</div>
+
+* Project: [ncnn](https://github.com/Tencent/ncnn): an open source project with 17k+ stars in Github
+* Role: Top15 committer of this program(util `Nov.2022`)
+* Mentor: [Nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
+* Duties included: Write and Optimize operators for ncnn.
+  * Mainly aligned with pytorch, some examples I built
+  * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
+  * [Gelu](https://github.com/Tencent/ncnn/pull/4144): implement `sse/avx/avx512` version of gelu, with a fast version of erfc
+
+<!-- 2 -->
+<div class="section-text col-right">
+<h3><a href="#"><span class="emph">Optimize</span> The Backend of LLVM for AI Chips</a></h3>
+</div>
+
+<div><a href="https://www.sensetime.com/en">Intern @ Sensetime Company</a>
+<font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
+</div>
+
+* Role: Intern
+* Mentor: WenqiangYin
+* Duties included: Write new pass and based on the new AI chips of Sensetime.
+  * Such as support the 64-bit Instr
+  * ISA like NVIDIA PTX  
+
+<!-- 3 -->
+<div class="section-text col-right">
+<h3><a href="#"><span class="emph">Deploy</span> High-FPS AI Models on Arm Chips</a></h3>
+</div>
+
+<div><a href="https://en.fiberhome.com/"> FiberHome Telecommunication Technologies Company</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April 2021 - June.2021</font>
+</div>
+
+> Establish a team of 7 undergraduate, 1 postgraduate in total for This Project.
+
+* Role: **Leader** @ [Dian.AI](https://dian.org.cn/)
+* Duties included: As the project leader, he is responsible for the whole process of calibration samples, selection, training network (lite-mspn/yolox) and deployment of high-performance Inference Networks to Arm CPU. 
+* Mentor: [YayuGao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ)
+
+Hobbies
+======
+
+* Football, crazy fans of Lionel Messi, [FC Barcelona](https://www.fcbarcelona.com/en/), and Argentina National Team
+* 
+
+<!-- 
 A data-driven personal website
 ======
 Like many other Jekyll-based GitHub Pages templates, academicpages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
@@ -67,4 +121,4 @@ Example: editing a markdown file for a talk
 
 For more info
 ------
-More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful. -->
