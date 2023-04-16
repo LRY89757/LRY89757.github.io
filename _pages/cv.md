@@ -100,30 +100,41 @@ replacement policies. Emulating memory disaggregation for data center applicatio
 </div>
 
 * Project: [ncnn](https://github.com/Tencent/ncnn): an open source project with 17k+ stars in Github
-* top15 committer of this program(util `Nov.2022`)
+* Role: Top15 committer of this program(util `Nov.2022`)
+* Mentor: [Nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
 * Duties included: Write and Optimize operators for ncnn.
-  * mainly aligned with pytorch, some examples I built
-  * [`GridSample`](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
+  * Mainly aligned with pytorch, some examples I built
+  * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
   * [Gelu](https://github.com/Tencent/ncnn/pull/4144): implement `sse/avx/avx512` version of gelu, with a fast version of erfc
-* Supervisor: [Nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
-* Get the final scholarship
 
-<!-- 1 -->
+<!-- 2 -->
 <div class="section-text col-right">
-<h3><a href="#"><span class="emph">Serving</span> for HFT team by HPC automated DevOps stack</a></h3>
+<h3><a href="#"><span class="emph">Optimize</span> The Backend of LLVM for AI Chips</a></h3>
 </div>
 
-<div><a href="https://www.jumptrading.com/">Jump Trading</a>
-<font face ="宋体" size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; June 2020 - July 2020 </font>
+<div><a href="https://www.sensetime.com/en">Intern @ Sensetime Company</a>
+<font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
 </div>
 
-<div>
-<ul class="desc">
-<li>High Frequency Trade Order Book simulation applying Linear.Regression Method.</li>
-<li>Applied salt and jinja to automate scheduling of jobs and assigning affinity of cpu cores in
-Linux DevOps.</li>
-<li>Applied eBPF on Distributed Filesystem to try IOVisor stuff.</li>
-</ul></div>
+* Role: Intern
+* Mentor: WenqiangYin
+* Duties included: Write new pass and support the 64-bit MachineInstr for Sensetime new AI chips
+  * ISA like NVIDIA PTX  
+
+<!-- 3 -->
+<div class="section-text col-right">
+<h3><a href="#"><span class="emph">Deploy</span> High-FPS AI Models on Arm Chips</a></h3>
+</div>
+
+<div><a href="https://en.fiberhome.com/"> FiberHome Telecommunication Technologies Company</a>
+<font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April 2021 - June.2021</font>
+</div>
+
+> Establish a team of 7 undergraduate, 1 postgraduate in total for This Project.
+
+* Role: **Leader** @ [Dian.AI](https://dian.org.cn/)
+* Duties included: As the project leader, he is responsible for the whole process of calibration samples, selection, training network (lite-mspn/yolox) and deployment of high-performance Inference Networks to Arm CPU. 
+* Mentor: [YayuGao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ)
 
 
 
