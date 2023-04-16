@@ -15,8 +15,12 @@ Biography
 ======
 
 
-undergraduate from Huazhong University of Science and Technology.
-mainly research on the edge deployment of AI models considered as a subfield of edge computing, who is familiar with common high-performance neural network inference engines and deep learning compiler architectures (such as TVM). Having written many high-performance neural networks operators for Tencent company, he also has made some contributions to open source projects of Microsoft, Tencent, Meituan, and Megvii. In addition, as the person in charge, he once led the team to complete a industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. At the same time, he has a basic understanding of AI theories. He conducted in-depth research in a college ai lab, where he studied and reproduced papers in the fields of  light-weight object detection, pose estimation and some transformer models.  With the experience of winning the title of "outstanding student" in the parallel programming summer program of the University of Sydney and  preparing for IELTS currently, he possesses basic English communication skills.
+* Undergraduate from Huazhong University of Science and Technology.
+* Once had some researches on the edge deployment of AI models considered as a subfield of edge computing, who is familiar with common high-performance neural network inference engines and deep learning compiler architectures (such as TVM). 
+* Having written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, he also has made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
+* In addition, as the person in charge, he once led the team to complete a industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
+* At the same time, he has a basic understanding of AI theories. He conducted in-depth research in a college ai lab, where he studied and reproduced papers in the fields of  light-weight object detection, pose estimation and some transformer models.
+* Now serves as intern@[sensetime](https://www.sensetime.com/en), studying how to optimize the llvm backend for the AI chips.
 
 Education
 ======
