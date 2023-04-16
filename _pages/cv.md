@@ -56,7 +56,7 @@ Education
 <font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
-* Project: [ncnn](https://github.com/Tencent/ncnn): an open source project with 17k+ stars in Github
+* Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **17k+** stars in Github
 * Role: Top15 committer of this program(util `Nov.2022`)
 * Mentor: [Nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
 * Duties included: Write and Optimize operators for ncnn.

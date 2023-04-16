@@ -18,12 +18,12 @@ redirect_from:
 </h2>
 ---
 
-* Undergraduate from [Huazhong University of Science and Technology](http://english.hust.edu.cn/).
-* Once had some researches on the edge deployment of AI models considered as a subfield of edge computing, who is familiar with common high-performance neural network inference engines and deep learning compiler architectures (such as TVM). 
-* Having written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, he also has made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
-* In addition, as the person in charge, he once led the team to complete a industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
-* At the same time, he has a basic understanding of AI theories. He conducted in-depth research in a college ai lab, where he studied and reproduced papers in the fields of  light-weight object detection, pose estimation and some transformer models.
-* Now serves as intern@[sensetime](https://www.sensetime.com/en), studying how to optimize the llvm backend for the AI chips.
+* I'm an undergraduate from [Huazhong University of Science and Technology](http://english.hust.edu.cn/).
+* I once had some researches on the edge deployment of AI models considered as a subfield of edge computing, who is familiar with common high-performance neural network inference engines and deep learning compiler architectures (such as TVM). 
+* I have written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
+* In addition, as the person in charge, I once led the team to complete a industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
+* At the same time, I have a basic understanding of AI theories. I conducted in-depth research in a college ai lab, where I studied and reproduced papers in the fields of  light-weight object detection, pose estimation and some transformer models.
+* Now I serve as intern@[sensetime](https://www.sensetime.com/en), studying how to optimize the llvm backend for the AI chips.
 
 <h2 class="col">
 <font color=blue>Education</font>
@@ -49,7 +49,7 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
-* Project: [ncnn](https://github.com/Tencent/ncnn): an open source project with 17k+ stars in Github
+* Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **17k+** stars in Github
 * Role: Top15 committer of this program(util `Nov.2022`)
 * Mentor: [Nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
 * Duties included: Write and Optimize operators for ncnn.
