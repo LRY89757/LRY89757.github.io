@@ -50,8 +50,7 @@ redirect_from:
 </div>
 
 * Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **17k+** stars in Github
-* Role: Top15 committer of this program(util `Nov.2022`)
-* Mentor: [Nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
+* Role: Top15 committer(util `Nov.2022`), Mentor: [nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
 * Duties included: Write and Optimize operators for ncnn.
   * Mainly aligned with pytorch, some examples I built
   * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
@@ -66,8 +65,7 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
 </div>
 
-* Role: Intern
-* Mentor: WenqiangYin
+* Role: Intern, Mentor: WenqiangYin
 * Duties included: Write new pass and based on the new AI chips of Sensetime.
   * Such as support the 64-bit Instr
   * ISA like NVIDIA PTX  
@@ -83,9 +81,9 @@ redirect_from:
 
 > Establish a team of 7 undergraduate, 1 postgraduate in total for This Project.
 
-* Role: **Leader** @ [Dian.AI](https://dian.org.cn/)
+* Role: **Leader** @ [Dian.AI](https://dian.org.cn/), Mentor: [YayuGao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ)
 * Duties included: As the project leader, he is responsible for the whole process of calibration samples, selection, training network (lite-mspn/yolox) and deployment of high-performance Inference Networks to Arm CPU. 
-* Mentor: [YayuGao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ)
+
 
 <h2 class="col">
 <font color=blue>Hobbies</font>
