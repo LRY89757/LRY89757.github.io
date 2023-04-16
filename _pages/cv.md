@@ -11,32 +11,13 @@ redirect_from:
 
 Education
 ======
-* B.S. in WuHan, (Huazhong University of Science and Technology)[http://english.hust.edu.cn/], 2024(expected)
+* B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/), 2024(expected)
+  * Want to pursure PhD Degree in AI Compiler
 <!-- * B.S. in GitHub, GitHub University, 2012 -->
 <!-- * M.S. in Jekyll, GitHub University, 2014 -->
 <!-- * Ph.D in Version Control Theory, GitHub University, 2018 (expected) -->
 
-Work experience
-======
-* Summer School: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Nihui
-
-* Tencent Company [ncnn](https://github.com/Tencent/ncnn): open source project(17k+ stars) 
-  * Duties included: top15 committer
-  * Write and optimize operators for its high neural network inference engine ncnn
-  * get the scholarship of the project
-  * Supervisor: [Nihui](https://github.com/nihui)(with Github 5.6k followers)
-
-* Sensetime Company: intern
-  * optimize the backend of llvm
-  * base on the AI chips of sensetime
-    * (ISA just like NV PTX)
-  <!-- * Duties included: Merging pull requests -->
-  * Supervisor: WenqiangYin
-
->###Markdown 字体颜色改变
+<!-- >###Markdown 字体颜色改变
 >​
 >绿色字体：<font color =green>Markdown</font>
 >红色字体：<font color = red>Markdown</font>
@@ -60,31 +41,7 @@ Work experience
 >链接：https://www.zhihu.com/question/21160553/answer/942069774
 >来源：知乎
 >著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
->
-
-
-</h3>
-</div>
-<div class="row subsection">
-<div class="row">
-<div class="col">
-<h3><a href="https://ssrc.us/index.html">CRSS </a><a href="https://arquinn.github.io">@
-UCSC</a>
-</h3>
-</div>
-</div>
-<div class="row subsection">
-<div class="emph col" class="alingleft"> Research Assistant </div><div class="col-right light" class="alingright">August 2022 - Present</div>
-<p style="text-align:left;"> Research Assistant<font face ="楷体"><font size ="5">Markdown</font>Markdown</font><span style="float:right;"><font color=black>August 2022 - Present</font></span></p>
-</div>
-<ul class="desc">
-<li> Understanding the performance characteristics of CXL.mem systems. Data-driven far
-memory allocation, prefetching, and
-replacement policies. Emulating memory disaggregation for data center applications</li>
-<li>Make Hardware Software Co-design for on CXL.cache data movement</li>
-<li>Make Virtual Machine migration based on WebAssembly</li>
-</ul></div>
-
+> -->
 
 <h2 class="col">
 <font color=blue>Industrial Experiences</font>
@@ -96,7 +53,7 @@ replacement policies. Emulating memory disaggregation for data center applicatio
 </div>
 
 <div><a href="https://www.tencent.com/en-us/">Tencent Company</a>
-<font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ShenZhen, China; June 2022 - Nov. 2022 </font>
+<font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
 * Project: [ncnn](https://github.com/Tencent/ncnn): an open source project with 17k+ stars in Github
@@ -118,7 +75,8 @@ replacement policies. Emulating memory disaggregation for data center applicatio
 
 * Role: Intern
 * Mentor: WenqiangYin
-* Duties included: Write new pass and support the 64-bit MachineInstr for Sensetime new AI chips
+* Duties included: Write new pass and based on the new AI chips of Sensetime.
+  * Such as support the 64-bit Instr
   * ISA like NVIDIA PTX  
 
 <!-- 3 -->
@@ -127,7 +85,7 @@ replacement policies. Emulating memory disaggregation for data center applicatio
 </div>
 
 <div><a href="https://en.fiberhome.com/"> FiberHome Telecommunication Technologies Company</a>
-<font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April 2021 - June.2021</font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April 2021 - June.2021</font>
 </div>
 
 > Establish a team of 7 undergraduate, 1 postgraduate in total for This Project.
@@ -160,14 +118,14 @@ parameters </li>
 </ul></div>
 </div>
 
-Skills
+<!-- Skills
 ======
 * Skill 1
 * Skill 2
   * Sub-skill 2.1
   * Sub-skill 2.2
   * Sub-skill 2.3
-* Skill 3
+* Skill 3 -->
 
 Work Experience
 ======
