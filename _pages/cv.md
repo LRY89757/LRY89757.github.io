@@ -90,6 +90,22 @@ replacement policies. Emulating memory disaggregation for data center applicatio
 <font color=blue>Industrial Experiences</font>
 </h2>
 
+<!-- 1 -->
+<div class="section-text col-right">
+<h3><a href="#"><span class="emph">Develop High</span> Performance Neural Network Inference Engine</a></h3>
+</div>
+
+<div><a href="https://www.tencent.com/en-us/">Tencent Company</a>
+<font size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ShenZhen, China; June 2022 - Nov. 2022 </font>
+</div>
+
+* Project: [ncnn](https://github.com/Tencent/ncnn): an open source project with 17k+ stars in Github
+* top15 committer of this program(util `Nov.2022`)
+* Duties included: Write and Optimize operators for its high neural network inference engine ncnn.
+* Supervisor: [Nihui](https://github.com/nihui)(*with Github 5.6k followers*)
+* Get the final scholarship
+
+<!-- 1 -->
 <div class="section-text col-right">
 <h3><a href="#"><span class="emph">Serving</span> for HFT team by HPC automated DevOps stack</a></h3>
 </div>
@@ -98,7 +114,6 @@ replacement policies. Emulating memory disaggregation for data center applicatio
 <font face ="宋体" size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; June 2020 - July 2020 </font>
 </div>
 
-
 <div>
 <ul class="desc">
 <li>High Frequency Trade Order Book simulation applying Linear.Regression Method.</li>
@@ -106,6 +121,8 @@ replacement policies. Emulating memory disaggregation for data center applicatio
 Linux DevOps.</li>
 <li>Applied eBPF on Distributed Filesystem to try IOVisor stuff.</li>
 </ul></div>
+
+
 
 
 <div class="row">
