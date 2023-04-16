@@ -101,8 +101,11 @@ replacement policies. Emulating memory disaggregation for data center applicatio
 
 * Project: [ncnn](https://github.com/Tencent/ncnn): an open source project with 17k+ stars in Github
 * top15 committer of this program(util `Nov.2022`)
-* Duties included: Write and Optimize operators for its high neural network inference engine ncnn.
-* Supervisor: [Nihui](https://github.com/nihui)(*with Github 5.6k followers*)
+* Duties included: Write and Optimize operators for ncnn.
+  * mainly aligned with pytorch, some examples I built
+  * [`GridSample`](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
+  * [Gelu](https://github.com/Tencent/ncnn/pull/4144): implement `sse/avx/avx512` version of gelu, with a fast version of erfc
+* Supervisor: [Nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
 * Get the final scholarship
 
 <!-- 1 -->
