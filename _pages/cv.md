@@ -94,7 +94,9 @@ replacement policies. Emulating memory disaggregation for data center applicatio
 <h3><a href="#"><span class="emph">Serving</span> for HFT team by HPC automated DevOps stack</a></h3>
 </div>
 
-<div><a href="https://www.jumptrading.com/"><font face ="微软雅黑"><font size ="3">Jump Trading</font></a><font face ="宋体" size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; June 2020 - July 2020 </font></div>
+<div><a href="https://www.jumptrading.com/">Jump Trading</a>
+<font face ="宋体" size ="2">&emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; June 2020 - July 2020 </font>
+</div>
 
 
 <div>
