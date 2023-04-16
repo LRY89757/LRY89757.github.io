@@ -14,9 +14,22 @@ redirect_from:
 Biography
 ======
 
-I'm an undergraduate from Huazhong University of Science and Technology.
+
+undergraduate from Huazhong University of Science and Technology.
 mainly research on the edge deployment of AI models considered as a subfield of edge computing, who is familiar with common high-performance neural network inference engines and deep learning compiler architectures (such as TVM). Having written many high-performance neural networks operators for Tencent company, he also has made some contributions to open source projects of Microsoft, Tencent, Meituan, and Megvii. In addition, as the person in charge, he once led the team to complete a industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. At the same time, he has a basic understanding of AI theories. He conducted in-depth research in a college ai lab, where he studied and reproduced papers in the fields of  light-weight object detection, pose estimation and some transformer models.  With the experience of winning the title of "outstanding student" in the parallel programming summer program of the University of Sydney and  preparing for IELTS currently, he possesses basic English communication skills.
 
+
+Education
+======
+
+<!-- * B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/) , 2024 -->
+  <!-- * GPA: 3.95/4.0 -->
+
+  <ul>{% for post in site.publications %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+
+ 
 A data-driven personal website
 ======
 Like many other Jekyll-based GitHub Pages templates, academicpages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
