@@ -53,12 +53,12 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
-* Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **17k+** stars in Github
+* Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with nearly **17k** stars in Github
 * Role: Top15 committer(util `Nov.2022`), Mentor: [nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
-* Duties included: Write and Optimize operators for ncnn.
-  * Mainly aligned with pytorch, some examples I built
+* Duties included: Write and Optimize operators for ncnn, mainly aligned with pytorch, some examples I built:
   * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
-  * [Gelu](https://github.com/Tencent/ncnn/pull/4144): implement `sse/avx/avx512` version of gelu, with a fast version of erfc
+      * To be noted, the PNNX of ncnn, a new `PyTorch Neural Network eXchange`, draw on the design concept of `MLIR`
+  * [Gelu](https://github.com/Tencent/ncnn/pull/4144): Implement `sse/avx/avx512` version of gelu, with a fast version of `erfc`.
 
 <!-- 2 -->
 <div class="section-text col-right">
@@ -71,7 +71,7 @@ redirect_from:
 
 * Role: Intern, Mentor: WenqiangYin
 * Duties included: Write new pass and based on the new AI chips of Sensetime.
-  * Such as support the 64-bit Instr
+  * Support the 64-bit `MachineInstr`, like `ld64`, `st64`
   * ISA like NVIDIA PTX  
 
 <!-- 3 -->
@@ -85,7 +85,7 @@ redirect_from:
 
 > Establish a team of 7 undergraduate, 1 postgraduate in total for This Project.
 
-* Role: **Leader** @ [Dian.AI](https://dian.org.cn/), Mentor: [YayuGao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ)
+* Role: **Leader** @ [Dian.AI](https://dian.org.cn/), Mentor: [Yayu Gao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ), Mentor of AI Group: [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=en)
 * Duties included: As the project leader, he is responsible for the whole process of calibration samples, selection, training network (lite-mspn/yolox) and deployment of high-performance Inference Networks to Arm CPU. 
 
 <h2 class="col">
@@ -98,12 +98,12 @@ redirect_from:
 <font color=blue>Honors</font>
 </h2>
 
+* Tencent [Rhino-bird Open-source Training Program](https://opensource.tencent.com/summer-of-code) Scholarship (2022), Like "the `GSOC` of Tencent"
 * Huawei "Intelligent Base" Scholarship (2022)
-* Tencent [Rhino-bird Open-source Training Program](https://opensource.tencent.com/summer-of-code) Scholarship (2022), Like the `GSOC` of Tencent
 
-* Science and Technology Innovation Scholarship(2022), School of Computer Science and Technology
-* Academic Excellence Scholarship(2021), School of Computer Science and Technology
-* Academic Excellence Scholarship(2021), School of Computer Science and Technology
+* Science and Technology Innovation Scholarship(2022), School of Computer Science and Technology, HUST
+* Academic Excellence Scholarship(2021), School of Computer Science and Technology, HUST
+* Academic Excellence Scholarship(2021), School of Computer Science and Technology, HUST
 
 <!-- ### to be completed  -->
 
@@ -114,7 +114,7 @@ redirect_from:
 <font color=blue>Hobbies</font>
 </h2>
 
-* Football, crazy fans of Lionel Messi, [FC Barcelona](https://www.fcbarcelona.com/en/), and Argentina National Team
+* Football, crazy fan of Lionel Messi, [FC Barcelona](https://www.fcbarcelona.com/en/), and Argentina National Team
 
 
 <!-- 
