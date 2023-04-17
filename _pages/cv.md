@@ -9,6 +9,12 @@ redirect_from:
 
 {% include base_path %}
 
+<h1 class="col">
+<font color=red>Attention!! Website Constructing, resume is not complete</font>
+</h1>
+---
+
+
 Education
 ======
 * B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/), 2024(expected)
