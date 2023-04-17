@@ -25,8 +25,8 @@ redirect_from:
 * The Experimental Class of Computer Excellence Program, with **GPA 3.96, rank 4th**.
 * I once had some researches on the edge deployment of AI models considered as a subfield of edge computing, who is familiar with common high-performance neural network inference engines and is interested in deep learning compiler architectures (such as TVM). 
 * I have written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
-* In addition, as the person in charge, I once led a team to complete a industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
-* At the same time, I have a basic understanding of AI theories. I conducted in-depth research in a college ai lab, where I studied and reproduced papers in the fields of  light-weight object detection, pose estimation and some transformer models.
+* In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
+* At the same time, I have a basic understanding of AI theories. I conducted in-depth research in the AI lab of our university, where I studied and reproduced papers in the fields of  light-weight object detection, pose estimation and some transformer models.
 * Now I am serving as intern@[sensetime](https://www.sensetime.com/en), studying how to optimize the llvm backend for the AI chips, looking for chances of **Summer research experience in US or Singpore onsite**. I can cover the expenses myself, no additional funding is required, but any assistance in the form of a fund would be greatly appreciated.
 
 <h2 class="col">
