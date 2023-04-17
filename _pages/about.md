@@ -11,7 +11,7 @@ redirect_from:
 <!-- This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io). -->
 
 <h1 class="col">
-<font color=blue>Website Constructing, resume is not complete</font>
+<font color=red>Attention!! Website Constructing, resume is not complete</font>
 </h1>
 ---
 
@@ -22,6 +22,7 @@ redirect_from:
 ---
 
 * Junior@[HUST](http://english.hust.edu.cn/), Intern@[sensetime](https://www.sensetime.com/en), want to pursue PhD on AI Compiler
+* The Experimental Class of Computer Excellence Program, with GPA 3.96, rank 4th.
 * I once had some researches on the edge deployment of AI models considered as a subfield of edge computing, who is familiar with common high-performance neural network inference engines and deep learning compiler architectures (such as TVM). 
 * I have written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
 * In addition, as the person in charge, I once led the team to complete a industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
@@ -87,13 +88,27 @@ redirect_from:
 * Role: **Leader** @ [Dian.AI](https://dian.org.cn/), Mentor: [YayuGao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ)
 * Duties included: As the project leader, he is responsible for the whole process of calibration samples, selection, training network (lite-mspn/yolox) and deployment of high-performance Inference Networks to Arm CPU. 
 
+<h2 class="col">
+<font color=blue>Academic Experiences</font>
+</h2>
+
+### to be completed 
+
+<h2 class="col">
+<font color=blue>Honors</font>
+</h2>
+
+### to be completed 
+
+
+
 
 <h2 class="col">
 <font color=blue>Hobbies</font>
 </h2>
 
 * Football, crazy fans of Lionel Messi, [FC Barcelona](https://www.fcbarcelona.com/en/), and Argentina National Team
-* 
+
 
 <!-- 
 A data-driven personal website
