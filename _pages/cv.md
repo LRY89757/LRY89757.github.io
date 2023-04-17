@@ -102,7 +102,7 @@ Education
 
 
 
-
+<!-- 
 <div class="row">
 <div class="col">
 <h3><a href="https://hpc.geekpie.club" style="text-decoration: none;">GeekPie_HPC @ ShanghaiTech</a></h3>
@@ -122,7 +122,7 @@ parameters </li>
 </li>
 <li>Train new members who are interested in system for job-related skills.</li>
 </ul></div>
-</div>
+</div> -->
 
 <!-- Skills
 ======
