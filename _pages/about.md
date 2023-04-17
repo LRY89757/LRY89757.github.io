@@ -80,7 +80,7 @@ redirect_from:
 </div>
 
 <div><a href="https://en.fiberhome.com/" style="text-decoration: none;"> FiberHome Telecommunication Technologies Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April 2021 - June.2021</font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp;&nbsp; WuHan, China; April 2021 - June.2021</font>
 </div>
 
 > Establish a team of 7 undergraduate, 1 postgraduate in total for This Project.
