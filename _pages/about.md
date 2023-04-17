@@ -58,7 +58,7 @@ redirect_from:
 * Duties included: Write and Optimize operators for ncnn, mainly aligned with pytorch, some examples I built:
   * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
       * To be noted, the PNNX of ncnn, a new `PyTorch Neural Network eXchange`, draw on the design concept of `MLIR`
-  * [Gelu](https://github.com/Tencent/ncnn/pull/4144): Implement `sse/avx/avx512` version of gelu, with a fast version of `erfc`.
+  * [GELU](https://github.com/Tencent/ncnn/pull/4144): Implement `sse/avx/avx512` version of gelu, with a fast version of `erfc`.
 
 <!-- 2 -->
 <div class="section-text col-right">
@@ -92,7 +92,29 @@ redirect_from:
 <font color=blue>Academic Experiences</font>
 </h2>
 
-### to be completed 
+<!-- 1 -->
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Explore</span> PMA/PCSR Dynamic Graph Structure</a></h3>
+</div>
+
+<div><a href="http://grid.hust.edu.cn/" style="text-decoration: none;">CGCL</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;WuHan, China; Nov. 2022 - Present </font>
+</div>
+
+* Role: Research And Coding Mainstay, Mentor: [ZhiyuanShao](https://www.researchgate.net/profile/Zhiyuan-Shao), [HaiJin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
+* Duties included: Based on the current dynamic graph storage formats of PMA/CSR, a more dynamic-graph-friendly data storage format is proposed, which involves modifications to the operating system kernel
+
+<!-- 2 -->
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Explore</span> Backdoor Attack on Transformer Models</a></h3>
+</div>
+
+<div><a href="https://mathcenter.hust.edu.cn/Research_Groups/John_Hopcroft_Lab_for_Data_Science.htm" style="text-decoration: none;">John Hopcroft Lab for Data Science</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April. 2022 - Augu.2023 </font>
+</div>
+
+* Role: Coding&Research Mainstay, Mentor: [Kunhe](https://scholar.google.com/citations?user=YTQnGJsAAAAJ&hl=en)
+* Duties included:  Research the model security of classic classification models such as ViT and DeiT, with a focus on black-box attacks.
 
 <h2 class="col">
 <font color=blue>Honors</font>
