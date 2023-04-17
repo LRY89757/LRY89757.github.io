@@ -63,7 +63,7 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
 </div>
 
-* Role: Intern, Mentor: WenqiangYin
+* Role: Intern, Mentor: Wenqiang Yin
 * Duties included: Write new pass and based on the new AI chips of Sensetime.
   * Support the 64-bit `MachineInstr`, like `ld64`, `st64`
   * ISA like NVIDIA PTX  
@@ -95,7 +95,7 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;WuHan, China; Nov. 2022 - Present </font>
 </div>
 
-* Role: Research And Coding Mainstay, Mentor: [ZhiyuanShao](https://www.researchgate.net/profile/Zhiyuan-Shao), [HaiJin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
+* Role: Research And Coding Mainstay, Mentor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
 * Duties included: Based on the current dynamic graph storage formats of PMA/CSR, a more dynamic-graph-friendly data storage format is proposed, which involves modifications to the operating system kernel
 
 <!-- 2 -->
@@ -107,7 +107,7 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April. 2022 - Augu.2023 </font>
 </div>
 
-* Role: Coding&Research Mainstay, Mentor: [Kunhe](https://scholar.google.com/citations?user=YTQnGJsAAAAJ&hl=en)
+* Role: Coding&Research Mainstay, Mentor: [Kun he](https://scholar.google.com/citations?user=YTQnGJsAAAAJ&hl=en)
 * Duties included:  Research the model security of classic classification models such as ViT and DeiT, with a focus on black-box attacks.
 
 <h2 class="col">
