@@ -52,7 +52,7 @@ redirect_from:
 </div>
 
 <div><a href="https://www.sensetime.com/en" style="text-decoration: none;">@Sensetime Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
 </div>
 
 * Role: LLVMer, Mentor: Wenqiang Yin
@@ -66,10 +66,10 @@ redirect_from:
 
 <!-- 2 -->
 <div><a href="https://www.tencent.com/en-us/" style="text-decoration: none;">@Tencent Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
+<font size ="2">&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
-* Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with nearly **17k** stars in Github
+* Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **17k+** stars in Github
 * Role: Top15 committer(util `Nov.2022`) of 253 committers in total, Mentor: [nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
 * Duties included: Write and Optimize(such as SIMD) operators for ncnn, mainly aligned with pytorch, some examples I built:
   * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
