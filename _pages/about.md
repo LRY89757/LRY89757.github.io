@@ -51,8 +51,8 @@ redirect_from:
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Optimize</span> The Backend of LLVM for AI Chips</a></h3>
 </div>
 
-<div><a href="https://www.sensetime.com/en" style="text-decoration: none;">@ Sensetime Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
+<div><a href="https://www.sensetime.com/en" style="text-decoration: none;">@Sensetime Company</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
 </div>
 
 * Role: LLVMer, Mentor: Wenqiang Yin
@@ -65,7 +65,7 @@ redirect_from:
 </div>
 
 <!-- 2 -->
-<div><a href="https://www.tencent.com/en-us/" style="text-decoration: none;">@ Tencent Company</a>
+<div><a href="https://www.tencent.com/en-us/" style="text-decoration: none;">@Tencent Company</a>
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
