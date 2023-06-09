@@ -17,13 +17,19 @@ redirect_from:
 </h2>
 ---
 
-* Junior@[HUST](http://english.hust.edu.cn/), Intern@[sensetime](https://www.sensetime.com/en), want to pursue PhD on AI Compiler
-* The Experimental Class of Computer Excellence Program, with **GPA 3.96, rank 4th**.
-* I once had some researches on the edge deployment of AI models considered as a subfield of edge computing, who is familiar with common high-performance neural network inference engines and is interested in deep learning compiler architectures (such as TVM). 
+* Junior@[HUST](http://english.hust.edu.cn/), The Experimental Class of Computer Excellence Program, with **GPA 3.96, rank 4th**, want to pursue PhD on AI Compiler
+* Intern@[sensetime](https://www.sensetime.com/en), optimizing the llvm backend for SenseTime TPU.
 * I have written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
 * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
-* At the same time, I have a basic understanding of AI theories. I conducted in-depth research in the AI lab of our university, where I studied and reproduced papers in the fields of  light-weight object detection, pose estimation and some transformer models.
-* Now I am serving as intern@[sensetime](https://www.sensetime.com/en), studying how to optimize the llvm backend for the AI chips, looking for chances of **Summer research experience in US or Singpore onsite**. I can cover the expenses myself, no additional funding is required, but any assistance in the form of a fund would be greatly appreciated.
+
+<h2 class="col">
+<font color=blue>Skills</font>
+</h2>
+---
+
+* **AI** Familiar with training and deploying common CV Models
+* **HPC** Have developed many high performance neural network operators
+* **Compiler** Optimizing the backend LLVM and interested in the DL Compiler like TVM
 
 <h2 class="col">
 <font color=blue>Education</font>
@@ -42,9 +48,22 @@ redirect_from:
 
 <!-- 1 -->
 <div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Optimize</span> The Backend of LLVM for AI Chips</a></h3>
+</div>
+
+<div><a href="https://www.sensetime.com/en" style="text-decoration: none;">Intern @ Sensetime Company</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
+</div>
+
+* Role: Intern, Mentor: Wenqiang Yin
+* Duties included: Optimizing the backend of LLVM based on the TPU of SenseTime.
+  * ISA like NVIDIA PTX  
+
+<div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Develop High</span> Performance Neural Network Inference Engine</a></h3>
 </div>
 
+<!-- 2 -->
 <div><a href="https://www.tencent.com/en-us/" style="text-decoration: none;">Tencent Company</a>
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
@@ -55,20 +74,6 @@ redirect_from:
   * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
       * To be noted, the PNNX of ncnn, a new `PyTorch Neural Network eXchange`, draw on the design concept of `MLIR`
   * [GELU](https://github.com/Tencent/ncnn/pull/4144): Implement `sse/avx/avx512` version of gelu, with a fast version of `erfc`.
-
-<!-- 2 -->
-<div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Optimize</span> The Backend of LLVM for AI Chips</a></h3>
-</div>
-
-<div><a href="https://www.sensetime.com/en" style="text-decoration: none;">Intern @ Sensetime Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
-</div>
-
-* Role: Intern, Mentor: Wenqiang Yin
-* Duties included: Write new pass and based on the new AI chips of Sensetime.
-  * Support the 64-bit `MachineInstr`, like `ld64`, `st64`
-  * ISA like NVIDIA PTX  
 
 <!-- 3 -->
 <div class="section-text col-right">
@@ -116,7 +121,7 @@ redirect_from:
 <font color=blue>Honors</font>
 </h2>
 
-* Tencent [Rhino-bird Open-source Training Program](https://opensource.tencent.com/summer-of-code) Scholarship (2022), Like "the `GSOC` of Tencent"
+* Tencent Rhino-bird Open-source Training Program Scholarship (2022)
 * Huawei "Intelligent Base" Scholarship (2022)
 
 * Science and Technology Innovation Scholarship(2022), School of Computer Science and Technology, HUST
