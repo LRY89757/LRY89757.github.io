@@ -115,7 +115,7 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April. 2022 - Augu.2023 </font>
 </div>
 
-* Role: Coding&Research Mainstay, Mentor: [Kun he](https://scholar.google.com/citations?user=YTQnGJsAAAAJ&hl=en)
+* Role: Coding&Research Mainstay, Mentor: [Kun He](https://scholar.google.com/citations?user=YTQnGJsAAAAJ&hl=en)
 * Duties included:  Research the model security of classic classification models such as ViT and DeiT, with a focus on black-box attacks.
 
 <h2 class="col">
