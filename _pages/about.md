@@ -37,7 +37,7 @@ redirect_from:
 ---
 
 * B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/), 2024(expected)
-  * Looking for chances of Summer research experience in US or Singpore
+  <!-- * Looking for chances of Summer research experience in US or Singpore -->
 <!-- * B.S. in GitHub, GitHub University, 2012 -->
 <!-- * M.S. in Jekyll, GitHub University, 2014 -->
 <!-- * Ph.D in Version Control Theory, GitHub University, 2018 (expected) -->
