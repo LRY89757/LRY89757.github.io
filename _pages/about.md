@@ -67,7 +67,7 @@ redirect_from:
 
 <!-- 2 -->
 <div><a href="https://www.tencent.com/en-us/" style="text-decoration: none;">@Tencent Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;&emsp; &emsp;&emsp;&nbsp;&emsp; &emsp;&emsp;&nbsp;&emsp; &emsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;&emsp; &emsp;&emsp;&nbsp;&emsp; &emsp;&emsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
 * Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **17k+** stars in Github
