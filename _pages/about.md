@@ -55,7 +55,8 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
 </div>
 
-* Role: LLVMer, Mentor: Wenqiang Yin
+* Role: LLVMer
+* Mentor: Wenqiang Yin
 * Duties included: Optimizing the backend of LLVM based on the TPU of SenseTime.
   * If there's one thing LLVM has taught me, it's that patience is a virtue. A virtue I never knew I had until I spent countless hours debugging its intricacies :(
   * ISA like NVIDIA PTX  
@@ -70,7 +71,8 @@ redirect_from:
 </div>
 
 * Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **17k+** stars in Github
-* Role: Top15 committer(util `Nov.2022`) of 253 committers in total, Mentor: [nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
+* Role: Top15 committer(util `Nov.2022`) of 253 committers in total
+* Mentor: [nihui](https://github.com/nihui)(*with Github **5.6k** followers*)
 * Duties included: Write and Optimize(such as SIMD) operators for ncnn, mainly aligned with pytorch, some examples I built:
   * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
       * To be noted, the PNNX of ncnn, a new `PyTorch Neural Network eXchange`, draw on the design concept of `MLIR`
@@ -87,7 +89,8 @@ redirect_from:
 
 > Establish a team of 7 undergraduate, 1 postgraduate in total for This Project.
 
-* Role: **Leader** @ [Dian.AI](https://dian.org.cn/), Mentor: [Yayu Gao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ), Mentor of AI Group: [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=en)
+* Role: **Leader** @ [Dian.AI](https://dian.org.cn/)
+* Mentor: [Yayu Gao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ), Mentor of AI Group: [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=en)
 * Duties included: As the project leader, he is responsible for the whole process of calibration samples, selection, training network (lite-mspn/yolox) and deployment of high-performance Inference Networks on Arm CPU. 
 
 <h2 class="col">
@@ -100,12 +103,12 @@ redirect_from:
 </div>
 
 <div><a href="http://lingming.cs.illinois.edu/index.html" style="text-decoration: none;">UIUC PLSE</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;, Champaign, IL; June. 2023 - Present </font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&nbsp; Champaign, IL; June. 2023 - Present </font>
 </div>
 
-* Role: Research Intern, Mentor: [Jiawei Liu](https://jiawei-site.github.io/), [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
+* Role: Research Intern 
+* Mentor: [Jiawei Liu](https://jiawei-site.github.io/), [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
 * Duties included: Upcoming
-
 
 
 <!-- 1 -->
@@ -117,10 +120,11 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;WuHan, China; Nov. 2022 - Present </font>
 </div>
 
-* Role: Research And Coding Mainstay, Mentor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
+* Role: Research Intern 
+* Mentor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
 * Duties included: Based on the current dynamic graph storage formats of PMA/CSR, a more dynamic-graph-friendly data storage format is proposed, which involves modifications to the operating system kernel
 
-<!-- 2 -->
+<!-- 2
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Explore</span> Backdoor Attack on Transformer Models</a></h3>
 </div>
@@ -129,8 +133,9 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; April. 2022 - Augu.2023 </font>
 </div>
 
-* Role: Coding&Research Mainstay, Mentor: [Kun He](https://scholar.google.com/citations?user=YTQnGJsAAAAJ&hl=en)
-* Duties included:  Research the model security of classic classification models such as ViT and DeiT, with a focus on black-box attacks.
+* Role: Research Intern
+* Mentor: [Kun He](https://scholar.google.com/citations?user=YTQnGJsAAAAJ&hl=en)
+* Duties included:  Research the model security of classic classification models such as ViT and DeiT, with a focus on black-box attacks. -->
 
 <h2 class="col">
 <font color=blue>Honors</font>
