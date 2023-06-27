@@ -67,7 +67,7 @@ redirect_from:
 
 <!-- 2 -->
 <div><a href="https://www.tencent.com/en-us/" style="text-decoration: none;">@Tencent Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;&emsp; &emsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;&emsp; &emsp;&emsp;&nbsp;&emsp; &emsp;&emsp;&nbsp;&emsp; &emsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
 * Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **17k+** stars in Github
@@ -90,7 +90,8 @@ redirect_from:
 > Establish a team of 7 undergraduate, 1 postgraduate in total for This Project.
 
 * Role: **Leader** @ [Dian.AI](https://dian.org.cn/)
-* Mentor: [Yayu Gao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ), Mentor of AI Group: [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=en)
+* Mentor: [Yayu Gao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ)
+* Mentor of AI Group: [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=en)
 * Duties included: As the project leader, he is responsible for the whole process of calibration samples, selection, training network (lite-mspn/yolox) and deployment of high-performance Inference Networks on Arm CPU. 
 
 <h2 class="col">
@@ -116,8 +117,8 @@ redirect_from:
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Explore</span> PMA/PCSR Dynamic Graph Structure</a></h3>
 </div>
 
-<div><a href="http://grid.hust.edu.cn/" style="text-decoration: none;">CGCL</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;WuHan, China; Nov. 2022 - Present </font>
+<div><a href="http://grid.hust.edu.cn/" style="text-decoration: none;">HUST CGCL</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;WuHan, China; Nov. 2022 - Present </font>
 </div>
 
 * Role: Research Intern 
