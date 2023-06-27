@@ -94,6 +94,20 @@ redirect_from:
 <font color=blue>Academic Experiences</font>
 </h2>
 
+<!-- 0 -->
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">About TVM</span> </a></h3>
+</div>
+
+<div><a href="http://lingming.cs.illinois.edu/index.html" style="text-decoration: none;">UIUC PLSE</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;, Champaign, IL; June. 2023 - Present </font>
+</div>
+
+* Role: Research Intern, Mentor: [Jiawei Liu](https://jiawei-site.github.io/), [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
+* Duties included: Upcoming
+
+
+
 <!-- 1 -->
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Explore</span> PMA/PCSR Dynamic Graph Structure</a></h3>
