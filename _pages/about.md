@@ -18,6 +18,7 @@ redirect_from:
 ---
 
 * Third-year Undergraduate@[HUST](http://english.hust.edu.cn/), The Experimental Class of Computer Excellence Program, with **GPA 3.96, rank 4th**, want to pursue PhD on AI Compiler
+* Intern@[UIUC](http://lingming.cs.illinois.edu/index.html), about tvm.
 * Intern@[sensetime](https://www.sensetime.com/en), optimizing the llvm backend for SenseTime TPU.
 * I have written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
 * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
