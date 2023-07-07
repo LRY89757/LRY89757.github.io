@@ -101,7 +101,7 @@ redirect_from:
 
 <!-- 0 -->
 <div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">About TVM</span> </a></h3>
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Fuzzing LLVM, TVM</span> </a></h3>
 </div>
 
 <div><a href="http://lingming.cs.illinois.edu/index.html" style="text-decoration: none;">UIUC PLSE</a>
@@ -109,7 +109,7 @@ redirect_from:
 </div>
 
 * Role: Research Intern 
-* Mentor: [Jiawei Liu](https://jiawei-site.github.io/), [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
+* Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Jiawei Liu](https://jiawei-site.github.io/), [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
 * Duties included: Upcoming
 
 
