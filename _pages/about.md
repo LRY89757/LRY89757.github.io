@@ -101,7 +101,7 @@ redirect_from:
 
 <!-- 0 -->
 <div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Fuzzing LLVM, TVM</span> </a></h3>
+<h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox, LLVM, Fuzzing</span> </a></h3>
 </div>
 
 <div><a href="http://lingming.cs.illinois.edu/index.html" style="text-decoration: none;">UIUC PLSE</a>
