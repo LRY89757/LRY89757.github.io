@@ -110,7 +110,7 @@ redirect_from:
 
 * Role: Research Intern 
 * Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Jiawei Liu](https://jiawei-site.github.io/), [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
-* Duties included:  Responsible for the LLVM part of this project. UseLLMs toinferwhatkind of testinputscouldtriggerthe optimizationin
+* Duties included:  Responsible for the LLVM part of this project. Use LLMs to infer what kind of test inputs could trigger the optimization in
 the compiler based on the pattern written in the source code.
 
 
