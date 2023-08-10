@@ -61,6 +61,10 @@ redirect_from:
 * Duties included: Optimizing the backend of LLVM based on the TPU of SenseTime.
   * If there's one thing LLVM has taught me, it's that patience is a virtue. A virtue I never knew I had until I spent countless hours debugging its intricacies :(
   * ISA like NVIDIA PTX  
+  * Instruction Selection, Instruction Pattern Match, such as optimize the ld/st into async_ld/st
+  * CodeGen Emitter
+  * Optimize the threadidx/blockDim based on their range.
+
 
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Develop High</span> Performance Neural Network Inference Engine</a></h3>
@@ -93,7 +97,10 @@ redirect_from:
 * Role: **Leader** @ [Dian.AI](https://dian.org.cn/)
 * Mentor: [Yayu Gao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ)
 * Mentor of AI Group: [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=en)
-* Duties included: As the project leader, he is responsible for the whole process of calibration samples, selection, training network (lite-mspn/yolox) and deployment of high-performance Inference Networks on Arm CPU. 
+* Duties included: As the project leader 
+  - Arm CPU/20FPS/ Snapdragon 870
+  - YOLOX/Lite-HRNet
+  - pattern match algorithm/**Hungarian Algorithm
 
 <h2 class="col">
 <font color=blue>Academic Experiences</font>
