@@ -100,7 +100,7 @@ redirect_from:
 * Duties included: As the project leader 
   - Arm CPU/20FPS/ Snapdragon 870
   - YOLOX/Lite-HRNet
-  - pattern match algorithm/**Hungarian Algorithm
+  - pattern match algorithm/**Hungarian Algorithm**
 
 <h2 class="col">
 <font color=blue>Academic Experiences</font>
