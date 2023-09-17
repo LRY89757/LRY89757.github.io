@@ -18,9 +18,10 @@ redirect_from:
 ---
 
 * Third-year Undergraduate@[HUST](http://english.hust.edu.cn/),  the elite program in the Department of Computer Science & Technology, with **GPA 3.96, rank 4th**, want to pursue PhD on AI Compiler
-* Intern@[UIUC](http://lingming.cs.illinois.edu/index.html), about tvm.
-* Intern@[sensetime](https://www.sensetime.com/en), optimizing the llvm backend for SenseTime TPU.
-* I have written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
+* Intern@[UIUC](http://lingming.cs.illinois.edu/index.html), about llvm fuzzing, with the guidance of Chenyuan Yang, Lingming Zhang
+* Intern@[UCSD](https://people.eecs.berkeley.edu/~hao/), about LLM Serving, under the guidance of Hao Zhang
+<!-- * Intern@[sensetime](https://www.sensetime.com/en), optimizing the llvm backend for SenseTime TPU. -->
+* I have optimized the LLVM Backend of SenseTime TPU, written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
 * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
 
 <h2 class="col">
@@ -28,8 +29,8 @@ redirect_from:
 </h2>
 ---
 
-* **AI** Familiar with training and deploying common CV Models
-* **HPC** Have developed many high performance neural network operators
+* **AI** Familiar with training and deploying common CV and LLM Models
+* **HPC** Have developed many high performance neural network operators.
 * **Compiler** Optimizing the backend LLVM and interested in the DL Compiler like TVM
 
 <h2 class="col">
@@ -53,7 +54,7 @@ redirect_from:
 </div>
 
 <div><a href="https://www.sensetime.com/en" style="text-decoration: none;">@Sensetime Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Present</font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Augu 2023</font>
 </div>
 
 * Role: LLVMer
@@ -106,17 +107,31 @@ redirect_from:
 <font color=blue>Academic Experiences</font>
 </h2>
 
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">LLM Serving, Inferncing</span> </a></h3>
+</div>
+
+<div><a href="https://people.eecs.berkeley.edu/~hao/" style="text-decoration: none;">UIUC PLSE</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; UCSD Augu. 2023 - Present </font>
+</div>
+
+* Role: Research Intern 
+* Mentor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
+* Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
+* Duties included:  Responsible for the LLM Serving Profiling and further exploration now.
+
 <!-- 0 -->
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox, LLVM, Fuzzing</span> </a></h3>
 </div>
 
 <div><a href="http://lingming.cs.illinois.edu/index.html" style="text-decoration: none;">UIUC PLSE</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; Champaign, IL; June. 2023 - Present </font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; Champaign, IL; June. 2023 - Sept. 2023 </font>
 </div>
 
 * Role: Research Intern 
-* Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Jiawei Liu](https://jiawei-site.github.io/), [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
+* Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Jiawei Liu](https://jiawei-site.github.io/),
+* Advisor: [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
 * Duties included:  Responsible for the LLVM part of this project. Use LLMs to infer what kind of test inputs could trigger the optimization in
 the compiler based on the pattern written in the source code.
 
@@ -130,8 +145,9 @@ the compiler based on the pattern written in the source code.
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; Nov. 2022 - June. 2023 </font>
 </div>
 
-* Role: Research Intern 
-* Mentor: [Hongru Gao](https://github.com/hongrugao) [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
+* Role: Research Intern, Co-author
+* Mentor: [Hongru Gao](https://github.com/hongrugao) 
+* Advisor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
 * Duties included: Based on the current dynamic graph storage formats of PMA/CSR, a more dynamic-graph-friendly data storage format is proposed, which involves modifications to the operating system kernel
 
 <!-- 2
