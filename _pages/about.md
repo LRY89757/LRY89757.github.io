@@ -111,7 +111,7 @@ redirect_from:
 <h3><a href="#" style="text-decoration: none;"><span class="emph">LLM Serving, Inferncing</span> </a></h3>
 </div>
 
-<div><a href="https://people.eecs.berkeley.edu/~hao/" style="text-decoration: none;">UIUC PLSE</a>
+<div><a href="https://people.eecs.berkeley.edu/~hao/" style="text-decoration: none;">UCSD lmsys Lab</a>
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; UCSD Augu. 2023 - Present </font>
 </div>
 
