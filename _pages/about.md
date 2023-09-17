@@ -54,7 +54,7 @@ redirect_from:
 </div>
 
 <div><a href="https://www.sensetime.com/en" style="text-decoration: none;">@Sensetime Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Augu 2023</font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Augu 2023</font>
 </div>
 
 * Role: LLVMer
