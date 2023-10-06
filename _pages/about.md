@@ -184,7 +184,8 @@ the compiler based on the pattern written in the source code.
 <font color=blue>Hobbies</font>
 </h2>
 
-* Football, crazy fan of Lionel Messi, [FC Barcelona](https://www.fcbarcelona.com/en/), and Argentina National Team
+* Football, crazy fan of Lionel Messi, [FC Barcelona](https://www.fcbarcelona.com/en/), and Argentina National Team.
+* F1, crazy fan of Charles Leclerc(racing in Formula One for Scuderia Ferrari), Guanyu Zhou(a Chinese racing driver who currently competes in Formula One for Alfa Romeo).
 
 
 <!-- 
