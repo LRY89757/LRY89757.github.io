@@ -149,7 +149,7 @@ the compiler based on the pattern written in the source code.
 * Duties included: As the project leader 
   - Arm CPU/20FPS/ Snapdragon 870
   - YOLOX/Lite-HRNet
-  - pattern match algorithm/**Hungarian Algorithm**
+  - pattern match algorithm/Hungarian Algorithm
 
 <!-- 2
 <div class="section-text col-right">
