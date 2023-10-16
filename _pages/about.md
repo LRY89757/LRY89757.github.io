@@ -18,7 +18,7 @@ redirect_from:
 ---
 
 * 19 years old, fourth-year Undergraduate@[HUST](http://english.hust.edu.cn/)
-* the elite program in the Department of Computer Science & Technology, with **GPA 3.96, rank 4th**, want to pursue PhD on AI Compiler
+* the elite program in the Department of Computer Science & Technology, with **GPA 3.95, rank 4th**, want to pursue PhD on AI Compiler
 * Intern@[UIUC](http://lingming.cs.illinois.edu/index.html), about llvm fuzzing, with the guidance of Chenyuan Yang, Lingming Zhang
 * Intern@[UCSD](https://people.eecs.berkeley.edu/~hao/), about LLM Serving, under the guidance of Hao Zhang
 <!-- * Intern@[sensetime](https://www.sensetime.com/en), optimizing the llvm backend for SenseTime TPU. -->
@@ -46,12 +46,59 @@ redirect_from:
 <!-- * Ph.D in Version Control Theory, GitHub University, 2018 (expected) -->
 
 <h2 class="col">
+<font color=blue>Academic Experiences</font>
+</h2>
+
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">LLM Serving, Inferncing</span> </a></h3>
+</div>
+
+<div><a href="https://lmsys.org/" style="text-decoration: none;">UCSD lmsys Lab</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; UCSD Augu. 2023 - Present </font>
+</div>
+
+* Role: Research Intern 
+* Mentor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
+* Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
+* Duties included: Profiling the bottleneck of current SOTA LLM Inferencing framework(vllm, ppl.llm, fastllm). And now coding for one project about acclerating the serving throughtput of LLMs.
+
+<!-- 0 -->
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox, LLVM, Fuzzing</span> </a></h3>
+</div>
+
+<div><a href="http://lingming.cs.illinois.edu/index.html" style="text-decoration: none;">UIUC PLSE</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; Champaign, IL; June. 2023 - Sept. 2023 </font>
+</div>
+
+* Role: Role: Research Intern, **Third author**, paper already submitted to **FSE'24**
+* Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/),
+* Advisor: [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
+* Duties included:  Responsible for the LLVM part of this project. Use LLMs to infer what kind of test inputs could trigger the optimization in
+the compiler based on the pattern written in the source code.
+
+
+<!-- 1 -->
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Explore</span> Efficient Paged Dynamic Graph Structure</a></h3>
+</div>
+
+<div><a href="http://grid.hust.edu.cn/" style="text-decoration: none;">HUST CGCL</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; Oct. 2022 - June. 2023 </font>
+</div>
+
+* Role: Research Intern, **Co-first author**, paper will be submitted to **ICDE'24**
+* Mentor: [Hongru Gao](https://github.com/hongrugao) 
+* Advisor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
+* Duties included: Based on the the memory bound of graph processing SOTA algorithm, a more efficient dynamic-graph-friendly data storage format is proposed, which involves modifications to the page table operating system kernel(Linux).
+
+<h2 class="col">
 <font color=blue>Industrial Experiences</font>
 </h2>
 
 <!-- 1 -->
 <div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Optimize</span> The Backend of LLVM for AI Chips</a></h3>
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Optimize the LLVM Backend of SenseTime TPU, GPU Compiler</span></a></h3>
 </div>
 
 <div><a href="https://www.sensetime.com/en" style="text-decoration: none;">@Sensetime Company</a>
@@ -77,7 +124,7 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp;&emsp; &emsp;&emsp;&nbsp;&emsp; &emsp;&emsp;ShenZhen, China; June 2022 - Nov. 2022 </font>
 </div>
 
-* Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **17k+** stars in Github
+* Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **18k+** stars in Github
 * Role: Top15 committer(util `Nov.2022`) of 269 committers in total
 * Mentor: [nihui](https://github.com/nihui)(*with Github **6k** followers*)
 * Duties included: Write and Optimize(such as SIMD) operators for ncnn, mainly aligned with pytorch, some examples I built:
@@ -103,53 +150,6 @@ redirect_from:
   - Arm CPU/20FPS/ Snapdragon 870
   - YOLOX/Lite-HRNet
   - pattern match algorithm/**Hungarian Algorithm**
-
-<h2 class="col">
-<font color=blue>Academic Experiences</font>
-</h2>
-
-<div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">LLM Serving, Inferncing</span> </a></h3>
-</div>
-
-<div><a href="https://lmsys.org/" style="text-decoration: none;">UCSD lmsys Lab</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; UCSD Augu. 2023 - Present </font>
-</div>
-
-* Role: Research Intern 
-* Mentor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
-* Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
-* Duties included:  Responsible for the LLM Serving Profiling and further exploration now.
-
-<!-- 0 -->
-<div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox, LLVM, Fuzzing</span> </a></h3>
-</div>
-
-<div><a href="http://lingming.cs.illinois.edu/index.html" style="text-decoration: none;">UIUC PLSE</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; Champaign, IL; June. 2023 - Sept. 2023 </font>
-</div>
-
-* Role: Research Intern 
-* Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/),
-* Advisor: [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
-* Duties included:  Responsible for the LLVM part of this project. Use LLMs to infer what kind of test inputs could trigger the optimization in
-the compiler based on the pattern written in the source code.
-
-
-<!-- 1 -->
-<div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Explore</span> PMA/PCSR Dynamic Graph Structure</a></h3>
-</div>
-
-<div><a href="http://grid.hust.edu.cn/" style="text-decoration: none;">HUST CGCL</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; Nov. 2022 - June. 2023 </font>
-</div>
-
-* Role: Research Intern, Co-author
-* Mentor: [Hongru Gao](https://github.com/hongrugao) 
-* Advisor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
-* Duties included: Based on the current dynamic graph storage formats of PMA/CSR, a more dynamic-graph-friendly data storage format is proposed, which involves modifications to the operating system kernel
 
 <!-- 2
 <div class="section-text col-right">
