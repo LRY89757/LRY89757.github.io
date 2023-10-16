@@ -30,9 +30,10 @@ redirect_from:
 </h2>
 ---
 
-* **AI** Familiar with training and deploying common CV and LLM Models
-* **HPC** Have developed many high performance neural network operators.
-* **Compiler** Optimizing the backend LLVM and interested in the DL Compiler like TVM
+* **AI** with deploying common LLM and CV Models on device like GPU, CPU(x86,arm)
+* **HPC** Have developed many high performance neural network operators(CUDA, C++, Asm)
+* **Compiler** Optimized the backend of LLVM and familiar with DL Compiler Infra like MLIR, Triton
+
 
 <h2 class="col">
 <font color=blue>Education</font>
