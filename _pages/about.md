@@ -30,9 +30,9 @@ redirect_from:
 </h2>
 ---
 
-* **AI** with deploying common LLM and CV Models on device like GPU, CPU(x86,arm)
-* **HPC** Have developed many high performance neural network operators(CUDA, C++, Asm)
-* **Compiler** Optimized the backend of LLVM and familiar with DL Compiler Infra like MLIR, Triton
+* **AI** Deployment of LLM and CV Models
+* **HPC** Have developed many high performance neural network operators(CUDA, AVX, NEON, Assembly)
+* **Compiler** DL Compiler Infra like LLVM Backend, MLIR, Triton
 
 
 <h2 class="col">
