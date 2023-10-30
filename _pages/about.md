@@ -30,10 +30,9 @@ redirect_from:
 </h2>
 ---
 
-* **AI** Deployment of LLM and CV Models
-* **HPC** Have developed many high performance neural network operators(CUDA, AVX, NEON, Assembly)
-* **Compiler** DL Compiler Infra like LLVM Backend, MLIR, Triton
-
+* **AI** LLM/CV Model Deployment
+* **HPC** CUDA, Intel SSE, Arm NEON, Assembly, Async Programming
+* **Compiler** Compiler Infra like LLVM, MLIR, Triton
 
 <h2 class="col">
 <font color=blue>Education</font>
@@ -45,6 +44,34 @@ redirect_from:
 <!-- * B.S. in GitHub, GitHub University, 2012 -->
 <!-- * M.S. in Jekyll, GitHub University, 2014 -->
 <!-- * Ph.D in Version Control Theory, GitHub University, 2018 (expected) -->
+
+# Publication
+
+<!-- -  **Symmetry-Preserving Program Representations for Learning Code Semantics**  [[Arxiv](https://arxiv.org/abs/2310.15991)]
+  Kexin Pei, Weichen Li*, Qirui Jin*, **Shuyang Liu**, Scott Geng, Lorenzo Cavallaro, Junfeng Yang, Suman Jana  
+  Accepted by [MAPS workshop at ESEC/FSE 2023](https://mapsworkshop.github.io/)  
+  Submitted to [ICLR 2024](https://iclr.cc/). Under Review. -->
+
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3>
+</div>
+<div><a href="https://arxiv.org/abs/2310.15991" style="text-decoration: none;">Under Review, ESEC/FSE’24</a>
+</div>
+
+* [Arxiv](https://arxiv.org/abs/2310.15991) available
+* ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering  
+* Authors: Chenyuan Yang, Yinlin Deng, Runyu Lu, Jiayi Yao, Jiawei Liu, Reyhaneh Jabbarvand, Lingming Zhang  
+
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient Memory Management for Large Dynamic Graph Serving with PagedMapping</span> </a></h3>
+</div>
+<div><a href="https://lmsys.org/" style="text-decoration: none;">To be submitted ICDE’24</a>
+</div>
+
+* The IEEE International Conference on Data Engineering  
+* Authors: *Hongru Gao, *Runyu Lu, Zhiyuan Shao, Hai Jin  
+`*` *denotes joint first authors*
+
 
 <h2 class="col">
 <font color=blue>Academic Experiences</font>
@@ -61,7 +88,9 @@ redirect_from:
 * Role: Research Intern 
 * Mentor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
-* Duties included: Profiling the bottleneck of current SOTA LLM Inferencing framework(vllm, ppl.llm, fastllm). And now coding for one project about acclerating the serving throughtput of LLMs.
+* Profiled the bottleneck of current SOTA LLM Serving framework(e.g., vllm, ppl.llm).
+* Improve the GPU SM utilization to accelerate the serving throughtput of LLMs
+* now coding for one project about acclerating the serving throughtput of LLMs.
 
 <!-- 0 -->
 <div class="section-text col-right">
@@ -72,11 +101,12 @@ redirect_from:
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; Champaign, IL; June. 2023 - Sept. 2023 </font>
 </div>
 
-* Role: Role: Research Intern, **Third author**, paper already submitted to **FSE'24**
+* Role: Role: Research Intern, **Third author**, paper already submitted to **FSE'24**, Arxiv Available in this [link](https://arxiv.org/abs/2310.15991)
 * Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/),
 * Advisor: [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
-* Duties included:  Responsible for the LLVM part of this project. Use LLMs to infer what kind of test inputs could trigger the optimization in
-the compiler based on the pattern written in the source code.
+* Duties included:  Responsible for the LLVM part of this project. 
+* Test optimization in compilers with white-box fuzzing technique by leveraging LLMs
+* Detect 96 bugs of Pytorch, TensorFlow XLA, TensorFlowLite, LLVM based on the optimization source code
 
 
 <!-- 1 -->
@@ -92,6 +122,8 @@ the compiler based on the pattern written in the source code.
 * Mentor: [Hongru Gao](https://github.com/hongrugao) 
 * Advisor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
 * Duties included: Based on the the memory bound of graph processing SOTA algorithm, a more efficient dynamic-graph-friendly data storage format is proposed, which involves modifications to the page table operating system kernel(Linux).
+* Remap the PageTable of OS Kernel to accelerate the dynamic graph processing system.
+* Speed up existing SOTA algorithms by more than 10x times.
 
 <h2 class="col">
 <font color=blue>Industrial Experiences</font>
