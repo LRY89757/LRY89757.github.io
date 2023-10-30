@@ -62,7 +62,7 @@ redirect_from:
 
 [Arxiv](https://arxiv.org/abs/2310.15991) available
 Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhaneh Jabbarvand, Lingming Zhang  
-ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering  
+*ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering*
 
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient Memory Management for Large Dynamic Graph Serving with PagedMapping</span> </a></h3>
@@ -71,7 +71,7 @@ ACM Joint European Software Engineering Conference and Symposium on the Foundati
 </div>
 
 Authors: `*`Hongru Gao, `*`**Runyu Lu**, Zhiyuan Shao, Hai Jin  
-The IEEE International Conference on Data Engineering  
+*The IEEE International Conference on Data Engineering*
 
 `*` *denotes joint first authors*
 
