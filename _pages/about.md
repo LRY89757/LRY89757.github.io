@@ -65,7 +65,7 @@ redirect_from:
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient Memory Management for Large Dynamic Graph Serving with PagedMapping</span> </a></h3>
 </div>
-<div><a href="https://lmsys.org/" style="text-decoration: none;">To be submitted ICDE’24</a>
+<div><a href="https://lmsys.org/" style="text-decoration: none;">To be submitted, ICDE’24</a>
 </div>
 
 * The IEEE International Conference on Data Engineering  
@@ -78,7 +78,7 @@ redirect_from:
 </h2>
 
 <div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">LLM Serving, Inferncing</span> </a></h3>
+<h3><a href="#" style="text-decoration: none;"><span class="emph">LLM Serving, Inferncing, Profiling</span> </a></h3>
 </div>
 
 <div><a href="https://lmsys.org/" style="text-decoration: none;">UCSD lmsys Lab</a>
@@ -94,7 +94,7 @@ redirect_from:
 
 <!-- 0 -->
 <div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox, LLVM, Fuzzing</span> </a></h3>
+<h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3>
 </div>
 
 <div><a href="http://lingming.cs.illinois.edu/index.html" style="text-decoration: none;">UIUC PLSE</a>
@@ -111,7 +111,7 @@ redirect_from:
 
 <!-- 1 -->
 <div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Explore</span> Efficient Paged Dynamic Graph Structure</a></h3>
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient</span> Memory Management for Large Dynamic Graph Serving with PagedMapping</a></h3>
 </div>
 
 <div><a href="http://grid.hust.edu.cn/" style="text-decoration: none;">HUST CGCL</a>
@@ -170,7 +170,7 @@ redirect_from:
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Deploy</span> High-FPS AI Models on Arm Chips</a></h3>
 </div>
 
-<div><a href="https://en.fiberhome.com/" style="text-decoration: none;"> FiberHome Telecommunication Technologies Company</a>
+<div><a href="https://en.fiberhome.com/" style="text-decoration: none;"> @FiberHome Telecommunication Company</a>
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; WuHan, China; April 2021 - June.2021</font>
 </div>
 
