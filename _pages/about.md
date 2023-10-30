@@ -106,7 +106,7 @@ The IEEE International Conference on Data Engineering
 
 * Role: Role: Research Intern, **Third author**, paper already submitted to **FSE'24**, Arxiv Available in this [link](https://arxiv.org/abs/2310.15991)
 * Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/),
-* Advisor: [lingming Zhang](http://lingming.cs.illinois.edu/index.html)
+* Advisor: [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)
 * Duties included:  Responsible for the LLVM part of this project. 
 * Test optimization in compilers with white-box fuzzing technique by leveraging LLMs
 * Detect 96 bugs of Pytorch, TensorFlow XLA, TensorFlowLite, LLVM based on the optimization source code
