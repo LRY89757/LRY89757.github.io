@@ -45,7 +45,9 @@ redirect_from:
 <!-- * M.S. in Jekyll, GitHub University, 2014 -->
 <!-- * Ph.D in Version Control Theory, GitHub University, 2018 (expected) -->
 
-# Publication
+<h2 class="col">
+<font color=blue>Publications</font>
+</h2>
 
 <!-- -  **Symmetry-Preserving Program Representations for Learning Code Semantics**  [[Arxiv](https://arxiv.org/abs/2310.15991)]
   Kexin Pei, Weichen Li*, Qirui Jin*, **Shuyang Liu**, Scott Geng, Lorenzo Cavallaro, Junfeng Yang, Suman Jana  
