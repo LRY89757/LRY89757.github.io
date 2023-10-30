@@ -89,7 +89,7 @@ Authors: `*`Hongru Gao, `*`**Runyu Lu**, Zhiyuan Shao, Hai Jin
 </div>
 
 * Role: Research Intern 
-* Mentor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
+* Mentor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/), [Jiangfei Duan](https://jf-d.github.io/)
 * Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Profiled the bottleneck of current SOTA LLM Serving framework(e.g., vllm, ppl.llm).
 * Improve the GPU SM utilization to accelerate the serving throughtput of LLMs
