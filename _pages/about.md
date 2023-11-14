@@ -105,7 +105,7 @@ Authors: `*`Hongru Gao, `*`**Runyu Lu**, Zhiyuan Shao, Hai Jin
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; Champaign, IL; June. 2023 - Sept. 2023 </font>
 </div>
 
-* Role: Role: Research Intern, **Third author**, paper already submitted to **FSE'24**, Arxiv Available in this [link](https://arxiv.org/abs/2310.15991)
+* Role: Role: Research Intern, **Third author**, paper already submitted to **xxxx'24**, Arxiv Available in this [link](https://arxiv.org/abs/2310.15991)
 * Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/),
 * Advisor: [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)
 * Duties included:  Responsible for the LLVM part of this project. 
@@ -122,7 +122,7 @@ Authors: `*`Hongru Gao, `*`**Runyu Lu**, Zhiyuan Shao, Hai Jin
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; Oct. 2022 - June. 2023 </font>
 </div>
 
-* Role: Research Intern, **Co-first author**, paper will be submitted to **ICDE'24**
+* Role: Research Intern, **Co-first author**, paper will be submitted to **xxxx'24**
 * Mentor: [Hongru Gao](https://github.com/hongrugao) 
 * Advisor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
 * Duties included: Based on the the memory bound of graph processing SOTA algorithm, a more efficient dynamic-graph-friendly data storage format is proposed, which involves modifications to the page table operating system kernel(Linux).
