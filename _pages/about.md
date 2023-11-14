@@ -67,7 +67,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient Memory Management for Large Dynamic Graph Serving with PagedMapping</span> </a></h3>
-<!-- </div> -->
+</div>
 <div><a href="https://lmsys.org/" style="text-decoration: none;">To be submitted, xxxx’24</a></div>
 
 Authors: `*`Hongru Gao, `*`**Runyu Lu**, Zhiyuan Shao, Hai Jin  
