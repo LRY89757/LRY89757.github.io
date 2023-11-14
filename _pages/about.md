@@ -30,9 +30,9 @@ redirect_from:
 </h2>
 ---
 
-* **AI** LLM/CV Model Deployment
-* **HPC** CUDA, Intel SSE, Arm NEON, Assembly, Async Programming
-* **Compiler** Compiler Infra like LLVM, MLIR, Triton
+* **AI:** LLM/CV Model Deployment
+* **HPC:** CUDA, Intel SSE, Arm NEON, Assembly, Async Programming
+* **Compiler:** Compiler Infra like LLVM, MLIR, Triton
 
 <h2 class="col">
 <font color=blue>Education</font>
