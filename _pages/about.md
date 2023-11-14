@@ -18,7 +18,7 @@ redirect_from:
 ---
 
 * 19 years old, fourth-year Undergraduate@[HUST](http://english.hust.edu.cn/)
-* the elite program in the Department of Computer Science & Technology, with **GPA 3.95, rank 4th**, want to pursue PhD on AI Compiler
+* the elite program in the Department of Computer Science & Technology, with **GPA 3.95, rank 4th**, want to pursue PhD on LLM Serving.
 * Intern@[UIUC](http://lingming.cs.illinois.edu/index.html), about llvm fuzzing, with the guidance of Chenyuan Yang, Lingming Zhang
 * Intern@[UCSD](https://people.eecs.berkeley.edu/~hao/), about LLM Serving, under the guidance of Hao Zhang
 <!-- * Intern@[sensetime](https://www.sensetime.com/en), optimizing the llvm backend for SenseTime TPU. -->
