@@ -65,13 +65,13 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 (Preprint), Oct 2023, [Arxiv](https://arxiv.org/abs/2310.15991) available
 <!-- ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering* -->
 
-<div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient Memory Management for Large Dynamic Graph Serving with PagedMapping</span> </a></h3>
-</div>
+<!-- <div class="section-text col-right"> -->
+<!-- <h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient Memory Management for Large Dynamic Graph Serving with PagedMapping</span> </a></h3> -->
+<!-- </div> -->
 
 <!-- <div><a href="https://lmsys.org/" style="text-decoration: none;">To be submitted, xxxx’24</a></div> -->
 
-Authors: `*`Hongru Gao, `*`**Runyu Lu**, Zhiyuan Shao, Hai Jin  
+<!-- Authors: `*`Hongru Gao, `*`**Runyu Lu**, Zhiyuan Shao, Hai Jin   -->
 <!-- *The IEEE International Conference on Data Engineering* -->
 
 `*` *denotes joint first authors*
