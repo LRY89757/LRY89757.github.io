@@ -135,7 +135,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 
 <!-- 1 -->
 <div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Optimize the LLVM Backend of SenseTime TPU, GPU Compiler</span></a></h3>
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Optimize the LLVM Backend of SenseTime GPU, GPU Compiler</span></a></h3>
 </div>
 
 <div><a href="https://www.sensetime.com/en" style="text-decoration: none;">@Sensetime Company</a>
@@ -144,13 +144,11 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 
 * Role: LLVMer
 * Mentor: Wenqiang Yin
-* Duties included: Optimizing the backend of LLVM based on the TPU of SenseTime.
-  * If there's one thing LLVM has taught me, it's that patience is a virtue. A virtue I never knew I had until I spent countless hours debugging its intricacies :(
-  * ISA like NVIDIA PTX  
-  * Instruction Selection, Instruction Pattern Match, such as optimize the ld/st into async_ld/st
-  * CodeGen Emitter
+* Duties included: Optimizing the backend of LLVM based on the SenseTime GPU.
+  * 4000+ line LLVM GPU Backend Optimization Codes
+  * Instruction Selection, Instruction Pattern Match, such as optimize the ld/st into async_ld/st, CodeGen Emitter
   * Optimize the threadidx/blockDim based on their range.
-
+  * If there's one thing LLVM has taught me, it's that patience is a virtue. A virtue I never knew I had until I spent countless hours debugging its intricacies :(
 
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Develop High</span> Performance Neural Network Inference Engine</a></h3>
