@@ -203,7 +203,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 <font color=blue>Honors</font>
 </h2>
 
-* Tencent Rhino-bird Open-source Training Program Scholarship (2022)
+* Tencent Scholarship (2023)
 * Huawei "Intelligent Base" Scholarship (2022)
 
 * Science and Technology Innovation Scholarship(2022), School of Computer Science and Technology, HUST
