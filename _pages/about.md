@@ -19,8 +19,8 @@ redirect_from:
 
 * 19 years old, fourth-year Undergraduate@[HUST](http://english.hust.edu.cn/)
 * the elite program in the Department of Computer Science & Technology, with **GPA 3.95, rank 4th**, want to pursue PhD on LLM Serving.
-* Intern@[UIUC](http://lingming.cs.illinois.edu/index.html), about llvm fuzzing, with the guidance of Chenyuan Yang, Lingming Zhang
-* Intern@[UCSD](https://people.eecs.berkeley.edu/~hao/), about LLM Serving, under the guidance of Hao Zhang
+* Intern@[UIUC](http://lingming.cs.illinois.edu/index.html), about llvm fuzzing, with the guidance of Chenyuan Yang@UIUC, Lingming Zhang@UIUC
+* Intern@[UCSD](https://people.eecs.berkeley.edu/~hao/), about LLM Serving, under the guidance of Jiangfei Duan@CUHK, Hao Zhang@UCSD
 <!-- * Intern@[sensetime](https://www.sensetime.com/en), optimizing the llvm backend for SenseTime TPU. -->
 * I have optimized the LLVM Backend of [SenseTime](https://www.sensetime.com/) TPU, written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company, I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
 * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
@@ -90,7 +90,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 </div>
 
 * Role: Research Intern 
-* Mentor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/), [Jiangfei Duan](https://jf-d.github.io/)
+* Mentor: [Jiangfei Duan](https://jf-d.github.io/), [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Profiled the bottleneck of current SOTA LLM Serving framework(e.g., vllm, ppl.llm).
 * Improve the GPU SM utilization to accelerate the serving throughtput of LLMs
@@ -203,7 +203,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 <font color=blue>Honors</font>
 </h2>
 
-* Tencent Rhino-bird Open-source Training Program Scholarship (2022)
+* Tencent Scholarship (2023)
 * Huawei "Intelligent Base" Scholarship (2022)
 
 * Science and Technology Innovation Scholarship(2022), School of Computer Science and Technology, HUST
