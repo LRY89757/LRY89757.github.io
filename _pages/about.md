@@ -115,7 +115,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 
 <!-- 1 -->
 <div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient</span> Memory Management for Large Dynamic Graph Serving with PagedMapping</a></h3>
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient</span>  Dynamic Graph Reconstruction with PagedMapping</a></h3>
 </div>
 
 <div><a href="http://grid.hust.edu.cn/" style="text-decoration: none;">HUST CGCL</a>
