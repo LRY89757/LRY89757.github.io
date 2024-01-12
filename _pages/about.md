@@ -122,7 +122,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; Oct. 2022 - June. 2023 </font>
 </div>
 
-* Role: Research Intern, **Co-first author**, paper will be submitted to **xxxx'24**
+* Role: Research Intern, **Co-first author**, paper is submitted to **xxxx'24**
 * Mentor: [Hongru Gao](https://github.com/hongrugao) 
 * Advisor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
 * Duties included: Based on the the memory bound of graph processing SOTA algorithm, a more efficient dynamic-graph-friendly data storage format is proposed, which involves modifications to the page table operating system kernel(Linux).
