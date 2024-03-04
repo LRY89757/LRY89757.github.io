@@ -17,11 +17,10 @@ redirect_from:
 </h2>
 ---
 
-* 19 years old, fourth-year Undergraduate@[HUST](http://english.hust.edu.cn/)
-* the elite program in the Department of Computer Science & Technology, with **GPA 3.95, rank 4th**, want to pursue PhD on LLM Serving.
+* 19 years old, fourth-year Undergraduate@[HUST](http://english.hust.edu.cn/) -> PhD@UMich(Ang Chen&Mosharaf Chowdhury)
+* the elite program in the Department of Computer Science & Technology, with **GPA 3.95, rank 4th**
 * Intern@[UIUC](http://lingming.cs.illinois.edu/index.html), about llvm fuzzing, with the guidance of Chenyuan Yang@UIUC, Lingming Zhang@UIUC
 * Intern@[UCSD](https://people.eecs.berkeley.edu/~hao/), about LLM Serving, under the guidance of Jiangfei Duan@CUHK, Hao Zhang@UCSD
-<!-- * Intern@[sensetime](https://www.sensetime.com/en), optimizing the llvm backend for SenseTime TPU. -->
 * I have optimized the LLVM Backend for [SenseTime](https://www.sensetime.com/)(GPU Compiler Optimization), written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company(Inference Engine), I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
 * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
 
