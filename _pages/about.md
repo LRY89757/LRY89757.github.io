@@ -40,6 +40,7 @@ redirect_from:
 ---
 
 * B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/), 2024(expected)
+* PhD in Ann Arbor, University of Michigan, under the guidance of Ang Chen & Mosharaf Chowdhury, 2024.9-
   <!-- * Looking for chances of Summer research experience in US or Singpore -->
 <!-- * B.S. in GitHub, GitHub University, 2012 -->
 <!-- * M.S. in Jekyll, GitHub University, 2014 -->
@@ -89,7 +90,8 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; UCSD Augu. 2023 - Present </font>
 </div>
 
-* Role: Research Intern 
+<!-- * Role: Research Intern  -->
+* Role: Role: Research Intern, **Second author**, paper already submitted to **xxxx'24**, Arxiv Available soon
 * Mentor: [Jiangfei Duan](https://jf-d.github.io/), [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Profiled the bottleneck of current SOTA LLM Serving framework(e.g., vllm, ppl.llm).
