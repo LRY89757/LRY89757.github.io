@@ -24,7 +24,7 @@ redirect_from:
 <!-- * I have optimized the LLVM Backend for [SenseTime](https://www.sensetime.com/)(GPU Compiler Optimization), written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company(Inference Engine), I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC).  -->
 <!-- * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands.  -->
 
-* I'm 20 years old now. Fourth-year Undergrad@[HUST](http://english.hust.edu.cn/) -> PhD@UMich(Ang Chen&Mosharaf Chowdhury), 
+* I'm 20 years old now. Fourth-year Undergrad@[HUST](http://english.hust.edu.cn/) -> PhD@UMich([Ang Chen](https://web.eecs.umich.edu/~chenang/)&[Mosharaf Chowdhury](https://www.mosharaf.com/)), 
 * I'm very honored to work with [Hao Zhang](http://lingming.cs.illinois.edu/index.html)(UCSD), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC) and [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergraduate Research.
 * I also once made contributions to ColossalAI@HPCAI-Tech, LLVM@SenseTime, NCNN@Tencent.
 
