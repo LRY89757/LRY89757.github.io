@@ -205,7 +205,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 * Mentor: [Kun He](https://scholar.google.com/citations?user=YTQnGJsAAAAJ&hl=en)
 * Duties included:  Research the model security of classic classification models such as ViT and DeiT, with a focus on black-box attacks. -->
 
-<h2 class="col">
+<!-- <h2 class="col">
 <font color=blue>Honors</font>
 </h2>
 
@@ -214,7 +214,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 
 * Science and Technology Innovation Scholarship(2022), School of Computer Science and Technology, HUST
 * Academic Excellence Scholarship(2021), School of Computer Science and Technology, HUST
-* Academic Excellence Scholarship(2020), School of Computer Science and Technology, HUST
+* Academic Excellence Scholarship(2020), School of Computer Science and Technology, HUST -->
 
 <!-- ### to be completed  -->
 
