@@ -17,30 +17,35 @@ redirect_from:
 </h2>
 ---
 
-* 20 years old, fourth-year Undergraduate@[HUST](http://english.hust.edu.cn/) -> PhD@UMich(Ang Chen&Mosharaf Chowdhury)
-* the elite program in the Department of Computer Science & Technology, with **GPA 3.95, rank 4th**
-* Intern@[UIUC](http://lingming.cs.illinois.edu/index.html), about llvm fuzzing, with the guidance of Chenyuan Yang@UIUC, Lingming Zhang@UIUC
-* Intern@[UCSD](https://people.eecs.berkeley.edu/~hao/), about LLM Serving, under the guidance of Jiangfei Duan@CUHK, Hao Zhang@UCSD
-* I have optimized the LLVM Backend for [SenseTime](https://www.sensetime.com/)(GPU Compiler Optimization), written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company(Inference Engine), I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC). 
-* In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands. 
+<!-- * 20 years old, fourth-year Undergraduate@[HUST](http://english.hust.edu.cn/) -> PhD@UMich(Ang Chen&Mosharaf Chowdhury) -->
+<!-- * the elite program in the Department of Computer Science & Technology, with **GPA 3.95, rank 4th** -->
+<!-- * Intern@[UIUC](http://lingming.cs.illinois.edu/index.html), about llvm fuzzing, with the guidance of Chenyuan Yang@UIUC, Lingming Zhang@UIUC -->
+<!-- * Intern@[UCSD](https://people.eecs.berkeley.edu/~hao/), about LLM Serving, under the guidance of Jiangfei Duan@CUHK, Hao Zhang@UCSD -->
+<!-- * I have optimized the LLVM Backend for [SenseTime](https://www.sensetime.com/)(GPU Compiler Optimization), written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company(Inference Engine), I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC).  -->
+<!-- * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands.  -->
 
-<h2 class="col">
-<font color=blue>Skills</font>
-</h2>
----
+I'm 20 years old now. Fourth-year Undergrad@[HUST](http://english.hust.edu.cn/) -> PhD@UMich(Ang Chen&Mosharaf Chowdhury), 
+I'm very honored to work with [Hao Zhang](http://lingming.cs.illinois.edu/index.html)(UCSD) and [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC), [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergraduate Research.
+I also once made contributions to ColossalAI@HPCAI-Tech, LLVM@SenseTime, NCNN@Tencent.
 
-* **AI:** LLM/CV Model Deployment
-* **HPC:** CUDA, Intel SSE, Arm NEON, Assembly, Async Programming
-* **Compiler:** Compiler Infra like LLVM, MLIR, Triton
+<!-- <h2 class="col"> -->
+<!-- <font color=blue>Skills</font> -->
+<!-- </h2> -->
+<!-- --- -->
+<!--  -->
+<!-- * **AI:** LLM/CV Model Deployment -->
+<!-- * **HPC:** CUDA, Intel SSE, Arm NEON, Assembly, Async Programming -->
+<!-- * **Compiler:** Compiler Infra like LLVM, MLIR, Triton -->
 
 <h2 class="col">
 <font color=blue>Education</font>
 </h2>
 ---
 
-* B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/), 2024(expected)
+* B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/), the elite program in the Department of Computer Science & Technology, with **GPA 3.95**, 2020-2024
 * PhD in Ann Arbor, University of Michigan, under the guidance of Ang Chen & Mosharaf Chowdhury, 2024.9-
-  <!-- * Looking for chances of Summer research experience in US or Singpore -->
+
+<!-- * Looking for chances of Summer research experience in US or Singpore -->
 <!-- * B.S. in GitHub, GitHub University, 2012 -->
 <!-- * M.S. in Jekyll, GitHub University, 2014 -->
 <!-- * Ph.D in Version Control Theory, GitHub University, 2018 (expected) -->
@@ -168,24 +173,24 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
       * To be noted, the PNNX of ncnn, a new `PyTorch Neural Network eXchange`, draw on the design concept of `MLIR`
   * [GELU](https://github.com/Tencent/ncnn/pull/4144): Implement `sse/avx/avx512` version of gelu, with a fast version of `erfc`.
 
-<!-- 3 -->
-<div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Deploy</span> High-FPS AI Models on Arm Chips</a></h3>
-</div>
-
-<div><a href="https://en.fiberhome.com/" style="text-decoration: none;"> @FiberHome Telecommunication Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; WuHan, China; April 2021 - June.2021</font>
-</div>
-
-> Establish a team of 7 undergraduate, 1 postgraduate in total for This Project.
-
-* Role: **Leader** @ [Dian.AI](https://dian.org.cn/)
-* Mentor: [Yayu Gao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ)
-* Mentor of AI Group: [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=en)
-* Duties included: As the project leader 
-  - Arm CPU/20FPS/ Snapdragon 870
-  - YOLOX/Lite-HRNet
-  - pattern match algorithm/Hungarian Algorithm
+3
+<!-- <div class="section-text col-right"> -->
+<!-- <h3><a href="#" style="text-decoration: none;"><span class="emph">Deploy</span> High-FPS AI Models on Arm Chips</a></h3> -->
+<!-- </div> -->
+<!--  -->
+<!-- <div><a href="https://en.fiberhome.com/" style="text-decoration: none;"> @FiberHome Telecommunication Company</a> -->
+<!-- <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &nbsp; WuHan, China; April 2021 - June.2021</font> -->
+<!-- </div> -->
+<!--  -->
+<!-- > Establish a team of 7 undergraduate, 1 postgraduate in total for This Project. -->
+<!--  -->
+<!-- * Role: **Leader** @ [Dian.AI](https://dian.org.cn/) -->
+<!-- * Mentor: [Yayu Gao](https://scholar.google.com.hk/citations?user=o42amRcAAAAJ) -->
+<!-- * Mentor of AI Group: [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=en) -->
+<!-- * Duties included: As the project leader  -->
+  <!-- - Arm CPU/20FPS/ Snapdragon 870 -->
+  <!-- - YOLOX/Lite-HRNet -->
+  <!-- - pattern match algorithm/Hungarian Algorithm -->
 
 <!-- 2
 <div class="section-text col-right">
@@ -212,9 +217,6 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 * Academic Excellence Scholarship(2020), School of Computer Science and Technology, HUST
 
 <!-- ### to be completed  -->
-
-
-
 
 <h2 class="col">
 <font color=blue>Hobbies</font>
