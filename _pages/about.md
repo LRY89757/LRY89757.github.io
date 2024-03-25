@@ -25,7 +25,7 @@ redirect_from:
 <!-- * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands.  -->
 
 * I'm 20 years old now. Fourth-year Undergrad@[HUST](http://english.hust.edu.cn/) -> PhD@UMich(Ang Chen&Mosharaf Chowdhury), 
-* I'm very honored to work with [Hao Zhang](http://lingming.cs.illinois.edu/index.html)(UCSD) and [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC), [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergraduate Research.
+* I'm very honored to work with [Hao Zhang](http://lingming.cs.illinois.edu/index.html)(UCSD), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC) and [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergraduate Research.
 * I also once made contributions to ColossalAI@HPCAI-Tech, LLVM@SenseTime, NCNN@Tencent.
 
 <!-- <h2 class="col"> -->
