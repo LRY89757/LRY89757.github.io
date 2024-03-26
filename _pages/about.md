@@ -43,7 +43,7 @@ redirect_from:
 ---
 
 * B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/), the elite program in the Department of Computer Science, with **GPA 3.95**, 2020-2024
-* PhD in Ann Arbor, University of Michigan, Advisors: [Ang Chen](https://web.eecs.umich.edu/~chenang/) & [Mosharaf Chowdhury](https://www.mosharaf.com/), 2024.9-
+* PhD in Ann Arbor, University of Michigan, Department of Computer Science & Engineering, Advisors: [Ang Chen](https://web.eecs.umich.edu/~chenang/) & [Mosharaf Chowdhury](https://www.mosharaf.com/), 2024.9-
 
 <!-- * Looking for chances of Summer research experience in US or Singpore -->
 <!-- * B.S. in GitHub, GitHub University, 2012 -->
