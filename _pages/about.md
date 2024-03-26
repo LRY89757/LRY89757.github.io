@@ -28,6 +28,8 @@ redirect_from:
 * I'm very honored to work with [Hao Zhang](http://lingming.cs.illinois.edu/index.html)(UCSD), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC) and [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergraduate Research.
 * I also once made contributions to ColossalAI@HPCAI-Tech, LLVM@SenseTime, NCNN@Tencent.
 
+> Btw, my wechat id is `Runyu_Lu`, please feel free to chat with me or drop me an email!
+
 <!-- <h2 class="col"> -->
 <!-- <font color=blue>Skills</font> -->
 <!-- </h2> -->
