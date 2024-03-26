@@ -24,9 +24,9 @@ redirect_from:
 <!-- ====== -->
 <!-- * B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/), 2024(expected) -->
   <!-- * Want to pursure PhD Degree in AI Compiler -->
-* B.S. in GitHub, GitHub University, 2012
+<!-- * B.S. in GitHub, GitHub University, 2012
 * M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* Ph.D in Version Control Theory, GitHub University, 2018 (expected) -->
 
 <!-- <!-- >###Markdown 字体颜色改变 -->
 <!-- >​ -->
@@ -58,7 +58,7 @@ redirect_from:
 <!-- <font color=blue>Industrial Experiences</font> -->
 <!-- </h2> -->
 
-1
+<!-- 1 -->
 <!-- <div class="section-text col-right"> -->
 <!-- <h3><a href="#" style="text-decoration: none;"><span class="emph">Develop High</span> Performance Neural Network Inference Engine</a></h3> -->
 <!-- </div> -->
@@ -75,7 +75,7 @@ redirect_from:
   <!-- * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid. -->
   <!-- * [Gelu](https://github.com/Tencent/ncnn/pull/4144): implement `sse/avx/avx512` version of gelu, with a fast version of erfc -->
 
-2
+<!-- 2 -->
 <!-- <div class="section-text col-right"> -->
 <!-- <h3><a href="#" style="text-decoration: none;"><span class="emph">Optimize</span> The Backend of LLVM for AI Chips</a></h3> -->
 <!-- </div> -->
@@ -90,7 +90,7 @@ redirect_from:
   <!-- * Such as support the 64-bit Instr -->
   <!-- * ISA like NVIDIA PTX   -->
 
-3
+<!-- 3 -->
 <!-- <div class="section-text col-right"> -->
 <!-- <h3><a href="#" style="text-decoration: none;"><span class="emph">Deploy</span> High-FPS AI Models on Arm Chips</a></h3> -->
 <!-- </div> -->
@@ -141,19 +141,19 @@ redirect_from:
 <!-- Work Experience -->
 <!-- ====== -->
   <!-- <ul>{% for post in site.talks %} -->
-    <!-- {% include archive-single-talk-cv.html %} -->
+<!-- {% include archive-single-talk-cv.html %} -->
   <!-- {% endfor %}</ul> -->
   
 <!-- Research Experince -->
 <!-- ====== -->
   <!-- <ul>{% for post in site.teaching %} -->
-    <!-- {% include archive-single-cv.html %} -->
+<!-- {% include archive-single-cv.html %} -->
   <!-- {% endfor %}</ul> -->
 
 <!-- Publications -->
 <!-- ====== -->
   <!-- <ul>{% for post in site.publications %} -->
-    <!-- {% include archive-single-cv.html %} -->
+<!-- {% include archive-single-cv.html %} -->
   <!-- {% endfor %}</ul> -->
    
 <!-- Service and leadership -->
