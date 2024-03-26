@@ -100,7 +100,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 * Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Profiled the bottleneck of current SOTA LLM Serving framework(e.g., vllm, ppl.llm).
 * Improve the GPU SM utilization to accelerate the serving throughput of LLMs
-* now coding for one project about acclerating the serving throughput of LLMs.
+<!-- * now coding for one project about acclerating the serving throughput of LLMs. -->
 
 <!-- 0 -->
 <div class="section-text col-right">
