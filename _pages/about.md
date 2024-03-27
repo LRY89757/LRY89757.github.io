@@ -24,7 +24,7 @@ redirect_from:
 <!-- * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands.  -->
 
 * 20 years old now. Undergrad@[HUST](http://english.hust.edu.cn/) -> PhD@UMich([Ang Chen](https://web.eecs.umich.edu/~chenang/)&[Mosharaf Chowdhury](https://www.mosharaf.com/)), 
-* I'm very honored to work with [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)(UCSD), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC) and [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergraduate Research.
+* I am very fortunate to be advised by [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)(UCSD), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC) and [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergrad Research.
 * I was involved in the development of [ColossalAI](https://github.com/hpcaitech/ColossalAI)@HPCAI-Tech, LLVM@SenseTime, [NCNN](https://github.com/Tencent/ncnn)@Tencent.
 
 > Btw, my wechat id is `Runyu_Lu`, please feel free to chat with me or drop me an email!
