@@ -51,24 +51,24 @@ redirect_from:
 <!-- * M.S. in Jekyll, GitHub University, 2014 -->
 <!-- * Ph.D in Version Control Theory, GitHub University, 2018 (expected) -->
 
-<h2 class="col">
+<!-- <h2 class="col">
 <font color=blue>Publications</font>
-</h2>
+</h2> -->
 
 <!-- -  **Symmetry-Preserving Program Representations for Learning Code Semantics**  [[Arxiv](https://arxiv.org/abs/2310.15991)]
   Kexin Pei, Weichen Li*, Qirui Jin*, **Shuyang Liu**, Scott Geng, Lorenzo Cavallaro, Junfeng Yang, Suman Jana  
   Accepted by [MAPS workshop at ESEC/FSE 2023](https://mapsworkshop.github.io/)  
   Submitted to [ICLR 2024](https://iclr.cc/). Under Review. -->
 
-<div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3>
-</div>
+<!-- <div class="section-text col-right"> -->
+<!-- <h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3> -->
+<!-- </div> -->
 
 <!-- <div><a href="https://arxiv.org/abs/2310.15991" style="text-decoration: none;">Under Review, xxx/xxxx’24</a></div> -->
 
-Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhaneh Jabbarvand, Lingming Zhang  
+<!-- Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhaneh Jabbarvand, Lingming Zhang   -->
 <!-- <br> -->
-(Preprint), Oct 2023, [Arxiv](https://arxiv.org/abs/2310.15991) available
+<!-- (Preprint), Oct 2023, [Arxiv](https://arxiv.org/abs/2310.15991) available -->
 <!-- ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering* -->
 
 <!-- <div class="section-text col-right"> -->
@@ -80,7 +80,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 <!-- Authors: `*`Hongru Gao, `*`**Runyu Lu**, Zhiyuan Shao, Hai Jin   -->
 <!-- *The IEEE International Conference on Data Engineering* -->
 
-`*` *denotes joint first authors*
+<!-- `*` *denotes joint first authors* -->
 
 
 <h2 class="col">
@@ -96,7 +96,8 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 </div>
 
 <!-- * Role: Research Intern  -->
-* Role: Role: Research Intern, **Second author**, paper already submitted to **xxxx'24**, Arxiv Available soon
+<!-- * Role: Role: Research Intern, **Second author**, paper already submitted to **xxxx'24**, Arxiv Available soon -->
+* Role: Role: Research Intern
 * Mentor: [Jiangfei Duan](https://jf-d.github.io/), [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Profiled the bottleneck of current SOTA LLM Serving framework(e.g., vllm, ppl.llm).
@@ -112,7 +113,8 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; Champaign, IL; June. 2023 - Sept. 2023 </font>
 </div>
 
-* Role: Role: Research Intern, **Third author**, paper already submitted to **xxxx'24**, Arxiv Available in this [link](https://arxiv.org/abs/2310.15991)
+<!-- * Role: Role: Research Intern, **Third author**, paper already submitted to **xxxx'24**, Arxiv Available in this [link](https://arxiv.org/abs/2310.15991) -->
+* Role: Role: Research Intern
 * Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/),
 * Advisor: [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)
 * Duties included:  Responsible for the LLVM part of this project. 
@@ -129,7 +131,8 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; Oct. 2022 - June. 2023 </font>
 </div>
 
-* Role: Research Intern, **Co-first author**, paper is submitted to **xxxx'24**
+<!-- * Role: Research Intern, **Co-first author**, paper is submitted to **xxxx'24** -->
+* Role: Research Intern
 * Mentor: [Hongru Gao](https://github.com/hongrugao) 
 * Advisor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
 * Duties included: Based on the the memory bound of graph processing SOTA algorithm, a more efficient dynamic-graph-friendly data storage format is proposed, which involves modifications to the page table operating system kernel(Linux).
