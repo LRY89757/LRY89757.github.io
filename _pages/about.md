@@ -93,7 +93,7 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 </h2>
 
 <div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">MuxServe: Flexible Multiplexing for Efficient Multiple LLM Serving</span> </a></h3>
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Scheduling the Streaming multiprocessors to accelerate LLM Serving</span> </a></h3>
 </div>
 
 <div><a href="https://lmsys.org/" style="text-decoration: none;">UCSD lmsys Lab</a>
