@@ -58,16 +58,18 @@ redirect_from:
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3>
 </div>
-<div><a href="https://arxiv.org/abs/2310.15991" style="text-decoration: none;">Under Review, xxx/xxxx’24</a>(Preprint), Oct 2023, [Arxiv](https://arxiv.org/abs/2310.15991) available</div>
+<div><a href="https://arxiv.org/abs/2310.15991" style="text-decoration: none;">Under Review, xxx/xxxx’24</a></div>
 Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhaneh Jabbarvand, Lingming Zhang  
+(Preprint), Oct 2023, [Arxiv](https://arxiv.org/abs/2310.15991) available
 <!-- <br> -->
 
 
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">MuxServe: Flexible Multiplexing for Efficient Multiple LLM Serving</span> </a></h3>
 </div>
-<div><a href="https://arxiv.org/abs/2404.02015" style="text-decoration: none;">Under Review, xxx/xxxx’24</a> (Preprint), April 2024, [Arxiv](https://arxiv.org/abs/2404.02015) available </div>
+<div><a href="https://arxiv.org/abs/2404.02015" style="text-decoration: none;">Under Review, xxx/xxxx’24</a></div>
 Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang, Dahua Lin, Ion Stoica, Hao Zhang
+(Preprint), April 2024, [Arxiv](https://arxiv.org/abs/2404.02015) available 
 <!-- <br> -->
 
 
