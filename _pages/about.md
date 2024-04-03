@@ -51,24 +51,27 @@ redirect_from:
 <!-- * M.S. in Jekyll, GitHub University, 2014 -->
 <!-- * Ph.D in Version Control Theory, GitHub University, 2018 (expected) -->
 
-<!-- <h2 class="col">
+<h2 class="col">
 <font color=blue>Publications</font>
-</h2> -->
+</h2>
 
-<!-- -  **Symmetry-Preserving Program Representations for Learning Code Semantics**  [[Arxiv](https://arxiv.org/abs/2310.15991)]
-  Kexin Pei, Weichen Li*, Qirui Jin*, **Shuyang Liu**, Scott Geng, Lorenzo Cavallaro, Junfeng Yang, Suman Jana  
-  Accepted by [MAPS workshop at ESEC/FSE 2023](https://mapsworkshop.github.io/)  
-  Submitted to [ICLR 2024](https://iclr.cc/). Under Review. -->
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3>
+</div>
+<div><a href="https://arxiv.org/abs/2310.15991" style="text-decoration: none;">Under Review, xxx/xxxx’24</a></div>
+Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhaneh Jabbarvand, Lingming Zhang  
+<br>
+(Preprint), Oct 2023, [Arxiv](https://arxiv.org/abs/2310.15991) available
 
-<!-- <div class="section-text col-right"> -->
-<!-- <h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3> -->
-<!-- </div> -->
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">MuxServe: Flexible Multiplexing for Efficient Multiple LLM Serving</span> </a></h3>
+</div>
+<div><a href="https://arxiv.org/abs/2404.02015" style="text-decoration: none;">Under Review, xxx/xxxx’24</a></div>
+Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang, Dahua Lin, Ion Stoica, Hao Zhang
+<br>
+(Preprint), April 2024, [Arxiv](https://arxiv.org/abs/2404.02015) available
 
-<!-- <div><a href="https://arxiv.org/abs/2310.15991" style="text-decoration: none;">Under Review, xxx/xxxx’24</a></div> -->
 
-<!-- Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhaneh Jabbarvand, Lingming Zhang   -->
-<!-- <br> -->
-<!-- (Preprint), Oct 2023, [Arxiv](https://arxiv.org/abs/2310.15991) available -->
 <!-- ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering* -->
 
 <!-- <div class="section-text col-right"> -->
@@ -88,7 +91,7 @@ redirect_from:
 </h2>
 
 <div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">LLM Serving, Inferncing, Profiling</span> </a></h3>
+<h3><a href="#" style="text-decoration: none;"><span class="emph">MuxServe: Flexible Multiplexing for Efficient Multiple LLM Serving</span> </a></h3>
 </div>
 
 <div><a href="https://lmsys.org/" style="text-decoration: none;">UCSD lmsys Lab</a>
