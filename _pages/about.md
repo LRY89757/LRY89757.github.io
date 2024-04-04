@@ -102,7 +102,7 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 
 <!-- * Role: Research Intern  -->
 <!-- * Role: Role: Research Intern, **Second author**, paper already submitted to **xxxx'24**, Arxiv Available soon -->
-* Role: Role: Research Intern
+* Role: Research Intern
 * Mentor: [Jiangfei Duan](https://jf-d.github.io/), [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
 * Profiled the bottleneck of current SOTA LLM Serving framework(e.g., vllm, ppl.llm).
@@ -119,7 +119,7 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 </div>
 
 <!-- * Role: Role: Research Intern, **Third author**, paper already submitted to **xxxx'24**, Arxiv Available in this [link](https://arxiv.org/abs/2310.15991) -->
-* Role: Role: Research Intern
+* Role: Research Intern
 * Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/),
 * Advisor: [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)
 * Duties included:  Responsible for the LLVM part of this project. 
