@@ -26,7 +26,7 @@ redirect_from:
 * 20 years old now. Undergrad@[HUST](http://english.hust.edu.cn/) -> PhD@UMich([Ang Chen](https://web.eecs.umich.edu/~chenang/)&[Mosharaf Chowdhury](https://www.mosharaf.com/)), 
 * My primary research area is Machine Learning System. In the past I mainly worked on High Performance Computing, in the future I want to dive into the Network and Cloud Computing Part.
 * I am very fortunate to be advised by [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)(UCSD), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC) and [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergrad Research.
-* I was involved in the development of [ColossalAI](https://github.com/hpcaitech/ColossalAI)@HPCAI-Tech, LLVM@SenseTime, [NCNN](https://github.com/Tencent/ncnn)@Tencent.
+* I was involved in the development of [ColossalAI](https://github.com/hpcaitech/ColossalAI)@HPCAI-Tech(37k+star), LLVM@SenseTime(not open source), [NCNN](https://github.com/Tencent/ncnn)@Tencent(18k+star).
 
 > Btw, my wechat id is `Runyu_Lu`, please feel free to chat with me or drop me an email!
 
