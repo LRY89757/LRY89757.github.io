@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Runyu Lu's Personal Page"
+title: "Runyu Lu"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
