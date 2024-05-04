@@ -179,7 +179,7 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 
 * Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **18k+** stars in Github
 * Role: Top15 committer(util `Nov.2022`) of 269 committers in total
-* Mentor: [nihui](https://github.com/nihui)(*with Github **6k** followers*)
+* Mentor: [nihui](https://github.com/nihui)(*with Github **6k** followers*), and she's cute :)
 * Duties included: Write and Optimize(such as SIMD) operators for ncnn, mainly aligned with pytorch, some examples I built:
   * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
       * To be noted, the PNNX of ncnn, a new `PyTorch Neural Network eXchange`, draw on the design concept of `MLIR`
