@@ -71,7 +71,7 @@ Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhan
 <!-- <div><a href="https://arxiv.org/abs/2404.02015" style="text-decoration: none;">Under Review, xxx/xxxx’24</a></div> -->
 Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang, Dahua Lin, Ion Stoica, Hao Zhang
 <br>
-*The 41st International Conference on Machine Learning* 
+*The 41st International Conference on Machine Learning (system track)* 
 <br>
 (ICML 2024), Vienna, Austria, [Arxiv](https://arxiv.org/abs/2404.02015) available 
 
