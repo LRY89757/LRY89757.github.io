@@ -157,7 +157,7 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 </div>
 
 <div><a href="https://hpc-ai.com/" style="text-decoration: none;">@HPCAI-Tech Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Beijing, China; March 2024 - Present 2024</font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Beijing, China; March 2024 - Present</font>
 </div>
 
 * Project: [ColossalAI](https://github.com/hpcaitech/ColossalAI), an open source project with **37k+** stars in Github
