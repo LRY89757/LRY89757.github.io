@@ -161,7 +161,7 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 </div>
 
 * Project: [ColossalAI](https://github.com/hpcaitech/ColossalAI), an open source project with **37k+** stars in Github
-* Role: Developer
+* Role: Core Developer of Inference Team
 * Mentor: [Yuanheng Zhao](https://github.com/yuanheng-zhao), [Shenggui Li](https://franklee.xyz/), and [Hongxin Liu](https://github.com/ver217)
 * Duties included: Core InferenceEngine Developer, some examples I built
   * [[feat]CUDA GRAPH Support](https://github.com/hpcaitech/ColossalAI/pull/5434): CUDA Graph Support and Refactor non-functional api
