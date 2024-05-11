@@ -166,7 +166,7 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 * Duties included: Core InferenceEngine Developer, some examples I built:
   * [[feat]CUDA Graph Support](https://github.com/hpcaitech/ColossalAI/pull/5434): CUDA Graph Support and Refactor non-functional api
   * [[feat]Tensor Model Parallel Support For Inference](https://github.com/hpcaitech/ColossalAI/pull/5563): Tensor Model Parallel Support For Inference
-  * [[feat]Inference RPC Server Support](https://github.com/hpcaitech/ColossalAI/pull/5705): RPC Support for online serving
+  * [[feat]Inference RPC Server Support](https://github.com/hpcaitech/ColossalAI/pull/5705): RPC Support for Online Serving
 
 <!-- 1 -->
 <div class="section-text col-right">
