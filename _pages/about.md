@@ -163,7 +163,7 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 * Project: [ColossalAI](https://github.com/hpcaitech/ColossalAI), an open source project with **37k+** stars in Github
 * Role: Core Developer of Inference Team
 * Mentor: [Yuanheng Zhao](https://github.com/yuanheng-zhao), [Shenggui Li](https://franklee.xyz/) and [Hongxin Liu](https://github.com/ver217)
-* Duties included: Core InferenceEngine Developer, some examples I built
+* Duties included: Core InferenceEngine Developer, some examples I built:
   * [[feat]CUDA Graph Support](https://github.com/hpcaitech/ColossalAI/pull/5434): CUDA Graph Support and Refactor non-functional api
   * [[feat]Tensor Model Parallel Support For Inference](https://github.com/hpcaitech/ColossalAI/pull/5563): Tensor Model Parallel Support For Inference
   * [[feat]Inference RPC Server Support](https://github.com/hpcaitech/ColossalAI/pull/5705): RPC Support for online serving
@@ -177,6 +177,7 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Shanghai, China; April 2023 - Augu 2023</font>
 </div>
 
+* Project: LLVM, the internal version of SenseTime
 * Role: LLVMer
 * Mentor: Wenqiang Yin
 * Duties included: Optimizing the backend of LLVM based on the SenseTime GPU.
