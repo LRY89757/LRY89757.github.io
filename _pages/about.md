@@ -156,7 +156,7 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Develop ColossalAI Inference Engine for LLM</span></a></h3>
 </div>
 
-<div><a href="https://www.sensetime.com/en" style="text-decoration: none;">@HPCAI-Tech Company</a>
+<div><a href="https://hpc-ai.com/" style="text-decoration: none;">@HPCAI-Tech Company</a>
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Beijing, China; March 2024 - Present 2024</font>
 </div>
 
