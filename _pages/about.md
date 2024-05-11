@@ -151,6 +151,23 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 <font color=blue>Industrial Experiences</font>
 </h2>
 
+<!-- 0 -->
+<div class="section-text col-right">
+<h3><a href="#" style="text-decoration: none;"><span class="emph">Develop ColossalAI Inference Engine for LLM</span></a></h3>
+</div>
+
+<div><a href="https://www.sensetime.com/en" style="text-decoration: none;">@HPCAI-Tech Company</a>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Beijing, China; March 2024 - Present 2024</font>
+</div>
+
+* Project: [ColossalAI](https://github.com/hpcaitech/ColossalAI), an open source project with **37k+** stars in Github
+* Role: Developer
+* Mentor: [Yuanheng Zhao](https://github.com/yuanheng-zhao), [Shenggui Li](https://franklee.xyz/), and [Hongxin Liu](https://github.com/ver217)
+* Duties included: Core InferenceEngine Developer, some examples I built
+  * [[feat]CUDA GRAPH Support](https://github.com/hpcaitech/ColossalAI/pull/5434): CUDA Graph Support and Refactor non-functional api
+  * [[feat]Tensor Model Parallel Support For Inference](https://github.com/hpcaitech/ColossalAI/pull/5563): Tensor Model Parallel Support For Inference
+  * [[feat]Inference RPC Server Support](https://github.com/hpcaitech/ColossalAI/pull/5705)
+
 <!-- 1 -->
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Optimize the LLVM Backend of SenseTime GPU, GPU Compiler</span></a></h3>
