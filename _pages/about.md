@@ -24,7 +24,8 @@ redirect_from:
 <!-- * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands.  -->
 
 * 20 years old now. Undergrad@[HUST](http://english.hust.edu.cn/) -> PhD@UMich([Ang Chen](https://web.eecs.umich.edu/~chenang/)&[Mosharaf Chowdhury](https://www.mosharaf.com/)), 
-* My primary research area is Machine Learning System. In the past I mainly worked on High Performance Computing, in the future I want to dive into the Network and Cloud Computing Part.
+<!-- * My primary research area is Machine Learning System. In the past I mainly worked on High Performance Computing, in the future I want to dive into the Network and Cloud Computing Part. -->
+* Machine Learning System, mainly on Serving System currently.
 * I am very fortunate to be advised by [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)(UCSD), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC) and [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergrad Research.
 * I was involved in the development of [ColossalAI](https://github.com/hpcaitech/ColossalAI)@HPCAI-Tech(37k+star), LLVM@SenseTime(not open source), [NCNN](https://github.com/Tencent/ncnn)@Tencent(18k+star).
 
@@ -157,16 +158,16 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 </div>
 
 <div><a href="https://hpc-ai.com/" style="text-decoration: none;">@HPCAI-Tech Company</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Beijing, China; March 2024 - Present</font>
+<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; Beijing, China; March 2024 - July 2024</font>
 </div>
 
 * Project: [ColossalAI](https://github.com/hpcaitech/ColossalAI), an open source project with **37k+** stars in Github
-* Role: Core Developer of Inference Team
+<!-- * Role: Core Developer of Inference Team -->
 * Mentor: [Yuanheng Zhao](https://github.com/yuanheng-zhao), [Shenggui Li](https://franklee.xyz/) and [Hongxin Liu](https://github.com/ver217)
-* Duties included: Core InferenceEngine Developer, some examples I built:
+<!-- * Duties included: Core InferenceEngine Developer, some examples I built:
   * [[feat]CUDA Graph Support](https://github.com/hpcaitech/ColossalAI/pull/5434): CUDA Graph Support and Refactor non-functional api
   * [[feat]Tensor Model Parallel Support For Inference](https://github.com/hpcaitech/ColossalAI/pull/5563): Tensor Model Parallel Support For Inference
-  * [[feat]Inference RPC Server Support](https://github.com/hpcaitech/ColossalAI/pull/5705): RPC Support for Online Serving
+  * [[feat]Inference RPC Server Support](https://github.com/hpcaitech/ColossalAI/pull/5705): RPC Support for Online Serving -->
 
 <!-- 1 -->
 <div class="section-text col-right">
@@ -178,13 +179,13 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 </div>
 
 * Project: LLVM, the internal version of SenseTime
-* Role: LLVMer
+<!-- * Role: LLVMer -->
 * Mentor: Wenqiang Yin
-* Duties included: Optimizing the backend of LLVM based on the SenseTime GPU.
+<!-- * Duties included: Optimizing the backend of LLVM based on the SenseTime GPU.
   * 4000+ line LLVM GPU Backend Optimization Codes
   * Instruction Selection, Instruction Pattern Match, such as optimize the ld/st into async_ld/st, CodeGen Emitter
   * Optimize the threadidx/blockDim based on their range.
-  * If there's one thing LLVM has taught me, it's that patience is a virtue. A virtue I never knew I had until I spent countless hours debugging its intricacies :(
+  * If there's one thing LLVM has taught me, it's that patience is a virtue. A virtue I never knew I had until I spent countless hours debugging its intricacies :( -->
 
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Develop High</span> Performance Neural Network Inference Engine</a></h3>
@@ -196,12 +197,12 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 </div>
 
 * Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **18k+** stars in Github
-* Role: Top15 committer(util `Nov.2022`) of 269 committers in total
+<!-- * Role: Top15 committer(util `Nov.2022`) of 269 committers in total -->
 * Mentor: [nihui](https://github.com/nihui)(*with Github **6k** followers*), and she's cute :)
-* Duties included: Write and Optimize(such as SIMD) operators for ncnn, mainly aligned with pytorch, some examples I built:
+<!-- * Duties included: Write and Optimize(such as SIMD) operators for ncnn, mainly aligned with pytorch, some examples I built:
   * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
       * To be noted, the PNNX of ncnn, a new `PyTorch Neural Network eXchange`, draw on the design concept of `MLIR`
-  * [GELU](https://github.com/Tencent/ncnn/pull/4144): Implement `sse/avx/avx512` version of gelu, with a fast version of `erfc`.
+  * [GELU](https://github.com/Tencent/ncnn/pull/4144): Implement `sse/avx/avx512` version of gelu, with a fast version of `erfc`. -->
 
 <!-- 3 -->
 <!-- <div class="section-text col-right"> -->
@@ -253,7 +254,8 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 </h2>
 
 * Football, crazy fan of Lionel Messi, [FC Barcelona](https://www.fcbarcelona.com/en/), and Argentina National Team.
-* F1, crazy fan of Charles Leclerc(racing in Formula One for Scuderia Ferrari), Guanyu Zhou(a Chinese racing driver who currently competes in Formula One for Stake F1 Team Kick Sauber).
+* F1, crazy fan of Charles Leclerc(racing in Formula One for Scuderia Ferrari), Guanyu Zhou(a Chinese racing driver who currently competed in Formula One for Stake F1 Team Kick Sauber).
+  * fun fact: I have some photos [photo1](https://lry89757.github.io/images\with-guanyu-1.jpg) [photo2](https://lry89757.github.io/images\with-guanyu-2.jpg) with Guanyu :)
 * ~~a little dance, like jazz/hiphop~~
 
 
