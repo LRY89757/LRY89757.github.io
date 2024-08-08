@@ -164,10 +164,12 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 * Project: [ColossalAI](https://github.com/hpcaitech/ColossalAI), an open source project with **37k+** stars in Github
 <!-- * Role: Core Developer of Inference Team -->
 * Mentor: [Yuanheng Zhao](https://github.com/yuanheng-zhao), [Shenggui Li](https://franklee.xyz/) and [Hongxin Liu](https://github.com/ver217)
-<!-- * Duties included: Core InferenceEngine Developer, some examples I built:
+<!-- 
+* Duties included: Core InferenceEngine Developer, some examples I built:
   * [[feat]CUDA Graph Support](https://github.com/hpcaitech/ColossalAI/pull/5434): CUDA Graph Support and Refactor non-functional api
   * [[feat]Tensor Model Parallel Support For Inference](https://github.com/hpcaitech/ColossalAI/pull/5563): Tensor Model Parallel Support For Inference
-  * [[feat]Inference RPC Server Support](https://github.com/hpcaitech/ColossalAI/pull/5705): RPC Support for Online Serving -->
+  * [[feat]Inference RPC Server Support](https://github.com/hpcaitech/ColossalAI/pull/5705): RPC Support for Online Serving 
+-->
 
 <!-- 1 -->
 <div class="section-text col-right">
@@ -181,11 +183,13 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 * Project: LLVM, the internal version of SenseTime
 <!-- * Role: LLVMer -->
 * Mentor: Wenqiang Yin
-<!-- * Duties included: Optimizing the backend of LLVM based on the SenseTime GPU.
+<!-- 
+* Duties included: Optimizing the backend of LLVM based on the SenseTime GPU.
   * 4000+ line LLVM GPU Backend Optimization Codes
   * Instruction Selection, Instruction Pattern Match, such as optimize the ld/st into async_ld/st, CodeGen Emitter
   * Optimize the threadidx/blockDim based on their range.
-  * If there's one thing LLVM has taught me, it's that patience is a virtue. A virtue I never knew I had until I spent countless hours debugging its intricacies :( -->
+  * If there's one thing LLVM has taught me, it's that patience is a virtue. A virtue I never knew I had until I spent countless hours debugging its intricacies :( 
+-->
 
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Develop High</span> Performance Neural Network Inference Engine</a></h3>
@@ -199,10 +203,12 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 * Project: [ncnn](https://github.com/Tencent/ncnn), an open source project with **18k+** stars in Github
 <!-- * Role: Top15 committer(util `Nov.2022`) of 269 committers in total -->
 * Mentor: [nihui](https://github.com/nihui)(*with Github **6k** followers*), and she's cute :)
-<!-- * Duties included: Write and Optimize(such as SIMD) operators for ncnn, mainly aligned with pytorch, some examples I built:
+<!-- 
+* Duties included: Write and Optimize(such as SIMD) operators for ncnn, mainly aligned with pytorch, some examples I built:
   * [GridSample](https://github.com/Tencent/ncnn/pull/4288): Given an input and a flow-field grid, computes the output using input values and pixel locations from grid.
       * To be noted, the PNNX of ncnn, a new `PyTorch Neural Network eXchange`, draw on the design concept of `MLIR`
-  * [GELU](https://github.com/Tencent/ncnn/pull/4144): Implement `sse/avx/avx512` version of gelu, with a fast version of `erfc`. -->
+  * [GELU](https://github.com/Tencent/ncnn/pull/4144): Implement `sse/avx/avx512` version of gelu, with a fast version of `erfc`. 
+-->
 
 <!-- 3 -->
 <!-- <div class="section-text col-right"> -->
