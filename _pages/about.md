@@ -135,15 +135,15 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 
 
 <!-- 1 -->
-<div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient</span>  Dynamic Graph Reconstruction with PagedMapping</a></h3>
-</div>
+<!-- <div class="section-text col-right"> -->
+<!-- <h3><a href="#" style="text-decoration: none;"><span class="emph">Efficient</span>  Dynamic Graph Reconstruction with PagedMapping</a></h3> -->
+<!-- </div> -->
 
-<div><a href="http://grid.hust.edu.cn/" style="text-decoration: none;">HUST CGCL</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; Oct. 2022 - June. 2023 </font>
-</div>
+<!-- <div><a href="http://grid.hust.edu.cn/" style="text-decoration: none;">HUST CGCL</a> -->
+<!-- <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; Oct. 2022 - June. 2023 </font> -->
+<!-- </div> -->
 
-* Advised by [Hongru Gao](https://github.com/hongrugao), [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
+<!-- * Advised by [Hongru Gao](https://github.com/hongrugao), [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en) -->
 
 <!-- * Role: Research Intern
 * Mentor: [Hongru Gao](https://github.com/hongrugao) 
