@@ -23,7 +23,7 @@ redirect_from:
 <!-- * I have optimized the LLVM Backend for [SenseTime](https://www.sensetime.com/)(GPU Compiler Optimization), written many high-performance neural networks operators for [Tencent](https://github.com/Tencent/ncnn) company(Inference Engine), I also have made some contributions to open source projects of [Microsoft](https://github.com/microsoft/AI-System), [Meituan](https://github.com/meituan/YOLOv6), and [Megvii](https://github.com/MegEngine/MegCC).  -->
 <!-- * In addition, as the person in charge, I once led a team to complete an industry project of the deployment of object detection and pose estimation models on arm chips, which perfectly meet the high FPS demands.  -->
 
-* 20 years old now. Undergrad@[HUST](http://english.hust.edu.cn/) -> PhD@UMich([Ang Chen](https://web.eecs.umich.edu/~chenang/)&[Mosharaf Chowdhury](https://www.mosharaf.com/)), 
+* 20 years old now. PhD Student@UMich([Ang Chen](https://web.eecs.umich.edu/~chenang/)&[Mosharaf Chowdhury](https://www.mosharaf.com/))
 <!-- * My primary research area is Machine Learning System. In the past I mainly worked on High Performance Computing, in the future I want to dive into the Network and Cloud Computing Part. -->
 * Machine Learning System, mainly on Serving System currently.
 * I am very fortunate to be advised by [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)(UCSD), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC) and [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergrad Research.
@@ -46,7 +46,7 @@ redirect_from:
 ---
 
 * B.S. in WuHan, [Huazhong University of Science and Technology](http://english.hust.edu.cn/), the elite program in the Department of Computer Science, with **GPA 3.95**, 2020.9-2024.6
-* PhD in Ann Arbor, University of Michigan, Department of Computer Science & Engineering, Advisors: [Ang Chen](https://web.eecs.umich.edu/~chenang/) & [Mosharaf Chowdhury](https://www.mosharaf.com/), 2024.9-
+* PhD in Ann Arbor, University of Michigan, Department of Computer Science & Engineering, Advisors: [Ang Chen](https://web.eecs.umich.edu/~chenang/) & [Mosharaf Chowdhury](https://www.mosharaf.com/), 2024.8-
 
 <!-- * Looking for chances of Summer research experience in US or Singpore -->
 <!-- * B.S. in GitHub, GitHub University, 2012 -->
@@ -60,9 +60,12 @@ redirect_from:
 <div class="section-text col-right">
 <h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3>
 </div>
-<div><a href="https://arxiv.org/abs/2310.15991" style="text-decoration: none;">Under Review, xxx/xxxx’24</a></div>
 Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhaneh Jabbarvand, Lingming Zhang  
-(Preprint), Oct 2023, [Arxiv](https://arxiv.org/abs/2310.15991) available
+<br>
+* Object-Oriented Programming, Systems, Languages, and Applications 2024 (in PACM PL)
+<br>
+(OOPSLA 2024), Pasadena, United States, [Arxiv](https://arxiv.org/abs/2310.15991) available
+
 <!-- <br> -->
 
 
