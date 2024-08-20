@@ -102,17 +102,19 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 <h3><a href="#" style="text-decoration: none;"><span class="emph">Scheduling the Streaming multiprocessors to accelerate LLM Serving</span> </a></h3>
 </div>
 
-<div><a href="https://lmsys.org/" style="text-decoration: none;">UCSD lmsys Lab</a>
+<div><a href="https://hao-ai-lab.github.io/home/" style="text-decoration: none;">UCSD Hao AI Lab</a>
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; La Jolla Augu. 2023 - Present </font>
 </div>
 
+* Advised by [Jiangfei Duan](https://jf-d.github.io/), [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)
+
 <!-- * Role: Research Intern  -->
 <!-- * Role: Role: Research Intern, **Second author**, paper already submitted to **xxxx'24**, Arxiv Available soon -->
-* Role: Research Intern
-* Mentor: [Jiangfei Duan](https://jf-d.github.io/), [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
-* Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/)
-* Profiled the bottleneck of current SOTA LLM Serving framework(e.g., vllm, ppl.llm).
-* Improve the GPU SM utilization to accelerate the serving throughput of LLMs
+<!-- * Role: Research Intern -->
+<!-- * Mentor: [Jiangfei Duan](https://jf-d.github.io/), [Hao Zhang](https://people.eecs.berkeley.edu/~hao/) -->
+<!-- * Advisor: [Hao Zhang](https://people.eecs.berkeley.edu/~hao/) -->
+<!-- * Profiled the bottleneck of current SOTA LLM Serving framework(e.g., vllm, ppl.llm). -->
+<!-- * Improve the GPU SM utilization to accelerate the serving throughput of LLMs -->
 
 <!-- 0 -->
 <div class="section-text col-right">
@@ -123,12 +125,14 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; Champaign, IL; June. 2023 - Sept. 2023 </font>
 </div>
 
+* Advised by [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)
+<!-- 
 * Role: Research Intern
 * Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/),
-* Advisor: [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)
-* Duties included:  Responsible for the LLVM part of this project. 
+* Advisor: [Lingming Zhang](http://lingming.cs.illinois.edu/index.html) -->
+<!-- * Duties included:  Responsible for the LLVM part of this project. 
 * Test optimization in compilers with white-box fuzzing technique by leveraging LLMs
-* Detect 96 bugs of Pytorch, TensorFlow XLA, TensorFlowLite, LLVM based on the optimization source code
+* Detect 96 bugs of Pytorch, TensorFlow XLA, TensorFlowLite, LLVM based on the optimization source code -->
 
 
 <!-- 1 -->
@@ -140,12 +144,14 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; WuHan, China; Oct. 2022 - June. 2023 </font>
 </div>
 
-* Role: Research Intern
+* Advised by [Hongru Gao](https://github.com/hongrugao), [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
+
+<!-- * Role: Research Intern
 * Mentor: [Hongru Gao](https://github.com/hongrugao) 
-* Advisor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en)
-* Duties included: Based on the the memory bound of graph processing SOTA algorithm, a more efficient dynamic-graph-friendly data storage format is proposed, which involves modifications to the page table operating system kernel(Linux).
+* Advisor: [Zhiyuan Shao](https://www.researchgate.net/profile/Zhiyuan-Shao), [Hai Jin](https://scholar.google.ca/citations?user=o02W0aEAAAAJ&hl=en) -->
+<!-- * Duties included: Based on the the memory bound of graph processing SOTA algorithm, a more efficient dynamic-graph-friendly data storage format is proposed, which involves modifications to the page table operating system kernel(Linux).
 * Remap the PageTable of OS Kernel to accelerate the dynamic graph processing system.
-* Speed up existing SOTA algorithms by more than 10x times.
+* Speed up existing SOTA algorithms by more than 10x times. -->
 
 <h2 class="col">
 <font color=blue>Industrial Experiences</font>
