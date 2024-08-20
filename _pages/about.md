@@ -94,19 +94,19 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 <!-- `*` *denotes joint first authors* -->
 
 
-<h2 class="col">
-<font color=blue>Academic Experiences</font>
-</h2>
+<!-- <h2 class="col"> -->
+<!-- <font color=blue>Academic Experiences</font> -->
+<!-- </h2> -->
 
-<div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">Scheduling the Streaming multiprocessors to accelerate LLM Serving</span> </a></h3>
-</div>
+<!-- <div class="section-text col-right"> -->
+<!-- <h3><a href="#" style="text-decoration: none;"><span class="emph">Scheduling the Streaming multiprocessors to accelerate LLM Serving</span> </a></h3> -->
+<!-- </div> -->
 
-<div><a href="https://hao-ai-lab.github.io/home/" style="text-decoration: none;">UCSD Hao AI Lab</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; La Jolla Augu. 2023 - Present </font>
-</div>
+<!-- <div><a href="https://hao-ai-lab.github.io/home/" style="text-decoration: none;">UCSD Hao AI Lab</a> -->
+<!-- <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; La Jolla Augu. 2023 - Present </font> -->
+<!-- </div> -->
 
-* Advised by [Jiangfei Duan](https://jf-d.github.io/), [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)
+<!-- * Advised by [Jiangfei Duan](https://jf-d.github.io/), [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/) -->
 
 <!-- * Role: Research Intern  -->
 <!-- * Role: Role: Research Intern, **Second author**, paper already submitted to **xxxx'24**, Arxiv Available soon -->
@@ -117,19 +117,18 @@ Authors: Jiangfei Duan, **Runyu Lu**, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang
 <!-- * Improve the GPU SM utilization to accelerate the serving throughput of LLMs -->
 
 <!-- 0 -->
-<div class="section-text col-right">
-<h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3>
-</div>
+<!-- <div class="section-text col-right"> -->
+<!-- <h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3> -->
+<!-- </div> -->
 
-<div><a href="http://lingming.cs.illinois.edu/index.html" style="text-decoration: none;">UIUC PLSE</a>
-<font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; Champaign, IL; June. 2023 - Sept. 2023 </font>
-</div>
+<!-- <div><a href="http://lingming.cs.illinois.edu/index.html" style="text-decoration: none;">UIUC PLSE</a> -->
+<!-- <font size ="2"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp;&emsp; &emsp; Champaign, IL; June. 2023 - Sept. 2023 </font> -->
+<!-- </div> -->
 
-* Advised by [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)
-<!-- 
-* Role: Research Intern
-* Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/),
-* Advisor: [Lingming Zhang](http://lingming.cs.illinois.edu/index.html) -->
+<!-- * Advised by [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html) -->
+<!-- * Role: Research Intern -->
+<!-- * Mentor: [Chenyuan Yang](https://yangchenyuan.github.io/) [Yinlin Deng](https://dengyinlin.github.io/) [Jiawei Liu](https://jiawei-site.github.io/), -->
+<!-- * Advisor: [Lingming Zhang](http://lingming.cs.illinois.edu/index.html) -->
 <!-- * Duties included:  Responsible for the LLVM part of this project. 
 * Test optimization in compilers with white-box fuzzing technique by leveraging LLMs
 * Detect 96 bugs of Pytorch, TensorFlow XLA, TensorFlowLite, LLVM based on the optimization source code -->
