@@ -29,7 +29,7 @@ redirect_from:
 * I am very fortunate to be advised by [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)(UCSD), [Lingming Zhang](http://lingming.cs.illinois.edu/index.html)(UIUC) and [Zhiyuan Shao](https://github.com/MrShawCode)(HUST) in my undergrad Research.
 * I was involved in the development of [ColossalAI](https://github.com/hpcaitech/ColossalAI)@HPCAI-Tech(37k+star), LLVM@SenseTime(not open source), [NCNN](https://github.com/Tencent/ncnn)@Tencent(18k+star).
 
-> Please feel free to drop me an email!
+> Please feel free to drop me an email for possible cooperation!
 
 <!-- <h2 class="col"> -->
 <!-- <font color=blue>Skills</font> -->
