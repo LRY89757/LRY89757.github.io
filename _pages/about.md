@@ -61,7 +61,6 @@ redirect_from:
 <h3><a href="#" style="text-decoration: none;"><span class="emph">WhiteFox: White-box Compiler Fuzzing via Large Language Models</span> </a></h3>
 </div>
 Authors: Chenyuan Yang, Yinlin Deng, **Runyu Lu**, Jiayi Yao, Jiawei Liu, Reyhaneh Jabbarvand, Lingming Zhang  
-<br>
 *Object-Oriented Programming, Systems, Languages, and Applications 2024 (in PACM PL)*
 <br>
 (OOPSLA 2024), Pasadena, United States, [Arxiv](https://arxiv.org/abs/2310.15991) available
