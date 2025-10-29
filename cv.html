@@ -12,24 +12,8 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-container">
-        <a class="brand" href="index.html#home">Runyu Lu</a>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
-          <span></span>
-        </label>
-        <nav class="site-nav">
-          <a href="index.html#home">Home</a>
-          <a href="education.html">Education</a>
-          <a href="cv.html" class="active">CV</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="blog.html">Blog</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+  <body data-page="cv">
+    <div id="header-placeholder"></div>
 
     <main>
       <section class="section page-header">
@@ -47,39 +31,9 @@
       </section>
     </main>
 
-    <footer id="contact" class="site-footer">
-      <div class="container footer-content">
-        <div>
-          <h3>Contact</h3>
-          <p>
-            <a href="mailto:runyulu@umich.edu">runyulu@umich.edu</a><br />
-            CSE, University of Michigan, Ann Arbor, MI 48109
-          </p>
-        </div>
-        <div>
-          <h3>Elsewhere</h3>
-          <ul class="footer-links">
-            <li><a href="https://github.com/LRY89757" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/runyu-lu-4074a622b/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://scholar.google.com/citations?user=t4gdsHsAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Updates</h3>
-          <p>
-            Last updated October 2025.<br />
-          </p>
-        </div>
-      </div>
-      <p class="footer-note">© <span id="year">2025</span> Runyu Lu. All rights reserved.</p>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script>
-      const yearSpan = document.getElementById('year');
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-      }
-    </script>
+    <script src="js/components.js"></script>
   </body>
 </html>
 
