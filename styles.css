@@ -153,10 +153,12 @@ a:focus {
   align-items: center;
   max-width: clamp(320px, 90vw, 1080px);
   width: 100%;
+  padding-inline: 0;
 }
 
 .hero-text {
   grid-column: span 7;
+  max-width: min(520px, 100%);
 }
 
 .hero-text h1 {
@@ -174,8 +176,9 @@ a:focus {
   margin-bottom: 1rem;
 }
 
-.hero p {
+.hero-text p {
   max-width: 600px;
+  margin-inline: auto;
   color: var(--color-text-muted);
 }
 
@@ -234,6 +237,7 @@ a:focus {
   width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: 16px;
 }
 
 .card-grid {
@@ -512,6 +516,11 @@ a:focus {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Slightly smaller gaps on very small phones */
+@media (max-width: 600px) {
+  .hero-content { gap: 1.5rem; }
+}
+
 @media (max-width: 900px) {
   .hero-content {
     grid-template-columns: repeat(12, 1fr);
@@ -521,10 +530,6 @@ a:focus {
   .hero-text {
     grid-column: span 12;
     text-align: center;
-  }
-
-  .hero p {
-    margin: 0 auto;
   }
 
   .hero-links,
@@ -541,38 +546,34 @@ a:focus {
 
 @media (max-width: 720px) {
   .nav-toggle {
-    display: block;
     position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .nav-toggle-label {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    border: 1px solid rgba(28, 61, 90, 0.15);
     cursor: pointer;
-    position: relative;
-    background-color: rgba(28, 61, 90, 0.1);
+    margin-left: auto;
   }
 
+  /* Hamburger bars */
   .nav-toggle-label span,
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
     content: "";
-    position: absolute;
-    width: 1.4rem;
+    display: block;
+    width: 22px;
     height: 2px;
-    background-color: var(--color-primary);
-    transition: transform 0.3s ease;
+    background: var(--color-text);
+    position: relative;
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
   .nav-toggle-label span::before {
@@ -583,40 +584,49 @@ a:focus {
     transform: translateY(6px);
   }
 
+  /* Closed state: hide links */
   .site-nav {
+    display: none;
     position: absolute;
-    inset: 100% 0 auto;
-    background-color: rgba(248, 247, 245, 0.98);
-    display: grid;
-    gap: 1.25rem;
-    padding: 1.5rem;
-    transform-origin: top;
-    transform: scaleY(0);
-    opacity: 0;
-    pointer-events: none;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 0.75rem 1rem 1rem;
+    background: rgba(248, 247, 245, 0.96);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(28, 61, 90, 0.08);
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
+  /* When checked: show links */
+  .nav-toggle:checked + .nav-toggle-label + .site-nav {
+    display: flex;
+  }
+
+  /* Animate hamburger into an "X" when open */
   .nav-toggle:checked + .nav-toggle-label span {
-    background-color: transparent;
-  }
-
-  .nav-toggle:checked + .nav-toggle-label span::before {
     transform: rotate(45deg);
   }
 
-  .nav-toggle:checked + .nav-toggle-label span::after {
-    transform: rotate(-45deg);
+  .nav-toggle:checked + .nav-toggle-label span::before {
+    transform: rotate(90deg);
   }
 
-  .nav-toggle:checked ~ .site-nav {
-    transform: scaleY(1);
-    opacity: 1;
-    pointer-events: auto;
+  .nav-toggle:checked + .nav-toggle-label span::after {
+    opacity: 0;
   }
 
   .hero-links {
     flex-direction: column;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
+  .hero-text p {
+    font-size: clamp(1rem, 3.8vw, 1.2rem);
   }
 
   .hero-image {
