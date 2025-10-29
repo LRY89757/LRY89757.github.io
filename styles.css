@@ -55,6 +55,15 @@ a:focus {
   background-color: var(--color-surface);
 }
 
+/* Automatic alternating backgrounds for sections (skip hero) */
+main .section:not(.hero):nth-child(even) {
+  background-color: var(--color-surface);
+}
+
+main .section:not(.hero):nth-child(odd) {
+  background-color: var(--color-muted);
+}
+
 .section h2 {
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 4vw, 2.4rem);
@@ -67,6 +76,7 @@ a:focus {
   color: var(--color-text-muted);
 }
 
+/* Keep .muted class for backward compatibility (other pages) */
 .muted {
   background-color: var(--color-muted);
 }
