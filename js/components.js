@@ -13,25 +13,26 @@ async function loadComponent(elementId, componentPath) {
   }
 }
 
-// Set active navigation link based on current page
-function setActiveNavLink() {
-  const currentPage = document.body.dataset.page;
-  if (!currentPage) return;
-  
-  const navLinks = document.querySelectorAll('.site-nav a[data-page]');
-  navLinks.forEach(link => {
-    if (link.dataset.page === currentPage) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
+function initializeNavigation() {
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.querySelectorAll('.site-nav a');
+
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (toggle) toggle.checked = false;
+    });
   });
+}
+
+function updateCopyrightYear() {
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
 }
 
 // Initialize components when DOM is loaded
 document.addEventListener('DOMContentLoaded', async () => {
   await loadComponent('header-placeholder', 'components/header.html');
   await loadComponent('footer-placeholder', 'components/footer.html');
-  setActiveNavLink();
+  initializeNavigation();
+  updateCopyrightYear();
 });
-

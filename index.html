@@ -1,57 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Runyu Lu</title>
-    <link rel="icon" type="image/svg+xml" href="assets/robot_portfolio.svg" />
-    
-    <!-- Open Graph / WhatsApp / LinkedIn / Slack -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://runyulu.com/" />
-    <meta property="og:title" content="Runyu Lu · CSE Ph.D. Student · University of Michigan" />
-    <meta property="og:description" content="Ph.D. student in Computer Science & Engineering at the University of Michigan, working on Robotics (Embodied AI) and ML Systems." />
-    <meta property="og:image" content="https://runyulu.com/assets/preview.jpg" />
-    
-    <!-- Twitter Card (also used by many chat apps) -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Runyu Lu · CSE Ph.D. Student · University of Michigan" />
-    <meta name="twitter:description" content="Ph.D. student in Computer Science & Engineering at the University of Michigan, working on Robotics (Embodied AI) and ML Systems." />
-    <meta name="twitter:image" content="https://runyulu.com/assets/preview.jpg" />
-    
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Runyu Lu | Embodied AI and ML Systems</title>
+    <meta
+      name="description"
+      content="Runyu Lu is a PhD student at the University of Michigan working on embodied AI, robotics, and machine learning systems."
+    >
+    <link rel="canonical" href="https://runyulu.com/">
+    <link rel="icon" type="image/svg+xml" href="assets/robot_portfolio.svg">
+    <link rel="preload" href="assets/portrait-hero.webp" as="image" type="image/webp">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://runyulu.com/">
+    <meta property="og:title" content="Runyu Lu | Embodied AI and ML Systems">
+    <meta
+      property="og:description"
+      content="PhD student at the University of Michigan working on embodied AI, robotics, and machine learning systems."
+    >
+    <meta property="og:image" content="https://runyulu.com/assets/preview.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Runyu Lu | Embodied AI and ML Systems">
+    <meta
+      name="twitter:description"
+      content="PhD student at the University of Michigan working on embodied AI, robotics, and machine learning systems."
+    >
+    <meta name="twitter:image" content="https://runyulu.com/assets/preview.jpg">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-      crossorigin
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
-    />
+    >
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Runyu Lu",
+        "url": "https://runyulu.com/",
+        "image": "https://runyulu.com/assets/preview.jpg",
+        "jobTitle": "PhD Student",
+        "affiliation": [
+          { "@type": "Organization", "name": "University of Michigan" },
+          { "@type": "Organization", "name": "NVIDIA GEAR Lab" }
+        ],
+        "sameAs": [
+          "https://github.com/LRY89757",
+          "https://www.linkedin.com/in/runyu-lu/",
+          "https://scholar.google.com/citations?user=t4gdsHsAAAAJ",
+          "https://orcid.org/0009-0000-5261-6147"
+        ]
+      }
+    </script>
   </head>
   <body data-page="index">
     <div id="header-placeholder"></div>
 
     <main>
-      <section id="home" class="section hero">
+      <section id="home" class="section hero" aria-labelledby="hero-title">
         <div class="container hero-content">
           <div class="hero-text">
             <p class="eyebrow">University of Michigan · CSE</p>
-            <h1>Hi, I’m Runyu Lu.</h1>
+            <h1 id="hero-title">Hi, I’m Runyu Lu.</h1>
             <p>
               I am a second-year PhD student in Computer Science and Engineering at the
               University of Michigan, co-advised by Professors Mosharaf Chowdhury and
-              Ang Chen. I am also doing research in NVIDIA GEAR Lab. I am interested in Robotics(Embodied AI) and ML systems.
+              Ang Chen. I am also doing research in NVIDIA GEAR Lab. I am interested in
+              Robotics (Embodied AI) and ML systems.
             </p>
             <div class="hero-links">
               <a class="button" href="mailto:runyulu@umich.edu">Email Me</a>
-              <!-- <a class="button secondary" href="#cv">View CV</a> -->
             </div>
             <ul class="social-links">
               <li><a href="https://github.com/LRY89757" target="_blank" rel="noopener">GitHub</a></li>
@@ -60,122 +83,257 @@
             </ul>
           </div>
           <figure class="hero-image">
-            <img src="assets/IMG_SF.JPG" alt="Runyu Lu standing at a harbor." />
+            <img
+              src="assets/portrait-hero.webp"
+              width="2400"
+              height="1600"
+              alt="Runyu Lu standing at a harbor."
+              fetchpriority="high"
+            >
           </figure>
         </div>
       </section>
 
-      <!-- <section id="education" class="section">
+      <section id="research" class="section research-section" aria-labelledby="research-title">
         <div class="container">
-          <h2>Education</h2>
-          <ul class="education-list">
-            <li>
-              <span class="edu-period">2024 – Present</span>
-              <div class="edu-details">
-                <h3>University of Michigan, Ann Arbor</h3>
-                <p>PhD in Computer Science and Engineering</p>
-              </div>
-            </li>
-            <li>
-              <span class="edu-period">2020 – 2024</span>
-              <div class="edu-details">
-                <h3>Huazhong University of Science and Technology</h3>
-                <p>B.E. in Computer Science</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section> -->
-
-      <section id="research" class="section">
-        <div class="container">
-          <h2>Research Overview</h2>
-          <p class="section-intro">
-            <!-- I am interested in robotics and machine learning systems. -->
-          </p>
+          <h2 id="research-title">Research Overview</h2>
           <ul class="research-list">
             <li>
-              <span class="research-term">Robotics(Embodied AI)</span>
+              <span class="research-term">Robotics (Embodied AI)</span>
               <p>
-                I am currently working on VLA post-training and physical agents.  While today's LLMs, VLMs, and AI agents excel at reasoning and diverse virtual tasks, I'm excited to learn and contribute to extending the intelligence into the physical world.
+                I am currently working on VLA post-training and physical agents. While
+                today’s LLMs, VLMs, and AI agents excel at reasoning and diverse virtual
+                tasks, I’m excited to learn and contribute to extending the intelligence
+                into the physical world.
               </p>
             </li>
             <li>
               <span class="research-term">ML System</span>
               <p>
-                I am interested in many aspects of ML systems. I worked on DiT-based Image/Video Generation, Multimodal Model Training, GPU Sharing for LLM Serving, and LLM-enabled Compiler Fuzzing.
+                I am interested in many aspects of ML systems. I worked on DiT-based
+                Image/Video Generation, Multimodal Model Training, GPU Sharing for LLM
+                Serving, and LLM-enabled Compiler Fuzzing.
               </p>
             </li>
           </ul>
         </div>
       </section>
 
-      <section id="publications" class="section">
+      <section id="papers" class="section papers-section" aria-labelledby="papers-title">
         <div class="container">
-          <h2>Papers</h2>
-          <p class="section-intro">
-          </p>
-          <ol class="pub-list">
-            <li>
-              <h3 class="pub-title">DSA: Efficient Inference For Video Generation Models via Distributed Sparse Attention</h3>
-              <p class="pub-authors">S. Li, <strong>R. Lu</strong>, Q. Chen, H. Yin, Y. Lyu, Y. Wen, I. Tsang, T. Zhang</p>
-              <p class="pub-venue">ICLR 2026</p>
-            </li>
-            <li>
-              <h3 class="pub-title">TetriServe: Efficient DiT Serving for Heterogeneous Image Generation</h3>
-              <p class="pub-authors"><strong>R. Lu*</strong>, S. He*, W. Tan, S. Li, R. Wu, J. J. Ma, A. Chen, M. Chowdhury</p>
-              <!-- <p class="pub-venue">arXiv preprint arXiv:2510.01565, 2025</p> -->
-              <p class="pub-venue">ASPLOS 2026</p>
-              <!-- <div class="pub-links">
-                <a href="#">PDF</a>
-                <a href="#">arXiv</a>
-                <a href="#">Code</a>
-                <a href="#">Slides</a>
-              </div> -->
-            </li>
-            <li>
-              <h3 class="pub-title">Cornstarch: Distributed Multimodal Training Must Be Multimodality-Aware</h3>
-              <p class="pub-authors">I. Jang, <strong>R. Lu</strong>, N. Bansal, A. Chen, M. Chowdhury</p>
-              <p class="pub-venue">ICML 2026</p>
-              <!-- <div class="pub-links">
-                <a href="#">PDF</a>
-                <a href="#">arXiv</a>
-                <a href="#">Code</a>
-                <a href="#">Slides</a>
-              </div> -->
-            </li>
-            <li>
-              <h3 class="pub-title">Whitefox: White-box compiler fuzzing empowered by large language models</h3>
-              <p class="pub-authors">C. Yang, Y. Deng, <strong>R. Lu</strong>, J. Yao, J. Liu, R. Jabbarvand, L. Zhang</p>
-              <p class="pub-venue">OOPSLA 2024</p>
-              <!-- <div class="pub-links">
-                <a href="#">PDF</a>
-                <a href="#">arXiv</a>
-                <a href="#">Code</a>
-                <a href="#">Slides</a>
-              </div> -->
-            </li>
-            <li>
-              <h3 class="pub-title">MuxServe: Flexible Spatial-Temporal Multiplexing for Multiple LLM Serving</h3>
-              <p class="pub-authors">J. Duan, <strong>R. Lu</strong>, H. Duanmu, X. Li, X. Zhang, D. Lin, I. Stoica, H. Zhang</p>
-              <p class="pub-venue"> ICML 2024</p>
-              <!-- <div class="pub-links">
-                <a href="#">PDF</a>
-                <a href="#">arXiv</a>
-                <a href="#">Code</a>
-                <a href="#">Slides</a>
-              </div> -->
-            </li>
+          <div class="papers-heading">
+            <div class="section-heading">
+              <p class="section-label">Publications</p>
+              <h2 id="papers-title">Papers</h2>
+            </div>
+            <nav class="publication-profiles" aria-label="Publication profiles">
+              <a href="https://scholar.google.com/citations?user=t4gdsHsAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+              <a href="https://orcid.org/0009-0000-5261-6147" target="_blank" rel="noopener">ORCID</a>
+            </nav>
+          </div>
 
-          </ol>
+          <section class="publication-year" aria-labelledby="year-2026">
+            <h3 id="year-2026" class="publication-year-label">2026</h3>
+            <div class="publication-list">
+              <article class="paper-row">
+                <div class="paper-row-meta">
+                  <span>ML Systems</span>
+                  <strong>ASPLOS</strong>
+                </div>
+                <div class="paper-row-main">
+                  <h4>
+                    <a href="https://arxiv.org/abs/2510.01565" target="_blank" rel="noopener">
+                      TetriServe: Efficiently Serving Mixed DiT Workloads
+                    </a>
+                  </h4>
+                  <p class="paper-authors">
+                    <strong>Runyu Lu*</strong>, Shiqi He*, Wenxuan Tan, Shenggui Li,
+                    Ruofan Wu, Jeff J. Ma, Ang Chen, Mosharaf Chowdhury
+                  </p>
+                  <p class="paper-contribution">
+                    Step-level sequence parallelism and round-based scheduling improve
+                    SLO attainment by up to 32% across heterogeneous DiT workloads.
+                  </p>
+                </div>
+                <div class="paper-links paper-row-links" role="group" aria-label="TetriServe resources">
+                  <a href="https://arxiv.org/abs/2510.01565" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://doi.org/10.1145/3779212.3790233" target="_blank" rel="noopener">DOI</a>
+                  <a class="code-link" href="https://github.com/DiT-Serving/TetriServe" target="_blank" rel="noopener">Code</a>
+                </div>
+              </article>
+
+              <article class="paper-row">
+                <div class="paper-row-meta">
+                  <span>Robotics</span>
+                  <strong>Manuscript</strong>
+                </div>
+                <div class="paper-row-main">
+                  <h4>
+                    <a href="https://research.nvidia.com/labs/gear/aspire/" target="_blank" rel="noopener">
+                      ASPIRE: Agentic /Skills Discovery for Robotics
+                    </a>
+                  </h4>
+                  <p class="paper-authors">
+                    <strong>Runyu Lu*†</strong>, Yubo Wu*, Ethan Kou*, Max Fu, Wenli Xiao,
+                    Ajay Mandlekar, Yinzhen Xu, Guanya Shi, Ken Goldberg, Ang Chen,
+                    Mosharaf Chowdhury, Yuke Zhu†, Linxi "Jim" Fan†, Guanzhi Wang†
+                  </p>
+                  <p class="paper-contribution">
+                    Coding agents turn multimodal execution traces into validated robot
+                    repairs and reusable skills that transfer across tasks, embodiments,
+                    and simulation-to-real settings.
+                  </p>
+                </div>
+                <div class="paper-links paper-row-links" role="group" aria-label="ASPIRE resources">
+                  <a href="https://research.nvidia.com/labs/gear/aspire/" target="_blank" rel="noopener">Project</a>
+                </div>
+              </article>
+
+              <article class="paper-row">
+                <div class="paper-row-meta">
+                  <span>ML Systems</span>
+                  <strong>ICML</strong>
+                </div>
+                <div class="paper-row-main">
+                  <h4>
+                    <a href="https://arxiv.org/abs/2503.11367" target="_blank" rel="noopener">
+                      Efficient Distributed MLLM Training with Cornstarch
+                    </a>
+                  </h4>
+                  <p class="paper-authors">
+                    Insu Jang, <strong>Runyu Lu</strong>, Nikhil Bansal, Ang Chen,
+                    Mosharaf Chowdhury
+                  </p>
+                  <p class="paper-contribution">
+                    Frozen-aware pipeline parallelism and workload-balanced context
+                    parallelism deliver 2.26× average MLLM training throughput.
+                  </p>
+                </div>
+                <div class="paper-links paper-row-links" role="group" aria-label="Cornstarch resources">
+                  <a href="https://arxiv.org/abs/2503.11367" target="_blank" rel="noopener">Paper</a>
+                  <a class="code-link" href="https://github.com/cornstarch-org/Cornstarch" target="_blank" rel="noopener">Code</a>
+                </div>
+              </article>
+
+              <article class="paper-row">
+                <div class="paper-row-meta">
+                  <span>ML Systems</span>
+                  <strong>ICLR</strong>
+                </div>
+                <div class="paper-row-main">
+                  <h4>
+                    <a href="https://openreview.net/forum?id=1ZmdfDzGE1" target="_blank" rel="noopener">
+                      DSA: Efficient Inference For Video Generation Models via Distributed Sparse Attention
+                    </a>
+                  </h4>
+                  <p class="paper-authors">
+                    Shenggui Li, <strong>Runyu Lu</strong>, Qiaoling Chen, Haiyan Yin,
+                    Yueming Lyu, Yonggang Wen, Ivor Tsang, Tianwei Zhang
+                  </p>
+                  <p class="paper-contribution">
+                    Training-free distributed sparse attention reaches up to 10.79×
+                    faster video-generation inference than a single GPU.
+                  </p>
+                </div>
+                <div class="paper-links paper-row-links" role="group" aria-label="DSA resources">
+                  <a href="https://openreview.net/forum?id=1ZmdfDzGE1" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://iclr.cc/virtual/2026/poster/10011818" target="_blank" rel="noopener">ICLR</a>
+                </div>
+              </article>
+
+              <article class="paper-row">
+                <div class="paper-row-meta">
+                  <span>AI for Science</span>
+                  <strong>arXiv</strong>
+                </div>
+                <div class="paper-row-main">
+                  <h4>
+                    <a href="https://arxiv.org/abs/2604.24658" target="_blank" rel="noopener">
+                      The Last Human-Written Paper: Agent-Native Research Artifacts
+                    </a>
+                  </h4>
+                  <p class="paper-authors">
+                    Jiachen Liu, Jiaxin Pei, Jintao Huang, Chenglei Si, Ao Qu,
+                    Xiangru Tang, <strong>Runyu Lu</strong>, et al.
+                  </p>
+                  <p class="paper-contribution">
+                    A machine-executable research format preserving scientific logic,
+                    code, exploration traces, and evidence for AI-native research.
+                  </p>
+                </div>
+                <div class="paper-links paper-row-links" role="group" aria-label="Agent-Native Research Artifact resources">
+                  <a href="https://arxiv.org/abs/2604.24658" target="_blank" rel="noopener">Paper</a>
+                  <a class="code-link" href="https://github.com/ARA-Labs/Agent-Native-Research-Artifact" target="_blank" rel="noopener">Code</a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="publication-year" aria-labelledby="year-2024">
+            <h3 id="year-2024" class="publication-year-label">2024</h3>
+            <div class="publication-list">
+              <article class="paper-row">
+                <div class="paper-row-meta">
+                  <span>Software</span>
+                  <strong>OOPSLA</strong>
+                </div>
+                <div class="paper-row-main">
+                  <h4>
+                    <a href="https://arxiv.org/abs/2310.15991" target="_blank" rel="noopener">
+                      WhiteFox: White-Box Compiler Fuzzing Empowered by Large Language Models
+                    </a>
+                  </h4>
+                  <p class="paper-authors">
+                    Chenyuan Yang, Yinlin Deng, <strong>Runyu Lu</strong>, Jiayi Yao,
+                    Jiawei Liu, Reyhaneh Jabbarvand, Lingming Zhang
+                  </p>
+                  <p class="paper-contribution">
+                    LLM-guided white-box compiler fuzzing found 101 bugs, including
+                    92 previously unknown defects across major DL compilers.
+                  </p>
+                </div>
+                <div class="paper-links paper-row-links" role="group" aria-label="WhiteFox resources">
+                  <a href="https://arxiv.org/abs/2310.15991" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://doi.org/10.1145/3689736" target="_blank" rel="noopener">DOI</a>
+                  <a class="code-link" href="https://github.com/ise-uiuc/WhiteFox" target="_blank" rel="noopener">Code</a>
+                </div>
+              </article>
+
+              <article class="paper-row">
+                <div class="paper-row-meta">
+                  <span>ML Systems</span>
+                  <strong>ICML</strong>
+                </div>
+                <div class="paper-row-main">
+                  <h4>
+                    <a href="https://proceedings.mlr.press/v235/duan24a.html" target="_blank" rel="noopener">
+                      MuxServe: Flexible Spatial-Temporal Multiplexing for Multiple LLM Serving
+                    </a>
+                  </h4>
+                  <p class="paper-authors">
+                    Jiangfei Duan, <strong>Runyu Lu</strong>, Haojie Duanmu, Xiuhong Li,
+                    Xingcheng Zhang, Dahua Lin, Ion Stoica, Hao Zhang
+                  </p>
+                  <p class="paper-contribution">
+                    Flexible model colocation improves throughput by up to 1.8× or
+                    serves 2.9× more requests while meeting latency objectives.
+                  </p>
+                </div>
+                <div class="paper-links paper-row-links" role="group" aria-label="MuxServe resources">
+                  <a href="https://proceedings.mlr.press/v235/duan24a.html" target="_blank" rel="noopener">Paper</a>
+                  <a href="https://arxiv.org/abs/2404.02015" target="_blank" rel="noopener">arXiv</a>
+                  <a class="code-link" href="https://github.com/hao-ai-lab/MuxServe" target="_blank" rel="noopener">Code</a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <p class="publication-note">* Equal contribution · † Project lead</p>
         </div>
       </section>
-
     </main>
 
     <div id="footer-placeholder"></div>
-
     <script src="js/components.js"></script>
   </body>
 </html>
-
