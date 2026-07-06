@@ -159,6 +159,31 @@
                   <a href="https://arxiv.org/abs/2510.01565" target="_blank" rel="noopener">Paper</a>
                   <a href="https://doi.org/10.1145/3779212.3790233" target="_blank" rel="noopener">DOI</a>
                   <a class="code-link" href="https://github.com/DiT-Serving/TetriServe" target="_blank" rel="noopener">Code</a>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="tetriserve-citation">BibTeX</button>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="tetriserve-abstract">Abstract</button>
+                </div>
+                <div class="paper-details" hidden>
+                  <section id="tetriserve-citation" class="paper-detail-panel paper-citation" hidden>
+                    <div class="paper-detail-heading">
+                      <h5>BibTeX</h5>
+                      <button class="copy-citation" type="button">Copy BibTeX</button>
+                      <span class="copy-status" aria-live="polite"></span>
+                    </div>
+                    <pre><code>@inproceedings{lu2026tetriserve,
+  title     = {TetriServe: Efficiently Serving Mixed DiT Workloads},
+  author    = {Lu, Runyu and He, Shiqi and Tan, Wenxuan and Li, Shenggui and Wu, Ruofan and Ma, Jeff J. and Chen, Ang and Chowdhury, Mosharaf},
+  booktitle = {Proceedings of the 31st ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 2},
+  pages     = {1982--1997},
+  year      = {2026},
+  doi       = {10.1145/3779212.3790233}
+}</code></pre>
+                  </section>
+                  <section id="tetriserve-abstract" class="paper-detail-panel paper-abstract" hidden>
+                    <h5>Abstract</h5>
+                    <p>
+                      Diffusion Transformer (DiT) models excel at generating high-quality images through iterative denoising steps, but serving them under strict Service Level Objectives (SLOs) is challenging due to their high computational cost, particularly at larger resolutions. Existing serving systems use fixed-degree sequence parallelism, which is inefficient for heterogeneous workloads with mixed resolutions and deadlines, leading to poor GPU utilization and low SLO attainment. In this paper, we propose step-level sequence parallelism to dynamically adjust the degree of parallelism of individual requests according to their deadlines. We present TetriServe, a DiT serving system that implements this strategy for highly efficient image generation. Specifically, TetriServe introduces a novel round-based scheduling mechanism that improves SLO attainment by (1) discretizing time into fixed rounds to make deadline-aware scheduling tractable, (2) adapting parallelism at the step level and minimizing GPU hour consumption, and (3) jointly packing requests to minimize late completions. Extensive evaluation on state-of-the-art DiT models shows that TetriServe achieves up to 32% higher SLO attainment compared to existing solutions without degrading image quality.
+                    </p>
+                  </section>
                 </div>
               </article>
 
@@ -187,6 +212,30 @@
                 <div class="paper-links paper-row-links" role="group" aria-label="ASPIRE resources">
                   <a href="https://arxiv.org/abs/2607.00272" target="_blank" rel="noopener">Paper</a>
                   <a href="https://research.nvidia.com/labs/gear/aspire/" target="_blank" rel="noopener">Project</a>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="aspire-citation">BibTeX</button>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="aspire-abstract">Abstract</button>
+                </div>
+                <div class="paper-details" hidden>
+                  <section id="aspire-citation" class="paper-detail-panel paper-citation" hidden>
+                    <div class="paper-detail-heading">
+                      <h5>BibTeX</h5>
+                      <button class="copy-citation" type="button">Copy BibTeX</button>
+                      <span class="copy-status" aria-live="polite"></span>
+                    </div>
+                    <pre><code>@article{lu2026aspire,
+  title         = {{ASPIRE}: Agentic /{Skills} Discovery for Robotics},
+  author        = {Lu, Runyu and Wu, Yubo and Kou, Ethan and Fu, Letian and Xiao, Wenli and Mandlekar, Ajay and Xu, Yinzhen and Shi, Guanya and Goldberg, Ken and Chen, Ang and Chowdhury, Mosharaf and Zhu, Yuke and Fan, Linxi {Jim} and Wang, Guanzhi},
+  journal       = {arXiv preprint arXiv:2607.00272},
+  year          = {2026},
+  url           = {https://arxiv.org/abs/2607.00272}
+}</code></pre>
+                  </section>
+                  <section id="aspire-abstract" class="paper-detail-panel paper-abstract" hidden>
+                    <h5>Abstract</h5>
+                    <p>
+                      Traditional robot programming is challenging: it requires orchestrating multimodal perception, managing physical contact dynamics, and handling diverse configurations and execution failures. We introduce ASPIRE (Agentic Skill Programming through Iterative Robot Exploration), a continual learning system that autonomously writes and refines robot control programs in a code-as-policy paradigm while compounding experience into a reusable skill library. ASPIRE discovers skills that persist across tasks, simulation and real-world settings, and embodiments. It operates in an open-ended loop with three components: (1) a closed-loop robot execution engine that exposes fine-grained multimodal traces, enabling autonomous failure diagnosis, repair synthesis, and validation; (2) a continually expanding skill library that distills validated fixes into reusable, transferable knowledge; and (3) evolutionary search that generates diverse task sequences and control programs to explore beyond single-trajectory refinement. ASPIRE surpasses prior methods by up to 77% on LIBERO-Pro manipulation under perturbation, 72% on Robosuite bimanual handover, and 32% on BEHAVIOR-1K long-horizon household tasks. Its accumulated library also enables zero-shot generalization to unseen long-horizon tasks: on LIBERO-Pro Long, ASPIRE achieves 31% success versus 4% for prior methods despite their use of test-time reasoning and retries. Finally, simulation-discovered skills provide initial evidence of sim-to-real transfer, substantially reducing real-robot programming effort across different embodiments and robot APIs.
+                    </p>
+                  </section>
                 </div>
               </article>
 
@@ -213,6 +262,30 @@
                 <div class="paper-links paper-row-links" role="group" aria-label="Cornstarch resources">
                   <a href="https://arxiv.org/abs/2503.11367" target="_blank" rel="noopener">Paper</a>
                   <a class="code-link" href="https://github.com/cornstarch-org/Cornstarch" target="_blank" rel="noopener">Code</a>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="cornstarch-citation">BibTeX</button>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="cornstarch-abstract">Abstract</button>
+                </div>
+                <div class="paper-details" hidden>
+                  <section id="cornstarch-citation" class="paper-detail-panel paper-citation" hidden>
+                    <div class="paper-detail-heading">
+                      <h5>BibTeX</h5>
+                      <button class="copy-citation" type="button">Copy BibTeX</button>
+                      <span class="copy-status" aria-live="polite"></span>
+                    </div>
+                    <pre><code>@inproceedings{jang2026cornstarch,
+  title     = {Efficient Distributed {MLLM} Training with {Cornstarch}},
+  author    = {Jang, Insu and Lu, Runyu and Bansal, Nikhil and Chen, Ang and Chowdhury, Mosharaf},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2503.11367}
+}</code></pre>
+                  </section>
+                  <section id="cornstarch-abstract" class="paper-detail-panel paper-abstract" hidden>
+                    <h5>Abstract</h5>
+                    <p>
+                      Multimodal large language models (MLLMs) extend the capabilities of large language models (LLMs) by combining heterogeneous model architectures to handle diverse modalities like images and audio. However, this inherent heterogeneity in MLLM model structure and data types makes makeshift extensions to existing LLM training frameworks unsuitable for efficient MLLM training. While there are a few works that have attempted to address the heterogeneity in MLLM training, their approaches are limited to only superficially considering the characteristics of MLLMs. In this paper, we present Cornstarch, an efficient distributed MLLM training framework that contemplates MLLM's unique characteristics in both model and data parallelization. Cornstarch introduces frozen-aware pipeline parallelism and token workload-balanced context parallelism to improve MLLM training throughput. Our extensive evaluation shows that Cornstarch outperforms state-of-the-art solutions by 2.26× on average in terms of MLLM training throughput. Cornstarch is an open-source project.
+                    </p>
+                  </section>
                 </div>
               </article>
 
@@ -239,6 +312,30 @@
                 <div class="paper-links paper-row-links" role="group" aria-label="DSA resources">
                   <a href="https://openreview.net/forum?id=1ZmdfDzGE1" target="_blank" rel="noopener">Paper</a>
                   <a href="https://iclr.cc/virtual/2026/poster/10011818" target="_blank" rel="noopener">ICLR</a>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="dsa-citation">BibTeX</button>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="dsa-abstract">Abstract</button>
+                </div>
+                <div class="paper-details" hidden>
+                  <section id="dsa-citation" class="paper-detail-panel paper-citation" hidden>
+                    <div class="paper-detail-heading">
+                      <h5>BibTeX</h5>
+                      <button class="copy-citation" type="button">Copy BibTeX</button>
+                      <span class="copy-status" aria-live="polite"></span>
+                    </div>
+                    <pre><code>@inproceedings{li2026dsa,
+  title     = {{DSA}: Efficient Inference for Video Generation Models via Distributed Sparse Attention},
+  author    = {Li, Shenggui and Lu, Runyu and Chen, Qiaoling and Yin, Haiyan and Lyu, Yueming and Wen, Yonggang and Tsang, Ivor and Zhang, Tianwei},
+  booktitle = {The Fourteenth International Conference on Learning Representations},
+  year      = {2026},
+  url       = {https://openreview.net/forum?id=1ZmdfDzGE1}
+}</code></pre>
+                  </section>
+                  <section id="dsa-abstract" class="paper-detail-panel paper-abstract" hidden>
+                    <h5>Abstract</h5>
+                    <p>
+                      Diffusion Transformer models have driven the rapid advances in video generation, achieving state-of-the-art quality and flexibility. However, their attention mechanism remains a major performance bottleneck, as its dense computation scales quadratically with the sequence length. To overcome this limitation and reduce the generation latency, we propose DSA, a novel attention mechanism that integrates sparse attention with distributed inference for diffusion-based video generation. By leveraging carefully-designed parallelism strategies and scheduling, DSA significantly reduces redundant computation while preserving global context. Extensive experiments on benchmark datasets demonstrate that, when deployed on 8 GPUs, DSA achieves up to 1.43× inference speedup than the existing distributed method and 10.79× faster than single-GPU inference.
+                    </p>
+                  </section>
                 </div>
               </article>
 
@@ -265,6 +362,30 @@
                 <div class="paper-links paper-row-links" role="group" aria-label="Agent-Native Research Artifact resources">
                   <a href="https://arxiv.org/abs/2604.24658" target="_blank" rel="noopener">Paper</a>
                   <a class="code-link" href="https://github.com/ARA-Labs/Agent-Native-Research-Artifact" target="_blank" rel="noopener">Code</a>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="ara-citation">BibTeX</button>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="ara-abstract">Abstract</button>
+                </div>
+                <div class="paper-details" hidden>
+                  <section id="ara-citation" class="paper-detail-panel paper-citation" hidden>
+                    <div class="paper-detail-heading">
+                      <h5>BibTeX</h5>
+                      <button class="copy-citation" type="button">Copy BibTeX</button>
+                      <span class="copy-status" aria-live="polite"></span>
+                    </div>
+                    <pre><code>@article{liu2026agentnative,
+  title         = {The Last Human-Written Paper: Agent-Native Research Artifacts},
+  author        = {Liu, Jiachen and Pei, Jiaxin and Huang, Jintao and Si, Chenglei and Qu, Ao and Tang, Xiangru and Lu, Runyu and Chen, Lichang and Bai, Xiaoyan and Zheng, Haizhong and Chen, Carl and Chen, Zhiyang and Ye, Haojie and Fu, Yujuan and He, Zexue and Jin, Zijian and Zhang, Zhenyu and Sun, Shangquan and Harmon, Maestro and Wang, John Dianzhuo and Zeng, Jianqiao and Sun, Jiachen and Wu, Mingyuan and Zhou, Baoyu and You, Chenyu and Lu, Shijian and Qiu, Yiming and Lai, Fan and Yuan, Yuan and Li, Yao and Hong, Junyuan and Zhu, Ruihao and Chen, Beidi and Pentland, Alex and Chen, Ang and Chowdhury, Mosharaf and Zhang, Zechen},
+  journal       = {arXiv preprint arXiv:2604.24658},
+  year          = {2026},
+  url           = {https://arxiv.org/abs/2604.24658}
+}</code></pre>
+                  </section>
+                  <section id="ara-abstract" class="paper-detail-panel paper-abstract" hidden>
+                    <h5>Abstract</h5>
+                    <p>
+                      Scientific publication compresses a branching, iterative research process into a linear narrative, discarding the majority of what was discovered along the way. This compilation imposes two structural costs: a Storytelling Tax, where failed experiments, rejected hypotheses, and the branching exploration process are discarded to fit a linear narrative; and an Engineering Tax, where the gap between reviewer-sufficient prose and agent-sufficient specification leaves critical implementation details unwritten. Tolerable for human readers, these costs become critical when AI agents must understand, reproduce, and extend published work. We introduce the Agent-Native Research Artifact (ARA), a protocol that replaces the narrative paper with a machine-executable research package structured around four layers: scientific logic, executable code with full specifications, an exploration graph that preserves the failures compilation discards, and evidence grounding every claim in raw outputs. Three mechanisms support the ecosystem: a Live Research Manager that captures decisions and dead ends during ordinary development; an ARA Compiler that translates legacy PDFs and repos into ARAs; and an ARA-native review system that automates objective checks so human reviewers can focus on significance, novelty, and taste. On PaperBench and RE-Bench, ARA raises question-answering accuracy from 72.4% to 93.7% and reproduction success from 57.4% to 64.4%. On RE-Bench's five open-ended extension tasks, preserved failure traces in ARA accelerate progress, but can also constrain a capable agent from stepping outside the prior-run box depending on the agent's capabilities.
+                    </p>
+                  </section>
                 </div>
               </article>
             </div>
@@ -297,6 +418,30 @@
                 <div class="paper-links paper-row-links" role="group" aria-label="Cornfigurator resources">
                   <a href="https://arxiv.org/abs/2512.14098" target="_blank" rel="noopener">Paper</a>
                   <a class="code-link" href="https://github.com/cornserve-ai/cornfigurator" target="_blank" rel="noopener">Repo</a>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="cornfigurator-citation">BibTeX</button>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="cornfigurator-abstract">Abstract</button>
+                </div>
+                <div class="paper-details" hidden>
+                  <section id="cornfigurator-citation" class="paper-detail-panel paper-citation" hidden>
+                    <div class="paper-detail-heading">
+                      <h5>BibTeX</h5>
+                      <button class="copy-citation" type="button">Copy BibTeX</button>
+                      <span class="copy-status" aria-live="polite"></span>
+                    </div>
+                    <pre><code>@article{ma2025cornfigurator,
+  title         = {Cornfigurator: Automated Planning for Any-to-Any Multimodal Model Serving},
+  author        = {Ma, Jeff J. and Chung, Jae-Won and Ahn, Jisang and Liang, Yizhuo and Lu, Runyu and Jajoo, Akshay and Lee, Myungjin and Chowdhury, Mosharaf},
+  journal       = {arXiv preprint arXiv:2512.14098},
+  year          = {2025},
+  url           = {https://arxiv.org/abs/2512.14098}
+}</code></pre>
+                  </section>
+                  <section id="cornfigurator-abstract" class="paper-detail-panel paper-abstract" hidden>
+                    <h5>Abstract</h5>
+                    <p>
+                      Any-to-Any models are an emerging class of multimodal models that accept combinations of text and multimodal data as input and generate them as output, introducing heterogeneous computation paths and component scaling characteristics. There are existing mechanisms for deploying Any-to-Any models--or special cases of them--for inference serving, but they either require manual effort and expertise to tune, or do not generalize to generic Any-to-Any models. We present Cornfigurator, the first deployment planner for generic Any-to-Any model inference serving. The goal of Cornfigurator is to maximize the overall goodput of serving the model, defined as the throughput of requests meeting their latency targets. To do so, based on model and workload characteristics, Cornfigurator explores the full spectrum of deployment strategies, from colocation to disaggregation and mixing different strategies. Cornfigurator performs coarse-to-fine statistical evaluation to efficiently navigate the large space of candidate plans. Plans generated by Cornfigurator either match or deliver 1.12×-6.32× higher goodput compared to existing systems and expert-tuned deployment plans.
+                    </p>
+                  </section>
                 </div>
               </article>
             </div>
@@ -329,6 +474,33 @@
                   <a href="https://arxiv.org/abs/2310.15991" target="_blank" rel="noopener">Paper</a>
                   <a href="https://doi.org/10.1145/3689736" target="_blank" rel="noopener">DOI</a>
                   <a class="code-link" href="https://github.com/ise-uiuc/WhiteFox" target="_blank" rel="noopener">Code</a>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="whitefox-citation">BibTeX</button>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="whitefox-abstract">Abstract</button>
+                </div>
+                <div class="paper-details" hidden>
+                  <section id="whitefox-citation" class="paper-detail-panel paper-citation" hidden>
+                    <div class="paper-detail-heading">
+                      <h5>BibTeX</h5>
+                      <button class="copy-citation" type="button">Copy BibTeX</button>
+                      <span class="copy-status" aria-live="polite"></span>
+                    </div>
+                    <pre><code>@article{yang2024whitefox,
+  title   = {WhiteFox: White-Box Compiler Fuzzing Empowered by Large Language Models},
+  author  = {Yang, Chenyuan and Deng, Yinlin and Lu, Runyu and Yao, Jiayi and Liu, Jiawei and Jabbarvand, Reyhaneh and Zhang, Lingming},
+  journal = {Proceedings of the ACM on Programming Languages},
+  volume  = {8},
+  number  = {OOPSLA2},
+  pages   = {709--735},
+  year    = {2024},
+  doi     = {10.1145/3689736}
+}</code></pre>
+                  </section>
+                  <section id="whitefox-abstract" class="paper-detail-panel paper-abstract" hidden>
+                    <h5>Abstract</h5>
+                    <p>
+                      Compiler correctness is crucial, as miscompilation can falsify program behaviors, leading to serious consequences. Fuzzing has been studied to uncover compiler defects. However, compiler fuzzing remains challenging: Existing arts focus on black- and grey-box fuzzing, which generates tests without sufficient understanding of internal compiler behaviors. Meanwhile, traditional white-box techniques, like symbolic execution, are computationally inapplicable to the giant codebase of compilers. Recent advances demonstrate that Large Language Models (LLMs) excel in code generation/understanding tasks. Nonetheless, guiding LLMs with compiler source-code information remains a missing piece of research in compiler testing. To this end, we propose WhiteFox, the first white-box compiler fuzzer using LLMs with source-code information to test compiler optimization, with a spotlight on detecting deep logic bugs in the deep learning (DL) compilers. WhiteFox adopts a multi-agent framework: an LLM-based analysis agent examines the low-level optimization source code and produces requirements on the high-level test programs that can trigger the optimization; an LLM-based generation agent produces test programs based on the summarized requirements. Additionally, optimization-triggering tests are used as feedback to enhance the generation on the fly. Our evaluation on the three most popular DL compilers (i.e., PyTorch Inductor, TensorFlow-XLA, and TensorFlow Lite) shows WhiteFox can generate high-quality test programs to exercise deep optimizations, practicing up to 8× more than state-of-the-art fuzzers. WhiteFox has found 101 bugs for the DL compilers, with 92 confirmed as previously unknown and 70 fixed. WhiteFox has been acknowledged by the PyTorch team and is being incorporated into its development workflow. Beyond DL compilers, WhiteFox can also be adapted for compilers in different domains.
+                    </p>
+                  </section>
                 </div>
               </article>
 
@@ -356,6 +528,34 @@
                   <a href="https://proceedings.mlr.press/v235/duan24a.html" target="_blank" rel="noopener">Paper</a>
                   <a href="https://arxiv.org/abs/2404.02015" target="_blank" rel="noopener">arXiv</a>
                   <a class="code-link" href="https://github.com/hao-ai-lab/MuxServe" target="_blank" rel="noopener">Code</a>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="muxserve-citation">BibTeX</button>
+                  <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="muxserve-abstract">Abstract</button>
+                </div>
+                <div class="paper-details" hidden>
+                  <section id="muxserve-citation" class="paper-detail-panel paper-citation" hidden>
+                    <div class="paper-detail-heading">
+                      <h5>BibTeX</h5>
+                      <button class="copy-citation" type="button">Copy BibTeX</button>
+                      <span class="copy-status" aria-live="polite"></span>
+                    </div>
+                    <pre><code>@inproceedings{pmlr-v235-duan24a,
+  title     = {{MuxServe}: Flexible Spatial-Temporal Multiplexing for Multiple {LLM} Serving},
+  author    = {Duan, Jiangfei and Lu, Runyu and Duanmu, Haojie and Li, Xiuhong and Zhang, Xingcheng and Lin, Dahua and Stoica, Ion and Zhang, Hao},
+  booktitle = {Proceedings of the 41st International Conference on Machine Learning},
+  pages     = {11905--11917},
+  year      = {2024},
+  volume    = {235},
+  series    = {Proceedings of Machine Learning Research},
+  publisher = {PMLR},
+  url       = {https://proceedings.mlr.press/v235/duan24a.html}
+}</code></pre>
+                  </section>
+                  <section id="muxserve-abstract" class="paper-detail-panel paper-abstract" hidden>
+                    <h5>Abstract</h5>
+                    <p>
+                      Large language models (LLMs) have demonstrated remarkable performance, and organizations are racing to serve LLMs of varying sizes as endpoints for use-cases like chat, programming and search. However, efficiently serving multiple LLMs poses significant challenges for existing approaches due to varying popularity of LLMs. In the paper, we present MuxServe, a flexible spatial-temporal multiplexing system for efficient multiple LLM serving. The key insight behind is to colocate LLMs considering their popularity to multiplex memory resources, and leverage the characteristics of prefill and decoding phases to separate and flexibly colocate them to multiplex computation resources. MuxServe formally formulates the multiplexing problem, and proposes a novel placement algorithm and adaptive batch scheduling strategy to identify optimal colocations and maximize utilization. MuxServe designs a unified resource manager to enable flexible and efficient multiplexing. Evaluation results show that MuxServe can achieves up to 1.8× higher throughput or processes 2.9× more requests within 99% SLO attainment. The code is available at: https://github.com/hao-ai-lab/MuxServe.
+                    </p>
+                  </section>
                 </div>
               </article>
             </div>
