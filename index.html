@@ -6,7 +6,7 @@
     <title>Runyu Lu | Embodied AI and ML Systems</title>
     <meta
       name="description"
-      content="Runyu Lu is a PhD student at the University of Michigan working on embodied AI, robotics, and machine learning systems."
+      content="Runyu Lu is a PhD student at the University of Michigan working on robot learning, and machine learning systems."
     >
     <link rel="canonical" href="https://runyulu.com/">
     <link rel="icon" type="image/svg+xml" href="assets/robot_portfolio.svg">
@@ -71,14 +71,13 @@
               I am a second-year PhD student in Computer Science and Engineering at the
               University of Michigan, co-advised by Professors Mosharaf Chowdhury and
               Ang Chen. I am also doing research in NVIDIA GEAR Lab. I am interested in
-              Robotics (Embodied AI) and ML systems.
+              Robotics and ML systems.
             </p>
-            <div class="hero-links">
-              <a class="button" href="mailto:runyulu@umich.edu">Email Me</a>
-            </div>
             <ul class="social-links">
+              <li><a href="mailto:runyulu@umich.edu">Email</a></li>
               <li><a href="https://github.com/LRY89757" target="_blank" rel="noopener">GitHub</a></li>
               <li><a href="https://www.linkedin.com/in/runyu-lu/" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://x.com/runyulu_x" target="_blank" rel="noopener">X / Twitter</a></li>
               <li><a href="https://scholar.google.com/citations?user=t4gdsHsAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
             </ul>
           </div>
@@ -94,7 +93,7 @@
         </div>
       </section>
 
-      <section id="research" class="section research-section" aria-labelledby="research-title">
+      <!-- <section id="research" class="section research-section" aria-labelledby="research-title">
         <div class="container">
           <h2 id="research-title">Research Overview</h2>
           <ul class="research-list">
@@ -111,9 +110,46 @@
               <span class="research-term">ML System</span>
               <p>
                 I am interested in many aspects of ML systems. I worked on DiT-based
-                Image/Video Generation, Multimodal Model Training, GPU Sharing for LLM
+                Image/Video Generation, Multimodal Model Training/Serving, GPU Sharing for LLM
                 Serving, and LLM-enabled Compiler Fuzzing.
               </p>
+            </li>
+          </ul>
+        </div>
+      </section> -->
+
+      <section id="education" class="section education-section" aria-labelledby="education-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-label">Background</p>
+            <h2 id="education-title">Education</h2>
+          </div>
+          <ul class="education-list education-list-home">
+            <li>
+              <span class="edu-period">2024 – Present</span>
+              <div class="edu-details">
+                <h3>University of Michigan, Ann Arbor</h3>
+                <p>PhD in Computer Science and Engineering</p>
+                <p class="edu-advisors">
+                  Advised by
+                  <a href="https://mosharaf.com/" target="_blank" rel="noopener">Mosharaf Chowdhury</a>
+                  and
+                  <a href="https://web.eecs.umich.edu/~chenang/" target="_blank" rel="noopener">Ang Chen</a>
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="edu-period">2020 – 2024</span>
+              <div class="edu-details">
+                <h3>Huazhong University of Science and Technology</h3>
+                <p>B.E. in Computer Science</p>
+                <p class="edu-advisors">
+                  Advised by
+                  <a href="https://haozhang.ai/" target="_blank" rel="noopener">Hao Zhang</a>,
+                  <a href="https://lingming.cs.illinois.edu/" target="_blank" rel="noopener">Lingming Zhang</a>, and
+                  <a href="https://github.com/MrShawCode" target="_blank" rel="noopener">Zhiyuan Shao</a>
+                </p>
+              </div>
             </li>
           </ul>
         </div>
@@ -132,13 +168,13 @@
             </nav>
           </div>
 
-          <section class="publication-year" aria-labelledby="year-2026">
-            <h3 id="year-2026" class="publication-year-label">2026</h3>
+          <section class="publication-group" aria-labelledby="selected-papers-title">
+            <h3 id="selected-papers-title" class="publication-group-label">Selected Papers</h3>
             <div class="publication-list">
               <article class="paper-row">
                 <div class="paper-row-meta">
                   <span>ML System</span>
-                  <strong>ASPLOS</strong>
+                  <strong>ASPLOS'26</strong>
                 </div>
                 <div class="paper-row-main">
                   <h4>
@@ -151,8 +187,7 @@
                     Ruofan Wu, Jeff J. Ma, Ang Chen, Mosharaf Chowdhury
                   </p>
                   <p class="paper-contribution">
-                    Step-level sequence parallelism and round-based scheduling improve
-                    SLO attainment by up to 32% across heterogeneous DiT workloads.
+                    Serve DiT models like Tetris!
                   </p>
                 </div>
                 <div class="paper-links paper-row-links" role="group" aria-label="TetriServe resources">
@@ -190,7 +225,7 @@
               <article class="paper-row">
                 <div class="paper-row-meta">
                   <span>Robotics</span>
-                  <strong>arXiv</strong>
+                  <strong>ARXIV'26</strong>
                 </div>
                 <div class="paper-row-main">
                   <h4>
@@ -204,14 +239,13 @@
                     Mosharaf Chowdhury, Yuke Zhu†, Linxi "Jim" Fan†, Guanzhi Wang†
                   </p>
                   <p class="paper-contribution">
-                    Coding agents turn multimodal execution traces into validated robot
-                    repairs and reusable skills that transfer across tasks, embodiments,
-                    and simulation-to-real settings.
+                    Agent accumulates physical skills automatically!
                   </p>
                 </div>
                 <div class="paper-links paper-row-links" role="group" aria-label="ASPIRE resources">
                   <a href="https://arxiv.org/abs/2607.00272" target="_blank" rel="noopener">Paper</a>
                   <a href="https://research.nvidia.com/labs/gear/aspire/" target="_blank" rel="noopener">Website</a>
+                  <a href="https://github.com/NVlabs/ASPIRE" target="_blank" rel="noopener">Code</a>
                   <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="aspire-abstract">Abstract</button>
                   <button class="paper-detail-toggle" type="button" aria-expanded="false" aria-controls="aspire-citation">BibTeX</button>
                 </div>
@@ -239,10 +273,23 @@
                 </div>
               </article>
 
+            </div>
+          </section>
+
+          <details class="publication-archive">
+            <summary class="publication-archive-toggle">
+              <span class="publication-archive-title">Other Papers</span>
+              <span class="publication-archive-meta">
+                <span class="publication-archive-description">6 collaborative publications</span>
+                <span class="publication-archive-icon" aria-hidden="true"></span>
+              </span>
+            </summary>
+            <div class="publication-archive-content">
+              <div class="publication-list">
               <article class="paper-row">
                 <div class="paper-row-meta">
                   <span>ML System</span>
-                  <strong>ICML</strong>
+                  <strong>ICML'26</strong>
                 </div>
                 <div class="paper-row-main">
                   <h4>
@@ -292,7 +339,7 @@
               <article class="paper-row">
                 <div class="paper-row-meta">
                   <span>ML System</span>
-                  <strong>ICLR</strong>
+                  <strong>ICLR'26</strong>
                 </div>
                 <div class="paper-row-main">
                   <h4>
@@ -341,7 +388,7 @@
               <article class="paper-row">
                 <div class="paper-row-meta">
                   <span>AI for Science</span>
-                  <strong>arXiv</strong>
+                  <strong>ARXIV'26</strong>
                 </div>
                 <div class="paper-row-main">
                   <h4>
@@ -387,16 +434,11 @@
                   </section>
                 </div>
               </article>
-            </div>
-          </section>
 
-          <section class="publication-year" aria-labelledby="year-2025">
-            <h3 id="year-2025" class="publication-year-label">2025</h3>
-            <div class="publication-list">
               <article class="paper-row">
                 <div class="paper-row-meta">
                   <span>ML System</span>
-                  <strong>arXiv</strong>
+                  <strong>ARXIV'25</strong>
                 </div>
                 <div class="paper-row-main">
                   <h4>
@@ -443,16 +485,11 @@
                   </section>
                 </div>
               </article>
-            </div>
-          </section>
 
-          <section class="publication-year" aria-labelledby="year-2024">
-            <h3 id="year-2024" class="publication-year-label">2024</h3>
-            <div class="publication-list">
               <article class="paper-row">
                 <div class="paper-row-meta">
                   <span>Software</span>
-                  <strong>OOPSLA</strong>
+                  <strong>OOPSLA'24</strong>
                 </div>
                 <div class="paper-row-main">
                   <h4>
@@ -506,7 +543,7 @@
               <article class="paper-row">
                 <div class="paper-row-meta">
                   <span>ML System</span>
-                  <strong>ICML</strong>
+                  <strong>ICML'24</strong>
                 </div>
                 <div class="paper-row-main">
                   <h4>
@@ -558,7 +595,8 @@
                 </div>
               </article>
             </div>
-          </section>
+            </div>
+          </details>
 
           <p class="publication-note">* Equal contribution · † Project lead</p>
         </div>
